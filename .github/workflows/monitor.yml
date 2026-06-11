@@ -1,0 +1,44 @@
+name: Monitor Licitaciones ARCE
+
+on:
+  schedule:
+    # Corre 3 veces por día: 7am, 12pm y 6pm hora Uruguay (UTC-3)
+    - cron: '0 10,15,21 * * *'
+  workflow_dispatch:  # También permite correrlo manualmente
+
+jobs:
+  monitorear:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Restaurar historial de licitaciones vistas
+        uses: actions/cache@v4
+        with:
+          path: licitaciones_vistas.json
+          key: licitaciones-vistas-${{ runner.os }}
+          restore-keys: licitaciones-vistas-
+
+      - name: Ejecutar monitor
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          EMAIL_DESTINO: ${{ secrets.EMAIL_DESTINO }}
+        run: python monitor.py
+
+      - name: Guardar historial actualizado
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: licitaciones_vistas.json
+          key: licitaciones-vistas-${{ runner.os }}-${{ github.run_id }}
