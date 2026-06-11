@@ -8,14 +8,122 @@ from email.mime.text import MIMEText
 from datetime import datetime
 
 # ─── CONFIGURACIÓN ────────────────────────────────────────────────────────────
-PALABRAS_CLAVE = [
-    "piso", "pisos", "piso vinílico", "piso laminado", "piso flotante",
-    "revestimiento", "revestimientos", "alfombra", "alfombras",
-    "césped sintético", "cesped sintetico", "césped artificial", "pasto sintético",
-    "pasto artificial", "cancha", "canchas", "SPC", "vinílico", "vinilico",
-    "parquet", "porcelanato", "baldosa", "baldosas", "deck", "goma eva",
-    "tapizado", "tapiz", "moquette", "linóleo", "linoleum",
+
+# Grupo 1: Productos Metropolitana
+PALABRAS_PRODUCTOS = [
+    # Pisos vinílicos
+    "piso vinílico", "piso vinilico", "piso PVC", "piso LVT", "luxury vinyl tile",
+    "baldosa vinílica", "baldosa PVC", "listón vinílico", "piso vinílico click",
+    "piso SPC", "stone plastic composite", "piso rígido SPC", "piso vinílico impermeable",
+    "piso vinílico comercial", "piso vinílico residencial", "piso vinílico heterogéneo",
+    "piso vinílico homogéneo", "piso vinílico en rollo", "rollo vinílico",
+    "revestimiento vinílico", "piso vinílico acústico", "piso vinílico hospitalario",
+    "piso vinílico alto tránsito", "piso conductivo", "piso antiestático",
+    # Pisos flotantes
+    "piso flotante", "piso laminado", "piso laminado AC3", "piso laminado AC4",
+    "piso laminado AC5", "piso melamínico", "piso flotante resistente al agua",
+    "piso flotante hidrófugo", "piso HDF", "piso MDF", "piso click",
+    "piso símil madera",
+    # Pisos de madera
+    "piso de madera", "piso de madera natural", "piso ingenieril", "piso multicapa",
+    "piso prefinished", "piso de roble", "piso de eucaliptus", "piso parquet",
+    "piso entablonado", "piso macizo", "piso de ingeniería",
+    # Pisos de goma
+    "piso de goma", "baldosa de goma", "piso de caucho", "piso elastomérico",
+    "piso para gimnasio", "piso deportivo de goma", "piso amortiguante",
+    "piso antigolpes", "piso antideslizante", "piso para playground",
+    "piso para plaza", "piso de seguridad", "piso EPDM", "loseta de caucho",
+    "baldosa amortiguante", "piso para sala de musculación",
+    # Césped sintético
+    "césped sintético", "cesped sintetico", "pasto sintético", "pasto sintetico",
+    "césped artificial", "gramilla sintética", "césped deportivo", "césped FIFA",
+    "césped para fútbol", "césped para hockey", "césped para tenis",
+    "césped para rugby", "césped para recreación", "césped ornamental",
+    "césped residencial", "césped paisajístico", "césped decorativo",
+    "césped para jardines", "césped para escuelas", "césped para plazas",
+    # Insumos para canchas
+    "arena de sílice", "arena silícea", "arena para césped sintético",
+    "caucho SBR", "caucho granulado", "caucho reciclado", "relleno para césped",
+    "infill", "pegamento para césped", "adhesivo para césped sintético",
+    "banda de unión", "cinta de empalme", "mantenimiento de canchas",
+    "cepillado de césped sintético",
+    # Pisos deportivos
+    "piso deportivo", "piso para cancha indoor", "piso para sala deportiva",
+    "piso para fitness", "piso para crossfit", "piso para musculación",
+    "piso para educación física", "piso deportivo vinílico", "piso deportivo PVC",
+    "piso deportivo multicapa",
+    # Alfombras
+    "alfombra", "alfombra modular", "alfombra en baldosas", "alfombra alto tránsito",
+    "alfombra comercial", "alfombra residencial", "alfombra punzonada",
+    "alfombra para oficina", "alfombra para hotel", "alfombra acústica",
+    # Moquettes
+    "moquette", "moqueta", "alfombra en rollo", "alfombra textil",
+    "revestimiento textil", "alfombra institucional", "alfombra para auditorios",
+    "alfombra para teatros",
+    # Alfombras infantiles
+    "piso infantil", "alfombra infantil", "piso para guardería",
+    "piso para jardín de infantes", "piso lavable", "piso acolchonado infantil",
+    "piso didáctico",
+    # Fieltros
+    "fieltro", "geotextil", "manta de fieltro", "fieltro protector",
+    "fieltro acústico", "fieltro decorativo", "panel de fieltro",
+    # Felpudos y camineros
+    "felpudo", "limpiapiés", "alfombra de acceso", "alfombra de entrada",
+    "caminero", "felpudo técnico", "sistema atrapa suciedad", "alfombra de recepción",
+    # Paneles y revestimientos de pared
+    "revestimiento de pared", "panel decorativo", "panel 3D", "panel acústico",
+    "panel listonado", "panel ripado", "wall panel", "revestimiento PVC",
+    "revestimiento WPC", "revestimiento decorativo", "revestimiento interior",
+    "panel mural", "panel arquitectónico",
+    # Piedrafina
+    "piedrafina", "revestimiento símil piedra", "piedra flexible", "lámina decorativa",
+    "revestimiento de muro",
+    # Jardines verticales
+    "jardín vertical", "jardin vertical", "muro verde", "green wall",
+    "jardín artificial", "panel vegetal", "jardín sintético", "revestimiento vegetal",
+    # Deck y exterior
+    "deck", "deck WPC", "piso exterior", "piso para terraza", "piso para balcón",
+    "piso para piscina", "deck modular", "baldosa deck", "deck sintético",
+    "deck compuesto", "wood plastic composite",
+    # Accesorios
+    "zócalo", "rodapié", "perfil de terminación", "perfil reductor",
+    "junta de dilatación", "nariz de escalón", "perfil escalón", "moldura",
+    "manta acústica", "manta niveladora", "base aislante", "espuma IXPE",
+    "espuma EVA", "adhesivo para pisos", "pegamento para pisos",
+    # Soluciones modulares
+    "módulo habitable", "oficina modular", "oficina prefabricada",
+    "contenedor habitable", "módulo prefabricado", "aula modular",
+    "baño portátil", "sanitario portátil", "cabina sanitaria", "ducha portátil",
+    "garita de vigilancia", "caseta de vigilancia", "depósito modular",
+    "construcción modular", "unidad modular",
+    # Servicios
+    "instalación de pisos", "colocación de pisos", "instalación de césped sintético",
+    "mantenimiento de pisos", "limpieza de pisos", "reparación de césped sintético",
+    "obras deportivas", "construcción de canchas", "recambio de césped sintético",
 ]
+
+# Grupo 2: Terminología genérica de pliegos públicos
+PALABRAS_PLIEGOS = [
+    "revestimiento de piso", "revestimiento de suelo",
+    "pavimento", "pavimentación",
+    "solado",
+    "recubrimiento de suelo",
+    "loseta", "losetas",
+    "baldosa", "baldosas",
+    "entablonado",
+    "piso amortiguante", "piso de seguridad",
+    "superficie deportiva", "superficie de juego",
+    "revestimiento mural", "revestimiento de muro",
+    "cerramiento modular", "módulo prefabricado",
+    "construcción modular",
+    "cubierta vegetal",
+    "pista atlética", "pista de atletismo",
+    "campo de juego", "campo deportivo",
+    "cancha sintética",
+    "obra deportiva",
+]
+
+PALABRAS_CLAVE = PALABRAS_PRODUCTOS + PALABRAS_PLIEGOS
 
 ARCHIVO_VISTOS = "licitaciones_vistas.json"
 OCDS_URL = "https://www.comprasestatales.gub.uy/ocds/releases"
