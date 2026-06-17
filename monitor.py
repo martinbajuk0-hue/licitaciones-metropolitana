@@ -3,6 +3,8 @@ import json
 import os
 import smtplib
 import hashlib
+import re
+import tempfile
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime
@@ -198,13 +200,67 @@ def obtener_licitaciones():
 
     return licitaciones
 
+# ─── LECTURA DE PDF ───────────────────────────────────────────────────────────
+def extraer_texto_pdf(url_pliego):
+    """Descarga el PDF del pliego y extrae el texto."""
+    if not url_pliego:
+        return ""
+    try:
+        import urllib.request
+        # Buscar el link al PDF desde la página del llamado en comprasestatales
+        id_licitacion = url_pliego.rstrip("/").split("/")[-1]
+        pdf_url = f"https://www.comprasestatales.gub.uy/ocds/budgetBreakdown/{id_licitacion}"
+
+        # Intentar descargar el PDF directamente desde la URL del pliego
+        headers = {"User-Agent": "Mozilla/5.0"}
+        r = requests.get(url_pliego, headers=headers, timeout=15)
+        
+        # Buscar links a PDF en la página
+        pdf_links = re.findall(r'href=["\']([^"\']*\.pdf[^"\']*)["\']', r.text, re.IGNORECASE)
+        
+        texto_total = ""
+        for pdf_link in pdf_links[:2]:  # máximo 2 PDFs por licitación
+            if not pdf_link.startswith("http"):
+                pdf_link = "https://www.comprasestatales.gub.uy" + pdf_link
+            try:
+                pr = requests.get(pdf_link, headers=headers, timeout=20)
+                if pr.status_code == 200 and b"%PDF" in pr.content[:10]:
+                    with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as f:
+                        f.write(pr.content)
+                        tmp_path = f.name
+                    # Extraer texto con pypdf
+                    try:
+                        from pypdf import PdfReader
+                        reader = PdfReader(tmp_path)
+                        for page in reader.pages[:10]:  # máximo 10 páginas
+                            texto_total += page.extract_text() or ""
+                    finally:
+                        os.unlink(tmp_path)
+            except Exception as e:
+                print(f"    PDF {pdf_link[:60]}... error: {e}")
+        
+        return texto_total
+    except Exception as e:
+        print(f"    Error extrayendo PDF: {e}")
+        return ""
+
 # ─── FILTRO POR PALABRAS CLAVE ─────────────────────────────────────────────────
 def es_relevante(lic):
-    texto = (lic["titulo"] + " " + lic["descripcion"]).lower()
+    # Primero buscar en título y descripción (rápido)
+    texto_base = (lic["titulo"] + " " + lic["descripcion"]).lower()
     for kw in PALABRAS_CLAVE:
-        if kw.lower() in texto:
-            return True, kw
-    return False, None
+        if kw.lower() in texto_base:
+            return True, kw, "título"
+
+    # Si no encontró nada, leer el PDF del pliego (más lento pero completo)
+    print(f"  Leyendo PDF de: {lic['titulo'][:60]}...")
+    texto_pdf = extraer_texto_pdf(lic["url"]).lower()
+    if texto_pdf:
+        for kw in PALABRAS_CLAVE:
+            if kw.lower() in texto_pdf:
+                return True, kw, "pliego PDF"
+
+    return False, None, None
 
 # ─── ENVÍO DE EMAIL ────────────────────────────────────────────────────────────
 def enviar_email(nuevas):
@@ -219,7 +275,7 @@ def enviar_email(nuevas):
         html_items += f"""
         <div style="border-left:4px solid #1a73e8;padding:12px 16px;margin-bottom:16px;background:#f8f9fa;border-radius:0 6px 6px 0;">
             <p style="margin:0 0 6px;font-size:15px;font-weight:600;color:#1a1a1a;">{lic['titulo']}</p>
-            <p style="margin:0 0 4px;font-size:13px;color:#555;">📅 {lic['fecha']} &nbsp;|&nbsp; 🔑 Coincidencia: <strong>{lic['keyword']}</strong></p>
+            <p style="margin:0 0 4px;font-size:13px;color:#555;">📅 {lic['fecha']} &nbsp;|&nbsp; 🔑 Coincidencia: <strong>{lic['keyword']}</strong> &nbsp;|&nbsp; 📄 Encontrado en: <em>{lic.get('fuente','título')}</em></p>
             {'<p style="margin:4px 0;font-size:13px;color:#555;">' + lic['descripcion'][:200] + '...</p>' if lic['descripcion'] else ''}
             <a href="{lic['url']}" style="display:inline-block;margin-top:8px;font-size:13px;color:#1a73e8;">Ver pliego →</a>
         </div>
@@ -259,9 +315,10 @@ def main():
     for lic in licitaciones:
         if lic["id"] in vistos:
             continue
-        relevante, kw = es_relevante(lic)
+        relevante, kw, fuente = es_relevante(lic)
         if relevante:
             lic["keyword"] = kw
+            lic["fuente"] = fuente
             nuevas.append(lic)
         vistos.add(lic["id"])
 
