@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -114,8 +115,20 @@ def obtener_licitaciones() -> list[dict]:
             return licitaciones
 
         todos_los_items = channel.findall("item")
-        items_llamado = [it for it in todos_los_items if it.findtext("category", default="") == "llamado"]
-        print(f"  RSS: {len(todos_los_items)} item(s) totales, {len(items_llamado)} de categoría 'llamado'")
+
+        def _tipo_release(item) -> str:
+            # El <category> del feed no distingue de forma confiable
+            # "llamado" (confirmado con evidencia: un item de adjudicación
+            # trae category="award"). El release_id embebido en <guid>/
+            # <title> sí es confiable: "llamado-123", "adjudicacion-123",
+            # "aclar_llamado-123-0", "ajuste_llamado-123", etc.
+            guid = item.findtext("guid", default="") or item.findtext("title", default="")
+            m = re.match(r"^([a-z_]+)-\d", guid)
+            return m.group(1) if m else ""
+
+        items_llamado = [it for it in todos_los_items if _tipo_release(it) == "llamado"]
+        tipos_vistos = sorted({_tipo_release(it) for it in todos_los_items})
+        print(f"  RSS: {len(todos_los_items)} item(s) totales, {len(items_llamado)} de tipo 'llamado'. Tipos vistos: {tipos_vistos}")
 
         primer_release_impreso = False
         for item in items_llamado:
