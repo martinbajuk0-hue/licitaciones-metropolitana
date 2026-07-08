@@ -9,7 +9,7 @@
 - Domicilio fiscal: [config/empresa.yaml → domicilio_fiscal]
 - Teléfono: [config/empresa.yaml → telefono_contacto]
 - Email: [config/empresa.yaml → email_contacto]
-- Representante legal: [config/empresa.yaml → representante_legal]
+- Representante(s) legal(es): [config/empresa.yaml → representantes_legales — elegir cuál firma según el poder vigente para esta licitación puntual]
 - Rubro: [config/empresa.yaml → rubro]
 - Licitación a la que se presenta: [NÚMERO Y ORGANISMO]
 - Fecha: [FECHA DE PRESENTACIÓN]

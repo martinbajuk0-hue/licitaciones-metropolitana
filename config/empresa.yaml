@@ -1,17 +1,18 @@
 # Datos de la empresa. Se usan en report.py y templates/ para completar
 # encabezados de informes y borradores de oferta.
-#
-# PENDIENTE: los campos marcados abajo no están en los PDFs de origen.
-# Completar con los datos societarios reales antes de generar ofertas
-# formales (no se inventan para no exponer datos incorrectos en un pliego).
 
 razon_social: "Metropolitana Pisos"
-rut: "PENDIENTE: completar RUT en config/empresa.yaml"
-domicilio_fiscal: "PENDIENTE: completar domicilio en config/empresa.yaml"
-telefono_contacto: "PENDIENTE: completar en config/empresa.yaml"
-email_contacto: "PENDIENTE: completar en config/empresa.yaml"
-sitio_web: "PENDIENTE: completar en config/empresa.yaml"
-representante_legal: "PENDIENTE: completar en config/empresa.yaml"
+rut: "210196570018"
+domicilio_fiscal: "Av. 8 de Octubre 3007, Montevideo, Uruguay"
+telefono_contacto: "24876095"
+email_contacto: "martinbajuk@metropolitana.com.uy"
+sitio_web: "https://www.metropolitanapisos.com.uy"
+
+representantes_legales:
+  - nombre: "Martín Bajuk"
+    cedula: "4.049.007"
+  - nombre: "Estela Vernazza"
+    cedula: "28450451"
 
 rubro: "Pisos, revestimientos, césped sintético, goma, alfombras y accesorios"
 

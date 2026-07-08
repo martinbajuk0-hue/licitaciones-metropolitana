@@ -98,8 +98,7 @@ Variables de entorno (secrets en GitHub Actions):
 - `knowledge/precios.yaml` está **vacío a propósito**: no existe una lista
   de precios en los documentos de origen del rol. `pricing.py` nunca
   inventa un precio — carga la lista real ahí antes de cotizar formalmente.
-- `config/empresa.yaml` tiene varios campos marcados `PENDIENTE`
-  (RUT, domicilio, contacto, representante legal) por el mismo motivo.
+- `config/empresa.yaml` ya tiene los datos societarios cargados.
 
 ## Tests
 

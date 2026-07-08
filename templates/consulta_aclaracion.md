@@ -25,4 +25,4 @@ prompts/consulta_aclaracion.md)_
 Sin otro particular, saludamos atentamente.
 
 Metropolitana Pisos
-[representante_legal — config/empresa.yaml]
+[representante que firma — ver config/empresa.yaml → representantes_legales]
