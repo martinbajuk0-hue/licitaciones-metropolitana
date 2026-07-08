@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -53,14 +54,32 @@ def _hash_contenido(lic: dict) -> str:
 # ─── Fetch de licitaciones (OCDS / RSS) ───────────────────────────────────
 
 def obtener_licitaciones() -> list[dict]:
-    """Intenta OCDS releases; si falla, usa el RSS."""
+    """Intenta OCDS releases; si falla, usa el RSS.
+
+    Evidencia recogida corriendo esto en producción (ver commits de este
+    branch): el feed RSS de comprasestatales.gub.uy NO trae texto de
+    negocio en el <item> — solo un identificador interno como <title>
+    (ej. "id_compra:1354587,release_id:adjudicacion-1354587"), <category>
+    y <link> al release individual en JSON. Por eso acá se sigue el link
+    de cada item category=="llamado" (nuevos llamados — lo que pide el
+    paso 1 del flujo) para obtener el título/descripción reales.
+
+    PENDIENTE (no implementado, no inventado): aclar_llamado/adjudicacion/
+    ajuste_* no se procesan todavía. El feed sí permite correlacionarlos
+    con el id_compra del llamado original (visible en el propio <title>),
+    pero vincularlos para el paso 2 (detectar aclaraciones/modificaciones/
+    adjudicaciones sobre licitaciones ya vistas) requiere diseño propio —
+    hoy monitor.py solo cubre "detectar llamados nuevos".
+    """
     licitaciones = []
 
     try:
-        r = requests.get(settings.OCDS_URL, timeout=30)
+        r = requests.get(settings.OCDS_URL, headers=parser_mod.HEADERS, timeout=30)
+        print(f"  OCDS: status={r.status_code} content-type={r.headers.get('content-type')} body[:300]={r.text[:300]!r}")
         if r.status_code == 200:
             data = r.json()
             releases = data if isinstance(data, list) else data.get("releases", [])
+            print(f"  OCDS: {len(releases)} release(s) en la respuesta")
             for rel in releases:
                 tender = rel.get("tender", {})
                 title = tender.get("title", "") or rel.get("title", "")
@@ -80,10 +99,12 @@ def obtener_licitaciones() -> list[dict]:
     try:
         import xml.etree.ElementTree as ET
 
-        r = requests.get(settings.RSS_URL, timeout=30)
+        r = requests.get(settings.RSS_URL, headers=parser_mod.HEADERS, timeout=30)
+        print(f"  RSS: status={r.status_code} content-type={r.headers.get('content-type')} body[:300]={r.text[:300]!r}")
         root = ET.fromstring(r.content)
         ns = {"atom": "http://www.w3.org/2005/Atom"}
         channel = root.find("channel")
+
         if channel is None:
             for entry in root.findall("atom:entry", ns):
                 title = entry.findtext("atom:title", default="", namespaces=ns)
@@ -91,14 +112,74 @@ def obtener_licitaciones() -> list[dict]:
                 date = (entry.findtext("atom:updated", default="", namespaces=ns) or "")[:10]
                 uid = hashlib.md5(link.encode()).hexdigest()
                 licitaciones.append({"id": uid, "titulo": title, "descripcion": "", "fecha": date, "url": link})
-        else:
-            for item in channel.findall("item"):
-                title = item.findtext("title", default="")
-                link = item.findtext("link", default="")
-                desc = item.findtext("description", default="")
-                date = item.findtext("pubDate", default="")
-                uid = hashlib.md5(link.encode()).hexdigest()
-                licitaciones.append({"id": uid, "titulo": title, "descripcion": desc, "fecha": date, "url": link})
+            return licitaciones
+
+        todos_los_items = channel.findall("item")
+
+        def _tipo_release(item) -> str:
+            # El <category> del feed no distingue de forma confiable
+            # "llamado" (confirmado con evidencia: un item de adjudicación
+            # trae category="award"). El release_id embebido en <guid>/
+            # <title> sí es confiable: "llamado-123", "adjudicacion-123",
+            # "aclar_llamado-123-0", "ajuste_llamado-123", etc.
+            guid = item.findtext("guid", default="") or item.findtext("title", default="")
+            m = re.match(r"^([a-z_]+)-\d", guid)
+            return m.group(1) if m else ""
+
+        items_llamado = [it for it in todos_los_items if _tipo_release(it) == "llamado"]
+        tipos_vistos = sorted({_tipo_release(it) for it in todos_los_items})
+        print(f"  RSS: {len(todos_los_items)} item(s) totales, {len(items_llamado)} de tipo 'llamado'. Tipos vistos: {tipos_vistos}")
+
+        primer_release_impreso = False
+        for item in items_llamado:
+            link = item.findtext("link", default="")
+            guid = item.findtext("guid", default="") or link
+            date = item.findtext("pubDate", default="")
+            uid = hashlib.md5(guid.encode()).hexdigest()
+
+            titulo, desc, documentos = "", "", []
+            try:
+                rr = requests.get(link, headers=parser_mod.HEADERS, timeout=15)
+                if rr.status_code == 200:
+                    rel = rr.json()
+                    # El JSON es un release package OCDS: uri/version/publisher
+                    # a nivel superior, y la release real (con tender/parties)
+                    # anidada en "releases": [...]. Confirmado con evidencia
+                    # del log — el primer intento buscaba "tender" en el nivel
+                    # equivocado y por eso siempre volvía vacío.
+                    if isinstance(rel, dict) and isinstance(rel.get("releases"), list) and rel["releases"]:
+                        rel = rel["releases"][0]
+                    tender = rel.get("tender", {}) if isinstance(rel, dict) else {}
+                    titulo = tender.get("title") or (rel.get("title") if isinstance(rel, dict) else "") or ""
+                    desc = tender.get("description") or ""
+                    # Estándar OCDS: los documentos del pliego van en
+                    # tender.documents[].url — NO en un HTML para scrapear.
+                    # lic["url"] apunta al JSON del release (no a una página
+                    # HTML), así que parser.extraer_pliego() no podría
+                    # encontrarlos ahí buscando <a href="...pdf">.
+                    documentos = [
+                        d.get("url") for d in tender.get("documents", []) if isinstance(d, dict) and d.get("url")
+                    ]
+                if not primer_release_impreso:
+                    print(
+                        f"  RSS->release: status={rr.status_code} título={titulo!r} "
+                        f"tender.keys={sorted(tender.keys()) if titulo or desc else 'N/A'} "
+                        f"documentos={documentos}"
+                    )
+                    primer_release_impreso = True
+            except Exception as e:  # noqa: BLE001
+                if not primer_release_impreso:
+                    print(f"  RSS->release: error obteniendo {link}: {e}")
+                    primer_release_impreso = True
+
+            licitaciones.append({
+                "id": uid,
+                "titulo": titulo or item.findtext("title", default=""),
+                "descripcion": desc,
+                "fecha": date,
+                "url": link,
+                "documentos": documentos,
+            })
     except Exception as e:  # noqa: BLE001
         print(f"RSS también falló: {e}")
 
@@ -107,6 +188,24 @@ def obtener_licitaciones() -> list[dict]:
 
 # ─── Filtro por palabras clave ─────────────────────────────────────────────
 
+def _leer_pliego(lic: dict) -> "parser_mod.PliegoExtraido":
+    """Descarga y extrae los documentos reales del pliego.
+
+    Preferimos tender.documents[].url (URLs directas a PDF/Word/Excel,
+    vienen en el JSON del release — campo estándar OCDS) sobre
+    parser.extraer_pliego(lic['url']), que scrapea <a href="...pdf"> de
+    una página HTML: lic['url'] apunta al JSON del release, no a una
+    página HTML, así que ese scrape nunca encontraría nada ahí.
+    """
+    urls = lic.get("documentos") or []
+    if urls:
+        pliego = parser_mod.PliegoExtraido()
+        for doc_url in urls[:MAX_DOCUMENTOS_POR_LICITACION]:
+            pliego.documentos.append(parser_mod.descargar_y_extraer(doc_url))
+        return pliego
+    return parser_mod.extraer_pliego(lic["url"], max_documentos=MAX_DOCUMENTOS_POR_LICITACION)
+
+
 def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
     """Devuelve (relevante, keyword, fuente, texto_pliego_si_se_leyo)."""
     texto_base = (lic["titulo"] + " " + lic["descripcion"]).lower()
@@ -114,8 +213,8 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
         if kw.lower() in texto_base:
             return True, kw, "título/descripción", ""
 
-    print(f"  Leyendo pliego de: {lic['titulo'][:60]}...")
-    pliego = parser_mod.extraer_pliego(lic["url"], max_documentos=MAX_DOCUMENTOS_POR_LICITACION)
+    print(f"  Leyendo pliego de: {lic['titulo'][:60]}... ({len(lic.get('documentos') or [])} documento(s))")
+    pliego = _leer_pliego(lic)
     texto_pliego = pliego.texto_completo
     texto_lower = texto_pliego.lower()
     for kw in settings.todas_las_palabras_clave():
@@ -221,7 +320,7 @@ def main(enviar_email_flag: bool = True) -> None:
         lic["fuente"] = fuente
 
         if not texto_pliego:
-            pliego = parser_mod.extraer_pliego(lic["url"], max_documentos=MAX_DOCUMENTOS_POR_LICITACION)
+            pliego = _leer_pliego(lic)
             texto_pliego = pliego.texto_completo
             errores = [d.nombre for d in pliego.documentos_con_error]
         else:
