@@ -53,7 +53,23 @@ def _hash_contenido(lic: dict) -> str:
 # ─── Fetch de licitaciones (OCDS / RSS) ───────────────────────────────────
 
 def obtener_licitaciones() -> list[dict]:
-    """Intenta OCDS releases; si falla, usa el RSS."""
+    """Intenta OCDS releases; si falla, usa el RSS.
+
+    Evidencia recogida corriendo esto en producción (ver commits de este
+    branch): el feed RSS de comprasestatales.gub.uy NO trae texto de
+    negocio en el <item> — solo un identificador interno como <title>
+    (ej. "id_compra:1354587,release_id:adjudicacion-1354587"), <category>
+    y <link> al release individual en JSON. Por eso acá se sigue el link
+    de cada item category=="llamado" (nuevos llamados — lo que pide el
+    paso 1 del flujo) para obtener el título/descripción reales.
+
+    PENDIENTE (no implementado, no inventado): aclar_llamado/adjudicacion/
+    ajuste_* no se procesan todavía. El feed sí permite correlacionarlos
+    con el id_compra del llamado original (visible en el propio <title>),
+    pero vincularlos para el paso 2 (detectar aclaraciones/modificaciones/
+    adjudicaciones sobre licitaciones ya vistas) requiere diseño propio —
+    hoy monitor.py solo cubre "detectar llamados nuevos".
+    """
     licitaciones = []
 
     try:
@@ -87,10 +103,7 @@ def obtener_licitaciones() -> list[dict]:
         root = ET.fromstring(r.content)
         ns = {"atom": "http://www.w3.org/2005/Atom"}
         channel = root.find("channel")
-        if channel is not None:
-            primer_item = channel.find("item")
-            if primer_item is not None:
-                print(f"  RSS primer <item> completo: {ET.tostring(primer_item, encoding='unicode')[:2500]!r}")
+
         if channel is None:
             for entry in root.findall("atom:entry", ns):
                 title = entry.findtext("atom:title", default="", namespaces=ns)
@@ -98,14 +111,42 @@ def obtener_licitaciones() -> list[dict]:
                 date = (entry.findtext("atom:updated", default="", namespaces=ns) or "")[:10]
                 uid = hashlib.md5(link.encode()).hexdigest()
                 licitaciones.append({"id": uid, "titulo": title, "descripcion": "", "fecha": date, "url": link})
-        else:
-            for item in channel.findall("item"):
-                title = item.findtext("title", default="")
-                link = item.findtext("link", default="")
-                desc = item.findtext("description", default="")
-                date = item.findtext("pubDate", default="")
-                uid = hashlib.md5(link.encode()).hexdigest()
-                licitaciones.append({"id": uid, "titulo": title, "descripcion": desc, "fecha": date, "url": link})
+            return licitaciones
+
+        todos_los_items = channel.findall("item")
+        items_llamado = [it for it in todos_los_items if it.findtext("category", default="") == "llamado"]
+        print(f"  RSS: {len(todos_los_items)} item(s) totales, {len(items_llamado)} de categoría 'llamado'")
+
+        primer_release_impreso = False
+        for item in items_llamado:
+            link = item.findtext("link", default="")
+            guid = item.findtext("guid", default="") or link
+            date = item.findtext("pubDate", default="")
+            uid = hashlib.md5(guid.encode()).hexdigest()
+
+            titulo, desc = "", ""
+            try:
+                rr = requests.get(link, headers=parser_mod.HEADERS, timeout=15)
+                if not primer_release_impreso:
+                    print(f"  RSS->release: status={rr.status_code} body[:500]={rr.text[:500]!r}")
+                    primer_release_impreso = True
+                if rr.status_code == 200:
+                    rel = rr.json()
+                    tender = rel.get("tender", {}) if isinstance(rel, dict) else {}
+                    titulo = tender.get("title") or rel.get("title") or ""
+                    desc = tender.get("description") or ""
+            except Exception as e:  # noqa: BLE001
+                if not primer_release_impreso:
+                    print(f"  RSS->release: error obteniendo {link}: {e}")
+                    primer_release_impreso = True
+
+            licitaciones.append({
+                "id": uid,
+                "titulo": titulo or item.findtext("title", default=""),
+                "descripcion": desc,
+                "fecha": date,
+                "url": link,
+            })
     except Exception as e:  # noqa: BLE001
         print(f"RSS también falló: {e}")
 
