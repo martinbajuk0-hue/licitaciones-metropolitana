@@ -137,12 +137,9 @@ def obtener_licitaciones() -> list[dict]:
             date = item.findtext("pubDate", default="")
             uid = hashlib.md5(guid.encode()).hexdigest()
 
-            titulo, desc = "", ""
+            titulo, desc, documentos = "", "", []
             try:
                 rr = requests.get(link, headers=parser_mod.HEADERS, timeout=15)
-                if not primer_release_impreso:
-                    print(f"  RSS->release: status={rr.status_code} body[:1500]={rr.text[:1500]!r}")
-                    primer_release_impreso = True
                 if rr.status_code == 200:
                     rel = rr.json()
                     # El JSON es un release package OCDS: uri/version/publisher
@@ -155,6 +152,21 @@ def obtener_licitaciones() -> list[dict]:
                     tender = rel.get("tender", {}) if isinstance(rel, dict) else {}
                     titulo = tender.get("title") or (rel.get("title") if isinstance(rel, dict) else "") or ""
                     desc = tender.get("description") or ""
+                    # Estándar OCDS: los documentos del pliego van en
+                    # tender.documents[].url — NO en un HTML para scrapear.
+                    # lic["url"] apunta al JSON del release (no a una página
+                    # HTML), así que parser.extraer_pliego() no podría
+                    # encontrarlos ahí buscando <a href="...pdf">.
+                    documentos = [
+                        d.get("url") for d in tender.get("documents", []) if isinstance(d, dict) and d.get("url")
+                    ]
+                if not primer_release_impreso:
+                    print(
+                        f"  RSS->release: status={rr.status_code} título={titulo!r} "
+                        f"tender.keys={sorted(tender.keys()) if titulo or desc else 'N/A'} "
+                        f"documentos={documentos}"
+                    )
+                    primer_release_impreso = True
             except Exception as e:  # noqa: BLE001
                 if not primer_release_impreso:
                     print(f"  RSS->release: error obteniendo {link}: {e}")
@@ -166,6 +178,7 @@ def obtener_licitaciones() -> list[dict]:
                 "descripcion": desc,
                 "fecha": date,
                 "url": link,
+                "documentos": documentos,
             })
     except Exception as e:  # noqa: BLE001
         print(f"RSS también falló: {e}")
@@ -175,6 +188,24 @@ def obtener_licitaciones() -> list[dict]:
 
 # ─── Filtro por palabras clave ─────────────────────────────────────────────
 
+def _leer_pliego(lic: dict) -> "parser_mod.PliegoExtraido":
+    """Descarga y extrae los documentos reales del pliego.
+
+    Preferimos tender.documents[].url (URLs directas a PDF/Word/Excel,
+    vienen en el JSON del release — campo estándar OCDS) sobre
+    parser.extraer_pliego(lic['url']), que scrapea <a href="...pdf"> de
+    una página HTML: lic['url'] apunta al JSON del release, no a una
+    página HTML, así que ese scrape nunca encontraría nada ahí.
+    """
+    urls = lic.get("documentos") or []
+    if urls:
+        pliego = parser_mod.PliegoExtraido()
+        for doc_url in urls[:MAX_DOCUMENTOS_POR_LICITACION]:
+            pliego.documentos.append(parser_mod.descargar_y_extraer(doc_url))
+        return pliego
+    return parser_mod.extraer_pliego(lic["url"], max_documentos=MAX_DOCUMENTOS_POR_LICITACION)
+
+
 def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
     """Devuelve (relevante, keyword, fuente, texto_pliego_si_se_leyo)."""
     texto_base = (lic["titulo"] + " " + lic["descripcion"]).lower()
@@ -182,8 +213,8 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
         if kw.lower() in texto_base:
             return True, kw, "título/descripción", ""
 
-    print(f"  Leyendo pliego de: {lic['titulo'][:60]}...")
-    pliego = parser_mod.extraer_pliego(lic["url"], max_documentos=MAX_DOCUMENTOS_POR_LICITACION)
+    print(f"  Leyendo pliego de: {lic['titulo'][:60]}... ({len(lic.get('documentos') or [])} documento(s))")
+    pliego = _leer_pliego(lic)
     texto_pliego = pliego.texto_completo
     texto_lower = texto_pliego.lower()
     for kw in settings.todas_las_palabras_clave():
@@ -289,7 +320,7 @@ def main(enviar_email_flag: bool = True) -> None:
         lic["fuente"] = fuente
 
         if not texto_pliego:
-            pliego = parser_mod.extraer_pliego(lic["url"], max_documentos=MAX_DOCUMENTOS_POR_LICITACION)
+            pliego = _leer_pliego(lic)
             texto_pliego = pliego.texto_completo
             errores = [d.nombre for d in pliego.documentos_con_error]
         else:
