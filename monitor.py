@@ -57,7 +57,7 @@ def obtener_licitaciones() -> list[dict]:
     licitaciones = []
 
     try:
-        r = requests.get(settings.OCDS_URL, timeout=30)
+        r = requests.get(settings.OCDS_URL, headers=parser_mod.HEADERS, timeout=30)
         print(f"  OCDS: status={r.status_code} content-type={r.headers.get('content-type')} body[:300]={r.text[:300]!r}")
         if r.status_code == 200:
             data = r.json()
@@ -82,7 +82,7 @@ def obtener_licitaciones() -> list[dict]:
     try:
         import xml.etree.ElementTree as ET
 
-        r = requests.get(settings.RSS_URL, timeout=30)
+        r = requests.get(settings.RSS_URL, headers=parser_mod.HEADERS, timeout=30)
         print(f"  RSS: status={r.status_code} content-type={r.headers.get('content-type')} body[:300]={r.text[:300]!r}")
         root = ET.fromstring(r.content)
         ns = {"atom": "http://www.w3.org/2005/Atom"}
