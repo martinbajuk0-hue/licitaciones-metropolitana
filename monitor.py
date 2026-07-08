@@ -228,22 +228,14 @@ def main(enviar_email_flag: bool = True) -> None:
             errores = []
 
         texto_para_informe = texto_pliego or (lic["titulo"] + "\n" + lic["descripcion"])
-        informe_md = report_mod.generar_informe_markdown(lic["titulo"], lic["url"], texto_para_informe, errores)
-        ruta_informe = report_mod.guardar_informe(lic["titulo"], informe_md)
-        print(f"  Informe generado: {ruta_informe}")
+        informe = report_mod.analizar_licitacion(lic["titulo"], lic["url"], texto_para_informe, errores)
+        ruta_informe = report_mod.guardar_informe(lic["titulo"], informe.markdown)
+        print(f"  Informe generado: {ruta_informe} ({informe.clasificacion.simbolo} score {informe.clasificacion.puntaje})")
 
-        campos = None
-        try:
-            clasif_score = report_mod.clasificar_oportunidad(
-                report_mod.analyzer.estimar_probabilidad_exito(
-                    report_mod.analyzer.extraer_campos_clave(texto_para_informe),
-                    report_mod.analyzer.identificar_productos(texto_para_informe),
-                    0, 0, 0,
-                )["score"]
-            )
-            lic["clasificacion"] = clasif_score
-        except Exception as e:  # noqa: BLE001
-            print(f"  No se pudo calcular clasificación rápida: {e}")
+        # Misma clasificación que queda en el informe guardado — nunca se
+        # recalcula por separado con menos datos (evita que el email
+        # muestre una estrella distinta a la del informe real).
+        lic["clasificacion"] = informe.clasificacion
 
         nuevas.append(lic)
 

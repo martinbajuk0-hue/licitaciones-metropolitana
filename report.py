@@ -76,12 +76,33 @@ def _md_lista(items: list[str]) -> str:
     return "\n".join(f"- {i}" for i in items) + "\n"
 
 
-def generar_informe_markdown(
+@dataclass
+class InformeLicitacion:
+    """Resultado completo de analizar una licitación: todo lo que calculó
+    el pipeline (no solo el Markdown), para que quien orquesta (monitor.py,
+    cli.py) pueda usar `clasificacion`, `riesgos`, etc. directamente sin
+    tener que recalcularlos por su cuenta ni parsear el Markdown de vuelta.
+    """
+
+    titulo: str
+    url: str
+    campos: analyzer.CamposClave
+    productos: list[analyzer.ProductoIdentificado]
+    riesgos: list[risk_mod.Riesgo]
+    checklist: list[checklist_mod.ItemChecklist]
+    resumen: str
+    probabilidad: dict
+    clasificacion: Clasificacion
+    cronograma: list[dict]
+    markdown: str
+
+
+def analizar_licitacion(
     titulo: str,
     url: str,
     texto_pliego: str,
     documentos_con_error: list[str] | None = None,
-) -> str:
+) -> InformeLicitacion:
     campos = analyzer.extraer_campos_clave(texto_pliego)
     productos = analyzer.identificar_productos(texto_pliego)
     riesgos = risk_mod.analizar_riesgos(texto_pliego)
@@ -148,7 +169,35 @@ def generar_informe_markdown(
         "_Informe generado automáticamente. No sustituye la lectura íntegra del pliego por una persona del equipo de licitaciones. "
         "Todo campo marcado como 'no identificado' o 'PENDIENTE' requiere verificación manual antes de tomar una decisión de presentarse._",
     ]
-    return "\n".join(p for p in partes if p is not None)
+    markdown = "\n".join(p for p in partes if p is not None)
+
+    return InformeLicitacion(
+        titulo=titulo,
+        url=url,
+        campos=campos,
+        productos=productos,
+        riesgos=riesgos,
+        checklist=items_checklist,
+        resumen=resumen,
+        probabilidad=probabilidad,
+        clasificacion=clasificacion,
+        cronograma=cronograma,
+        markdown=markdown,
+    )
+
+
+def generar_informe_markdown(
+    titulo: str,
+    url: str,
+    texto_pliego: str,
+    documentos_con_error: list[str] | None = None,
+) -> str:
+    """Atajo para cuando solo interesa el Markdown (ej. cli.py). Si además
+    se necesita la clasificación/riesgos/etc. para otra cosa (ej. el email
+    de monitor.py), usar analizar_licitacion() directamente para no
+    recalcular el pipeline dos veces.
+    """
+    return analizar_licitacion(titulo, url, texto_pliego, documentos_con_error).markdown
 
 
 def guardar_informe(titulo: str, contenido_md: str) -> str:
