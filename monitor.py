@@ -58,9 +58,11 @@ def obtener_licitaciones() -> list[dict]:
 
     try:
         r = requests.get(settings.OCDS_URL, timeout=30)
+        print(f"  OCDS: status={r.status_code} content-type={r.headers.get('content-type')} body[:300]={r.text[:300]!r}")
         if r.status_code == 200:
             data = r.json()
             releases = data if isinstance(data, list) else data.get("releases", [])
+            print(f"  OCDS: {len(releases)} release(s) en la respuesta")
             for rel in releases:
                 tender = rel.get("tender", {})
                 title = tender.get("title", "") or rel.get("title", "")
@@ -81,6 +83,7 @@ def obtener_licitaciones() -> list[dict]:
         import xml.etree.ElementTree as ET
 
         r = requests.get(settings.RSS_URL, timeout=30)
+        print(f"  RSS: status={r.status_code} content-type={r.headers.get('content-type')} body[:300]={r.text[:300]!r}")
         root = ET.fromstring(r.content)
         ns = {"atom": "http://www.w3.org/2005/Atom"}
         channel = root.find("channel")
