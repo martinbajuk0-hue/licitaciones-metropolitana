@@ -1,0 +1,29 @@
+# Lista de precios base de Metropolitana Pisos.
+#
+# ESTADO: VACÍA A PROPÓSITO. No existe ninguna lista de precios en los
+# documentos fuente (los dos PDFs de rol/flujo no incluyen precios).
+# Regla del rol: "nunca inventes información".
+#
+# pricing.py NO inventa precios: si un producto no tiene "precio_unitario"
+# cargado acá, el módulo devuelve el ítem marcado como
+# "SIN PRECIO CARGADO - completar en knowledge/precios.yaml" en vez de
+# estimar un número.
+#
+# Cómo completar esta lista:
+#   1. Pedir al equipo comercial de Metropolitana la lista de precios vigente.
+#   2. Cargar un precio_unitario por cada id de producto (ver knowledge/productos.yaml).
+#   3. moneda: "UYU" o "USD". iva_incluido: true/false.
+#
+# Formato esperado por producto_id:
+# <producto_id>:
+#   precio_unitario: <number>
+#   moneda: "UYU" | "USD"
+#   iva_incluido: true | false
+#   vigencia: "YYYY-MM-DD"
+#   fuente: "texto libre (ej: lista de precios julio 2026)"
+
+moneda_default: "UYU"
+iva_uruguay_porcentaje: 22
+
+precios:
+  {}

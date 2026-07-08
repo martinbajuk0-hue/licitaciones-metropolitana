@@ -1,334 +1,263 @@
-import requests
-import json
-import os
-import smtplib
+"""Paso 1-4 del flujo: revisar diariamente nuevos llamados en Compras
+Estatales (ARCE), detectar aclaraciones/modificaciones sobre licitaciones
+ya vistas, descargar la documentación y correr el pipeline completo
+(analyzer + risk + checklist + report) sobre las que resulten relevantes.
+
+Uso:
+    python monitor.py              # corrida normal (usada por el cron de GitHub Actions)
+    python monitor.py --sin-email  # corre el pipeline pero no envía email (debug local)
+"""
+from __future__ import annotations
+
+import argparse
 import hashlib
-import re
-import tempfile
+import json
+import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime
 
-# ─── CONFIGURACIÓN ────────────────────────────────────────────────────────────
+import requests
 
-# Grupo 1: Productos Metropolitana
-PALABRAS_PRODUCTOS = [
-    # Pisos vinílicos
-    "piso vinílico", "piso vinilico", "piso PVC", "piso LVT", "luxury vinyl tile",
-    "baldosa vinílica", "baldosa PVC", "listón vinílico", "piso vinílico click",
-    "piso SPC", "stone plastic composite", "piso rígido SPC", "piso vinílico impermeable",
-    "piso vinílico comercial", "piso vinílico residencial", "piso vinílico heterogéneo",
-    "piso vinílico homogéneo", "piso vinílico en rollo", "rollo vinílico",
-    "revestimiento vinílico", "piso vinílico acústico", "piso vinílico hospitalario",
-    "piso vinílico alto tránsito", "piso conductivo", "piso antiestático",
-    # Pisos flotantes
-    "piso flotante", "piso laminado", "piso laminado AC3", "piso laminado AC4",
-    "piso laminado AC5", "piso melamínico", "piso flotante resistente al agua",
-    "piso flotante hidrófugo", "piso HDF", "piso MDF", "piso click",
-    "piso símil madera",
-    # Pisos de madera
-    "piso de madera", "piso de madera natural", "piso ingenieril", "piso multicapa",
-    "piso prefinished", "piso de roble", "piso de eucaliptus", "piso parquet",
-    "piso entablonado", "piso macizo", "piso de ingeniería",
-    # Pisos de goma
-    "piso de goma", "baldosa de goma", "piso de caucho", "piso elastomérico",
-    "piso para gimnasio", "piso deportivo de goma", "piso amortiguante",
-    "piso antigolpes", "piso antideslizante", "piso para playground",
-    "piso para plaza", "piso de seguridad", "piso EPDM", "loseta de caucho",
-    "baldosa amortiguante", "piso para sala de musculación",
-    # Césped sintético
-    "césped sintético", "cesped sintetico", "pasto sintético", "pasto sintetico",
-    "césped artificial", "gramilla sintética", "césped deportivo", "césped FIFA",
-    "césped para fútbol", "césped para hockey", "césped para tenis",
-    "césped para rugby", "césped para recreación", "césped ornamental",
-    "césped residencial", "césped paisajístico", "césped decorativo",
-    "césped para jardines", "césped para escuelas", "césped para plazas",
-    # Insumos para canchas
-    "arena de sílice", "arena silícea", "arena para césped sintético",
-    "caucho SBR", "caucho granulado", "caucho reciclado", "relleno para césped",
-    "infill", "pegamento para césped", "adhesivo para césped sintético",
-    "banda de unión", "cinta de empalme", "mantenimiento de canchas",
-    "cepillado de césped sintético",
-    # Pisos deportivos
-    "piso deportivo", "piso para cancha indoor", "piso para sala deportiva",
-    "piso para fitness", "piso para crossfit", "piso para musculación",
-    "piso para educación física", "piso deportivo vinílico", "piso deportivo PVC",
-    "piso deportivo multicapa",
-    # Alfombras
-    "alfombra", "alfombra modular", "alfombra en baldosas", "alfombra alto tránsito",
-    "alfombra comercial", "alfombra residencial", "alfombra punzonada",
-    "alfombra para oficina", "alfombra para hotel", "alfombra acústica",
-    # Moquettes
-    "moquette", "moqueta", "alfombra en rollo", "alfombra textil",
-    "revestimiento textil", "alfombra institucional", "alfombra para auditorios",
-    "alfombra para teatros",
-    # Alfombras infantiles
-    "piso infantil", "alfombra infantil", "piso para guardería",
-    "piso para jardín de infantes", "piso lavable", "piso acolchonado infantil",
-    "piso didáctico",
-    # Fieltros
-    "fieltro", "geotextil", "manta de fieltro", "fieltro protector",
-    "fieltro acústico", "fieltro decorativo", "panel de fieltro",
-    # Felpudos y camineros
-    "felpudo", "limpiapiés", "alfombra de acceso", "alfombra de entrada",
-    "caminero", "felpudo técnico", "sistema atrapa suciedad", "alfombra de recepción",
-    # Paneles y revestimientos de pared
-    "revestimiento de pared", "panel decorativo", "panel 3D", "panel acústico",
-    "panel listonado", "panel ripado", "wall panel", "revestimiento PVC",
-    "revestimiento WPC", "revestimiento decorativo", "revestimiento interior",
-    "panel mural", "panel arquitectónico",
-    # Piedrafina
-    "piedrafina", "revestimiento símil piedra", "piedra flexible", "lámina decorativa",
-    "revestimiento de muro",
-    # Jardines verticales
-    "jardín vertical", "jardin vertical", "muro verde", "green wall",
-    "jardín artificial", "panel vegetal", "jardín sintético", "revestimiento vegetal",
-    # Deck y exterior
-    "deck", "deck WPC", "piso exterior", "piso para terraza", "piso para balcón",
-    "piso para piscina", "deck modular", "baldosa deck", "deck sintético",
-    "deck compuesto", "wood plastic composite",
-    # Accesorios
-    "zócalo", "rodapié", "perfil de terminación", "perfil reductor",
-    "junta de dilatación", "nariz de escalón", "perfil escalón", "moldura",
-    "manta acústica", "manta niveladora", "base aislante", "espuma IXPE",
-    "espuma EVA", "adhesivo para pisos", "pegamento para pisos",
-    # Soluciones modulares
-    "módulo habitable", "oficina modular", "oficina prefabricada",
-    "contenedor habitable", "módulo prefabricado", "aula modular",
-    "baño portátil", "sanitario portátil", "cabina sanitaria", "ducha portátil",
-    "garita de vigilancia", "caseta de vigilancia", "depósito modular",
-    "construcción modular", "unidad modular",
-    # Servicios
-    "instalación de pisos", "colocación de pisos", "instalación de césped sintético",
-    "mantenimiento de pisos", "limpieza de pisos", "reparación de césped sintético",
-    "obras deportivas", "construcción de canchas", "recambio de césped sintético",
-]
+import config.settings as settings
+import parser as parser_mod
+import report as report_mod
 
-# Grupo 2: Terminología genérica de pliegos públicos
-PALABRAS_PLIEGOS = [
-    "revestimiento de piso", "revestimiento de suelo",
-    "pavimento", "pavimentación",
-    "solado",
-    "recubrimiento de suelo",
-    "loseta", "losetas",
-    "baldosa", "baldosas",
-    "entablonado",
-    "piso amortiguante", "piso de seguridad",
-    "superficie deportiva", "superficie de juego",
-    "revestimiento mural", "revestimiento de muro",
-    "cerramiento modular", "módulo prefabricado",
-    "construcción modular",
-    "cubierta vegetal",
-    "pista atlética", "pista de atletismo",
-    "campo de juego", "campo deportivo",
-    "cancha sintética",
-    "obra deportiva",
-]
+MAX_DOCUMENTOS_POR_LICITACION = 5
 
-PALABRAS_CLAVE = PALABRAS_PRODUCTOS + PALABRAS_PLIEGOS
 
-ARCHIVO_VISTOS = "licitaciones_vistas.json"
-OCDS_URL = "https://www.comprasestatales.gub.uy/ocds/releases"
-RSS_URL  = "https://www.comprasestatales.gub.uy/ocds/rss"
+# ─── Estado (licitaciones ya vistas) ──────────────────────────────────────
+# Formato: { id: {"titulo": str, "hash": str, "primera_deteccion": iso, "notificaciones": int} }
+# Compatible hacia atrás: si el archivo viejo era una lista simple de ids,
+# se migra automáticamente al formato nuevo en la primera corrida.
 
-# ─── CARGA / GUARDA IDs YA VISTOS ─────────────────────────────────────────────
-def cargar_vistos():
-    if os.path.exists(ARCHIVO_VISTOS):
-        with open(ARCHIVO_VISTOS, "r") as f:
-            return set(json.load(f))
-    return set()
+def cargar_vistos() -> dict:
+    if not settings.ARCHIVO_VISTOS.exists():
+        return {}
+    with open(settings.ARCHIVO_VISTOS, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    if isinstance(data, list):  # formato legado
+        return {uid: {"titulo": "", "hash": "", "primera_deteccion": "", "notificaciones": 1} for uid in data}
+    return data
 
-def guardar_vistos(vistos):
-    with open(ARCHIVO_VISTOS, "w") as f:
-        json.dump(list(vistos), f)
 
-# ─── FETCH DE LICITACIONES ─────────────────────────────────────────────────────
-def obtener_licitaciones():
+def guardar_vistos(vistos: dict) -> None:
+    with open(settings.ARCHIVO_VISTOS, "w", encoding="utf-8") as f:
+        json.dump(vistos, f, ensure_ascii=False, indent=2)
+
+
+def _hash_contenido(lic: dict) -> str:
+    return hashlib.md5((lic["titulo"] + "|" + lic["descripcion"]).encode("utf-8")).hexdigest()
+
+
+# ─── Fetch de licitaciones (OCDS / RSS) ───────────────────────────────────
+
+def obtener_licitaciones() -> list[dict]:
     """Intenta OCDS releases; si falla, usa el RSS."""
     licitaciones = []
 
-    # -- Intento 1: endpoint OCDS JSON
     try:
-        r = requests.get(OCDS_URL, timeout=30)
+        r = requests.get(settings.OCDS_URL, timeout=30)
         if r.status_code == 200:
             data = r.json()
             releases = data if isinstance(data, list) else data.get("releases", [])
             for rel in releases:
                 tender = rel.get("tender", {})
                 title = tender.get("title", "") or rel.get("title", "")
-                desc  = tender.get("description", "") or ""
-                ocid  = rel.get("ocid", "") or rel.get("id", "")
-                date  = rel.get("date", "")[:10] if rel.get("date") else ""
-                url   = f"https://www.comprasestatales.gub.uy/consultas/detalle/id/{ocid.split('-')[-1]}" if ocid else ""
-                licitaciones.append({
-                    "id": ocid,
-                    "titulo": title,
-                    "descripcion": desc,
-                    "fecha": date,
-                    "url": url,
-                })
+                desc = tender.get("description", "") or ""
+                ocid = rel.get("ocid", "") or rel.get("id", "")
+                date = rel.get("date", "")[:10] if rel.get("date") else ""
+                url = (
+                    f"https://www.comprasestatales.gub.uy/consultas/detalle/id/{ocid.split('-')[-1]}"
+                    if ocid else ""
+                )
+                licitaciones.append({"id": ocid, "titulo": title, "descripcion": desc, "fecha": date, "url": url})
             if licitaciones:
                 return licitaciones
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"OCDS JSON falló: {e}")
 
-    # -- Intento 2: RSS feed
     try:
         import xml.etree.ElementTree as ET
-        r = requests.get(RSS_URL, timeout=30)
+
+        r = requests.get(settings.RSS_URL, timeout=30)
         root = ET.fromstring(r.content)
         ns = {"atom": "http://www.w3.org/2005/Atom"}
         channel = root.find("channel")
         if channel is None:
-            # Atom feed
             for entry in root.findall("atom:entry", ns):
                 title = entry.findtext("atom:title", default="", namespaces=ns)
-                link  = entry.findtext("atom:id", default="", namespaces=ns)
-                date  = entry.findtext("atom:updated", default="", namespaces=ns)[:10]
-                uid   = hashlib.md5(link.encode()).hexdigest()
+                link = entry.findtext("atom:id", default="", namespaces=ns)
+                date = (entry.findtext("atom:updated", default="", namespaces=ns) or "")[:10]
+                uid = hashlib.md5(link.encode()).hexdigest()
                 licitaciones.append({"id": uid, "titulo": title, "descripcion": "", "fecha": date, "url": link})
         else:
             for item in channel.findall("item"):
                 title = item.findtext("title", default="")
-                link  = item.findtext("link", default="")
-                desc  = item.findtext("description", default="")
-                date  = item.findtext("pubDate", default="")
-                uid   = hashlib.md5(link.encode()).hexdigest()
+                link = item.findtext("link", default="")
+                desc = item.findtext("description", default="")
+                date = item.findtext("pubDate", default="")
+                uid = hashlib.md5(link.encode()).hexdigest()
                 licitaciones.append({"id": uid, "titulo": title, "descripcion": desc, "fecha": date, "url": link})
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"RSS también falló: {e}")
 
     return licitaciones
 
-# ─── LECTURA DE PDF ───────────────────────────────────────────────────────────
-def extraer_texto_pdf(url_pliego):
-    """Descarga el PDF del pliego y extrae el texto."""
-    if not url_pliego:
-        return ""
-    try:
-        import urllib.request
-        # Buscar el link al PDF desde la página del llamado en comprasestatales
-        id_licitacion = url_pliego.rstrip("/").split("/")[-1]
-        pdf_url = f"https://www.comprasestatales.gub.uy/ocds/budgetBreakdown/{id_licitacion}"
 
-        # Intentar descargar el PDF directamente desde la URL del pliego
-        headers = {"User-Agent": "Mozilla/5.0"}
-        r = requests.get(url_pliego, headers=headers, timeout=15)
-        
-        # Buscar links a PDF en la página
-        pdf_links = re.findall(r'href=["\']([^"\']*\.pdf[^"\']*)["\']', r.text, re.IGNORECASE)
-        
-        texto_total = ""
-        for pdf_link in pdf_links[:2]:  # máximo 2 PDFs por licitación
-            if not pdf_link.startswith("http"):
-                pdf_link = "https://www.comprasestatales.gub.uy" + pdf_link
-            try:
-                pr = requests.get(pdf_link, headers=headers, timeout=20)
-                if pr.status_code == 200 and b"%PDF" in pr.content[:10]:
-                    with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as f:
-                        f.write(pr.content)
-                        tmp_path = f.name
-                    # Extraer texto con pypdf
-                    try:
-                        from pypdf import PdfReader
-                        reader = PdfReader(tmp_path)
-                        for page in reader.pages[:10]:  # máximo 10 páginas
-                            texto_total += page.extract_text() or ""
-                    finally:
-                        os.unlink(tmp_path)
-            except Exception as e:
-                print(f"    PDF {pdf_link[:60]}... error: {e}")
-        
-        return texto_total
-    except Exception as e:
-        print(f"    Error extrayendo PDF: {e}")
-        return ""
+# ─── Filtro por palabras clave ─────────────────────────────────────────────
 
-# ─── FILTRO POR PALABRAS CLAVE ─────────────────────────────────────────────────
-def es_relevante(lic):
-    # Primero buscar en título y descripción (rápido)
+def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
+    """Devuelve (relevante, keyword, fuente, texto_pliego_si_se_leyo)."""
     texto_base = (lic["titulo"] + " " + lic["descripcion"]).lower()
-    for kw in PALABRAS_CLAVE:
+    for kw in settings.todas_las_palabras_clave():
         if kw.lower() in texto_base:
-            return True, kw, "título"
+            return True, kw, "título/descripción", ""
 
-    # Si no encontró nada, leer el PDF del pliego (más lento pero completo)
-    print(f"  Leyendo PDF de: {lic['titulo'][:60]}...")
-    texto_pdf = extraer_texto_pdf(lic["url"]).lower()
-    if texto_pdf:
-        for kw in PALABRAS_CLAVE:
-            if kw.lower() in texto_pdf:
-                return True, kw, "pliego PDF"
+    print(f"  Leyendo pliego de: {lic['titulo'][:60]}...")
+    pliego = parser_mod.extraer_pliego(lic["url"], max_documentos=MAX_DOCUMENTOS_POR_LICITACION)
+    texto_pliego = pliego.texto_completo
+    texto_lower = texto_pliego.lower()
+    for kw in settings.todas_las_palabras_clave():
+        if kw.lower() in texto_lower:
+            return True, kw, "pliego (PDF/Word/Excel)", texto_pliego
 
-    return False, None, None
+    return False, None, None, texto_pliego
 
-# ─── ENVÍO DE EMAIL ────────────────────────────────────────────────────────────
-def enviar_email(nuevas):
-    gmail_user   = os.environ["GMAIL_USER"]
-    gmail_pass   = os.environ["GMAIL_APP_PASSWORD"]
-    dest         = os.environ.get("EMAIL_DESTINO", gmail_user)
 
-    subject = f"🏗️ {len(nuevas)} licitación(es) nueva(s) para Metropolitana — {datetime.today().strftime('%d/%m/%Y')}"
+# ─── Email ──────────────────────────────────────────────────────────────────
 
-    html_items = ""
-    for lic in nuevas:
-        html_items += f"""
-        <div style="border-left:4px solid #1a73e8;padding:12px 16px;margin-bottom:16px;background:#f8f9fa;border-radius:0 6px 6px 0;">
+def enviar_email(nuevas: list[dict], modificadas: list[dict]) -> None:
+    gmail_user = settings.gmail_user()
+    gmail_pass = settings.gmail_app_password()
+    dest = settings.email_destino()
+
+    if not gmail_user or not gmail_pass:
+        print("  GMAIL_USER/GMAIL_APP_PASSWORD no configurados: se omite el envío de email.")
+        return
+
+    total = len(nuevas) + len(modificadas)
+    subject = f"🏗️ {total} novedad(es) de licitaciones para Metropolitana — {datetime.today().strftime('%d/%m/%Y')}"
+
+    def _tarjeta(lic: dict, etiqueta: str, color: str) -> str:
+        clasif = lic.get("clasificacion")
+        clasif_html = (
+            f'<p style="margin:0 0 4px;font-size:13px;color:#555;">⭐ {clasif.simbolo} — {clasif.etiqueta} (score {clasif.puntaje}/100)</p>'
+            if clasif else ""
+        )
+        return f"""
+        <div style="border-left:4px solid {color};padding:12px 16px;margin-bottom:16px;background:#f8f9fa;border-radius:0 6px 6px 0;">
+            <p style="margin:0 0 4px;font-size:11px;font-weight:700;color:{color};text-transform:uppercase;">{etiqueta}</p>
             <p style="margin:0 0 6px;font-size:15px;font-weight:600;color:#1a1a1a;">{lic['titulo']}</p>
-            <p style="margin:0 0 4px;font-size:13px;color:#555;">📅 {lic['fecha']} &nbsp;|&nbsp; 🔑 Coincidencia: <strong>{lic['keyword']}</strong> &nbsp;|&nbsp; 📄 Encontrado en: <em>{lic.get('fuente','título')}</em></p>
-            {'<p style="margin:4px 0;font-size:13px;color:#555;">' + lic['descripcion'][:200] + '...</p>' if lic['descripcion'] else ''}
+            <p style="margin:0 0 4px;font-size:13px;color:#555;">📅 {lic['fecha']} &nbsp;|&nbsp; 🔑 Coincidencia: <strong>{lic.get('keyword','')}</strong> &nbsp;|&nbsp; 📄 Encontrado en: <em>{lic.get('fuente','título')}</em></p>
+            {clasif_html}
             <a href="{lic['url']}" style="display:inline-block;margin-top:8px;font-size:13px;color:#1a73e8;">Ver pliego →</a>
         </div>
         """
 
+    html_items = "".join(_tarjeta(lic, "Nueva licitación", "#1a73e8") for lic in nuevas)
+    html_items += "".join(_tarjeta(lic, "Aclaración / modificación detectada", "#e8711a") for lic in modificadas)
+
     html = f"""
     <html><body style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px;color:#1a1a1a;">
-        <h2 style="color:#1a73e8;margin-bottom:4px;">🔔 Nuevas licitaciones relevantes</h2>
-        <p style="color:#666;font-size:13px;margin-top:0;">Detectadas automáticamente para <strong>Metropolitana SA</strong></p>
+        <h2 style="color:#1a73e8;margin-bottom:4px;">🔔 Novedades de licitaciones</h2>
+        <p style="color:#666;font-size:13px;margin-top:0;">Detectadas automáticamente para <strong>Metropolitana Pisos</strong></p>
         <hr style="border:none;border-top:1px solid #e0e0e0;margin:16px 0;">
         {html_items}
-        <p style="font-size:11px;color:#aaa;margin-top:24px;">Monitoreo automático vía ARCE · comprasestatales.gub.uy</p>
+        <p style="font-size:11px;color:#aaa;margin-top:24px;">Monitoreo automático vía ARCE · comprasestatales.gub.uy · Informes completos en la carpeta reports/ del repositorio.</p>
     </body></html>
     """
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
-    msg["From"]    = gmail_user
-    msg["To"]      = dest
+    msg["From"] = gmail_user
+    msg["To"] = dest
     msg.attach(MIMEText(html, "html"))
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(gmail_user, gmail_pass)
         server.sendmail(gmail_user, dest, msg.as_string())
 
-    print(f"✅ Email enviado con {len(nuevas)} licitaciones.")
+    print(f"✅ Email enviado ({len(nuevas)} nuevas, {len(modificadas)} modificadas).")
 
-# ─── MAIN ──────────────────────────────────────────────────────────────────────
-def main():
+
+# ─── Main ──────────────────────────────────────────────────────────────────
+
+def main(enviar_email_flag: bool = True) -> None:
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M')}] Consultando ARCE...")
 
-    vistos      = cargar_vistos()
+    vistos = cargar_vistos()
     licitaciones = obtener_licitaciones()
     print(f"  Total obtenidas: {len(licitaciones)}")
 
-    nuevas = []
+    nuevas: list[dict] = []
+    modificadas: list[dict] = []
+
     for lic in licitaciones:
-        if lic["id"] in vistos:
+        hash_actual = _hash_contenido(lic)
+        previo = vistos.get(lic["id"])
+
+        if previo is not None:
+            if previo.get("hash") and previo["hash"] != hash_actual:
+                lic["keyword"] = "(título/descripción cambió desde la última revisión)"
+                lic["fuente"] = "cambio detectado"
+                modificadas.append(lic)
+                vistos[lic["id"]]["hash"] = hash_actual
+                vistos[lic["id"]]["notificaciones"] = previo.get("notificaciones", 1) + 1
             continue
-        relevante, kw, fuente = es_relevante(lic)
-        if relevante:
-            lic["keyword"] = kw
-            lic["fuente"] = fuente
-            nuevas.append(lic)
-        vistos.add(lic["id"])
+
+        relevante, kw, fuente, texto_pliego = es_relevante(lic)
+        vistos[lic["id"]] = {
+            "titulo": lic["titulo"],
+            "hash": hash_actual,
+            "primera_deteccion": datetime.now().isoformat(),
+            "notificaciones": 1 if relevante else 0,
+        }
+
+        if not relevante:
+            continue
+
+        lic["keyword"] = kw
+        lic["fuente"] = fuente
+
+        if not texto_pliego:
+            pliego = parser_mod.extraer_pliego(lic["url"], max_documentos=MAX_DOCUMENTOS_POR_LICITACION)
+            texto_pliego = pliego.texto_completo
+            errores = [d.nombre for d in pliego.documentos_con_error]
+        else:
+            errores = []
+
+        texto_para_informe = texto_pliego or (lic["titulo"] + "\n" + lic["descripcion"])
+        informe_md = report_mod.generar_informe_markdown(lic["titulo"], lic["url"], texto_para_informe, errores)
+        ruta_informe = report_mod.guardar_informe(lic["titulo"], informe_md)
+        print(f"  Informe generado: {ruta_informe}")
+
+        campos = None
+        try:
+            clasif_score = report_mod.clasificar_oportunidad(
+                report_mod.analyzer.estimar_probabilidad_exito(
+                    report_mod.analyzer.extraer_campos_clave(texto_para_informe),
+                    report_mod.analyzer.identificar_productos(texto_para_informe),
+                    0, 0, 0,
+                )["score"]
+            )
+            lic["clasificacion"] = clasif_score
+        except Exception as e:  # noqa: BLE001
+            print(f"  No se pudo calcular clasificación rápida: {e}")
+
+        nuevas.append(lic)
 
     guardar_vistos(vistos)
-    print(f"  Nuevas relevantes: {len(nuevas)}")
+    print(f"  Nuevas relevantes: {len(nuevas)} · Modificadas: {len(modificadas)}")
 
-    if nuevas:
-        enviar_email(nuevas)
-    else:
+    if (nuevas or modificadas) and enviar_email_flag:
+        enviar_email(nuevas, modificadas)
+    elif not nuevas and not modificadas:
         print("  Sin novedades.")
 
+
 if __name__ == "__main__":
-    main()
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--sin-email", action="store_true", help="No enviar email (para debug local)")
+    args = ap.parse_args()
+    main(enviar_email_flag=not args.sin_email)

@@ -1,0 +1,90 @@
+# Base de organismos públicos uruguayos a priorizar en el monitoreo.
+# Regla del rol: "Buscar especialmente organismos como Intendencias,
+# Ministerios, UTE, OSE, ANEP, CODICEN, ASSE, hospitales, universidades,
+# empresas públicas y municipios."
+#
+# Esta lista se usa para (a) marcar como prioritarias las licitaciones de
+# estos organismos en report.py/risk.py, y (b) referencia rápida al
+# investigar antecedentes (paso 12 del flujo).
+
+intendencias:
+  - "Intendencia de Artigas"
+  - "Intendencia de Canelones"
+  - "Intendencia de Cerro Largo"
+  - "Intendencia de Colonia"
+  - "Intendencia de Durazno"
+  - "Intendencia de Flores"
+  - "Intendencia de Florida"
+  - "Intendencia de Lavalleja"
+  - "Intendencia de Maldonado"
+  - "Intendencia de Montevideo"
+  - "Intendencia de Paysandú"
+  - "Intendencia de Río Negro"
+  - "Intendencia de Rivera"
+  - "Intendencia de Rocha"
+  - "Intendencia de Salto"
+  - "Intendencia de San José"
+  - "Intendencia de Soriano"
+  - "Intendencia de Tacuarembó"
+  - "Intendencia de Treinta y Tres"
+
+ministerios:
+  - "Ministerio de Economía y Finanzas (MEF)"
+  - "Ministerio de Relaciones Exteriores (MRREE)"
+  - "Ministerio del Interior (MI)"
+  - "Ministerio de Defensa Nacional (MDN)"
+  - "Ministerio de Educación y Cultura (MEC)"
+  - "Ministerio de Transporte y Obras Públicas (MTOP)"
+  - "Ministerio de Industria, Energía y Minería (MIEM)"
+  - "Ministerio de Trabajo y Seguridad Social (MTSS)"
+  - "Ministerio de Salud Pública (MSP)"
+  - "Ministerio de Vivienda y Ordenamiento Territorial (MVOT)"
+  - "Ministerio de Ganadería, Agricultura y Pesca (MGAP)"
+  - "Ministerio de Turismo (MINTUR)"
+  - "Ministerio de Ambiente (MA)"
+  - "Ministerio de Desarrollo Social (MIDES)"
+
+empresas_publicas_y_entes_autonomos:
+  - "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas"
+  - "OSE - Obras Sanitarias del Estado"
+  - "ANTEL - Administración Nacional de Telecomunicaciones"
+  - "ANCAP - Administración Nacional de Combustibles, Alcohol y Pórtland"
+  - "BPS - Banco de Previsión Social"
+  - "BSE - Banco de Seguros del Estado"
+  - "BROU - Banco de la República Oriental del Uruguay"
+  - "BHU - Banco Hipotecario del Uruguay"
+  - "ANP - Administración Nacional de Puertos"
+  - "AFE - Administración de Ferrocarriles del Estado"
+  - "Correo Uruguayo"
+
+educacion:
+  - "ANEP - Administración Nacional de Educación Pública"
+  - "CODICEN"
+  - "CEIP - Consejo de Educación Inicial y Primaria"
+  - "CES - Consejo de Educación Secundaria"
+  - "CETP-UTU - Consejo de Educación Técnico Profesional"
+  - "UDELAR - Universidad de la República"
+  - "UTEC - Universidad Tecnológica"
+  - "Plan Ceibal"
+
+salud:
+  - "ASSE - Administración de los Servicios de Salud del Estado"
+  - "Hospital de Clínicas (UDELAR)"
+  - "Hospitales departamentales de ASSE"
+  - "Fondo Nacional de Recursos"
+
+municipios:
+  # Los municipios (gobiernos de cercanía) dependen de cada Intendencia.
+  # PENDIENTE: completar con el listado específico de municipios cuando
+  # se detecte una licitación municipal relevante — no se listan los ~125
+  # municipios acá para evitar mantenimiento innecesario; se identifican
+  # por texto libre ("Municipio de <nombre>") en monitor.py.
+  nota: "Detectar por patrón 'Municipio de <nombre>' en el texto de la licitación."
+
+fuentes_de_publicacion:
+  - nombre: "Compras Estatales (ARCE)"
+    url: "https://www.comprasestatales.gub.uy"
+    tipo: "Portal central de compras públicas de Uruguay"
+  - nombre: "OCDS Compras Estatales"
+    url: "https://www.comprasestatales.gub.uy/ocds/releases"
+    tipo: "API de datos abiertos de contrataciones (Open Contracting Data Standard)"

@@ -1,0 +1,70 @@
+# Sinónimos y expansión de términos.
+# Se usa para (a) ampliar búsquedas más allá de knowledge/keywords.yaml y
+# (b) traducir siglas de organismos/documentación a su nombre completo en
+# los informes generados por report.py.
+#
+# Si un término del pliego no aparece acá y creés que debería, agregalo:
+# es la forma más rápida de mejorar la detección sin tocar código.
+
+productos:
+  piso vinílico: ["vinyl flooring", "PVC flooring", "LVT", "luxury vinyl tile", "piso vinilico", "piso PVC"]
+  piso SPC: ["stone plastic composite", "piso rígido", "rigid core flooring"]
+  piso laminado: ["laminate flooring", "piso flotante", "piso melamínico"]
+  piso de madera: ["hardwood flooring", "piso ingenieril", "piso de ingeniería", "parquet"]
+  césped sintético: ["synthetic turf", "artificial turf", "pasto sintético", "césped artificial", "gramilla sintética"]
+  piso de goma: ["rubber flooring", "piso de caucho", "piso elastomérico"]
+  deck WPC: ["wood plastic composite", "wpc decking", "deck compuesto", "deck sintético"]
+  panel ranurado: ["slat panel", "wood wall", "solid wall", "panel listonado", "panel ripado"]
+  jardín vertical: ["green wall", "vertical garden", "muro verde"]
+  moquette: ["carpet tile", "moqueta", "alfombra en rollo"]
+
+# Siglas de organismos y entidades públicas uruguayas -> nombre completo.
+# Usado por analyzer.py/report.py para expandir el organismo detectado
+# en los informes ejecutivos.
+organismos:
+  UTE: "Administración Nacional de Usinas y Trasmisiones Eléctricas"
+  OSE: "Obras Sanitarias del Estado"
+  ANEP: "Administración Nacional de Educación Pública"
+  CODICEN: "Consejo Directivo Central (ANEP)"
+  CETP: "Consejo de Educación Técnico Profesional (UTU)"
+  UTU: "Universidad del Trabajo del Uruguay"
+  ASSE: "Administración de los Servicios de Salud del Estado"
+  ANTEL: "Administración Nacional de Telecomunicaciones"
+  ANCAP: "Administración Nacional de Combustibles, Alcohol y Pórtland"
+  BPS: "Banco de Previsión Social"
+  BSE: "Banco de Seguros del Estado"
+  BROU: "Banco de la República Oriental del Uruguay"
+  BHU: "Banco Hipotecario del Uruguay"
+  ANP: "Administración Nacional de Puertos"
+  AFE: "Administración de Ferrocarriles del Estado"
+  UDELAR: "Universidad de la República"
+  UTEC: "Universidad Tecnológica del Uruguay"
+  MTOP: "Ministerio de Transporte y Obras Públicas"
+  MSP: "Ministerio de Salud Pública"
+  MEC: "Ministerio de Educación y Cultura"
+  MVOT: "Ministerio de Vivienda y Ordenamiento Territorial"
+  MIDES: "Ministerio de Desarrollo Social"
+  MDN: "Ministerio de Defensa Nacional"
+  MI: "Ministerio del Interior"
+  MEF: "Ministerio de Economía y Finanzas"
+  MIEM: "Ministerio de Industria, Energía y Minería"
+  MTSS: "Ministerio de Trabajo y Seguridad Social"
+  MGAP: "Ministerio de Ganadería, Agricultura y Pesca"
+  MINTUR: "Ministerio de Turismo"
+  MA: "Ministerio de Ambiente"
+  MRREE: "Ministerio de Relaciones Exteriores"
+
+# Siglas de documentación / trámites habituales en pliegos uruguayos.
+# Usado por checklist.py para reconocer requisitos aunque el pliego solo
+# use la sigla.
+documentacion:
+  RUPE: "Registro Único de Proveedores del Estado"
+  DGI: "Dirección General Impositiva (Certificado Único de DGI)"
+  BPS: "Banco de Previsión Social (Certificado Único de BPS)"
+  ARCE: "Agencia Reguladora de Compras Estatales"
+  TOCAF: "Texto Ordenado de Contabilidad y Administración Financiera"
+  TCA: "Tribunal de lo Contencioso Administrativo"
+  IVA: "Impuesto al Valor Agregado"
+  UI: "Unidad Indexada"
+  UR: "Unidad Reajustable"
+  SIIF: "Sistema Integrado de Información Financiera"

@@ -1,0 +1,42 @@
+# Datos de la empresa. Se usan en report.py y templates/ para completar
+# encabezados de informes y borradores de oferta.
+#
+# PENDIENTE: los campos marcados abajo no están en los PDFs de origen.
+# Completar con los datos societarios reales antes de generar ofertas
+# formales (no se inventan para no exponer datos incorrectos en un pliego).
+
+razon_social: "Metropolitana Pisos"
+rut: "PENDIENTE: completar RUT en config/empresa.yaml"
+domicilio_fiscal: "PENDIENTE: completar domicilio en config/empresa.yaml"
+telefono_contacto: "PENDIENTE: completar en config/empresa.yaml"
+email_contacto: "PENDIENTE: completar en config/empresa.yaml"
+sitio_web: "PENDIENTE: completar en config/empresa.yaml"
+representante_legal: "PENDIENTE: completar en config/empresa.yaml"
+
+rubro: "Pisos, revestimientos, césped sintético, goma, alfombras y accesorios"
+
+lineas_de_negocio:
+  - "Pisos SPC, vinílicos (click, pegados, en rollo), LVT"
+  - "Pisos laminados y flotantes"
+  - "Pisos H2O"
+  - "Pisos de ingeniería y de madera"
+  - "Deck WPC"
+  - "Pisos deportivos, industriales, comerciales, hospitalarios, educativos"
+  - "Revestimientos: Piedrafina, paneles decorativos, Wood Wall, Solid Wall, jardines verticales"
+  - "Césped sintético: residencial, deportivo (fútbol, hockey, multideporte), paisajismo"
+  - "Goma: baldosas, rollos, EVA, seguridad, áreas infantiles, gimnasios"
+  - "Alfombras: moquettes, modulares, camineros, felpudos, fieltros"
+  - "Accesorios: zócalos, perfiles, narices de escalón, juntas de dilatación, adhesivos, bases acústicas, gripper"
+  - "Servicios: venta, asesoramiento, medición, instalación, mantenimiento, reparación, reposición"
+
+organismos_objetivo:
+  - "Intendencias"
+  - "Ministerios"
+  - "UTE"
+  - "OSE"
+  - "ANEP / CODICEN"
+  - "ASSE"
+  - "Hospitales"
+  - "Universidades"
+  - "Empresas públicas"
+  - "Municipios"

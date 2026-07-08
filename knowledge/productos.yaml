@@ -1,0 +1,192 @@
+# Catálogo de productos y servicios de Metropolitana Pisos.
+# Esta es la fuente de verdad que usan analyzer.py (para identificar
+# productos dentro de un pliego) y pricing.py (para armar cotizaciones).
+#
+# IMPORTANTE — DATOS PENDIENTES:
+# Los campos marcados como PENDIENTE no vienen definidos en los PDFs de
+# origen (Prompt Claude Code Licitaciones Metropolitana Parte 1 y 2).
+# Según la regla "nunca inventes información. Si falta un dato, indicá
+# exactamente qué falta y dónde obtenerlo": estos campos deben completarse
+# con las fichas técnicas y catálogo comercial real de Metropolitana Pisos
+# (marca/proveedor, espesores, capa de desgaste, certificaciones, precio
+# de lista). Hasta entonces, pricing.py y report.py marcan cualquier
+# cálculo que dependa de ellos como "estimado / requiere verificación".
+
+categorias:
+  pisos:
+    subtipos:
+      - id: piso_spc
+        nombre: "Piso SPC (Stone Plastic Composite)"
+        usos_tipicos: ["comercial", "hospitalario", "oficinas", "alto tránsito"]
+        espesor_mm: "PENDIENTE: completar con ficha técnica"
+        capa_desgaste_mm: "PENDIENTE: completar con ficha técnica"
+        certificaciones: "PENDIENTE: completar (ej. clase de tránsito EN 685, reacción al fuego)"
+        unidad_venta: "m2"
+      - id: piso_vinilico_click
+        nombre: "Piso vinílico click"
+        usos_tipicos: ["residencial", "comercial"]
+        unidad_venta: "m2"
+      - id: piso_vinilico_pegado
+        nombre: "Piso vinílico pegado (LVT)"
+        usos_tipicos: ["comercial", "hospitalario", "educativo"]
+        unidad_venta: "m2"
+      - id: piso_vinilico_rollo
+        nombre: "Piso vinílico en rollo (heterogéneo/homogéneo)"
+        usos_tipicos: ["hospitalario", "alto tránsito", "industrial"]
+        unidad_venta: "m2"
+      - id: piso_laminado
+        nombre: "Piso laminado / flotante"
+        usos_tipicos: ["residencial", "oficinas"]
+        clases_ac: ["AC3", "AC4", "AC5"]
+        unidad_venta: "m2"
+      - id: piso_h2o
+        nombre: "Piso H2O (resistente al agua)"
+        usos_tipicos: ["residencial", "comercial con humedad"]
+        unidad_venta: "m2"
+      - id: piso_ingenieria
+        nombre: "Piso de ingeniería"
+        usos_tipicos: ["residencial premium", "oficinas"]
+        unidad_venta: "m2"
+      - id: piso_madera
+        nombre: "Piso de madera maciza"
+        usos_tipicos: ["residencial premium"]
+        unidad_venta: "m2"
+      - id: deck_wpc
+        nombre: "Deck WPC (Wood Plastic Composite)"
+        usos_tipicos: ["exterior", "terrazas", "piletas"]
+        unidad_venta: "m2"
+      - id: piso_deportivo
+        nombre: "Piso deportivo (vinílico/PVC/goma multicapa)"
+        usos_tipicos: ["gimnasios", "canchas indoor", "salas de fitness", "educación física"]
+        unidad_venta: "m2"
+      - id: piso_industrial
+        nombre: "Piso industrial"
+        usos_tipicos: ["industria", "depósitos"]
+        unidad_venta: "m2"
+
+  revestimientos:
+    subtipos:
+      - id: piedrafina
+        nombre: "Piedrafina (revestimiento símil piedra flexible)"
+        usos_tipicos: ["fachadas", "muros interiores/exteriores"]
+        unidad_venta: "m2"
+      - id: panel_decorativo
+        nombre: "Panel decorativo de pared"
+        usos_tipicos: ["oficinas", "hotelería", "comercios"]
+        unidad_venta: "m2"
+      - id: panel_wood_wall
+        nombre: "Panel ranurado Wood Wall"
+        usos_tipicos: ["oficinas", "hotelería"]
+        unidad_venta: "m2"
+      - id: panel_solid_wall
+        nombre: "Panel Solid Wall"
+        usos_tipicos: ["oficinas", "comercios"]
+        unidad_venta: "m2"
+      - id: jardin_vertical
+        nombre: "Jardín vertical / muro verde"
+        usos_tipicos: ["fachadas", "interiores corporativos", "paisajismo"]
+        unidad_venta: "m2"
+
+  cesped:
+    subtipos:
+      - id: cesped_residencial
+        nombre: "Césped sintético residencial"
+        unidad_venta: "m2"
+      - id: cesped_deportivo_futbol
+        nombre: "Césped sintético fútbol"
+        certificaciones: "PENDIENTE: verificar si se requiere certificación FIFA Quality / FIFA Quality Pro para el llamado puntual"
+        unidad_venta: "m2"
+      - id: cesped_deportivo_hockey
+        nombre: "Césped sintético hockey"
+        certificaciones: "PENDIENTE: verificar certificación FIH"
+        unidad_venta: "m2"
+      - id: cesped_multideporte
+        nombre: "Césped sintético multideporte"
+        unidad_venta: "m2"
+      - id: cesped_paisajismo
+        nombre: "Césped sintético paisajístico / clubes / escuelas"
+        unidad_venta: "m2"
+
+  goma:
+    subtipos:
+      - id: goma_baldosa
+        nombre: "Baldosa de goma"
+        unidad_venta: "m2"
+      - id: goma_rollo
+        nombre: "Goma en rollo"
+        unidad_venta: "m2"
+      - id: goma_eva
+        nombre: "Piso EVA"
+        usos_tipicos: ["áreas infantiles", "gimnasios"]
+        unidad_venta: "m2"
+      - id: goma_seguridad
+        nombre: "Piso de seguridad / amortiguante"
+        usos_tipicos: ["áreas infantiles", "plazas", "playground"]
+        certificaciones: "PENDIENTE: verificar norma de altura crítica de caída (EN 1177 o equivalente) exigida en el pliego"
+        unidad_venta: "m2"
+
+  alfombras:
+    subtipos:
+      - id: moquette_rollo
+        nombre: "Moquette en rollo"
+        unidad_venta: "m2"
+      - id: alfombra_modular
+        nombre: "Alfombra modular (baldosas)"
+        unidad_venta: "m2"
+      - id: caminero
+        nombre: "Caminero"
+        unidad_venta: "m lineal / m2"
+      - id: felpudo
+        nombre: "Felpudo / sistema atrapa suciedad"
+        unidad_venta: "m2 / unidad"
+      - id: fieltro
+        nombre: "Fieltro / geotextil"
+        unidad_venta: "m2"
+
+  accesorios:
+    subtipos:
+      - id: zocalo
+        nombre: "Zócalo / rodapié"
+        unidad_venta: "m lineal"
+      - id: perfil
+        nombre: "Perfiles (terminación, reductor, escalón)"
+        unidad_venta: "m lineal"
+      - id: junta_dilatacion
+        nombre: "Junta de dilatación"
+        unidad_venta: "m lineal"
+      - id: adhesivo
+        nombre: "Adhesivo / pegamento para pisos"
+        unidad_venta: "kg / balde"
+      - id: base_acustica
+        nombre: "Base acústica / manta niveladora"
+        unidad_venta: "m2"
+      - id: gripper
+        nombre: "Gripper"
+        unidad_venta: "m lineal"
+
+  servicios:
+    subtipos:
+      - id: venta
+        nombre: "Venta de materiales"
+      - id: asesoramiento
+        nombre: "Asesoramiento técnico"
+      - id: medicion
+        nombre: "Medición / relevamiento de obra"
+      - id: instalacion
+        nombre: "Instalación / colocación"
+      - id: mantenimiento
+        nombre: "Mantenimiento"
+      - id: reparacion
+        nombre: "Reparación"
+      - id: reposicion
+        nombre: "Reposición"
+
+equivalencias_recomendadas:
+  # Ejemplos de cómo pricing.py/analyzer.py sugieren un producto Metropolitana
+  # cuando el pliego pide una especificación genérica.
+  - especificacion_pliego: "piso vinílico homogéneo alto tránsito para uso hospitalario"
+    productos_sugeridos: ["piso_vinilico_rollo"]
+    nota: "PENDIENTE: confirmar referencia comercial exacta y certificación bacteriostática con el equipo técnico."
+  - especificacion_pliego: "césped sintético para cancha de fútbol 7"
+    productos_sugeridos: ["cesped_deportivo_futbol"]
+    nota: "PENDIENTE: confirmar altura de fibra y densidad según el pliego puntual."
