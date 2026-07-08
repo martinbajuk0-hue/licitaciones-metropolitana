@@ -141,12 +141,19 @@ def obtener_licitaciones() -> list[dict]:
             try:
                 rr = requests.get(link, headers=parser_mod.HEADERS, timeout=15)
                 if not primer_release_impreso:
-                    print(f"  RSS->release: status={rr.status_code} body[:500]={rr.text[:500]!r}")
+                    print(f"  RSS->release: status={rr.status_code} body[:1500]={rr.text[:1500]!r}")
                     primer_release_impreso = True
                 if rr.status_code == 200:
                     rel = rr.json()
+                    # El JSON es un release package OCDS: uri/version/publisher
+                    # a nivel superior, y la release real (con tender/parties)
+                    # anidada en "releases": [...]. Confirmado con evidencia
+                    # del log — el primer intento buscaba "tender" en el nivel
+                    # equivocado y por eso siempre volvía vacío.
+                    if isinstance(rel, dict) and isinstance(rel.get("releases"), list) and rel["releases"]:
+                        rel = rel["releases"][0]
                     tender = rel.get("tender", {}) if isinstance(rel, dict) else {}
-                    titulo = tender.get("title") or rel.get("title") or ""
+                    titulo = tender.get("title") or (rel.get("title") if isinstance(rel, dict) else "") or ""
                     desc = tender.get("description") or ""
             except Exception as e:  # noqa: BLE001
                 if not primer_release_impreso:
