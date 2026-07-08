@@ -173,17 +173,26 @@ def _buscar_numero_licitacion(texto: str) -> str | None:
 
 
 def _buscar_garantia(texto: str, patron_ctx: str) -> str | None:
-    m = re.search(patron_ctx + r"[:\s]+(\d+(?:[.,]\d+)?)\s*%", texto, re.IGNORECASE)
+    # Hasta 40 caracteres de texto libre entre la etiqueta y el porcentaje,
+    # para tolerar variantes como "garantía de fiel cumplimiento DE CONTRATO: 5%"
+    # sin cruzar a la línea siguiente (evita capturar el % de otro campo).
+    m = re.search(patron_ctx + r"[^%\n]{0,40}?(\d+(?:[.,]\d+)?)\s*%", texto, re.IGNORECASE)
     if m:
         return f"{m.group(1)}%"
     return None
 
 
 def _buscar_criterios_evaluacion(texto: str) -> list[str]:
-    m = re.search(r"criterios?\s+de\s+evaluaci[óo]n(.{0,600})", texto, re.IGNORECASE | re.DOTALL)
+    m = re.search(r"criterios?\s+de\s+evaluaci[óo]n(.{0,900})", texto, re.IGNORECASE | re.DOTALL)
     if not m:
         return []
     bloque = m.group(1)
+    # Los criterios suelen terminar en el primer párrafo en blanco; lo que
+    # sigue después normalmente es otro requisito del pliego, no un criterio
+    # más (evita mezclar párrafos no relacionados en la lista).
+    corte = re.search(r"\n[ \t]*\n", bloque)
+    if corte:
+        bloque = bloque[: corte.start()]
     items = re.split(r"\n|;|(?=\d\s*[.)-])", bloque)
     return [i.strip(" .-\t") for i in items if len(i.strip()) > 8][:8]
 

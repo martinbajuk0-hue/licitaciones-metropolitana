@@ -45,6 +45,23 @@ class TestAnalyzer(unittest.TestCase):
         self.assertIn("30 dias", campos.fecha_entrega)
         self.assertNotIn("2026-07-20", campos.fecha_entrega)
 
+    def test_garantia_fiel_cumplimiento_con_texto_intermedio(self):
+        texto = "Garantía de fiel cumplimiento de contrato: 5% del monto adjudicado."
+        campos = analyzer.extraer_campos_clave(texto)
+        self.assertEqual(campos.garantia_fiel_cumplimiento, "5%")
+
+    def test_criterios_evaluacion_no_mezcla_parrafo_siguiente(self):
+        texto = (
+            "Criterios de evaluación:\n"
+            "1. Precio: 40 puntos.\n"
+            "2. Antecedentes: 25 puntos.\n"
+            "\n"
+            "Se debera presentar muestra fisica de los materiales ofertados."
+        )
+        campos = analyzer.extraer_campos_clave(texto)
+        self.assertEqual(len(campos.criterios_evaluacion), 2)
+        self.assertTrue(all("muestra" not in c.lower() for c in campos.criterios_evaluacion))
+
     def test_probabilidad_exito_baja_sin_productos(self):
         campos = analyzer.CamposClave()
         resultado = analyzer.estimar_probabilidad_exito(campos, [], 0, 0, 0)

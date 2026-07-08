@@ -45,8 +45,10 @@ _PATRONES_MULTAS = [
     (r"rescisi[óo]n\s+(?:del\s+)?contrato", "Riesgo de rescisión contractual"),
 ]
 
+_PATRON_PLAZO_ENTREGA_DIAS = re.compile(r"plazo\s+(?:de\s+)?entrega[^%\n]{0,20}?(\d{1,3})\s*d[ií]as", re.IGNORECASE)
+UMBRAL_DIAS_PLAZO_AJUSTADO = 15
+
 _PATRONES_PLAZOS_AJUSTADOS = [
-    (r"plazo\s+(?:de\s+)?entrega[:\s]+(\d{1,3})\s*d[ií]as", "Plazo de entrega corto — verificar viabilidad logística"),
     (r"48\s*horas", "Plazo de 48 horas mencionado"),
     (r"72\s*horas", "Plazo de 72 horas mencionado"),
 ]
@@ -62,8 +64,11 @@ _PATRONES_CERTIFICACIONES = [
 ]
 
 _PATRONES_GARANTIAS = [
-    (r"garant[íi]a\s+de\s+mantenimiento\s+de\s+oferta[:\s]+(\d+(?:[.,]\d+)?)\s*%", "Garantía de mantenimiento de oferta"),
-    (r"garant[íi]a\s+de\s+fiel\s+cumplimiento[:\s]+(\d+(?:[.,]\d+)?)\s*%", "Garantía de fiel cumplimiento"),
+    # Hasta 40 caracteres libres entre la etiqueta y el %, para tolerar
+    # variantes como "garantía de fiel cumplimiento DE CONTRATO: 5%" sin
+    # cruzar a la línea siguiente.
+    (r"garant[íi]a\s+de\s+mantenimiento\s+de\s+oferta[^%\n]{0,40}?(\d+(?:[.,]\d+)?)\s*%", "Garantía de mantenimiento de oferta"),
+    (r"garant[íi]a\s+de\s+fiel\s+cumplimiento[^%\n]{0,40}?(\d+(?:[.,]\d+)?)\s*%", "Garantía de fiel cumplimiento"),
     (r"garant[íi]a\s+t[ée]cnica\s+(?:de\s+)?(?:m[íi]nimo\s+)?(\d+)\s*a[ñn]os?", "Garantía técnica de largo plazo exigida"),
 ]
 
@@ -101,7 +106,21 @@ def detectar_multas_y_penalidades(texto: str) -> list[Riesgo]:
 
 
 def detectar_plazos_ajustados(texto: str) -> list[Riesgo]:
-    return _buscar(texto, _PATRONES_PLAZOS_AJUSTADOS, "plazos", Severidad.MEDIA)
+    riesgos = _buscar(texto, _PATRONES_PLAZOS_AJUSTADOS, "plazos", Severidad.MEDIA)
+
+    for match in _PATRON_PLAZO_ENTREGA_DIAS.finditer(texto):
+        dias = int(match.group(1))
+        if dias <= UMBRAL_DIAS_PLAZO_AJUSTADO:
+            riesgos.append(
+                Riesgo(
+                    categoria="plazos",
+                    severidad=Severidad.MEDIA,
+                    descripcion=f"Plazo de entrega ajustado ({dias} días) — verificar viabilidad logística",
+                    fragmento=_fragmento(texto, match),
+                )
+            )
+
+    return riesgos
 
 
 def detectar_certificaciones_especiales(texto: str) -> list[Riesgo]:
@@ -119,9 +138,9 @@ def detectar_contradicciones(texto: str) -> list[Riesgo]:
     """
     riesgos = []
     conceptos = {
-        "plazo de entrega": r"plazo\s+de\s+entrega[:\s]+(\d{1,3})\s*d[ií]as",
-        "garantía de mantenimiento de oferta": r"garant[íi]a\s+de\s+mantenimiento\s+de\s+oferta[:\s]+(\d+(?:[.,]\d+)?)\s*%",
-        "garantía de fiel cumplimiento": r"garant[íi]a\s+de\s+fiel\s+cumplimiento[:\s]+(\d+(?:[.,]\d+)?)\s*%",
+        "plazo de entrega": _PATRON_PLAZO_ENTREGA_DIAS.pattern,
+        "garantía de mantenimiento de oferta": r"garant[íi]a\s+de\s+mantenimiento\s+de\s+oferta[^%\n]{0,40}?(\d+(?:[.,]\d+)?)\s*%",
+        "garantía de fiel cumplimiento": r"garant[íi]a\s+de\s+fiel\s+cumplimiento[^%\n]{0,40}?(\d+(?:[.,]\d+)?)\s*%",
     }
     for concepto, patron in conceptos.items():
         valores = set()

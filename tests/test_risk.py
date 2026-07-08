@@ -27,6 +27,21 @@ class TestRisk(unittest.TestCase):
         riesgos = risk.analizar_riesgos(texto)
         self.assertEqual([r for r in riesgos if r.categoria == "multas_penalidades"], [])
 
+    def test_detecta_garantia_fiel_cumplimiento_con_texto_intermedio(self):
+        texto = "Garantía de fiel cumplimiento de contrato: 5% del monto adjudicado."
+        riesgos = risk.detectar_garantias_exigentes(texto)
+        self.assertTrue(any("fiel cumplimiento" in r.descripcion for r in riesgos))
+
+    def test_plazo_de_entrega_normal_no_se_marca_como_ajustado(self):
+        texto = "Plazo de entrega: 30 dias corridos desde la notificacion de la orden de compra."
+        riesgos = risk.detectar_plazos_ajustados(texto)
+        self.assertEqual(riesgos, [])
+
+    def test_plazo_de_entrega_corto_si_se_marca_como_ajustado(self):
+        texto = "Plazo de entrega: 5 dias corridos desde la notificacion de la orden de compra."
+        riesgos = risk.detectar_plazos_ajustados(texto)
+        self.assertTrue(any("ajustado" in r.descripcion for r in riesgos))
+
     def test_orden_por_severidad(self):
         texto = (
             "multa de hasta 5% del contrato. certificacion iso 14001 requerida."
