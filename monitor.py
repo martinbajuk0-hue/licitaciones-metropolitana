@@ -87,6 +87,10 @@ def obtener_licitaciones() -> list[dict]:
         root = ET.fromstring(r.content)
         ns = {"atom": "http://www.w3.org/2005/Atom"}
         channel = root.find("channel")
+        if channel is not None:
+            primer_item = channel.find("item")
+            if primer_item is not None:
+                print(f"  RSS primer <item> completo: {ET.tostring(primer_item, encoding='unicode')[:2500]!r}")
         if channel is None:
             for entry in root.findall("atom:entry", ns):
                 title = entry.findtext("atom:title", default="", namespaces=ns)
