@@ -98,7 +98,7 @@ def generar_informe_markdown(
     clasificacion = clasificar_oportunidad(probabilidad["score"])
     cronograma = generar_cronograma(campos)
 
-    categorias_detectadas = sorted({p.categoria for p in productos})
+    categorias_detectadas = sorted({settings.etiqueta_categoria(p.categoria) for p in productos})
 
     partes = [
         f"# Informe de licitación: {titulo}",
@@ -130,7 +130,7 @@ def generar_informe_markdown(
         "## Productos Metropolitana identificados",
         f"Categorías detectadas: {', '.join(categorias_detectadas) if categorias_detectadas else 'NINGUNA — revisar el pliego completo manualmente antes de descartar (regla: nunca descartar solo por el título).'}",
         "",
-        _md_lista([f"**{p.categoria}** (\"{p.termino_encontrado}\"): ...{p.fragmento}..." for p in productos[:25]]),
+        _md_lista([f"**{settings.etiqueta_categoria(p.categoria)}** (\"{p.termino_encontrado}\"): ...{p.fragmento}..." for p in productos[:25]]),
         "## Riesgos detectados",
         f"Altos: {len(riesgos_altos)} · Medios: {len(riesgos_medios)} · Total: {len(riesgos)}",
         "",

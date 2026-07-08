@@ -81,6 +81,37 @@ def todas_las_palabras_clave() -> list[str]:
     return terminos
 
 
+_ETIQUETAS_CATEGORIA = {
+    "pisos_vinilicos": "Pisos vinílicos",
+    "pisos_flotantes": "Pisos flotantes/laminados",
+    "pisos_madera": "Pisos de madera",
+    "pisos_goma": "Pisos de goma",
+    "cesped_sintetico": "Césped sintético",
+    "insumos_canchas": "Insumos para canchas",
+    "pisos_deportivos": "Pisos deportivos",
+    "alfombras": "Alfombras",
+    "moquettes": "Moquettes",
+    "alfombras_infantiles": "Alfombras/pisos infantiles",
+    "fieltros": "Fieltros",
+    "felpudos_camineros": "Felpudos y camineros",
+    "paneles_revestimientos": "Paneles y revestimientos de pared",
+    "piedrafina": "Piedrafina",
+    "jardines_verticales": "Jardines verticales",
+    "deck_exterior": "Deck y exterior",
+    "accesorios": "Accesorios de instalación",
+    "soluciones_modulares": "Soluciones modulares",
+    "servicios": "Servicios",
+    "terminologia_pliegos": "Terminología genérica del pliego (revisar manualmente qué producto aplica)",
+}
+
+
+def etiqueta_categoria(categoria: str) -> str:
+    """Nombre legible de una categoría de knowledge/keywords.yaml, para
+    mostrar en informes en vez del slug interno (ej. 'pisos_vinilicos').
+    """
+    return _ETIQUETAS_CATEGORIA.get(categoria, categoria)
+
+
 def palabras_clave_por_categoria() -> dict[str, list[str]]:
     categorias = dict(keywords().get("productos", {}))
     terminologia = keywords().get("terminologia_pliegos", [])

@@ -258,7 +258,7 @@ def identificar_productos(texto: str) -> list[ProductoIdentificado]:
 # ─── Resumen ejecutivo ─────────────────────────────────────────────────────
 
 def _resumen_extractivo(texto: str, campos: CamposClave, productos: list[ProductoIdentificado]) -> str:
-    categorias = sorted({p.categoria for p in productos})
+    categorias = sorted({settings.etiqueta_categoria(p.categoria) for p in productos})
     lineas = [
         f"Organismo: {campos.organismo or 'no identificado — verificar manualmente'}.",
         f"Número: {campos.numero_licitacion or 'no identificado — verificar manualmente'}.",
