@@ -1,0 +1,13 @@
+# Estado runtime (se regenera / se cachea en el workflow de GitHub Actions)
+data/licitaciones_vistas.json
+
+# Informes generados — artefactos, no código. Sacar esta línea si se
+# decide conservar el historial de informes versionado en git.
+reports/*.md
+!reports/.gitkeep
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env

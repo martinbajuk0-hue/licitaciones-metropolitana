@@ -1,0 +1,43 @@
+# Datos de la empresa. Se usan en report.py y templates/ para completar
+# encabezados de informes y borradores de oferta.
+
+razon_social: "Metropolitana Pisos"
+rut: "210196570018"
+domicilio_fiscal: "Av. 8 de Octubre 3007, Montevideo, Uruguay"
+telefono_contacto: "24876095"
+email_contacto: "martinbajuk@metropolitana.com.uy"
+sitio_web: "https://www.metropolitanapisos.com.uy"
+
+representantes_legales:
+  - nombre: "Martín Bajuk"
+    cedula: "4.049.007"
+  - nombre: "Estela Vernazza"
+    cedula: "28450451"
+
+rubro: "Pisos, revestimientos, césped sintético, goma, alfombras y accesorios"
+
+lineas_de_negocio:
+  - "Pisos SPC, vinílicos (click, pegados, en rollo), LVT"
+  - "Pisos laminados y flotantes"
+  - "Pisos H2O"
+  - "Pisos de ingeniería y de madera"
+  - "Deck WPC"
+  - "Pisos deportivos, industriales, comerciales, hospitalarios, educativos"
+  - "Revestimientos: Piedrafina, paneles decorativos, Wood Wall, Solid Wall, jardines verticales"
+  - "Césped sintético: residencial, deportivo (fútbol, hockey, multideporte), paisajismo"
+  - "Goma: baldosas, rollos, EVA, seguridad, áreas infantiles, gimnasios"
+  - "Alfombras: moquettes, modulares, camineros, felpudos, fieltros"
+  - "Accesorios: zócalos, perfiles, narices de escalón, juntas de dilatación, adhesivos, bases acústicas, gripper"
+  - "Servicios: venta, asesoramiento, medición, instalación, mantenimiento, reparación, reposición"
+
+organismos_objetivo:
+  - "Intendencias"
+  - "Ministerios"
+  - "UTE"
+  - "OSE"
+  - "ANEP / CODICEN"
+  - "ASSE"
+  - "Hospitales"
+  - "Universidades"
+  - "Empresas públicas"
+  - "Municipios"
