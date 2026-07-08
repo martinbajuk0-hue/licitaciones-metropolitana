@@ -85,15 +85,50 @@ def _normalizar_fecha(match: re.Match) -> str:
     return f"{int(anio):04d}-{int(mes):02d}-{int(dia):02d}"
 
 
+_PATRON_PLAZO_DIAS = re.compile(r"\d{1,3}\s*d[ií]as(?:\s+(?:corridos|h[áa]biles))?", re.IGNORECASE)
+
+
+def _ventana_por_lineas(texto: str, inicio: int, max_lineas: int = 1, max_chars: int = 250) -> str:
+    """Ventana de búsqueda acotada, por defecto a la línea actual desde
+    `inicio`.
+
+    Evita que la búsqueda de un dato "se cuele" hacia el valor de la
+    siguiente etiqueta del pliego (ej. que "plazo de entrega" termine
+    matcheando la fecha de "consultas hasta" que viene en la línea de
+    abajo). Preferimos no encontrar el dato (queda como faltante,
+    explícito) antes que devolver uno incorrecto tomado de otro campo.
+    """
+    fin = min(len(texto), inicio + max_chars)
+    trozo = texto[inicio:fin]
+    lineas = trozo.split("\n")
+    return "\n".join(lineas[:max_lineas])
+
+
 def _buscar_fecha_cerca_de(texto: str, patrones_contexto: list[str]) -> str | None:
     for patron_ctx in patrones_contexto:
-        m = re.search(patron_ctx, texto, re.IGNORECASE)
-        if not m:
-            continue
-        ventana = texto[m.end():m.end() + 100]
-        fm = _PATRON_FECHA_TEXTUAL.search(ventana) or _PATRON_FECHA_NUMERICA.search(ventana)
-        if fm:
-            return _normalizar_fecha(fm)
+        for m in re.finditer(patron_ctx, texto, re.IGNORECASE):
+            ventana = _ventana_por_lineas(texto, m.end())
+            fm = _PATRON_FECHA_TEXTUAL.search(ventana) or _PATRON_FECHA_NUMERICA.search(ventana)
+            if fm:
+                return _normalizar_fecha(fm)
+    return None
+
+
+def _buscar_plazo_entrega(texto: str) -> str | None:
+    """El plazo de entrega en los pliegos uruguayos suele ser una fecha
+    fija ("entrega antes del 20/08/2026") o un plazo relativo ("30 días
+    corridos desde la orden de compra"). Probamos ambos; nunca inventamos
+    una fecha absoluta a partir de un plazo relativo.
+    """
+    for patron_ctx in [r"plazo\s+de\s+entrega", r"fecha\s+de\s+entrega"]:
+        for m in re.finditer(patron_ctx, texto, re.IGNORECASE):
+            ventana = _ventana_por_lineas(texto, m.end())
+            fm = _PATRON_FECHA_TEXTUAL.search(ventana) or _PATRON_FECHA_NUMERICA.search(ventana)
+            if fm:
+                return _normalizar_fecha(fm)
+            dm = _PATRON_PLAZO_DIAS.search(ventana)
+            if dm:
+                return f"{dm.group(0)} (plazo relativo — no es una fecha fija, calcular desde la orden de compra/notificación)"
     return None
 
 
@@ -158,7 +193,7 @@ def extraer_campos_clave(texto: str) -> CamposClave:
     campos.organismo = _buscar_organismo(texto)
     campos.numero_licitacion = _buscar_numero_licitacion(texto)
     campos.fecha_apertura = _buscar_fecha_cerca_de(texto, [r"fecha\s+de\s+apertura", r"apertura\s+de\s+ofertas"])
-    campos.fecha_entrega = _buscar_fecha_cerca_de(texto, [r"plazo\s+de\s+entrega", r"fecha\s+de\s+entrega"])
+    campos.fecha_entrega = _buscar_plazo_entrega(texto)
     campos.fecha_consultas = _buscar_fecha_cerca_de(texto, [r"consultas\s+hasta", r"plazo\s+(?:para|de)\s+consultas"])
     campos.fecha_visita = _buscar_fecha_cerca_de(texto, [r"visita\s+(?:de\s+)?obra", r"visita\s+previa"])
     campos.garantia_mantenimiento_oferta = _buscar_garantia(texto, r"garant[íi]a\s+de\s+mantenimiento\s+de\s+oferta")

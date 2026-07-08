@@ -25,6 +25,26 @@ class TestAnalyzer(unittest.TestCase):
         campos = analyzer.extraer_campos_clave(texto)
         self.assertTrue(len(campos.faltantes) > 0)
 
+    def test_fecha_apertura_no_confunde_mencion_anterior_sin_fecha(self):
+        # "a la fecha de apertura" aparece antes, sin fecha cerca; la fecha
+        # real está en una mención posterior de "Fecha de apertura:".
+        texto = (
+            "Se requiere certificado unico de BPS vigente a la fecha de apertura.\n"
+            "Fecha de apertura: 15 de agosto de 2026.\n"
+        )
+        campos = analyzer.extraer_campos_clave(texto)
+        self.assertEqual(campos.fecha_apertura, "2026-08-15")
+
+    def test_plazo_entrega_relativo_no_toma_fecha_de_otro_campo(self):
+        texto = (
+            "Plazo de entrega: 30 dias corridos desde la notificacion de la orden de compra.\n"
+            "Consultas hasta 20 de julio de 2026.\n"
+        )
+        campos = analyzer.extraer_campos_clave(texto)
+        self.assertIsNotNone(campos.fecha_entrega)
+        self.assertIn("30 dias", campos.fecha_entrega)
+        self.assertNotIn("2026-07-20", campos.fecha_entrega)
+
     def test_probabilidad_exito_baja_sin_productos(self):
         campos = analyzer.CamposClave()
         resultado = analyzer.estimar_probabilidad_exito(campos, [], 0, 0, 0)
