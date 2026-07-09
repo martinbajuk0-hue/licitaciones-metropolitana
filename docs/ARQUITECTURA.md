@@ -76,6 +76,39 @@ Ningún módulo abre estos YAML directamente; todos pasan por
 que **para ajustar el comportamiento del sistema casi nunca hace falta
 tocar código** — alcanza con editar estos YAML.
 
+### Señal fuerte vs. señal débil en `knowledge/keywords.yaml`
+
+El archivo tiene ~3000 términos (`categorias.*.keywords`, `terminologia_pliegos`,
+`materiales`, `normativas`, `marcas`, `errores_comunes`, `abreviaturas`,
+`lugares_uso`, `aplicaciones`). No todos disparan relevancia de la misma forma:
+
+- **Señal fuerte** (`config.settings.todas_las_palabras_clave()`): categorías
+  de producto + terminología de pliegos + materiales + normativas + marcas +
+  errores comunes + abreviaturas. Una sola coincidencia alcanza para marcar
+  la licitación como relevante.
+- **Señal débil / contexto** (`config.settings.palabras_clave_contexto()`):
+  `lugares_uso` (escuela, hospital, intendencia...) y `aplicaciones`
+  (interior, alto tránsito...) **nunca** disparan relevancia por sí solas —
+  aparecen en prácticamente cualquier licitación pública de Uruguay sin
+  importar el rubro. Solo se calculan y se muestran (`analyzer.identificar_contexto`)
+  cuando la licitación ya fue marcada relevante por una señal fuerte, como
+  dato adicional en el informe ("Contexto adicional: lugar de uso: escuela").
+
+Esta separación se agregó después de que un chequeo automático
+(`tests/test_settings_keywords.py::test_no_falsos_positivos_en_licitaciones_no_relacionadas`)
+detectara que meter términos genéricos en la señal fuerte (siglas de
+organismos, vocabulario administrativo tipo "compra directa"/"orden de
+compra") hacía que el sistema marcara como relevante prácticamente
+cualquier licitación pública. Al agregar términos nuevos a `keywords.yaml`,
+preguntarse: *¿este término, aparecería en una licitación de CUALQUIER
+rubro (computadoras, catering, uniformes)?* Si la respuesta es sí, va en
+`lugares_uso`/`aplicaciones`, nunca en una de las listas de señal fuerte.
+
+Los términos cortos (≤5 caracteres, sin espacio — ej. `pu`, `eva`, `sbr`)
+matchean por límite de palabra (`config.settings.coincide_palabra_clave`),
+no por substring plano, para evitar falsos positivos como "pu" dentro de
+"publico".
+
 ## Estado persistente
 
 `data/licitaciones_vistas.json` guarda, por id de licitación, título,

@@ -58,12 +58,27 @@ marcado como `SIN PRECIO CARGADO`.
 
 ## Agregar una palabra clave o producto nuevo
 
-1. Editar `knowledge/keywords.yaml` (agregar el término en la categoría
-   correspondiente).
+1. Editar `knowledge/keywords.yaml`:
+   - Si es un término específico de un producto Metropolitana, agregarlo
+     en `categorias.<categoria>.keywords`.
+   - Si es vocabulario genérico de pliegos, material, normativa, marca,
+     abreviatura o error de tipeo común, va en la lista correspondiente
+     (`terminologia_pliegos`, `materiales`, `normativas`, `marcas`,
+     `errores_comunes`, `abreviaturas`) — todas estas SÍ disparan
+     relevancia por sí solas.
+   - Si es un lugar de uso (escuela, hospital...) o una aplicación
+     genérica (interior, alto tránsito...), va en `lugares_uso` o
+     `aplicaciones` — estas **nunca** disparan relevancia solas (ver
+     "Señal fuerte vs. señal débil" en `docs/ARQUITECTURA.md`). Antes de
+     agregar un término ahí, preguntarse: *¿aparecería en una licitación
+     de cualquier rubro?* Si sí, es señal débil.
 2. Si es un producto nuevo del catálogo, agregarlo también en
    `knowledge/productos.yaml`.
 3. Si tiene variantes/sinónimos frecuentes, agregarlos en
    `knowledge/sinonimos.yaml`.
+4. Correr `python -m unittest discover -s tests` — hay un test
+   (`test_no_falsos_positivos_en_licitaciones_no_relacionadas`) que
+   verifica que los términos nuevos no generen falsos positivos masivos.
 
 No hace falta tocar ningún archivo `.py` para esto.
 

@@ -14,6 +14,11 @@ import checklist as checklist_mod
 import config.settings as settings
 import risk as risk_mod
 
+_ETIQUETA_CONTEXTO = {
+    "lugares_uso": "Lugar de uso mencionado",
+    "aplicaciones": "Aplicación mencionada",
+}
+
 _ESTRELLAS = {
     5: ("★★★★★", "Excelente"),
     4: ("★★★★", "Buena"),
@@ -88,6 +93,7 @@ class InformeLicitacion:
     url: str
     campos: analyzer.CamposClave
     productos: list[analyzer.ProductoIdentificado]
+    contexto: dict[str, list[str]]
     riesgos: list[risk_mod.Riesgo]
     checklist: list[checklist_mod.ItemChecklist]
     resumen: str
@@ -105,6 +111,9 @@ def analizar_licitacion(
 ) -> InformeLicitacion:
     campos = analyzer.extraer_campos_clave(texto_pliego)
     productos = analyzer.identificar_productos(texto_pliego)
+    # lugares_uso/aplicaciones son señal débil (ver knowledge/keywords.yaml):
+    # solo se calculan y muestran como contexto si ya hubo un match fuerte.
+    contexto = analyzer.identificar_contexto(texto_pliego) if productos else {}
     riesgos = risk_mod.analizar_riesgos(texto_pliego)
     items_checklist = checklist_mod.generar_checklist(texto_pliego)
     pendientes_checklist = checklist_mod.items_pendientes_de_verificar(items_checklist)
@@ -152,6 +161,13 @@ def analizar_licitacion(
         f"Categorías detectadas: {', '.join(categorias_detectadas) if categorias_detectadas else 'NINGUNA — revisar el pliego completo manualmente antes de descartar (regla: nunca descartar solo por el título).'}",
         "",
         _md_lista([f"**{settings.etiqueta_categoria(p.categoria)}** (\"{p.termino_encontrado}\"): ...{p.fragmento}..." for p in productos[:25]]),
+        "### Contexto adicional (lugar de uso / aplicación)" if contexto else None,
+        (
+            _md_lista(
+                [f"{_ETIQUETA_CONTEXTO.get(grupo, grupo)}: {', '.join(terminos)}" for grupo, terminos in contexto.items()]
+            )
+            if contexto else None
+        ),
         "## Riesgos detectados",
         f"Altos: {len(riesgos_altos)} · Medios: {len(riesgos_medios)} · Total: {len(riesgos)}",
         "",
@@ -176,6 +192,7 @@ def analizar_licitacion(
         url=url,
         campos=campos,
         productos=productos,
+        contexto=contexto,
         riesgos=riesgos,
         checklist=items_checklist,
         resumen=resumen,

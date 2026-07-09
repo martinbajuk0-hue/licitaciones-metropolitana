@@ -236,7 +236,7 @@ def identificar_productos(texto: str) -> list[ProductoIdentificado]:
 
     for categoria, terminos in settings.palabras_clave_por_categoria().items():
         for termino in terminos:
-            idx = texto_lower.find(termino.lower())
+            idx = settings.buscar_palabra_clave(texto_lower, termino)
             if idx == -1:
                 continue
             clave = (categoria, termino.lower())
@@ -253,6 +253,23 @@ def identificar_productos(texto: str) -> list[ProductoIdentificado]:
                 )
             )
     return encontrados
+
+
+def identificar_contexto(texto: str) -> dict[str, list[str]]:
+    """lugares_uso / aplicaciones detectados en el texto — señal DÉBIL,
+    nunca decide relevancia por sí sola (ver knowledge/keywords.yaml).
+    Se usa solo para enriquecer el informe cuando ya hubo un match fuerte
+    (identificar_productos no vacío).
+    """
+    texto_lower = texto.lower()
+    contexto: dict[str, list[str]] = {}
+    for grupo, terminos in settings.palabras_clave_contexto().items():
+        encontrados = sorted({
+            t for t in terminos if settings.coincide_palabra_clave(texto_lower, t)
+        })
+        if encontrados:
+            contexto[grupo] = encontrados[:15]
+    return contexto
 
 
 # ─── Resumen ejecutivo ─────────────────────────────────────────────────────
