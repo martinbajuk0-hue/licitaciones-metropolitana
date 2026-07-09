@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -235,6 +236,16 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict]) -> None:
         print("  GMAIL_USER/GMAIL_APP_PASSWORD no configurados: se omite el envío de email.")
         return
 
+    # Diagnóstico sin exponer los secrets: GitHub enmascara cualquier
+    # coincidencia exacta de un secret en el log, pero el dominio del
+    # destinatario no lo es, y alcanza para saber si EMAIL_DESTINO está
+    # configurado o si el mail termina cayendo en la propia cuenta de envío.
+    dominio_dest = dest.split("@")[-1] if dest and "@" in dest else "(dirección inválida o vacía)"
+    print(
+        f"  Email: EMAIL_DESTINO seteado como variable de entorno={'EMAIL_DESTINO' in os.environ} "
+        f"destino_es_igual_a_gmail_user={dest == gmail_user} dominio_destino={dominio_dest!r}"
+    )
+
     total = len(nuevas) + len(modificadas)
     subject = f"🏗️ {total} novedad(es) de licitaciones para Metropolitana — {datetime.today().strftime('%d/%m/%Y')}"
 
@@ -273,11 +284,21 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict]) -> None:
     msg["To"] = dest
     msg.attach(MIMEText(html, "html"))
 
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-        server.login(gmail_user, gmail_pass)
-        server.sendmail(gmail_user, dest, msg.as_string())
+    try:
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+            server.login(gmail_user, gmail_pass)
+            server.sendmail(gmail_user, dest, msg.as_string())
+    except smtplib.SMTPRecipientsRefused as e:
+        print(f"❌ El servidor de Gmail rechazó al destinatario (dirección inválida/inexistente): {e}")
+        return
+    except smtplib.SMTPResponseException as e:
+        print(f"❌ Error SMTP al enviar: código {e.smtp_code} — {e.smtp_error}")
+        return
 
-    print(f"✅ Email enviado ({len(nuevas)} nuevas, {len(modificadas)} modificadas).")
+    # smtp 250 OK acá solo confirma que Gmail ACEPTÓ el mensaje para
+    # entregarlo — no garantiza que llegue a la bandeja de entrada (puede
+    # caer en spam/cuarentena del servidor destino sin que Gmail se entere).
+    print(f"✅ Email aceptado por Gmail para entrega ({len(nuevas)} nuevas, {len(modificadas)} modificadas) — revisar spam si no aparece en la bandeja principal.")
 
 
 # ─── Main ──────────────────────────────────────────────────────────────────
@@ -347,8 +368,28 @@ def main(enviar_email_flag: bool = True) -> None:
         print("  Sin novedades.")
 
 
+def enviar_email_de_prueba() -> None:
+    """Manda un mail de prueba sin depender de encontrar una licitación
+    real — para verificar GMAIL_USER/GMAIL_APP_PASSWORD/EMAIL_DESTINO
+    (`python monitor.py --test-email`).
+    """
+    lic_prueba = {
+        "titulo": "[PRUEBA] Verificación de configuración de email",
+        "descripcion": "Este mail no corresponde a una licitación real. Se generó manualmente para confirmar que GMAIL_USER/GMAIL_APP_PASSWORD/EMAIL_DESTINO están bien configurados.",
+        "fecha": datetime.now().strftime("%Y-%m-%d"),
+        "url": "https://www.comprasestatales.gub.uy",
+        "keyword": "(prueba manual, no es una coincidencia real)",
+        "fuente": "prueba",
+    }
+    enviar_email([lic_prueba], [])
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--sin-email", action="store_true", help="No enviar email (para debug local)")
+    ap.add_argument("--test-email", action="store_true", help="Mandar un email de prueba y salir, sin correr el monitoreo")
     args = ap.parse_args()
-    main(enviar_email_flag=not args.sin_email)
+    if args.test_email:
+        enviar_email_de_prueba()
+    else:
+        main(enviar_email_flag=not args.sin_email)
