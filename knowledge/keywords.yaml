@@ -1,315 +1,3090 @@
-# Base de palabras clave para detección de licitaciones relevantes.
-# Estructura: categoria -> lista de términos (se buscan en minúsculas, coincidencia de substring).
-# Mantener esta lista es la forma principal de ajustar la sensibilidad del monitor.
+# Base de palabras clave para detección automática de licitaciones — versión
+# ampliada (2026-07). Prioriza recall sobre precisión: ante la duda, se
+# incluyó el término. Es normal y esperado que haya falsos positivos.
 #
-# NOTA: "Nunca descartes una licitación solamente por el título" (regla del rol).
-# Estas palabras se usan primero contra título/descripción; si no matchean,
-# analyzer.py/parser.py bajan a leer el pliego completo antes de descartar.
+# ESTRUCTURA
+# ──────────
+# categorias.<nombre>.keywords
+#   17 categorías de producto Metropolitana. Señal FUERTE: cualquier
+#   coincidencia acá dispara relevancia por sí sola (config.settings.
+#   todas_las_palabras_clave()).
+#
+# terminologia_pliegos / materiales / normativas / marcas / errores_comunes /
+# abreviaturas
+#   También señal FUERTE — se suman al gatillo automático. Son lo
+#   suficientemente específicas del rubro construcción/pisos/superficies
+#   como para no inundar de falsos positivos el monitoreo diario.
+#
+# lugares_uso / aplicaciones
+#   Señal DÉBIL — a propósito NO se suman al gatillo automático
+#   (config.settings.todas_las_palabras_clave() las excluye). Términos
+#   como "escuela", "hospital", "intendencia", "interior", "alto tránsito"
+#   aparecen en prácticamente cualquier licitación pública de Uruguay sin
+#   importar el rubro; si dispararan solas, el monitoreo dejaría de filtrar
+#   y avisaría de absolutamente todo. Se usan como CONTEXTO: sólo se
+#   reportan (analyzer.identificar_contexto) cuando la licitación ya fue
+#   marcada relevante por una keyword fuerte — nunca la marcan por sí solas.
+#   Ver docs/ARQUITECTURA.md para el detalle de esta regla.
+#
+# MANTENIMIENTO
+# ─────────────
+# Agregar un término: sumarlo a la lista de la categoría correspondiente
+# (o a terminologia_pliegos si es genérico de pliegos públicos). No hace
+# falta tocar ningún .py. Evitar agregar palabras sueltas de 1-2 letras o
+# palabras comunes del español/portugués (ej. "en", "de", "con") como
+# abreviatura suelta: el matcher usa límite de palabra para términos
+# cortos (ver config.settings.coincide_palabra_clave), pero una palabra
+# de uso corriente igual generaría ruido masivo.
 
-productos:
+categorias:
   pisos_vinilicos:
-    - "piso vinílico"
-    - "piso vinilico"
-    - "piso PVC"
-    - "piso LVT"
-    - "luxury vinyl tile"
-    - "baldosa vinílica"
-    - "baldosa PVC"
-    - "listón vinílico"
-    - "piso vinílico click"
-    - "piso SPC"
-    - "stone plastic composite"
-    - "piso rígido SPC"
-    - "piso vinílico impermeable"
-    - "piso vinílico comercial"
-    - "piso vinílico residencial"
-    - "piso vinílico heterogéneo"
-    - "piso vinílico homogéneo"
-    - "piso vinílico en rollo"
-    - "rollo vinílico"
-    - "revestimiento vinílico"
-    - "piso vinílico acústico"
-    - "piso vinílico hospitalario"
-    - "piso vinílico alto tránsito"
-    - "piso conductivo"
-    - "piso antiestático"
-
+    keywords:
+    - baldosa pvc
+    - baldosa vinilica
+    - baldosa vinílica
+    - baldosas pvc
+    - baldosas vinilicas
+    - baldosas vinílicas
+    - capa de desgaste
+    - capa de uso
+    - cleanroom flooring
+    - click vinyl
+    - cold welding vinyl
+    - cordon de soldadura pvc
+    - cordón de soldadura pvc
+    - dryback vinyl
+    - electrostatic dissipative flooring
+    - friso vinilico
+    - friso vinílico
+    - glue down vinyl
+    - hot welding vinyl
+    - junta soldada vinilico
+    - junta soldada vinílico
+    - lamina vinilica
+    - laminas vinilicas
+    - linoleo en rollo
+    - linoleo natural
+    - linóleo en rollo
+    - linóleo natural
+    - liston vinilico
+    - listones vinilicos
+    - listones vinílicos
+    - listón vinílico
+    - loose lay
+    - loose lay vinyl
+    - loseta vinilica
+    - loseta vinílica
+    - losetas vinilicas
+    - losetas vinílicas
+    - luxury vinyl plank
+    - luxury vinyl tile
+    - luxury vinyl tiles
+    - lvp
+    - lvt
+    - lámina vinílica
+    - láminas vinílicas
+    - manta vinilica
+    - manta vinílica
+    - mantas vinilicas
+    - mantas vinílicas
+    - marmoleum
+    - pavimento de pvc
+    - pavimento vinilico
+    - pavimento vinílico
+    - peel and stick vinyl
+    - piso antiestatico
+    - piso antiestático
+    - piso click
+    - piso conductivo
+    - piso de pvc
+    - piso de vinil
+    - piso de vinilo brasil
+    - piso de vinilo click 5mm
+    - piso de vinilo click 6mm
+    - piso de vinilo click 7mm
+    - piso disipativo estatico
+    - piso disipativo estático
+    - piso esd
+    - piso flotante pvc
+    - piso heterogeneo
+    - piso heterogéneo
+    - piso homogeneo
+    - piso homogéneo
+    - piso linoleo
+    - piso linóleo
+    - piso plastico
+    - piso plástico
+    - piso pvc
+    - piso resiliente
+    - piso semiflexible
+    - piso vinilico
+    - piso vinilico acustico
+    - piso vinilico alto transito
+    - piso vinilico autoadhesivo
+    - piso vinilico brasil
+    - piso vinilico click
+    - piso vinilico comercial
+    - piso vinilico de 2mm
+    - piso vinilico de 3mm
+    - piso vinilico de 4mm
+    - piso vinilico de 5mm
+    - piso vinilico en rollo
+    - piso vinilico heterogeneo
+    - piso vinilico homogeneo
+    - piso vinilico hospitalario
+    - piso vinilico impermeable
+    - piso vinilico loose lay
+    - piso vinilico pegado
+    - piso vinilico residencial
+    - piso vinílico
+    - piso vinílico acústico
+    - piso vinílico alto tránsito
+    - piso vinílico antibacterial
+    - piso vinílico autoadhesivo
+    - piso vinílico click
+    - piso vinílico comercial
+    - piso vinílico de 2mm
+    - piso vinílico de 3mm
+    - piso vinílico de 4mm
+    - piso vinílico de 5mm
+    - piso vinílico en rollo
+    - piso vinílico heterogéneo
+    - piso vinílico homogéneo
+    - piso vinílico hospitalario
+    - piso vinílico impermeable
+    - piso vinílico loose lay
+    - piso vinílico para farmacia
+    - piso vinílico para laboratorio
+    - piso vinílico para sala limpia
+    - piso vinílico para veterinaria
+    - piso vinílico pegado
+    - piso vinílico residencial
+    - piso vinílico stone look
+    - piso vinílico wood look
+    - pisos antiestaticos
+    - pisos antiestáticos
+    - pisos click
+    - pisos conductivos
+    - pisos de pvc
+    - pisos pvc
+    - pisos resilientes
+    - pisos vinilicos
+    - pisos vinílicos
+    - pvc
+    - pvc flooring
+    - regua vinilica
+    - resilient flooring
+    - revestimento em pvc
+    - revestimento vinílico
+    - revestimiento de pvc
+    - revestimiento plástico de piso
+    - revestimiento pvc
+    - revestimiento resiliente
+    - revestimiento vinilico
+    - revestimiento vinílico
+    - revestimientos vinilicos
+    - revestimientos vinílicos
+    - rigid vinyl
+    - rollo vinilico
+    - rollo vinílico
+    - rollos vinilicos
+    - rollos vinílicos
+    - régua vinílica
+    - self adhesive vinyl
+    - solado vinilico
+    - solado vinílico
+    - soldadura en frio
+    - soldadura en frío
+    - spc vinyl
+    - vinilica
+    - vinilicas
+    - vinilico
+    - vinilico 2mm
+    - vinilico autoadhesivo
+    - vinilico bacteriostatico
+    - vinilico biselado
+    - vinilico click 4mm
+    - vinilico color madera
+    - vinilico conductivo esd
+    - vinilico decorativo
+    - vinilico dryback
+    - vinilico encolado
+    - vinilico hospitalario antibacteriano
+    - vinilico para quirofano
+    - vinilico simil ceramica
+    - vinilico simil porcelanato
+    - vinilico texturado
+    - vinilicos
+    - vinilo
+    - vinilo click
+    - vinilo en rollo
+    - vinilo heterogeneo
+    - vinilo heterogéneo
+    - vinilo homogeneo
+    - vinilo homogéneo
+    - vinilo pegado
+    - vinilos
+    - vinyl floor
+    - vinyl flooring
+    - vinyl sheet
+    - vinyl sheet flooring
+    - vinyl tile
+    - vinyl tiles
+    - vinílica
+    - vinílicas
+    - vinílico
+    - vinílico 2mm
+    - vinílico autoadhesivo
+    - vinílico bacteriostático
+    - vinílico biselado
+    - vinílico click 4mm
+    - vinílico click brasil
+    - vinílico color madera
+    - vinílico conductivo esd
+    - vinílico decorativo
+    - vinílico dryback
+    - vinílico encolado
+    - vinílico espesor 2mm
+    - vinílico hospitalario antibacteriano
+    - vinílico para quirófano
+    - vinílico símil cerámica
+    - vinílico símil porcelanato
+    - vinílico texturado
+    - vinílico tono madera
+    - vinílico tono piedra
+    - vinílicos
+    - wear layer
+    - wpc vinyl
+  pisos_spc:
+    keywords:
+    - assoalho spc
+    - composite flooring
+    - engineered vinyl plank
+    - evp
+    - hybrid flooring
+    - loose lay spc
+    - nucleo de piedra
+    - nucleo rigido
+    - nucleo wpc
+    - núcleo de piedra
+    - núcleo rígido
+    - núcleo wpc
+    - piedra plastica compuesta
+    - piedra plástica compuesta
+    - piso composite
+    - piso hibrido
+    - piso híbrido
+    - piso mineral vinilico
+    - piso mineral vinílico
+    - piso petreo vinilico
+    - piso pétreo vinílico
+    - piso rigido spc
+    - piso rígido spc
+    - piso spc
+    - piso spc 100% impermeable
+    - piso spc brasil
+    - piso spc click
+    - piso spc comercial
+    - piso spc hidrofugo
+    - piso spc hidrófugo
+    - piso spc impermeable
+    - piso spc para exteriores
+    - piso spc premium
+    - piso spc residencial
+    - piso spc waterproof
+    - piso vinilico rigido
+    - piso vinílico rígido
+    - pisos spc
+    - revestimento spc
+    - rigid core
+    - rigid core flooring
+    - rigid vinyl plank
+    - rvp
+    - spc
+    - spc a prueba de agua
+    - spc antibacteriano
+    - spc bisel v4
+    - spc calibre 34
+    - spc calibre 43
+    - spc calibre comercial
+    - spc clase 33
+    - spc clase 34
+    - spc clase 42
+    - spc clase 43
+    - spc con base ixpe
+    - spc con textura madera
+    - spc con textura piedra
+    - spc con underlayment
+    - spc de 4mm
+    - spc de 5mm
+    - spc de 6mm
+    - spc de 7mm
+    - spc de alto trafico
+    - spc de alto tráfico
+    - spc dryback
+    - spc en losetas
+    - spc en tablones
+    - spc exterior flooring
+    - spc floor
+    - spc flooring
+    - spc flooring uruguay
+    - spc hidrofugo total
+    - spc hidrófugo total
+    - spc hybrid
+    - spc outdoor
+    - spc para colegios
+    - spc para comercios
+    - spc para hospitales
+    - spc para oficinas
+    - spc plank
+    - spc tile
+    - spc tiles
+    - spc uniclic
+    - spc valinge
+    - spc waterproof floor
+    - stone plastic composite
+    - stone polymer composite
+    - waterproof rigid core
+    - wpc core
+    - wpc vs spc
   pisos_flotantes:
-    - "piso flotante"
-    - "piso laminado"
-    - "piso laminado AC3"
-    - "piso laminado AC4"
-    - "piso laminado AC5"
-    - "piso melamínico"
-    - "piso flotante resistente al agua"
-    - "piso flotante hidrófugo"
-    - "piso HDF"
-    - "piso MDF"
-    - "piso click"
-    - "piso símil madera"
-    - "piso H2O"
-
+    keywords:
+    - assoalho laminado
+    - assoalho laminado hidrofugo
+    - click laminate
+    - floating floor
+    - flotante
+    - flotantes
+    - hdf
+    - high density fiberboard
+    - hydro flooring
+    - laminado de alta resistencia
+    - laminado hidrorepelente
+    - laminado impermeable total
+    - laminate floor
+    - laminate flooring
+    - laminate wood flooring
+    - laminated flooring
+    - manta bajo laminado
+    - mdf
+    - medium density fiberboard
+    - melamina
+    - piso agua
+    - piso click flotante
+    - piso de melamina
+    - piso flotante
+    - piso flotante ac4 8mm
+    - piso flotante ac5 12mm
+    - piso flotante hidrofugo
+    - piso flotante hidrófugo
+    - piso flotante impermeable
+    - piso flotante laminado
+    - piso flotante resistente al agua
+    - piso flotante waterproof
+    - piso h2o
+    - piso hdf
+    - piso laminado
+    - piso laminado 10mm
+    - piso laminado 12mm
+    - piso laminado 8mm
+    - piso laminado ac3
+    - piso laminado ac4
+    - piso laminado ac5
+    - piso laminado ac6
+    - piso laminado acustico
+    - piso laminado acústico
+    - piso laminado antideslizante
+    - piso laminado bisel v4
+    - piso laminado clase 31
+    - piso laminado clase 32
+    - piso laminado clase 33
+    - piso laminado click
+    - piso laminado colonial
+    - piso laminado con clic
+    - piso laminado con garantia
+    - piso laminado con garantía
+    - piso laminado con relieve
+    - piso laminado economico
+    - piso laminado económico
+    - piso laminado gris
+    - piso laminado hidrofugo brasil
+    - piso laminado para dormitorio
+    - piso laminado para living
+    - piso laminado premium
+    - piso laminado roble
+    - piso laminado rustico
+    - piso laminado rústico
+    - piso laminado simil madera
+    - piso laminado sintocrom
+    - piso laminado símil madera
+    - piso laminado texturado
+    - piso laminado waterproof
+    - piso mdf
+    - piso melaminico
+    - piso melamínico
+    - piso simil madera
+    - piso símil madera
+    - pisos flotantes
+    - pisos laminados
+    - revestimiento laminado
+    - underlay laminate
+    - underlayment
+    - waterproof laminate
   pisos_madera:
-    - "piso de madera"
-    - "piso de madera natural"
-    - "piso ingenieril"
-    - "piso de ingeniería"
-    - "piso multicapa"
-    - "piso prefinished"
-    - "piso de roble"
-    - "piso de eucaliptus"
-    - "piso parquet"
-    - "piso entablonado"
-    - "piso macizo"
-
+    keywords:
+    - assoalho de madeira
+    - chevron flooring
+    - deck de madera
+    - duela
+    - duelas
+    - encerado de parquet
+    - engineered flooring
+    - engineered wood
+    - engineered wood flooring
+    - entablonado
+    - hardwood
+    - hardwood flooring
+    - herringbone flooring
+    - listones de madera para piso
+    - madera maciza
+    - madera natural
+    - madera termotratada
+    - parquet
+    - parquet espiga
+    - parquet espina de pescado
+    - parquet flotante
+    - parquet laminado
+    - parquet macizo
+    - parquet mosaico
+    - parqué
+    - piso de cedro
+    - piso de cumaru
+    - piso de curupay
+    - piso de eucalipto
+    - piso de eucaliptus
+    - piso de garapa
+    - piso de guatambu
+    - piso de guatambú
+    - piso de ingenieria
+    - piso de ingeniería
+    - piso de ipe
+    - piso de ipê
+    - piso de itauba
+    - piso de lapacho
+    - piso de listones
+    - piso de madeira
+    - piso de madeira maciça
+    - piso de madera
+    - piso de madera maciza
+    - piso de madera natural
+    - piso de madera para escenario
+    - piso de madera para exterior
+    - piso de madera para gimnasio
+    - piso de madera tratada
+    - piso de peteribi
+    - piso de peteribí
+    - piso de pino
+    - piso de roble
+    - piso de tatajuba
+    - piso de teca
+    - piso deportivo de madera
+    - piso duela
+    - piso entablonado
+    - piso eucalipto
+    - piso eucaliptus
+    - piso flotante de madera
+    - piso ingenieril
+    - piso macizo
+    - piso madera
+    - piso multicapa
+    - piso multilaminado
+    - piso parquet
+    - piso prefinished
+    - piso preterminado
+    - piso raspado y plastificado
+    - piso roble
+    - piso tecnico de madera
+    - piso tecnico teatral
+    - piso técnico de madera
+    - piso técnico teatral
+    - pisos de ingenieria
+    - pisos de ingeniería
+    - pisos de madera
+    - pisos ingenieriles
+    - pisos multicapa
+    - prefinished flooring
+    - revestimiento de madera para piso
+    - solid wood flooring
+    - stage flooring
+    - tarima de madera
+    - tarima escenica
+    - tarima escénica
+    - tarima flotante
+    - tarima maciza
+    - thermowood
+    - wood flooring
+    - wood sports flooring
   pisos_goma:
-    - "piso de goma"
-    - "baldosa de goma"
-    - "piso de caucho"
-    - "piso elastomérico"
-    - "piso para gimnasio"
-    - "piso deportivo de goma"
-    - "piso amortiguante"
-    - "piso antigolpes"
-    - "piso antideslizante"
-    - "piso para playground"
-    - "piso para plaza"
-    - "piso de seguridad"
-    - "piso EPDM"
-    - "loseta de caucho"
-    - "baldosa amortiguante"
-    - "piso para sala de musculación"
-
-  cesped_sintetico:
-    - "césped sintético"
-    - "cesped sintetico"
-    - "pasto sintético"
-    - "pasto sintetico"
-    - "césped artificial"
-    - "gramilla sintética"
-    - "césped deportivo"
-    - "césped FIFA"
-    - "césped para fútbol"
-    - "césped para hockey"
-    - "césped para tenis"
-    - "césped para rugby"
-    - "césped para recreación"
-    - "césped ornamental"
-    - "césped residencial"
-    - "césped paisajístico"
-    - "césped decorativo"
-    - "césped para jardines"
-    - "césped para escuelas"
-    - "césped para plazas"
-
-  insumos_canchas:
-    - "arena de sílice"
-    - "arena silícea"
-    - "arena para césped sintético"
-    - "caucho SBR"
-    - "caucho granulado"
-    - "caucho reciclado"
-    - "relleno para césped"
-    - "infill"
-    - "pegamento para césped"
-    - "adhesivo para césped sintético"
-    - "banda de unión"
-    - "cinta de empalme"
-    - "mantenimiento de canchas"
-    - "cepillado de césped sintético"
-
+    keywords:
+    - altura critica de caida
+    - altura crítica de caída
+    - anti-fatigue mat
+    - baldosa amortiguante
+    - baldosa de goma
+    - baldosas amortiguantes
+    - baldosas de goma
+    - caucho granulado
+    - caucho sbr
+    - critical fall height
+    - epdm
+    - epdm granulado color
+    - escalon de goma
+    - escalón de goma
+    - goma en rollo
+    - goma reciclada
+    - granulado de caucho
+    - granza de caucho
+    - granza epdm
+    - guarda escalera de goma
+    - loseta de caucho
+    - loseta drenante de goma
+    - loseta perforada de goma
+    - losetas de caucho
+    - matting caballerizas
+    - nariz de goma
+    - pavimento de caucho
+    - piso amortiguacion de caidas
+    - piso amortiguación de caídas
+    - piso amortiguante
+    - piso antideslizante
+    - piso antideslizante industrial
+    - piso antifatiga
+    - piso antigolpes
+    - piso caucho
+    - piso caucho antifatiga
+    - piso caucho in situ
+    - piso caucho industrial
+    - piso caucho para gimnasio
+    - piso continuo de caucho
+    - piso de caucho
+    - piso de caucho colado
+    - piso de caucho para caballerizas
+    - piso de caucho para cocheras
+    - piso de goma
+    - piso de goma en rollo
+    - piso de goma para box de caballos
+    - piso de goma para establo
+    - piso de goma para pesas
+    - piso de goma para spa
+    - piso de goma para vestuario
+    - piso de goma para vestuario de piscina
+    - piso de goma para vestuarios
+    - piso de goma reciclada
+    - piso de seguridad
+    - piso de seguridad infantil
+    - piso de seguridad para juegos infantiles
+    - piso de seguridad para parques
+    - piso deportivo de goma
+    - piso elastomerico
+    - piso elastomérico
+    - piso epdm
+    - piso epdm colado
+    - piso goma
+    - piso goma sala de pesas
+    - piso para gimnasio
+    - piso para playground
+    - piso para playgrounds
+    - piso para plaza
+    - piso para sala de musculacion
+    - piso para sala de musculación
+    - piso pump track
+    - piso rodado de caucho
+    - piso wet pour
+    - pisos amortiguantes
+    - pisos antideslizantes
+    - pisos de caucho
+    - pisos de goma
+    - pisos de seguridad
+    - pisos para gimnasio
+    - poured rubber
+    - revestimiento de caucho
+    - rubber floor
+    - rubber flooring
+    - rubber mat
+    - rubber matting
+    - rubber tile
+    - rubber tiles
+    - safety flooring
+    - safety surfacing
+    - sbr
+    - sistema epdm dos capas
+    - sistema epdm mono capa
+    - wet pour rubber
   pisos_deportivos:
-    - "piso deportivo"
-    - "piso para cancha indoor"
-    - "piso para sala deportiva"
-    - "piso para fitness"
-    - "piso para crossfit"
-    - "piso para musculación"
-    - "piso para educación física"
-    - "piso deportivo vinílico"
-    - "piso deportivo PVC"
-    - "piso deportivo multicapa"
-
+    keywords:
+    - area elastic
+    - athletic track surface
+    - cancha acrilica
+    - cancha acrílica
+    - cancha techada
+    - carpeta deportiva
+    - colchoneta deportiva
+    - combi elastic
+    - dance floor
+    - gym floor
+    - gym flooring
+    - linoleo deportivo
+    - linóleo deportivo
+    - mondo
+    - piso acrilico deportivo
+    - piso acrílico deportivo
+    - piso deportivo
+    - piso deportivo certificado
+    - piso deportivo certificado fiba
+    - piso deportivo desmontable
+    - piso deportivo enrollable
+    - piso deportivo homologado
+    - piso deportivo modular
+    - piso deportivo multicapa
+    - piso deportivo para padel
+    - piso deportivo para pádel
+    - piso deportivo para squash
+    - piso deportivo portatil
+    - piso deportivo portátil
+    - piso deportivo pvc
+    - piso deportivo vinilico
+    - piso deportivo vinílico
+    - piso para basquetbol
+    - piso para básquetbol
+    - piso para cancha indoor
+    - piso para crossfit
+    - piso para danza
+    - piso para dojo
+    - piso para educacion fisica
+    - piso para educación física
+    - piso para fitness
+    - piso para futsal
+    - piso para handball
+    - piso para musculacion
+    - piso para musculación
+    - piso para pabellon deportivo
+    - piso para pabellón deportivo
+    - piso para pista de atletismo
+    - piso para polideportivo
+    - piso para polifuncional
+    - piso para sala de baile
+    - piso para sala de pilates
+    - piso para sala de yoga
+    - piso para sala deportiva
+    - piso para tenis de mesa
+    - piso para voleibol
+    - piso para vóleibol
+    - piso poliportivo
+    - piso poliuretanico deportivo
+    - piso poliuretánico deportivo
+    - piso techado deportivo
+    - piso vinilico deportivo
+    - piso vinílico deportivo
+    - pisos deportivos
+    - pista sintetica de atletismo
+    - pista sintética de atletismo
+    - playing surface
+    - point elastic
+    - pu deportivo
+    - recubrimiento de pista de atletismo
+    - resina deportiva
+    - roll out flooring deportivo
+    - running track surface
+    - sandwich elastic
+    - sistema de amortiguacion deportiva
+    - sistema de amortiguación deportiva
+    - sistema pu deportivo
+    - sport flooring
+    - sports floor
+    - sports flooring
+    - sports surface
+    - superficie de juego
+    - superficie deportiva
+    - tapiz deportivo
+    - taraflex
+    - tatami
+    - área elastic
+  cesped_sintetico:
+    keywords:
+    - alfombra de cesped
+    - alfombra de césped
+    - artificial grass
+    - artificial turf
+    - cancha de cesped sintetico
+    - cancha de césped sintético
+    - cesped 5ta generacion
+    - cesped artificial
+    - cesped bitono
+    - cesped con relleno de corcho
+    - cesped de 40mm
+    - cesped de 50mm
+    - cesped de 60mm
+    - cesped de golf sintetico
+    - cesped decorativo
+    - cesped deportivo
+    - cesped fibrilado
+    - cesped fifa
+    - cesped monofilamento
+    - cesped multideporte
+    - cesped nautico
+    - cesped organico infill
+    - cesped ornamental
+    - cesped paisajistico
+    - cesped para escuelas
+    - cesped para escuelitas de futbol
+    - cesped para futbol
+    - cesped para golf
+    - cesped para hockey
+    - cesped para jardines
+    - cesped para paddle
+    - cesped para padel
+    - cesped para plazas
+    - cesped para recreacion
+    - cesped para rugby
+    - cesped para tenis
+    - cesped residencial
+    - cesped sin relleno
+    - cesped sintetico
+    - cesped sintetico fifa quality
+    - cesped sintetico fifa quality pro
+    - cesped texturizado
+    - cesped tipo cinta
+    - cesped tipo sisal
+    - cesped tricolor
+    - césped 5ta generación
+    - césped artificial
+    - césped bitono
+    - césped con relleno de corcho
+    - césped de altura 40mm
+    - césped de altura 50mm
+    - césped de altura 60mm
+    - césped de golf sintético
+    - césped decorativo
+    - césped deportivo
+    - césped fibrilado
+    - césped fifa
+    - césped monofilamento
+    - césped multideporte
+    - césped náutico
+    - césped orgánico infill
+    - césped ornamental
+    - césped paisajístico
+    - césped para escuelas
+    - césped para escuelitas de fútbol
+    - césped para fútbol
+    - césped para golf
+    - césped para hockey
+    - césped para jardines
+    - césped para paddle
+    - césped para plazas
+    - césped para pádel
+    - césped para recreación
+    - césped para rugby
+    - césped para tenis
+    - césped residencial
+    - césped sin relleno
+    - césped sintético
+    - césped sintético fifa quality
+    - césped sintético fifa quality pro
+    - césped texturizado
+    - césped tipo cinta
+    - césped tipo sisal
+    - césped tricolor
+    - fibra de polietileno para cesped
+    - fibra de polietileno para césped
+    - field turf
+    - grama artificial
+    - grama artificial brasil
+    - grama artificial esportiva
+    - grama sintetica
+    - grama sintética
+    - grama sintética 5ª geração
+    - grama sintética esportiva
+    - gramilla sintetica
+    - gramilla sintética
+    - grass artificial
+    - grass esportivo
+    - grass sintetico
+    - grass sintético
+    - green artificial
+    - green sintetico
+    - green sintético
+    - manto sintetico
+    - manto sintético
+    - non infill turf
+    - pasto artificial
+    - pasto sintetico
+    - pasto sintético
+    - putting green sintetico
+    - putting green sintético
+    - synthetic grass
+    - synthetic turf
+  insumos_canchas:
+    keywords:
+    - adhesivo para cesped sintetico
+    - adhesivo para césped sintético
+    - arcos de futbol
+    - arcos de fútbol
+    - arena de silice
+    - arena de sílice
+    - arena para cesped sintetico
+    - arena para césped sintético
+    - arena silicea
+    - arena silícea
+    - aspersor para cancha
+    - backing de cesped
+    - backing de césped
+    - banda de union
+    - banda de unión
+    - base amortiguante para cesped
+    - base amortiguante para césped
+    - base granular para cancha
+    - caneria de drenaje deportivo
+    - caucho granulado
+    - caucho reciclado
+    - caucho sbr
+    - cañeria de drenaje deportivo
+    - cepillado de canchas
+    - cepillado de cesped sintetico
+    - cepillado de césped sintético
+    - cerco olimpico
+    - cerco olímpico
+    - cerco perimetral de cancha
+    - certificacion de campo de juego
+    - certificación de campo de juego
+    - cesped de recambio
+    - cinta de empalme
+    - compactacion de base deportiva
+    - compactación de base deportiva
+    - cortadora de cesped sintetico
+    - cortadora de césped sintético
+    - césped de recambio
+    - descompactacion de cesped
+    - descompactación de césped
+    - drenaje subsuperficial para cancha
+    - escoba mecanica para cancha
+    - escoba mecánica para cancha
+    - geotextil para cancha
+    - gmax test
+    - infill
+    - infill de caucho
+    - infill epdm
+    - informe fifa de cancha
+    - latex para cesped
+    - linea de cancha
+    - látex para césped
+    - línea de cancha
+    - malla perimetral deportiva
+    - manguera de riego deportivo
+    - manta drenante
+    - manta geotextil deportiva
+    - mantenimiento de canchas
+    - maquina cepilladora de cesped
+    - marcado de cancha
+    - medicion de dureza de cancha
+    - medición de dureza de cancha
+    - máquina cepilladora de césped
+    - nivelacion de cancha
+    - nivelación de cancha
+    - pegamento para cesped
+    - pegamento para césped
+    - pintura para lineas de cancha
+    - pintura para líneas de cancha
+    - postes de arco
+    - programador de riego para cancha
+    - rastrillo para cesped sintetico
+    - rastrillo para césped sintético
+    - red de contencion deportiva
+    - red de contención deportiva
+    - relleno para cesped
+    - relleno para césped
+    - reposicion de cesped sintetico
+    - reposición de césped sintético
+    - riego para cancha sintetica
+    - riego para cancha sintética
+    - seam glue
+    - seaming tape
+    - shockpad
+    - sistema de drenaje para cancha
+    - sistema de riego deportivo
+    - sub base para cancha sintetica
+    - sub base para cancha sintética
+    - test de campo fifa
+    - top dressing
+    - valvula de riego deportivo
+    - válvula de riego deportivo
   alfombras:
-    - "alfombra"
-    - "alfombra modular"
-    - "alfombra en baldosas"
-    - "alfombra alto tránsito"
-    - "alfombra comercial"
-    - "alfombra residencial"
-    - "alfombra punzonada"
-    - "alfombra para oficina"
-    - "alfombra para hotel"
-    - "alfombra acústica"
-
+    keywords:
+    - alfombra
+    - alfombra a medida
+    - alfombra acustica
+    - alfombra acústica
+    - alfombra afelpada
+    - alfombra alta densidad
+    - alfombra alto transito
+    - alfombra alto tránsito
+    - alfombra antiestatica
+    - alfombra antiestática
+    - alfombra bajo transito
+    - alfombra bajo tránsito
+    - alfombra bucle
+    - alfombra colombina
+    - alfombra comercial
+    - alfombra con certificacion verde
+    - alfombra con certificación verde
+    - alfombra con proteccion antimanchas
+    - alfombra con protección antimanchas
+    - alfombra con respaldo de goma
+    - alfombra con respaldo de pvc
+    - alfombra corporativa
+    - alfombra de bucle
+    - alfombra de corte
+    - alfombra de fibra reciclada
+    - alfombra de fibra sintetica
+    - alfombra de fibra sintética
+    - alfombra de nylon
+    - alfombra de pelo corto
+    - alfombra de pelo largo
+    - alfombra de polipropileno
+    - alfombra de pp
+    - alfombra en baldosas
+    - alfombra en placas
+    - alfombra ignifuga
+    - alfombra ignífuga
+    - alfombra institucional para oficina
+    - alfombra media densidad
+    - alfombra modular
+    - alfombra modular autoinstalable
+    - alfombra para escalera
+    - alfombra para hotel
+    - alfombra para oficina
+    - alfombra para pasillo
+    - alfombra para sala de conferencias
+    - alfombra punzonada
+    - alfombra residencial
+    - alfombra retardante de fuego
+    - alfombra tejida
+    - alfombra tipo boucle
+    - alfombra tipo loop
+    - alfombra tipo tabla
+    - alfombra tipo texturizado
+    - alfombra tratada scotchgard
+    - alfombras
+    - alfombras comerciales
+    - alfombras en baldosas
+    - alfombras modulares
+    - alfombras para hotel
+    - alfombras para oficina
+    - alfombras punzonadas
+    - alfombras residenciales
+    - backing de alfombra
+    - carpet
+    - carpet plank
+    - carpet planks
+    - carpet tile
+    - carpet tiles
+    - carpete
+    - carpete em placas
+    - carpete modular
+    - carpeting
+    - carpets
+    - cut pile carpet
+    - loop pile carpet
+    - moqueta en placas
+    - needle punch carpet
+    - piso de carpete
+    - placas de alfombra
+    - respaldo de alfombra
+    - revestimento de piso em carpete
+    - revestimiento textil de piso
+    - tapete
+    - tapetes
+    - tapiz
+    - tapizado de piso
   moquettes:
-    - "moquette"
-    - "moqueta"
-    - "alfombra en rollo"
-    - "alfombra textil"
-    - "revestimiento textil"
-    - "alfombra institucional"
-    - "alfombra para auditorios"
-    - "alfombra para teatros"
-
-  alfombras_infantiles:
-    - "piso infantil"
-    - "alfombra infantil"
-    - "piso para guardería"
-    - "piso para jardín de infantes"
-    - "piso lavable"
-    - "piso acolchonado infantil"
-    - "piso didáctico"
-
-  fieltros:
-    - "fieltro"
-    - "geotextil"
-    - "manta de fieltro"
-    - "fieltro protector"
-    - "fieltro acústico"
-    - "fieltro decorativo"
-    - "panel de fieltro"
-
-  felpudos_camineros:
-    - "felpudo"
-    - "limpiapiés"
-    - "alfombra de acceso"
-    - "alfombra de entrada"
-    - "caminero"
-    - "felpudo técnico"
-    - "sistema atrapa suciedad"
-    - "alfombra de recepción"
-
+    keywords:
+    - alfombra de rollo para eventos
+    - alfombra en rollo
+    - alfombra en rollos
+    - alfombra institucional
+    - alfombra para auditorios
+    - alfombra para salas de conferencia
+    - alfombra para teatros
+    - alfombra textil
+    - broadloom
+    - broadloom carpet
+    - carpet roll
+    - carpete agulhado
+    - carpete para eventos
+    - carpete tipo moquette
+    - moqueta
+    - moqueta acustica
+    - moqueta adhesiva
+    - moqueta antifuego
+    - moqueta autoadhesiva
+    - moqueta bouclé
+    - moqueta color liso
+    - moqueta contract
+    - moqueta de exhibicion
+    - moqueta de exposicion
+    - moqueta de fibra dura
+    - moqueta desechable
+    - moqueta ferial
+    - moqueta institucional
+    - moqueta para eventos
+    - moqueta para stands
+    - moqueta punzonada
+    - moqueta reutilizable
+    - moqueta rustica
+    - moqueta tecnica
+    - moqueta termosellada
+    - moqueta tufting
+    - moquetas
+    - moquette
+    - moquette acústica
+    - moquette adhesiva
+    - moquette antifuego
+    - moquette autoadhesiva
+    - moquette bouclé
+    - moquette color liso
+    - moquette contract
+    - moquette de eventos
+    - moquette de exhibición
+    - moquette de exposición
+    - moquette de fibra dura
+    - moquette desechable
+    - moquette en rollo de 2 metros
+    - moquette ferial
+    - moquette institucional
+    - moquette para eventos
+    - moquette para stands
+    - moquette punzonada
+    - moquette reutilizable
+    - moquette rústica
+    - moquette termosellada
+    - moquette tufting
+    - moquette técnica
+    - moquettes
+    - piso textil
+    - revestimiento de piso textil
+    - revestimiento textil
+    - revestimiento textil comercial
+    - revestimiento textil de pared
+    - wall to wall carpet
+  felpudos:
+    keywords:
+    - alfombra atrapa polvo
+    - alfombra atrapapolvo
+    - alfombra de acceso
+    - alfombra de entrada
+    - alfombra de recepcion
+    - alfombra de recepción
+    - alfombra recibidor
+    - alfombra scraper
+    - alfombra vestibular
+    - caminero
+    - caminero antideslizante
+    - caminero de goma
+    - caminero institucional
+    - camineros
+    - capacho
+    - capachos
+    - cepillo limpia calzado
+    - door mat
+    - doormat
+    - entrance mat
+    - entrance matting
+    - felpudo
+    - felpudo absorbente
+    - felpudo antideslizante
+    - felpudo con logo
+    - felpudo de aluminio
+    - felpudo de caucho
+    - felpudo de coco
+    - felpudo de fibra
+    - felpudo de fibra de coco
+    - felpudo de goma
+    - felpudo de nylon
+    - felpudo de vinilo
+    - felpudo empotrable
+    - felpudo higienico
+    - felpudo higiénico
+    - felpudo institucional
+    - felpudo para empotrar
+    - felpudo para oficinas
+    - felpudo perfilado
+    - felpudo perfilado de aluminio
+    - felpudo personalizado
+    - felpudo scraper
+    - felpudo tecnico
+    - felpudo textil
+    - felpudo tipo cepillo
+    - felpudo tipo reja
+    - felpudo técnico
+    - felpudos
+    - grating mat
+    - limpiapies
+    - limpiapiés
+    - logo mat
+    - recessed entrance mat
+    - reja atrapa barro
+    - reja limpia pies
+    - scraper mat
+    - sistema atrapa suciedad
+    - sistema de limpieza de calzado
+    - sistema modular de limpieza de calzado
+    - tapete capacho
+    - tapete de entrada
+    - tapete higiênico
+    - tapete personalizado
+    - tapete vestibular
+    - walk off mat
   paneles_revestimientos:
-    - "revestimiento de pared"
-    - "panel decorativo"
-    - "panel 3D"
-    - "panel acústico"
-    - "panel listonado"
-    - "panel ripado"
-    - "wall panel"
-    - "revestimiento PVC"
-    - "revestimiento WPC"
-    - "revestimiento decorativo"
-    - "revestimiento interior"
-    - "panel mural"
-    - "panel arquitectónico"
-    - "panel ranurado"
-    - "wood wall"
-    - "solid wall"
-
+    keywords:
+    - acoustic panel
+    - acoustic panels
+    - aluminum composite panel
+    - boiserie
+    - boiserie decorativa
+    - cielorraso decorativo
+    - cladding panel
+    - decorative wall panel
+    - exterior wall cladding
+    - fachada ventilada
+    - lambri decorativo
+    - lambris
+    - panel 3d
+    - panel absorbente de sonido
+    - panel acm
+    - panel acustico
+    - panel acústico
+    - panel arquitectonico
+    - panel arquitectónico
+    - panel canaletado
+    - panel composite de aluminio
+    - panel de cielorraso
+    - panel de fachada
+    - panel de fibra de madera
+    - panel de fieltro decorativo
+    - panel de pared texturizado
+    - panel decorativo
+    - panel fonoabsorbente
+    - panel listonado
+    - panel mdf decorativo
+    - panel mural
+    - panel para cielorraso
+    - panel ranurado
+    - panel ripado
+    - panel sandwich
+    - panel simil madera
+    - panel sándwich
+    - panel símil madera
+    - panel tipo madera
+    - panel wpc exterior
+    - panel wpc para pared
+    - paneles 3d
+    - paneles acusticos
+    - paneles acústicos
+    - paneles arquitectonicos
+    - paneles arquitectónicos
+    - paneles canaletados
+    - paneles decorativos
+    - paneles fonoabsorbentes
+    - paneles listonados
+    - paneles murales
+    - paneles ranurados
+    - paneles ripados
+    - papel mural
+    - papel tapiz
+    - revestimiento acustico de pared
+    - revestimiento acústico de pared
+    - revestimiento de fachada
+    - revestimiento de muro
+    - revestimiento de pared
+    - revestimiento de pared 3d
+    - revestimiento decorativo
+    - revestimiento interior
+    - revestimiento pvc
+    - revestimiento tipo madera
+    - revestimiento tipo tela para pared
+    - revestimiento vinilico de pared
+    - revestimiento vinílico de pared
+    - revestimiento wpc
+    - revestimientos de muro
+    - revestimientos de pared
+    - revestimientos decorativos
+    - revestimientos interiores
+    - slat panel
+    - slat wall
+    - slatwall
+    - solid wall
+    - wall panel
+    - wall panels
+    - wallpaper
+    - wood wall
   piedrafina:
-    - "piedrafina"
-    - "revestimiento símil piedra"
-    - "piedra flexible"
-    - "lámina decorativa"
-    - "revestimiento de muro"
-
+    keywords:
+    - chapa de marmol flexible
+    - chapa de mármol flexible
+    - chapa de piedra
+    - flexible stone
+    - flexible stone veneer
+    - lamina de cuarzo
+    - lamina de piedra natural
+    - lamina de pizarra
+    - lamina decorativa
+    - lamina flexible mineral
+    - lámina de cuarzo
+    - lámina de piedra natural
+    - lámina de pizarra
+    - lámina decorativa
+    - lámina flexible mineral
+    - manta de piedra
+    - panel simil ladrillo
+    - panel simil piedra
+    - panel símil ladrillo
+    - panel símil piedra
+    - piedra decorativa flexible
+    - piedra decorativa para exterior
+    - piedra decorativa para interior
+    - piedra flexible
+    - piedra flexible decorativa
+    - piedra laminada
+    - piedra laminada autoadhesiva
+    - piedra maleable
+    - piedra natural flexible para pared
+    - piedra reconstituida flexible
+    - piedra ultrafina
+    - piedrafina
+    - piedrafina para exteriores
+    - piedrafina para fachadas
+    - piedrafina para interiores
+    - placa de piedra flexible
+    - revestimiento de fachada simil piedra
+    - revestimiento de fachada símil piedra
+    - revestimiento de muro piedra
+    - revestimiento de piedra en rollo
+    - revestimiento de piedra flexible para exterior
+    - revestimiento de piedra laminada
+    - revestimiento de piedra ultradelgada
+    - revestimiento petreo decorativo
+    - revestimiento petreo flexible
+    - revestimiento petreo laminado
+    - revestimiento piedra simil natural
+    - revestimiento piedra símil natural
+    - revestimiento pizarra flexible
+    - revestimiento pétreo decorativo
+    - revestimiento pétreo flexible
+    - revestimiento pétreo laminado
+    - revestimiento simil piedra
+    - revestimiento símil piedra
+    - revestimiento textura piedra
+    - revestimiento textura piedra natural
+    - revestimiento tipo arenisca
+    - revestimiento tipo basalto
+    - revestimiento tipo ladrillo
+    - revestimiento tipo ladrillo visto
+    - revestimiento tipo piedra
+    - revestimiento tipo travertino
+    - stone flex
+    - stone flex panel
+    - stone veneer
   jardines_verticales:
-    - "jardín vertical"
-    - "jardin vertical"
-    - "muro verde"
-    - "green wall"
-    - "jardín artificial"
-    - "panel vegetal"
-    - "jardín sintético"
-    - "revestimiento vegetal"
-
-  deck_exterior:
-    - "deck"
-    - "deck WPC"
-    - "piso exterior"
-    - "piso para terraza"
-    - "piso para balcón"
-    - "piso para piscina"
-    - "deck modular"
-    - "baldosa deck"
-    - "deck sintético"
-    - "deck compuesto"
-    - "wood plastic composite"
-
+    keywords:
+    - biombo verde artificial
+    - cerco verde artificial
+    - cobertura vegetal artificial
+    - estructura para jardin vertical
+    - estructura para jardín vertical
+    - fachada vegetal
+    - fachada verde
+    - follaje artificial
+    - follaje sintetico
+    - follaje sintético
+    - green facade
+    - green screen
+    - green wall
+    - green walls
+    - jardin artificial
+    - jardin interior artificial
+    - jardin sintetico
+    - jardin vertical
+    - jardin vertical hidroponico
+    - jardin vertical modular
+    - jardines artificiales
+    - jardines sinteticos
+    - jardines sintéticos
+    - jardines verticales
+    - jardín artificial
+    - jardín interior artificial
+    - jardín sintético
+    - jardín vertical
+    - jardín vertical hidropónico
+    - jardín vertical modular
+    - living wall
+    - living walls
+    - modulo de jardin vertical
+    - moss wall
+    - muro de musgo
+    - muro follaje sintetico
+    - muro follaje sintético
+    - muro vegetal
+    - muro verde
+    - muro verde artificial
+    - muro verde natural
+    - muros vegetales
+    - muros verdes
+    - módulo de jardín vertical
+    - paisajismo vertical
+    - panel de cesped decorativo
+    - panel de césped decorativo
+    - panel de follaje
+    - panel de jardin vertical con riego
+    - panel de jardín vertical con riego
+    - panel de musgo preservado
+    - panel de plantas artificiales
+    - panel vegetal
+    - paneles vegetales
+    - pared verde
+    - paredes verdes
+    - planta artificial de pared
+    - revestimiento de plantas artificiales
+    - revestimiento vegetal
+    - sistema de riego para jardin vertical
+    - sistema de riego para jardín vertical
+    - sistema modular de plantas
+    - verde decorativo artificial
+    - vertical garden
+    - vertical gardens
+  decks_exterior:
+    keywords:
+    - baldosa de deck flotante
+    - baldosa deck
+    - baldosas deck
+    - boat decking
+    - borde de piscina
+    - capped composite decking
+    - cerca wpc
+    - cerco wpc
+    - clip de fijacion deck
+    - clip de fijación deck
+    - co-extruded decking
+    - composite decking
+    - deck
+    - deck antideslizante
+    - deck bicolor
+    - deck cepillado
+    - deck coextruido
+    - deck compuesto
+    - deck con capa protectora
+    - deck de madera
+    - deck de piscina
+    - deck ecologico
+    - deck ecológico
+    - deck flotante
+    - deck grabado
+    - deck liso
+    - deck modular
+    - deck naval
+    - deck para exteriores
+    - deck para spa
+    - deck plastico
+    - deck plástico
+    - deck ranurado
+    - deck sintetico
+    - deck sintético
+    - deck wpc
+    - decking
+    - decks
+    - decks modulares
+    - marine decking
+    - outdoor decking
+    - pasarela de madera plastica
+    - pasarela de madera plástica
+    - pasarela wpc
+    - pergola wpc
+    - piso de exterior wpc
+    - piso de pileta
+    - piso de terraza wpc
+    - piso exterior
+    - piso naval sintetico
+    - piso naval sintético
+    - piso para balcon
+    - piso para balcón
+    - piso para piscina
+    - piso para piscinas
+    - piso para terraza
+    - piso para terrazas
+    - pisos exteriores
+    - pérgola wpc
+    - reja wpc
+    - revestimiento de exterior antideslizante
+    - revestimiento exterior wpc
+    - sistema de fijacion oculta deck
+    - sistema de fijación oculta deck
+    - solario
+    - solarium
+    - solárium
+    - sub estructura wpc
+    - tablon wpc
+    - tablones wpc
+    - tablón wpc
+    - tarima composite
+    - tarima de exterior
+    - tarima exterior
+    - tarima wpc
+    - vigueta wpc
+    - wood plastic composite
+    - wpc
   accesorios:
-    - "zócalo"
-    - "rodapié"
-    - "perfil de terminación"
-    - "perfil reductor"
-    - "junta de dilatación"
-    - "nariz de escalón"
-    - "perfil escalón"
-    - "moldura"
-    - "manta acústica"
-    - "manta niveladora"
-    - "base aislante"
-    - "espuma IXPE"
-    - "espuma EVA"
-    - "adhesivo para pisos"
-    - "pegamento para pisos"
-    - "gripper"
-    - "base acústica"
-
-  soluciones_modulares:
-    - "módulo habitable"
-    - "oficina modular"
-    - "oficina prefabricada"
-    - "contenedor habitable"
-    - "módulo prefabricado"
-    - "aula modular"
-    - "baño portátil"
-    - "sanitario portátil"
-    - "cabina sanitaria"
-    - "ducha portátil"
-    - "garita de vigilancia"
-    - "caseta de vigilancia"
-    - "depósito modular"
-    - "construcción modular"
-    - "unidad modular"
-
+    keywords:
+    - accesorio de fijacion de zocalo
+    - accesorio de fijación de zócalo
+    - banda de dilatacion
+    - banda de dilatación
+    - banda perimetral de dilatacion
+    - banda perimetral de dilatación
+    - base acustica
+    - base acústica
+    - base aislante
+    - baseboard
+    - baston de aluminio
+    - bastón de aluminio
+    - burlete de puerta
+    - burlete para piso
+    - canaleta para piso
+    - canaleta portacables
+    - cinta de instalacion
+    - cinta de instalación
+    - cinta doble contacto
+    - clip de instalacion
+    - clip de instalación
+    - cubre juntas
+    - cubrejuntas
+    - espaciadores de instalacion
+    - espaciadores de instalación
+    - espuma eva
+    - espuma ixpe
+    - esquinero
+    - esquineros
+    - eva
+    - gripper
+    - grippers
+    - guarda canto
+    - guardacanto
+    - ixpe
+    - junta de dilatacion
+    - junta de dilatación
+    - junta de expansion
+    - junta de expansión
+    - junta flexible de piso
+    - juntas de dilatacion
+    - juntas de dilatación
+    - kit de instalacion de piso
+    - kit de instalación de piso
+    - kit gripper para alfombra
+    - manta acustica
+    - manta acústica
+    - manta niveladora
+    - media cana sanitaria
+    - media caña sanitaria
+    - moldura
+    - moldura de aluminio
+    - moldura de pvc
+    - molduras
+    - narices de escalon
+    - narices de escalón
+    - nariz de escalon
+    - nariz de escalón
+    - perfil autoadhesivo
+    - perfil de aluminio anodizado
+    - perfil de aluminio para piso
+    - perfil de bronce para piso
+    - perfil de cierre
+    - perfil de dilatacion
+    - perfil de dilatación
+    - perfil de laton para piso
+    - perfil de latón para piso
+    - perfil de terminacion
+    - perfil de terminación
+    - perfil de transicion de piso
+    - perfil de transición de piso
+    - perfil de union
+    - perfil de unión
+    - perfil en t
+    - perfil en u
+    - perfil escalon
+    - perfil escalón
+    - perfil metalico para piso
+    - perfil metálico para piso
+    - perfil reductor
+    - perfil sanitario
+    - perfil terminacion de rampa
+    - perfil terminación de rampa
+    - perfil terminador
+    - perfiles de terminacion
+    - perfiles de terminación
+    - perfiles escalon
+    - perfiles escalón
+    - perfiles reductores
+    - reducer
+    - rodapie
+    - rodapies
+    - rodapié
+    - rodapiés
+    - sello de piso a pared
+    - skirting board
+    - stair nose
+    - sujetador de piso
+    - tapa de cable para piso
+    - tapajuntas
+    - threshold
+    - transition strip
+    - trim
+    - varilla de fijacion
+    - varilla de fijación
+    - zocalo
+    - zocalo sanitario
+    - zocalos
+    - zócalo
+    - zócalo sanitario
+    - zócalos
+  adhesivos:
+    keywords:
+    - adhesivo acrilico
+    - adhesivo acrílico
+    - adhesivo bicomponente
+    - adhesivo de contacto
+    - adhesivo en aerosol para piso
+    - adhesivo en base agua
+    - adhesivo en base solvente
+    - adhesivo en pasta
+    - adhesivo en spray
+    - adhesivo epoxico para piso
+    - adhesivo epóxico para piso
+    - adhesivo monocomponente
+    - adhesivo para alfombra
+    - adhesivo para caucho
+    - adhesivo para cesped sintetico
+    - adhesivo para césped sintético
+    - adhesivo para deck
+    - adhesivo para moqueta
+    - adhesivo para moquette
+    - adhesivo para pisos
+    - adhesivo para vinilico
+    - adhesivo para vinílico
+    - adhesivo para wpc
+    - adhesivo poliuretanico
+    - adhesivo poliuretánico
+    - adhesivos para pisos
+    - carpet adhesive
+    - cemento de contacto
+    - cinta adhesiva de instalacion
+    - cinta adhesiva de instalación
+    - cinta adhesiva doble faz
+    - cinta de carpintero para piso
+    - cola de contacto
+    - cola para piso
+    - compuesto autonivelante
+    - flooring adhesive
+    - imprimacion para piso
+    - imprimación para piso
+    - latex de caucho para instalacion
+    - látex de caucho para instalación
+    - masilla epoxica
+    - masilla epóxica
+    - masilla niveladora
+    - masilla para juntas de piso
+    - membrana niveladora
+    - mortero autonivelante
+    - nivelador de piso
+    - pasta niveladora
+    - pegamento de contacto para goma
+    - pegamento de poliuretano
+    - pegamento para alfombra
+    - pegamento para pisos
+    - pegamentos para pisos
+    - primer epoxico
+    - primer epóxico
+    - primer para piso
+    - pu glue
+    - resina para autonivelante
+    - self leveling compound
+    - sellador acrilico para piso
+    - sellador acrílico para piso
+    - sellador de piso
+    - sellador de silicona
+    - sellador para juntas
+    - silicone sealant
+    - solvent based adhesive
+    - vinyl adhesive
+    - water based adhesive
   servicios:
-    - "instalación de pisos"
-    - "colocación de pisos"
-    - "instalación de césped sintético"
-    - "mantenimiento de pisos"
-    - "limpieza de pisos"
-    - "reparación de césped sintético"
-    - "obras deportivas"
-    - "construcción de canchas"
-    - "recambio de césped sintético"
-    - "medición de pisos"
-    - "asesoramiento de pisos"
-    - "reposición de pisos"
-
-# Terminología genérica de pliegos públicos uruguayos que puede esconder
-# una necesidad de productos Metropolitana aunque el título no los mencione
-# explícitamente (regla: "nunca descartes por el título").
+    keywords:
+    - acondicionamiento de contrapiso
+    - asesoramiento de pisos
+    - capacitacion tecnica al personal
+    - capacitación técnica al personal
+    - certificacion de piso deportivo
+    - certificacion post instalacion
+    - certificación de piso deportivo
+    - certificación post instalación
+    - colocacion de alfombras
+    - colocacion de pisos
+    - colocacion de revestimientos
+    - colocación de alfombras
+    - colocación de pisos
+    - colocación de revestimientos
+    - construccion de canchas
+    - construcción de canchas
+    - demolicion de piso existente
+    - demolición de piso existente
+    - desmontaje de piso deportivo
+    - diagnostico de piso deportivo
+    - diagnóstico de piso deportivo
+    - encerado de piso
+    - flooring installation
+    - flooring installation service
+    - garantia de instalacion
+    - garantía de instalación
+    - hidrolaqueado de piso
+    - impermeabilizacion de contrapiso
+    - impermeabilización de contrapiso
+    - instalacion de cesped sintetico
+    - instalacion de deck
+    - instalacion de jardin vertical
+    - instalacion de pisos
+    - instalacion de sistema de riego
+    - instalacion llave en mano
+    - instalación de césped sintético
+    - instalación de deck
+    - instalación de jardín vertical
+    - instalación de pisos
+    - instalación de sistema de riego
+    - instalación llave en mano
+    - levantamiento de piso existente
+    - lijado de piso
+    - limpieza de pisos
+    - logistica de obra
+    - logística de obra
+    - mano de obra de instalacion de piso
+    - mano de obra de instalación de piso
+    - mantenimiento correctivo de pisos
+    - mantenimiento de cesped sintetico
+    - mantenimiento de césped sintético
+    - mantenimiento de pisos
+    - mantenimiento preventivo de pisos
+    - medicion de pisos
+    - medición de pisos
+    - montaje de piso deportivo
+    - nivelacion de contrapiso
+    - nivelación de contrapiso
+    - obras deportivas
+    - plastificado de piso
+    - postventa de pisos
+    - presupuesto de instalacion de piso
+    - presupuesto de instalación de piso
+    - provision e instalacion
+    - provisión e instalación
+    - pulido de piso
+    - reacondicionamiento de piso
+    - readecuacion de piso
+    - readecuación de piso
+    - recambio de cesped sintetico
+    - recambio de césped sintético
+    - relevamiento tecnico de obra
+    - relevamiento técnico de obra
+    - renovacion de piso
+    - renovación de piso
+    - reparacion de cesped sintetico
+    - reparacion de contrapiso
+    - reparación de contrapiso
+    - reparación de césped sintético
+    - reposicion de pisos
+    - reposición de pisos
+    - restauracion de piso de madera
+    - restauración de piso de madera
+    - retiro de piso viejo
+    - service de pisos
+    - servicio de flete e instalacion
+    - servicio de flete e instalación
+    - servicio de fumigacion de canchas
+    - servicio de fumigación de canchas
+    - servicio de piso tecnico
+    - servicio de piso técnico
+    - servicio de poda y jardineria
+    - servicio de poda y jardinería
+    - servicio de riego automatico
+    - servicio de riego automático
+    - servicio tecnico de pisos
+    - servicio técnico de pisos
+    - suministro e instalacion
+    - suministro e instalación
+    - turf installation
+    - venta e instalacion
+    - venta e instalación
+    - visita tecnica de medicion
+    - visita técnica de medición
 terminologia_pliegos:
-  - "revestimiento de piso"
-  - "revestimiento de suelo"
-  - "pavimento"
-  - "pavimentación"
-  - "solado"
-  - "recubrimiento de suelo"
-  - "loseta"
-  - "losetas"
-  - "baldosa"
-  - "baldosas"
-  - "entablonado"
-  - "piso amortiguante"
-  - "piso de seguridad"
-  - "superficie deportiva"
-  - "superficie de juego"
-  - "revestimiento mural"
-  - "revestimiento de muro"
-  - "cerramiento modular"
-  - "módulo prefabricado"
-  - "construcción modular"
-  - "cubierta vegetal"
-  - "pista atlética"
-  - "pista de atletismo"
-  - "campo de juego"
-  - "campo deportivo"
-  - "cancha sintética"
-  - "obra deportiva"
-  - "remodelación de gimnasio"
-  - "refacción de salón"
-  - "acondicionamiento de aulas"
-  - "obra civil menor"
+- acondicionamiento
+- acondicionamiento acustico
+- acondicionamiento acústico
+- acondicionamiento comercial
+- acondicionamiento de aulas
+- acondicionamiento de cancha
+- acondicionamiento de comedor
+- acondicionamiento de consultorio
+- acondicionamiento de deposito
+- acondicionamiento de depósito
+- acondicionamiento de espacios
+- acondicionamiento de gimnasio municipal
+- acondicionamiento de local comercial
+- acondicionamiento de oficinas
+- acondicionamiento de piso deportivo
+- acondicionamiento de plaza
+- acondicionamiento de sshh
+- acondicionamiento de sum
+- acondicionamiento de vestuarios
+- acondicionamiento hospitalario
+- acondicionamiento industrial
+- acondicionamiento termico
+- acondicionamiento térmico
+- adecuacion de espacios educativos
+- adecuación de espacios educativos
+- adquisicion de materiales
+- adquisición de materiales
+- ampliacion edilicia
+- ampliación edilicia
+- baldosa
+- baldosas
+- cambio de pavimento
+- cambio de solado
+- campo de juego
+- campo deportivo
+- cancha sintetica
+- cancha sintética
+- cerramiento modular
+- colocacion de solado
+- colocacion de zocalos y perfiles
+- colocación de solado
+- colocación de zócalos y perfiles
+- compra de materiales
+- computo y presupuesto
+- construccion modular
+- construcción modular
+- cubierta vegetal
+- cómputo y presupuesto
+- diseno de espacios verdes
+- diseño de espacios verdes
+- eliminacion de barreras arquitectonicas
+- eliminación de barreras arquitectónicas
+- entablonado
+- equipamiento de plaza
+- equipamiento deportivo
+- equipamiento urbano
+- especificaciones tecnicas
+- especificaciones técnicas
+- estacion saludable
+- estación saludable
+- fit out
+- fitout
+- forestacion urbana
+- forestación urbana
+- gimnasio al aire libre
+- infraestructura deportiva
+- item pisos
+- item revestimientos
+- juegos infantiles
+- juegos saludables
+- loseta
+- losetas
+- mantenimiento de infraestructura
+- mantenimiento edilicio
+- materiales de construccion
+- materiales de construcción
+- materiales de terminacion
+- materiales de terminación
+- mejora edilicia
+- mejoras edilicias
+- memoria constructiva
+- memoria descriptiva de obra
+- mobiliario urbano
+- modulo prefabricado
+- módulo prefabricado
+- obra civil menor
+- obra de accesibilidad
+- obra de acondicionamiento de plaza de deportes
+- obra de albanileria con piso
+- obra de albañilería con piso
+- obra de arquitectura
+- obra de consultorio
+- obra de depósito
+- obra de fit out
+- obra de gimnasio municipal
+- obra de infraestructura deportiva
+- obra de infraestructura educativa
+- obra de infraestructura escolar
+- obra de infraestructura hospitalaria
+- obra de local comercial
+- obra de mantenimiento edilicio
+- obra de paisajismo
+- obra de piso tecnico
+- obra de piso técnico
+- obra de recubrimiento de suelo
+- obra de refaccion
+- obra de refacción
+- obra de revestimiento de fachada
+- obra de vestuarios
+- obra deportiva
+- obra industrial menor
+- obra nueva
+- obra sanitaria menor
+- paisajismo
+- partida de pisos
+- partida de revestimientos
+- pavimentacion
+- pavimentación
+- pavimento
+- pavimento exterior
+- pavimento interior
+- piso amortiguante
+- piso de seguridad
+- pista atletica
+- pista atlética
+- pista de atletismo
+- planilla de rubrado
+- plaza de deportes
+- pliego de condiciones particulares
+- pliego de especificaciones tecnicas
+- pliego de especificaciones técnicas
+- provision de accesorios de instalacion de piso
+- provision de materiales
+- provision de piso deportivo y accesorios
+- provision y colocacion de piso
+- provision y colocacion de revestimiento
+- provisión de accesorios de instalación de piso
+- provisión de materiales
+- provisión de piso deportivo y accesorios
+- provisión y colocación de piso
+- provisión y colocación de revestimiento
+- proyecto ejecutivo de obra
+- puesta a punto de cancha
+- puesta a punto de plaza
+- puesta en valor
+- puesta en valor edilicia
+- rampa de accesibilidad
+- reacondicionamiento de plaza
+- readecuacion de aulas
+- readecuacion de cancha
+- readecuacion de espacios
+- readecuacion funcional
+- readecuación de aulas
+- readecuación de cancha
+- readecuación de espacios
+- readecuación funcional
+- recambio de carpeta deportiva
+- recambio de pavimento
+- recambio de solado
+- recubrimiento
+- recubrimiento de suelo
+- recubrimientos
+- recuperacion de espacio publico
+- recuperación de espacio público
+- reemplazo de piso
+- reemplazo de revestimiento
+- refaccion de salon
+- refaccion integral
+- refacción de salón
+- refacción integral
+- reforma comercial
+- reforma de banos
+- reforma de baños
+- reforma de comedor escolar
+- reforma de local
+- reforma de oficina
+- reforma de oficinas
+- reforma de piso deportivo
+- reforma de sala de espera
+- reforma de sum
+- reforma de vestuarios
+- remodelacion de gimnasio
+- remodelacion integral
+- remodelación de gimnasio
+- remodelación integral
+- renglon pisos
+- renglón pisos
+- renovacion de carpeta deportiva
+- renovacion de pavimento
+- renovacion de superficie
+- renovación de carpeta deportiva
+- renovación de pavimento
+- renovación de superficie
+- revestimiento de muro
+- revestimiento de piso
+- revestimiento de suelo
+- revestimiento mural
+- rubrado de obra
+- rubro pisos
+- rubro pisos y revestimientos
+- rubro revestimientos
+- salon de usos multiples
+- salón de usos múltiples
+- solado
+- solados
+- suministro de materiales
+- superficie amortiguante
+- superficie de juego
+- superficie deportiva
+- sustitucion de piso
+- sustitución de piso
+- terminaciones
+- terminaciones de obra
+- trabajo de solado
+- trabajos de revestimiento exterior
+- trabajos de solado
+- trabajos de terminacion de piso
+- trabajos de terminación de piso
+- ítem pisos
+- ítem revestimientos
+materiales:
+- abs
+- abs plastico
+- abs plástico
+- acabado brillante
+- acabado laqueado
+- acabado mate
+- acabado texturizado
+- aceite de linaza
+- acero al carbono
+- acero galvanizado
+- acero inoxidable
+- acrilico
+- acrílico
+- aglomerado
+- algodon
+- algodón
+- aluminio
+- bambu
+- bambú
+- biopolimero
+- biopolímero
+- caucho
+- caucho natural
+- caucho reciclado
+- caucho sintetico
+- caucho sintético
+- caucho vulcanizado
+- cedro
+- cemento alisado
+- ceramica
+- cerámica
+- chapa metalica
+- chapa metálica
+- coco
+- compuesto de madera reciclada
+- compuesto plastico madera
+- compuesto plástico madera
+- compuestos polimericos
+- compuestos poliméricos
+- concreto
+- contrachapado
+- corcho
+- corcho aglomerado
+- corcho para pisos
+- cristal templado
+- cuarzo
+- curupay
+- elastomero termoplastico
+- elastómero termoplástico
+- epdm
+- epoxi
+- eps
+- espuma de nitrilo
+- espuma de polietileno
+- espuma de poliuretano
+- espuma eva reticulada
+- espuma ixpe
+- espuma rigida
+- espuma rígida
+- eucalipto
+- eucaliptus
+- eva
+- fibra de aramida
+- fibra de carbono
+- fibra de coco
+- fibra de polietileno
+- fibra de vidrio
+- fibra natural
+- fibra pet reciclada
+- fibra sintetica
+- fibra sintética
+- fibra textil tecnica
+- fibra textil técnica
+- fibra vegetal
+- fieltro de lana
+- fieltro sintetico
+- fieltro sintético
+- geotextil
+- goma
+- goma espuma
+- goma eva
+- goma reciclada
+- granito
+- guatambu
+- guatambú
+- hdf
+- hdpe
+- hierro fundido
+- hormigon
+- hormigón
+- laminado
+- lana
+- lapacho
+- latex
+- latex natural
+- ldpe
+- linoleo
+- linoleum
+- linóleo
+- lvt
+- látex
+- látex natural
+- madera
+- madera de demolicion
+- madera de demolición
+- madera de ingenieria
+- madera de ingeniería
+- madera maciza
+- madera reconstituida
+- madera recuperada
+- marmol
+- material biodegradable
+- material reciclable
+- material reciclado
+- materiales compuestos
+- mdf
+- melamina
+- microcemento
+- mármol
+- nylon
+- nylon 6
+- nylon 66
+- osb
+- pe
+- pet reciclado
+- peteribi
+- peteribí
+- piedra artificial
+- piedra natural
+- pino
+- piso de bambu
+- piso de bambú
+- plywood
+- poliamida
+- policarbonato
+- policarbonato alveolar
+- policloruro de vinilo
+- poliester
+- poliestireno
+- poliestireno expandido
+- poliestireno extruido
+- polietileno
+- polietileno de alta densidad
+- polietileno de baja densidad
+- polimero reciclado
+- polimero termoplastico
+- polipropileno
+- polipropileno bcf
+- poliuretano
+- poliuretano bicomponente
+- poliuretano cementicio
+- poliéster
+- polímero reciclado
+- polímero termoplástico
+- porcelanato
+- pp
+- pu
+- pvc
+- resina acrilica
+- resina acrílica
+- resina de poliester
+- resina de poliéster
+- resina epoxica
+- resina epóxica
+- resina vinilica
+- resina vinílica
+- roble
+- sbr
+- sisal
+- sisal sintetico
+- sisal sintético
+- spc
+- termoestable
+- termoplastico
+- termoplástico
+- termopolimero
+- termopolímero
+- textil no tejido
+- tpe
+- tpu
+- vidrio laminado
+- vinilo
+- wpc
+- xps
+- yute
+- yute crudo
+aplicaciones:
+- absorcion acustica
+- absorción acústica
+- acustico
+- acústico
+- aislante acustico
+- aislante acústico
+- aislante termico
+- aislante térmico
+- alto transito
+- alto tránsito
+- amortiguacion
+- amortiguación
+- antibacteriano
+- antideslizante
+- antiestatico
+- antiestático
+- antimicrobiano
+- apto para exteriores
+- apto para interiores
+- apto para silla de ruedas
+- apto para tráfico peatonal
+- apto para tráfico vehicular liviano
+- apto para uso publico
+- apto para uso público
+- apto zona humeda
+- apto zona húmeda
+- bajo mantenimiento
+- bajo voc
+- certificado
+- clase de transito comercial
+- clase de tránsito comercial
+- coeficiente de friccion
+- coeficiente de fricción
+- de bajo impacto ambiental
+- de facil limpieza
+- de facil recambio
+- de fácil limpieza
+- de fácil recambio
+- de instalacion rapida
+- de instalación rápida
+- de larga duracion
+- de larga duración
+- ecologico
+- ecológico
+- exterior
+- grado de deslizamiento
+- grado de dureza superior
+- hidrofugo
+- hidrófugo
+- higienico
+- higiénico
+- hipoalergenico
+- hipoalergénico
+- homologado
+- ignifugo
+- ignífugo
+- impermeabilizado
+- impermeable
+- interior
+- lavable
+- libre de compuestos orgánicos volátiles
+- low voc
+- para alto trafico
+- para alto tráfico
+- reciclable
+- resistencia al impacto
+- resistencia uv
+- resistente a cargas rodantes
+- resistente a heladas
+- resistente a la abrasion
+- resistente a la abrasión
+- resistente a la humedad
+- resistente a la intemperie
+- resistente a los rayos uv
+- resistente a manchas
+- resistente a quimicos
+- resistente a químicos
+- resistente al agua
+- resistente al desgaste
+- resistente al desgaste diario
+- resistente al fuego
+- resistente al punzonamiento
+- sostenible
+- sustentable
+- termico
+- transito intenso
+- tránsito intenso
+- térmico
+- uso comercial
+- uso deportivo
+- uso educativo
+- uso hospitalario
+- uso industrial
+- uso residencial
+lugares_uso:
+- acuario
+- aduana
+- aeropuerto
+- aeropuertos
+- afe
+- alcaldia
+- alcaldias
+- alcaldía
+- alcaldías
+- almacen
+- almacén
+- ancap
+- anep
+- anp
+- antel
+- area infantil
+- area protegida
+- asilo
+- asse
+- auditorio
+- auditorios
+- aula
+- aulas
+- azotea
+- balcon
+- balcones
+- balcón
+- balneario
+- banco
+- bancos
+- base militar
+- bhu
+- biblioteca
+- bibliotecas
+- bomberos
+- bps
+- brou
+- bse
+- caif
+- campus
+- cancha
+- cancha de basquetbol
+- cancha de básquetbol
+- cancha de futbol
+- cancha de fútbol
+- cancha de padel
+- cancha de pádel
+- cancha de tenis
+- cancha de voleibol
+- cancha de vóleibol
+- cancha multiuso
+- canchas
+- carcel
+- carceles
+- casa central
+- casa de cultura
+- casa de estudiantes
+- casa de la cultura
+- ceip
+- centro caif
+- centro comercial
+- centro comunal zonal
+- centro cultural
+- centro de convenciones
+- centro de eventos
+- centro de rehabilitacion
+- centro de rehabilitación
+- centro de salud
+- centro de visitantes
+- centro deportivo
+- centro juvenil
+- centro mype
+- centro regional de profesores
+- centro vecinal
+- centros comerciales
+- centros culturales
+- cerp
+- ces
+- cetp
+- club
+- club de ninos
+- club de niños
+- clubes
+- cochera
+- cocina industrial
+- codicen
+- colegio
+- colegios
+- comedor
+- comedores
+- comisaria
+- comisarias
+- comisaría
+- comisarías
+- complejo deportivo
+- consultorio
+- consultorios
+- cooperativa
+- correo
+- costanera
+- cuartel
+- cuartel de bomberos
+- cuarteles
+- cárcel
+- cárceles
+- defensoria
+- defensoría
+- delegacion
+- delegación
+- deposito
+- depositos
+- depósito
+- depósitos
+- destacamento
+- direccion
+- dirección
+- edificio administrativo
+- edificio gubernamental
+- edificio municipal
+- edificio publico
+- edificio público
+- ejecutivo comunal
+- escuela
+- escuela de tiempo completo
+- escuela especial
+- escuela rural
+- escuela tecnica
+- escuela técnica
+- escuelas
+- espacio de adolescentes
+- estacion de omnibus
+- estacion de servicio
+- estacion de trenes
+- estacionamiento
+- estación de servicio
+- estación de trenes
+- estación de ómnibus
+- estadio
+- estadios
+- fabrica
+- fabricas
+- facultad
+- facultad de arquitectura
+- facultad de derecho
+- facultad de ingenieria
+- facultad de ingeniería
+- facultad de medicina
+- facultades
+- farmacia
+- farmacias
+- fiscalia
+- fiscalía
+- fábrica
+- fábricas
+- galeria
+- galeria de arte
+- galerias
+- galería
+- galería de arte
+- galerías
+- galpon
+- galpón
+- garage
+- garaje
+- gimnasio
+- gimnasios
+- gobierno departamental
+- gobierno municipal
+- guarderia
+- guarderias
+- guardería
+- guarderías
+- guarnicion
+- guarnición
+- hogar de ancianos
+- hospital
+- hospital de ojos
+- hospital departamental
+- hospital pediatrico
+- hospital pediátrico
+- hospital psiquiatrico
+- hospital psiquiátrico
+- hospital regional
+- hospitales
+- hotel
+- hoteles
+- incubadora de empresas
+- instituto
+- instituto de formacion docente
+- instituto de formación docente
+- institutos
+- intendencia
+- intendencia de artigas
+- intendencia de canelones
+- intendencia de cerro largo
+- intendencia de colonia
+- intendencia de durazno
+- intendencia de flores
+- intendencia de florida
+- intendencia de lavalleja
+- intendencia de maldonado
+- intendencia de montevideo
+- intendencia de paysandu
+- intendencia de paysandú
+- intendencia de rio negro
+- intendencia de rivera
+- intendencia de rocha
+- intendencia de río negro
+- intendencia de salto
+- intendencia de san jose
+- intendencia de san josé
+- intendencia de soriano
+- intendencia de tacuarembo
+- intendencia de tacuarembó
+- intendencia de treinta y tres
+- intendencias
+- internado
+- jardin
+- jardin de infantes
+- jardines
+- jardín
+- jardín de infantes
+- juegos infantiles
+- junta departamental
+- junta departamental de canelones
+- junta departamental de montevideo
+- junta local
+- juzgado
+- liceo
+- liceo departamental
+- liceo publico
+- liceo público
+- liceos
+- ma
+- mdn
+- mec
+- mef
+- mgap
+- mi
+- mides
+- miem
+- ministerio
+- ministerios
+- mintur
+- mirador turistico
+- mirador turístico
+- mrree
+- msp
+- mtop
+- mtss
+- municipio
+- municipio de montevideo
+- municipios
+- museo
+- museos
+- mvot
+- nave industrial
+- oficina
+- oficina de turismo
+- oficina publica
+- oficina pública
+- oficina zonal
+- oficinas
+- ose
+- parking
+- parque
+- parque infantil
+- parque tecnologico
+- parque tecnológico
+- parque zoologico
+- parque zoológico
+- parques
+- paseo publico
+- paseo público
+- patio
+- peaje
+- penitenciaria
+- penitenciaría
+- perrera municipal
+- pista de patinaje
+- plan ceibal
+- planta industrial
+- playa de estacionamiento
+- playa publica
+- playa pública
+- playground
+- playon
+- playones
+- playón
+- plaza
+- plazas
+- policlinica
+- policlinica barrial
+- policlinica municipal
+- policlinica veterinaria
+- policlinicas
+- policlínica
+- policlínica barrial
+- policlínica municipal
+- policlínica veterinaria
+- policlínicas
+- polideportivo
+- polo tecnologico
+- polo tecnológico
+- puerto
+- puesto de peaje
+- rambla
+- recepcion
+- recepción
+- refugio de animales
+- reserva natural
+- residencia de estudiantes
+- residencia estudiantil
+- residencia universitaria
+- residencial de ancianos
+- sala de arte
+- sala de espera
+- sala de exposiciones
+- sala de profesores
+- sala de reuniones
+- salon de clases
+- salon de eventos
+- salon de fiestas
+- salón de clases
+- salón de eventos
+- salón de fiestas
+- sanatorio
+- sanatorios
+- seccional policial
+- sede administrativa
+- sede central
+- sede de cooperativa
+- sede de facultad
+- sede de gobierno departamental
+- sede gremial
+- sede judicial
+- sede sindical
+- sede social
+- sede vecinal
+- shopping
+- shoppings
+- skatepark
+- teatro
+- teatros
+- terminal
+- terminal de omnibus
+- terminal de ómnibus
+- terminal portuaria
+- terminales
+- terraza
+- terrazas
+- tribunal
+- udelar
+- universidad
+- universidades
+- ute
+- utec
+- utu
+- vereda
+- veredas
+- vestuario
+- vestuarios
+- vivero de empresas
+- zoologico
+- zoológico
+- área infantil
+- área protegida
+normativas:
+- abnt
+- astm d2047
+- astm e648
+- astm f1700
+- astm f1913
+- astm f2772
+- bfl-s1
+- breeam
+- certificacion fsc
+- certificacion leed
+- certificación fsc
+- certificación leed
+- certificado de calidad
+- certificado de calidad iram
+- certificado de ensayo
+- certificado de origen
+- certificado inti
+- certificado unit uy
+- cfl-s1
+- clase de reaccion al fuego
+- clase de reacción al fuego
+- clasificacion al fuego
+- clasificación al fuego
+- coeficiente de deslizamiento din 51130
+- conformité européenne
+- declaracion de conformidad
+- declaración de conformidad
+- din 18032
+- din 18035
+- din 51130
+- en 1177
+- en 12667
+- en 1307
+- en 13501
+- en 14041
+- en 1470
+- en 685
+- en iso
+- en iso 105
+- ensayo de flexion
+- ensayo de flexión
+- ensayo de laboratorio
+- ensayo de pendulo
+- ensayo de péndulo
+- ensayo de traccion
+- ensayo de tracción
+- environmental product declaration
+- epd
+- ficha de seguridad
+- fifa quality
+- fifa quality concept
+- fifa quality pro
+- fih global
+- fih national
+- fsc
+- greenguard
+- hoja de datos de seguridad
+- informe de ensayo
+- inmetro
+- inti
+- iram
+- iso 105
+- iso 105 b02
+- iso 10874
+- iso 14001
+- iso 14025
+- iso 17025
+- iso 9001
+- leed
+- marca ce
+- msds
+- nbr 13818
+- nbr 15575
+- nbr 9050
+- norma abnt
+- norma antideslizamiento
+- norma de accesibilidad
+- norma inmetro
+- norma tocaf
+- norma unit
+- norma unit accesibilidad
+- pendulum test
+- prueba de resistencia al fuego
+- r10
+- r11
+- r12
+- r13
+- r9
+- reach
+- sello inmetro
+- tocaf
+- unit
+marcas:
+- 3m nomad
+- acczent
+- act global
+- action floor systems
+- altro
+- altro flooring
+- amorim
+- amtico
+- amtico signature
+- amtico spacia
+- armstrong
+- balsan
+- balterio
+- balterio urban wood
+- beaulieu
+- berry alloc
+- boen
+- boen chaletino
+- bolon
+- bostik
+- burke flooring
+- casalgrande padana
+- ccgrass
+- colorex
+- condor
+- condor grass
+- congoleum
+- connor flooring
+- connor sports
+- coral flooring
+- creation gerflor
+- desso
+- diamond floor
+- domo
+- domo sports grass
+- durafloor
+- duropal
+- ecore
+- ecore performance flooring
+- ege carpets
+- egger
+- egger pro laminate
+- essenza
+- eucafloor
+- eurofloor
+- expona
+- extreme click
+- fieldturf
+- fila
+- flexco
+- flexform
+- flor
+- flor carpet tiles
+- flotex
+- flotex forbo
+- forbo
+- formica
+- gerflor
+- gerflor creation
+- gerflor gti
+- gerflor mipolam
+- gerflor sarlon
+- gerflor taraflex
+- gerflor tarasafe
+- grabo
+- granit multisafe
+- granorte
+- greatmats
+- greenfields
+- haro
+- haro disano
+- henkel pisos
+- horner flooring
+- id essential
+- id inspiration
+- impressions
+- impressions click
+- indusparquet
+- interface
+- iq eminent
+- iq granit
+- iq optima
+- iq surface
+- iq zenit
+- ironwood
+- johnsonite
+- junckers
+- junckers solidfloor
+- kahrs
+- kahrs supreme
+- karndean
+- karndean knight tile
+- karndean korlok
+- krono
+- kronoswiss
+- kronotex
+- kronotex robusto
+- limonta sport
+- lonseal
+- mannington
+- mapei
+- meister
+- meister lindura
+- mflor
+- milliken
+- mipolam
+- moduleo
+- moduleo select
+- moduleo transform
+- mohawk
+- mondo
+- mondo activepro
+- mondo rubber
+- notrax
+- novilon
+- novocore
+- novofloor
+- objectflor
+- omnisports tarkett
+- pavigym
+- pergo
+- pergo original excellence
+- polyflor
+- polyflor camaro
+- polyflor colonia
+- polyflor expona
+- polysafe
+- polytan
+- porcelanosa
+- primo
+- quick step
+- quick step largo
+- quick step livyn
+- quickstep
+- regupol
+- regupol aktiv
+- regupol everroll
+- resopal
+- robbins bio-cushion
+- robbins sports surfaces
+- roca
+- roppe
+- rubberflex
+- sarlon gerflor
+- shaw
+- shaw contract
+- shaw sports turf
+- signature carpets
+- signature floors
+- sika
+- sportexe
+- starfloor
+- starfloor click
+- step click
+- surestep
+- taraflex
+- tarasafe
+- tarkett
+- tarkett acczent
+- tarkett granit multisafe
+- tarkett iq
+- tarkett omnisports
+- tigerturf
+- toli
+- toli corporation
+- unilin
+- vebe
+- vinilit
+- weber
+- wicanders
+- wilsonart
+- wineo
+- wineo purline
+errores_comunes:
+- accesorios de pizo
+- acesorios de piso
+- acustco
+- acustico
+- adesivo para piso
+- adhesibo para piso
+- alfombra modula
+- alfombraa
+- amortigacion
+- amortiguasion
+- antidesliante
+- antideslisante
+- assoalho vinilico
+- assoalho vinílico
+- bynilico
+- carper
+- carpeta
+- carpete piso
+- carpett
+- cerpet
+- cesped
+- cesped artficial
+- cesped artifcial
+- cesped artifical
+- cesped sinteico
+- cesped sinteico artificial
+- cesped sintetco
+- cesped sinttetico
+- cesped sinttico
+- cespedsintetico
+- cespéd
+- colocasion de alfombra
+- colocasion de piso
+- colocasión de alfombra
+- deck compuesta
+- deck exteriorr
+- deck exteror
+- deck sinttico
+- deckwpc
+- dilatasion
+- epdm rubber
+- espansion
+- esped sintetico
+- espeso
+- espesor de peso
+- eva rubber floor
+- expancion
+- felpudo instucional
+- flokante
+- flotate
+- gramila artificial
+- gramila sintetica
+- gramilla sinteica
+- impermable
+- impermeavel
+- instalacion de piso
+- instalasion de cesped
+- instalasion de piso
+- jardin bertical
+- jardin vertcial
+- junta de dilatasion
+- laminaddo
+- linoleo
+- linolio
+- moket
+- moket carpet
+- moket vinilico
+- moquet
+- moqueta
+- moqueta institucinal
+- pegamento pra piso
+- piedra fina
+- piedra-fina
+- piedrafna
+- piso flotante
+- piso flotate
+- piso plotante
+- piso vinilicos
+- pisodeportivo
+- pisoflotante
+- pisolaminado
+- pisos vinilico
+- pisovinilico
+- pisovinilíco
+- pisovinílico
+- pizo
+- pizo flotante
+- pizo vinilico
+- porcelanato
+- porcelanatto
+- pvc click
+- pvs
+- recubierta
+- revestiemento
+- revestimeinto
+- revestimento
+- revestimento parede
+- revestimieto
+- revestimineto
+- rodape
+- rodapie
+- rodapé
+- sesped
+- sokalo
+- spc flooer
+- spc flooring floors
+- spc flor
+- spc rigido
+- spc rígido flooring
+- vinil floor
+- vinilico
+- vinílco
+- vynil
+- vynil floor
+- vynilico
+- wpc composite
+- wpc floors floor
+- wpc flor
+- zocalo
+- zocálo
+abreviaturas:
+- abs
+- ac3
+- ac4
+- ac5
+- ac6
+- acm
+- astm e648
+- astm f1700
+- astm f1913
+- astm f2772
+- bfl-s1
+- cfl-s1
+- clase ac1
+- clase ac2
+- clase ac3
+- clase ac4
+- clase ac5
+- clase ac6
+- clasificacion 23
+- clasificacion 31
+- clasificacion 32
+- clasificacion 33
+- clasificacion 34
+- clasificación 23
+- clasificación 31
+- clasificación 32
+- clasificación 33
+- clasificación 34
+- din 18032
+- din 4102
+- din 51097
+- din 51130
+- eir
+- en 1177
+- en 12667
+- en 1307
+- en 13329
+- en 14041
+- en 15468
+- en 649
+- en 650
+- en 651
+- en 652
+- en 653
+- en 654
+- en 655
+- en 685
+- epd
+- epdm
+- eps
+- esd
+- eva
+- evp
+- fsc
+- hdf
+- hdf core
+- hdpe
+- iso 105 e04
+- iso 14001
+- iso 24343
+- iso 24344
+- iso 6807
+- iso 8543
+- iso 9001
+- ixpe
+- ldpe
+- leed
+- lvp
+- lvt
+- mdf
+- mdf core
+- msds
+- nbr 13818
+- nbr 15575
+- nbr 9050
+- norma en 13329
+- norma en 15468
+- norma en iso 10874
+- osb
+- pe
+- pp
+- pu
+- pvc
+- r10
+- r11
+- r12
+- r13
+- r9
+- rvp
+- sbr
+- spc
+- spc core
+- top dressing
+- voc
+- wear layer
+- wpc
+- wpc decking
+- xps

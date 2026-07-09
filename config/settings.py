@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import functools
 import os
+import re
 from pathlib import Path
 from typing import Any
 
@@ -71,37 +72,74 @@ def precios() -> dict:
     return _cargar_yaml(KNOWLEDGE_DIR / "precios.yaml")
 
 
+# Listas de knowledge/keywords.yaml que son señal FUERTE: una sola
+# coincidencia dispara relevancia por sí sola (ver header del propio YAML
+# para la justificación de por qué "lugares_uso" y "aplicaciones" quedan
+# afuera de esta lista — son señal débil, ver GRUPOS_CONTEXTO más abajo).
+_GRUPOS_SEÑAL_FUERTE = [
+    "terminologia_pliegos",
+    "materiales",
+    "normativas",
+    "marcas",
+    "errores_comunes",
+    "abreviaturas",
+]
+
+# Listas que NUNCA disparan relevancia por sí solas — son demasiado
+# genéricas (aparecen en casi cualquier licitación pública de Uruguay
+# sin importar el rubro). Se usan solo como contexto adicional una vez
+# que la licitación ya fue marcada relevante por una señal fuerte.
+_GRUPOS_CONTEXTO = ["lugares_uso", "aplicaciones"]
+
+
 def todas_las_palabras_clave() -> list[str]:
-    """Aplana knowledge/keywords.yaml en una lista única de términos."""
+    """Aplana knowledge/keywords.yaml en la lista de términos "señal
+    fuerte" usada para decidir si una licitación es relevante. NO incluye
+    lugares_uso/aplicaciones (ver palabras_clave_contexto()).
+    """
     kw = keywords()
     terminos: list[str] = []
-    for lista in kw.get("productos", {}).values():
-        terminos.extend(lista)
-    terminos.extend(kw.get("terminologia_pliegos", []))
+    for datos_categoria in kw.get("categorias", {}).values():
+        terminos.extend(datos_categoria.get("keywords", []))
+    for grupo in _GRUPOS_SEÑAL_FUERTE:
+        terminos.extend(kw.get(grupo, []))
     return terminos
+
+
+def palabras_clave_contexto() -> dict[str, list[str]]:
+    """lugares_uso / aplicaciones: nunca disparan relevancia solas.
+    analyzer.identificar_contexto() las usa para enriquecer el informe
+    únicamente después de que ya hubo un match de señal fuerte.
+    """
+    kw = keywords()
+    return {grupo: kw.get(grupo, []) for grupo in _GRUPOS_CONTEXTO}
 
 
 _ETIQUETAS_CATEGORIA = {
     "pisos_vinilicos": "Pisos vinílicos",
+    "pisos_spc": "Pisos SPC",
     "pisos_flotantes": "Pisos flotantes/laminados",
     "pisos_madera": "Pisos de madera",
     "pisos_goma": "Pisos de goma",
+    "pisos_deportivos": "Pisos deportivos",
     "cesped_sintetico": "Césped sintético",
     "insumos_canchas": "Insumos para canchas",
-    "pisos_deportivos": "Pisos deportivos",
     "alfombras": "Alfombras",
     "moquettes": "Moquettes",
-    "alfombras_infantiles": "Alfombras/pisos infantiles",
-    "fieltros": "Fieltros",
-    "felpudos_camineros": "Felpudos y camineros",
+    "felpudos": "Felpudos y camineros",
     "paneles_revestimientos": "Paneles y revestimientos de pared",
     "piedrafina": "Piedrafina",
     "jardines_verticales": "Jardines verticales",
-    "deck_exterior": "Deck y exterior",
+    "decks_exterior": "Deck y exterior",
     "accesorios": "Accesorios de instalación",
-    "soluciones_modulares": "Soluciones modulares",
+    "adhesivos": "Adhesivos",
     "servicios": "Servicios",
     "terminologia_pliegos": "Terminología genérica del pliego (revisar manualmente qué producto aplica)",
+    "materiales": "Material mencionado (revisar contexto)",
+    "normativas": "Normativa/certificación mencionada",
+    "marcas": "Marca de mercado mencionada",
+    "errores_comunes": "Variante/error ortográfico de un término del rubro",
+    "abreviaturas": "Abreviatura técnica del rubro",
 }
 
 
@@ -113,11 +151,62 @@ def etiqueta_categoria(categoria: str) -> str:
 
 
 def palabras_clave_por_categoria() -> dict[str, list[str]]:
-    categorias = dict(keywords().get("productos", {}))
-    terminologia = keywords().get("terminologia_pliegos", [])
-    if terminologia:
-        categorias["terminologia_pliegos"] = terminologia
+    """Como todas_las_palabras_clave(), pero conservando a qué categoría
+    pertenece cada término — usado por analyzer.identificar_productos()
+    para mostrar "categoría (\"término\"): ...fragmento..." en el informe.
+    """
+    kw = keywords()
+    categorias = {
+        nombre: datos.get("keywords", []) for nombre, datos in kw.get("categorias", {}).items()
+    }
+    for grupo in _GRUPOS_SEÑAL_FUERTE:
+        lista = kw.get(grupo, [])
+        if lista:
+            categorias[grupo] = lista
     return categorias
+
+
+# Términos cortos (<=5 caracteres, sin espacios) matchean por límite de
+# palabra en vez de substring plano: con la ampliación de knowledge/
+# keywords.yaml para incluir abreviaturas técnicas (spc, pu, eva, sbr...),
+# un substring search ingenuo generaría falsos positivos absurdos (ej.
+# "pu" dentro de "publico"). Los términos largos/multi-palabra siguen
+# usando substring, que ya es suficientemente específico.
+_UMBRAL_TERMINO_CORTO = 5
+_regex_cache: dict[str, re.Pattern] = {}
+
+
+def _es_termino_corto(kw: str) -> bool:
+    return len(kw) <= _UMBRAL_TERMINO_CORTO and " " not in kw
+
+
+def coincide_palabra_clave(texto_lower: str, kw: str) -> bool:
+    """True si `kw` aparece en `texto_lower` (ya en minúsculas). Para
+    términos cortos exige límite de palabra; para el resto, substring.
+    """
+    kw_lower = kw.lower()
+    if not _es_termino_corto(kw_lower):
+        return kw_lower in texto_lower
+    patron = _regex_cache.get(kw_lower)
+    if patron is None:
+        patron = re.compile(r"(?<![a-záéíóúñ0-9])" + re.escape(kw_lower) + r"(?![a-záéíóúñ0-9])")
+        _regex_cache[kw_lower] = patron
+    return bool(patron.search(texto_lower))
+
+
+def buscar_palabra_clave(texto_lower: str, kw: str) -> int:
+    """Como coincide_palabra_clave(), pero devuelve el índice del match (o
+    -1) — usado donde hace falta la posición para extraer un fragmento.
+    """
+    kw_lower = kw.lower()
+    if not _es_termino_corto(kw_lower):
+        return texto_lower.find(kw_lower)
+    patron = _regex_cache.get(kw_lower)
+    if patron is None:
+        patron = re.compile(r"(?<![a-záéíóúñ0-9])" + re.escape(kw_lower) + r"(?![a-záéíóúñ0-9])")
+        _regex_cache[kw_lower] = patron
+    m = patron.search(texto_lower)
+    return m.start() if m else -1
 
 
 # ─── Variables de entorno / secretos ──────────────────────────────────────

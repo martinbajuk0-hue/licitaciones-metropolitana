@@ -211,7 +211,7 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
     """Devuelve (relevante, keyword, fuente, texto_pliego_si_se_leyo)."""
     texto_base = (lic["titulo"] + " " + lic["descripcion"]).lower()
     for kw in settings.todas_las_palabras_clave():
-        if kw.lower() in texto_base:
+        if settings.coincide_palabra_clave(texto_base, kw):
             return True, kw, "título/descripción", ""
 
     print(f"  Leyendo pliego de: {lic['titulo'][:60]}... ({len(lic.get('documentos') or [])} documento(s))")
@@ -219,7 +219,7 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
     texto_pliego = pliego.texto_completo
     texto_lower = texto_pliego.lower()
     for kw in settings.todas_las_palabras_clave():
-        if kw.lower() in texto_lower:
+        if settings.coincide_palabra_clave(texto_lower, kw):
             return True, kw, "pliego (PDF/Word/Excel)", texto_pliego
 
     return False, None, None, texto_pliego
