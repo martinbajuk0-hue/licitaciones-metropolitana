@@ -255,13 +255,25 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict]) -> None:
             f'<p style="margin:0 0 4px;font-size:13px;color:#555;">⭐ {clasif.simbolo} — {clasif.etiqueta} (score {clasif.puntaje}/100)</p>'
             if clasif else ""
         )
+        # lic["url"] es el JSON del release OCDS (metadata para el pipeline,
+        # no algo legible para una persona). Lo que hay que abrir es el PDF
+        # real del pliego, que viene en lic["documentos"]
+        # (tender.documents[].url — ver monitor.obtener_licitaciones()).
+        documentos = lic.get("documentos") or []
+        if documentos:
+            links_html = "".join(
+                f'<a href="{doc_url}" style="display:inline-block;margin-top:8px;margin-right:16px;font-size:13px;color:#1a73e8;">📄 Ver pliego {i + 1} →</a>'
+                for i, doc_url in enumerate(documentos[:3])
+            )
+        else:
+            links_html = f'<a href="{lic["url"]}" style="display:inline-block;margin-top:8px;font-size:13px;color:#1a73e8;">Ver ficha de la licitación (sin PDF adjunto) →</a>'
         return f"""
         <div style="border-left:4px solid {color};padding:12px 16px;margin-bottom:16px;background:#f8f9fa;border-radius:0 6px 6px 0;">
             <p style="margin:0 0 4px;font-size:11px;font-weight:700;color:{color};text-transform:uppercase;">{etiqueta}</p>
             <p style="margin:0 0 6px;font-size:15px;font-weight:600;color:#1a1a1a;">{lic['titulo']}</p>
             <p style="margin:0 0 4px;font-size:13px;color:#555;">📅 {lic['fecha']} &nbsp;|&nbsp; 🔑 Coincidencia: <strong>{lic.get('keyword','')}</strong> &nbsp;|&nbsp; 📄 Encontrado en: <em>{lic.get('fuente','título')}</em></p>
             {clasif_html}
-            <a href="{lic['url']}" style="display:inline-block;margin-top:8px;font-size:13px;color:#1a73e8;">Ver pliego →</a>
+            {links_html}
         </div>
         """
 
@@ -375,11 +387,12 @@ def enviar_email_de_prueba() -> None:
     """
     lic_prueba = {
         "titulo": "[PRUEBA] Verificación de configuración de email",
-        "descripcion": "Este mail no corresponde a una licitación real. Se generó manualmente para confirmar que GMAIL_USER/GMAIL_APP_PASSWORD/EMAIL_DESTINO están bien configurados.",
+        "descripcion": "Este mail no corresponde a una licitación real. Se generó manualmente para confirmar que GMAIL_USER/GMAIL_APP_PASSWORD/EMAIL_DESTINO están bien configurados, y que el link va al PDF del pliego (no al JSON crudo).",
         "fecha": datetime.now().strftime("%Y-%m-%d"),
         "url": "https://www.comprasestatales.gub.uy",
         "keyword": "(prueba manual, no es una coincidencia real)",
         "fuente": "prueba",
+        "documentos": ["https://www.comprasestatales.gub.uy/Pliegos/pedido_1354522.pdf"],
     }
     enviar_email([lic_prueba], [])
 
