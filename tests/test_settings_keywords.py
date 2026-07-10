@@ -96,6 +96,54 @@ class TestKeywordsAmpliado(unittest.TestCase):
             matches = [kw for kw in fuertes if settings.coincide_palabra_clave(texto_lower, kw)]
             self.assertEqual(matches, [], f"Falso positivo en: {texto!r}")
 
+    def test_no_falsos_positivos_por_bureaucracia_generica_de_pliego(self):
+        # Guarda de regresión: auditoría real contra ARCE del 2026-07-10
+        # (monitor.py --auditoria, run #66) encontró que "tocaf",
+        # "certificado de origen", "iso 9001", "unit", "especificaciones
+        # técnicas", "pliego de condiciones particulares", "planilla de
+        # rubrado", "suministro de materiales" y la familia genérica de
+        # "acondicionamiento de <espacio>" están en CUALQUIER pliego público
+        # uruguayo sin importar el rubro — no aportan señal de producto y se
+        # removieron de las listas de señal fuerte. Estos fragmentos son
+        # textuales de pliegos reales que dispararon esos falsos positivos.
+        fragmentos_reales = [
+            "Artículo 46 del TOCAF, excluyente. Toda Declaración Jurada a presentarse",
+            "Quien resulte adjudicatario, deberá presentar el Certificado de Origen respectivo",
+            "Certificación ISO 9001:2015 Sistema de Gestión de Calidad",
+            "determinadas mediante ensayo de tamizado según normas UNIT vigentes",
+            "En caso de que se requieran especificaciones técnicas y/o habilitaciones",
+            "las disposiciones del Pliego de Condiciones Particulares del llamado",
+            "A los efectos de la cotización deberán llenar la planilla de rubrado",
+            "el suministro de materiales y toda la mano de obra necesaria",
+            "Acondicionamiento térmico acorde a los materiales, herramientas y productos",
+        ]
+        fuertes = settings.todas_las_palabras_clave()
+        for texto in fragmentos_reales:
+            texto_lower = texto.lower()
+            matches = [kw for kw in fuertes if settings.coincide_palabra_clave(texto_lower, kw)]
+            self.assertEqual(matches, [], f"Falso positivo (bureaucracia genérica) en: {texto!r} -> {matches}")
+
+    def test_terminaciones_no_matchea_dentro_de_determinaciones(self):
+        # "terminaciones" (removida de terminologia_pliegos) era substring de
+        # "determinaciones" (cantidad de análisis de laboratorio en pliegos
+        # médicos) — evidencia real: Compra Directa 1223/2026 (kit x 10
+        # DETERMINACIONES). Ya no está en las listas fuertes; este test
+        # bloquea que alguien la reagregue sin notar la colisión.
+        fuertes = {k.lower() for k in settings.todas_las_palabras_clave()}
+        self.assertNotIn("terminaciones", fuertes)
+
+    def test_abreviatura_pe_removida_por_colision_con_rango_militar(self):
+        # "pe" (ex materiales/abreviaturas) matcheaba dentro de "(PE)" —
+        # evidencia real: Concurso de Precios 78/2026, "Sub. Of.Mayor
+        # (PE)(CP)" (rango, no polietileno). El límite de palabra de
+        # coincide_palabra_clave no protege acá porque "(" y ")" no son
+        # caracteres alfanuméricos, así que el lookaround igual matchea —
+        # demasiado corta/ambigua para señal fuerte. Se removió del YAML;
+        # este test prueba la colisión real y bloquea que se reagregue.
+        self.assertTrue(settings.coincide_palabra_clave("sub. of.mayor (pe)(cp)", "pe"))
+        fuertes = {k.lower() for k in settings.todas_las_palabras_clave()}
+        self.assertNotIn("pe", fuertes)
+
     def test_detecta_licitaciones_realmente_relacionadas(self):
         textos_relacionados = [
             "Licitación Abreviada: Provisión e instalación de piso vinílico para el Liceo N°5.",

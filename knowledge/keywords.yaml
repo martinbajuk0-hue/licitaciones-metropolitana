@@ -120,10 +120,12 @@ categorias:
     - piso vinilico
     - piso vinilico acustico
     - piso vinilico alto transito
+    - piso vinilico antiestatico
     - piso vinilico autoadhesivo
     - piso vinilico brasil
     - piso vinilico click
     - piso vinilico comercial
+    - piso vinilico conductivo
     - piso vinilico de 2mm
     - piso vinilico de 3mm
     - piso vinilico de 4mm
@@ -140,9 +142,11 @@ categorias:
     - piso vinílico acústico
     - piso vinílico alto tránsito
     - piso vinílico antibacterial
+    - piso vinílico antiestático
     - piso vinílico autoadhesivo
     - piso vinílico click
     - piso vinílico comercial
+    - piso vinílico conductivo
     - piso vinílico de 2mm
     - piso vinílico de 3mm
     - piso vinílico de 4mm
@@ -209,6 +213,8 @@ categorias:
     - vinilico decorativo
     - vinilico dryback
     - vinilico encolado
+    - vinilico heterogeneo
+    - vinilico homogeneo
     - vinilico hospitalario antibacteriano
     - vinilico para quirofano
     - vinilico simil ceramica
@@ -245,6 +251,8 @@ categorias:
     - vinílico dryback
     - vinílico encolado
     - vinílico espesor 2mm
+    - vinílico heterogéneo
+    - vinílico homogéneo
     - vinílico hospitalario antibacteriano
     - vinílico para quirófano
     - vinílico símil cerámica
@@ -282,6 +290,7 @@ categorias:
     - piso rígido spc
     - piso spc
     - piso spc 100% impermeable
+    - piso spc antibacterial
     - piso spc brasil
     - piso spc click
     - piso spc comercial
@@ -311,6 +320,7 @@ categorias:
     - spc clase 34
     - spc clase 42
     - spc clase 43
+    - spc click
     - spc con base ixpe
     - spc con textura madera
     - spc con textura piedra
@@ -337,11 +347,13 @@ categorias:
     - spc para hospitales
     - spc para oficinas
     - spc plank
+    - spc rigid core
     - spc tile
     - spc tiles
     - spc uniclic
     - spc valinge
     - spc waterproof floor
+    - spc waterproof flooring
     - stone plastic composite
     - stone polymer composite
     - waterproof rigid core
@@ -750,8 +762,10 @@ categorias:
     - cesped residencial
     - cesped sin relleno
     - cesped sintetico
+    - cesped sintetico fibrilado
     - cesped sintetico fifa quality
     - cesped sintetico fifa quality pro
+    - cesped sintetico monofilamento
     - cesped texturizado
     - cesped tipo cinta
     - cesped tipo sisal
@@ -789,8 +803,10 @@ categorias:
     - césped residencial
     - césped sin relleno
     - césped sintético
+    - césped sintético fibrilado
     - césped sintético fifa quality
     - césped sintético fifa quality pro
+    - césped sintético monofilamento
     - césped texturizado
     - césped tipo cinta
     - césped tipo sisal
@@ -822,6 +838,8 @@ categorias:
     - pasto sintético
     - putting green sintetico
     - putting green sintético
+    - relleno de sbr para cesped
+    - relleno de sbr para césped
     - synthetic grass
     - synthetic turf
   insumos_canchas:
@@ -843,6 +861,8 @@ categorias:
     - banda de unión
     - base amortiguante para cesped
     - base amortiguante para césped
+    - base elastica para cancha deportiva
+    - base elástica para cancha deportiva
     - base granular para cancha
     - caneria de drenaje deportivo
     - caucho granulado
@@ -871,6 +891,7 @@ categorias:
     - escoba mecánica para cancha
     - geotextil para cancha
     - gmax test
+    - granulado de caucho para cancha
     - infill
     - infill de caucho
     - infill epdm
@@ -930,6 +951,7 @@ categorias:
     - alfombra alto tránsito
     - alfombra antiestatica
     - alfombra antiestática
+    - alfombra axminster
     - alfombra bajo transito
     - alfombra bajo tránsito
     - alfombra bucle
@@ -944,6 +966,7 @@ categorias:
     - alfombra corporativa
     - alfombra de bucle
     - alfombra de corte
+    - alfombra de fibra natural
     - alfombra de fibra reciclada
     - alfombra de fibra sintetica
     - alfombra de fibra sintética
@@ -974,6 +997,8 @@ categorias:
     - alfombra tipo tabla
     - alfombra tipo texturizado
     - alfombra tratada scotchgard
+    - alfombra tufted
+    - alfombra wilton
     - alfombras
     - alfombras comerciales
     - alfombras en baldosas
@@ -1162,7 +1187,9 @@ categorias:
     - panel absorbente de sonido
     - panel acm
     - panel acustico
+    - panel acustico decorativo
     - panel acústico
+    - panel acústico decorativo
     - panel arquitectonico
     - panel arquitectónico
     - panel canaletado
@@ -1264,6 +1291,7 @@ categorias:
     - piedrafina para exteriores
     - piedrafina para fachadas
     - piedrafina para interiores
+    - piedrafina para revestimiento exterior
     - placa de piedra flexible
     - revestimiento de fachada simil piedra
     - revestimiento de fachada símil piedra
@@ -1381,6 +1409,7 @@ categorias:
     - deck cepillado
     - deck coextruido
     - deck compuesto
+    - deck compuesto antideslizante
     - deck con capa protectora
     - deck de madera
     - deck de piscina
@@ -1399,6 +1428,7 @@ categorias:
     - deck sintetico
     - deck sintético
     - deck wpc
+    - deck wpc para exterior
     - decking
     - decks
     - decks modulares
@@ -1479,7 +1509,9 @@ categorias:
     - guardacanto
     - ixpe
     - junta de dilatacion
+    - junta de dilatacion de piso
     - junta de dilatación
+    - junta de dilatación de piso
     - junta de expansion
     - junta de expansión
     - junta flexible de piso
@@ -1527,6 +1559,7 @@ categorias:
     - perfil terminacion de rampa
     - perfil terminación de rampa
     - perfil terminador
+    - perfil terminador de piso
     - perfiles de terminacion
     - perfiles de terminación
     - perfiles escalon
@@ -1627,6 +1660,8 @@ categorias:
   servicios:
     keywords:
     - acondicionamiento de contrapiso
+    - acondicionamiento de piso comercial
+    - acondicionamiento de piso industrial
     - asesoramiento de pisos
     - capacitacion tecnica al personal
     - capacitación técnica al personal
@@ -1689,8 +1724,8 @@ categorias:
     - postventa de pisos
     - presupuesto de instalacion de piso
     - presupuesto de instalación de piso
-    - provision e instalacion
-    - provisión e instalación
+    - provision e instalacion de piso
+    - provisión e instalación de piso
     - pulido de piso
     - reacondicionamiento de piso
     - readecuacion de piso
@@ -1723,41 +1758,19 @@ categorias:
     - servicio de riego automático
     - servicio tecnico de pisos
     - servicio técnico de pisos
-    - suministro e instalacion
-    - suministro e instalación
+    - suministro e instalacion de piso
+    - suministro e instalación de piso
     - turf installation
     - venta e instalacion
     - venta e instalación
     - visita tecnica de medicion
     - visita técnica de medición
 terminologia_pliegos:
-- acondicionamiento
-- acondicionamiento acustico
-- acondicionamiento acústico
-- acondicionamiento comercial
-- acondicionamiento de aulas
 - acondicionamiento de cancha
-- acondicionamiento de comedor
-- acondicionamiento de consultorio
-- acondicionamiento de deposito
-- acondicionamiento de depósito
-- acondicionamiento de espacios
 - acondicionamiento de gimnasio municipal
-- acondicionamiento de local comercial
-- acondicionamiento de oficinas
 - acondicionamiento de piso deportivo
-- acondicionamiento de plaza
-- acondicionamiento de sshh
-- acondicionamiento de sum
-- acondicionamiento de vestuarios
-- acondicionamiento hospitalario
-- acondicionamiento industrial
-- acondicionamiento termico
-- acondicionamiento térmico
 - adecuacion de espacios educativos
 - adecuación de espacios educativos
-- adquisicion de materiales
-- adquisición de materiales
 - ampliacion edilicia
 - ampliación edilicia
 - baldosa
@@ -1787,8 +1800,6 @@ terminologia_pliegos:
 - equipamiento de plaza
 - equipamiento deportivo
 - equipamiento urbano
-- especificaciones tecnicas
-- especificaciones técnicas
 - estacion saludable
 - estación saludable
 - fit out
@@ -1857,11 +1868,7 @@ terminologia_pliegos:
 - pista atletica
 - pista atlética
 - pista de atletismo
-- planilla de rubrado
 - plaza de deportes
-- pliego de condiciones particulares
-- pliego de especificaciones tecnicas
-- pliego de especificaciones técnicas
 - provision de accesorios de instalacion de piso
 - provision de materiales
 - provision de piso deportivo y accesorios
@@ -1936,14 +1943,11 @@ terminologia_pliegos:
 - salón de usos múltiples
 - solado
 - solados
-- suministro de materiales
 - superficie amortiguante
 - superficie de juego
 - superficie deportiva
 - sustitucion de piso
 - sustitución de piso
-- terminaciones
-- terminaciones de obra
 - trabajo de solado
 - trabajos de revestimiento exterior
 - trabajos de solado
@@ -2075,7 +2079,6 @@ materiales:
 - nylon 6
 - nylon 66
 - osb
-- pe
 - pet reciclado
 - peteribi
 - peteribí
@@ -2617,7 +2620,6 @@ normativas:
 - certificado de calidad
 - certificado de calidad iram
 - certificado de ensayo
-- certificado de origen
 - certificado inti
 - certificado unit uy
 - cfl-s1
@@ -2669,7 +2671,6 @@ normativas:
 - iso 14001
 - iso 14025
 - iso 17025
-- iso 9001
 - leed
 - marca ce
 - msds
@@ -2680,7 +2681,6 @@ normativas:
 - norma antideslizamiento
 - norma de accesibilidad
 - norma inmetro
-- norma tocaf
 - norma unit
 - norma unit accesibilidad
 - pendulum test
@@ -2692,8 +2692,6 @@ normativas:
 - r9
 - reach
 - sello inmetro
-- tocaf
-- unit
 marcas:
 - 3m nomad
 - acczent
@@ -3053,7 +3051,6 @@ abreviaturas:
 - iso 24344
 - iso 6807
 - iso 8543
-- iso 9001
 - ixpe
 - ldpe
 - leed
@@ -3069,7 +3066,6 @@ abreviaturas:
 - norma en 15468
 - norma en iso 10874
 - osb
-- pe
 - pp
 - pu
 - pvc
