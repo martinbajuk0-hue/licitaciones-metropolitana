@@ -21,6 +21,7 @@ from datetime import datetime
 
 import requests
 
+import analyzer
 import config.settings as settings
 import parser as parser_mod
 import report as report_mod
@@ -380,6 +381,55 @@ def main(enviar_email_flag: bool = True) -> None:
         print("  Sin novedades.")
 
 
+def auditar() -> None:
+    """Modo de solo lectura para verificar CON EVIDENCIA que cada
+    licitación marcada relevante realmente menciona un producto de
+    Metropolitana — no confiar solo en el score.
+
+    A diferencia de main(), no toca data/licitaciones_vistas.json (evalúa
+    TODAS las licitaciones del feed, no solo las nuevas) ni envía email:
+    solo imprime, para cada una marcada relevante, el término que la
+    disparó y el fragmento real de texto donde aparece — para que una
+    persona pueda confirmar de un vistazo si es un producto real o un
+    falso positivo del filtro amplio (ver knowledge/keywords.yaml).
+
+    Uso: python monitor.py --auditoria
+    """
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M')}] Auditoría de relevancia (solo lectura, no modifica estado ni envía email)...")
+
+    licitaciones = obtener_licitaciones()
+    print(f"  Total obtenidas: {len(licitaciones)}")
+
+    relevantes = 0
+    for lic in licitaciones:
+        relevante, kw, fuente, texto_pliego = es_relevante(lic)
+        if not relevante:
+            continue
+        relevantes += 1
+
+        if not texto_pliego:
+            # Matcheó por título/descripción: igual leemos el pliego para
+            # poder mostrar los fragmentos de producto, si los hay.
+            texto_pliego = _leer_pliego(lic).texto_completo
+
+        print(f"\n=== {lic['titulo']} ===")
+        print(f"  Coincidencia inicial: {kw!r} (fuente: {fuente})")
+
+        productos = analyzer.identificar_productos(texto_pliego) if texto_pliego else []
+        if not productos:
+            print("  ⚠️  Sin productos identificables en el texto del pliego (matcheó por título/descripción "
+                  "o el pliego no se pudo leer) — VERIFICAR MANUALMENTE antes de confiar en este match.")
+            continue
+
+        for p in productos[:10]:
+            etiqueta = settings.etiqueta_categoria(p.categoria)
+            print(f"  ✓ [{etiqueta}] \"{p.termino_encontrado}\" — ...{p.fragmento}...")
+        if len(productos) > 10:
+            print(f"  ... y {len(productos) - 10} coincidencia(s) más de producto.")
+
+    print(f"\n  Total evaluadas: {len(licitaciones)} · Marcadas relevantes: {relevantes}")
+
+
 def enviar_email_de_prueba() -> None:
     """Manda un mail de prueba sin depender de encontrar una licitación
     real — para verificar GMAIL_USER/GMAIL_APP_PASSWORD/EMAIL_DESTINO
@@ -401,8 +451,15 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--sin-email", action="store_true", help="No enviar email (para debug local)")
     ap.add_argument("--test-email", action="store_true", help="Mandar un email de prueba y salir, sin correr el monitoreo")
+    ap.add_argument(
+        "--auditoria", action="store_true",
+        help="Solo lectura: evalúa todo el feed actual y muestra el término + fragmento que dispara "
+        "cada match, sin tocar data/licitaciones_vistas.json ni enviar email (ver monitor.auditar()).",
+    )
     args = ap.parse_args()
     if args.test_email:
         enviar_email_de_prueba()
+    elif args.auditoria:
+        auditar()
     else:
         main(enviar_email_flag=not args.sin_email)
