@@ -35,6 +35,17 @@ class TestAnalyzer(unittest.TestCase):
         campos = analyzer.extraer_campos_clave(texto)
         self.assertEqual(campos.fecha_apertura, "2026-08-15")
 
+    def test_fecha_con_mes_en_mayuscula_no_rompe_el_parseo(self):
+        # Bug real en producción (2026-07-13, run #71 de monitor.yml):
+        # "13 de Julio de 2026" (mes con mayúscula inicial, común al
+        # empezar una oración/título) hacía que _normalizar_fecha buscara
+        # "Julio" en _MESES (claves en minúscula), no lo encontrara, y
+        # cayera al branch numérico -> int("Julio") -> ValueError, tumbando
+        # todo monitor.py a mitad de corrida.
+        texto = "La fecha de apertura de ofertas será el día 13 de Julio de 2026 a las 10 horas."
+        campos = analyzer.extraer_campos_clave(texto)
+        self.assertEqual(campos.fecha_apertura, "2026-07-13")
+
     def test_plazo_entrega_relativo_no_toma_fecha_de_otro_campo(self):
         texto = (
             "Plazo de entrega: 30 dias corridos desde la notificacion de la orden de compra.\n"
