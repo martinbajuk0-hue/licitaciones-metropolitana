@@ -45,6 +45,52 @@ class TestKeywordsAmpliado(unittest.TestCase):
         self.assertTrue(relevante)
         self.assertEqual(fuente, "título/descripción")
 
+    def test_una_sola_palabra_generica_en_titulo_no_alcanza(self):
+        # Caso real de la auditoría 2026-07-10: "aluminio" solo, en un
+        # contexto ajeno (esponja de limpieza), no debe marcar relevante.
+        lic = {
+            "titulo": "Compra de esponjas de aluminio para limpieza de oficinas",
+            "descripcion": "",
+            "url": "",
+            "documentos": [],
+        }
+        relevante, kw, fuente, _ = monitor.es_relevante(lic)
+        self.assertFalse(relevante)
+
+    def test_dos_palabras_genericas_distintas_si_marcan_relevante(self):
+        # Caso real: "pvc" + "mdf" + "zócalo" juntos sí fueron pisos reales
+        # (Compra Directa 75426/2026 y similares). Acá con dos alcanza.
+        lic = {
+            "titulo": "Retiro de zócalos y postigones de pvc en edificio municipal",
+            "descripcion": "",
+            "url": "",
+            "documentos": [],
+        }
+        relevante, kw, fuente, _ = monitor.es_relevante(lic)
+        self.assertTrue(relevante)
+
+    def test_termino_multipalabra_alcanza_solo_bajo_la_nueva_regla(self):
+        lic = {
+            "titulo": "Provisión e instalación de piso vinílico para el liceo",
+            "descripcion": "",
+            "url": "",
+            "documentos": [],
+        }
+        relevante, kw, fuente, _ = monitor.es_relevante(lic)
+        self.assertTrue(relevante)
+
+    def test_decidir_relevancia_una_palabra_sola_no_alcanza(self):
+        self.assertEqual(monitor._decidir_relevancia(["aluminio"]), (False, None))
+
+    def test_decidir_relevancia_dos_palabras_distintas_alcanzan(self):
+        relevante, kw = monitor._decidir_relevancia(["aluminio", "goma"])
+        self.assertTrue(relevante)
+
+    def test_decidir_relevancia_multipalabra_sola_alcanza(self):
+        relevante, kw = monitor._decidir_relevancia(["piso vinílico"])
+        self.assertTrue(relevante)
+        self.assertEqual(kw, "piso vinílico")
+
     def test_coincide_palabra_clave_respeta_limite_de_palabra_en_termino_corto(self):
         # "pu" (poliuretano) no debe matchear dentro de "publico"
         self.assertFalse(settings.coincide_palabra_clave("edificio publico", "pu"))
@@ -122,6 +168,15 @@ class TestKeywordsAmpliado(unittest.TestCase):
             texto_lower = texto.lower()
             matches = [kw for kw in fuertes if settings.coincide_palabra_clave(texto_lower, kw)]
             self.assertEqual(matches, [], f"Falso positivo (bureaucracia genérica) en: {texto!r} -> {matches}")
+
+    def test_espeso_no_matchea_dentro_de_espesor(self):
+        # "espeso" (removida de errores_comunes) era substring de
+        # "espesor" (grosor) — palabra genérica de cualquier ficha técnica
+        # (muebles, vidrios, chapas), no solo de pisos. Evidencia real:
+        # Compra Directa 139/2026, "Espesor de placa. 25 mm." (mesa de
+        # oficina, no piso). Mismo patrón que "terminaciones"/"determinaciones".
+        fuertes = {k.lower() for k in settings.todas_las_palabras_clave()}
+        self.assertNotIn("espeso", fuertes)
 
     def test_terminaciones_no_matchea_dentro_de_determinaciones(self):
         # "terminaciones" (removida de terminologia_pliegos) era substring de

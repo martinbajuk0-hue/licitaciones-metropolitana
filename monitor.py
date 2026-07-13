@@ -208,20 +208,49 @@ def _leer_pliego(lic: dict) -> "parser_mod.PliegoExtraido":
     return parser_mod.extraer_pliego(lic["url"], max_documentos=MAX_DOCUMENTOS_POR_LICITACION)
 
 
+def _matches_en_texto(texto_lower: str) -> list[str]:
+    return [kw for kw in settings.todas_las_palabras_clave() if settings.coincide_palabra_clave(texto_lower, kw)]
+
+
+def _decidir_relevancia(matches: list[str]) -> tuple[bool, str | None]:
+    """Regla anti-falsos-positivos SIN IA (ver conversación 2026-07-13):
+    una sola coincidencia de un término de UNA palabra (ej. "aluminio",
+    "goma", "pvc") no alcanza para marcar relevante — la auditoría real
+    contra ARCE mostró que esos términos sueltos matchean tan seguido en
+    contextos ajenos al rubro (esponja de aluminio, ruedas de goma,
+    conducto PVC) como en pliegos reales de pisos. Exigimos:
+      - cualquier término de 2+ palabras (ya específico por construcción,
+        ej. "piso vinílico", "césped sintético"), O
+      - 2+ términos de una palabra DISTINTOS en el mismo texto (la señal
+        real de un pliego de pisos es que aparecen varios juntos: pvc +
+        zócalo + baldosa, no uno solo aislado).
+    No reemplaza una verificación semántica real — sigue habiendo margen
+    de falsos positivos (ej. "pvc" + "carpeta" en una compra de
+    útiles de oficina), pero reduce el ruido sin costo ni dependencias.
+    """
+    multipalabra = [kw for kw in matches if settings.es_termino_multipalabra(kw)]
+    if multipalabra:
+        return True, multipalabra[0]
+    distintos = sorted({kw.lower() for kw in matches})
+    if len(distintos) >= 2:
+        return True, " + ".join(distintos[:3])
+    return False, None
+
+
 def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
     """Devuelve (relevante, keyword, fuente, texto_pliego_si_se_leyo)."""
     texto_base = (lic["titulo"] + " " + lic["descripcion"]).lower()
-    for kw in settings.todas_las_palabras_clave():
-        if settings.coincide_palabra_clave(texto_base, kw):
-            return True, kw, "título/descripción", ""
+    relevante, kw = _decidir_relevancia(_matches_en_texto(texto_base))
+    if relevante:
+        return True, kw, "título/descripción", ""
 
     print(f"  Leyendo pliego de: {lic['titulo'][:60]}... ({len(lic.get('documentos') or [])} documento(s))")
     pliego = _leer_pliego(lic)
     texto_pliego = pliego.texto_completo
     texto_lower = texto_pliego.lower()
-    for kw in settings.todas_las_palabras_clave():
-        if settings.coincide_palabra_clave(texto_lower, kw):
-            return True, kw, "pliego (PDF/Word/Excel)", texto_pliego
+    relevante, kw = _decidir_relevancia(_matches_en_texto(texto_lower))
+    if relevante:
+        return True, kw, "pliego (PDF/Word/Excel)", texto_pliego
 
     return False, None, None, texto_pliego
 

@@ -180,6 +180,17 @@ def _es_termino_corto(kw: str) -> bool:
     return len(kw) <= _UMBRAL_TERMINO_CORTO and " " not in kw
 
 
+def es_termino_multipalabra(kw: str) -> bool:
+    """True si `kw` tiene 2+ palabras (ej. "piso vinílico"). Un término
+    multi-palabra ya es específico por construcción — lo usa
+    monitor._decidir_relevancia() para decidir si una sola coincidencia
+    alcanza o si hace falta una segunda señal independiente (ver esa
+    función para el porqué: términos de una sola palabra genéricos como
+    "aluminio" o "goma" aparecen en cualquier rubro, no solo pisos).
+    """
+    return " " in kw.strip()
+
+
 def coincide_palabra_clave(texto_lower: str, kw: str) -> bool:
     """True si `kw` aparece en `texto_lower` (ya en minúsculas). Para
     términos cortos exige límite de palabra; para el resto, substring.
