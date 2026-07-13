@@ -78,7 +78,7 @@ _PATRON_FECHA_NUMERICA = re.compile(r"\b(\d{1,2})[/-](\d{1,2})[/-](\d{4})\b")
 
 def _normalizar_fecha(match: re.Match) -> str:
     grupos = match.groups()
-    if len(grupos) == 3 and grupos[1] in _MESES:
+    if len(grupos) == 3 and grupos[1].lower() in _MESES:
         dia, mes_txt, anio = grupos
         return f"{int(anio):04d}-{_MESES[mes_txt.lower()]:02d}-{int(dia):02d}"
     dia, mes, anio = grupos
