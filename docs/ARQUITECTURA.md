@@ -84,8 +84,9 @@ El archivo tiene ~3000 términos (`categorias.*.keywords`, `terminologia_pliegos
 
 - **Señal fuerte** (`config.settings.todas_las_palabras_clave()`): categorías
   de producto + terminología de pliegos + materiales + normativas + marcas +
-  errores comunes + abreviaturas. Una sola coincidencia alcanza para marcar
-  la licitación como relevante.
+  errores comunes + abreviaturas. Ver más abajo ("Regla de 2+ señales") qué
+  hace falta para que esto marque la licitación como relevante — no es
+  simplemente "una coincidencia alcanza".
 - **Señal débil / contexto** (`config.settings.palabras_clave_contexto()`):
   `lugares_uso` (escuela, hospital, intendencia...) y `aplicaciones`
   (interior, alto tránsito...) **nunca** disparan relevancia por sí solas —
@@ -108,6 +109,30 @@ Los términos cortos (≤5 caracteres, sin espacio — ej. `pu`, `eva`, `sbr`)
 matchean por límite de palabra (`config.settings.coincide_palabra_clave`),
 no por substring plano, para evitar falsos positivos como "pu" dentro de
 "publico".
+
+### Regla de 2+ señales (`monitor._decidir_relevancia`)
+
+Una auditoría real contra ARCE (2026-07-10, `monitor.py --auditoria`)
+mostró que un solo término de UNA palabra (ej. "aluminio", "goma", "pvc")
+matchea tan seguido en contextos ajenos al rubro (esponja de aluminio,
+ruedas de goma, conducto de PVC eléctrico) como en pliegos reales de
+pisos. Sin una API de IA para verificar semánticamente cada caso (decisión
+tomada explícitamente por costo — ver conversación 2026-07-13), la mejor
+mitigación determinística es exigir corroboración:
+
+- Cualquier término de **2+ palabras** (`config.settings.es_termino_multipalabra`)
+  alcanza solo — ya es específico por construcción (ej. "piso vinílico",
+  "césped sintético").
+- Un término de **una sola palabra** necesita una **segunda coincidencia
+  distinta** en el mismo texto (ej. "pvc" + "zócalo") — la señal real de
+  un pliego de pisos es que aparecen varios términos juntos, no uno solo
+  aislado.
+
+Esto reduce el ruido pero no lo elimina: sigue habiendo casos como "pvc" +
+"carpeta" matcheando una compra de útiles de oficina (carpeta plástica),
+porque el sistema sigue sin entender significado, solo cuenta
+coincidencias. Ver `tests/test_settings_keywords.py` para los casos reales
+que motivaron esta regla.
 
 ## Estado persistente
 
