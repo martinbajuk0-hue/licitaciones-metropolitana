@@ -398,6 +398,11 @@ def main(enviar_email_flag: bool = True) -> None:
         # recalcula por separado con menos datos (evita que el email
         # muestre una estrella distinta a la del informe real).
         lic["clasificacion"] = informe.clasificacion
+        # Filtro por score mínimo (configurable vía secret SCORE_MINIMO_EMAIL)
+        score_minimo = int(os.environ.get("SCORE_MINIMO_EMAIL", 0))
+        if informe.clasificacion.puntaje < score_minimo:
+            print(f"  Score {informe.clasificacion.puntaje} < mínimo {score_minimo}, omitiendo del email.")
+            continue
 
         nuevas.append(lic)
 
