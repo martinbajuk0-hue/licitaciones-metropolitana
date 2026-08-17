@@ -107,6 +107,22 @@
   }
   .badge-nueva { background: #e6f4ea; color: var(--verde); }
   .badge-modificada { background: #fef7e0; color: #b06000; }
+  .cierre {
+    display: block;
+    font-size: 11px;
+    color: var(--gris-texto);
+    margin-top: 2px;
+    white-space: nowrap;
+  }
+  .cierre.urgente { color: var(--rojo); font-weight: 600; }
+  .cierre.vencido { color: var(--rojo); }
+  .ya-adjudicado {
+    display: block;
+    font-size: 11.5px;
+    color: var(--verde);
+    font-weight: 600;
+    margin-top: 3px;
+  }
   .estrellas { color: var(--amarillo); white-space: nowrap; font-size: 13px; }
   .estrellas .vacia { color: #e0e0e0; }
   .organismo { font-weight: 600; }
@@ -336,6 +352,25 @@ function ordenar(lista) {
   });
 }
 
+// Espejo de report.texto_cierre() en Python — se recalcula acá (no se
+// guarda como texto fijo en llamados.json) para que nunca quede
+// desactualizado entre las 3 corridas diarias del pipeline. Formato
+// tomado del ejemplo de Simple Compras Públicas (reunión del 14/08/2026):
+// "Cierra en N días" / "Cierra hoy" / "Cierra mañana".
+function textoCierre(fechaApertura) {
+  if (!fechaApertura) return { texto: "Fecha de cierre no identificada — verificar manualmente", clase: "" };
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(fechaApertura);
+  if (!m) return { texto: "Fecha de cierre no identificada — verificar manualmente", clase: "" };
+  const fecha = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+  const hoy = new Date();
+  const hoyUTC = new Date(Date.UTC(hoy.getFullYear(), hoy.getMonth(), hoy.getDate()));
+  const dias = Math.round((fecha - hoyUTC) / 86400000);
+  if (dias < 0) return { texto: `Cierre ${fechaApertura} (ya pasó — verificar si sigue vigente)`, clase: "vencido" };
+  if (dias === 0) return { texto: "Cierra hoy", clase: "urgente" };
+  if (dias === 1) return { texto: "Cierra mañana", clase: "urgente" };
+  return { texto: `Cierra en ${dias} días`, clase: dias <= 3 ? "urgente" : "" };
+}
+
 function render() {
   const filtrados = ordenar(filtrar());
   renderResumen();
@@ -358,11 +393,19 @@ function render() {
     const badge = d.cambio_detectado
       ? '<span class="badge badge-modificada">Con cambios</span>'
       : '<span class="badge badge-nueva">Nueva</span>';
+    const cierre = textoCierre(d.fecha_apertura);
+    const yaAdjudicados = d.ya_adjudicados || [];
+    const yaAdjudicadosHtml = yaAdjudicados.length
+      ? '<span class="ya-adjudicado">✅ Ya adjudicaste antes: ' +
+        escapeHtml(yaAdjudicados.slice(0, 5).join(", ")) +
+        (yaAdjudicados.length > 5 ? " …" : "") + '</span>'
+      : "";
     tr.innerHTML = `
-      <td>${escapeHtml(d.fecha_apertura || "No detectada")}</td>
+      <td>${escapeHtml(d.fecha_apertura || "No detectada")}<span class="cierre ${cierre.clase}">${escapeHtml(cierre.texto)}</span></td>
       <td class="organismo">${escapeHtml(d.organismo || "No detectado")}</td>
       <td class="titulo-cell">${escapeHtml(d.titulo || "")}
         ${d.url_ficha ? '<br><a class="link-ficha" href="' + escapeAttr(d.url_ficha) + '" target="_blank" rel="noopener">Ver ficha en ARCE ↗</a>' : ""}
+        ${yaAdjudicadosHtml}
       </td>
       <td>${cats || '<span style="color:#9aa0a6">—</span>'}</td>
       <td><span class="estrellas">${estrellas}</span><br><span style="font-size:11px;color:var(--gris-texto)">${escapeHtml(d.etiqueta_clasificacion || "")}</span></td>

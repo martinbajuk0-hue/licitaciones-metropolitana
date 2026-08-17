@@ -147,6 +147,42 @@ notificaciones. Se usa para:
 Es cacheado entre corridas del workflow de GitHub Actions vía
 `actions/cache`.
 
+## Historial de adjudicaciones y "Cierra en N días" (`historial.py`)
+
+Tras una reunión del 14/08/2026 con Simple Compras Públicas (empresa que
+vende avisos de licitaciones con datos de mercado), se replicó "en primera
+instancia" lo que muestran sus emails apenas se abren, antes de cualquier
+análisis de precios:
+
+- **"✅ Ya adjudicaste antes: X, Y, Z"** — `historial.productos_ya_adjudicados()`
+  matchea (por substring, normalizado sin acentos/mayúsculas) los términos
+  de producto que `analyzer.identificar_productos()` encontró en el pliego
+  nuevo contra `knowledge/historial_adjudicaciones_metropolitana.json`: las
+  617 compras adjudicadas a Metropolitana entre 2025-2026, con el
+  "Código de artículo" que asigna ARCE a cada ítem (el mismo clasificador
+  que usan terceros para sus reportes de mercado). Ese JSON es una foto
+  congelada a la fecha de generación — no se recalcula solo; para
+  actualizarlo hay que rehacer la extracción manual desde
+  comprasestatales.gub.uy y regenerar el archivo.
+- **"Cierra en N días" / "Cierra hoy" / "Cierra mañana"** — `report.texto_cierre()`
+  calcula la cuenta regresiva a partir de `fecha_apertura`. En el visor
+  (`docs/index.html`) esto se recalcula en JavaScript en el navegador
+  (`textoCierre()`) en vez de guardarse como texto fijo en
+  `docs/data/llamados.json`, para que no quede desactualizado entre las 3
+  corridas diarias del pipeline.
+
+Ambos campos quedan expuestos en `report.InformeLicitacion` (`ya_adjudicados`,
+`cierre`), se usan en el email (`monitor.py`) y se persisten en el catálogo
+del visor vía `catalogo.registrar_llamado()` (solo `ya_adjudicados`; el
+"cierre" es deliberadamente client-side, ver arriba).
+
+El campo `items_otros_proveedores` de ese mismo JSON (501 ítems de otros
+proveedores, con precio unitario) queda cargado pero sin usar todavía — es
+la base para una futura funcionalidad de "precios de referencia de
+mercado" (equivalente al reporte de 21 páginas que muestra Simple Compras
+Públicas), que no forma parte de esta "primera instancia" y no está
+implementada.
+
 ## Integración opcional con Claude (LLM)
 
 `analyzer.generar_resumen_ejecutivo()` intenta usar la API de Claude
