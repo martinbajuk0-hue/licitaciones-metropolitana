@@ -6,6 +6,7 @@ ya vistas, descargar la documentación y correr el pipeline completo
 Uso:
     python monitor.py              # corrida normal (usada por el cron de GitHub Actions)
     python monitor.py --sin-email  # corre el pipeline pero no envía email (debug local)
+    python monitor.py --test-rango-fechas 2026-08-13:2026-08-14  # email de prueba con licitaciones reales de ese rango
 """
 from __future__ import annotations
 
@@ -509,6 +510,85 @@ def enviar_email_de_prueba() -> None:
     enviar_email([lic_prueba], [])
 
 
+def _fecha_lic_a_iso(fecha_cruda: str) -> str | None:
+    """lic['fecha'] sale de obtener_licitaciones() ya normalizada a
+    'YYYY-MM-DD' cuando el feed OCDS responde (rel['date'][:10]), pero si
+    se cayó al fallback RSS es un pubDate RFC822 crudo (ej. 'Wed, 13 Aug
+    2026 10:00:00 GMT') que nunca se normalizó porque main() nunca lo
+    necesitó en ese formato — solo lo usa para mostrarlo tal cual en el
+    email. Acá sí hace falta compararlo contra un rango, así que se
+    intentan ambos formatos en vez de asumir uno.
+    """
+    if not fecha_cruda:
+        return None
+    if re.match(r"^\d{4}-\d{2}-\d{2}", fecha_cruda):
+        return fecha_cruda[:10]
+    try:
+        from email.utils import parsedate_to_datetime
+        return parsedate_to_datetime(fecha_cruda).strftime("%Y-%m-%d")
+    except (TypeError, ValueError):
+        return None
+
+
+def enviar_email_de_prueba_rango_fechas(desde: str, hasta: str) -> None:
+    """Corre el pipeline real (fetch a ARCE + filtro de relevancia +
+    lectura de pliego + análisis) pero restringido a licitaciones cuya
+    fecha de publicación cae en [desde, hasta] (inclusive, 'YYYY-MM-DD'),
+    y manda el resultado por email — para revisar con datos reales cómo
+    se ve el mail (incluye "Ya adjudicaste antes" / "Cierra en N días")
+    sin esperar a que aparezca un llamado nuevo hoy.
+
+    A diferencia de main(): es de solo lectura. No toca
+    data/licitaciones_vistas.json ni docs/data/llamados.json/docs/informes
+    — así no interfiere con el estado real ("ya visto") que usa el cron
+    de producción, y no hace falta limpiarlo después de probar.
+
+    Uso: python monitor.py --test-rango-fechas 2026-08-13:2026-08-14
+    """
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M')}] Test con licitaciones publicadas entre {desde} y {hasta} (solo lectura, no modifica estado ni el catálogo del visor)...")
+
+    licitaciones = obtener_licitaciones()
+    print(f"  Total obtenidas: {len(licitaciones)}")
+
+    en_rango = [lic for lic in licitaciones if (_fecha_lic_a_iso(lic.get("fecha", "")) or "") and desde <= _fecha_lic_a_iso(lic["fecha"]) <= hasta]
+    print(f"  Publicadas entre {desde} y {hasta}: {len(en_rango)}")
+
+    score_minimo = int(os.environ.get("SCORE_MINIMO_EMAIL", 0))
+    nuevas: list[dict] = []
+    for lic in en_rango:
+        relevante, kw, fuente, texto_pliego = es_relevante(lic)
+        if not relevante:
+            continue
+        lic["keyword"] = kw
+        lic["fuente"] = fuente
+
+        if not texto_pliego:
+            pliego = _leer_pliego(lic)
+            texto_pliego = pliego.texto_completo
+            errores = [d.nombre for d in pliego.documentos_con_error]
+        else:
+            errores = []
+
+        texto_para_informe = texto_pliego or (lic["titulo"] + "\n" + lic["descripcion"])
+        informe = report_mod.analizar_licitacion(lic["titulo"], lic["url"], texto_para_informe, errores)
+        print(f"  Relevante: {lic['titulo'][:70]!r} — {informe.clasificacion.simbolo} score {informe.clasificacion.puntaje}")
+
+        lic["clasificacion"] = informe.clasificacion
+        lic["ya_adjudicados"] = informe.ya_adjudicados
+        lic["cierre"] = informe.cierre
+
+        if informe.clasificacion.puntaje < score_minimo:
+            print(f"    Score {informe.clasificacion.puntaje} < mínimo {score_minimo}, omitiendo del email (igual que en producción).")
+            continue
+        nuevas.append(lic)
+
+    print(f"  Relevantes que entrarían al email: {len(nuevas)}")
+    if not nuevas:
+        print("  Ninguna licitación relevante en ese rango de fechas — no se manda email (para no mandar uno vacío).")
+        return
+    enviar_email(nuevas, [])
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--sin-email", action="store_true", help="No enviar email (para debug local)")
@@ -518,10 +598,23 @@ if __name__ == "__main__":
         help="Solo lectura: evalúa todo el feed actual y muestra el término + fragmento que dispara "
         "cada match, sin tocar data/licitaciones_vistas.json ni enviar email (ver monitor.auditar()).",
     )
+    ap.add_argument(
+        "--test-rango-fechas", metavar="DESDE:HASTA",
+        help="Solo lectura: manda un email con las licitaciones relevantes publicadas entre DESDE y HASTA "
+        "(inclusive, formato YYYY-MM-DD:YYYY-MM-DD), sin tocar data/licitaciones_vistas.json ni el catálogo "
+        "del visor (ver monitor.enviar_email_de_prueba_rango_fechas()). Ej.: --test-rango-fechas 2026-08-13:2026-08-14",
+    )
     args = ap.parse_args()
     if args.test_email:
         enviar_email_de_prueba()
     elif args.auditoria:
         auditar()
+    elif args.test_rango_fechas:
+        try:
+            desde, hasta = args.test_rango_fechas.split(":", 1)
+        except ValueError:
+            ap.error("--test-rango-fechas espera el formato YYYY-MM-DD:YYYY-MM-DD, ej. 2026-08-13:2026-08-14")
+        else:
+            enviar_email_de_prueba_rango_fechas(desde, hasta)
     else:
         main(enviar_email_flag=not args.sin_email)
