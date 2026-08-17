@@ -22,6 +22,7 @@ from datetime import datetime
 import requests
 
 import analyzer
+import catalogo
 import config.settings as settings
 import parser as parser_mod
 import report as report_mod
@@ -364,6 +365,7 @@ def main(enviar_email_flag: bool = True) -> None:
                 lic["keyword"] = "(título/descripción cambió desde la última revisión)"
                 lic["fuente"] = "cambio detectado"
                 modificadas.append(lic)
+                catalogo.registrar_modificacion(lic)
                 vistos[lic["id"]]["hash"] = hash_actual
                 vistos[lic["id"]]["notificaciones"] = previo.get("notificaciones", 1) + 1
             continue
@@ -393,6 +395,12 @@ def main(enviar_email_flag: bool = True) -> None:
         informe = report_mod.analizar_licitacion(lic["titulo"], lic["url"], texto_para_informe, errores)
         ruta_informe = report_mod.guardar_informe(lic["titulo"], informe.markdown)
         print(f"  Informe generado: {ruta_informe} ({informe.clasificacion.simbolo} score {informe.clasificacion.puntaje})")
+
+        # Se registra en el catálogo del visor web SIEMPRE que el llamado
+        # pasó el filtro de relevancia, sin importar el score — el filtro de
+        # score mínimo (más abajo) decide qué llega por mail, no qué aparece
+        # en el visor. Ver docstring de catalogo.registrar_llamado().
+        catalogo.registrar_llamado(lic, informe)
 
         # Misma clasificación que queda en el informe guardado — nunca se
         # recalcula por separado con menos datos (evita que el email
