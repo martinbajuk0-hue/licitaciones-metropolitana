@@ -14,6 +14,10 @@ on:
         description: 'Auditoría de solo lectura: muestra término+fragmento de cada match, sin marcar como visto ni enviar email'
         type: boolean
         default: false
+      rango_fechas:
+        description: 'Email de prueba con licitaciones REALES publicadas en este rango (formato YYYY-MM-DD:YYYY-MM-DD, ej. 2026-08-13:2026-08-14). Solo lectura, no marca como visto ni toca el catálogo del visor. Dejar vacío para no usar este modo.'
+        type: string
+        default: ''
 
 permissions:
   contents: write  # necesario para el commit+push de docs/data y docs/informes (visor web)
@@ -49,7 +53,12 @@ jobs:
           # Opcional: si se configura este secret, el resumen ejecutivo se genera vía Claude
           # en vez del resumen extractivo por reglas (ver docs/ARQUITECTURA.md).
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python monitor.py ${{ inputs.test_email && '--test-email' || (inputs.auditoria && '--auditoria' || '') }}
+        run: >
+          python monitor.py
+          ${{ inputs.test_email && '--test-email'
+              || (inputs.auditoria && '--auditoria'
+              || (inputs.rango_fechas && format('--test-rango-fechas {0}', inputs.rango_fechas)
+              || '')) }}
 
       - name: Guardar historial actualizado
         uses: actions/cache/save@v4
@@ -59,7 +68,7 @@ jobs:
           key: licitaciones-vistas-${{ runner.os }}-${{ github.run_id }}
 
       - name: Publicar catálogo del visor web (docs/data, docs/informes)
-        if: always() && !inputs.test_email && !inputs.auditoria
+        if: always() && !inputs.test_email && !inputs.auditoria && !inputs.rango_fechas
         run: |
           git config user.name "monitor-bot"
           git config user.email "monitor-bot@users.noreply.github.com"
