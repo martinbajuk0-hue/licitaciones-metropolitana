@@ -286,6 +286,21 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict]) -> None:
             f'<p style="margin:0 0 4px;font-size:13px;color:#555;">⭐ {clasif.simbolo} — {clasif.etiqueta} (score {clasif.puntaje}/100)</p>'
             if clasif else ""
         )
+        # "Ya adjudicaste antes" + "Cierra en N días": el mismo par de datos
+        # que un servicio de avisos como Simple Compras Públicas muestra
+        # primero en su email (ver Ejemplo_Alerta_Email_Metropolitana.png,
+        # reunión del 14/08/2026) — permite decidir en un vistazo si vale
+        # la pena abrir el informe completo, sin leer el pliego.
+        ya_adjudicados = lic.get("ya_adjudicados") or []
+        ya_adjudicados_html = (
+            f'<p style="margin:0 0 4px;font-size:13px;color:#1e8e3e;font-weight:600;">✅ Ya adjudicaste antes: {", ".join(ya_adjudicados[:5])}'
+            f'{" ..." if len(ya_adjudicados) > 5 else ""}</p>'
+            if ya_adjudicados else ""
+        )
+        cierre_html = (
+            f'<p style="margin:0 0 4px;font-size:13px;color:#555;">⏱️ {lic["cierre"]}</p>'
+            if lic.get("cierre") else ""
+        )
         # lic["url"] es el JSON del release OCDS (metadata para el pipeline,
         # no algo legible para una persona). Lo que hay que abrir es el PDF
         # real del pliego, que viene en lic["documentos"]
@@ -304,6 +319,8 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict]) -> None:
             <p style="margin:0 0 6px;font-size:15px;font-weight:600;color:#1a1a1a;">{lic['titulo']}</p>
             <p style="margin:0 0 4px;font-size:13px;color:#555;">📅 {lic['fecha']} &nbsp;|&nbsp; 🔑 Coincidencia: <strong>{lic.get('keyword','')}</strong> &nbsp;|&nbsp; 📄 Encontrado en: <em>{lic.get('fuente','título')}</em></p>
             {clasif_html}
+            {ya_adjudicados_html}
+            {cierre_html}
             {links_html}
         </div>
         """
@@ -402,10 +419,13 @@ def main(enviar_email_flag: bool = True) -> None:
         # en el visor. Ver docstring de catalogo.registrar_llamado().
         catalogo.registrar_llamado(lic, informe)
 
-        # Misma clasificación que queda en el informe guardado — nunca se
-        # recalcula por separado con menos datos (evita que el email
-        # muestre una estrella distinta a la del informe real).
+        # Misma clasificación, historial y cierre que quedan en el informe
+        # guardado — nunca se recalculan por separado con menos datos
+        # (evita que el email muestre una estrella, o un "ya adjudicaste
+        # antes", distinto al del informe real).
         lic["clasificacion"] = informe.clasificacion
+        lic["ya_adjudicados"] = informe.ya_adjudicados
+        lic["cierre"] = informe.cierre
         # Filtro por score mínimo (configurable vía secret SCORE_MINIMO_EMAIL)
         score_minimo = int(os.environ.get("SCORE_MINIMO_EMAIL", 0))
         if informe.clasificacion.puntaje < score_minimo:

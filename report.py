@@ -12,6 +12,7 @@ from datetime import date, datetime, timedelta
 import analyzer
 import checklist as checklist_mod
 import config.settings as settings
+import historial
 import risk as risk_mod
 
 _ETIQUETA_CONTEXTO = {
@@ -50,6 +51,33 @@ def clasificar_oportunidad(score: int) -> Clasificacion:
         nivel = 1
     simbolo, etiqueta = _ESTRELLAS[nivel]
     return Clasificacion(puntaje=score, nivel=nivel, simbolo=simbolo, etiqueta=etiqueta)
+
+
+def texto_cierre(fecha_apertura: str | None, hoy: date | None = None) -> str:
+    """"Cierra en N días" / "Cierra hoy" / "Cierra mañana" — el formato que
+    usa Simple Compras Públicas en sus avisos (ver Ejemplo_Alerta_Email_
+    Metropolitana.png, reunión del 14/08/2026) porque se lee mucho más
+    rápido que una fecha ISO suelta al decidir qué llamados revisar primero.
+
+    fecha_apertura ya viene normalizada a 'YYYY-MM-DD' por
+    analyzer._normalizar_fecha(). Si no se identificó o no se puede
+    parsear, se dice explícitamente en vez de mostrar un número confuso.
+    """
+    if not fecha_apertura:
+        return "Fecha de cierre no identificada — verificar manualmente"
+    hoy = hoy or date.today()
+    try:
+        fecha = date.fromisoformat(fecha_apertura)
+    except ValueError:
+        return "Fecha de cierre no identificada — verificar manualmente"
+    dias = (fecha - hoy).days
+    if dias < 0:
+        return f"Cierre {fecha_apertura} (ya pasó — verificar si sigue vigente)"
+    if dias == 0:
+        return "Cierra hoy"
+    if dias == 1:
+        return "Cierra mañana"
+    return f"Cierra en {dias} días"
 
 
 def generar_cronograma(campos: analyzer.CamposClave, hoy: date | None = None) -> list[dict]:
@@ -100,6 +128,8 @@ class InformeLicitacion:
     probabilidad: dict
     clasificacion: Clasificacion
     cronograma: list[dict]
+    ya_adjudicados: list[str]
+    cierre: str
     markdown: str
 
 
@@ -130,6 +160,11 @@ def analizar_licitacion(
 
     categorias_detectadas = sorted({settings.etiqueta_categoria(p.categoria) for p in productos})
 
+    # "Ya adjudicaste antes" — primer campo que muestra el aviso de Simple
+    # Compras Públicas antes que ningún otro análisis (ver historial.py).
+    ya_adjudicados = historial.productos_ya_adjudicados([p.termino_encontrado for p in productos])
+    cierre = texto_cierre(campos.fecha_apertura)
+
     partes = [
         f"# Informe de licitación: {titulo}",
         "",
@@ -146,7 +181,7 @@ def analizar_licitacion(
         "## Datos clave",
         f"- Organismo: {campos.organismo or '**NO IDENTIFICADO — verificar manualmente**'}",
         f"- Número de licitación/expediente: {campos.numero_licitacion or '**NO IDENTIFICADO — verificar manualmente**'}",
-        f"- Fecha de apertura: {campos.fecha_apertura or '**NO IDENTIFICADA — verificar manualmente**'}",
+        f"- Fecha de apertura: {campos.fecha_apertura or '**NO IDENTIFICADA — verificar manualmente**'} ({cierre})",
         f"- Plazo/fecha de entrega: {campos.fecha_entrega or 'no identificado — verificar manualmente'}",
         f"- Fecha límite de consultas: {campos.fecha_consultas or 'no identificada — verificar manualmente'}",
         f"- Fecha de visita de obra: {campos.fecha_visita or 'no identificada / puede no aplicar'}",
@@ -161,6 +196,12 @@ def analizar_licitacion(
         f"Categorías detectadas: {', '.join(categorias_detectadas) if categorias_detectadas else 'NINGUNA — revisar el pliego completo manualmente antes de descartar (regla: nunca descartar solo por el título).'}",
         "",
         _md_lista([f"**{settings.etiqueta_categoria(p.categoria)}** (\"{p.termino_encontrado}\"): ...{p.fragmento}..." for p in productos[:25]]),
+        "### Ya adjudicaste antes" if ya_adjudicados else None,
+        (
+            "Metropolitana ya le vendió al Estado alguno de estos productos antes "
+            f"(historial 2025-2026, ver knowledge/historial_adjudicaciones_metropolitana.json): {', '.join(ya_adjudicados)}."
+            if ya_adjudicados else None
+        ),
         "### Contexto adicional (lugar de uso / aplicación)" if contexto else None,
         (
             _md_lista(
@@ -199,6 +240,8 @@ def analizar_licitacion(
         probabilidad=probabilidad,
         clasificacion=clasificacion,
         cronograma=cronograma,
+        ya_adjudicados=ya_adjudicados,
+        cierre=cierre,
         markdown=markdown,
     )
 

@@ -90,6 +90,13 @@ def registrar_llamado(lic: dict, informe: report_mod.InformeLicitacion) -> None:
         "fecha_visita": informe.campos.fecha_visita,
         "categorias": categorias,
         "categorias_etiquetas": etiquetas,
+        # Nombres de producto del historial de Metropolitana (2025-2026,
+        # con código de artículo ARCE) que matchean con este llamado — ver
+        # historial.py. El "Cierra en N días" NO se guarda acá como texto
+        # fijo: docs/index.html lo recalcula en el navegador a partir de
+        # fecha_apertura, así no queda desactualizado entre corridas del
+        # pipeline (que solo se ejecuta 3 veces por día).
+        "ya_adjudicados": informe.ya_adjudicados,
         "keyword": lic.get("keyword"),
         "fuente_match": lic.get("fuente"),
         "score": informe.clasificacion.puntaje,
