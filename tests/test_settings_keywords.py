@@ -221,6 +221,53 @@ class TestKeywordsAmpliado(unittest.TestCase):
             total += len(kw[grupo])
         self.assertGreater(total, 3000)
 
+    def test_abs_y_concreto_sueltos_no_marcan_relevante_compra_de_motos(self):
+        # Caso real reportado por el usuario 2026-08-17: "Licitación
+        # Abreviada 13/2026" — adquisición de motocicletas 0km para la
+        # Intendencia de Rocha — llegó por email marcada relevante con
+        # "Coincidencia: abs + concreto". "abs" matcheaba por los frenos
+        # ABS de las motos (nada que ver con zócalos/perfiles ABS) y
+        # "concreto" por el uso genérico del adjetivo español ("en forma
+        # concreta"), no por hormigón/contrapiso. Ambos términos sueltos
+        # eran demasiado ambiguos para ser señal fuerte por sí solos — se
+        # sacó "abs" de materiales/abreviaturas (quedan las variantes
+        # "abs plastico"/"abs plástico", que sí son específicas) y
+        # "concreto" se reemplazó por "concreto pulido" (el acabado de
+        # piso real, no el adjetivo suelto).
+        texto = (
+            "adquisición de hasta 15 motocicletas 0 km, 150cc a 200cc, con sistema de frenos abs de serie. "
+            "en forma concreta, el oferente deberá detallar las especificaciones técnicas del vehículo."
+        )
+        fuertes = settings.todas_las_palabras_clave()
+        matches = [kw for kw in fuertes if settings.coincide_palabra_clave(texto, kw)]
+        self.assertEqual(matches, [], f"No debería matchear ningún término fuerte, matcheó: {matches}")
+
+    def test_contenedores_habitables_garitas_y_banos_modulares_son_relevantes(self):
+        # Caso real 2026-08-17: "Compra Directa 6/2026" (adquisición de dos
+        # contenedores/módulos habitacionales para AFE Tacuarembó) es un
+        # producto real de Metropolitana (ver config/empresa.yaml), pero
+        # antes de agregar la categoría contenedores_modulares solo
+        # matcheaba de casualidad por "piso vinílico" si el pliego
+        # mencionaba el piso interior del módulo — si no lo mencionaba, el
+        # llamado pasaba completamente desapercibido.
+        textos_relacionados = [
+            "Adquisición de dos contenedores habitables con destino a la Estación de AFE en Tacuarembó.",
+            "Provisión de módulo habitacional container para obrador de la Intendencia.",
+            "Contratación de garita de seguridad prefabricada para el acceso al predio municipal.",
+            "Adquisición de baño modular para el balneario municipal.",
+        ]
+        fuertes = settings.todas_las_palabras_clave()
+        for texto in textos_relacionados:
+            texto_lower = texto.lower()
+            matches = [kw for kw in fuertes if settings.coincide_palabra_clave(texto_lower, kw)]
+            self.assertTrue(matches, f"No se detectó ningún término en: {texto!r}")
+
+    def test_categoria_contenedores_modulares_tiene_etiqueta_legible(self):
+        self.assertEqual(
+            settings.etiqueta_categoria("contenedores_modulares"),
+            "Contenedores habitables, garitas y módulos",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
