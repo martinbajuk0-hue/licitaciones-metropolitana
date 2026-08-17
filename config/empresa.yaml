@@ -14,7 +14,7 @@ representantes_legales:
   - nombre: "Estela Vernazza"
     cedula: "28450451"
 
-rubro: "Pisos, revestimientos, césped sintético, goma, alfombras y accesorios"
+rubro: "Pisos, revestimientos, césped sintético, goma, alfombras, accesorios, y contenedores/módulos habitables"
 
 lineas_de_negocio:
   - "Pisos SPC, vinílicos (click, pegados, en rollo), LVT"
@@ -28,6 +28,7 @@ lineas_de_negocio:
   - "Goma: baldosas, rollos, EVA, seguridad, áreas infantiles, gimnasios"
   - "Alfombras: moquettes, modulares, camineros, felpudos, fieltros"
   - "Accesorios: zócalos, perfiles, narices de escalón, juntas de dilatación, adhesivos, bases acústicas, gripper"
+  - "Contenedores/módulos habitables, garitas, depósitos y baños modulares"
   - "Servicios: venta, asesoramiento, medición, instalación, mantenimiento, reparación, reposición"
 
 organismos_objetivo:

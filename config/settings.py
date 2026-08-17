@@ -134,6 +134,7 @@ _ETIQUETAS_CATEGORIA = {
     "accesorios": "Accesorios de instalación",
     "adhesivos": "Adhesivos",
     "servicios": "Servicios",
+    "contenedores_modulares": "Contenedores habitables, garitas y módulos",
     "terminologia_pliegos": "Terminología genérica del pliego (revisar manualmente qué producto aplica)",
     "materiales": "Material mencionado (revisar contexto)",
     "normativas": "Normativa/certificación mencionada",
