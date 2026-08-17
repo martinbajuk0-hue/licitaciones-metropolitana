@@ -268,6 +268,68 @@ class TestKeywordsAmpliado(unittest.TestCase):
             "Contenedores habitables, garitas y módulos",
         )
 
+    def test_pavimento_y_norma_de_accesibilidad_sueltos_no_marcan_relevante_alcantarilla(self):
+        # Caso real reportado por el usuario 2026-08-17: "Licitación
+        # Abreviada 44/2026" — construcción de una alcantarilla (obra vial
+        # de drenaje, hormigón armado) para la DNV — llegó por email
+        # marcada relevante con "Coincidencia: norma de accesibilidad", y
+        # con un "Ya adjudicaste antes: REPARACION DE PAVIMENTO,
+        # MANTENIMIENTO DE PAVIMENTO" que no tiene nada que ver con la
+        # obra (esos adjudicaciones reales de Metropolitana eran de
+        # pavimento deportivo/interior, no de vialidad). Dos términos
+        # demasiado genéricos causaban esto:
+        #   - "norma de accesibilidad"/"norma unit accesibilidad"/"norma
+        #     unit": la normativa de accesibilidad y las normas UNIT son
+        #     un requisito legal de CUALQUIER obra pública en Uruguay
+        #     (rutas, puentes, alcantarillas, edificios), no una señal de
+        #     que se necesite un producto de Metropolitana.
+        #   - "pavimento"/"pavimentación" solos: es el término genérico
+        #     para pavimento VIAL (de ruta/calle) en cualquier pliego de
+        #     la DNV o una Intendencia, tanto como para un piso de
+        #     edificio. Se reemplazaron por variantes específicas del
+        #     rubro real de Metropolitana ("pavimento industrial",
+        #     "pavimento deportivo", etc. — ver config/empresa.yaml
+        #     "Pisos deportivos, industriales, comerciales, hospitalarios,
+        #     educativos"), y se sacaron "cambio de pavimento"/"recambio
+        #     de pavimento"/"renovación de pavimento" (repavimentación de
+        #     calles, un trabajo real y frecuente de Intendencias que no
+        #     es rubro de Metropolitana).
+        # Este mismo test, al escribir un fragmento realista de pliego vial
+        # para probarlo, encontró un TERCER término igual de genérico que
+        # no había sido reportado todavía: "hormigón"/"hormigon" solo
+        # (materiales) — el hormigón armado es el material de CUALQUIER
+        # obra vial/estructural (rutas, puentes, alcantarillas), no una
+        # señal de piso. Mismo arreglo que ya se había hecho con
+        # "concreto": se reemplazó por "hormigón pulido"/"hormigon
+        # pulido" (el piso de hormigón pulido sí es un producto real del
+        # rubro, con el término que efectivamente se usa en Uruguay).
+        texto = (
+            "los trabajos comprenden la construcción de una alcantarilla en el cruce de la continuación "
+            "de ruta 89 sobre la cañada s/n, en el departamento de san josé. la alcantarilla a construir "
+            "será de 5 bocas de 1,5 m de luz, de acuerdo a las láminas tipo de la dnv. para el acceso a la "
+            "obra se prevé una rampa según la norma de accesibilidad vigente, y se procederá al cambio de "
+            "pavimento en la zona afectada una vez finalizados los trabajos de hormigón armado."
+        )
+        fuertes = settings.todas_las_palabras_clave()
+        matches = [kw for kw in fuertes if settings.coincide_palabra_clave(texto, kw)]
+        self.assertEqual(matches, [], f"No debería matchear ningún término fuerte, matcheó: {matches}")
+
+    def test_pavimento_especifico_del_rubro_sigue_marcando_relevante(self):
+        # Los reemplazos específicos ("pavimento industrial", etc.) no
+        # deben perder cobertura real: Metropolitana sí vende pisos
+        # deportivos/industriales/comerciales/hospitalarios/educativos
+        # (ver config/empresa.yaml).
+        textos_relacionados = [
+            "Provisión de pavimento deportivo para el polideportivo municipal.",
+            "Recambio de pavimento industrial en planta de UTE.",
+            "Colocación de pavimento hospitalario en el Hospital Pasteur.",
+        ]
+        fuertes = settings.todas_las_palabras_clave()
+        for texto in textos_relacionados:
+            texto_lower = texto.lower()
+            matches = [kw for kw in fuertes if settings.coincide_palabra_clave(texto_lower, kw)]
+            self.assertTrue(matches, f"No se detectó ningún término en: {texto!r}")
+
 
 if __name__ == "__main__":
     unittest.main()
