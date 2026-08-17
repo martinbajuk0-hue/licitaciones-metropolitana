@@ -15,6 +15,9 @@ on:
         type: boolean
         default: false
 
+permissions:
+  contents: write  # necesario para el commit+push de docs/data y docs/informes (visor web)
+
 jobs:
   monitorear:
     runs-on: ubuntu-latest
@@ -54,3 +57,16 @@ jobs:
         with:
           path: data/licitaciones_vistas.json
           key: licitaciones-vistas-${{ runner.os }}-${{ github.run_id }}
+
+      - name: Publicar catálogo del visor web (docs/data, docs/informes)
+        if: always() && !inputs.test_email && !inputs.auditoria
+        run: |
+          git config user.name "monitor-bot"
+          git config user.email "monitor-bot@users.noreply.github.com"
+          git add docs/data docs/informes
+          if git diff --cached --quiet; then
+            echo "Sin cambios en el catálogo del visor, no hay nada que commitear."
+          else
+            git commit -m "Actualizar catálogo del visor [skip ci]"
+            git push
+          fi
