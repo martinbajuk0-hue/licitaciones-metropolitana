@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visor de Licitaciones — Metropolitana</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<style>
+  :root {
+    --azul: #1a73e8;
+    --azul-oscuro: #0b57bf;
+    --verde: #1e8e3e;
+    --amarillo: #f9ab00;
+    --rojo: #d93025;
+    --gris-fondo: #f4f6f8;
+    --gris-borde: #dadce0;
+    --gris-texto: #5f6368;
+    --texto: #202124;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--gris-fondo);
+    color: var(--texto);
+  }
+  header {
+    background: var(--azul);
+    color: white;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  header h1 { font-size: 19px; margin: 0; font-weight: 600; }
+  header .sub { font-size: 12.5px; opacity: 0.9; }
+  #resumen {
+    display: flex;
+    gap: 12px;
+    padding: 14px 28px;
+    flex-wrap: wrap;
+  }
+  .stat {
+    background: white;
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: 10px 16px;
+    min-width: 110px;
+  }
+  .stat .n { font-size: 22px; font-weight: 700; }
+  .stat .l { font-size: 11.5px; color: var(--gris-texto); text-transform: uppercase; letter-spacing: .03em; }
+  #filtros {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0 28px 14px 28px;
+    align-items: center;
+  }
+  #filtros input, #filtros select {
+    padding: 8px 10px;
+    border: 1px solid var(--gris-borde);
+    border-radius: 6px;
+    font-size: 13.5px;
+    background: white;
+  }
+  #filtros input[type="text"] { min-width: 220px; }
+  #filtros label { font-size: 12px; color: var(--gris-texto); display: flex; flex-direction: column; gap: 3px; }
+  #contador { font-size: 12.5px; color: var(--gris-texto); padding: 0 28px 8px 28px; }
+  main { padding: 0 28px 40px 28px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  }
+  th, td {
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 13px;
+    border-bottom: 1px solid var(--gris-borde);
+    vertical-align: top;
+  }
+  th {
+    background: #eef2f7;
+    color: var(--gris-texto);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+  th:hover { color: var(--texto); }
+  th.activo { color: var(--azul); }
+  tr:hover td { background: #f8faff; }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge-nueva { background: #e6f4ea; color: var(--verde); }
+  .badge-modificada { background: #fef7e0; color: #b06000; }
+  .estrellas { color: var(--amarillo); white-space: nowrap; font-size: 13px; }
+  .estrellas .vacia { color: #e0e0e0; }
+  .organismo { font-weight: 600; }
+  .titulo-cell { max-width: 340px; }
+  .link-informe {
+    color: var(--azul);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12.5px;
+    white-space: nowrap;
+  }
+  .link-informe:hover { text-decoration: underline; }
+  .link-ficha { color: var(--gris-texto); font-size: 11.5px; text-decoration: none; }
+  .link-ficha:hover { text-decoration: underline; }
+  .cat-tag {
+    display: inline-block;
+    background: #eef2f7;
+    color: var(--gris-texto);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 11px;
+    margin: 1px 2px 1px 0;
+  }
+  .vacio {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gris-texto);
+    font-size: 14px;
+  }
+  /* Panel de detalle */
+  #overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 50;
+  }
+  #overlay.activo { display: block; }
+  #panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: min(760px, 92vw);
+    background: white;
+    box-shadow: -2px 0 12px rgba(0,0,0,0.2);
+    overflow-y: auto;
+    padding: 28px 34px 60px 34px;
+    z-index: 51;
+  }
+  #panel-cerrar {
+    position: sticky;
+    top: 0;
+    float: right;
+    background: var(--gris-fondo);
+    border: 1px solid var(--gris-borde);
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  #panel-contenido h1 { font-size: 20px; }
+  #panel-contenido h2 { font-size: 16px; margin-top: 26px; border-bottom: 1px solid var(--gris-borde); padding-bottom: 4px; }
+  #panel-contenido h3 { font-size: 14px; margin-top: 18px; }
+  #panel-contenido table { box-shadow: none; }
+  #panel-contenido code { background: #f1f3f4; padding: 1px 5px; border-radius: 4px; font-size: 12.5px; }
+  #panel-loading { color: var(--gris-texto); padding: 40px 0; text-align: center; }
+  footer {
+    text-align: center;
+    font-size: 11.5px;
+    color: var(--gris-texto);
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Visor de Licitaciones — Metropolitana</h1>
+    <div class="sub">Oportunidades detectadas automáticamente en Compras Estatales (ARCE)</div>
+  </div>
+  <div class="sub" id="actualizado">—</div>
+</header>
+
+<div id="resumen"></div>
+
+<div id="filtros">
+  <label>Buscar
+    <input type="text" id="f-texto" placeholder="Título, organismo...">
+  </label>
+  <label>Organismo
+    <select id="f-organismo"><option value="">Todos</option></select>
+  </label>
+  <label>Rubro
+    <select id="f-categoria"><option value="">Todos</option></select>
+  </label>
+  <label>Estrellas mínimas
+    <select id="f-score">
+      <option value="0">Todas</option>
+      <option value="2">★★ o más</option>
+      <option value="3">★★★ o más</option>
+      <option value="4">★★★★ o más</option>
+      <option value="5">★★★★★</option>
+    </select>
+  </label>
+  <label>Estado
+    <select id="f-estado">
+      <option value="">Todos</option>
+      <option value="nueva">Nuevas</option>
+      <option value="modificada">Con cambios</option>
+    </select>
+  </label>
+</div>
+
+<div id="contador"></div>
+
+<main>
+  <table id="tabla">
+    <thead>
+      <tr>
+        <th data-col="fecha_apertura">Apertura</th>
+        <th data-col="organismo">Organismo</th>
+        <th data-col="titulo">Título</th>
+        <th data-col="categorias_etiquetas">Rubro</th>
+        <th data-col="score">Clasificación</th>
+        <th data-col="cambio_detectado">Estado</th>
+        <th>Informe</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <div class="vacio" id="vacio" style="display:none;">No hay llamados que coincidan con los filtros.</div>
+</main>
+
+<footer>
+  Datos generados automáticamente por el pipeline de monitoreo (GitHub Actions). No reemplaza la lectura del pliego original.
+</footer>
+
+<div id="overlay" onclick="cerrarPanel()"></div>
+<div id="panel" style="display:none;">
+  <button id="panel-cerrar" onclick="cerrarPanel()">✕ Cerrar</button>
+  <div id="panel-contenido"><div id="panel-loading">Cargando informe…</div></div>
+</div>
+
+<script>
+let DATA = [];
+let ORDEN = { col: "fecha_apertura", asc: true };
+
+async function cargar() {
+  try {
+    const resp = await fetch("data/llamados.json?_=" + Date.now());
+    if (!resp.ok) throw new Error("No se pudo leer data/llamados.json (" + resp.status + ")");
+    const json = await resp.json();
+    DATA = Object.values(json);
+  } catch (err) {
+    document.getElementById("tbody").innerHTML =
+      '<tr><td colspan="7" class="vacio">No se pudo cargar el catálogo (' + err.message + '). ' +
+      'Puede que todavía no haya corrido ninguna actualización, o que el sitio no esté publicado vía GitHub Pages.</td></tr>';
+    return;
+  }
+  poblarFiltros();
+  render();
+}
+
+function poblarFiltros() {
+  const organismos = [...new Set(DATA.map(d => d.organismo).filter(Boolean))].sort();
+  const selOrg = document.getElementById("f-organismo");
+  organismos.forEach(o => {
+    const opt = document.createElement("option");
+    opt.value = o; opt.textContent = o;
+    selOrg.appendChild(opt);
+  });
+
+  const categorias = [...new Set(DATA.flatMap(d => d.categorias_etiquetas || []))].sort();
+  const selCat = document.getElementById("f-categoria");
+  categorias.forEach(c => {
+    const opt = document.createElement("option");
+    opt.value = c; opt.textContent = c;
+    selCat.appendChild(opt);
+  });
+
+  const ultima = DATA.map(d => d.ultima_actualizacion).filter(Boolean).sort().pop();
+  document.getElementById("actualizado").textContent = ultima
+    ? "Última actualización: " + new Date(ultima).toLocaleString("es-UY")
+    : "";
+}
+
+function filtrar() {
+  const texto = document.getElementById("f-texto").value.trim().toLowerCase();
+  const organismo = document.getElementById("f-organismo").value;
+  const categoria = document.getElementById("f-categoria").value;
+  const scoreMin = parseInt(document.getElementById("f-score").value, 10);
+  const estado = document.getElementById("f-estado").value;
+
+  return DATA.filter(d => {
+    if (texto) {
+      const hay = (d.titulo || "").toLowerCase().includes(texto) ||
+                  (d.organismo || "").toLowerCase().includes(texto);
+      if (!hay) return false;
+    }
+    if (organismo && d.organismo !== organismo) return false;
+    if (categoria && !(d.categorias_etiquetas || []).includes(categoria)) return false;
+    if (scoreMin && (d.nivel || 0) < scoreMin) return false;
+    if (estado === "nueva" && d.cambio_detectado) return false;
+    if (estado === "modificada" && !d.cambio_detectado) return false;
+    return true;
+  });
+}
+
+function ordenar(lista) {
+  const { col, asc } = ORDEN;
+  return [...lista].sort((a, b) => {
+    let va = a[col], vb = b[col];
+    if (col === "score") { va = a.nivel || 0; vb = b.nivel || 0; }
+    if (col === "categorias_etiquetas") { va = (a.categorias_etiquetas || []).join(","); vb = (b.categorias_etiquetas || []).join(","); }
+    if (va === undefined || va === null) va = "";
+    if (vb === undefined || vb === null) vb = "";
+    // Fechas vacías (sin detectar) siempre al final, sin importar la dirección.
+    if (col === "fecha_apertura") {
+      if (!va && vb) return 1;
+      if (va && !vb) return -1;
+    }
+    if (va < vb) return asc ? -1 : 1;
+    if (va > vb) return asc ? 1 : -1;
+    return 0;
+  });
+}
+
+function render() {
+  const filtrados = ordenar(filtrar());
+  renderResumen();
+  document.getElementById("contador").textContent =
+    filtrados.length + " de " + DATA.length + " llamados";
+
+  const tbody = document.getElementById("tbody");
+  const vacio = document.getElementById("vacio");
+  tbody.innerHTML = "";
+  vacio.style.display = filtrados.length ? "none" : "block";
+
+  document.querySelectorAll("th[data-col]").forEach(th => {
+    th.classList.toggle("activo", th.dataset.col === ORDEN.col);
+  });
+
+  filtrados.forEach(d => {
+    const tr = document.createElement("tr");
+    const estrellas = renderEstrellas(d.nivel || 0);
+    const cats = (d.categorias_etiquetas || []).map(c => '<span class="cat-tag">' + escapeHtml(c) + '</span>').join("");
+    const badge = d.cambio_detectado
+      ? '<span class="badge badge-modificada">Con cambios</span>'
+      : '<span class="badge badge-nueva">Nueva</span>';
+    tr.innerHTML = `
+      <td>${escapeHtml(d.fecha_apertura || "No detectada")}</td>
+      <td class="organismo">${escapeHtml(d.organismo || "No detectado")}</td>
+      <td class="titulo-cell">${escapeHtml(d.titulo || "")}
+        ${d.url_ficha ? '<br><a class="link-ficha" href="' + escapeAttr(d.url_ficha) + '" target="_blank" rel="noopener">Ver ficha en ARCE ↗</a>' : ""}
+      </td>
+      <td>${cats || '<span style="color:#9aa0a6">—</span>'}</td>
+      <td><span class="estrellas">${estrellas}</span><br><span style="font-size:11px;color:var(--gris-texto)">${escapeHtml(d.etiqueta_clasificacion || "")}</span></td>
+      <td>${badge}</td>
+      <td><a class="link-informe" href="#" onclick="abrirInforme('${escapeAttr(d.informe)}', '${escapeAttr((d.titulo||"").replace(/'/g,"\\'"))}'); return false;">Ver informe →</a></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function renderEstrellas(nivel) {
+  let out = "";
+  for (let i = 1; i <= 5; i++) out += i <= nivel ? "★" : '<span class="vacia">★</span>';
+  return out;
+}
+
+function renderResumen() {
+  const total = DATA.length;
+  const nuevas = DATA.filter(d => !d.cambio_detectado).length;
+  const modificadas = DATA.filter(d => d.cambio_detectado).length;
+  const altas = DATA.filter(d => (d.nivel || 0) >= 4).length;
+  const cont = document.getElementById("resumen");
+  cont.innerHTML = `
+    <div class="stat"><div class="n">${total}</div><div class="l">Total llamados</div></div>
+    <div class="stat"><div class="n">${nuevas}</div><div class="l">Nuevas</div></div>
+    <div class="stat"><div class="n">${modificadas}</div><div class="l">Con cambios</div></div>
+    <div class="stat"><div class="n">${altas}</div><div class="l">★★★★ o más</div></div>
+  `;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+}
+function escapeAttr(s) { return escapeHtml(s); }
+
+async function abrirInforme(ruta, titulo) {
+  document.getElementById("overlay").classList.add("activo");
+  const panel = document.getElementById("panel");
+  panel.style.display = "block";
+  document.getElementById("panel-contenido").innerHTML =
+    '<button id="panel-cerrar" onclick="cerrarPanel()">✕ Cerrar</button><div id="panel-loading">Cargando informe…</div>';
+  try {
+    const resp = await fetch(ruta + "?_=" + Date.now());
+    if (!resp.ok) throw new Error("No se encontró el informe (" + resp.status + ")");
+    const md = await resp.text();
+    document.getElementById("panel-contenido").innerHTML =
+      '<button id="panel-cerrar" onclick="cerrarPanel()">✕ Cerrar</button>' + marked.parse(md);
+  } catch (err) {
+    document.getElementById("panel-contenido").innerHTML =
+      '<button id="panel-cerrar" onclick="cerrarPanel()">✕ Cerrar</button><div class="vacio">No se pudo cargar el informe (' + err.message + ').</div>';
+  }
+}
+
+function cerrarPanel() {
+  document.getElementById("overlay").classList.remove("activo");
+  document.getElementById("panel").style.display = "none";
+}
+
+document.getElementById("f-texto").addEventListener("input", render);
+document.getElementById("f-organismo").addEventListener("change", render);
+document.getElementById("f-categoria").addEventListener("change", render);
+document.getElementById("f-score").addEventListener("change", render);
+document.getElementById("f-estado").addEventListener("change", render);
+
+document.querySelectorAll("th[data-col]").forEach(th => {
+  th.addEventListener("click", () => {
+    const col = th.dataset.col;
+    if (ORDEN.col === col) ORDEN.asc = !ORDEN.asc;
+    else { ORDEN.col = col; ORDEN.asc = true; }
+    render();
+  });
+});
+
+document.addEventListener("keydown", e => { if (e.key === "Escape") cerrarPanel(); });
+
+cargar();
+</script>
+
+</body>
+</html>
