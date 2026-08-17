@@ -1765,6 +1765,49 @@ categorias:
     - venta e instalación
     - visita tecnica de medicion
     - visita técnica de medición
+  contenedores_modulares:
+    # Metropolitana también vende baños modulares, garitas, depósitos y
+    # contenedores habitables (ver CLAUDE.md / rol de la empresa) — línea
+    # de negocio que no estaba cubierta acá hasta el 2026-08-17. Caso real
+    # que expuso el hueco: Compra Directa 6/2026 (adquisición de dos
+    # contenedores/módulos habitacionales para AFE Tacuarembó) solo
+    # matcheó por "piso vinílico" — un término que aparecía de casualidad
+    # en la ficha técnica del piso interior del módulo, no por reconocer
+    # el producto real (contenedor habitable). Todos los términos acá son
+    # de 2+ palabras a propósito (ver settings.es_termino_multipalabra):
+    # "container"/"garita" sueltos son demasiado genéricos para ser señal
+    # fuerte por sí solos.
+    keywords:
+    - baño modular
+    - baños modulares
+    - bano modular
+    - banos modulares
+    - contenedor habitable
+    - contenedor oficina
+    - contenedor vivienda
+    - contenedores habitables
+    - container habitable
+    - container oficina
+    - deposito modular
+    - depósito modular
+    - depositos modulares
+    - depósitos modulares
+    - garita de seguridad
+    - garita prefabricada
+    - garitas de seguridad
+    - garitas prefabricadas
+    - modulo habitacional
+    - módulo habitacional
+    - modulo sanitario
+    - módulo sanitario
+    - modulos habitacionales
+    - módulos habitacionales
+    - oficina container
+    - oficina modular
+    - sanitario modular
+    - unidad habitacional container
+    - vivienda container
+    - vivienda modular
 terminologia_pliegos:
 - acondicionamiento de cancha
 - acondicionamiento de gimnasio municipal
@@ -1956,7 +1999,6 @@ terminologia_pliegos:
 - ítem pisos
 - ítem revestimientos
 materiales:
-- abs
 - abs plastico
 - abs plástico
 - acabado brillante
@@ -1995,7 +2037,7 @@ materiales:
 - compuesto plástico madera
 - compuestos polimericos
 - compuestos poliméricos
-- concreto
+- concreto pulido
 - contrachapado
 - corcho
 - corcho aglomerado
@@ -2987,7 +3029,6 @@ errores_comunes:
 - zocalo
 - zocálo
 abreviaturas:
-- abs
 - ac3
 - ac4
 - ac5
