@@ -1,0 +1,103 @@
+# Informe de licitación: Licitación Pública 24/2025
+
+**URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1362541
+**Generado:** 2026-08-18 20:44
+
+## Clasificación: ★ — No presentarse (score 17/100)
+
+### Por qué este puntaje
+- +24 por 2 categoría(s) de producto identificadas
+- +15 por organismo identificado (prioritario según el rol)
+- -16 por 4 campo(s) clave no identificados (a verificar manualmente)
+- -10 por 1 riesgo(s) de severidad alta
+- -6 por 2 riesgo(s) de severidad media
+- -20 por 11 ítem(s) documentales a verificar
+
+## Resumen ejecutivo
+Organismo: Intendencia de Maldonado.
+Número: no identificado — verificar manualmente.
+Fecha de apertura: no identificada — verificar manualmente.
+Categorías de producto detectadas: Felpudos y camineros, Material mencionado (revisar contexto).
+Resumen generado por reglas (sin ANTHROPIC_API_KEY configurada): es un extracto de campos, no un análisis narrativo completo del pliego.
+
+## Datos clave
+- Organismo: Intendencia de Maldonado
+- Número de licitación/expediente: **NO IDENTIFICADO — verificar manualmente**
+- Fecha de apertura: **NO IDENTIFICADA — verificar manualmente** (Fecha de cierre no identificada — verificar manualmente)
+- Plazo/fecha de entrega: no identificado — verificar manualmente
+- Fecha límite de consultas: no identificada — verificar manualmente
+- Fecha de visita de obra: no identificada / puede no aplicar
+- Garantía de mantenimiento de oferta: no identificada — verificar manualmente
+- Garantía de fiel cumplimiento: no identificada — verificar manualmente
+
+### Criterios de evaluación detectados
+- aplicado, la Comisión Asesora de
+- Adjudicaciones, podrá invitar a los oferentes respectivos a mejorar sus ofertas
+- 7). La Intendencia se reserva el derecho en caso d e ofertas similares de entablar
+- negociaciones con los respectivos oferentes, a fin de obtener mejores condiciones
+- técnicas, de calidad o de precio
+- 8). Si los precios de la o las ofertas recibidas son considerados manifiestamente
+- inconvenientes, la Comisión Asesora queda autorizada a solicitar directamente mejoras
+- en sus condiciones técnicas de precio, plazo o calidad
+
+### Datos que faltan y dónde buscarlos
+- número de licitación/expediente: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- fecha de apertura: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- fecha/plazo de entrega: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- fecha límite de consultas: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+
+## Productos Metropolitana identificados
+Categorías detectadas: Felpudos y camineros, Material mencionado (revisar contexto)
+
+- **Felpudos y camineros** ("caminero"): ...barrido del área contratada incluye pavimentos, peatonales, camineros,  cordones, cordón cuneta, veredas, bordes de rutas, calza...
+- **Felpudos y camineros** ("camineros"): ...barrido del área contratada incluye pavimentos, peatonales, camineros,  cordones, cordón cuneta, veredas, bordes de rutas, calzad...
+- **Material mencionado (revisar contexto)** ("madera"): ...uenta del concesionario, debiendo depositar lo producido de madera del talado en  donde lo dictamine el Departamento de Gestió...
+- **Material mencionado (revisar contexto)** ("polietileno"): ...r de 1 (una) hora de finalizada la tarea.  d) Las bolsas de polietileno deberán ser de resistencia adecuada, no menor a 45 micrones...
+- **Material mencionado (revisar contexto)** ("polietileno de alta densidad"): ...mínima 120 lts.   Color llamativo.   Que sea material de polietileno de alta densidad, que sean resistente a la acción del  agua y los rayos U.V....
+
+### Ya adjudicaste antes
+Metropolitana ya le vendió al Estado alguno de estos productos antes (historial 2025-2026, ver knowledge/historial_adjudicaciones_metropolitana.json): MANTA BAJO PISO DE ESPUMA DE POLIETILENO, ZOCALO DE MADERA, PANEL DE MADERA, CAMINERO DE GOMA, CAMINERO DE FIELTRO, CAMINERO DE PVC, CAMINERO DE ACRILICO, REPARACION DE PISO DE MADERA.
+### Contexto adicional (lugar de uso / aplicación)
+- Lugar de uso mencionado: banco, brou, campus, comedor, correo, deposito, depósito, depósitos, direccion, dirección, estacionamiento, facultad, intendencia, intendencia de maldonado, jardin
+- Aplicación mencionada: certificado, interior, térmico
+
+## Riesgos detectados
+Altos: 1 · Medios: 2 · Total: 3
+
+- [ALTA] multas_penalidades: Penalidades mencionadas — «pecíficamente  a) El adjudicatario podrá ser sancionado con penalidades graduales entre 5 y 50 U.R. y/o entre  el 5 (cinco) y el 50»
+- [MEDIA] plazos: Plazo de 48 horas mencionado — «ncia podrá si lo considera necesario, con ceder un plazo de 48 horas hábiles,  a los efectos que los oferentes sub sanen cualqui»
+- [MEDIA] plazos: Plazo de 48 horas mencionado — «os se realizará por escrito comunicándole al  adjudicatario 48 horas antes.  b) La Intendencia se reserva el derecho de contrata»
+
+## Checklist documental
+### Exigidos explícitamente en el pliego
+- Inscripción activa en RUPE — evidencia: «veedor propuesto no hubiese adquirido el estado "ACTIVO" en RUPE, la Administración otorgará un plazo de 5 días hábiles a fi»
+- Garantía de mantenimiento de oferta — evidencia: «s, fianza o aval bancario, o póliza de seguro de fianza. La garantía de mantenimiento de oferta será de $ 50 0.000 (pesos uruguayos quinientos mil) y la de»
+- Garantía de fiel cumplimiento de contrato — evidencia: «trato en forma previa a la firma  del mismo. El depósito de garantía de fiel cumplimiento del contrato podrá complementa rse al depósito de garantía»
+- Pólizas de seguro (responsabilidad civil / accidentes) — evidencia: «efe ctivo o en valores públicos, fianza o aval bancario, o póliza de seguro de fianza. La garantía de mantenimiento de oferta»
+- Formulario de identificación del oferente — evidencia: «las disposiciones aplicables del T.O.C.A.F.  FORMULARIO DE IDENTIFICACION DEL OFERENTE Licitación Pública Nro. 24 / 2025 Razón Social de la Empres»
+
+### Estándar, no mencionado en el pliego (verificar si igual aplica)
+- Certificado único de DGI vigente
+- Certificado único de BPS vigente
+- Poderes / representación legal vigentes
+- Certificado notarial de vigencia / representación
+- Estados contables / antecedentes financieros
+- Catálogos de producto
+- Fichas técnicas de los productos ofertados
+- Muestras físicas de producto
+- Antecedentes en obras/suministros similares
+- Constancia de visita de obra (si el pliego la exige)
+- Declaraciones juradas exigidas
+
+## Cronograma de tareas
+- 2026-08-18: Lectura integral del pliego y anexos
+- 2026-08-19: Armar checklist documental y reunir certificados
+- según disponibilidad, antes de apertura: Definir productos y armar cotización
+- según disponibilidad, antes de apertura: Redactar oferta técnica y administrativa
+- FECHA DE APERTURA NO IDENTIFICADA — verificar manualmente antes de planificar: Entrega de oferta
+
+## Documentos que no se pudieron leer
+_(ninguno)_
+
+---
+_Informe generado automáticamente. No sustituye la lectura íntegra del pliego por una persona del equipo de licitaciones. Todo campo marcado como 'no identificado' o 'PENDIENTE' requiere verificación manual antes de tomar una decisión de presentarse._

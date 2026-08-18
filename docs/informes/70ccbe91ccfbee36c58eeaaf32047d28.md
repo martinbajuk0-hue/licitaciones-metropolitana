@@ -1,0 +1,113 @@
+# Informe de licitación: Compra Directa 46026/2026
+
+**URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1354830
+**Generado:** 2026-08-18 20:12
+
+## Clasificación: ★★ — Poco conveniente (score 39/100)
+
+### Por qué este puntaje
+- +40 por 9 categoría(s) de producto identificadas
+- +15 por organismo identificado (prioritario según el rol)
+- -16 por 4 campo(s) clave no identificados (a verificar manualmente)
+- -10 por 1 riesgo(s) de severidad alta
+- -20 por 13 ítem(s) documentales a verificar
+
+## Resumen ejecutivo
+Organismo: UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas.
+Número: 102702.
+Fecha de apertura: no identificada — verificar manualmente.
+Categorías de producto detectadas: Abreviatura técnica del rubro, Accesorios de instalación, Marca de mercado mencionada, Material mencionado (revisar contexto), Pisos de madera, Pisos flotantes/laminados, Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro.
+Resumen generado por reglas (sin ANTHROPIC_API_KEY configurada): es un extracto de campos, no un análisis narrativo completo del pliego.
+
+## Datos clave
+- Organismo: UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas
+- Número de licitación/expediente: 102702
+- Fecha de apertura: **NO IDENTIFICADA — verificar manualmente** (Fecha de cierre no identificada — verificar manualmente)
+- Plazo/fecha de entrega: no identificado — verificar manualmente
+- Fecha límite de consultas: no identificada — verificar manualmente
+- Fecha de visita de obra: no identificada / puede no aplicar
+- Garantía de mantenimiento de oferta: no identificada — verificar manualmente
+- Garantía de fiel cumplimiento: no identificada — verificar manualmente
+
+### Criterios de evaluación detectados
+_(ninguno)_
+
+### Datos que faltan y dónde buscarlos
+- fecha de apertura: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- fecha/plazo de entrega: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- fecha límite de consultas: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- criterios de evaluación: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+
+## Productos Metropolitana identificados
+Categorías detectadas: Abreviatura técnica del rubro, Accesorios de instalación, Marca de mercado mencionada, Material mencionado (revisar contexto), Pisos de madera, Pisos flotantes/laminados, Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro
+
+- **Pisos vinílicos** ("pvc"): ...1,10 Aberturas exteriores (ajustes) Cortinas de enrollar 1 PVC Postigones Rejas Vidrios 6 - HERRAJES Rubro Unidad Cantidad...
+- **Pisos flotantes/laminados** ("mdf"): ...necesario su suministro o reparación, se podrá realizar en MDF  o en bastidor, terminado por lo menos con dos manos de esm...
+- **Pisos de madera** ("parquet"): ...calcareo m2 Piso monolítico m2 Piso cerámico m2 38 3,2 Piso parquet m2 Suministro y colocación de piso cermaico grado 5 en Esta...
+- **Pisos de madera** ("piso parquet"): ...Piso calcareo m2 Piso monolítico m2 Piso cerámico m2 38 3,2 Piso parquet m2 Suministro y colocación de piso cermaico grado 5 en Esta...
+- **Accesorios de instalación** ("tapajuntas"): ...los trabajos. Se debe incluir colillas de malla metálica y tapajuntas nuevas.  La instalación realizada se deberá dejar descubier...
+- **Accesorios de instalación** ("zócalo"): ...so de baño Av.Artigas s/n entre calle  17m y Juan P. Lopez  Zócalos ml Revestimiento cocina m2 2,3 Revestimiento baño m2 12,5...
+- **Accesorios de instalación** ("zócalos"): ...so de baño Av.Artigas s/n entre calle  17m y Juan P. Lopez  Zócalos ml Revestimiento cocina m2 2,3 Revestimiento baño m2 12,5 P...
+- **Terminología genérica del pliego (revisar manualmente qué producto aplica)** ("baldosa"): ...zócalo de granito 1 1,20 x 0,05 Unidad Cantidad Retiro piso baldosa monolitico m2 45 3 - INSTALACION SANITARIA Rubro Unidad Can...
+- **Terminología genérica del pliego (revisar manualmente qué producto aplica)** ("baldosas"): ...tener piezas enteras. En sustitución parcial  de pisos, las baldosas a colocar deberán ser de igual terminación a las existentes...
+- **Material mencionado (revisar contexto)** ("acero inoxidable"): ...de Baño. Hoja y marco Mesada de granito gris con pileta de acero inoxidable. Suministro y colocación Zócalo de granito gris idem mesada...
+- **Material mencionado (revisar contexto)** ("aluminio"): ...ustes) Aberturas exteriores (nuevas) 1 Madera 0,80 x 2,05 1 Aluminio 0,50 x 0,80 1 Aluminio 1,40 x 2,05 1 Aluminio 1,10 x 1,10 1...
+- **Material mencionado (revisar contexto)** ("cerámica"): ...evestimientos:  La reposición o colocación de revestimiento cerámica grado 3 como mínimo deberá realizarse  de acuerdo a las dir...
+- **Material mencionado (revisar contexto)** ("epoxi"): ...Revestimientos: Se pintará con dos manos de pintura esmalte epoxi, del tipo para azulejos como  mínimo el revestimiento de ba...
+- **Material mencionado (revisar contexto)** ("goma"): ...e emplearán como elemento de conexión de asiento, embudo de goma.  El encuentro entre artefacto e instalación será continuo,...
+- **Material mencionado (revisar contexto)** ("granito"): ...2 0,75 x 2,05 1 0,70 x 2,05 Mesadas Cant. Medida Mesada de granito 1 1,20 x 0,60 Otros Cant. Medida zócalo de granito 1 1,20 x...
+- **Material mencionado (revisar contexto)** ("látex"): ...aredes: Se terminarán por lo menos con dos manos de pintura látex de igual o superior calidad  que las del tipo al agua para...
+- **Material mencionado (revisar contexto)** ("madera"): ...rturas interiores (ajustes) Aberturas exteriores (nuevas) 1 Madera 0,80 x 2,05 1 Aluminio 0,50 x 0,80 1 Aluminio 1,40 x 2,05 1...
+- **Material mencionado (revisar contexto)** ("mdf"): ...necesario su suministro o reparación, se podrá realizar en MDF  o en bastidor, terminado por lo menos con dos manos de esm...
+- **Material mencionado (revisar contexto)** ("mármol"): ...Mesada:   De ser necesario, se colocará mesada de granito, mármol u otra variante a elección de la  dirección de la obra con...
+- **Material mencionado (revisar contexto)** ("poliuretano"): ...ra exterior con la aplicación de masilla elástica a base de poliuretano tipo Sika Flex,   Construcción, o similar.     4.1.2) Ajust...
+- **Material mencionado (revisar contexto)** ("porcelanato"): ...colocara en su lugar piso cerámico  alto tránsito grado 4 o porcelanato color a elección con mortero en “bindafix” o similar. Una v...
+- **Material mencionado (revisar contexto)** ("pvc"): ...1,10 Aberturas exteriores (ajustes) Cortinas de enrollar 1 PVC Postigones Rejas Vidrios 6 - HERRAJES Rubro Unidad Cantidad...
+- **Marca de mercado mencionada** ("sika"): ...brirán con cemento Portland puro o un cemento especial tipo Sika Top 122.    1.2) Pisos:  Se igualarán las superficies en cu...
+- **Variante/error ortográfico de un término del rubro** ("porcelanato"): ...colocara en su lugar piso cerámico  alto tránsito grado 4 o porcelanato color a elección con mortero en “bindafix” o similar. Una v...
+- **Abreviatura técnica del rubro** ("mdf"): ...necesario su suministro o reparación, se podrá realizar en MDF  o en bastidor, terminado por lo menos con dos manos de esm...
+
+### Ya adjudicaste antes
+Metropolitana ya le vendió al Estado alguno de estos productos antes (historial 2025-2026, ver knowledge/historial_adjudicaciones_metropolitana.json): ALFOMBRA DE PVC, ALFOMBRA DE GOMA, BALDOSA LISA, CEMENTO ADHESIVO PARA PORCELANATO, ZOCALO PARA PISO FLOTANTE, PISO MODULAR DE PVC, CEMENTO ADHESIVO PARA CERAMICA, PISO DE GOMA, ZOCALO DE MADERA, PANEL DE MADERA, ZOCALO CONFORMADO PARA PISO VINILICO, VARILLA DE ALUMINIO, PROTECTOR EN PVC PARA PISO FLOTANTE, ZOCALO MONOLITICO, BALDOSA VINILICA ALTO TRANSITO, CAMINERO DE GOMA, TAPAJUNTAS, PERFIL U DE ALUMINIO, BALDOSA VINILICA, BALDOSA DE GOMA, COLOCACION DE ZOCALO, PLANCHA DE GOMA EVA, ZOCALO EN MDF, GOMA DE LATEX 1.5 ESPESOR 3 MM, CAMINERO DE PVC, GOMA NATURAL EN PLANCHA, REPARACION DE PISO DE MADERA, piso de goma o vinilo en rollo de 1,5 mm, de espesor.-.
+### Contexto adicional (lugar de uso / aplicación)
+- Lugar de uso mencionado: banco, bps, bse, comedor, depósito, dirección, fabrica, facultad, garage, intendencia, mtss, ose, parque, patio, recepcion
+- Aplicación mencionada: alto tránsito, certificado, exterior, impermeable, interior
+
+## Riesgos detectados
+Altos: 1 · Medios: 0 · Total: 1
+
+- [ALTA] multas_penalidades: Riesgo de rescisión contractual — «ón al servicio mediante Técnico Electricista registrado.    RESCISIÓN DEL CONTRATO:  Si se constatare falta de cumplimiento por parte del Cont»
+
+## Checklist documental
+### Exigidos explícitamente en el pliego
+- Certificado único de DGI vigente — evidencia: «tener funcionarios en régimen de Industria y Comercio),   Certificado único de DGI,   Planilla de control de trabajo, y»
+- Certificado único de BPS vigente — evidencia: «de Inicio la Empresa deberá presentar:   Formulario F2 del BPS para la vinculación de la obra a ejecutar,   Certificado d»
+- Constancia de visita de obra (si el pliego la exige) — evidencia: «mpleta, correcta y esmerada  terminación a las unidades.    Visita de obra:  Se sugiere al Oferente el relevar en el lugar los trabajo»
+
+### Estándar, no mencionado en el pliego (verificar si igual aplica)
+- Inscripción activa en RUPE
+- Poderes / representación legal vigentes
+- Certificado notarial de vigencia / representación
+- Estados contables / antecedentes financieros
+- Catálogos de producto
+- Fichas técnicas de los productos ofertados
+- Muestras físicas de producto
+- Garantía de mantenimiento de oferta
+- Garantía de fiel cumplimiento de contrato
+- Pólizas de seguro (responsabilidad civil / accidentes)
+- Antecedentes en obras/suministros similares
+- Declaraciones juradas exigidas
+- Formulario de identificación del oferente
+
+## Cronograma de tareas
+- 2026-08-18: Lectura integral del pliego y anexos
+- 2026-08-19: Armar checklist documental y reunir certificados
+- según disponibilidad, antes de apertura: Definir productos y armar cotización
+- según disponibilidad, antes de apertura: Redactar oferta técnica y administrativa
+- FECHA DE APERTURA NO IDENTIFICADA — verificar manualmente antes de planificar: Entrega de oferta
+
+## Documentos que no se pudieron leer
+_(ninguno)_
+
+---
+_Informe generado automáticamente. No sustituye la lectura íntegra del pliego por una persona del equipo de licitaciones. Todo campo marcado como 'no identificado' o 'PENDIENTE' requiere verificación manual antes de tomar una decisión de presentarse._
