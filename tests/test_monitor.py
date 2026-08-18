@@ -159,12 +159,15 @@ class TestEsRelevantePorCodigoArticulo(unittest.TestCase):
             relevante, kw, fuente, texto_pliego = monitor.es_relevante(lic)
             self.assertFalse(relevante)
 
-    def test_match_por_codigo_pisa_al_filtro_de_alquiler_de_inmueble(self):
-        # Caso extremo pero relevante para verificar el orden de prioridad:
-        # si por alguna razón un llamado con título de alquiler de local
-        # trae un código de artículo que sí matchea el historial, el match
-        # por código debe ganar — es la señal más fuerte, no el texto del
-        # título.
+    def test_filtro_de_alquiler_de_inmueble_pisa_al_match_por_codigo(self):
+        # Orden de prioridad invertido respecto a una primera versión de
+        # este código: el filtro de alquiler de inmueble es un VETO
+        # ABSOLUTO, ni siquiera un match por código lo pisa. Motivo
+        # (evidencia real 2026-08-18): el historial puede tener códigos
+        # genéricos o casos borde (ver historial._CODIGOS_NO_ESPECIFICOS,
+        # ej. "ARRENDAMIENTO DE PISO") — más vale un falso negativo
+        # ocasional que reintroducir el tipo de falso positivo que ya
+        # causó "siento que no estás leyendo los pliegos".
         with tempfile.TemporaryDirectory() as tmp:
             self._usar_historial_con_tatami(Path(tmp))
             lic = {
@@ -175,8 +178,7 @@ class TestEsRelevantePorCodigoArticulo(unittest.TestCase):
                 "codigos_articulo": ["63663"],
             }
             relevante, kw, fuente, texto_pliego = monitor.es_relevante(lic)
-            self.assertTrue(relevante)
-            self.assertEqual(fuente, monitor.FUENTE_CODIGO_ARTICULO)
+            self.assertFalse(relevante)
 
     def test_sin_codigos_articulo_no_rompe_el_flujo_normal(self):
         # lic sin la clave "codigos_articulo" (ej. viniendo de la rama OCDS

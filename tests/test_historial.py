@@ -162,6 +162,34 @@ class TestCodigosMetropolitana(unittest.TestCase):
             resultado = historial.productos_por_codigo_ya_adjudicado(["63663", "2925", "00000"])
             self.assertEqual(resultado, ["TATAMI", "MOQUETTE"])
 
+    def test_codigos_genericos_no_especificos_no_matchean(self):
+        # Regresión del falso positivo real detectado 2026-08-18 (run #195,
+        # auditoría en vivo): el código 35420 "CONTRATACION DE SERVICIOS
+        # PROFESIONALES" está en el historial real de Metropolitana (Poder
+        # Judicial, 08/11/2021) pero es un código genérico de ARCE que
+        # cualquier rubro puede usar — disparó contra un llamado de la
+        # Intendencia de Montevideo sin ninguna relación con pisos. Los
+        # códigos en historial._CODIGOS_NO_ESPECIFICOS nunca deben matchear,
+        # aunque estén presentes en el JSON del historial.
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            self._usar_datos(Path(tmp), [
+                {"producto": "TATAMI", "codigo": "63663"},
+                {"producto": "CONTRATACION DE SERVICIOS PROFESIONALES", "codigo": "35420"},
+                {"producto": "CONTRATACION DE MANO DE OBRA", "codigo": "28031"},
+                {"producto": "ARRENDAMIENTO DE PISO", "codigo": "72449"},
+                {"producto": "ENTREGA DE ENCOMIENDAS Y PAQUETES DENTRO DEL PAIS", "codigo": "747"},
+                {"producto": "MOQUETTE", "codigo": "0"},
+            ])
+            self.assertEqual(historial.productos_por_codigo_ya_adjudicado(["35420"]), [])
+            self.assertEqual(historial.productos_por_codigo_ya_adjudicado(["28031"]), [])
+            self.assertEqual(historial.productos_por_codigo_ya_adjudicado(["72449"]), [])
+            self.assertEqual(historial.productos_por_codigo_ya_adjudicado(["747"]), [])
+            self.assertEqual(historial.productos_por_codigo_ya_adjudicado(["0"]), [])
+            # El código específico (TATAMI) sigue matcheando normalmente —
+            # la exclusión es puntual, no global.
+            self.assertEqual(historial.productos_por_codigo_ya_adjudicado(["63663"]), ["TATAMI"])
+
 
 if __name__ == "__main__":
     unittest.main()
