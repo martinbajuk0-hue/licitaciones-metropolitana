@@ -1,7 +1,9 @@
 import json
 import tempfile
 import unittest
+from datetime import datetime
 from pathlib import Path
+from unittest.mock import patch
 
 import historial
 import monitor
@@ -192,6 +194,146 @@ class TestEsRelevantePorCodigoArticulo(unittest.TestCase):
         }
         relevante, kw, fuente, texto_pliego = monitor.es_relevante(lic)
         self.assertFalse(relevante)
+
+
+class _RespuestaFalsa:
+    """Doble mínimo de requests.Response para mockear requests.get() sin red."""
+
+    def __init__(self, status_code=200, content=b"", json_data=None, text=""):
+        self.status_code = status_code
+        self.content = content
+        self._json_data = json_data
+        self.text = text
+        self.headers = {"content-type": "application/xml"}
+
+    def json(self):
+        return self._json_data
+
+
+def _rss_mensual_xml(items_guid: list[str]) -> bytes:
+    # Mismo shape que produce comprasestatales.gub.uy/ocds/rss/AAAA/MM:
+    # <channel><item><guid>llamado-123</guid><link>...</link>
+    # <pubDate>...</pubDate><title>...</title></item>...</channel>
+    items_xml = "".join(
+        f"<item><guid>{g}</guid><link>https://www.comprasestatales.gub.uy/ocds/release/{g}</link>"
+        f"<pubDate>Wed, 13 Aug 2026 10:00:00 GMT</pubDate><title>{g}</title></item>"
+        for g in items_guid
+    )
+    return f"<rss><channel>{items_xml}</channel></rss>".encode("utf-8")
+
+
+class TestMesesARelevar(unittest.TestCase):
+    """monitor._meses_a_relevar() decide qué feeds RSS mensuales
+    (settings.RSS_URL + "/AAAA/MM") pedir: el mes en curso + el anterior,
+    para no perder cobertura los primeros días de cada mes (ver
+    conversación 2026-08-18, "faltan organismos y rubros").
+    """
+
+    def test_mes_en_curso_y_anterior_mismo_anio(self):
+        self.assertEqual(
+            monitor._meses_a_relevar(datetime(2026, 8, 18)),
+            [(2026, 7), (2026, 8)],
+        )
+
+    def test_enero_retrocede_a_diciembre_del_anio_anterior(self):
+        self.assertEqual(
+            monitor._meses_a_relevar(datetime(2026, 1, 15)),
+            [(2025, 12), (2026, 1)],
+        )
+
+
+class TestObtenerLicitacionesFeedMensual(unittest.TestCase):
+    """obtener_licitaciones() (rama RSS) ahora pide el feed RSS MENSUAL
+    (mes actual + anterior) en vez del feed plano de 500 ítems — y, si se
+    le pasa `vistos`, omite el refetch de detalle de ítems ya vistos
+    (optimización necesaria: sin esto, cada corrida re-descargaría el
+    detalle de los ~1000+ llamados del mes en vez de solo los nuevos).
+    """
+
+    def _mockear_ocds_caido_y_rss_mensual(self, mock_get, guids_por_mes, detalle_por_guid=None):
+        detalle_por_guid = detalle_por_guid or {}
+
+        def side_effect(url, headers=None, timeout=None):
+            if url == monitor.settings.OCDS_URL:
+                return _RespuestaFalsa(status_code=404, text="not found")
+            for (anio, mes), guids in guids_por_mes.items():
+                if url == f"{monitor.settings.RSS_URL}/{anio}/{mes:02d}":
+                    return _RespuestaFalsa(status_code=200, content=_rss_mensual_xml(guids))
+            # Fetch de detalle de un release individual.
+            for guid, detalle in detalle_por_guid.items():
+                if url.endswith(guid):
+                    return _RespuestaFalsa(status_code=200, json_data=detalle)
+            return _RespuestaFalsa(status_code=404, text="not found")
+
+        mock_get.side_effect = side_effect
+
+    @patch("monitor.datetime")
+    @patch("monitor.requests.get")
+    def test_pide_feed_mensual_de_mes_actual_y_anterior(self, mock_get, mock_datetime):
+        mock_datetime.now.return_value = datetime(2026, 8, 18)
+        self._mockear_ocds_caido_y_rss_mensual(
+            mock_get,
+            {
+                (2026, 7): ["llamado-1"],
+                (2026, 8): ["llamado-2"],
+            },
+            detalle_por_guid={
+                "llamado-1": {"releases": [{"tender": {"title": "Julio", "description": ""}}]},
+                "llamado-2": {"releases": [{"tender": {"title": "Agosto", "description": ""}}]},
+            },
+        )
+        licitaciones = monitor.obtener_licitaciones()
+        titulos = sorted(lic["titulo"] for lic in licitaciones)
+        self.assertEqual(titulos, ["Agosto", "Julio"])
+
+    @patch("monitor.datetime")
+    @patch("monitor.requests.get")
+    def test_vistos_omite_refetch_de_detalle_de_items_ya_vistos(self, mock_get, mock_datetime):
+        mock_datetime.now.return_value = datetime(2026, 8, 18)
+        self._mockear_ocds_caido_y_rss_mensual(
+            mock_get,
+            {
+                (2026, 7): [],
+                (2026, 8): ["llamado-3", "llamado-4"],
+            },
+            detalle_por_guid={
+                "llamado-3": {"releases": [{"tender": {"title": "Nuevo", "description": ""}}]},
+                "llamado-4": {"releases": [{"tender": {"title": "Viejo", "description": ""}}]},
+            },
+        )
+        uid_viejo = monitor.hashlib.md5(b"llamado-4").hexdigest()
+        vistos = {uid_viejo: {"titulo": "Viejo", "hash": "x", "primera_deteccion": "", "notificaciones": 1}}
+
+        licitaciones = monitor.obtener_licitaciones(vistos)
+
+        # El ya visto no debe aparecer en el resultado (main() lo saltea
+        # igual por vistos, así que no hace falta re-traer su detalle)...
+        titulos = [lic["titulo"] for lic in licitaciones]
+        self.assertEqual(titulos, ["Nuevo"])
+        # ...y en particular, nunca se pidió su release individual.
+        urls_pedidas = [c.args[0] if c.args else c.kwargs.get("url") for c in mock_get.call_args_list]
+        self.assertFalse(any(u.endswith("llamado-4") for u in urls_pedidas))
+
+    @patch("monitor.datetime")
+    @patch("monitor.requests.get")
+    def test_sin_vistos_pide_detalle_de_todos_los_items(self, mock_get, mock_datetime):
+        # auditar() y enviar_email_de_prueba_rango_fechas() llaman a
+        # obtener_licitaciones() sin vistos (de solo lectura, quieren ver
+        # todo) — deben seguir trayendo el detalle completo de cada ítem.
+        mock_datetime.now.return_value = datetime(2026, 8, 18)
+        self._mockear_ocds_caido_y_rss_mensual(
+            mock_get,
+            {
+                (2026, 7): [],
+                (2026, 8): ["llamado-5", "llamado-6"],
+            },
+            detalle_por_guid={
+                "llamado-5": {"releases": [{"tender": {"title": "A", "description": ""}}]},
+                "llamado-6": {"releases": [{"tender": {"title": "B", "description": ""}}]},
+            },
+        )
+        licitaciones = monitor.obtener_licitaciones()
+        self.assertEqual(sorted(lic["titulo"] for lic in licitaciones), ["A", "B"])
 
 
 if __name__ == "__main__":
