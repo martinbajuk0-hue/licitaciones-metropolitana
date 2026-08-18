@@ -214,6 +214,47 @@ def _matches_en_texto(texto_lower: str) -> list[str]:
     return [kw for kw in settings.todas_las_palabras_clave() if settings.coincide_palabra_clave(texto_lower, kw)]
 
 
+_PATRONES_ALQUILER_INMUEBLE = [
+    "contratación de local",
+    "contratacion de local",
+    "contratación de locales",
+    "contratacion de locales",
+    "alquiler de local",
+    "alquiler de locales",
+    "arrendamiento de local",
+    "arrendamiento de locales",
+    "alquiler de inmueble",
+    "alquiler de inmuebles",
+    "arrendamiento de inmueble",
+    "arrendamiento de inmuebles",
+    "locación de inmueble",
+    "locacion de inmueble",
+    "comodato de local",
+    "comodato de inmueble",
+]
+
+
+def _es_alquiler_de_inmueble(texto_lower: str) -> bool:
+    """True si el objeto de la compra es arrendar/alquilar un local o
+    inmueble YA CONSTRUIDO (ej. auditoría real 2026-08-17, Concurso de
+    Precios 12/2026: 'Contratación de local apto para el dictado de
+    clases curriculares de Educación Física...') — Metropolitana vende e
+    instala pisos/revestimientos/césped sintético/contenedores, no es
+    propietaria de inmuebles para alquilar, así que este tipo de compra
+    nunca es una oportunidad real sin importar qué términos matcheen.
+
+    Este caso concreto matcheó por 'arcos de fútbol': el pliego es un
+    formulario donde el organismo le pregunta a cada local candidato qué
+    equipamiento YA TIENE instalado ("Piso: Madera:.... Baldosa:....
+    Hormigón:...." / "Arcos de fútbol Sí .... No ....") — son casillas de
+    verificación sobre infraestructura existente, no una compra de
+    producto. Por eso este chequeo va ANTES de _decidir_relevancia(): un
+    término multi-palabra específico del rubro no alcanza para salvar
+    estos casos, hace falta descartarlos por el tipo de objeto.
+    """
+    return any(patron in texto_lower for patron in _PATRONES_ALQUILER_INMUEBLE)
+
+
 def _decidir_relevancia(matches: list[str]) -> tuple[bool, str | None]:
     """Regla anti-falsos-positivos SIN IA (ver conversación 2026-07-13):
     una sola coincidencia de un término de UNA palabra (ej. "aluminio",
@@ -242,6 +283,8 @@ def _decidir_relevancia(matches: list[str]) -> tuple[bool, str | None]:
 def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
     """Devuelve (relevante, keyword, fuente, texto_pliego_si_se_leyo)."""
     texto_base = (lic["titulo"] + " " + lic["descripcion"]).lower()
+    if _es_alquiler_de_inmueble(texto_base):
+        return False, None, None, ""
     relevante, kw = _decidir_relevancia(_matches_en_texto(texto_base))
     if relevante:
         return True, kw, "título/descripción", ""
@@ -250,6 +293,8 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
     pliego = _leer_pliego(lic)
     texto_pliego = pliego.texto_completo
     texto_lower = texto_pliego.lower()
+    if _es_alquiler_de_inmueble(texto_lower):
+        return False, None, None, texto_pliego
     relevante, kw = _decidir_relevancia(_matches_en_texto(texto_lower))
     if relevante:
         return True, kw, "pliego (PDF/Word/Excel)", texto_pliego
