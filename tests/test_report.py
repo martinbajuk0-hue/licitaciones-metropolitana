@@ -1,6 +1,10 @@
+import json
+import tempfile
 import unittest
 from datetime import date
+from pathlib import Path
 
+import historial
 import report
 
 
@@ -72,6 +76,64 @@ class TestReport(unittest.TestCase):
         self.assertIsInstance(informe.ya_adjudicados, list)
         self.assertIsInstance(informe.cierre, str)
         self.assertTrue(informe.cierre)
+
+
+class TestCodigoArticuloEnInforme(unittest.TestCase):
+    """codigos_articulo (classification.id de OCDS) suma un bonus fuerte al
+    score y aparece primero en "Ya adjudicaste antes" — pedido explícito
+    del usuario 2026-08-18: es la señal más confiable posible (código
+    exacto, no coincidencia de texto)."""
+
+    def setUp(self):
+        self._orig_path = historial.HISTORIAL_PATH
+
+    def tearDown(self):
+        historial.HISTORIAL_PATH = self._orig_path
+        historial._cargar.cache_clear()
+        historial._items_metropolitana_normalizados.cache_clear()
+        historial._codigos_metropolitana.cache_clear()
+
+    def _usar_historial_con_tatami(self, tmp_path):
+        data = {
+            "generado": "2026-08-14",
+            "items_metropolitana": [{"producto": "TATAMI", "codigo": "63663"}],
+            "items_otros_proveedores": [],
+        }
+        ruta = tmp_path / "historial.json"
+        ruta.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+        historial.HISTORIAL_PATH = ruta
+        historial._cargar.cache_clear()
+        historial._items_metropolitana_normalizados.cache_clear()
+        historial._codigos_metropolitana.cache_clear()
+
+    def test_codigo_matcheado_sube_el_score_y_aparece_en_ya_adjudicados(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self._usar_historial_con_tatami(Path(tmp))
+            texto = "Adquisición de 115 placas de piso de goma EVA tipo tatami."
+
+            sin_codigo = report.analizar_licitacion("A", "", texto)
+            con_codigo = report.analizar_licitacion("B", "", texto, codigos_articulo=["63663"])
+
+            self.assertGreater(con_codigo.clasificacion.puntaje, sin_codigo.clasificacion.puntaje)
+            self.assertIn("TATAMI", con_codigo.ya_adjudicados)
+            self.assertTrue(
+                any("código de artículo ARCE ya adjudicado" in r for r in con_codigo.probabilidad["razones"])
+            )
+
+    def test_codigo_sin_match_no_altera_el_score(self):
+        # Texto neutro que no menciona "tatami" en ningún lado — así el
+        # único canal posible para "Ya adjudicaste antes" es el código, y
+        # un código que no está en el historial no debe sumar bonus ni
+        # aparecer en ya_adjudicados.
+        with tempfile.TemporaryDirectory() as tmp:
+            self._usar_historial_con_tatami(Path(tmp))
+            texto = "Adquisición de resmas de papel A4 para oficina."
+
+            sin_codigos = report.analizar_licitacion("A", "", texto)
+            codigo_ajeno = report.analizar_licitacion("B", "", texto, codigos_articulo=["00000"])
+
+            self.assertEqual(sin_codigos.clasificacion.puntaje, codigo_ajeno.clasificacion.puntaje)
+            self.assertNotIn("TATAMI", codigo_ajeno.ya_adjudicados)
 
 
 if __name__ == "__main__":
