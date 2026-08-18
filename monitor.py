@@ -81,8 +81,28 @@ def _codigos_articulo(tender: dict) -> list[str]:
 
 # ─── Fetch de licitaciones (OCDS / RSS) ───────────────────────────────────
 
-def obtener_licitaciones() -> list[dict]:
-    """Intenta OCDS releases; si falla, usa el RSS.
+def _meses_a_relevar(ahora: datetime) -> list[tuple[int, int]]:
+    """Mes actual + el anterior.
+
+    settings.RSS_URL + "/AAAA/MM" es el feed RSS MENSUAL de ARCE — a
+    diferencia de settings.RSS_URL a secas ("últimos 500 releases",
+    mezclando TODOS los tipos de release de TODOS los organismos del
+    país), este no tiene tope de 500 (confirmado 2026-08-18 contra la
+    documentación oficial de ARCE y empíricamente: 7098 ítems para
+    agosto/2026 a la fecha, de los cuales 1014 son de tipo "llamado",
+    contra apenas 77 "llamado" visibles en esa misma ventana vía el feed
+    plano de 500). Se pide también el mes anterior para no perder
+    cobertura los primeros días de cada mes, cuando el feed del mes en
+    curso todavía tiene pocos ítems publicados.
+    """
+    anio, mes = ahora.year, ahora.month
+    anio_ant, mes_ant = (anio - 1, 12) if mes == 1 else (anio, mes - 1)
+    return [(anio_ant, mes_ant), (anio, mes)]
+
+
+def obtener_licitaciones(vistos: dict | None = None) -> list[dict]:
+    """Intenta OCDS releases; si falla, usa el RSS mensual (mes actual +
+    anterior), con fallback final al RSS plano de "últimos 500".
 
     Evidencia recogida corriendo esto en producción (ver commits de este
     branch): el feed RSS de comprasestatales.gub.uy NO trae texto de
@@ -91,6 +111,25 @@ def obtener_licitaciones() -> list[dict]:
     y <link> al release individual en JSON. Por eso acá se sigue el link
     de cada item category=="llamado" (nuevos llamados — lo que pide el
     paso 1 del flujo) para obtener el título/descripción reales.
+
+    vistos: si se pasa (ver cargar_vistos()), los ítems "llamado" cuyo id
+    ya está en vistos se omiten ANTES de pedir el detalle del release —
+    evita re-descargar el JSON de ~1000+ llamados del mes en cada corrida
+    (antes eran ~77/corrida bajo el feed plano de 500). Se pasa solo desde
+    main() (la corrida real de producción); auditar() y
+    enviar_email_de_prueba_rango_fechas() siguen pidiendo el detalle de
+    TODOS los ítems (vistos=None) porque son de solo lectura y quieren
+    ver todo, no solo lo nuevo.
+
+    Trade-off aceptado (2026-08-18, ver "faltan organismos y rubros"): al
+    omitir el refetch de ítems ya vistos, se deja de detectar si el
+    release ORIGINAL de un llamado ya visto cambió de texto sin publicar
+    un release separado (el hash-diff de enviar_email() para eso deja de
+    dispararse en esos casos). No es una regresión de un caso ya
+    manejado de punta a punta: aclar_llamado/ajuste_llamado (el mecanismo
+    real de ARCE para modificaciones) siguen sin procesarse — ver
+    PENDIENTE abajo — así que esto no elimina cobertura real, solo un
+    caso borde ya fuera de alcance.
 
     PENDIENTE (no implementado, no inventado): aclar_llamado/adjudicacion/
     ajuste_* no se procesan todavía. El feed sí permite correlacionarlos
@@ -130,22 +169,44 @@ def obtener_licitaciones() -> list[dict]:
     try:
         import xml.etree.ElementTree as ET
 
-        r = requests.get(settings.RSS_URL, headers=parser_mod.HEADERS, timeout=30)
-        print(f"  RSS: status={r.status_code} content-type={r.headers.get('content-type')} body[:300]={r.text[:300]!r}")
-        root = ET.fromstring(r.content)
         ns = {"atom": "http://www.w3.org/2005/Atom"}
-        channel = root.find("channel")
+        todos_los_items = []
+        for anio, mes in _meses_a_relevar(datetime.now()):
+            url_mes = f"{settings.RSS_URL}/{anio}/{mes:02d}"
+            r = requests.get(url_mes, headers=parser_mod.HEADERS, timeout=60)
+            print(f"  RSS {anio}-{mes:02d}: status={r.status_code} content-type={r.headers.get('content-type')} body[:200]={r.text[:200]!r}")
+            if r.status_code != 200:
+                continue
+            try:
+                root_mes = ET.fromstring(r.content)
+            except ET.ParseError as e:
+                print(f"  RSS {anio}-{mes:02d}: XML inválido: {e}")
+                continue
+            channel_mes = root_mes.find("channel")
+            if channel_mes is None:
+                continue
+            items_mes = channel_mes.findall("item")
+            print(f"  RSS {anio}-{mes:02d}: {len(items_mes)} item(s)")
+            todos_los_items.extend(items_mes)
 
-        if channel is None:
-            for entry in root.findall("atom:entry", ns):
-                title = entry.findtext("atom:title", default="", namespaces=ns)
-                link = entry.findtext("atom:id", default="", namespaces=ns)
-                date = (entry.findtext("atom:updated", default="", namespaces=ns) or "")[:10]
-                uid = hashlib.md5(link.encode()).hexdigest()
-                licitaciones.append({"id": uid, "titulo": title, "descripcion": "", "fecha": date, "url": link})
-            return licitaciones
-
-        todos_los_items = channel.findall("item")
+        if not todos_los_items:
+            # Red de seguridad: si el feed mensual no devolvió nada para
+            # ninguno de los dos meses (ej. ambos pedidos fallaron), usar
+            # el feed plano de "últimos 500" — mejor cobertura parcial que
+            # ninguna, es el comportamiento que ya había antes de este fix.
+            r = requests.get(settings.RSS_URL, headers=parser_mod.HEADERS, timeout=30)
+            print(f"  RSS (fallback plano, sin tope mensual disponible): status={r.status_code} content-type={r.headers.get('content-type')} body[:300]={r.text[:300]!r}")
+            root = ET.fromstring(r.content)
+            channel = root.find("channel")
+            if channel is None:
+                for entry in root.findall("atom:entry", ns):
+                    title = entry.findtext("atom:title", default="", namespaces=ns)
+                    link = entry.findtext("atom:id", default="", namespaces=ns)
+                    date = (entry.findtext("atom:updated", default="", namespaces=ns) or "")[:10]
+                    uid = hashlib.md5(link.encode()).hexdigest()
+                    licitaciones.append({"id": uid, "titulo": title, "descripcion": "", "fecha": date, "url": link})
+                return licitaciones
+            todos_los_items = channel.findall("item")
 
         def _tipo_release(item) -> str:
             # El <category> del feed no distingue de forma confiable
@@ -162,11 +223,16 @@ def obtener_licitaciones() -> list[dict]:
         print(f"  RSS: {len(todos_los_items)} item(s) totales, {len(items_llamado)} de tipo 'llamado'. Tipos vistos: {tipos_vistos}")
 
         primer_release_impreso = False
+        omitidos_por_vistos = 0
         for item in items_llamado:
             link = item.findtext("link", default="")
             guid = item.findtext("guid", default="") or link
             date = item.findtext("pubDate", default="")
             uid = hashlib.md5(guid.encode()).hexdigest()
+
+            if vistos is not None and uid in vistos:
+                omitidos_por_vistos += 1
+                continue
 
             titulo, desc, documentos, codigos_articulo = "", "", [], []
             try:
@@ -213,6 +279,9 @@ def obtener_licitaciones() -> list[dict]:
                 "documentos": documentos,
                 "codigos_articulo": codigos_articulo,
             })
+
+        if vistos is not None:
+            print(f"  RSS: {omitidos_por_vistos} ítem(s) 'llamado' ya vistos en corridas anteriores — se omitió el refetch de detalle.")
     except Exception as e:  # noqa: BLE001
         print(f"RSS también falló: {e}")
 
@@ -477,7 +546,7 @@ def main(enviar_email_flag: bool = True) -> None:
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M')}] Consultando ARCE...")
 
     vistos = cargar_vistos()
-    licitaciones = obtener_licitaciones()
+    licitaciones = obtener_licitaciones(vistos)
     print(f"  Total obtenidas: {len(licitaciones)}")
 
     nuevas: list[dict] = []
