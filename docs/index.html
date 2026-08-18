@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Visor de Licitaciones — Metropolitana</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
 <style>
   :root {
     --azul: #1a73e8;
@@ -196,6 +197,113 @@
     color: var(--gris-texto);
     padding: 20px;
   }
+  /* Pestañas (Llamados / Performance) */
+  #tabs {
+    display: flex;
+    gap: 4px;
+    padding: 0 28px;
+    background: white;
+    border-bottom: 1px solid var(--gris-borde);
+  }
+  #tabs button {
+    border: none;
+    background: none;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--gris-texto);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+  }
+  #tabs button:hover { color: var(--texto); }
+  #tabs button.activo { color: var(--azul); border-bottom-color: var(--azul); }
+  /* Performance */
+  #performance { padding: 20px 28px 40px 28px; }
+  .perf-aviso {
+    background: #fef7e0;
+    border: 1px solid #f2d98a;
+    color: #7a5b00;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+  .perf-seccion {
+    background: white;
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+  }
+  .perf-seccion h2 {
+    font-size: 14.5px;
+    margin: 0 0 14px 0;
+    color: var(--texto);
+  }
+  .perf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 18px;
+  }
+  .perf-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 12.5px;
+  }
+  .perf-bar-row .nombre {
+    width: 230px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--texto);
+  }
+  .perf-bar-row .barra-fondo {
+    flex: 1;
+    background: #eef2f7;
+    border-radius: 4px;
+    height: 14px;
+    overflow: hidden;
+  }
+  .perf-bar-row .barra {
+    display: block;
+    background: var(--azul);
+    height: 100%;
+    border-radius: 4px;
+  }
+  .perf-bar-row .valor {
+    width: 150px;
+    flex-shrink: 0;
+    text-align: right;
+    color: var(--gris-texto);
+    white-space: nowrap;
+  }
+  .perf-organismo-card {
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .perf-organismo-card h3 {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+  }
+  .perf-organismo-card .llamados-n {
+    font-weight: 400;
+    color: var(--gris-texto);
+    font-size: 11.5px;
+  }
+  .perf-organismo-card table { box-shadow: none; }
+  .perf-organismo-card th, .perf-organismo-card td { padding: 6px 8px; font-size: 12px; }
+  #perf-chart-evolucion { max-height: 320px; }
+  .perf-vacio {
+    text-align: center;
+    color: var(--gris-texto);
+    padding: 40px 20px;
+    font-size: 13.5px;
+  }
 </style>
 </head>
 <body>
@@ -207,6 +315,13 @@
   </div>
   <div class="sub" id="actualizado">—</div>
 </header>
+
+<div id="tabs">
+  <button id="tab-btn-llamados" class="activo" onclick="mostrarTab('llamados')">Llamados</button>
+  <button id="tab-btn-performance" onclick="mostrarTab('performance')">Performance</button>
+</div>
+
+<div id="vista-llamados">
 
 <div id="resumen"></div>
 
@@ -257,6 +372,12 @@
   </table>
   <div class="vacio" id="vacio" style="display:none;">No hay llamados que coincidan con los filtros.</div>
 </main>
+
+</div>
+
+<div id="vista-performance" style="display:none;">
+  <div id="performance"></div>
+</div>
 
 <footer>
   Datos generados automáticamente por el pipeline de monitoreo (GitHub Actions). No reemplaza la lectura del pliego original.
@@ -462,6 +583,186 @@ async function abrirInforme(ruta, titulo) {
 function cerrarPanel() {
   document.getElementById("overlay").classList.remove("activo");
   document.getElementById("panel").style.display = "none";
+}
+
+// ---------- Performance (docs/data/performance.json) ----------
+// Agregados de knowledge/historial_adjudicaciones_metropolitana.json —
+// ver performance.py. A diferencia de data/llamados.json (que cambia 3
+// veces por día), este archivo es un dato congelado: se carga una sola
+// vez, la primera vez que se abre la pestaña.
+let PERF = null;
+let PERF_CHART = null;
+
+function mostrarTab(tab) {
+  const esLlamados = tab === "llamados";
+  document.getElementById("vista-llamados").style.display = esLlamados ? "" : "none";
+  document.getElementById("vista-performance").style.display = esLlamados ? "none" : "";
+  document.getElementById("tab-btn-llamados").classList.toggle("activo", esLlamados);
+  document.getElementById("tab-btn-performance").classList.toggle("activo", !esLlamados);
+  if (!esLlamados && !PERF) cargarPerformance();
+}
+
+async function cargarPerformance() {
+  const cont = document.getElementById("performance");
+  cont.innerHTML = '<div class="perf-vacio">Cargando…</div>';
+  try {
+    const resp = await fetch("data/performance.json?_=" + Date.now());
+    if (!resp.ok) throw new Error("No se pudo leer data/performance.json (" + resp.status + ")");
+    PERF = await resp.json();
+  } catch (err) {
+    cont.innerHTML = '<div class="perf-vacio">No se pudo cargar Performance (' + err.message + ').</div>';
+    return;
+  }
+  renderPerformance();
+}
+
+function formatoMoneda(n) {
+  return "$ " + Math.round(n || 0).toLocaleString("es-UY");
+}
+
+function renderPerformance() {
+  const p = PERF;
+  const cont = document.getElementById("performance");
+  if (!p || !p.total_llamados) {
+    cont.innerHTML = '<div class="perf-vacio">Todavía no hay datos de Performance.</div>';
+    return;
+  }
+
+  cont.innerHTML = `
+    <div class="perf-aviso">
+      ⚠️ Esta pestaña muestra únicamente <strong>adjudicaciones ganadas</strong> (historial 2025-2026,
+      generado ${escapeHtml(p.generado || "")}). No incluye participaciones ni licitaciones perdidas —
+      ARCE no publica esa información en el llamado activo, y reconstruirla a partir del historial
+      completo de actas de apertura es un relevamiento pendiente. "Tasa de éxito" y "Participaciones"
+      no se muestran para no inventar un dato que todavía no tenemos.
+    </div>
+
+    <div id="resumen">
+      <div class="stat"><div class="n">${p.total_llamados}</div><div class="l">Llamados ganados</div></div>
+      <div class="stat"><div class="n">${p.items_adjudicados}</div><div class="l">Ítems adjudicados</div></div>
+      <div class="stat"><div class="n">${formatoMoneda(p.total_adjudicado)}</div><div class="l">Total adjudicado</div></div>
+      <div class="stat"><div class="n">${p.organismos_distintos}</div><div class="l">Organismos distintos</div></div>
+    </div>
+
+    <div class="perf-seccion">
+      <h2>Evolución anual de adjudicaciones</h2>
+      <canvas id="perf-chart-evolucion"></canvas>
+    </div>
+
+    <div class="perf-grid">
+      <div class="perf-seccion">
+        <h2>Top organismos por monto adjudicado</h2>
+        <div id="perf-top-organismos"></div>
+      </div>
+      <div class="perf-seccion">
+        <h2>Concentración de clientes</h2>
+        <div id="perf-concentracion"></div>
+      </div>
+    </div>
+
+    <div class="perf-grid">
+      <div class="perf-seccion">
+        <h2>Distribución por tipo de procedimiento</h2>
+        <div id="perf-tipo"></div>
+      </div>
+      <div class="perf-seccion">
+        <h2>Artículos más adjudicados</h2>
+        <div id="perf-articulos"></div>
+      </div>
+    </div>
+
+    <div class="perf-seccion">
+      <h2>Artículos más adjudicados por organismo</h2>
+      <div class="perf-grid" id="perf-articulos-organismo"></div>
+    </div>
+  `;
+
+  renderPerfEvolucion(p.evolucion_anual || []);
+  renderPerfBarras("perf-top-organismos", (p.top_organismos || []).slice(0, 10), r => r.organismo, r => formatoMoneda(r.importe) + " (" + r.llamados + ")");
+  renderPerfConcentracion(p.concentracion);
+  renderPerfTabla("perf-tipo", ["Tipo", "Llamados", "Ítems", "Monto"], (p.distribucion_tipo || []).map(r => [r.tipo, r.llamados, r.items, formatoMoneda(r.importe)]));
+  renderPerfTabla("perf-articulos", ["Artículo", "Veces", "Organismos", "Monto total"], (p.articulos_mas_adjudicados || []).slice(0, 15).map(r => [r.producto, r.veces, r.organismos, formatoMoneda(r.importe)]));
+  renderPerfArticulosPorOrganismo(p.articulos_por_organismo || []);
+}
+
+function renderPerfEvolucion(filas) {
+  const ctx = document.getElementById("perf-chart-evolucion");
+  if (!ctx || typeof Chart === "undefined") return;
+  if (PERF_CHART) PERF_CHART.destroy();
+  PERF_CHART = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: filas.map(f => f.anio),
+      datasets: [{
+        label: "Monto adjudicado",
+        data: filas.map(f => f.importe),
+        backgroundColor: "#1a73e8",
+      }],
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { ticks: { callback: v => formatoMoneda(v) } },
+      },
+    },
+  });
+}
+
+function renderPerfBarras(idCont, filas, nombreFn, valorFn) {
+  const cont = document.getElementById(idCont);
+  if (!cont) return;
+  if (!filas.length) { cont.innerHTML = '<div class="perf-vacio">Sin datos.</div>'; return; }
+  const max = Math.max(...filas.map(r => r.importe || 0)) || 1;
+  cont.innerHTML = filas.map(r => `
+    <div class="perf-bar-row">
+      <span class="nombre" title="${escapeAttr(nombreFn(r))}">${escapeHtml(nombreFn(r))}</span>
+      <span class="barra-fondo"><span class="barra" style="width:${Math.max(2, 100 * (r.importe || 0) / max)}%"></span></span>
+      <span class="valor">${escapeHtml(valorFn(r))}</span>
+    </div>
+  `).join("");
+}
+
+function renderPerfConcentracion(c) {
+  const cont = document.getElementById("perf-concentracion");
+  if (!cont) return;
+  if (!c || !c.organismo) { cont.innerHTML = '<div class="perf-vacio">Sin datos.</div>'; return; }
+  cont.innerHTML = `
+    <div class="stat" style="min-width:100%;">
+      <div class="n">${c.porcentaje}%</div>
+      <div class="l">de tus ventas al Estado son a ${escapeHtml(c.organismo)}</div>
+    </div>
+    <div style="margin-top:10px;font-size:12.5px;color:var(--gris-texto);">${formatoMoneda(c.importe)}</div>
+  `;
+}
+
+function renderPerfTabla(idCont, columnas, filas) {
+  const cont = document.getElementById(idCont);
+  if (!cont) return;
+  if (!filas.length) { cont.innerHTML = '<div class="perf-vacio">Sin datos.</div>'; return; }
+  cont.innerHTML = `
+    <table>
+      <thead><tr>${columnas.map(c => `<th>${escapeHtml(c)}</th>`).join("")}</tr></thead>
+      <tbody>${filas.map(f => `<tr>${f.map(v => `<td>${escapeHtml(String(v))}</td>`).join("")}</tr>`).join("")}</tbody>
+    </table>
+  `;
+}
+
+function renderPerfArticulosPorOrganismo(lista) {
+  const cont = document.getElementById("perf-articulos-organismo");
+  if (!cont) return;
+  if (!lista.length) { cont.innerHTML = '<div class="perf-vacio">Sin datos.</div>'; return; }
+  cont.innerHTML = lista.map(o => `
+    <div class="perf-organismo-card">
+      <h3>${escapeHtml(o.organismo)} <span class="llamados-n">(${o.llamados} llamados)</span></h3>
+      <table>
+        <thead><tr><th>Artículo</th><th>Veces</th><th>Monto</th></tr></thead>
+        <tbody>
+          ${o.articulos.map(a => `<tr><td>${escapeHtml(a.producto)}</td><td>${a.veces}</td><td>${formatoMoneda(a.importe)}</td></tr>`).join("")}
+        </tbody>
+      </table>
+    </div>
+  `).join("");
 }
 
 document.getElementById("f-texto").addEventListener("input", render);
