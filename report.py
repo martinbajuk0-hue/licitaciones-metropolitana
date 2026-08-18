@@ -138,6 +138,7 @@ def analizar_licitacion(
     url: str,
     texto_pliego: str,
     documentos_con_error: list[str] | None = None,
+    codigos_articulo: list[str] | None = None,
 ) -> InformeLicitacion:
     campos = analyzer.extraer_campos_clave(texto_pliego)
     productos = analyzer.identificar_productos(texto_pliego)
@@ -155,6 +156,22 @@ def analizar_licitacion(
     probabilidad = analyzer.estimar_probabilidad_exito(
         campos, productos, len(riesgos_altos), len(riesgos_medios), len(pendientes_checklist)
     )
+
+    # Match por código de artículo (classification.id de OCDS) contra el
+    # historial — señal EXACTA (no por texto), ver historial.
+    # productos_por_codigo_ya_adjudicado(). Cuando hay match, se suma un
+    # bonus fuerte al score: es la certeza más alta posible de que
+    # Metropolitana tiene un artículo concreto para ofertar. Pedido
+    # explícito del usuario 2026-08-18.
+    ya_adjudicados_por_codigo = historial.productos_por_codigo_ya_adjudicado(codigos_articulo or [])
+    if ya_adjudicados_por_codigo:
+        bonus = 25
+        probabilidad["score"] = min(100, probabilidad["score"] + bonus)
+        probabilidad["razones"].append(
+            f"+{bonus} por código de artículo ARCE ya adjudicado a Metropolitana antes (match exacto, "
+            f"no por texto): {', '.join(ya_adjudicados_por_codigo)}"
+        )
+
     clasificacion = clasificar_oportunidad(probabilidad["score"])
     cronograma = generar_cronograma(campos)
 
@@ -162,7 +179,11 @@ def analizar_licitacion(
 
     # "Ya adjudicaste antes" — primer campo que muestra el aviso de Simple
     # Compras Públicas antes que ningún otro análisis (ver historial.py).
-    ya_adjudicados = historial.productos_ya_adjudicados([p.termino_encontrado for p in productos])
+    # El match por código va primero (señal más fuerte), deduplicado contra
+    # el match por texto.
+    ya_adjudicados = list(dict.fromkeys(
+        ya_adjudicados_por_codigo + historial.productos_ya_adjudicados([p.termino_encontrado for p in productos])
+    ))
     cierre = texto_cierre(campos.fecha_apertura)
 
     partes = [

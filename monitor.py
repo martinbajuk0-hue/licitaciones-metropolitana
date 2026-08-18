@@ -25,6 +25,7 @@ import requests
 import analyzer
 import catalogo
 import config.settings as settings
+import historial as historial_mod
 import parser as parser_mod
 import report as report_mod
 
@@ -53,6 +54,29 @@ def guardar_vistos(vistos: dict) -> None:
 
 def _hash_contenido(lic: dict) -> str:
     return hashlib.md5((lic["titulo"] + "|" + lic["descripcion"]).encode("utf-8")).hexdigest()
+
+
+def _codigos_articulo(tender: dict) -> list[str]:
+    """tender.items[].classification.id — el "Código de artículo" que ARCE
+    le asigna a cada ítem pedido en el llamado (confirmado 2026-08-18
+    contra el release real de la Compra Directa 10176/2026: el JSON trae
+    "items": [{"classification": {"id": "63663", "description": "TATAMI"}, ...}],
+    el mismo "Cód. Artículo 63663" que se ve en la ficha HTML del llamado).
+
+    Es el mismo clasificador que usa knowledge/historial_adjudicaciones_
+    metropolitana.json (campo "codigo") para cada ítem ya adjudicado a
+    Metropolitana — por eso sirve para matchear EXACTO por código en vez
+    de por texto (ver historial.productos_por_codigo_ya_adjudicado()).
+    """
+    items = tender.get("items", []) if isinstance(tender, dict) else []
+    codigos = []
+    for it in items:
+        if not isinstance(it, dict):
+            continue
+        clasif = it.get("classification")
+        if isinstance(clasif, dict) and clasif.get("id"):
+            codigos.append(str(clasif["id"]))
+    return codigos
 
 
 # ─── Fetch de licitaciones (OCDS / RSS) ───────────────────────────────────
@@ -94,7 +118,10 @@ def obtener_licitaciones() -> list[dict]:
                     f"https://www.comprasestatales.gub.uy/consultas/detalle/id/{ocid.split('-')[-1]}"
                     if ocid else ""
                 )
-                licitaciones.append({"id": ocid, "titulo": title, "descripcion": desc, "fecha": date, "url": url})
+                licitaciones.append({
+                    "id": ocid, "titulo": title, "descripcion": desc, "fecha": date, "url": url,
+                    "codigos_articulo": _codigos_articulo(tender),
+                })
             if licitaciones:
                 return licitaciones
     except Exception as e:  # noqa: BLE001
@@ -141,7 +168,7 @@ def obtener_licitaciones() -> list[dict]:
             date = item.findtext("pubDate", default="")
             uid = hashlib.md5(guid.encode()).hexdigest()
 
-            titulo, desc, documentos = "", "", []
+            titulo, desc, documentos, codigos_articulo = "", "", [], []
             try:
                 rr = requests.get(link, headers=parser_mod.HEADERS, timeout=15)
                 if rr.status_code == 200:
@@ -164,11 +191,12 @@ def obtener_licitaciones() -> list[dict]:
                     documentos = [
                         d.get("url") for d in tender.get("documents", []) if isinstance(d, dict) and d.get("url")
                     ]
+                    codigos_articulo = _codigos_articulo(tender)
                 if not primer_release_impreso:
                     print(
                         f"  RSS->release: status={rr.status_code} título={titulo!r} "
                         f"tender.keys={sorted(tender.keys()) if titulo or desc else 'N/A'} "
-                        f"documentos={documentos}"
+                        f"documentos={documentos} codigos_articulo={codigos_articulo}"
                     )
                     primer_release_impreso = True
             except Exception as e:  # noqa: BLE001
@@ -183,6 +211,7 @@ def obtener_licitaciones() -> list[dict]:
                 "fecha": date,
                 "url": link,
                 "documentos": documentos,
+                "codigos_articulo": codigos_articulo,
             })
     except Exception as e:  # noqa: BLE001
         print(f"RSS también falló: {e}")
@@ -280,8 +309,34 @@ def _decidir_relevancia(matches: list[str]) -> tuple[bool, str | None]:
     return False, None
 
 
+FUENTE_CODIGO_ARTICULO = "código de artículo ARCE (ya adjudicado)"
+
+
 def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
-    """Devuelve (relevante, keyword, fuente, texto_pliego_si_se_leyo)."""
+    """Devuelve (relevante, keyword, fuente, texto_pliego_si_se_leyo).
+
+    El match por código de artículo (lic["codigos_articulo"], ver
+    _codigos_articulo()) se chequea PRIMERO, antes que cualquier otro
+    filtro: es un match exacto contra un código que Metropolitana ya
+    facturó antes (historial.productos_por_codigo_ya_adjudicado()), no
+    una coincidencia de texto que puede ser casual. Pedido explícito del
+    usuario 2026-08-18: si hay match por código, el llamado se manda por
+    mail sí o sí — por eso se salta tanto el filtro de alquiler de
+    inmueble como el umbral de 2+ términos de _decidir_relevancia(), que
+    existen para compensar la debilidad del match por texto (algo que un
+    match por código no tiene).
+    """
+    codigos = lic.get("codigos_articulo") or []
+    if codigos:
+        productos_por_codigo = historial_mod.productos_por_codigo_ya_adjudicado(codigos)
+        if productos_por_codigo:
+            return (
+                True,
+                f"código ya adjudicado: {', '.join(productos_por_codigo)}",
+                FUENTE_CODIGO_ARTICULO,
+                "",
+            )
+
     texto_base = (lic["titulo"] + " " + lic["descripcion"]).lower()
     if _es_alquiler_de_inmueble(texto_base):
         return False, None, None, ""
@@ -455,7 +510,9 @@ def main(enviar_email_flag: bool = True) -> None:
             errores = []
 
         texto_para_informe = texto_pliego or (lic["titulo"] + "\n" + lic["descripcion"])
-        informe = report_mod.analizar_licitacion(lic["titulo"], lic["url"], texto_para_informe, errores)
+        informe = report_mod.analizar_licitacion(
+            lic["titulo"], lic["url"], texto_para_informe, errores, codigos_articulo=lic.get("codigos_articulo")
+        )
         ruta_informe = report_mod.guardar_informe(lic["titulo"], informe.markdown)
         print(f"  Informe generado: {ruta_informe} ({informe.clasificacion.simbolo} score {informe.clasificacion.puntaje})")
 
@@ -473,8 +530,11 @@ def main(enviar_email_flag: bool = True) -> None:
         lic["ya_adjudicados"] = informe.ya_adjudicados
         lic["cierre"] = informe.cierre
         # Filtro por score mínimo (configurable vía secret SCORE_MINIMO_EMAIL)
+        # — salvo que el match haya sido por código de artículo ya
+        # adjudicado: ahí se manda sí o sí, pedido explícito del usuario
+        # 2026-08-18 (ver es_relevante()).
         score_minimo = int(os.environ.get("SCORE_MINIMO_EMAIL", 0))
-        if informe.clasificacion.puntaje < score_minimo:
+        if informe.clasificacion.puntaje < score_minimo and fuente != FUENTE_CODIGO_ARTICULO:
             print(f"  Score {informe.clasificacion.puntaje} < mínimo {score_minimo}, omitiendo del email.")
             continue
 
@@ -525,6 +585,13 @@ def auditar() -> None:
 
         productos = analyzer.identificar_productos(texto_pliego) if texto_pliego else []
         if not productos:
+            if fuente == FUENTE_CODIGO_ARTICULO:
+                # No hace falta texto del pliego para confiar en este match:
+                # el código de artículo del ítem pedido coincide EXACTO con
+                # uno que Metropolitana ya facturó (ver kw, con los nombres
+                # de producto del historial).
+                print("  ✓ Match por código de artículo — no requiere confirmación por texto del pliego.")
+                continue
             print("  ⚠️  Sin productos identificables en el texto del pliego (matcheó por título/descripción "
                   "o el pliego no se pudo leer) — VERIFICAR MANUALMENTE antes de confiar en este match.")
             continue
@@ -615,14 +682,16 @@ def enviar_email_de_prueba_rango_fechas(desde: str, hasta: str) -> None:
             errores = []
 
         texto_para_informe = texto_pliego or (lic["titulo"] + "\n" + lic["descripcion"])
-        informe = report_mod.analizar_licitacion(lic["titulo"], lic["url"], texto_para_informe, errores)
+        informe = report_mod.analizar_licitacion(
+            lic["titulo"], lic["url"], texto_para_informe, errores, codigos_articulo=lic.get("codigos_articulo")
+        )
         print(f"  Relevante: {lic['titulo'][:70]!r} — {informe.clasificacion.simbolo} score {informe.clasificacion.puntaje}")
 
         lic["clasificacion"] = informe.clasificacion
         lic["ya_adjudicados"] = informe.ya_adjudicados
         lic["cierre"] = informe.cierre
 
-        if informe.clasificacion.puntaje < score_minimo:
+        if informe.clasificacion.puntaje < score_minimo and fuente != FUENTE_CODIGO_ARTICULO:
             print(f"    Score {informe.clasificacion.puntaje} < mínimo {score_minimo}, omitiendo del email (igual que en producción).")
             continue
         nuevas.append(lic)

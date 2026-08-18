@@ -75,6 +75,53 @@ def _matchea(termino_normalizado: str, producto_normalizado: str) -> bool:
     return termino_normalizado in producto_normalizado or producto_normalizado in termino_normalizado
 
 
+@functools.lru_cache(maxsize=1)
+def _codigos_metropolitana() -> dict[str, str]:
+    """codigo de artículo (str) -> nombre de producto (tal como figura en
+    ARCE) de cada ítem que Metropolitana ya adjudicó.
+
+    Señal MUCHO más fuerte que el match por texto de productos_ya_
+    adjudicados(): el "codigo" es el clasificador exacto que asigna ARCE
+    (visible como "Cód. Artículo" en la ficha de cada llamado, y como
+    tender.items[].classification.id en el JSON OCDS — ver
+    monitor._codigos_articulo()). Si un llamado nuevo pide un ítem con
+    el mismo código que uno que Metropolitana ya facturó, es certeza de
+    que existe un artículo concreto para ofertar — no una coincidencia de
+    palabras que puede aparecer en un contexto ajeno al rubro.
+    """
+    out: dict[str, str] = {}
+    for item in _cargar().get("items_metropolitana", []):
+        codigo = item.get("codigo")
+        producto = item.get("producto")
+        if codigo and producto and str(codigo) not in out:
+            out[str(codigo)] = producto
+    return out
+
+
+def productos_por_codigo_ya_adjudicado(codigos: list[str]) -> list[str]:
+    """Dada la lista de códigos de artículo (classification.id de OCDS) de
+    los ítems de un llamado nuevo, devuelve los nombres de producto del
+    historial de Metropolitana que matchean por CÓDIGO EXACTO (no por
+    texto) — nombres deduplicados, orden estable.
+
+    Pedido explícito del usuario 2026-08-18: si hay match por código, hay
+    que enviar el llamado por mail sí o sí (ver monitor.es_relevante()),
+    porque significa que Metropolitana ya le vendió ese artículo puntual
+    al Estado antes.
+    """
+    if not codigos:
+        return []
+    mapa = _codigos_metropolitana()
+    vistos: set[str] = set()
+    resultado: list[str] = []
+    for codigo in codigos:
+        producto = mapa.get(str(codigo))
+        if producto and producto not in vistos:
+            vistos.add(producto)
+            resultado.append(producto)
+    return resultado
+
+
 def productos_ya_adjudicados(terminos: list[str]) -> list[str]:
     """Dada la lista de términos que analyzer.identificar_productos()
     encontró en el pliego de un llamado nuevo (ProductoIdentificado.
