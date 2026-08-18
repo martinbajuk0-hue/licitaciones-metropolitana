@@ -75,10 +75,48 @@ def _matchea(termino_normalizado: str, producto_normalizado: str) -> bool:
     return termino_normalizado in producto_normalizado or producto_normalizado in termino_normalizado
 
 
+_CODIGOS_NO_ESPECIFICOS = {
+    # Códigos de artículo ARCE que NO identifican un producto concreto del
+    # rubro de Metropolitana (pisos/revestimientos/contenedores/etc.) sino
+    # una categoría genérica de servicio/administrativa que cualquier
+    # rubro puede usar — matchear por estos códigos no es evidencia de que
+    # el llamado nuevo tenga algo que ver con Metropolitana. Cada uno tiene
+    # evidencia concreta, no es una exclusión especulativa (ver
+    # conversación 2026-08-18).
+    "0",       # Placeholder/dato faltante en knowledge/historial_adjudicaciones_
+               # metropolitana.json: bajo "código" 0 quedaron agrupados 5
+               # productos sin relación entre sí (moquette, mano de obra,
+               # instalación...) — no es un clasificador real de ARCE.
+    "747",     # ENTREGA DE ENCOMIENDAS Y PAQUETES DENTRO DEL PAIS — servicio
+               # de mensajería/logística, no un producto de pisos.
+    "28031",   # CONTRATACION DE MANO DE OBRA — código genérico de "mano de
+               # obra" que ARCE reutiliza en cualquier rubro (limpieza,
+               # seguridad, jardinería...), no específico de instalación de
+               # pisos.
+    "35420",   # CONTRATACION DE SERVICIOS PROFESIONALES — FALSO POSITIVO REAL
+               # detectado en la auditoría en vivo del 2026-08-18 (run #195):
+               # disparó contra Licitación Abreviada A191575/2026 (Intendencia
+               # de Montevideo, "Contratación de servicios profesionales con
+               # destino al Departamento de Planificación"), que no tiene nada
+               # que ver con pisos.
+    "72449",   # ARRENDAMIENTO DE PISO — es un alquiler, no una venta/
+               # instalación (importe $0 en el historial, probablemente un
+               # alquiler puntual de piso para un evento). Contradice
+               # directamente el filtro de alquiler de inmueble (ver
+               # monitor._es_alquiler_de_inmueble()), así que no debe
+               # disparar el match "sí o sí".
+    "26627",   # ACONDICIONAMIENTO DE EDIFICIO — genérico, no específico del
+               # rubro de pisos (podría ser electricidad, pintura, etc.).
+    "27478",   # MANTENIMIENTO EDILICIO — genérico, mismo riesgo que el
+               # anterior.
+}
+
+
 @functools.lru_cache(maxsize=1)
 def _codigos_metropolitana() -> dict[str, str]:
     """codigo de artículo (str) -> nombre de producto (tal como figura en
-    ARCE) de cada ítem que Metropolitana ya adjudicó.
+    ARCE) de cada ítem que Metropolitana ya adjudicó, EXCLUYENDO los
+    códigos genéricos/administrativos de _CODIGOS_NO_ESPECIFICOS.
 
     Señal MUCHO más fuerte que el match por texto de productos_ya_
     adjudicados(): el "codigo" es el clasificador exacto que asigna ARCE
@@ -87,14 +125,23 @@ def _codigos_metropolitana() -> dict[str, str]:
     monitor._codigos_articulo()). Si un llamado nuevo pide un ítem con
     el mismo código que uno que Metropolitana ya facturó, es certeza de
     que existe un artículo concreto para ofertar — no una coincidencia de
-    palabras que puede aparecer en un contexto ajeno al rubro.
+    palabras que puede aparecer en un contexto ajeno al rubro. PERO esa
+    certeza solo vale para códigos específicos de un producto físico: un
+    código genérico de servicio (mano de obra, servicios profesionales,
+    mensajería...) puede pertenecer a cualquier rubro, así que no alcanza
+    como evidencia por sí solo.
     """
     out: dict[str, str] = {}
     for item in _cargar().get("items_metropolitana", []):
         codigo = item.get("codigo")
         producto = item.get("producto")
-        if codigo and producto and str(codigo) not in out:
-            out[str(codigo)] = producto
+        if not codigo or not producto:
+            continue
+        codigo = str(codigo)
+        if codigo in _CODIGOS_NO_ESPECIFICOS:
+            continue
+        if codigo not in out:
+            out[codigo] = producto
     return out
 
 

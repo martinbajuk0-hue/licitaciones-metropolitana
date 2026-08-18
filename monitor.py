@@ -316,16 +316,28 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
     """Devuelve (relevante, keyword, fuente, texto_pliego_si_se_leyo).
 
     El match por código de artículo (lic["codigos_articulo"], ver
-    _codigos_articulo()) se chequea PRIMERO, antes que cualquier otro
-    filtro: es un match exacto contra un código que Metropolitana ya
-    facturó antes (historial.productos_por_codigo_ya_adjudicado()), no
-    una coincidencia de texto que puede ser casual. Pedido explícito del
-    usuario 2026-08-18: si hay match por código, el llamado se manda por
-    mail sí o sí — por eso se salta tanto el filtro de alquiler de
-    inmueble como el umbral de 2+ términos de _decidir_relevancia(), que
-    existen para compensar la debilidad del match por texto (algo que un
-    match por código no tiene).
+    _codigos_articulo()) se chequea ANTES que el umbral de 2+ términos de
+    _decidir_relevancia() (que existe para compensar la debilidad del
+    match por texto — algo que un código exacto no tiene): si hay match,
+    el llamado se manda por mail sí o sí. Pedido explícito del usuario
+    2026-08-18.
+
+    PERO el filtro de alquiler de inmueble se chequea PRIMERO que el
+    código, como veto absoluto — no al revés. Motivo (evidencia real
+    2026-08-18, ver historial._CODIGOS_NO_ESPECIFICOS): el historial tiene
+    códigos genéricos/administrativos (ej. 35420 "CONTRATACION DE
+    SERVICIOS PROFESIONALES", que disparó en la auditoría en vivo contra
+    un llamado de Intendencia de Montevideo sin relación con pisos) que
+    ya se filtran en historial._codigos_metropolitana(), pero un código
+    específico también podría coincidir por casualidad con una compra que
+    en realidad es un alquiler de local (ej. si algún día apareciera
+    "ARRENDAMIENTO DE PISO" sin excluir) — así que ninguna señal, ni
+    siquiera el código, debe pisar ese veto.
     """
+    texto_base = (lic["titulo"] + " " + lic["descripcion"]).lower()
+    if _es_alquiler_de_inmueble(texto_base):
+        return False, None, None, ""
+
     codigos = lic.get("codigos_articulo") or []
     if codigos:
         productos_por_codigo = historial_mod.productos_por_codigo_ya_adjudicado(codigos)
@@ -337,9 +349,6 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
                 "",
             )
 
-    texto_base = (lic["titulo"] + " " + lic["descripcion"]).lower()
-    if _es_alquiler_de_inmueble(texto_base):
-        return False, None, None, ""
     relevante, kw = _decidir_relevancia(_matches_en_texto(texto_base))
     if relevante:
         return True, kw, "título/descripción", ""
