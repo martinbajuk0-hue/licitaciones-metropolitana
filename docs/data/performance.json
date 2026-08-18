@@ -1,0 +1,1088 @@
+{
+  "generado": "2026-08-14",
+  "total_adjudicado": 43998109.61,
+  "items_adjudicados": 761,
+  "total_llamados": 508,
+  "organismos_distintos": 28,
+  "evolucion_anual": [
+    {
+      "anio": "2003",
+      "importe": 41472.0,
+      "llamados": 3
+    },
+    {
+      "anio": "2004",
+      "importe": 59745.0,
+      "llamados": 5
+    },
+    {
+      "anio": "2005",
+      "importe": 87221.65,
+      "llamados": 9
+    },
+    {
+      "anio": "2006",
+      "importe": 298766.18,
+      "llamados": 16
+    },
+    {
+      "anio": "2007",
+      "importe": 435826.56,
+      "llamados": 13
+    },
+    {
+      "anio": "2008",
+      "importe": 340397.28,
+      "llamados": 18
+    },
+    {
+      "anio": "2009",
+      "importe": 295365.41,
+      "llamados": 17
+    },
+    {
+      "anio": "2010",
+      "importe": 484984.32,
+      "llamados": 13
+    },
+    {
+      "anio": "2011",
+      "importe": 225593.55,
+      "llamados": 9
+    },
+    {
+      "anio": "2012",
+      "importe": 211265.57,
+      "llamados": 13
+    },
+    {
+      "anio": "2013",
+      "importe": 493843.11,
+      "llamados": 20
+    },
+    {
+      "anio": "2014",
+      "importe": 1026857.61,
+      "llamados": 27
+    },
+    {
+      "anio": "2015",
+      "importe": 1762179.18,
+      "llamados": 37
+    },
+    {
+      "anio": "2016",
+      "importe": 1017170.98,
+      "llamados": 27
+    },
+    {
+      "anio": "2017",
+      "importe": 1918407.82,
+      "llamados": 42
+    },
+    {
+      "anio": "2018",
+      "importe": 1510603.18,
+      "llamados": 31
+    },
+    {
+      "anio": "2019",
+      "importe": 3012600.97,
+      "llamados": 44
+    },
+    {
+      "anio": "2020",
+      "importe": 809527.96,
+      "llamados": 21
+    },
+    {
+      "anio": "2021",
+      "importe": 1418161.46,
+      "llamados": 15
+    },
+    {
+      "anio": "2022",
+      "importe": 4945904.33,
+      "llamados": 21
+    },
+    {
+      "anio": "2023",
+      "importe": 2801540.97,
+      "llamados": 31
+    },
+    {
+      "anio": "2024",
+      "importe": 15264442.23,
+      "llamados": 38
+    },
+    {
+      "anio": "2025",
+      "importe": 3395321.26,
+      "llamados": 28
+    },
+    {
+      "anio": "2026",
+      "importe": 2140911.03,
+      "llamados": 10
+    }
+  ],
+  "top_organismos": [
+    {
+      "organismo": "Poder Legislativo",
+      "importe": 16947089.71,
+      "llamados": 18
+    },
+    {
+      "organismo": "Ministerio de Defensa Nacional",
+      "importe": 4688304.0,
+      "llamados": 63
+    },
+    {
+      "organismo": "Ministerio de Ganadería, Agricultura y Pesca",
+      "importe": 3783808.79,
+      "llamados": 78
+    },
+    {
+      "organismo": "Ministerio del Interior",
+      "importe": 3376912.17,
+      "llamados": 72
+    },
+    {
+      "organismo": "Ministerio de Educación y Cultura",
+      "importe": 3334764.99,
+      "llamados": 50
+    },
+    {
+      "organismo": "Administración de Servicios de Salud del Estado",
+      "importe": 1723363.68,
+      "llamados": 25
+    },
+    {
+      "organismo": "Ministerio de Relaciones Exteriores",
+      "importe": 1385358.93,
+      "llamados": 32
+    },
+    {
+      "organismo": "Ministerio de Industria, Energía y Minería",
+      "importe": 1356045.88,
+      "llamados": 31
+    },
+    {
+      "organismo": "Universidad de la República",
+      "importe": 1284301.62,
+      "llamados": 12
+    },
+    {
+      "organismo": "Ministerio de Economía y Finanzas",
+      "importe": 955730.08,
+      "llamados": 33
+    },
+    {
+      "organismo": "Ministerio de Transporte y Obras Públicas",
+      "importe": 775100.42,
+      "llamados": 11
+    },
+    {
+      "organismo": "Ministerio de Salud Pública",
+      "importe": 584508.4,
+      "llamados": 19
+    },
+    {
+      "organismo": "Ministerio de Vivienda y Ordenamiento Territorial",
+      "importe": 575210.65,
+      "llamados": 10
+    },
+    {
+      "organismo": "Administración Nacional de Educación Pública",
+      "importe": 452940.1,
+      "llamados": 5
+    },
+    {
+      "organismo": "Poder Judicial",
+      "importe": 382777.44,
+      "llamados": 3
+    },
+    {
+      "organismo": "Ministerio de Trabajo y Seguridad Social",
+      "importe": 377692.04,
+      "llamados": 6
+    },
+    {
+      "organismo": "Presidencia de la República",
+      "importe": 357733.53,
+      "llamados": 7
+    },
+    {
+      "organismo": "Tribunal de lo Contencioso Administrativo",
+      "importe": 330197.88,
+      "llamados": 3
+    },
+    {
+      "organismo": "Ministerio de Desarrollo Social",
+      "importe": 295094.85,
+      "llamados": 8
+    },
+    {
+      "organismo": "Fiscalia General de la Nación",
+      "importe": 218111.84,
+      "llamados": 4
+    },
+    {
+      "organismo": "Intendencia de Colonia",
+      "importe": 166483.64,
+      "llamados": 1
+    },
+    {
+      "organismo": "Tribunal de Cuentas",
+      "importe": 162123.36,
+      "llamados": 1
+    },
+    {
+      "organismo": "Banco Central del Uruguay",
+      "importe": 154372.4,
+      "llamados": 1
+    },
+    {
+      "organismo": "Ministerio de Turismo",
+      "importe": 126474.25,
+      "llamados": 7
+    },
+    {
+      "organismo": "Instituto Uruguayo de Meteorología",
+      "importe": 107836.52,
+      "llamados": 3
+    },
+    {
+      "organismo": "Instituto del Niño y Adolescente del Uruguay",
+      "importe": 54170.44,
+      "llamados": 3
+    },
+    {
+      "organismo": "Corte Electoral",
+      "importe": 31244.2,
+      "llamados": 1
+    },
+    {
+      "organismo": "Intendencia de Río Negro",
+      "importe": 10357.8,
+      "llamados": 1
+    }
+  ],
+  "distribucion_tipo": [
+    {
+      "tipo": "Compra Directa",
+      "llamados": 489,
+      "items": 732,
+      "importe": 24259092.49
+    },
+    {
+      "tipo": "Licitación Abreviada",
+      "llamados": 9,
+      "items": 12,
+      "importe": 16208150.98
+    },
+    {
+      "tipo": "Concurso de Precios",
+      "llamados": 6,
+      "items": 9,
+      "importe": 2041882.28
+    },
+    {
+      "tipo": "Compra por Excepción",
+      "llamados": 4,
+      "items": 7,
+      "importe": 1478626.06
+    },
+    {
+      "tipo": "Licitación Pública",
+      "llamados": 1,
+      "items": 1,
+      "importe": 10357.8
+    }
+  ],
+  "articulos_mas_adjudicados": [
+    {
+      "producto": "COLOCACION DE MOQUETTE",
+      "veces": 94,
+      "organismos": 18,
+      "importe": 2364159.99
+    },
+    {
+      "producto": "MOQUETTE",
+      "veces": 91,
+      "organismos": 20,
+      "importe": 7804808.08
+    },
+    {
+      "producto": "PISO FLOTANTE",
+      "veces": 71,
+      "organismos": 15,
+      "importe": 5339445.86
+    },
+    {
+      "producto": "VINILICO PARA PISO",
+      "veces": 65,
+      "organismos": 13,
+      "importe": 3655203.0
+    },
+    {
+      "producto": "COLOCACION DE VINILICOS",
+      "veces": 45,
+      "organismos": 14,
+      "importe": 3948034.18
+    },
+    {
+      "producto": "COLOCACION DE PISO",
+      "veces": 41,
+      "organismos": 17,
+      "importe": 1814853.26
+    },
+    {
+      "producto": "FELPUDO",
+      "veces": 31,
+      "organismos": 7,
+      "importe": 373841.07
+    },
+    {
+      "producto": "FIELTRO",
+      "veces": 25,
+      "organismos": 8,
+      "importe": 573207.04
+    },
+    {
+      "producto": "ALFOMBRA DE FIELTRO",
+      "veces": 19,
+      "organismos": 7,
+      "importe": 255311.33
+    },
+    {
+      "producto": "ALFOMBRA DE PVC",
+      "veces": 18,
+      "organismos": 8,
+      "importe": 337678.92
+    },
+    {
+      "producto": "PISO DE GOMA",
+      "veces": 18,
+      "organismos": 10,
+      "importe": 598983.47
+    },
+    {
+      "producto": "ZOCALO PARA PISO FLOTANTE",
+      "veces": 15,
+      "organismos": 6,
+      "importe": 142623.56
+    },
+    {
+      "producto": "VARILLA DE ALUMINIO",
+      "veces": 15,
+      "organismos": 7,
+      "importe": 13216.7
+    },
+    {
+      "producto": "COLOCACION DE ALFOMBRA",
+      "veces": 13,
+      "organismos": 6,
+      "importe": 10777243.32
+    },
+    {
+      "producto": "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "veces": 12,
+      "organismos": 5,
+      "importe": 210435.48
+    },
+    {
+      "producto": "CONTRATACION DE MANO DE OBRA",
+      "veces": 11,
+      "organismos": 2,
+      "importe": 214650.87
+    },
+    {
+      "producto": "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "veces": 10,
+      "organismos": 3,
+      "importe": 83321.91
+    },
+    {
+      "producto": "ALFOMBRA BOUCLE",
+      "veces": 9,
+      "organismos": 4,
+      "importe": 136330.24
+    },
+    {
+      "producto": "ZOCALO DE MADERA",
+      "veces": 8,
+      "organismos": 3,
+      "importe": 82837.39
+    },
+    {
+      "producto": "CEMENTO DE CONTACTO",
+      "veces": 7,
+      "organismos": 2,
+      "importe": 24946.26
+    },
+    {
+      "producto": "BALDOSA VINILICA",
+      "veces": 7,
+      "organismos": 5,
+      "importe": 181580.41
+    },
+    {
+      "producto": "JUNTA PARA PISO FLOTANTE",
+      "veces": 7,
+      "organismos": 2,
+      "importe": 13651.8
+    },
+    {
+      "producto": "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "veces": 6,
+      "organismos": 4,
+      "importe": 214089.03
+    },
+    {
+      "producto": "REDUCTOR PARA PISO FLOTANTE",
+      "veces": 6,
+      "organismos": 4,
+      "importe": 5565.23
+    },
+    {
+      "producto": "PLANCHA DE GOMA EVA",
+      "veces": 5,
+      "organismos": 4,
+      "importe": 113509.97
+    },
+    {
+      "producto": "CEMENTO PARA PISO VINILICO (ADHESIVO)",
+      "veces": 4,
+      "organismos": 1,
+      "importe": 101414.96
+    },
+    {
+      "producto": "CONSTRUCCION DE PISOS",
+      "veces": 4,
+      "organismos": 2,
+      "importe": 652777.22
+    },
+    {
+      "producto": "PISO MODULAR DE PVC",
+      "veces": 4,
+      "organismos": 2,
+      "importe": 139988.62
+    },
+    {
+      "producto": "CAMINERO DE GOMA",
+      "veces": 4,
+      "organismos": 3,
+      "importe": 44889.9
+    },
+    {
+      "producto": "CAMINERO DE PVC",
+      "veces": 4,
+      "organismos": 4,
+      "importe": 29049.98
+    },
+    {
+      "producto": "BALDOSA LISA",
+      "veces": 3,
+      "organismos": 2,
+      "importe": 433880.3
+    },
+    {
+      "producto": "REPARACION DE PISO",
+      "veces": 3,
+      "organismos": 2,
+      "importe": 525187.98
+    },
+    {
+      "producto": "ACONDICIONAMIENTO DE EDIFICIO",
+      "veces": 3,
+      "organismos": 1,
+      "importe": 303947.1
+    },
+    {
+      "producto": "COLOCACION DE AZULEJOS, CERAMICOS Y SIMILARES",
+      "veces": 3,
+      "organismos": 2,
+      "importe": 144773.74
+    },
+    {
+      "producto": "CAMINERO DE FIELTRO",
+      "veces": 3,
+      "organismos": 3,
+      "importe": 78777.22
+    },
+    {
+      "producto": "COLOCACION DE ZOCALO",
+      "veces": 3,
+      "organismos": 1,
+      "importe": 13777.64
+    },
+    {
+      "producto": "ALFOMBRA ATRAPA POLVO",
+      "veces": 3,
+      "organismos": 3,
+      "importe": 14564.35
+    },
+    {
+      "producto": "VARILLA DE BRONCE PARA ALFOMBRA",
+      "veces": 3,
+      "organismos": 3,
+      "importe": 7391.98
+    },
+    {
+      "producto": "REPARACION DE MOQUETTE",
+      "veces": 3,
+      "organismos": 3,
+      "importe": 87084.92
+    },
+    {
+      "producto": "ZOCALO EN MDF",
+      "veces": 3,
+      "organismos": 3,
+      "importe": 17432.66
+    },
+    {
+      "producto": "CORTINADO",
+      "veces": 3,
+      "organismos": 2,
+      "importe": 10603.0
+    },
+    {
+      "producto": "REPARACION DE PAVIMENTO",
+      "veces": 2,
+      "organismos": 2,
+      "importe": 375840.11
+    },
+    {
+      "producto": "RETIRO DE MOQUETTE",
+      "veces": 2,
+      "organismos": 2,
+      "importe": 3320.0
+    },
+    {
+      "producto": "CABINA DE VIGILANCIA",
+      "veces": 2,
+      "organismos": 1,
+      "importe": 129100.4
+    },
+    {
+      "producto": "ALFOMBRA DE GOMA",
+      "veces": 2,
+      "organismos": 1,
+      "importe": 57600.0
+    },
+    {
+      "producto": "ALFOMBRA DE LANA",
+      "veces": 2,
+      "organismos": 2,
+      "importe": 218660.6
+    },
+    {
+      "producto": "ARRENDAMIENTO DE PISO",
+      "veces": 2,
+      "organismos": 1,
+      "importe": 156191.72
+    },
+    {
+      "producto": "CESPED SINTETICO",
+      "veces": 2,
+      "organismos": 2,
+      "importe": 58779.6
+    },
+    {
+      "producto": "COLOCACION DE PANES DE CESPED",
+      "veces": 2,
+      "organismos": 2,
+      "importe": 91496.34
+    },
+    {
+      "producto": "BALDOSA DE GOMA",
+      "veces": 2,
+      "organismos": 2,
+      "importe": 82712.07
+    },
+    {
+      "producto": "ALFOMBRA DE YUTE",
+      "veces": 2,
+      "organismos": 2,
+      "importe": 25998.5
+    },
+    {
+      "producto": "MANTENIMIENTO DE PAVIMENTO",
+      "veces": 2,
+      "organismos": 1,
+      "importe": 35750.0
+    },
+    {
+      "producto": "moquette",
+      "veces": 2,
+      "organismos": 1,
+      "importe": 14053.0
+    },
+    {
+      "producto": "CEMENTO ADHESIVO PARA PORCELANATO",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 18056.0
+    },
+    {
+      "producto": "VARILLA DE ACERO",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 1000.0
+    },
+    {
+      "producto": "CEMENTO ADHESIVO PARA CERAMICA",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 9469.64
+    },
+    {
+      "producto": "PANEL DE MADERA",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 93256.8
+    },
+    {
+      "producto": "ENTREPUERTA METALICA",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 1695.0
+    },
+    {
+      "producto": "ZOCALO MONOLITICO",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 9259.8
+    },
+    {
+      "producto": "ESCUADRA DE METAL",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 1127.28
+    },
+    {
+      "producto": "TABLA PARA PISO",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 180855.0
+    },
+    {
+      "producto": "LONA VINILICA",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 5802.32
+    },
+    {
+      "producto": "BALDOSA VINILICA ALTO TRANSITO",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 118893.82
+    },
+    {
+      "producto": "TAPAJUNTAS",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 13999.5
+    },
+    {
+      "producto": "PERFIL U DE ALUMINIO",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 10000.0
+    },
+    {
+      "producto": "CONTRATACION DE SERVICIOS PROFESIONALES",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 0.0
+    },
+    {
+      "producto": "REPARACION DE ALFOMBRA",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 37114.84
+    },
+    {
+      "producto": "PEDILUVIO SANITARIO",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 2947.52
+    },
+    {
+      "producto": "LIMPIEZA DE ALFOMBRA",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 15860.0
+    },
+    {
+      "producto": "PAPEL VINILO",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 43633.22
+    },
+    {
+      "producto": "TARIMA",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 176956.79
+    },
+    {
+      "producto": "ENTREGA DE ENCOMIENDAS Y PAQUETES DENTRO DEL PAIS",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 300.0
+    },
+    {
+      "producto": "CINTA ELASTICA PARA JUNTA DE DILATACION",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 713.7
+    },
+    {
+      "producto": "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 1247.39
+    },
+    {
+      "producto": "MANTENIMIENTO EDILICIO",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 8278.0
+    },
+    {
+      "producto": "CAMINERO DE ACRILICO",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 1900.76
+    },
+    {
+      "producto": "LIMPIEZA DE MOQUETTE",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 4112.0
+    },
+    {
+      "producto": "GOMA NATURAL EN PLANCHA",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 3774.95
+    },
+    {
+      "producto": "REPARACION DE PISO DE MADERA",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 20569.0
+    },
+    {
+      "producto": "DISAN",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 1674.0
+    },
+    {
+      "producto": "COLOCACION DE BARANDA EN ESCALERA",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 2989.0
+    },
+    {
+      "producto": "TELA GRANITE",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 4644.0
+    },
+    {
+      "producto": "INSTALACION DE CORTINADO",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 9113.0
+    },
+    {
+      "producto": "MOQUETTE / VERDE",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 11487.0
+    },
+    {
+      "producto": "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 25388.0
+    },
+    {
+      "producto": "mano obra",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 6458.0
+    },
+    {
+      "producto": "colocación moquette",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 17568.0
+    },
+    {
+      "producto": "instalación",
+      "veces": 1,
+      "organismos": 1,
+      "importe": 3393.0
+    }
+  ],
+  "articulos_por_organismo": [
+    {
+      "organismo": "Poder Legislativo",
+      "llamados": 18,
+      "articulos": [
+        {
+          "producto": "VINILICO PARA PISO",
+          "veces": 4,
+          "importe": 508900.87
+        },
+        {
+          "producto": "MOQUETTE",
+          "veces": 3,
+          "importe": 5315923.72
+        },
+        {
+          "producto": "PROTECTOR EN PVC PARA PISO FLOTANTE",
+          "veces": 3,
+          "importe": 52006.16
+        },
+        {
+          "producto": "COLOCACION DE ALFOMBRA",
+          "veces": 2,
+          "importe": 10413188.0
+        },
+        {
+          "producto": "COLOCACION DE MOQUETTE",
+          "veces": 2,
+          "importe": 175899.6
+        }
+      ]
+    },
+    {
+      "organismo": "Ministerio de Defensa Nacional",
+      "llamados": 63,
+      "articulos": [
+        {
+          "producto": "MOQUETTE",
+          "veces": 22,
+          "importe": 556719.65
+        },
+        {
+          "producto": "COLOCACION DE MOQUETTE",
+          "veces": 17,
+          "importe": 237374.96
+        },
+        {
+          "producto": "PISO FLOTANTE",
+          "veces": 10,
+          "importe": 1083579.88
+        },
+        {
+          "producto": "COLOCACION DE VINILICOS",
+          "veces": 6,
+          "importe": 1562651.84
+        },
+        {
+          "producto": "VINILICO PARA PISO",
+          "veces": 6,
+          "importe": 128020.8
+        }
+      ]
+    },
+    {
+      "organismo": "Ministerio de Ganadería, Agricultura y Pesca",
+      "llamados": 78,
+      "articulos": [
+        {
+          "producto": "MOQUETTE",
+          "veces": 14,
+          "importe": 235927.68
+        },
+        {
+          "producto": "VINILICO PARA PISO",
+          "veces": 13,
+          "importe": 1006996.46
+        },
+        {
+          "producto": "COLOCACION DE MOQUETTE",
+          "veces": 11,
+          "importe": 338412.2
+        },
+        {
+          "producto": "FIELTRO",
+          "veces": 11,
+          "importe": 344671.03
+        },
+        {
+          "producto": "CONTRATACION DE MANO DE OBRA",
+          "veces": 10,
+          "importe": 173170.87
+        }
+      ]
+    },
+    {
+      "organismo": "Ministerio del Interior",
+      "llamados": 72,
+      "articulos": [
+        {
+          "producto": "VINILICO PARA PISO",
+          "veces": 16,
+          "importe": 1160827.67
+        },
+        {
+          "producto": "FELPUDO",
+          "veces": 14,
+          "importe": 162664.74
+        },
+        {
+          "producto": "PISO FLOTANTE",
+          "veces": 13,
+          "importe": 514038.36
+        },
+        {
+          "producto": "MOQUETTE",
+          "veces": 9,
+          "importe": 364725.5
+        },
+        {
+          "producto": "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+          "veces": 8,
+          "importe": 76892.51
+        }
+      ]
+    },
+    {
+      "organismo": "Ministerio de Educación y Cultura",
+      "llamados": 50,
+      "articulos": [
+        {
+          "producto": "MOQUETTE",
+          "veces": 11,
+          "importe": 141000.54
+        },
+        {
+          "producto": "COLOCACION DE MOQUETTE",
+          "veces": 10,
+          "importe": 42872.19
+        },
+        {
+          "producto": "VINILICO PARA PISO",
+          "veces": 7,
+          "importe": 228349.11
+        },
+        {
+          "producto": "PISO FLOTANTE",
+          "veces": 7,
+          "importe": 1482617.78
+        },
+        {
+          "producto": "CONSTRUCCION DE PISOS",
+          "veces": 3,
+          "importe": 586233.18
+        }
+      ]
+    },
+    {
+      "organismo": "Administración de Servicios de Salud del Estado",
+      "llamados": 25,
+      "articulos": [
+        {
+          "producto": "ALFOMBRA DE PVC",
+          "veces": 3,
+          "importe": 43654.04
+        },
+        {
+          "producto": "ALFOMBRA BOUCLE",
+          "veces": 3,
+          "importe": 23228.8
+        },
+        {
+          "producto": "CABINA DE VIGILANCIA",
+          "veces": 2,
+          "importe": 129100.4
+        },
+        {
+          "producto": "ALFOMBRA DE GOMA",
+          "veces": 2,
+          "importe": 57600.0
+        },
+        {
+          "producto": "BALDOSA LISA",
+          "veces": 2,
+          "importe": 240258.02
+        }
+      ]
+    },
+    {
+      "organismo": "Ministerio de Relaciones Exteriores",
+      "llamados": 32,
+      "articulos": [
+        {
+          "producto": "COLOCACION DE MOQUETTE",
+          "veces": 8,
+          "importe": 254104.6
+        },
+        {
+          "producto": "VARILLA DE ALUMINIO",
+          "veces": 5,
+          "importe": 3730.75
+        },
+        {
+          "producto": "ALFOMBRA DE PVC",
+          "veces": 5,
+          "importe": 122390.4
+        },
+        {
+          "producto": "VINILICO PARA PISO",
+          "veces": 4,
+          "importe": 164926.91
+        },
+        {
+          "producto": "ALFOMBRA DE FIELTRO",
+          "veces": 4,
+          "importe": 29316.6
+        }
+      ]
+    },
+    {
+      "organismo": "Ministerio de Industria, Energía y Minería",
+      "llamados": 31,
+      "articulos": [
+        {
+          "producto": "PISO FLOTANTE",
+          "veces": 16,
+          "importe": 896566.85
+        },
+        {
+          "producto": "ZOCALO DE MADERA",
+          "veces": 6,
+          "importe": 66572.96
+        },
+        {
+          "producto": "COLOCACION DE VINILICOS",
+          "veces": 5,
+          "importe": 182375.0
+        },
+        {
+          "producto": "MOQUETTE",
+          "veces": 4,
+          "importe": 62419.27
+        },
+        {
+          "producto": "COLOCACION DE MOQUETTE",
+          "veces": 3,
+          "importe": 31225.6
+        }
+      ]
+    }
+  ],
+  "concentracion": {
+    "organismo": "Poder Legislativo",
+    "importe": 16947089.71,
+    "porcentaje": 38.5
+  }
+}
