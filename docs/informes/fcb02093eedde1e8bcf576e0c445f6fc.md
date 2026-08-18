@@ -1,7 +1,7 @@
 # Informe de licitación: Licitación Abreviada 11/2026
 
 **URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1363270
-**Generado:** 2026-08-18 20:39
+**Generado:** 2026-08-18 22:57
 
 ## Clasificación: ★ — No presentarse (score 23/100)
 

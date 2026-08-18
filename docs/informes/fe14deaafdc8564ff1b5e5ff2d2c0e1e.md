@@ -1,7 +1,7 @@
 # Informe de licitación: Licitación Abreviada 8/2026
 
 **URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1357563
-**Generado:** 2026-08-18 19:51
+**Generado:** 2026-08-18 22:08
 
 ## Clasificación: ★★ — Poco conveniente (score 33/100)
 

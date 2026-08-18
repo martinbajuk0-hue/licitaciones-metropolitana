@@ -1,7 +1,7 @@
 # Informe de licitación: Licitación Pública 260021/2026
 
 **URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1359202
-**Generado:** 2026-08-18 19:36
+**Generado:** 2026-08-18 21:54
 
 ## Clasificación: ★ — No presentarse (score 6/100)
 

@@ -1,7 +1,7 @@
 # Informe de licitación: Compra Directa 12987/2026
 
 **URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1361124
-**Generado:** 2026-08-18 20:54
+**Generado:** 2026-08-18 23:11
 
 ## Clasificación: ★★★ — Dudosa (score 55/100)
 

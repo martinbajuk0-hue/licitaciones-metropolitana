@@ -1,7 +1,7 @@
 # Informe de licitación: Concurso de Precios 10002/2026
 
 **URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1357038
-**Generado:** 2026-08-18 19:56
+**Generado:** 2026-08-18 22:13
 
 ## Clasificación: ★ — No presentarse (score 6/100)
 

@@ -1,7 +1,7 @@
 # Informe de licitación: Licitación Pública 24/2025
 
 **URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1362541
-**Generado:** 2026-08-18 20:44
+**Generado:** 2026-08-18 23:02
 
 ## Clasificación: ★ — No presentarse (score 17/100)
 

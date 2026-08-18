@@ -1,7 +1,7 @@
 # Informe de licitación: Compra Directa 46026/2026
 
 **URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1354830
-**Generado:** 2026-08-18 20:12
+**Generado:** 2026-08-18 22:30
 
 ## Clasificación: ★★ — Poco conveniente (score 39/100)
 

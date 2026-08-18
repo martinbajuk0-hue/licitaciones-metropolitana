@@ -1,7 +1,7 @@
 # Informe de licitación: Concurso de Precios 146768/2026
 
 **URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1357194
-**Generado:** 2026-08-18 19:54
+**Generado:** 2026-08-18 22:12
 
 ## Clasificación: ★ — No presentarse (score 6/100)
 

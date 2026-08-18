@@ -1,7 +1,7 @@
 # Informe de licitación: Compra Directa 202/2026
 
 **URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1362228
-**Generado:** 2026-08-18 20:46
+**Generado:** 2026-08-18 23:03
 
 ## Clasificación: ★ — No presentarse (score 2/100)
 

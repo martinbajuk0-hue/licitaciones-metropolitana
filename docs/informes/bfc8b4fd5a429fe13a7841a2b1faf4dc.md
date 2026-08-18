@@ -1,7 +1,7 @@
 # Informe de licitación: Compra por Excepción 16/2026
 
 **URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1356317
-**Generado:** 2026-08-18 19:30
+**Generado:** 2026-08-18 21:49
 
 ## Clasificación: ★ — No presentarse (score 13/100)
 

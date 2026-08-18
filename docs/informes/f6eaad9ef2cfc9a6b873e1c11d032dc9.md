@@ -1,7 +1,7 @@
 # Informe de licitación: Licitación Abreviada 152094/2026
 
 **URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1361963
-**Generado:** 2026-08-18 20:49
+**Generado:** 2026-08-18 23:07
 
 ## Clasificación: ★ — No presentarse (score 0/100)
 
