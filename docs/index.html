@@ -108,6 +108,9 @@
   }
   .badge-nueva { background: #e6f4ea; color: var(--verde); }
   .badge-modificada { background: #fef7e0; color: #b06000; }
+  .badge-ganamos { background: #e6f4ea; color: #1e8e3e; margin-top:4px; }
+  .badge-perdimos { background: #fce8e6; color: #c53929; margin-top:4px; }
+  .badge-no-presentamos { background: #f1f3f4; color: #5f6368; margin-top:4px; }
   .cierre {
     display: block;
     font-size: 11px;
@@ -349,6 +352,8 @@
       <option value="">Todos</option>
       <option value="nueva">Nuevas</option>
       <option value="modificada">Con cambios</option>
+      <option value="ganamos">🏆 Ganamos</option>
+      <option value="perdimos">❌ Perdimos</option>
     </select>
   </label>
 </div>
@@ -450,6 +455,8 @@ function filtrar() {
     if (scoreMin && (d.nivel || 0) < scoreMin) return false;
     if (estado === "nueva" && d.cambio_detectado) return false;
     if (estado === "modificada" && !d.cambio_detectado) return false;
+    if (estado === "ganamos" && (!d.resultado || d.resultado.estado !== "ganamos")) return false;
+    if (estado === "perdimos" && (!d.resultado || d.resultado.estado !== "perdimos")) return false;
     return true;
   });
 }
@@ -514,6 +521,17 @@ function render() {
     const badge = d.cambio_detectado
       ? '<span class="badge badge-modificada">Con cambios</span>'
       : '<span class="badge badge-nueva">Nueva</span>';
+    // Resultado de adjudicación (ver revisar_resultados.py) — se agrega
+    // como segunda línea debajo del badge de "Nueva/Con cambios" cuando
+    // ya se conoce (pedido del usuario 2026-08-19: saber qué se presentó
+    // y perdió). "pendiente" (todavía sin resolución de ARCE) no se
+    // muestra, para no llenar la tabla de badges vacíos de información.
+    const resultadoBadges = {
+      ganamos: '<br><span class="badge badge-ganamos">🏆 Ganamos</span>',
+      perdimos: '<br><span class="badge badge-perdimos">❌ Perdimos</span>',
+      no_presentamos: '<br><span class="badge badge-no-presentamos">➖ No nos presentamos</span>',
+    };
+    const resultadoHtml = (d.resultado && resultadoBadges[d.resultado.estado]) || "";
     const cierre = textoCierre(d.fecha_apertura);
     const yaAdjudicados = d.ya_adjudicados || [];
     const yaAdjudicadosHtml = yaAdjudicados.length
@@ -530,7 +548,7 @@ function render() {
       </td>
       <td>${cats || '<span style="color:#9aa0a6">—</span>'}</td>
       <td><span class="estrellas">${estrellas}</span><br><span style="font-size:11px;color:var(--gris-texto)">${escapeHtml(d.etiqueta_clasificacion || "")}</span></td>
-      <td>${badge}</td>
+      <td>${badge}${resultadoHtml}</td>
       <td><a class="link-informe" href="#" onclick="abrirInforme('${escapeAttr(d.informe)}', '${escapeAttr((d.titulo||"").replace(/'/g,"\\'"))}'); return false;">Ver informe →</a></td>
     `;
     tbody.appendChild(tr);
@@ -548,12 +566,16 @@ function renderResumen() {
   const nuevas = DATA.filter(d => !d.cambio_detectado).length;
   const modificadas = DATA.filter(d => d.cambio_detectado).length;
   const altas = DATA.filter(d => (d.nivel || 0) >= 4).length;
+  const ganamos = DATA.filter(d => d.resultado && d.resultado.estado === "ganamos").length;
+  const perdimos = DATA.filter(d => d.resultado && d.resultado.estado === "perdimos").length;
   const cont = document.getElementById("resumen");
   cont.innerHTML = `
     <div class="stat"><div class="n">${total}</div><div class="l">Total llamados</div></div>
     <div class="stat"><div class="n">${nuevas}</div><div class="l">Nuevas</div></div>
     <div class="stat"><div class="n">${modificadas}</div><div class="l">Con cambios</div></div>
     <div class="stat"><div class="n">${altas}</div><div class="l">★★★★ o más</div></div>
+    <div class="stat"><div class="n">${ganamos}</div><div class="l">🏆 Ganamos</div></div>
+    <div class="stat"><div class="n">${perdimos}</div><div class="l">❌ Perdimos</div></div>
   `;
 }
 
