@@ -1,0 +1,66 @@
+name: Resultados de Adjudicación
+
+on:
+  schedule:
+    # Una vez por día, 8am hora Uruguay (UTC-3) — antes de la primera
+    # corrida del día de monitor.yml (7am/12pm/6pm Uruguay, ver ese
+    # archivo) para minimizar la chance de que los dos workflows hagan
+    # commit+push a docs/data al mismo tiempo. Los resultados de
+    # adjudicación no cambian con la frecuencia de monitor.yml — ARCE
+    # tarda semanas o meses en resolver una compra — así que no hace
+    # falta correr esto más seguido.
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+    inputs:
+      sin_email:
+        description: 'Actualiza el catálogo del visor con los resultados nuevos pero SIN mandar email.'
+        type: boolean
+        default: false
+
+# Mismo motivo que en monitor.yml: evita que dos corridas de ESTE
+# workflow se pisen entre sí si se dispara manualmente mientras la
+# programada sigue en curso.
+concurrency:
+  group: resultados-adjudicacion-arce
+  cancel-in-progress: false
+
+permissions:
+  contents: write  # necesario para el commit+push de docs/data/llamados.json
+
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Revisar resultados de adjudicación
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          EMAIL_DESTINO: ${{ secrets.EMAIL_DESTINO }}
+        run: >
+          python revisar_resultados.py
+          ${{ inputs.sin_email && '--sin-email' || '' }}
+
+      - name: Publicar catálogo del visor web actualizado
+        if: always()
+        run: |
+          git config user.name "resultados-bot"
+          git config user.email "resultados-bot@users.noreply.github.com"
+          git add docs/data/llamados.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en resultados de adjudicación, no hay nada que commitear."
+          else
+            git commit -m "Actualizar resultados de adjudicación [skip ci]"
+            git push
+          fi
