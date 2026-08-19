@@ -159,6 +159,12 @@ def obtener_licitaciones(vistos: dict | None = None) -> list[dict]:
                 )
                 licitaciones.append({
                     "id": ocid, "titulo": title, "descripcion": desc, "fecha": date, "url": url,
+                    # Acá "url" YA es la ficha humana (ver arriba) — se
+                    # duplica en "url_ficha" para que el resto del código
+                    # (catalogo.py, enviar_email(), report.analizar_licitacion())
+                    # pueda usar siempre lic.get("url_ficha") sin importar
+                    # de qué rama (OCDS/RSS) vino el llamado.
+                    "url_ficha": url,
                     "codigos_articulo": _codigos_articulo(tender),
                 })
             if licitaciones:
@@ -204,7 +210,7 @@ def obtener_licitaciones(vistos: dict | None = None) -> list[dict]:
                     link = entry.findtext("atom:id", default="", namespaces=ns)
                     date = (entry.findtext("atom:updated", default="", namespaces=ns) or "")[:10]
                     uid = hashlib.md5(link.encode()).hexdigest()
-                    licitaciones.append({"id": uid, "titulo": title, "descripcion": "", "fecha": date, "url": link})
+                    licitaciones.append({"id": uid, "titulo": title, "descripcion": "", "fecha": date, "url": link, "url_ficha": link})
                 return licitaciones
             todos_los_items = channel.findall("item")
 
@@ -217,6 +223,25 @@ def obtener_licitaciones(vistos: dict | None = None) -> list[dict]:
             guid = item.findtext("guid", default="") or item.findtext("title", default="")
             m = re.match(r"^([a-z_]+)-\d", guid)
             return m.group(1) if m else ""
+
+        def _url_ficha_arce(guid: str, link: str) -> str:
+            # lic["url"] (== link, el <link> del feed) apunta al JSON del
+            # release OCDS (ej. ".../ocds/release/llamado-1361110") — sirve
+            # para que el pipeline lea título/descripción/documentos, pero
+            # si una persona lo abre en el navegador ve JSON crudo, no la
+            # ficha de ARCE (reportado 2026-08-18: el link "Ver ficha en
+            # ARCE" del visor mostraba el JSON en vez de la página). ARCE
+            # sí tiene una página humana para el mismo llamado en
+            # /consultas/detalle/id/{id numérico} — el mismo patrón que ya
+            # se usa arriba para la rama OCDS (ocid.split('-')[-1]). El id
+            # numérico de un guid "llamado-1361110" es la parte después del
+            # último guion; si el guid no matchea ese formato exacto (no
+            # debería pasar, ya se filtró por _tipo_release == "llamado"),
+            # se cae al link del JSON antes que a un link roto.
+            m = re.match(r"^llamado-(\d+)$", guid)
+            if m:
+                return f"https://www.comprasestatales.gub.uy/consultas/detalle/id/{m.group(1)}"
+            return link
 
         items_llamado = [it for it in todos_los_items if _tipo_release(it) == "llamado"]
         tipos_vistos = sorted({_tipo_release(it) for it in todos_los_items})
@@ -276,6 +301,7 @@ def obtener_licitaciones(vistos: dict | None = None) -> list[dict]:
                 "descripcion": desc,
                 "fecha": date,
                 "url": link,
+                "url_ficha": _url_ficha_arce(guid, link),
                 "documentos": documentos,
                 "codigos_articulo": codigos_articulo,
             })
@@ -491,7 +517,7 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict]) -> None:
                 for i, doc_url in enumerate(documentos[:3])
             )
         else:
-            links_html = f'<a href="{lic["url"]}" style="display:inline-block;margin-top:8px;font-size:13px;color:#1a73e8;">Ver ficha de la licitación (sin PDF adjunto) →</a>'
+            links_html = f'<a href="{lic.get("url_ficha") or lic["url"]}" style="display:inline-block;margin-top:8px;font-size:13px;color:#1a73e8;">Ver ficha de la licitación (sin PDF adjunto) →</a>'
         return f"""
         <div style="border-left:4px solid {color};padding:12px 16px;margin-bottom:16px;background:#f8f9fa;border-radius:0 6px 6px 0;">
             <p style="margin:0 0 4px;font-size:11px;font-weight:700;color:{color};text-transform:uppercase;">{etiqueta}</p>
@@ -589,7 +615,8 @@ def main(enviar_email_flag: bool = True) -> None:
 
         texto_para_informe = texto_pliego or (lic["titulo"] + "\n" + lic["descripcion"])
         informe = report_mod.analizar_licitacion(
-            lic["titulo"], lic["url"], texto_para_informe, errores, codigos_articulo=lic.get("codigos_articulo")
+            lic["titulo"], lic.get("url_ficha") or lic["url"], texto_para_informe, errores,
+            codigos_articulo=lic.get("codigos_articulo"),
         )
         ruta_informe = report_mod.guardar_informe(lic["titulo"], informe.markdown)
         print(f"  Informe generado: {ruta_informe} ({informe.clasificacion.simbolo} score {informe.clasificacion.puntaje})")
@@ -761,7 +788,8 @@ def enviar_email_de_prueba_rango_fechas(desde: str, hasta: str) -> None:
 
         texto_para_informe = texto_pliego or (lic["titulo"] + "\n" + lic["descripcion"])
         informe = report_mod.analizar_licitacion(
-            lic["titulo"], lic["url"], texto_para_informe, errores, codigos_articulo=lic.get("codigos_articulo")
+            lic["titulo"], lic.get("url_ficha") or lic["url"], texto_para_informe, errores,
+            codigos_articulo=lic.get("codigos_articulo"),
         )
         print(f"  Relevante: {lic['titulo'][:70]!r} — {informe.clasificacion.simbolo} score {informe.clasificacion.puntaje}")
 

@@ -103,7 +103,13 @@ def registrar_llamado(lic: dict, informe: report_mod.InformeLicitacion) -> None:
         "nivel": informe.clasificacion.nivel,
         "simbolo": informe.clasificacion.simbolo,
         "etiqueta_clasificacion": informe.clasificacion.etiqueta,
-        "url_ficha": lic.get("url"),
+        # lic["url_ficha"] es la página humana de ARCE (consultas/detalle/
+        # id/...) — lic["url"] es el JSON del release OCDS, útil para el
+        # pipeline pero no para que una persona lo abra en el navegador
+        # (reportado 2026-08-18: el link del visor mostraba JSON crudo en
+        # vez de la ficha). Fallback a "url" solo por si algún llamado
+        # viejo en el catálogo no tiene "url_ficha" todavía.
+        "url_ficha": lic.get("url_ficha") or lic.get("url"),
         "documentos": lic.get("documentos") or [],
         "informe": f"informes/{slug}.md",
         "cambio_detectado": False,
