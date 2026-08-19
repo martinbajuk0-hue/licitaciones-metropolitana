@@ -1,0 +1,28 @@
+<!--
+Ficha después de la apertura de ofertas pero ANTES de que ARCE publique
+la resolución de adjudicación: hay tabla de "Proveedores participantes"
+pero no hay ningún <li>Resolución:</li>. Caso sintético (no es una
+compra real puntual) para probar que estado_resumen() devuelve
+"pendiente" en vez de inventar un resultado.
+-->
+<html>
+<body>
+<main>
+  <h1>Licitación Abreviada 99/2026</h1>
+  <ul>
+    <li class="col-md-6 col-xs-6">Fecha Publicación:</li>
+    <li class="col-md-6 col-xs-6">10/08/2026 09:00hs</li>
+  </ul>
+
+  <h2>Proveedores participantes</h2>
+  <table class="table">
+    <caption class="sr-only">Proveedores participantes</caption>
+    <thead><tr><th>Tipo</th><th>Nro. Documento</th><th>Nombre Proveedor</th></tr></thead>
+    <tbody>
+      <tr><td>RUT</td><td>210196570018</td><td>METROPOLITANA S A</td></tr>
+      <tr><td>RUT</td><td>219999990013</td><td>OTRO PROVEEDOR SA</td></tr>
+    </tbody>
+  </table>
+</main>
+</body>
+</html>
