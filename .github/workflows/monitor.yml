@@ -18,6 +18,26 @@ on:
         description: 'Email de prueba con licitaciones REALES publicadas en este rango (formato YYYY-MM-DD:YYYY-MM-DD, ej. 2026-08-13:2026-08-14). Solo lectura, no marca como visto ni toca el catálogo del visor. Dejar vacío para no usar este modo.'
         type: string
         default: ''
+      sin_email:
+        description: 'Corrida real (marca como visto, actualiza el catálogo del visor) pero SIN mandar email — útil para absorber backlog manualmente sin generar una alerta grande. Se ignora si test_email/auditoria/rango_fechas están activos.'
+        type: boolean
+        default: false
+
+# Evita que dos corridas se pisen: sin esto, una corrida lenta (el feed
+# mensual puede traer varios cientos de llamados nuevos — cada uno implica
+# 1-2 requests HTTP con timeout, así que una corrida puede tardar más de
+# una hora) que sigue en curso cuando toca el próximo disparador (cron
+# cada ~5hs, o un run manual) hace que la segunda corrida arranque
+# restaurando el MISMO caché viejo de licitaciones vistas que la primera
+# — las dos terminan reprocesando el mismo backlog y mandando cada una su
+# propio email con cientos de tarjetas (evidencia real 2026-08-18/19:
+# corridas #199, #200 y #201, cada una ~1h50m, cada una repitiendo el
+# mismo trabajo). "cancel-in-progress: false" hace que la corrida nueva
+# espere en cola a que termine la anterior, en vez de competir por el
+# mismo caché o cancelarla a mitad de camino perdiendo su progreso.
+concurrency:
+  group: monitor-licitaciones-arce
+  cancel-in-progress: false
 
 permissions:
   contents: write  # necesario para el commit+push de docs/data y docs/informes (visor web)
@@ -58,7 +78,8 @@ jobs:
           ${{ inputs.test_email && '--test-email'
               || (inputs.auditoria && '--auditoria'
               || (inputs.rango_fechas && format('--test-rango-fechas {0}', inputs.rango_fechas)
-              || '')) }}
+              || (inputs.sin_email && '--sin-email'
+              || ''))) }}
 
       - name: Guardar historial actualizado
         uses: actions/cache/save@v4
