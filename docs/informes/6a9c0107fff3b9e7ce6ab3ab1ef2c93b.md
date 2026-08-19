@@ -1,7 +1,7 @@
 # Informe de licitación: Licitación Abreviada 22/2026
 
-**URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1352405
-**Generado:** 2026-08-18 22:03
+**URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1352405
+**Generado:** 2026-08-19 22:11
 
 ## Clasificación: ★★ — Poco conveniente (score 37/100)
 
@@ -88,8 +88,8 @@ Altos: 2 · Medios: 0 · Total: 2
 - Antecedentes en obras/suministros similares
 
 ## Cronograma de tareas
-- 2026-08-18: Lectura integral del pliego y anexos
-- 2026-08-19: Armar checklist documental y reunir certificados
+- 2026-08-19: Lectura integral del pliego y anexos
+- 2026-08-20: Armar checklist documental y reunir certificados
 - según disponibilidad, antes de apertura: Definir productos y armar cotización
 - según disponibilidad, antes de apertura: Redactar oferta técnica y administrativa
 - FECHA DE APERTURA NO IDENTIFICADA — verificar manualmente antes de planificar: Entrega de oferta

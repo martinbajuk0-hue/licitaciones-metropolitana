@@ -1,7 +1,7 @@
 # Informe de licitación: Licitación Abreviada 152094/2026
 
-**URL:** http://www.comprasestatales.gub.uy/ocds/release/llamado-1361963
-**Generado:** 2026-08-18 23:07
+**URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1361963
+**Generado:** 2026-08-19 23:29
 
 ## Clasificación: ★ — No presentarse (score 0/100)
 
@@ -84,8 +84,8 @@ Altos: 4 · Medios: 2 · Total: 6
 - Constancia de visita de obra (si el pliego la exige)
 
 ## Cronograma de tareas
-- 2026-08-18: Lectura integral del pliego y anexos
-- 2026-08-19: Armar checklist documental y reunir certificados
+- 2026-08-19: Lectura integral del pliego y anexos
+- 2026-08-20: Armar checklist documental y reunir certificados
 - según disponibilidad, antes de apertura: Definir productos y armar cotización
 - según disponibilidad, antes de apertura: Redactar oferta técnica y administrativa
 - FECHA DE APERTURA NO IDENTIFICADA — verificar manualmente antes de planificar: Entrega de oferta
