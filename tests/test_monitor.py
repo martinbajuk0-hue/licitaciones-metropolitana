@@ -336,5 +336,93 @@ class TestObtenerLicitacionesFeedMensual(unittest.TestCase):
         self.assertEqual(sorted(lic["titulo"] for lic in licitaciones), ["A", "B"])
 
 
+class TestUrlFichaArce(unittest.TestCase):
+    """Bug reportado 2026-08-18: el link "Ver ficha en ARCE" del visor
+    abría el JSON del release OCDS (lic["url"], usado internamente por el
+    pipeline) en vez de la página humana de ARCE. obtener_licitaciones()
+    (rama RSS) debe poblar además lic["url_ficha"] con
+    /consultas/detalle/id/{id numérico}, extraído del <guid> del feed
+    ("llamado-1361110" -> "1361110").
+    """
+
+    def _mockear_ocds_caido_y_rss_mensual(self, mock_get, guids_por_mes, detalle_por_guid=None):
+        detalle_por_guid = detalle_por_guid or {}
+
+        def side_effect(url, headers=None, timeout=None):
+            if url == monitor.settings.OCDS_URL:
+                return _RespuestaFalsa(status_code=404, text="not found")
+            for (anio, mes), guids in guids_por_mes.items():
+                if url == f"{monitor.settings.RSS_URL}/{anio}/{mes:02d}":
+                    return _RespuestaFalsa(status_code=200, content=_rss_mensual_xml(guids))
+            for guid, detalle in detalle_por_guid.items():
+                if url.endswith(guid):
+                    return _RespuestaFalsa(status_code=200, json_data=detalle)
+            return _RespuestaFalsa(status_code=404, text="not found")
+
+        mock_get.side_effect = side_effect
+
+    @patch("monitor.datetime")
+    @patch("monitor.requests.get")
+    def test_url_ficha_apunta_a_la_pagina_humana_no_al_json(self, mock_get, mock_datetime):
+        mock_datetime.now.return_value = datetime(2026, 8, 18)
+        self._mockear_ocds_caido_y_rss_mensual(
+            mock_get,
+            {(2026, 7): [], (2026, 8): ["llamado-1361110"]},
+            detalle_por_guid={
+                "llamado-1361110": {"releases": [{"tender": {"title": "Piso vinílico", "description": ""}}]},
+            },
+        )
+        licitaciones = monitor.obtener_licitaciones()
+        self.assertEqual(len(licitaciones), 1)
+        lic = licitaciones[0]
+        self.assertEqual(
+            lic["url"],
+            "https://www.comprasestatales.gub.uy/ocds/release/llamado-1361110",
+        )
+        self.assertEqual(
+            lic["url_ficha"],
+            "https://www.comprasestatales.gub.uy/consultas/detalle/id/1361110",
+        )
+
+    @patch("monitor.datetime")
+    @patch("monitor.requests.get")
+    def test_url_ficha_cae_al_link_del_json_si_el_guid_no_matchea_el_patron(self, mock_get, mock_datetime):
+        # _url_ficha_arce() es interno a obtener_licitaciones() (no hay
+        # función module-level que testear en aislamiento), así que este
+        # caso borde también se ejercita a través de la función pública.
+        # No debería pasar en la práctica (ya se filtró por
+        # _tipo_release == "llamado", que exige guid "llamado-<dígitos>"),
+        # pero si igual llegara un guid con otro formato no hay que romper
+        # ni devolver un link roto — se cae al link del JSON.
+        mock_datetime.now.return_value = datetime(2026, 8, 18)
+        # Un guid que matchea _tipo_release() ("llamado-...") pero no el
+        # patrón numérico estricto de _url_ficha_arce() ("llamado-\d+$").
+        guid_raro = "llamado-1361110-bis"
+        link = f"https://www.comprasestatales.gub.uy/ocds/release/{guid_raro}"
+
+        def side_effect(url, headers=None, timeout=None):
+            if url == monitor.settings.OCDS_URL:
+                return _RespuestaFalsa(status_code=404, text="not found")
+            if url == f"{monitor.settings.RSS_URL}/2026/08":
+                items_xml = (
+                    f"<item><guid>{guid_raro}</guid><link>{link}</link>"
+                    f"<pubDate>Wed, 13 Aug 2026 10:00:00 GMT</pubDate><title>{guid_raro}</title></item>"
+                )
+                return _RespuestaFalsa(status_code=200, content=f"<rss><channel>{items_xml}</channel></rss>".encode())
+            if url == f"{monitor.settings.RSS_URL}/2026/07":
+                return _RespuestaFalsa(status_code=200, content=b"<rss><channel></channel></rss>")
+            if url == link:
+                return _RespuestaFalsa(
+                    status_code=200,
+                    json_data={"releases": [{"tender": {"title": "Raro", "description": ""}}]},
+                )
+            return _RespuestaFalsa(status_code=404, text="not found")
+
+        mock_get.side_effect = side_effect
+        licitaciones = monitor.obtener_licitaciones()
+        self.assertEqual(len(licitaciones), 1)
+        self.assertEqual(licitaciones[0]["url_ficha"], link)
+
+
 if __name__ == "__main__":
     unittest.main()

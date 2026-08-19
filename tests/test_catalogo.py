@@ -110,6 +110,34 @@ class TestCatalogo(unittest.TestCase):
         # No existe el catálogo (nunca se llamó a registrar_llamado antes).
         self.assertFalse(catalogo.CATALOGO_PATH.exists())
 
+    def test_registrar_llamado_usa_url_ficha_en_vez_de_url_json_cruda(self):
+        # Bug reportado 2026-08-18: el link "Ver ficha en ARCE" del visor
+        # abría el JSON del release OCDS en vez de la página humana de
+        # ARCE. lic["url"] sigue siendo el JSON (lo necesita el pipeline
+        # para leer título/descripción/documentos) — lo que debe guardarse
+        # en el catálogo (lo que lee docs/index.html) es lic["url_ficha"].
+        lic = self._lic()
+        lic["url"] = "https://www.comprasestatales.gub.uy/ocds/release/llamado-1361110"
+        lic["url_ficha"] = "https://www.comprasestatales.gub.uy/consultas/detalle/id/1361110"
+        catalogo.registrar_llamado(lic, self._informe())
+
+        data = json.loads(catalogo.CATALOGO_PATH.read_text(encoding="utf-8"))
+        self.assertEqual(
+            data["ocid-123"]["url_ficha"],
+            "https://www.comprasestatales.gub.uy/consultas/detalle/id/1361110",
+        )
+
+    def test_registrar_llamado_sin_url_ficha_cae_a_url(self):
+        # Compatibilidad con llamados viejos del catálogo (o de la rama
+        # OCDS/atom, donde lic["url"] ya es humana) que no traigan
+        # "url_ficha" — no debe romper ni guardar None si hay "url".
+        lic = self._lic()
+        self.assertNotIn("url_ficha", lic)
+        catalogo.registrar_llamado(lic, self._informe())
+
+        data = json.loads(catalogo.CATALOGO_PATH.read_text(encoding="utf-8"))
+        self.assertEqual(data["ocid-123"]["url_ficha"], lic["url"])
+
 
 if __name__ == "__main__":
     unittest.main()
