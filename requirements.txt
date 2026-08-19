@@ -3,6 +3,10 @@ requests>=2.31
 PyYAML>=6.0
 pypdf>=4.0
 
+# Parseo de HTML de fichas de ARCE (resultados.py: seguimiento de
+# adjudicaciones ganadas/perdidas) — requerido siempre.
+beautifulsoup4>=4.12
+
 # Lectura de anexos Word/Excel — opcional (parser.py degrada si faltan)
 python-docx>=1.1
 openpyxl>=3.1
