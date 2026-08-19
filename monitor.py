@@ -31,6 +31,43 @@ import report as report_mod
 
 MAX_DOCUMENTOS_POR_LICITACION = 5
 
+# Reportado 2026-08-18/19: al pasar al feed RSS mensual (ver
+# _meses_a_relevar()), un problema de concurrencia entre corridas (dos
+# Cada cuántos llamados procesados en main() se hace un checkpoint de
+# guardar_vistos() (en vez de solo una vez al final del loop). Con el
+# feed mensual, una corrida que procesa varios cientos de llamados nuevos
+# puede tardar más de una hora (cada uno implica 1-2 requests HTTP con
+# timeout) — si esa corrida se cancela o se cae a mitad de camino, sin
+# checkpoints se pierde TODO lo procesado hasta ese punto y la próxima
+# corrida vuelve a arrancar de cero (evidencia real 2026-08-19: la
+# corrida #201 se canceló a mitad de camino después de ~50 min).
+CHECKPOINT_CADA_N_ITEMS = 25
+
+# corridas del workflow procesando el mismo backlog de ~1000 llamados en
+# simultáneo — ver .github/workflows/monitor.yml, "concurrency"; y cada
+# corrida perdía TODO su progreso si no llegaba a terminar, porque
+# guardar_vistos() solo se llamaba una vez al final del loop — ver
+# CHECKPOINT_CADA_N_ITEMS más abajo) hizo que main() mandara UN email con
+# ~450 tarjetas ("novedades") de una sola vez.
+# Un email así no sirve para "acción rápida" (pedido explícito del
+# usuario) — así que además de arreglar la concurrencia, se pone un techo
+# defensivo acá: si alguna vez una corrida encuentra de golpe muchas más
+# licitaciones relevantes de las que puede haber publicado ARCE en un
+# día real (backlog, glitch del feed, etc.), el email NO las vuelca todas
+# — manda las más relevantes (mayor score) y avisa cuántas quedaron
+# afuera, visibles igual en el catálogo del visor (catalogo.registrar_llamado()
+# se sigue llamando para TODAS, esto solo filtra qué entra al mail).
+MAX_ALERTAS_POR_EMAIL = 30
+
+# Idem: solo se manda por mail lo publicado "hace poco" — un llamado
+# encontrado relevante pero publicado hace semanas (típicamente backlog
+# de una corrida que recién ahora lo procesa, no una novedad real de
+# hoy) tampoco es una "alerta del día". Se admiten 2 días de margen (no
+# 1) para no perder de vista algo publicado a última hora de la tarde
+# antes de la corrida de las 7am, o durante un fin de semana sin
+# corridas. El catálogo del visor sigue mostrando todo, sin este filtro.
+DIAS_MAX_PARA_ALERTA_POR_MAIL = 2
+
 
 # ─── Estado (licitaciones ya vistas) ──────────────────────────────────────
 # Formato: { id: {"titulo": str, "hash": str, "primera_deteccion": iso, "notificaciones": int} }
@@ -463,7 +500,15 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
 
 # ─── Email ──────────────────────────────────────────────────────────────────
 
-def enviar_email(nuevas: list[dict], modificadas: list[dict]) -> None:
+def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor: int = 0) -> None:
+    """omitidas_del_visor: cuántos llamados relevantes adicionales quedaron
+    afuera de este email (por antigüedad o por el techo de
+    MAX_ALERTAS_POR_EMAIL — ver main()) pero siguen visibles en el
+    catálogo del visor. Es solo informativo: no cambia qué se manda, solo
+    agrega una línea al pie para que quede claro que el email no es
+    necesariamente "todo lo relevante", así no se lea como que faltó
+    algo sin avisar.
+    """
     gmail_user = settings.gmail_user()
     gmail_pass = settings.gmail_app_password()
     dest = settings.email_destino()
@@ -533,11 +578,19 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict]) -> None:
     html_items = "".join(_tarjeta(lic, "Nueva licitación", "#1a73e8") for lic in nuevas)
     html_items += "".join(_tarjeta(lic, "Aclaración / modificación detectada", "#e8711a") for lic in modificadas)
 
+    omitidas_html = (
+        f'<p style="font-size:12px;color:#888;margin:0 0 16px;">ℹ️ {omitidas_del_visor} llamado(s) relevante(s) '
+        "más (backlog más antiguo, o por encima del techo de este email) no incluido(s) acá — "
+        'ver el catálogo completo en el visor.</p>'
+        if omitidas_del_visor else ""
+    )
+
     html = f"""
     <html><body style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px;color:#1a1a1a;">
         <h2 style="color:#1a73e8;margin-bottom:4px;">🔔 Novedades de licitaciones</h2>
         <p style="color:#666;font-size:13px;margin-top:0;">Detectadas automáticamente para <strong>Metropolitana Pisos</strong></p>
         <hr style="border:none;border-top:1px solid #e0e0e0;margin:16px 0;">
+        {omitidas_html}
         {html_items}
         <p style="font-size:11px;color:#aaa;margin-top:24px;">Monitoreo automático vía ARCE · comprasestatales.gub.uy · Informes completos en la carpeta reports/ del repositorio.</p>
     </body></html>
@@ -578,7 +631,14 @@ def main(enviar_email_flag: bool = True) -> None:
     nuevas: list[dict] = []
     modificadas: list[dict] = []
 
-    for lic in licitaciones:
+    for idx, lic in enumerate(licitaciones, start=1):
+        # Checkpoint periódico: guarda el progreso acumulado hasta ahora
+        # ANTES de procesar el siguiente ítem, así una corrida larga que
+        # se cancela o se cae a mitad de camino no pierde todo lo ya
+        # procesado (ver CHECKPOINT_CADA_N_ITEMS arriba).
+        if idx > 1 and (idx - 1) % CHECKPOINT_CADA_N_ITEMS == 0:
+            guardar_vistos(vistos)
+
         hash_actual = _hash_contenido(lic)
         previo = vistos.get(lic["id"])
 
@@ -648,10 +708,40 @@ def main(enviar_email_flag: bool = True) -> None:
     guardar_vistos(vistos)
     print(f"  Nuevas relevantes: {len(nuevas)} · Modificadas: {len(modificadas)}")
 
-    if (nuevas or modificadas) and enviar_email_flag:
-        enviar_email(nuevas, modificadas)
-    elif not nuevas and not modificadas:
-        print("  Sin novedades.")
+    # El email es para "acción rápida" (pedido explícito del usuario
+    # 2026-08-19) — no un volcado de todo lo relevante que haya en
+    # vistos. Dos filtros antes de armar el mail (el catálogo del visor
+    # NO pasa por ninguno de los dos, sigue mostrando todo):
+    #   1. Solo lo publicado hace poco (DIAS_MAX_PARA_ALERTA_POR_MAIL) —
+    #      backlog viejo que recién se termina de procesar ahora no es
+    #      una "novedad del día".
+    #   2. Techo defensivo (MAX_ALERTAS_POR_EMAIL) — si aun así quedan
+    #      demasiadas, se manda solo las de mayor score y se avisa cuántas
+    #      quedaron afuera (siguen en el catálogo del visor).
+    nuevas_para_mail = [lic for lic in nuevas if _es_publicacion_reciente(lic)]
+    omitidas_por_antiguedad = len(nuevas) - len(nuevas_para_mail)
+    if omitidas_por_antiguedad:
+        print(
+            f"  {omitidas_por_antiguedad} relevante(s) publicada(s) hace más de "
+            f"{DIAS_MAX_PARA_ALERTA_POR_MAIL} día(s) — quedan en el catálogo del visor "
+            "pero no se incluyen en el email del día."
+        )
+
+    omitidas_por_techo = 0
+    if len(nuevas_para_mail) > MAX_ALERTAS_POR_EMAIL:
+        nuevas_para_mail.sort(key=lambda lic: lic["clasificacion"].puntaje, reverse=True)
+        omitidas_por_techo = len(nuevas_para_mail) - MAX_ALERTAS_POR_EMAIL
+        nuevas_para_mail = nuevas_para_mail[:MAX_ALERTAS_POR_EMAIL]
+        print(
+            f"  {omitidas_por_techo} relevante(s) más publicada(s) recientemente, pero por "
+            f"encima del techo de {MAX_ALERTAS_POR_EMAIL}/email — se mandan las de mayor "
+            "score, el resto queda en el catálogo del visor."
+        )
+
+    if (nuevas_para_mail or modificadas) and enviar_email_flag:
+        enviar_email(nuevas_para_mail, modificadas, omitidas_por_techo + omitidas_por_antiguedad)
+    elif not nuevas_para_mail and not modificadas:
+        print("  Sin novedades para el email del día.")
 
 
 def auditar() -> None:
@@ -731,10 +821,12 @@ def _fecha_lic_a_iso(fecha_cruda: str) -> str | None:
     """lic['fecha'] sale de obtener_licitaciones() ya normalizada a
     'YYYY-MM-DD' cuando el feed OCDS responde (rel['date'][:10]), pero si
     se cayó al fallback RSS es un pubDate RFC822 crudo (ej. 'Wed, 13 Aug
-    2026 10:00:00 GMT') que nunca se normalizó porque main() nunca lo
-    necesitó en ese formato — solo lo usa para mostrarlo tal cual en el
-    email. Acá sí hace falta compararlo contra un rango, así que se
-    intentan ambos formatos en vez de asumir uno.
+    2026 10:00:00 GMT') que nunca se normalizó en obtener_licitaciones()
+    porque esa función solo lo usa para mostrarlo tal cual en el email.
+    Acá sí hace falta compararlo contra un rango/fecha de hoy, así que se
+    intentan ambos formatos en vez de asumir uno. Usado tanto por
+    --test-rango-fechas como por main() (ver _es_publicacion_reciente(),
+    filtro de qué entra al email del día).
     """
     if not fecha_cruda:
         return None
@@ -745,6 +837,27 @@ def _fecha_lic_a_iso(fecha_cruda: str) -> str | None:
         return parsedate_to_datetime(fecha_cruda).strftime("%Y-%m-%d")
     except (TypeError, ValueError):
         return None
+
+
+def _es_publicacion_reciente(lic: dict, max_dias: int = DIAS_MAX_PARA_ALERTA_POR_MAIL) -> bool:
+    """True si lic['fecha'] cae dentro de los últimos `max_dias` días (o si
+    no se pudo parsear la fecha — fail-open: mejor una alerta de más que
+    perder silenciosamente un llamado nuevo real por un pubDate raro).
+
+    Usado en main() para decidir qué llamados relevantes entran al email
+    del día — ver MAX_ALERTAS_POR_EMAIL y DIAS_MAX_PARA_ALERTA_POR_MAIL
+    arriba. El catálogo del visor (catalogo.registrar_llamado()) NO pasa
+    por este filtro: se sigue registrando todo lo relevante, esto solo
+    decide qué es urgente para el email.
+    """
+    fecha_iso = _fecha_lic_a_iso(lic.get("fecha", ""))
+    if not fecha_iso:
+        return True
+    try:
+        fecha_pub = datetime.strptime(fecha_iso, "%Y-%m-%d")
+    except ValueError:
+        return True
+    return (datetime.now() - fecha_pub).days <= max_dias
 
 
 def enviar_email_de_prueba_rango_fechas(desde: str, hasta: str) -> None:
