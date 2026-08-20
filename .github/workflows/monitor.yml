@@ -110,8 +110,8 @@ jobs:
           # llamados YA existentes, son ediciones a distintas líneas del
           # mismo JSON — un rebase automático las combina sin conflicto en
           # el caso normal. Si hubiera un conflicto real (mismo llamado
-          # tocado por ambos a la vez), el rebase falla y abortamos con error
-          # en vez de forzar nada.
+          # tocado por ambos a la vez), el rebase falla y abortamos con
+          # error en vez de forzar nada.
           intentos_restantes=5
           while [ "$intentos_restantes" -gt 0 ]; do
             if git push; then
