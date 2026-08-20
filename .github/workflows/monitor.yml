@@ -96,7 +96,37 @@ jobs:
           git add docs/data docs/informes
           if git diff --cached --quiet; then
             echo "Sin cambios en el catálogo del visor, no hay nada que commitear."
-          else
-            git commit -m "Actualizar catálogo del visor [skip ci]"
-            git push
+            exit 0
           fi
+          git commit -m "Actualizar catálogo del visor [skip ci]"
+
+          # El repo también recibe pushes de resultados.yml (y en teoría de
+          # otra corrida de este mismo workflow, aunque el concurrency group
+          # de arriba ya evita ese caso). Si el remoto avanzó mientras
+          # corríamos, "git push" es rechazado — sin retry se perdían las 2+
+          # horas de trabajo de esta corrida entera (evidencia real: #202,
+          # #203, #205 fallaron así). Como monitor.py solo AGREGA llamados
+          # nuevos y resultados.py solo actualiza el campo "resultado" de
+          # llamados YA existentes, son ediciones a distintas líneas del
+          # mismo JSON — un rebase automático las combina sin conflicto en
+          # el caso normal. Si hubiera un conflicto real (mismo llamado
+          # tocado por ambos a la vez), el rebase falla y abortamos con error
+          # en vez de forzar nada.
+          intentos_restantes=5
+          while [ "$intentos_restantes" -gt 0 ]; do
+            if git push; then
+              echo "Push OK."
+              exit 0
+            fi
+            intentos_restantes=$((intentos_restantes - 1))
+            echo "Push rechazado (quedan $intentos_restantes reintentos) — el remoto avanzó mientras corríamos. Reintentando con rebase..."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "::error::Conflicto real al rebasar sobre origin/main — no se puede resolver automáticamente. Se pierde esta actualización del catálogo, pero los llamados nuevos se van a volver a detectar en la próxima corrida."
+              git rebase --abort
+              exit 1
+            fi
+            sleep $((5 + RANDOM % 10))
+          done
+          echo "::error::No se pudo pushear después de varios reintentos."
+          exit 1
