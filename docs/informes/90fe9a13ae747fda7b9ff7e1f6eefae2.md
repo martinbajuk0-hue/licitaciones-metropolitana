@@ -1,0 +1,87 @@
+# Informe de licitación: Compra Directa 395/2026
+
+**URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1365749
+**Generado:** 2026-08-20 23:14
+
+## Clasificación: ★★ — Poco conveniente (score 29/100)
+
+### Por qué este puntaje
+- +24 por 2 categoría(s) de producto identificadas
+- +15 por organismo identificado (prioritario según el rol)
+- -20 por 5 campo(s) clave no identificados (a verificar manualmente)
+- -20 por 15 ítem(s) documentales a verificar
+
+## Resumen ejecutivo
+Organismo: CES - Consejo de Educación Secundaria.
+Número: no identificado — verificar manualmente.
+Fecha de apertura: no identificada — verificar manualmente.
+Categorías de producto detectadas: Alfombras, Variante/error ortográfico de un término del rubro.
+Resumen generado por reglas (sin ANTHROPIC_API_KEY configurada): es un extracto de campos, no un análisis narrativo completo del pliego.
+
+## Datos clave
+- Organismo: CES - Consejo de Educación Secundaria
+- Número de licitación/expediente: **NO IDENTIFICADO — verificar manualmente**
+- Fecha de apertura: **NO IDENTIFICADA — verificar manualmente** (Fecha de cierre no identificada — verificar manualmente)
+- Plazo/fecha de entrega: no identificado — verificar manualmente
+- Fecha límite de consultas: no identificada — verificar manualmente
+- Fecha de visita de obra: no identificada / puede no aplicar
+- Garantía de mantenimiento de oferta: no identificada — verificar manualmente
+- Garantía de fiel cumplimiento: no identificada — verificar manualmente
+
+### Criterios de evaluación detectados
+_(ninguno)_
+
+### Datos que faltan y dónde buscarlos
+- número de licitación/expediente: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- fecha de apertura: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- fecha/plazo de entrega: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- fecha límite de consultas: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- criterios de evaluación: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+
+## Productos Metropolitana identificados
+Categorías detectadas: Alfombras, Variante/error ortográfico de un término del rubro
+
+- **Alfombras** ("carpet"): ...BASES PARA LA ADQUISICIÓN DE CARPETAS   CON ELASTICOS PARA ADMINISTRACION.    Se solicita cotiz...
+- **Variante/error ortográfico de un término del rubro** ("carpeta"): ...BASES PARA LA ADQUISICIÓN DE CARPETAS   CON ELASTICOS PARA ADMINISTRACION.    Se solicita cotiza...
+
+### Contexto adicional (lugar de uso / aplicación)
+- Lugar de uso mencionado: miem
+
+## Riesgos detectados
+Altos: 0 · Medios: 0 · Total: 0
+
+_(ninguno)_
+
+## Checklist documental
+### Exigidos explícitamente en el pliego
+- Inscripción activa en RUPE — evidencia: «alidez de oferta.    El proveedor deberá estar inscripto en RUPE (Registro Único de Proveedores del   Estado).    Las oferta»
+
+### Estándar, no mencionado en el pliego (verificar si igual aplica)
+- Certificado único de DGI vigente
+- Certificado único de BPS vigente
+- Poderes / representación legal vigentes
+- Certificado notarial de vigencia / representación
+- Estados contables / antecedentes financieros
+- Catálogos de producto
+- Fichas técnicas de los productos ofertados
+- Muestras físicas de producto
+- Garantía de mantenimiento de oferta
+- Garantía de fiel cumplimiento de contrato
+- Pólizas de seguro (responsabilidad civil / accidentes)
+- Antecedentes en obras/suministros similares
+- Constancia de visita de obra (si el pliego la exige)
+- Declaraciones juradas exigidas
+- Formulario de identificación del oferente
+
+## Cronograma de tareas
+- 2026-08-20: Lectura integral del pliego y anexos
+- 2026-08-21: Armar checklist documental y reunir certificados
+- según disponibilidad, antes de apertura: Definir productos y armar cotización
+- según disponibilidad, antes de apertura: Redactar oferta técnica y administrativa
+- FECHA DE APERTURA NO IDENTIFICADA — verificar manualmente antes de planificar: Entrega de oferta
+
+## Documentos que no se pudieron leer
+_(ninguno)_
+
+---
+_Informe generado automáticamente. No sustituye la lectura íntegra del pliego por una persona del equipo de licitaciones. Todo campo marcado como 'no identificado' o 'PENDIENTE' requiere verificación manual antes de tomar una decisión de presentarse._

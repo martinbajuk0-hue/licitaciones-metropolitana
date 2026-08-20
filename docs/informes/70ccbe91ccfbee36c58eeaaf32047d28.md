@@ -1,7 +1,7 @@
 # Informe de licitación: Compra Directa 46026/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1354830
-**Generado:** 2026-08-19 22:42
+**Generado:** 2026-08-20 22:56
 
 ## Clasificación: ★★ — Poco conveniente (score 39/100)
 
@@ -100,8 +100,8 @@ Altos: 1 · Medios: 0 · Total: 1
 - Formulario de identificación del oferente
 
 ## Cronograma de tareas
-- 2026-08-19: Lectura integral del pliego y anexos
-- 2026-08-20: Armar checklist documental y reunir certificados
+- 2026-08-20: Lectura integral del pliego y anexos
+- 2026-08-21: Armar checklist documental y reunir certificados
 - según disponibilidad, antes de apertura: Definir productos y armar cotización
 - según disponibilidad, antes de apertura: Redactar oferta técnica y administrativa
 - FECHA DE APERTURA NO IDENTIFICADA — verificar manualmente antes de planificar: Entrega de oferta
