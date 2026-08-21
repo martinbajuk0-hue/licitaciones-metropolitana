@@ -1,7 +1,7 @@
 # Informe de licitación: Licitación Abreviada 62/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1359267
-**Generado:** 2026-08-20 23:15
+**Generado:** 2026-08-21 12:14
 
 ## Clasificación: ★★★ — Dudosa (score 47/100)
 
@@ -23,7 +23,7 @@ Resumen generado por reglas (sin ANTHROPIC_API_KEY configurada): es un extracto 
 ## Datos clave
 - Organismo: Ministerio de Educación y Cultura (MEC)
 - Número de licitación/expediente: 62/2026
-- Fecha de apertura: 2026-09-14 (Cierra en 25 días)
+- Fecha de apertura: 2026-09-14 (Cierra en 24 días)
 - Plazo/fecha de entrega: no identificado — verificar manualmente
 - Fecha límite de consultas: no identificada — verificar manualmente
 - Fecha de visita de obra: no identificada / puede no aplicar
@@ -83,8 +83,8 @@ Altos: 1 · Medios: 2 · Total: 3
 - Antecedentes en obras/suministros similares
 
 ## Cronograma de tareas
-- 2026-08-20: Lectura integral del pliego y anexos
-- 2026-08-21: Armar checklist documental y reunir certificados
+- 2026-08-21: Lectura integral del pliego y anexos
+- 2026-08-22: Armar checklist documental y reunir certificados
 - según disponibilidad, antes de apertura: Definir productos y armar cotización
 - según disponibilidad, antes de apertura: Redactar oferta técnica y administrativa
 - 2026-09-14: Entrega de oferta (fecha de apertura)
