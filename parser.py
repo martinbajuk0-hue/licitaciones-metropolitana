@@ -11,17 +11,33 @@ PDF principal.
 """
 from __future__ import annotations
 
+import multiprocessing
+import os
 import re
 import tempfile
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Optional
+from typing import Callable, Optional
 
 import requests
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; MetropolitanaLicitaciones/1.0)"}
 
 EXTENSIONES_SOPORTADAS = {".pdf", ".doc", ".docx", ".xls", ".xlsx", ".png", ".jpg", ".jpeg", ".tif", ".tiff"}
+
+# Timeout duro (en segundos) para la extracción de texto de UN documento.
+#
+# Evidencia real (corrida #206 de monitor.yml, 2026-08-20): un pliego en PDF
+# con una fuente de codificación no estándar ("/SymbolSetEncoding") hizo que
+# pypdf.extract_text() se volviera catastróficamente lento — el log repitió
+# la advertencia "Advanced encoding /SymbolSetEncoding not implemented yet"
+# sin parar durante 5h59m, hasta que GitHub mató el job entero por el límite
+# de 6 horas. Se perdió TODA la corrida (todos los llamados ya procesados,
+# no solo ese documento) porque no había ningún límite de tiempo alrededor
+# de la extracción.
+#
+# Configurable vía env var para poder bajarlo en tests.
+TIMEOUT_EXTRACCION_SEGUNDOS = int(os.environ.get("TIMEOUT_EXTRACCION_DOCUMENTO_SEGUNDOS", "120"))
 
 
 @dataclass
@@ -150,6 +166,91 @@ def extraer_archivo_local(path: Path, nombre: Optional[str] = None, url: str = "
         return DocumentoExtraido(nombre=nombre, url=url, tipo=ext, error=str(e))
 
 
+def _correr_target_y_encolar(func, args: tuple, queue: "multiprocessing.Queue") -> None:
+    """Target genérico del subproceso: corre func(*args) y pone el resultado
+    en la queue. Función de módulo (no closure/lambda) para que
+    multiprocessing pueda importarla en el hijo bajo el contexto "spawn".
+    """
+    queue.put(func(*args))
+
+
+def ejecutar_con_timeout_duro(func: Callable, args: tuple, timeout_segundos: int, timeout_exitcode_a: Callable):
+    """Corre func(*args) en un subproceso aparte y lo mata si no termina
+    dentro de timeout_segundos.
+
+    Usa multiprocessing (no concurrent.futures.ThreadPoolExecutor) a
+    propósito: un cuelgue CPU-bound dentro de una librería en C/Python puro
+    (ej. pypdf.extract_text() con una fuente de codificación rara — ver
+    TIMEOUT_EXTRACCION_SEGUNDOS más arriba) no coopera con timeouts a nivel
+    de threading, porque el GIL nunca se libera. Hace falta poder matar el
+    proceso de verdad.
+
+    func y sus args deben ser picklables (se pasan al subproceso vía
+    multiprocessing bajo contexto "spawn"). Devuelve (resultado, se_agoto):
+    si se_agoto es True, resultado es lo que devuelve timeout_exitcode_a()
+    (para que el caller arme su propio objeto de error con sus propios
+    campos, en vez de que esta función genérica conozca DocumentoExtraido).
+    """
+    ctx = multiprocessing.get_context("spawn")
+    queue: "multiprocessing.Queue" = ctx.Queue()
+    proceso = ctx.Process(target=_correr_target_y_encolar, args=(func, args, queue), daemon=True)
+    proceso.start()
+    proceso.join(timeout_segundos)
+
+    if proceso.is_alive():
+        proceso.kill()  # SIGKILL — terminate() (SIGTERM) podría no alcanzar si está trabado en código C
+        proceso.join(5)
+        return timeout_exitcode_a(None), True
+
+    try:
+        # get(timeout=...) en vez de get_nowait(): el feeder thread de la
+        # Queue puede tardar un instante en terminar de escribir al pipe
+        # después de que el proceso hijo ya se reportó como no-vivo — con
+        # get_nowait() eso es una carrera real (Empty espurio).
+        return queue.get(timeout=5), False
+    except Exception:
+        return timeout_exitcode_a(proceso.exitcode), False
+
+
+def extraer_archivo_local_con_timeout(
+    path: Path,
+    nombre: Optional[str] = None,
+    url: str = "",
+    timeout_segundos: int = TIMEOUT_EXTRACCION_SEGUNDOS,
+) -> DocumentoExtraido:
+    """Igual que extraer_archivo_local(), pero corriendo la extracción en un
+    subproceso aparte con un timeout duro.
+
+    extraer_archivo_local() delega en librerías de terceros (pypdf,
+    pytesseract, etc.) cuyo tiempo de ejecución no controlamos — un solo
+    documento con una codificación/fuente problemática puede colgarse
+    indefinidamente (ver comentario de TIMEOUT_EXTRACCION_SEGUNDOS más
+    arriba, con la evidencia real de la corrida #206).
+    """
+    nombre_final = nombre or path.name
+    tipo = path.suffix.lower()
+
+    def _error_timeout(exitcode):
+        if exitcode is None:
+            return DocumentoExtraido(
+                nombre=nombre_final, url=url, tipo=tipo,
+                error=(
+                    f"Extracción de texto excedió el timeout de {timeout_segundos}s "
+                    "(probablemente una fuente/codificación problemática en el documento) — "
+                    "se omite este documento puntual, el resto del pliego se sigue analizando."
+                ),
+            )
+        return DocumentoExtraido(
+            nombre=nombre_final, url=url, tipo=tipo,
+            error=f"El subproceso de extracción terminó sin resultado (exit code {exitcode}).",
+        )
+
+    resultado, _se_agoto = ejecutar_con_timeout_duro(
+        extraer_archivo_local, (path, nombre_final, url), timeout_segundos, _error_timeout,
+    )
+    return resultado
+
+
 def descargar_y_extraer(url: str, timeout: int = 30) -> DocumentoExtraido:
     """Descarga un documento por URL y extrae su texto."""
     nombre = url.rstrip("/").split("/")[-1] or url
@@ -168,7 +269,7 @@ def descargar_y_extraer(url: str, timeout: int = 30) -> DocumentoExtraido:
         tmp_path = Path(f.name)
 
     try:
-        return extraer_archivo_local(tmp_path, nombre=nombre, url=url)
+        return extraer_archivo_local_con_timeout(tmp_path, nombre=nombre, url=url)
     finally:
         tmp_path.unlink(missing_ok=True)
 
