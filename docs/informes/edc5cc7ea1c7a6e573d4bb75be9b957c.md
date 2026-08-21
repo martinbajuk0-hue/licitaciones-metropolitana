@@ -1,7 +1,7 @@
 # Informe de licitación: Compra Directa 1269/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1357738
-**Generado:** 2026-08-21 11:19
+**Generado:** 2026-08-21 18:11
 
 ## Clasificación: ★ — No presentarse (score 14/100)
 

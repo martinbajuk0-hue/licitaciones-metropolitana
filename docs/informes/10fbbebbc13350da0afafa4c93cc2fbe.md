@@ -1,7 +1,7 @@
 # Informe de licitación: Compra Directa 188/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1359195
-**Generado:** 2026-08-21 11:09
+**Generado:** 2026-08-21 17:15
 
 ## Clasificación: ★★ — Poco conveniente (score 25/100)
 

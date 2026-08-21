@@ -1,7 +1,7 @@
 # Informe de licitación: Licitación Abreviada 8/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1357563
-**Generado:** 2026-08-21 11:27
+**Generado:** 2026-08-21 18:53
 
 ## Clasificación: ★★ — Poco conveniente (score 33/100)
 
