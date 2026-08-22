@@ -1,7 +1,7 @@
 # Informe de licitación: Licitación Abreviada 8/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1357563
-**Generado:** 2026-08-21 18:53
+**Generado:** 2026-08-22 13:42
 
 ## Clasificación: ★★ — Poco conveniente (score 33/100)
 
@@ -80,8 +80,8 @@ _(ninguno)_
 - Formulario de identificación del oferente
 
 ## Cronograma de tareas
-- 2026-08-21: Lectura integral del pliego y anexos
-- 2026-08-22: Armar checklist documental y reunir certificados
+- 2026-08-22: Lectura integral del pliego y anexos
+- 2026-08-23: Armar checklist documental y reunir certificados
 - según disponibilidad, antes de apertura: Definir productos y armar cotización
 - según disponibilidad, antes de apertura: Redactar oferta técnica y administrativa
 - FECHA DE APERTURA NO IDENTIFICADA — verificar manualmente antes de planificar: Entrega de oferta

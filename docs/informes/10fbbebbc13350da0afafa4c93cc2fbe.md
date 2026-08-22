@@ -1,7 +1,7 @@
 # Informe de licitación: Compra Directa 188/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1359195
-**Generado:** 2026-08-21 17:15
+**Generado:** 2026-08-22 12:04
 
 ## Clasificación: ★★ — Poco conveniente (score 25/100)
 
@@ -75,8 +75,8 @@ _(ninguno)_
 - Formulario de identificación del oferente
 
 ## Cronograma de tareas
-- 2026-08-21: Lectura integral del pliego y anexos
-- 2026-08-22: Armar checklist documental y reunir certificados
+- 2026-08-22: Lectura integral del pliego y anexos
+- 2026-08-23: Armar checklist documental y reunir certificados
 - según disponibilidad, antes de apertura: Definir productos y armar cotización
 - según disponibilidad, antes de apertura: Redactar oferta técnica y administrativa
 - FECHA DE APERTURA NO IDENTIFICADA — verificar manualmente antes de planificar: Entrega de oferta
