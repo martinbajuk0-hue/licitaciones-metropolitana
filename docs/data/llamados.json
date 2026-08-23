@@ -26,6 +26,16 @@
     "numero_licitacion": "licitatorio",
     "organismo": "Intendencia de Colonia",
     "primera_deteccion": "2026-08-18T19:43:10",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:23:51"
+    },
     "score": 10,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 25/2026",
@@ -87,7 +97,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:30"
+      "ultima_revision": "2026-08-23T11:23:52"
     },
     "score": 13,
     "simbolo": "★",
@@ -151,7 +161,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:31"
+      "ultima_revision": "2026-08-23T11:23:53"
     },
     "score": 48,
     "simbolo": "★★★",
@@ -211,7 +221,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:32"
+      "ultima_revision": "2026-08-23T11:23:54"
     },
     "score": 9,
     "simbolo": "★",
@@ -464,6 +474,16 @@
     "numero_licitacion": "148/2026",
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:36:19",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:23:55"
+    },
     "score": 49,
     "simbolo": "★★★",
     "titulo": "Licitación Abreviada 148/2026",
@@ -504,6 +524,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:23:49",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 333.387,24",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:23:56"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 194/2026",
@@ -546,7 +576,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:35"
+      "ultima_revision": "2026-08-23T11:23:57"
     },
     "score": 37,
     "simbolo": "★★",
@@ -594,6 +624,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio del Interior (MI)",
     "primera_deteccion": "2026-08-18T19:27:18",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:23:58"
+    },
     "score": 15,
     "simbolo": "★",
     "titulo": "Concurso de Precios 14/2026",
@@ -700,7 +740,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:36"
+      "ultima_revision": "2026-08-23T11:23:59"
     },
     "score": 0,
     "simbolo": "★",
@@ -801,7 +841,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:37"
+      "ultima_revision": "2026-08-23T11:24:00"
     },
     "score": 15,
     "simbolo": "★",
@@ -846,6 +886,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:33:12",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 127.396,46",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:01"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 191/2026",
@@ -886,7 +936,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:39"
+      "ultima_revision": "2026-08-23T11:24:02"
     },
     "score": 8,
     "simbolo": "★",
@@ -920,6 +970,16 @@
     "numero_licitacion": "23/2026",
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:57:18",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:03"
+    },
     "score": 21,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 23/2026",
@@ -972,7 +1032,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:41"
+      "ultima_revision": "2026-08-23T11:24:03"
     },
     "score": 27,
     "simbolo": "★★",
@@ -1033,7 +1093,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:41"
+      "ultima_revision": "2026-08-23T11:24:04"
     },
     "score": 20,
     "simbolo": "★",
@@ -1075,7 +1135,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:42"
+      "ultima_revision": "2026-08-23T11:24:05"
     },
     "score": 3,
     "simbolo": "★",
@@ -1119,7 +1179,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:43"
+      "ultima_revision": "2026-08-23T11:24:06"
     },
     "score": 2,
     "simbolo": "★",
@@ -1181,7 +1241,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:44"
+      "ultima_revision": "2026-08-23T11:24:07"
     },
     "score": 39,
     "simbolo": "★★",
@@ -1254,7 +1314,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:44"
+      "ultima_revision": "2026-08-23T11:24:08"
     },
     "score": 6,
     "simbolo": "★",
@@ -1349,7 +1409,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:45"
+      "ultima_revision": "2026-08-23T11:24:09"
     },
     "score": 15,
     "simbolo": "★",
@@ -1408,7 +1468,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:46"
+      "ultima_revision": "2026-08-23T11:24:10"
     },
     "score": 10,
     "simbolo": "★",
@@ -1475,6 +1535,16 @@
     "numero_licitacion": "112310",
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:58:35",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 786.900,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:11"
+    },
     "score": 36,
     "simbolo": "★★",
     "titulo": "Compra Directa 196726/2026",
@@ -1557,7 +1627,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:48"
+      "ultima_revision": "2026-08-23T11:24:12"
     },
     "score": 55,
     "simbolo": "★★★",
@@ -1621,6 +1691,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Industria, Energía y Minería (MIEM)",
     "primera_deteccion": "2026-08-18T19:26:11",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:13"
+    },
     "score": 45,
     "simbolo": "★★★",
     "titulo": "Compra Directa 351/2026",
@@ -1680,7 +1760,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:49"
+      "ultima_revision": "2026-08-23T11:24:14"
     },
     "score": 37,
     "simbolo": "★★",
@@ -1723,6 +1803,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:23:59",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 42.792,72",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:15"
+    },
     "score": 29,
     "simbolo": "★★",
     "titulo": "Compra Directa 151/2026",
@@ -1823,7 +1913,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:51"
+      "ultima_revision": "2026-08-23T11:24:16"
     },
     "score": 15,
     "simbolo": "★",
@@ -1853,6 +1943,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:36:45",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 192.184,15",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:16"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Compra Directa 188/2026",
@@ -1897,7 +1997,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:53"
+      "ultima_revision": "2026-08-23T11:24:18"
     },
     "score": 26,
     "simbolo": "★★",
@@ -1931,6 +2031,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:39:22",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 396.000,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:18"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 363/2026",
@@ -1969,6 +2079,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:43:23",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 29.280,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:20"
+    },
     "score": 29,
     "simbolo": "★★",
     "titulo": "Compra Directa 146/2026",
@@ -2009,6 +2129,16 @@
     "numero_licitacion": "3005/2026",
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:40:46",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:21"
+    },
     "score": 36,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 3005/2026",
@@ -2204,7 +2334,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:56"
+      "ultima_revision": "2026-08-23T11:24:21"
     },
     "score": 51,
     "simbolo": "★★★",
@@ -2333,7 +2463,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:58"
+      "ultima_revision": "2026-08-23T11:24:23"
     },
     "score": 12,
     "simbolo": "★",
@@ -2391,7 +2521,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:23:59"
+      "ultima_revision": "2026-08-23T11:24:24"
     },
     "score": 57,
     "simbolo": "★★★",
@@ -2443,6 +2573,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
     "primera_deteccion": "2026-08-18T19:58:42",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 320.176,80",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:24"
+    },
     "score": 41,
     "simbolo": "★★",
     "titulo": "Compra Directa 173/2026",
@@ -2491,7 +2631,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:01"
+      "ultima_revision": "2026-08-23T11:24:25"
     },
     "score": 51,
     "simbolo": "★★★",
@@ -2549,7 +2689,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:02"
+      "ultima_revision": "2026-08-23T11:24:26"
     },
     "score": 4,
     "simbolo": "★",
@@ -2603,7 +2743,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:02"
+      "ultima_revision": "2026-08-23T11:24:27"
     },
     "score": 21,
     "simbolo": "★",
@@ -2651,7 +2791,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:03"
+      "ultima_revision": "2026-08-23T11:24:28"
     },
     "score": 26,
     "simbolo": "★★",
@@ -2691,6 +2831,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T20:02:11",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 0,00",
+      "nos_presentamos": false,
+      "resolucion": "Declarada sin efecto",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:28"
+    },
     "score": 14,
     "simbolo": "★",
     "titulo": "Compra Directa 11820/2026",
@@ -2737,7 +2887,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:05"
+      "ultima_revision": "2026-08-23T11:24:29"
     },
     "score": 21,
     "simbolo": "★",
@@ -2788,7 +2938,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:06"
+      "ultima_revision": "2026-08-23T11:24:30"
     },
     "score": 25,
     "simbolo": "★★",
@@ -2852,7 +3002,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:06"
+      "ultima_revision": "2026-08-23T11:24:31"
     },
     "score": 41,
     "simbolo": "★★",
@@ -2910,7 +3060,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:07"
+      "ultima_revision": "2026-08-23T11:24:32"
     },
     "score": 1,
     "simbolo": "★",
@@ -2954,7 +3104,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:08"
+      "ultima_revision": "2026-08-23T11:24:32"
     },
     "score": 13,
     "simbolo": "★",
@@ -3002,7 +3152,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:09"
+      "ultima_revision": "2026-08-23T11:24:33"
     },
     "score": 13,
     "simbolo": "★",
@@ -3050,7 +3200,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:09"
+      "ultima_revision": "2026-08-23T11:24:34"
     },
     "score": 16,
     "simbolo": "★",
@@ -3098,7 +3248,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:10"
+      "ultima_revision": "2026-08-23T11:24:35"
     },
     "score": 29,
     "simbolo": "★★",
@@ -3160,7 +3310,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:11"
+      "ultima_revision": "2026-08-23T11:24:36"
     },
     "score": 21,
     "simbolo": "★",
@@ -3211,7 +3361,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:12"
+      "ultima_revision": "2026-08-23T11:24:37"
     },
     "score": 2,
     "simbolo": "★",
@@ -3264,7 +3414,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:13"
+      "ultima_revision": "2026-08-23T11:24:38"
     },
     "score": 0,
     "simbolo": "★",
@@ -3302,6 +3452,16 @@
     "numero_licitacion": "licitatorio",
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:42:54",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:38"
+    },
     "score": 33,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 4/2026",
@@ -3359,7 +3519,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:14"
+      "ultima_revision": "2026-08-23T11:24:40"
     },
     "score": 21,
     "simbolo": "★",
@@ -3406,7 +3566,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:15"
+      "ultima_revision": "2026-08-23T11:24:40"
     },
     "score": 21,
     "simbolo": "★",
@@ -3440,6 +3600,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T20:02:07",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:41"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 238/2026",
@@ -3542,7 +3712,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:17"
+      "ultima_revision": "2026-08-23T11:24:42"
     },
     "score": 41,
     "simbolo": "★★",
@@ -3650,7 +3820,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:18"
+      "ultima_revision": "2026-08-23T11:24:42"
     },
     "score": 27,
     "simbolo": "★★",
@@ -3697,7 +3867,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:18"
+      "ultima_revision": "2026-08-23T11:24:43"
     },
     "score": 14,
     "simbolo": "★",
@@ -3760,7 +3930,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:19"
+      "ultima_revision": "2026-08-23T11:24:44"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -3815,6 +3985,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:39:37",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:45"
+    },
     "score": 41,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 8/2026",
@@ -3858,7 +4038,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:21"
+      "ultima_revision": "2026-08-23T11:24:45"
     },
     "score": 21,
     "simbolo": "★",
@@ -3904,7 +4084,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:23"
+      "ultima_revision": "2026-08-23T11:24:46"
     },
     "score": 41,
     "simbolo": "★★",
@@ -3955,7 +4135,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:24"
+      "ultima_revision": "2026-08-23T11:24:47"
     },
     "score": 20,
     "simbolo": "★",
@@ -4001,7 +4181,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:25"
+      "ultima_revision": "2026-08-23T11:24:48"
     },
     "score": 24,
     "simbolo": "★",
@@ -4056,7 +4236,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:26"
+      "ultima_revision": "2026-08-23T11:24:49"
     },
     "score": 25,
     "simbolo": "★★",
@@ -4102,7 +4282,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:27"
+      "ultima_revision": "2026-08-23T11:24:50"
     },
     "score": 17,
     "simbolo": "★",
@@ -4149,7 +4329,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:27"
+      "ultima_revision": "2026-08-23T11:24:50"
     },
     "score": 14,
     "simbolo": "★",
@@ -4264,7 +4444,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:28"
+      "ultima_revision": "2026-08-23T11:24:51"
     },
     "score": 50,
     "simbolo": "★★★",
@@ -4317,7 +4497,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:29"
+      "ultima_revision": "2026-08-23T11:24:52"
     },
     "score": 31,
     "simbolo": "★★",
@@ -4378,7 +4558,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:30"
+      "ultima_revision": "2026-08-23T11:24:53"
     },
     "score": 20,
     "simbolo": "★",
@@ -4468,6 +4648,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:44:29",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:54"
+    },
     "score": 30,
     "simbolo": "★★",
     "titulo": "Compra Directa 10120/2026",
@@ -4585,7 +4775,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:32"
+      "ultima_revision": "2026-08-23T11:24:55"
     },
     "score": 36,
     "simbolo": "★★",
@@ -4659,6 +4849,16 @@
     "numero_licitacion": null,
     "organismo": "Intendencia de Paysandú",
     "primera_deteccion": "2026-08-18T19:58:39",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:24:56"
+    },
     "score": 11,
     "simbolo": "★",
     "titulo": "Compra Directa 692/2026",
@@ -4705,7 +4905,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:34"
+      "ultima_revision": "2026-08-23T11:24:57"
     },
     "score": 13,
     "simbolo": "★",
@@ -4749,7 +4949,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:34"
+      "ultima_revision": "2026-08-23T11:24:58"
     },
     "score": 2,
     "simbolo": "★",
@@ -4797,7 +4997,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:35"
+      "ultima_revision": "2026-08-23T11:24:59"
     },
     "score": 17,
     "simbolo": "★",
@@ -4837,6 +5037,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:24:40",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:00"
+    },
     "score": 35,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 11/2026",
@@ -4884,7 +5094,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:37"
+      "ultima_revision": "2026-08-23T11:25:01"
     },
     "score": 33,
     "simbolo": "★★",
@@ -4920,6 +5130,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:46:38",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:01"
+    },
     "score": 16,
     "simbolo": "★",
     "titulo": "Compra Directa 403/2026",
@@ -4971,7 +5191,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:38"
+      "ultima_revision": "2026-08-23T11:25:03"
     },
     "score": 0,
     "simbolo": "★",
@@ -5017,7 +5237,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:39"
+      "ultima_revision": "2026-08-23T11:25:04"
     },
     "score": 25,
     "simbolo": "★★",
@@ -5069,7 +5289,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:40"
+      "ultima_revision": "2026-08-23T11:25:05"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -5118,7 +5338,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:41"
+      "ultima_revision": "2026-08-23T11:25:05"
     },
     "score": 17,
     "simbolo": "★",
@@ -5224,7 +5444,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:42"
+      "ultima_revision": "2026-08-23T11:25:06"
     },
     "score": 41,
     "simbolo": "★★",
@@ -5266,6 +5486,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T20:03:40",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:07"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra por Excepción 2/2026",
@@ -5316,7 +5546,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:44"
+      "ultima_revision": "2026-08-23T11:25:08"
     },
     "score": 48,
     "simbolo": "★★★",
@@ -5374,7 +5604,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:44"
+      "ultima_revision": "2026-08-23T11:25:09"
     },
     "score": 22,
     "simbolo": "★",
@@ -5418,7 +5648,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:45"
+      "ultima_revision": "2026-08-23T11:25:09"
     },
     "score": 3,
     "simbolo": "★",
@@ -5470,7 +5700,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:46"
+      "ultima_revision": "2026-08-23T11:25:10"
     },
     "score": 21,
     "simbolo": "★",
@@ -5558,6 +5788,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:45:06",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 65.106,72",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:11"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 176/2026",
@@ -5608,7 +5848,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:47"
+      "ultima_revision": "2026-08-23T11:25:12"
     },
     "score": 47,
     "simbolo": "★★★",
@@ -5649,6 +5889,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
     "primera_deteccion": "2026-08-18T19:35:21",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": "13/08/2026",
+      "ganamos": null,
+      "monto_total": "U$S 25.687,11",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": "109431/2026",
+      "ultima_revision": "2026-08-23T11:25:13"
+    },
     "score": 35,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 109431/2026",
@@ -5695,7 +5945,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:49"
+      "ultima_revision": "2026-08-23T11:25:14"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -5750,7 +6000,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:50"
+      "ultima_revision": "2026-08-23T11:25:15"
     },
     "score": 35,
     "simbolo": "★★",
@@ -5809,7 +6059,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:51"
+      "ultima_revision": "2026-08-23T11:25:16"
     },
     "score": 22,
     "simbolo": "★",
@@ -5862,6 +6112,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
     "primera_deteccion": "2026-08-18T19:25:15",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 458.000,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:17"
+    },
     "score": 33,
     "simbolo": "★★",
     "titulo": "Compra Directa 187/2026",
@@ -5975,7 +6235,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:52"
+      "ultima_revision": "2026-08-23T11:25:18"
     },
     "score": 36,
     "simbolo": "★★",
@@ -6059,7 +6319,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:24:53"
+      "ultima_revision": "2026-08-23T11:25:18"
     },
     "score": 39,
     "simbolo": "★★",
@@ -6097,6 +6357,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:53:50",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:19"
+    },
     "score": 23,
     "simbolo": "★",
     "titulo": "Concurso de Precios 112026/2026",
@@ -6140,6 +6410,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:59:04",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:20"
+    },
     "score": 14,
     "simbolo": "★",
     "titulo": "Compra Directa 1047/2026",
@@ -6176,6 +6456,16 @@
     "numero_licitacion": null,
     "organismo": "Intendencia de Maldonado",
     "primera_deteccion": "2026-08-18T19:33:02",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:21"
+    },
     "score": 35,
     "simbolo": "★★",
     "titulo": "Licitación Pública 13/2026",
@@ -6254,6 +6544,16 @@
     "numero_licitacion": null,
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:52:27",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:22"
+    },
     "score": 29,
     "simbolo": "★★",
     "titulo": "Compra Directa 110/2026",
@@ -6286,6 +6586,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
     "primera_deteccion": "2026-08-18T19:37:16",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:22"
+    },
     "score": 4,
     "simbolo": "★",
     "titulo": "Compra Directa 88567/2026",
@@ -6326,6 +6636,16 @@
     "numero_licitacion": null,
     "organismo": "BSE - Banco de Seguros del Estado",
     "primera_deteccion": "2026-08-18T19:31:30",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 9.932,02",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:24"
+    },
     "score": 38,
     "simbolo": "★★",
     "titulo": "Compra Directa 1292/2026",
@@ -6363,6 +6683,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:33:06",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 21.167,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:25"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 88586/2026",
@@ -6441,6 +6771,16 @@
     "numero_licitacion": "103848/2026",
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:48:23",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:25"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 103848/2026",
@@ -6481,7 +6821,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:00"
+      "ultima_revision": "2026-08-23T11:25:26"
     },
     "score": 2,
     "simbolo": "★",
@@ -6515,6 +6855,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:36:43",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 268.504,18",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:27"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 154/2026",
@@ -6555,7 +6905,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:02"
+      "ultima_revision": "2026-08-23T11:25:28"
     },
     "score": 0,
     "simbolo": "★",
@@ -6597,7 +6947,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:03"
+      "ultima_revision": "2026-08-23T11:25:28"
     },
     "score": 23,
     "simbolo": "★",
@@ -6645,7 +6995,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:04"
+      "ultima_revision": "2026-08-23T11:25:29"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -6786,7 +7136,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:04"
+      "ultima_revision": "2026-08-23T11:25:30"
     },
     "score": 37,
     "simbolo": "★★",
@@ -6826,6 +7176,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:45:11",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:31"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 211/2026",
@@ -6862,6 +7222,16 @@
     "numero_licitacion": null,
     "organismo": "BSE - Banco de Seguros del Estado",
     "primera_deteccion": "2026-08-18T19:30:31",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 189.279,34",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:32"
+    },
     "score": 45,
     "simbolo": "★★★",
     "titulo": "Compra Directa 210/2026",
@@ -6911,7 +7281,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:07"
+      "ultima_revision": "2026-08-23T11:25:32"
     },
     "score": 39,
     "simbolo": "★★",
@@ -6953,7 +7323,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:08"
+      "ultima_revision": "2026-08-23T11:25:33"
     },
     "score": 25,
     "simbolo": "★★",
@@ -7086,6 +7456,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:30:27",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:34"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 7481/2026",
@@ -7136,7 +7516,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:09"
+      "ultima_revision": "2026-08-23T11:25:34"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -7196,7 +7576,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:10"
+      "ultima_revision": "2026-08-23T11:25:36"
     },
     "score": 12,
     "simbolo": "★",
@@ -7242,7 +7622,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:11"
+      "ultima_revision": "2026-08-23T11:25:37"
     },
     "score": 24,
     "simbolo": "★",
@@ -7299,7 +7679,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:12"
+      "ultima_revision": "2026-08-23T11:25:37"
     },
     "score": 39,
     "simbolo": "★★",
@@ -7347,7 +7727,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:12"
+      "ultima_revision": "2026-08-23T11:25:38"
     },
     "score": 22,
     "simbolo": "★",
@@ -7388,6 +7768,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:36:14",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:39"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Concurso de Precios 109484/2026",
@@ -7428,7 +7818,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:14"
+      "ultima_revision": "2026-08-23T11:25:40"
     },
     "score": 5,
     "simbolo": "★",
@@ -7462,6 +7852,16 @@
     "numero_licitacion": null,
     "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
     "primera_deteccion": "2026-08-18T20:06:00",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:41"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 805/2026",
@@ -7506,7 +7906,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:15"
+      "ultima_revision": "2026-08-23T11:25:41"
     },
     "score": 25,
     "simbolo": "★★",
@@ -7598,7 +7998,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:16"
+      "ultima_revision": "2026-08-23T11:25:42"
     },
     "score": 12,
     "simbolo": "★",
@@ -7642,7 +8042,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:17"
+      "ultima_revision": "2026-08-23T11:25:43"
     },
     "score": 35,
     "simbolo": "★★",
@@ -7698,7 +8098,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:18"
+      "ultima_revision": "2026-08-23T11:25:44"
     },
     "score": 41,
     "simbolo": "★★",
@@ -7739,6 +8139,16 @@
     "numero_licitacion": null,
     "organismo": "Intendencia de Soriano",
     "primera_deteccion": "2026-08-18T19:38:52",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:44"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Concurso de Precios 29/2026",
@@ -7781,7 +8191,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:19"
+      "ultima_revision": "2026-08-23T11:25:45"
     },
     "score": 23,
     "simbolo": "★",
@@ -7828,7 +8238,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:20"
+      "ultima_revision": "2026-08-23T11:25:46"
     },
     "score": 3,
     "simbolo": "★",
@@ -7866,6 +8276,16 @@
     "numero_licitacion": null,
     "organismo": "Intendencia de Paysandú",
     "primera_deteccion": "2026-08-18T19:31:22",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:47"
+    },
     "score": 20,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 43/2026",
@@ -7912,6 +8332,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:50:59",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": "13/08/2026",
+      "ganamos": null,
+      "monto_total": "$ 1.196.841,96",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": "58/2026",
+      "ultima_revision": "2026-08-23T11:25:47"
+    },
     "score": 23,
     "simbolo": "★",
     "titulo": "Concurso de Precios 26313/2026",
@@ -7947,6 +8377,16 @@
     "numero_licitacion": null,
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T20:04:09",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:48"
+    },
     "score": 14,
     "simbolo": "★",
     "titulo": "Concurso de Precios 146778/2026",
@@ -7985,6 +8425,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:34:06",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:49"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 3654/2026",
@@ -8041,7 +8491,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:24"
+      "ultima_revision": "2026-08-23T11:25:50"
     },
     "score": 50,
     "simbolo": "★★★",
@@ -8180,7 +8630,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:25"
+      "ultima_revision": "2026-08-23T11:25:50"
     },
     "score": 43,
     "simbolo": "★★",
@@ -8226,6 +8676,16 @@
     "numero_licitacion": null,
     "organismo": "BSE - Banco de Seguros del Estado",
     "primera_deteccion": "2026-08-18T19:49:56",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 428.978,57",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:51"
+    },
     "score": 38,
     "simbolo": "★★",
     "titulo": "Compra Directa 1264/2026",
@@ -8316,7 +8776,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:27"
+      "ultima_revision": "2026-08-23T11:25:52"
     },
     "score": 2,
     "simbolo": "★",
@@ -8354,7 +8814,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:28"
+      "ultima_revision": "2026-08-23T11:25:53"
     },
     "score": 25,
     "simbolo": "★★",
@@ -8398,7 +8858,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:28"
+      "ultima_revision": "2026-08-23T11:25:53"
     },
     "score": 14,
     "simbolo": "★",
@@ -8446,7 +8906,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:29"
+      "ultima_revision": "2026-08-23T11:25:54"
     },
     "score": 29,
     "simbolo": "★★",
@@ -8494,7 +8954,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:30"
+      "ultima_revision": "2026-08-23T11:25:55"
     },
     "score": 37,
     "simbolo": "★★",
@@ -8538,6 +8998,16 @@
     "numero_licitacion": "10/2026",
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:31:00",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:56"
+    },
     "score": 20,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 10/2026",
@@ -8591,7 +9061,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:32"
+      "ultima_revision": "2026-08-23T11:25:56"
     },
     "score": 4,
     "simbolo": "★",
@@ -8645,7 +9115,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:32"
+      "ultima_revision": "2026-08-23T11:25:57"
     },
     "score": 19,
     "simbolo": "★",
@@ -8693,7 +9163,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:33"
+      "ultima_revision": "2026-08-23T11:25:58"
     },
     "score": 1,
     "simbolo": "★",
@@ -8732,6 +9202,16 @@
     "numero_licitacion": null,
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:42:32",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:25:59"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 82/2026",
@@ -8778,7 +9258,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:35"
+      "ultima_revision": "2026-08-23T11:26:00"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -8815,6 +9295,16 @@
     "numero_licitacion": "6/2026",
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:38:14",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:01"
+    },
     "score": 0,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 6/2026",
@@ -8855,7 +9345,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:36"
+      "ultima_revision": "2026-08-23T11:26:01"
     },
     "score": 0,
     "simbolo": "★",
@@ -8893,6 +9383,16 @@
     "numero_licitacion": null,
     "organismo": "Intendencia de Paysandú",
     "primera_deteccion": "2026-08-18T19:58:30",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:02"
+    },
     "score": 11,
     "simbolo": "★",
     "titulo": "Compra Directa 691/2026",
@@ -8937,7 +9437,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:38"
+      "ultima_revision": "2026-08-23T11:26:03"
     },
     "score": 18,
     "simbolo": "★",
@@ -9055,6 +9555,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:30:46",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:04"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 777/2026",
@@ -9095,7 +9605,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:40"
+      "ultima_revision": "2026-08-23T11:26:05"
     },
     "score": 16,
     "simbolo": "★",
@@ -9138,6 +9648,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T20:04:35",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 10.797,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:06"
+    },
     "score": 21,
     "simbolo": "★",
     "titulo": "Compra Directa 2298/2026",
@@ -9178,6 +9698,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:37:00",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:06"
+    },
     "score": 18,
     "simbolo": "★",
     "titulo": "Concurso de Precios 6/2026",
@@ -9215,6 +9745,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:29:15",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 12.444,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:07"
+    },
     "score": 18,
     "simbolo": "★",
     "titulo": "Compra Directa 12782/2026",
@@ -9299,7 +9839,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:43"
+      "ultima_revision": "2026-08-23T11:26:08"
     },
     "score": 22,
     "simbolo": "★",
@@ -9337,6 +9877,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T20:01:28",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:08"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 88327/2026",
@@ -9424,7 +9974,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:44"
+      "ultima_revision": "2026-08-23T11:26:09"
     },
     "score": 17,
     "simbolo": "★",
@@ -9465,6 +10015,16 @@
     "numero_licitacion": "22/2026",
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:45:48",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:10"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 22/2026",
@@ -9501,6 +10061,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
     "primera_deteccion": "2026-08-18T19:24:55",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:11"
+    },
     "score": 35,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 109492/2026",
@@ -9533,6 +10103,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:26:42",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:12"
+    },
     "score": 46,
     "simbolo": "★★★",
     "titulo": "Licitación Abreviada 3/2026",
@@ -9577,7 +10157,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:48"
+      "ultima_revision": "2026-08-23T11:26:12"
     },
     "score": 26,
     "simbolo": "★★",
@@ -9628,7 +10208,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:48"
+      "ultima_revision": "2026-08-23T11:26:13"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -9678,7 +10258,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:49"
+      "ultima_revision": "2026-08-23T11:26:14"
     },
     "score": 25,
     "simbolo": "★★",
@@ -9724,7 +10304,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:50"
+      "ultima_revision": "2026-08-23T11:26:15"
     },
     "score": 13,
     "simbolo": "★",
@@ -9772,7 +10352,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:51"
+      "ultima_revision": "2026-08-23T11:26:15"
     },
     "score": 3,
     "simbolo": "★",
@@ -9822,7 +10402,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:51"
+      "ultima_revision": "2026-08-23T11:26:16"
     },
     "score": 16,
     "simbolo": "★",
@@ -10010,7 +10590,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:52"
+      "ultima_revision": "2026-08-23T11:26:17"
     },
     "score": 23,
     "simbolo": "★",
@@ -10082,7 +10662,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:53"
+      "ultima_revision": "2026-08-23T11:26:18"
     },
     "score": 71,
     "simbolo": "★★★★",
@@ -10143,7 +10723,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:54"
+      "ultima_revision": "2026-08-23T11:26:18"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -10213,7 +10793,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:55"
+      "ultima_revision": "2026-08-23T11:26:19"
     },
     "score": 25,
     "simbolo": "★★",
@@ -10281,7 +10861,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:55"
+      "ultima_revision": "2026-08-23T11:26:20"
     },
     "score": 13,
     "simbolo": "★",
@@ -10377,7 +10957,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:56"
+      "ultima_revision": "2026-08-23T11:26:21"
     },
     "score": 16,
     "simbolo": "★",
@@ -10429,7 +11009,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:57"
+      "ultima_revision": "2026-08-23T11:26:21"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -10498,7 +11078,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:58"
+      "ultima_revision": "2026-08-23T11:26:22"
     },
     "score": 47,
     "simbolo": "★★★",
@@ -10551,6 +11131,16 @@
     "numero_licitacion": null,
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T20:01:37",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:23"
+    },
     "score": 23,
     "simbolo": "★",
     "titulo": "Concurso de Precios 146765/2026",
@@ -10599,7 +11189,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:25:59"
+      "ultima_revision": "2026-08-23T11:26:24"
     },
     "score": 37,
     "simbolo": "★★",
@@ -10644,6 +11234,16 @@
     "numero_licitacion": null,
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:34:48",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:24"
+    },
     "score": 38,
     "simbolo": "★★",
     "titulo": "Compra Directa 122/2026",
@@ -10683,6 +11283,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:58:05",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 66.429,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:25"
+    },
     "score": 46,
     "simbolo": "★★★",
     "titulo": "Compra Directa 11913/2026",
@@ -10795,6 +11405,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio del Interior (MI)",
     "primera_deteccion": "2026-08-18T20:01:07",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:26"
+    },
     "score": 11,
     "simbolo": "★",
     "titulo": "Concurso de Precios 24/2026",
@@ -10857,7 +11477,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:02"
+      "ultima_revision": "2026-08-23T11:26:27"
     },
     "score": 36,
     "simbolo": "★★",
@@ -10935,7 +11555,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:03"
+      "ultima_revision": "2026-08-23T11:26:27"
     },
     "score": 4,
     "simbolo": "★",
@@ -10971,6 +11591,16 @@
     "numero_licitacion": null,
     "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
     "primera_deteccion": "2026-08-18T20:05:30",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 57.645,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:28"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 810/2026",
@@ -11053,7 +11683,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:05"
+      "ultima_revision": "2026-08-23T11:26:29"
     },
     "score": 25,
     "simbolo": "★★",
@@ -11091,6 +11721,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:50:10",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:30"
+    },
     "score": 30,
     "simbolo": "★★",
     "titulo": "Compra Directa 64/2026",
@@ -11135,6 +11775,16 @@
     "numero_licitacion": "109378/2026",
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:38:22",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:30"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 109378/2026",
@@ -11169,6 +11819,16 @@
     "numero_licitacion": null,
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:33:28",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 0,00",
+      "nos_presentamos": false,
+      "resolucion": "Declarada sin efecto",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:31"
+    },
     "score": 21,
     "simbolo": "★",
     "titulo": "Compra Directa 43/2026",
@@ -11220,7 +11880,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:08"
+      "ultima_revision": "2026-08-23T11:26:32"
     },
     "score": 35,
     "simbolo": "★★",
@@ -11286,7 +11946,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:09"
+      "ultima_revision": "2026-08-23T11:26:33"
     },
     "score": 33,
     "simbolo": "★★",
@@ -11337,7 +11997,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:09"
+      "ultima_revision": "2026-08-23T11:26:33"
     },
     "score": 41,
     "simbolo": "★★",
@@ -11385,7 +12045,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:10"
+      "ultima_revision": "2026-08-23T11:26:34"
     },
     "score": 35,
     "simbolo": "★★",
@@ -11433,7 +12093,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:11"
+      "ultima_revision": "2026-08-23T11:26:35"
     },
     "score": 7,
     "simbolo": "★",
@@ -11477,7 +12137,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:12"
+      "ultima_revision": "2026-08-23T11:26:36"
     },
     "score": 2,
     "simbolo": "★",
@@ -11523,7 +12183,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:13"
+      "ultima_revision": "2026-08-23T11:26:36"
     },
     "score": 23,
     "simbolo": "★",
@@ -11571,7 +12231,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:14"
+      "ultima_revision": "2026-08-23T11:26:37"
     },
     "score": 5,
     "simbolo": "★",
@@ -11723,7 +12383,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:14"
+      "ultima_revision": "2026-08-23T11:26:38"
     },
     "score": 28,
     "simbolo": "★★",
@@ -11776,7 +12436,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:15"
+      "ultima_revision": "2026-08-23T11:26:39"
     },
     "score": 25,
     "simbolo": "★★",
@@ -11832,7 +12492,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:16"
+      "ultima_revision": "2026-08-23T11:26:39"
     },
     "score": 6,
     "simbolo": "★",
@@ -11885,7 +12545,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:17"
+      "ultima_revision": "2026-08-23T11:26:40"
     },
     "score": 3,
     "simbolo": "★",
@@ -11929,7 +12589,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:17"
+      "ultima_revision": "2026-08-23T11:26:41"
     },
     "score": 20,
     "simbolo": "★",
@@ -12019,6 +12679,16 @@
     "numero_licitacion": null,
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:46:41",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:42"
+    },
     "score": 38,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 6/2026",
@@ -12056,6 +12726,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Ambiente (MA)",
     "primera_deteccion": "2026-08-18T19:46:00",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:42"
+    },
     "score": 21,
     "simbolo": "★",
     "titulo": "Compra Directa 12028/2026",
@@ -12088,6 +12768,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:37:46",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:43"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Concurso de Precios 27/2026",
@@ -12122,6 +12812,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:49:48",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:44"
+    },
     "score": 7,
     "simbolo": "★",
     "titulo": "Compra Directa 50/2026",
@@ -12224,7 +12924,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:21"
+      "ultima_revision": "2026-08-23T11:26:44"
     },
     "score": 25,
     "simbolo": "★★",
@@ -12282,7 +12982,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:22"
+      "ultima_revision": "2026-08-23T11:26:45"
     },
     "score": 39,
     "simbolo": "★★",
@@ -12353,7 +13053,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:23"
+      "ultima_revision": "2026-08-23T11:26:46"
     },
     "score": 16,
     "simbolo": "★",
@@ -12391,6 +13091,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:59:43",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 28.763,73",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:47"
+    },
     "score": 41,
     "simbolo": "★★",
     "titulo": "Compra Directa 11920/2026",
@@ -12440,7 +13150,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:24"
+      "ultima_revision": "2026-08-23T11:26:47"
     },
     "score": 21,
     "simbolo": "★",
@@ -12537,7 +13247,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:25"
+      "ultima_revision": "2026-08-23T11:26:48"
     },
     "score": 3,
     "simbolo": "★",
@@ -12589,7 +13299,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:26"
+      "ultima_revision": "2026-08-23T11:26:49"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -12677,6 +13387,16 @@
     "numero_licitacion": null,
     "organismo": "Intendencia de Colonia",
     "primera_deteccion": "2026-08-18T19:40:11",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:50"
+    },
     "score": 41,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 96517/2026",
@@ -12717,6 +13437,16 @@
     "numero_licitacion": null,
     "organismo": "CES - Consejo de Educación Secundaria",
     "primera_deteccion": "2026-08-18T19:59:03",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 27.290,01",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:50"
+    },
     "score": 41,
     "simbolo": "★★",
     "titulo": "Compra Directa 91/2026",
@@ -12760,7 +13490,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:28"
+      "ultima_revision": "2026-08-23T11:26:51"
     },
     "score": 18,
     "simbolo": "★",
@@ -12827,7 +13557,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:29"
+      "ultima_revision": "2026-08-23T11:26:52"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -12895,7 +13625,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:30"
+      "ultima_revision": "2026-08-23T11:26:53"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -12956,7 +13686,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:31"
+      "ultima_revision": "2026-08-23T11:26:53"
     },
     "score": 25,
     "simbolo": "★★",
@@ -12996,6 +13726,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:37:13",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:54"
+    },
     "score": 42,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 7464/2026",
@@ -13055,7 +13795,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:32"
+      "ultima_revision": "2026-08-23T11:26:55"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -13121,7 +13861,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:33"
+      "ultima_revision": "2026-08-23T11:26:56"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -13176,7 +13916,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:34"
+      "ultima_revision": "2026-08-23T11:26:57"
     },
     "score": 0,
     "simbolo": "★",
@@ -13226,7 +13966,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:35"
+      "ultima_revision": "2026-08-23T11:26:58"
     },
     "score": 41,
     "simbolo": "★★",
@@ -13281,7 +14021,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:36"
+      "ultima_revision": "2026-08-23T11:26:58"
     },
     "score": 33,
     "simbolo": "★★",
@@ -13319,6 +14059,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:39:42",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 72.687,60",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:26:59"
+    },
     "score": 7,
     "simbolo": "★",
     "titulo": "Compra Directa 106/2026",
@@ -13363,7 +14113,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:37"
+      "ultima_revision": "2026-08-23T11:27:00"
     },
     "score": 29,
     "simbolo": "★★",
@@ -13401,6 +14151,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:39:09",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 26.321,50",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:00"
+    },
     "score": 41,
     "simbolo": "★★",
     "titulo": "Compra Directa 119/2026",
@@ -13444,7 +14204,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:39"
+      "ultima_revision": "2026-08-23T11:27:01"
     },
     "score": 2,
     "simbolo": "★",
@@ -13489,7 +14249,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:39"
+      "ultima_revision": "2026-08-23T11:27:02"
     },
     "score": 23,
     "simbolo": "★",
@@ -13523,6 +14283,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:57:39",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 7.237,98",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:03"
+    },
     "score": 14,
     "simbolo": "★",
     "titulo": "Compra Directa 301/2026",
@@ -13567,7 +14337,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:41"
+      "ultima_revision": "2026-08-23T11:27:04"
     },
     "score": 8,
     "simbolo": "★",
@@ -13618,7 +14388,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:42"
+      "ultima_revision": "2026-08-23T11:27:04"
     },
     "score": 35,
     "simbolo": "★★",
@@ -13659,6 +14429,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio del Interior (MI)",
     "primera_deteccion": "2026-08-18T19:57:39",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:05"
+    },
     "score": 1,
     "simbolo": "★",
     "titulo": "Concurso de Precios 77/2026",
@@ -13691,6 +14471,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:45:16",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:06"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Compra Directa 158/2026",
@@ -13729,6 +14519,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Ganadería, Agricultura y Pesca (MGAP)",
     "primera_deteccion": "2026-08-18T19:36:44",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:07"
+    },
     "score": 39,
     "simbolo": "★★",
     "titulo": "PFI - Comparación de precios 8/2026",
@@ -13772,7 +14572,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:45"
+      "ultima_revision": "2026-08-23T11:27:07"
     },
     "score": 5,
     "simbolo": "★",
@@ -13873,7 +14673,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:46"
+      "ultima_revision": "2026-08-23T11:27:08"
     },
     "score": 32,
     "simbolo": "★★",
@@ -13932,6 +14732,16 @@
     "numero_licitacion": null,
     "organismo": "Intendencia de Colonia",
     "primera_deteccion": "2026-08-18T19:43:16",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:09"
+    },
     "score": 45,
     "simbolo": "★★★",
     "titulo": "Concurso de Precios 91022/2026",
@@ -13990,7 +14800,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:47"
+      "ultima_revision": "2026-08-23T11:27:10"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -14040,6 +14850,16 @@
     "numero_licitacion": "846/2026",
     "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
     "primera_deteccion": "2026-08-18T20:04:30",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:10"
+    },
     "score": 27,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 846/2026",
@@ -14111,7 +14931,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:49"
+      "ultima_revision": "2026-08-23T11:27:11"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -14163,6 +14983,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T20:01:16",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 85.473,20",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:12"
+    },
     "score": 23,
     "simbolo": "★",
     "titulo": "Compra Directa 11955/2026",
@@ -14214,7 +15044,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:50"
+      "ultima_revision": "2026-08-23T11:27:13"
     },
     "score": 0,
     "simbolo": "★",
@@ -14256,6 +15086,16 @@
     "numero_licitacion": "807/2026",
     "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
     "primera_deteccion": "2026-08-18T19:57:33",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:14"
+    },
     "score": 55,
     "simbolo": "★★★",
     "titulo": "Licitación Abreviada 807/2026",
@@ -14314,6 +15154,16 @@
     "numero_licitacion": "7/2026",
     "organismo": "Intendencia de Rocha",
     "primera_deteccion": "2026-08-18T19:55:27",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:15"
+    },
     "score": 48,
     "simbolo": "★★★",
     "titulo": "Licitación Pública 7/2026",
@@ -14386,7 +15236,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:53"
+      "ultima_revision": "2026-08-23T11:27:16"
     },
     "score": 51,
     "simbolo": "★★★",
@@ -14440,6 +15290,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio del Interior (MI)",
     "primera_deteccion": "2026-08-18T19:53:02",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:16"
+    },
     "score": 7,
     "simbolo": "★",
     "titulo": "Concurso de Precios 80/2026",
@@ -14522,7 +15382,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:55"
+      "ultima_revision": "2026-08-23T11:27:17"
     },
     "score": 1,
     "simbolo": "★",
@@ -14572,7 +15432,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:56"
+      "ultima_revision": "2026-08-23T11:27:18"
     },
     "score": 38,
     "simbolo": "★★",
@@ -14624,7 +15484,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:56"
+      "ultima_revision": "2026-08-23T11:27:19"
     },
     "score": 2,
     "simbolo": "★",
@@ -14666,6 +15526,16 @@
     "numero_licitacion": null,
     "organismo": "Intendencia de Paysandú",
     "primera_deteccion": "2026-08-18T19:58:44",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:19"
+    },
     "score": 15,
     "simbolo": "★",
     "titulo": "Concurso de Precios 12/2026",
@@ -14704,6 +15574,16 @@
     "numero_licitacion": null,
     "organismo": "BSE - Banco de Seguros del Estado",
     "primera_deteccion": "2026-08-18T20:00:16",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 11.990,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:20"
+    },
     "score": 37,
     "simbolo": "★★",
     "titulo": "Compra Directa 234/2026",
@@ -14751,7 +15631,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:26:59"
+      "ultima_revision": "2026-08-23T11:27:21"
     },
     "score": 17,
     "simbolo": "★",
@@ -14814,7 +15694,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:00"
+      "ultima_revision": "2026-08-23T11:27:22"
     },
     "score": 36,
     "simbolo": "★★",
@@ -14886,7 +15766,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:00"
+      "ultima_revision": "2026-08-23T11:27:22"
     },
     "score": 0,
     "simbolo": "★",
@@ -14922,6 +15802,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:25:42",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:23"
+    },
     "score": 0,
     "simbolo": "★",
     "titulo": "Compra Directa 73/2026",
@@ -14958,6 +15848,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
     "primera_deteccion": "2026-08-18T19:53:21",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 29.909,67",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:24"
+    },
     "score": 38,
     "simbolo": "★★",
     "titulo": "Compra Directa 179/2026",
@@ -15003,7 +15903,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:03"
+      "ultima_revision": "2026-08-23T11:27:25"
     },
     "score": 12,
     "simbolo": "★",
@@ -15083,6 +15983,16 @@
     "numero_licitacion": "739/2026",
     "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
     "primera_deteccion": "2026-08-18T19:46:35",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:25"
+    },
     "score": 26,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 739/2026",
@@ -15139,7 +16049,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:04"
+      "ultima_revision": "2026-08-23T11:27:26"
     },
     "score": 5,
     "simbolo": "★",
@@ -15185,7 +16095,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:05"
+      "ultima_revision": "2026-08-23T11:27:27"
     },
     "score": 53,
     "simbolo": "★★★",
@@ -15234,7 +16144,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:06"
+      "ultima_revision": "2026-08-23T11:27:28"
     },
     "score": 0,
     "simbolo": "★",
@@ -15321,6 +16231,16 @@
     "numero_licitacion": "24/2026",
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:45:00",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:29"
+    },
     "score": 29,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 24/2026",
@@ -15378,7 +16298,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:08"
+      "ultima_revision": "2026-08-23T11:27:30"
     },
     "score": 23,
     "simbolo": "★",
@@ -15412,6 +16332,16 @@
     "numero_licitacion": "26934/2026",
     "organismo": null,
     "primera_deteccion": "2026-08-18T20:05:45",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:31"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 26934/2026",
@@ -15446,6 +16376,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T20:04:47",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:31"
+    },
     "score": 23,
     "simbolo": "★",
     "titulo": "Compra Directa 11829/2026",
@@ -15501,7 +16441,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:10"
+      "ultima_revision": "2026-08-23T11:27:32"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -15561,7 +16501,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:11"
+      "ultima_revision": "2026-08-23T11:27:33"
     },
     "score": 18,
     "simbolo": "★",
@@ -15620,7 +16560,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:12"
+      "ultima_revision": "2026-08-23T11:27:34"
     },
     "score": 9,
     "simbolo": "★",
@@ -15659,6 +16599,16 @@
     "numero_licitacion": "13/2026",
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:41:11",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:34"
+    },
     "score": 10,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 13/2026",
@@ -15711,7 +16661,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:14"
+      "ultima_revision": "2026-08-23T11:27:35"
     },
     "score": 25,
     "simbolo": "★★",
@@ -15826,7 +16776,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:14"
+      "ultima_revision": "2026-08-23T11:27:36"
     },
     "score": 17,
     "simbolo": "★",
@@ -15860,6 +16810,16 @@
     "numero_licitacion": "30/2026",
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:53:00",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:37"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 30/2026",
@@ -15900,7 +16860,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:16"
+      "ultima_revision": "2026-08-23T11:27:37"
     },
     "score": 21,
     "simbolo": "★",
@@ -15956,7 +16916,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:17"
+      "ultima_revision": "2026-08-23T11:27:38"
     },
     "score": 50,
     "simbolo": "★★★",
@@ -16007,6 +16967,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
     "primera_deteccion": "2026-08-18T19:36:08",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:39"
+    },
     "score": 11,
     "simbolo": "★",
     "titulo": "Compra por Excepción 7/2026",
@@ -16041,6 +17011,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
     "primera_deteccion": "2026-08-18T19:37:39",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:40"
+    },
     "score": 33,
     "simbolo": "★★",
     "titulo": "Compra Directa 5214/2026",
@@ -16078,6 +17058,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:45:05",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 0,00",
+      "nos_presentamos": false,
+      "resolucion": "Declarada sin efecto",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:40"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 175/2026",
@@ -16126,7 +17116,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:20"
+      "ultima_revision": "2026-08-23T11:27:41"
     },
     "score": 47,
     "simbolo": "★★★",
@@ -16167,6 +17157,16 @@
     "numero_licitacion": null,
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:43:18",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:42"
+    },
     "score": 1,
     "simbolo": "★",
     "titulo": "Compra por Excepción 157/2026",
@@ -16206,6 +17206,16 @@
     "numero_licitacion": null,
     "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
     "primera_deteccion": "2026-08-18T19:41:52",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 44.273,80",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:42"
+    },
     "score": 29,
     "simbolo": "★★",
     "titulo": "Compra Directa 3317/2026",
@@ -16247,6 +17257,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:44:33",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:43"
+    },
     "score": 30,
     "simbolo": "★★",
     "titulo": "Compra Directa 11408/2026",
@@ -16289,7 +17309,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:23"
+      "ultima_revision": "2026-08-23T11:27:44"
     },
     "score": 0,
     "simbolo": "★",
@@ -16331,7 +17351,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:24"
+      "ultima_revision": "2026-08-23T11:27:45"
     },
     "score": 4,
     "simbolo": "★",
@@ -16371,6 +17391,16 @@
     "numero_licitacion": "11/2026",
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:39:13",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:45"
+    },
     "score": 56,
     "simbolo": "★★★",
     "titulo": "Licitación Pública 11/2026",
@@ -16421,7 +17451,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:25"
+      "ultima_revision": "2026-08-23T11:27:46"
     },
     "score": 8,
     "simbolo": "★",
@@ -16477,7 +17507,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:26"
+      "ultima_revision": "2026-08-23T11:27:47"
     },
     "score": 27,
     "simbolo": "★★",
@@ -16531,6 +17561,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:49:44",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": "05/08/2026",
+      "ganamos": null,
+      "monto_total": "$ 401.840,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": "157/2026",
+      "ultima_revision": "2026-08-23T11:27:47"
+    },
     "score": 36,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 4/2026",
@@ -16577,6 +17617,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:45:07",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 0,00",
+      "nos_presentamos": false,
+      "resolucion": "Declarada sin efecto",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:48"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 173/2026",
@@ -16617,7 +17667,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:28"
+      "ultima_revision": "2026-08-23T11:27:49"
     },
     "score": 0,
     "simbolo": "★",
@@ -16656,6 +17706,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:44:48",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 57.248,90",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:50"
+    },
     "score": 0,
     "simbolo": "★",
     "titulo": "Compra Directa 12183/2026",
@@ -16688,6 +17748,16 @@
     "numero_licitacion": "copias",
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:29:32",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:50"
+    },
     "score": 29,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 7/2026",
@@ -16724,6 +17794,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:46:36",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 88.938,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:51"
+    },
     "score": 29,
     "simbolo": "★★",
     "titulo": "Compra Directa 11990/2026",
@@ -16766,7 +17846,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:31"
+      "ultima_revision": "2026-08-23T11:27:52"
     },
     "score": 3,
     "simbolo": "★",
@@ -16809,6 +17889,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:55:16",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:53"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 88468/2026",
@@ -16851,7 +17941,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:33"
+      "ultima_revision": "2026-08-23T11:27:53"
     },
     "score": 1,
     "simbolo": "★",
@@ -16917,7 +18007,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:34"
+      "ultima_revision": "2026-08-23T11:27:54"
     },
     "score": 33,
     "simbolo": "★★",
@@ -16981,7 +18071,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:35"
+      "ultima_revision": "2026-08-23T11:27:55"
     },
     "score": 73,
     "simbolo": "★★★★",
@@ -17103,7 +18193,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:35"
+      "ultima_revision": "2026-08-23T11:27:56"
     },
     "score": 24,
     "simbolo": "★",
@@ -17160,7 +18250,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:36"
+      "ultima_revision": "2026-08-23T11:27:56"
     },
     "score": 38,
     "simbolo": "★★",
@@ -17208,7 +18298,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:37"
+      "ultima_revision": "2026-08-23T11:27:57"
     },
     "score": 29,
     "simbolo": "★★",
@@ -17252,7 +18342,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:38"
+      "ultima_revision": "2026-08-23T11:27:58"
     },
     "score": 2,
     "simbolo": "★",
@@ -17294,6 +18384,16 @@
     "numero_licitacion": "10/2026",
     "organismo": "Ministerio de Salud Pública (MSP)",
     "primera_deteccion": "2026-08-18T19:54:18",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:27:58"
+    },
     "score": 38,
     "simbolo": "★★",
     "titulo": "Licitación Pública 10/2026",
@@ -17355,7 +18455,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:39"
+      "ultima_revision": "2026-08-23T11:27:59"
     },
     "score": 20,
     "simbolo": "★",
@@ -17409,7 +18509,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:40"
+      "ultima_revision": "2026-08-23T11:28:00"
     },
     "score": 0,
     "simbolo": "★",
@@ -17445,6 +18545,16 @@
     "numero_licitacion": "licitatorio",
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:45:05",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:01"
+    },
     "score": 21,
     "simbolo": "★",
     "titulo": "Concurso de Precios 5/2026",
@@ -17499,7 +18609,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:41"
+      "ultima_revision": "2026-08-23T11:28:01"
     },
     "score": 53,
     "simbolo": "★★★",
@@ -17566,7 +18676,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:42"
+      "ultima_revision": "2026-08-23T11:28:02"
     },
     "score": 17,
     "simbolo": "★",
@@ -17621,7 +18731,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:43"
+      "ultima_revision": "2026-08-23T11:28:03"
     },
     "score": 42,
     "simbolo": "★★",
@@ -17686,7 +18796,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:44"
+      "ultima_revision": "2026-08-23T11:28:03"
     },
     "score": 12,
     "simbolo": "★",
@@ -17754,7 +18864,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:45"
+      "ultima_revision": "2026-08-23T11:28:04"
     },
     "score": 43,
     "simbolo": "★★",
@@ -17802,7 +18912,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:45"
+      "ultima_revision": "2026-08-23T11:28:05"
     },
     "score": 21,
     "simbolo": "★",
@@ -17852,6 +18962,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Ambiente (MA)",
     "primera_deteccion": "2026-08-18T19:30:57",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:06"
+    },
     "score": 13,
     "simbolo": "★",
     "titulo": "Compra por Excepción 16/2026",
@@ -17894,6 +19014,16 @@
     "numero_licitacion": null,
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:40:14",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:06"
+    },
     "score": 22,
     "simbolo": "★",
     "titulo": "Compra Directa 88546/2026",
@@ -17947,7 +19077,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:48"
+      "ultima_revision": "2026-08-23T11:28:07"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -18002,7 +19132,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:48"
+      "ultima_revision": "2026-08-23T11:28:08"
     },
     "score": 17,
     "simbolo": "★",
@@ -18139,7 +19269,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:49"
+      "ultima_revision": "2026-08-23T11:28:09"
     },
     "score": 37,
     "simbolo": "★★",
@@ -18189,7 +19319,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:50"
+      "ultima_revision": "2026-08-23T11:28:09"
     },
     "score": 1,
     "simbolo": "★",
@@ -18313,7 +19443,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:51"
+      "ultima_revision": "2026-08-23T11:28:10"
     },
     "score": 25,
     "simbolo": "★★",
@@ -18348,6 +19478,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:26:39",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:11"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 7482/2026",
@@ -18458,7 +19598,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:52"
+      "ultima_revision": "2026-08-23T11:28:12"
     },
     "score": 41,
     "simbolo": "★★",
@@ -18508,7 +19648,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:53"
+      "ultima_revision": "2026-08-23T11:28:12"
     },
     "score": 37,
     "simbolo": "★★",
@@ -18546,6 +19686,16 @@
     "numero_licitacion": null,
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:24:36",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:13"
+    },
     "score": 18,
     "simbolo": "★",
     "titulo": "Compra Directa 236/2026",
@@ -18581,6 +19731,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
     "primera_deteccion": "2026-08-18T19:36:28",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:14"
+    },
     "score": 11,
     "simbolo": "★",
     "titulo": "Compra por Excepción 6/2026",
@@ -18623,7 +19783,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:56"
+      "ultima_revision": "2026-08-23T11:28:15"
     },
     "score": 6,
     "simbolo": "★",
@@ -18679,7 +19839,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:56"
+      "ultima_revision": "2026-08-23T11:28:15"
     },
     "score": 32,
     "simbolo": "★★",
@@ -18760,6 +19920,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio de Ganadería, Agricultura y Pesca (MGAP)",
     "primera_deteccion": "2026-08-18T19:51:52",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:16"
+    },
     "score": 42,
     "simbolo": "★★",
     "titulo": "PFI - Comparación de precios 12026/2026",
@@ -18830,7 +20000,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:58"
+      "ultima_revision": "2026-08-23T11:28:17"
     },
     "score": 7,
     "simbolo": "★",
@@ -18886,7 +20056,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:27:59"
+      "ultima_revision": "2026-08-23T11:28:18"
     },
     "score": 32,
     "simbolo": "★★",
@@ -18953,6 +20123,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:43:22",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 83.897,96",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:18"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 12116/2026",
@@ -18987,6 +20167,16 @@
     "numero_licitacion": null,
     "organismo": "Intendencia de Soriano",
     "primera_deteccion": "2026-08-18T19:41:40",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:19"
+    },
     "score": 26,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 8/2026",
@@ -19031,7 +20221,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:01"
+      "ultima_revision": "2026-08-23T11:28:20"
     },
     "score": 18,
     "simbolo": "★",
@@ -19092,7 +20282,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:02"
+      "ultima_revision": "2026-08-23T11:28:20"
     },
     "score": 20,
     "simbolo": "★",
@@ -19138,7 +20328,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:03"
+      "ultima_revision": "2026-08-23T11:28:21"
     },
     "score": 20,
     "simbolo": "★",
@@ -19192,7 +20382,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:03"
+      "ultima_revision": "2026-08-23T11:28:22"
     },
     "score": 18,
     "simbolo": "★",
@@ -19236,7 +20426,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:04"
+      "ultima_revision": "2026-08-23T11:28:23"
     },
     "score": 15,
     "simbolo": "★",
@@ -19289,7 +20479,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:05"
+      "ultima_revision": "2026-08-23T11:28:23"
     },
     "score": 21,
     "simbolo": "★",
@@ -19328,6 +20518,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:51:15",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 9.150,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:24"
+    },
     "score": 21,
     "simbolo": "★",
     "titulo": "Compra Directa 12186/2026",
@@ -19372,7 +20572,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:06"
+      "ultima_revision": "2026-08-23T11:28:25"
     },
     "score": 17,
     "simbolo": "★",
@@ -19474,7 +20674,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:08"
+      "ultima_revision": "2026-08-23T11:28:26"
     },
     "score": 32,
     "simbolo": "★★",
@@ -19530,7 +20730,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:09"
+      "ultima_revision": "2026-08-23T11:28:27"
     },
     "score": 22,
     "simbolo": "★",
@@ -19580,7 +20780,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:10"
+      "ultima_revision": "2026-08-23T11:28:28"
     },
     "score": 12,
     "simbolo": "★",
@@ -19664,6 +20864,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:57:09",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 47.683,45",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:28"
+    },
     "score": 7,
     "simbolo": "★",
     "titulo": "Compra Directa 44/2026",
@@ -19708,7 +20918,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:12"
+      "ultima_revision": "2026-08-23T11:28:29"
     },
     "score": 2,
     "simbolo": "★",
@@ -19756,6 +20966,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:36:04",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 546.814,98",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:30"
+    },
     "score": 53,
     "simbolo": "★★★",
     "titulo": "Compra Directa 1916/2026",
@@ -19814,7 +21034,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:13"
+      "ultima_revision": "2026-08-23T11:28:31"
     },
     "score": 35,
     "simbolo": "★★",
@@ -19942,7 +21162,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:14"
+      "ultima_revision": "2026-08-23T11:28:32"
     },
     "score": 7,
     "simbolo": "★",
@@ -19976,6 +21196,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:57:32",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:32"
+    },
     "score": 5,
     "simbolo": "★",
     "titulo": "Compra Directa 439/2026",
@@ -20084,7 +21314,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:15"
+      "ultima_revision": "2026-08-23T11:28:33"
     },
     "score": 14,
     "simbolo": "★",
@@ -20229,7 +21459,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:16"
+      "ultima_revision": "2026-08-23T11:28:34"
     },
     "score": 19,
     "simbolo": "★",
@@ -20275,7 +21505,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:17"
+      "ultima_revision": "2026-08-23T11:28:34"
     },
     "score": 18,
     "simbolo": "★",
@@ -20334,7 +21564,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:18"
+      "ultima_revision": "2026-08-23T11:28:35"
     },
     "score": 21,
     "simbolo": "★",
@@ -20373,6 +21603,16 @@
     "numero_licitacion": "16-26",
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:35:36",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:36"
+    },
     "score": 23,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 16/2026",
@@ -20503,7 +21743,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:19"
+      "ultima_revision": "2026-08-23T11:28:37"
     },
     "score": 29,
     "simbolo": "★★",
@@ -20549,7 +21789,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:20"
+      "ultima_revision": "2026-08-23T11:28:37"
     },
     "score": 2,
     "simbolo": "★",
@@ -20589,6 +21829,16 @@
     "numero_licitacion": null,
     "organismo": "Ministerio del Interior (MI)",
     "primera_deteccion": "2026-08-18T20:01:06",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:38"
+    },
     "score": 31,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 44/2026",
@@ -20627,6 +21877,16 @@
     "numero_licitacion": null,
     "organismo": "Intendencia de Maldonado",
     "primera_deteccion": "2026-08-18T19:46:05",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:39"
+    },
     "score": 42,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 29/2026",
@@ -20671,7 +21931,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:23"
+      "ultima_revision": "2026-08-23T11:28:40"
     },
     "score": 21,
     "simbolo": "★",
@@ -20701,6 +21961,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:29:13",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:41"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 13/2026",
@@ -20743,7 +22013,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:26"
+      "ultima_revision": "2026-08-23T11:28:41"
     },
     "score": 1,
     "simbolo": "★",
@@ -20777,6 +22047,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:53:19",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:42"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Compra Directa 239/2026",
@@ -20815,7 +22095,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:28"
+      "ultima_revision": "2026-08-23T11:28:43"
     },
     "score": 25,
     "simbolo": "★★",
@@ -20853,6 +22133,16 @@
     "numero_licitacion": null,
     "organismo": "CES - Consejo de Educación Secundaria",
     "primera_deteccion": "2026-08-18T19:27:46",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:43"
+    },
     "score": 33,
     "simbolo": "★★",
     "titulo": "Compra Directa 113/2026",
@@ -20899,7 +22189,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:30"
+      "ultima_revision": "2026-08-23T11:28:44"
     },
     "score": 35,
     "simbolo": "★★",
@@ -20947,7 +22237,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:31"
+      "ultima_revision": "2026-08-23T11:28:45"
     },
     "score": 41,
     "simbolo": "★★",
@@ -21015,7 +22305,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:31"
+      "ultima_revision": "2026-08-23T11:28:46"
     },
     "score": 44,
     "simbolo": "★★",
@@ -21089,7 +22379,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:32"
+      "ultima_revision": "2026-08-23T11:28:46"
     },
     "score": 29,
     "simbolo": "★★",
@@ -21164,7 +22454,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:33"
+      "ultima_revision": "2026-08-23T11:28:47"
     },
     "score": 36,
     "simbolo": "★★",
@@ -21296,7 +22586,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:35"
+      "ultima_revision": "2026-08-23T11:28:48"
     },
     "score": 35,
     "simbolo": "★★",
@@ -21347,7 +22637,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:35"
+      "ultima_revision": "2026-08-23T11:28:49"
     },
     "score": 9,
     "simbolo": "★",
@@ -21406,7 +22696,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:36"
+      "ultima_revision": "2026-08-23T11:28:49"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -21459,6 +22749,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T20:00:06",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:50"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra por Excepción 108/2026",
@@ -21503,7 +22803,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:38"
+      "ultima_revision": "2026-08-23T11:28:51"
     },
     "score": 2,
     "simbolo": "★",
@@ -21541,6 +22841,16 @@
     "numero_licitacion": null,
     "organismo": "CES - Consejo de Educación Secundaria",
     "primera_deteccion": "2026-08-18T20:05:18",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 0,00",
+      "nos_presentamos": false,
+      "resolucion": "Declarada sin efecto",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:51"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 41/2026",
@@ -21635,7 +22945,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:39"
+      "ultima_revision": "2026-08-23T11:28:52"
     },
     "score": 18,
     "simbolo": "★",
@@ -21693,7 +23003,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:40"
+      "ultima_revision": "2026-08-23T11:28:53"
     },
     "score": 51,
     "simbolo": "★★★",
@@ -21742,6 +23052,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:42:09",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:54"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Compra Directa 88507/2026",
@@ -21774,6 +23094,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:41:24",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 245.808,80",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:55"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 364/2026",
@@ -21806,6 +23136,16 @@
     "numero_licitacion": null,
     "organismo": "BSE - Banco de Seguros del Estado",
     "primera_deteccion": "2026-08-18T19:44:41",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 339.942,48",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:28:56"
+    },
     "score": 14,
     "simbolo": "★",
     "titulo": "Compra Directa 1269/2026",
@@ -21855,7 +23195,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:43"
+      "ultima_revision": "2026-08-23T11:28:57"
     },
     "score": 1,
     "simbolo": "★",
@@ -21901,7 +23241,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:44"
+      "ultima_revision": "2026-08-23T11:28:58"
     },
     "score": 14,
     "simbolo": "★",
@@ -21943,7 +23283,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:45"
+      "ultima_revision": "2026-08-23T11:28:59"
     },
     "score": 1,
     "simbolo": "★",
@@ -21987,7 +23327,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:46"
+      "ultima_revision": "2026-08-23T11:29:00"
     },
     "score": 20,
     "simbolo": "★",
@@ -22101,7 +23441,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:46"
+      "ultima_revision": "2026-08-23T11:29:01"
     },
     "score": 29,
     "simbolo": "★★",
@@ -22248,6 +23588,16 @@
     "numero_licitacion": null,
     "organismo": "Intendencia de Treinta y Tres",
     "primera_deteccion": "2026-08-18T19:48:24",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:29:02"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 9/2026",
@@ -22284,6 +23634,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:54:15",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:29:03"
+    },
     "score": 0,
     "simbolo": "★",
     "titulo": "Compra Directa 191195/2026",
@@ -22329,7 +23689,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:49"
+      "ultima_revision": "2026-08-23T11:29:04"
     },
     "score": 34,
     "simbolo": "★★",
@@ -22378,7 +23738,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:50"
+      "ultima_revision": "2026-08-23T11:29:05"
     },
     "score": 13,
     "simbolo": "★",
@@ -22430,7 +23790,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:50"
+      "ultima_revision": "2026-08-23T11:29:06"
     },
     "score": 21,
     "simbolo": "★",
@@ -22477,6 +23837,16 @@
     "numero_licitacion": "18/26",
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:24:58",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:29:07"
+    },
     "score": 51,
     "simbolo": "★★★",
     "titulo": "Licitación Abreviada 18/2026",
@@ -22535,7 +23905,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:52"
+      "ultima_revision": "2026-08-23T11:29:08"
     },
     "score": 1,
     "simbolo": "★",
@@ -22579,7 +23949,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:53"
+      "ultima_revision": "2026-08-23T11:29:09"
     },
     "score": 29,
     "simbolo": "★★",
@@ -22623,6 +23993,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:53:03",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 804.579,02",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:29:10"
+    },
     "score": 49,
     "simbolo": "★★★",
     "titulo": "Compra Directa 443/2026",
@@ -22668,7 +24048,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:54"
+      "ultima_revision": "2026-08-23T11:29:11"
     },
     "score": 5,
     "simbolo": "★",
@@ -22714,7 +24094,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:55"
+      "ultima_revision": "2026-08-23T11:29:12"
     },
     "score": 5,
     "simbolo": "★",
@@ -22764,7 +24144,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:56"
+      "ultima_revision": "2026-08-23T11:29:13"
     },
     "score": 39,
     "simbolo": "★★",
@@ -22798,6 +24178,16 @@
     "numero_licitacion": null,
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:42:06",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:29:14"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Concurso de Precios 704201/2026",
@@ -22840,7 +24230,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:58"
+      "ultima_revision": "2026-08-23T11:29:15"
     },
     "score": 23,
     "simbolo": "★",
@@ -22882,7 +24272,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:59"
+      "ultima_revision": "2026-08-23T11:29:15"
     },
     "score": 1,
     "simbolo": "★",
@@ -22939,7 +24329,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:28:59"
+      "ultima_revision": "2026-08-23T11:29:16"
     },
     "score": 32,
     "simbolo": "★★",
@@ -23016,7 +24406,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:29:00"
+      "ultima_revision": "2026-08-23T11:29:17"
     },
     "score": 0,
     "simbolo": "★",
@@ -23067,7 +24457,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:29:01"
+      "ultima_revision": "2026-08-23T11:29:18"
     },
     "score": 36,
     "simbolo": "★★",
@@ -23113,7 +24503,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:29:02"
+      "ultima_revision": "2026-08-23T11:29:19"
     },
     "score": 57,
     "simbolo": "★★★",
@@ -23222,7 +24612,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:29:02"
+      "ultima_revision": "2026-08-23T11:29:20"
     },
     "score": 18,
     "simbolo": "★",
@@ -23336,7 +24726,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:29:03"
+      "ultima_revision": "2026-08-23T11:29:21"
     },
     "score": 30,
     "simbolo": "★★",
@@ -23370,6 +24760,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:25:59",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:29:22"
+    },
     "score": 0,
     "simbolo": "★",
     "titulo": "Licitación Pública 13/2026",
@@ -23416,7 +24816,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:29:05"
+      "ultima_revision": "2026-08-23T11:29:23"
     },
     "score": 23,
     "simbolo": "★",
@@ -23458,6 +24858,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:27:51",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:29:23"
+    },
     "score": 35,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 22/2026",
@@ -23492,6 +24902,16 @@
     "numero_licitacion": "29/2026",
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:56:22",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:29:24"
+    },
     "score": 14,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 29/2026",
@@ -23524,6 +24944,16 @@
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:45:30",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 100.406,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:29:25"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 88523/2026",
@@ -23560,6 +24990,16 @@
     "numero_licitacion": "2026-86-001-",
     "organismo": "Intendencia de Florida",
     "primera_deteccion": "2026-08-18T19:51:01",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:29:26"
+    },
     "score": 33,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 8/2026",
@@ -23614,7 +25054,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:29:09"
+      "ultima_revision": "2026-08-23T11:29:26"
     },
     "score": 32,
     "simbolo": "★★",
@@ -23685,6 +25125,16 @@
     "numero_licitacion": "107/2026",
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:29:04",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-23T11:29:27"
+    },
     "score": 55,
     "simbolo": "★★★",
     "titulo": "Licitación Abreviada 107/2026",
@@ -23740,7 +25190,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-22T11:29:10"
+      "ultima_revision": "2026-08-23T11:29:28"
     },
     "score": 21,
     "simbolo": "★",
