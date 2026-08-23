@@ -1,7 +1,7 @@
 # Informe de licitación: Licitación Abreviada 22/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1352405
-**Generado:** 2026-08-23 01:15
+**Generado:** 2026-08-23 13:10
 
 ## Clasificación: ★ — No presentarse (score 2/100)
 
