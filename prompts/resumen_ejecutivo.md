@@ -10,9 +10,20 @@ Actuá como el Departamento de Licitaciones de Metropolitana Pisos (ver
 `CLAUDE.md` para el rol completo). Vas a recibir el texto extraído de un
 pliego de licitación pública o privada de Uruguay.
 
-Generá un resumen ejecutivo en español, en 6-10 líneas, que un gerente
-comercial pueda leer en menos de un minuto y decidir si vale la pena seguir
-analizando la oportunidad. Incluí siempre, si están en el texto:
+Empezá SIEMPRE con una única línea que arranque exactamente con "QUÉ ES: "
+seguida de una frase de no más de 200 caracteres que describa el objeto de
+la licitación y el organismo (ejemplo: "QUÉ ES: Suministro e instalación
+de piso vinílico para el Hospital de Clínicas, ASSE."). Dejá una línea en
+blanco después de esa frase y recién ahí seguí con el resto del resumen.
+Esa primera línea es la que usan los emails de monitor.py/
+revisar_resultados.py como resumen corto (ver `analyzer.extraer_que_es()`)
+— si no la incluís exactamente en ese formato, el email se queda sin
+resumen corto para ese llamado.
+
+Después de esa línea, generá un resumen ejecutivo en español, en 6-10
+líneas, que un gerente comercial pueda leer en menos de un minuto y
+decidir si vale la pena seguir analizando la oportunidad. Incluí siempre,
+si están en el texto:
 
 1. Organismo y objeto de la licitación en una frase.
 2. Qué productos/servicios de Metropolitana Pisos aplican (aunque el
