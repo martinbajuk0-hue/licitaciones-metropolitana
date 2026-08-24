@@ -1,7 +1,7 @@
 # Informe de licitación: Compra por Excepción 16/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1356317
-**Generado:** 2026-08-23 11:38
+**Generado:** 2026-08-23 23:36
 
 ## Clasificación: ★ — No presentarse (score 13/100)
 
