@@ -124,10 +124,21 @@ def enviar_email_resultados(transiciones: list[dict]) -> None:
         r = entrada["resultado"]
         color = "#1e8e3e" if gano else "#c53929"
         etiqueta = "🏆 GANAMOS" if gano else "❌ PERDIMOS"
+        # Mismo resumen corto ("qué es esta licitación") que el email de
+        # monitor.py, reusado del catálogo (ver catalogo.registrar_llamado)
+        # — acá suele haber pasado tiempo desde la apertura, así que
+        # recordar de qué se trataba ayuda a leer el resultado sin tener
+        # que ir a buscar el informe completo. Pedido del usuario
+        # 2026-08-24.
+        que_es_html = (
+            f'<p style="margin:0 0 6px;font-size:13px;color:#333;">📝 {entrada["que_es"]}</p>'
+            if entrada.get("que_es") else ""
+        )
         return f"""
         <div style="border-left:4px solid {color};padding:12px 16px;margin-bottom:16px;background:#f8f9fa;border-radius:0 6px 6px 0;">
             <p style="margin:0 0 4px;font-size:11px;font-weight:700;color:{color};text-transform:uppercase;">{etiqueta}</p>
             <p style="margin:0 0 6px;font-size:15px;font-weight:600;color:#1a1a1a;">{entrada.get('titulo','')}</p>
+            {que_es_html}
             <p style="margin:0 0 4px;font-size:13px;color:#555;">🏢 {entrada.get('organismo') or 'Organismo no especificado'}</p>
             <p style="margin:0 0 4px;font-size:13px;color:#555;">📋 Resolución: <strong>{r.get('resolucion') or '—'}</strong> {('(Nº ' + r['resolucion_nro'] + ')') if r.get('resolucion_nro') else ''}</p>
             <p style="margin:0 0 4px;font-size:13px;color:#555;">📅 Fecha resolución: {r.get('fecha_resolucion') or '—'} &nbsp;|&nbsp; 💰 Monto total: {r.get('monto_total') or '—'}</p>
