@@ -68,7 +68,7 @@ class ProductoIdentificado:
         return {"categoria": self.categoria, "termino_encontrado": self.termino_encontrado, "fragmento": self.fragmento}
 
 
-# ─── Campos clave ──────────────────────────────────────────────────────────
+# ─── Campos clave ─────────────────────────────────────────────────────
 
 _PATRON_FECHA_TEXTUAL = re.compile(
     r"(\d{1,2})\s+de\s+(" + "|".join(_MESES) + r")\s+(?:de\s+)?(\d{4})", re.IGNORECASE
@@ -276,15 +276,47 @@ def identificar_contexto(texto: str) -> dict[str, list[str]]:
 
 def _resumen_extractivo(texto: str, campos: CamposClave, productos: list[ProductoIdentificado]) -> str:
     categorias = sorted({settings.etiqueta_categoria(p.categoria) for p in productos})
+    organismo = campos.organismo or "organismo no identificado"
+    categorias_txt = ", ".join(categorias) if categorias else "ninguna coincidencia directa de categoría"
     lineas = [
+        # Línea "QUÉ ES:" con el mismo formato que generar_resumen_ejecutivo()
+        # le pide a Claude (ver prompts/resumen_ejecutivo.md) — así
+        # extraer_que_es() funciona igual tenga o no ANTHROPIC_API_KEY
+        # configurada, sin que monitor.py tenga que distinguir el origen.
+        f"QUÉ ES: Licitación de {organismo} — categorías de producto detectadas: {categorias_txt}.",
+        "",
         f"Organismo: {campos.organismo or 'no identificado — verificar manualmente'}.",
         f"Número: {campos.numero_licitacion or 'no identificado — verificar manualmente'}.",
         f"Fecha de apertura: {campos.fecha_apertura or 'no identificada — verificar manualmente'}.",
-        f"Categorías de producto detectadas: {', '.join(categorias) if categorias else 'ninguna coincidencia directa — revisar el pliego completo igualmente'}.",
+        f"Categorías de producto detectadas: {categorias_txt}.",
         "Resumen generado por reglas (sin ANTHROPIC_API_KEY configurada): "
         "es un extracto de campos, no un análisis narrativo completo del pliego.",
     ]
     return "\n".join(lineas)
+
+
+def extraer_que_es(resumen: str) -> str:
+    """Extrae la línea "QUÉ ES: ..." del resumen ejecutivo (ver
+    prompts/resumen_ejecutivo.md y _resumen_extractivo() más arriba) para
+    usarla como resumen corto en los emails de monitor.py y
+    revisar_resultados.py — pedido del usuario 2026-08-24: "un pequeño
+    resumen contándome de qué es cada licitación", para poder decidir si
+    vale la pena abrir el pliego sin tener que leerlo primero.
+
+    Si el resumen no trae esa línea en el formato esperado (por ejemplo,
+    una respuesta de Claude que no respetó el prompt), se cae a recortar
+    el resumen completo a 220 caracteres en vez de dejar el campo vacío.
+    """
+    for linea in resumen.splitlines():
+        linea = linea.strip()
+        if linea.upper().startswith(("QUÉ ES:", "QUE ES:")):
+            texto = linea.split(":", 1)[1].strip()
+            if texto:
+                return texto
+    texto_plano = " ".join(resumen.split())
+    if len(texto_plano) <= 220:
+        return texto_plano
+    return texto_plano[:220].rstrip() + "…"
 
 
 def generar_resumen_ejecutivo(texto: str, campos: CamposClave, productos: list[ProductoIdentificado]) -> str:
@@ -297,12 +329,12 @@ def generar_resumen_ejecutivo(texto: str, campos: CamposClave, productos: list[P
     except ImportError:
         return _resumen_extractivo(texto, campos, productos) + (
             "\n\n(ANTHROPIC_API_KEY está configurada pero falta instalar el paquete 'anthropic': "
-            "pip install anthropic)"
+            "pip install anthropic"
         )
 
     prompt_path = settings.PROMPTS_DIR / "resumen_ejecutivo.md"
     system_prompt = prompt_path.read_text(encoding="utf-8") if prompt_path.exists() else (
-        "Actuá como el Departamento de Licitaciones de Metropolitana Pisos. "
+        "Actúa como el Departamento de Licitaciones de Metropolitana Pisos. "
         "Generá un resumen ejecutivo claro y accionable del siguiente pliego."
     )
 
@@ -317,7 +349,7 @@ def generar_resumen_ejecutivo(texto: str, campos: CamposClave, productos: list[P
     return "".join(block.text for block in respuesta.content if hasattr(block, "text"))
 
 
-# ─── Probabilidad de éxito ─────────────────────────────────────────────────
+# ─── Probabilidad de éxito ──────────────────────────────────────────────────
 
 def estimar_probabilidad_exito(
     campos: CamposClave,
