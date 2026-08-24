@@ -77,6 +77,17 @@ class TestReport(unittest.TestCase):
         self.assertIsInstance(informe.cierre, str)
         self.assertTrue(informe.cierre)
 
+    def test_analizar_licitacion_expone_que_es_y_lo_incluye_en_el_markdown(self):
+        # Pedido del usuario 2026-08-24: resumen corto de "qué es esta
+        # licitación" disponible como campo propio (para monitor.py/
+        # catalogo.py, sin tener que re-parsear el resumen ejecutivo
+        # completo) y también visible en el informe Markdown.
+        texto = "UTE licitación abreviada 10/2026 para piso vinílico, plazo de entrega: 30 dias."
+        informe = report.analizar_licitacion("Prueba", "https://example.com", texto)
+        self.assertIsInstance(informe.que_es, str)
+        self.assertTrue(informe.que_es)
+        self.assertIn(f"**Qué es:** {informe.que_es}", informe.markdown)
+
 
 class TestCodigoArticuloEnInforme(unittest.TestCase):
     """codigos_articulo (classification.id de OCDS) suma un bonus fuerte al
