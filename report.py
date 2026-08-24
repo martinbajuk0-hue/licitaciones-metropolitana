@@ -125,6 +125,7 @@ class InformeLicitacion:
     riesgos: list[risk_mod.Riesgo]
     checklist: list[checklist_mod.ItemChecklist]
     resumen: str
+    que_es: str
     probabilidad: dict
     clasificacion: Clasificacion
     cronograma: list[dict]
@@ -149,6 +150,10 @@ def analizar_licitacion(
     items_checklist = checklist_mod.generar_checklist(texto_pliego)
     pendientes_checklist = checklist_mod.items_pendientes_de_verificar(items_checklist)
     resumen = analyzer.generar_resumen_ejecutivo(texto_pliego, campos, productos)
+    # Resumen corto de 1 frase ("qué es esta licitación") para los emails
+    # de monitor.py/revisar_resultados.py — ver analyzer.extraer_que_es()
+    # y prompts/resumen_ejecutivo.md. Pedido del usuario 2026-08-24.
+    que_es = analyzer.extraer_que_es(resumen)
 
     riesgos_altos = [r for r in riesgos if r.severidad.value == "alta"]
     riesgos_medios = [r for r in riesgos if r.severidad.value == "media"]
@@ -191,6 +196,7 @@ def analizar_licitacion(
         "",
         f"**URL:** {url}" if url else "",
         f"**Generado:** {datetime.now().strftime('%Y-%m-%d %H:%M')}",
+        f"**Qué es:** {que_es}",
         "",
         f"## Clasificación: {clasificacion.simbolo} — {clasificacion.etiqueta} (score {clasificacion.puntaje}/100)",
         "",
@@ -258,6 +264,7 @@ def analizar_licitacion(
         riesgos=riesgos,
         checklist=items_checklist,
         resumen=resumen,
+        que_es=que_es,
         probabilidad=probabilidad,
         clasificacion=clasificacion,
         cronograma=cronograma,
