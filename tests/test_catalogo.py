@@ -127,6 +127,18 @@ class TestCatalogo(unittest.TestCase):
             "https://www.comprasestatales.gub.uy/consultas/detalle/id/1361110",
         )
 
+    def test_registrar_llamado_guarda_que_es(self):
+        # Pedido del usuario 2026-08-24: revisar_resultados.py reusa este
+        # campo desde el catálogo (no vuelve a leer el pliego) para el
+        # email de ganamos/perdimos — ver test_revisar_resultados.py.
+        lic = self._lic()
+        informe = self._informe()
+        catalogo.registrar_llamado(lic, informe)
+
+        data = json.loads(catalogo.CATALOGO_PATH.read_text(encoding="utf-8"))
+        self.assertEqual(data["ocid-123"]["que_es"], informe.que_es)
+        self.assertTrue(data["ocid-123"]["que_es"])
+
     def test_registrar_llamado_sin_url_ficha_cae_a_url(self):
         # Compatibilidad con llamados viejos del catálogo (o de la rama
         # OCDS/atom, donde lic["url"] ya es humana) que no traigan
