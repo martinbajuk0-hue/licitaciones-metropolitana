@@ -85,6 +85,52 @@ class TestAnalyzer(unittest.TestCase):
         resumen = analyzer.generar_resumen_ejecutivo(texto, campos, productos)
         self.assertIn("Organismo", resumen)
 
+    def test_resumen_extractivo_empieza_con_linea_que_es(self):
+        # extraer_que_es() depende de este formato — ver prompts/
+        # resumen_ejecutivo.md, que le pide lo mismo a Claude.
+        texto = "UTE llama a licitación para piso vinílico."
+        campos = analyzer.extraer_campos_clave(texto)
+        productos = analyzer.identificar_productos(texto)
+        resumen = analyzer.generar_resumen_ejecutivo(texto, campos, productos)
+        self.assertTrue(resumen.splitlines()[0].upper().startswith("QUÉ ES:"))
+
+
+class TestExtraerQueEs(unittest.TestCase):
+    """extraer_que_es(): pedido del usuario 2026-08-24, "un pequeño
+    resumen contándome de qué es cada licitación" en los emails —
+    ver monitor.enviar_email() y revisar_resultados.enviar_email_resultados().
+    """
+
+    def test_toma_la_linea_que_es_del_resumen(self):
+        resumen = (
+            "QUÉ ES: Suministro e instalación de piso vinílico para ASSE.\n"
+            "\n"
+            "Organismo: ASSE.\n"
+            "Número: 10/2026.\n"
+        )
+        self.assertEqual(
+            analyzer.extraer_que_es(resumen),
+            "Suministro e instalación de piso vinílico para ASSE.",
+        )
+
+    def test_es_insensible_a_mayusculas_y_acento_en_la_etiqueta(self):
+        resumen = "que es: Compra de moquette para UTE.\nResto del resumen."
+        self.assertEqual(analyzer.extraer_que_es(resumen), "Compra de moquette para UTE.")
+
+    def test_sin_linea_que_es_recorta_el_resumen_completo(self):
+        # Respuesta de Claude que no respetó el formato del prompt: no debe
+        # romper ni devolver vacío, se cae a un recorte del texto entero.
+        resumen = "Organismo: UTE.\nEste resumen no sigue el formato QUÉ ES esperado."
+        resultado = analyzer.extraer_que_es(resumen)
+        self.assertTrue(resultado)
+        self.assertNotIn("\n", resultado)
+
+    def test_resumen_muy_largo_sin_que_es_se_recorta_a_220_caracteres(self):
+        resumen = "X" * 500
+        resultado = analyzer.extraer_que_es(resumen)
+        self.assertEqual(len(resultado), 221)  # 220 + el "…" final
+        self.assertTrue(resultado.endswith("…"))
+
 
 if __name__ == "__main__":
     unittest.main()
