@@ -2,12 +2,22 @@ import json
 import shutil
 import tempfile
 import unittest
+from email import message_from_string
 from pathlib import Path
 from unittest.mock import patch
 
 import catalogo
 import resultados as resultados_mod
 import revisar_resultados
+
+
+def _cuerpo_html(mensaje_raw: str) -> str:
+    """Ver la misma función en tests/test_monitor.py: el mensaje MIME
+    serializado va en base64 cuando hay acentos, así que hay que
+    decodificarlo en vez de buscar directamente en el string crudo."""
+    mensaje = message_from_string(mensaje_raw)
+    parte_html = next(p for p in mensaje.walk() if p.get_content_type() == "text/html")
+    return parte_html.get_payload(decode=True).decode("utf-8")
 
 
 class TestRevisarPendientes(unittest.TestCase):
@@ -155,6 +165,33 @@ class TestEnviarEmailResultados(unittest.TestCase):
             server = mock_smtp.return_value.__enter__.return_value
             revisar_resultados.enviar_email_resultados([self._entrada("ganamos"), self._entrada("perdimos")])
             server.login.assert_called_once()
+            server.sendmail.assert_called_once()
+
+    @patch("revisar_resultados.settings.email_destino", return_value="dest@example.com")
+    @patch("revisar_resultados.settings.gmail_app_password", return_value="app-pass")
+    @patch("revisar_resultados.settings.gmail_user", return_value="user@gmail.com")
+    def test_que_es_reusado_del_catalogo_aparece_en_el_email(self, _u, _p, _d):
+        # Pedido del usuario 2026-08-24: el resumen corto también debe
+        # aparecer en el email de resultados (ganamos/perdimos), reusando
+        # el campo guardado en el catálogo por catalogo.registrar_llamado()
+        # — acá no se vuelve a leer el pliego.
+        entrada = self._entrada("ganamos")
+        entrada["que_es"] = "Suministro e instalación de piso vinílico para ASSE."
+        with patch("revisar_resultados.smtplib.SMTP_SSL") as mock_smtp:
+            server = mock_smtp.return_value.__enter__.return_value
+            revisar_resultados.enviar_email_resultados([entrada])
+            cuerpo = _cuerpo_html(server.sendmail.call_args[0][2])
+        self.assertIn("Suministro e instalación de piso vinílico para ASSE.", cuerpo)
+
+    @patch("revisar_resultados.settings.email_destino", return_value="dest@example.com")
+    @patch("revisar_resultados.settings.gmail_app_password", return_value="app-pass")
+    @patch("revisar_resultados.settings.gmail_user", return_value="user@gmail.com")
+    def test_sin_que_es_no_rompe_el_email(self, _u, _p, _d):
+        entrada = self._entrada("ganamos")
+        self.assertNotIn("que_es", entrada)
+        with patch("revisar_resultados.smtplib.SMTP_SSL") as mock_smtp:
+            server = mock_smtp.return_value.__enter__.return_value
+            revisar_resultados.enviar_email_resultados([entrada])
             server.sendmail.assert_called_once()
 
 
