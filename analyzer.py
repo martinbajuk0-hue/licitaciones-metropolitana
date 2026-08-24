@@ -68,7 +68,7 @@ class ProductoIdentificado:
         return {"categoria": self.categoria, "termino_encontrado": self.termino_encontrado, "fragmento": self.fragmento}
 
 
-# ─── Campos clave ─────────────────────────────────────────────────────
+# ─── Campos clave ──────────────────────────────────────────────────────────
 
 _PATRON_FECHA_TEXTUAL = re.compile(
     r"(\d{1,2})\s+de\s+(" + "|".join(_MESES) + r")\s+(?:de\s+)?(\d{4})", re.IGNORECASE
@@ -329,12 +329,12 @@ def generar_resumen_ejecutivo(texto: str, campos: CamposClave, productos: list[P
     except ImportError:
         return _resumen_extractivo(texto, campos, productos) + (
             "\n\n(ANTHROPIC_API_KEY está configurada pero falta instalar el paquete 'anthropic': "
-            "pip install anthropic"
+            "pip install anthropic)"
         )
 
     prompt_path = settings.PROMPTS_DIR / "resumen_ejecutivo.md"
     system_prompt = prompt_path.read_text(encoding="utf-8") if prompt_path.exists() else (
-        "Actúa como el Departamento de Licitaciones de Metropolitana Pisos. "
+        "Actuá como el Departamento de Licitaciones de Metropolitana Pisos. "
         "Generá un resumen ejecutivo claro y accionable del siguiente pliego."
     )
 
@@ -349,7 +349,7 @@ def generar_resumen_ejecutivo(texto: str, campos: CamposClave, productos: list[P
     return "".join(block.text for block in respuesta.content if hasattr(block, "text"))
 
 
-# ─── Probabilidad de éxito ──────────────────────────────────────────────────
+# ─── Probabilidad de éxito ─────────────────────────────────────────────────
 
 def estimar_probabilidad_exito(
     campos: CamposClave,
