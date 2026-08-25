@@ -1,7 +1,7 @@
 # Informe de licitación: Compra Directa 1269/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1357738
-**Generado:** 2026-08-25 01:15
+**Generado:** 2026-08-25 13:09
 **Qué es:** Licitación de BSE - Banco de Seguros del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).
 
 ## Clasificación: ★ — No presentarse (score 14/100)

@@ -1,7 +1,7 @@
 # Informe de licitación: Licitación Abreviada 22/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1352405
-**Generado:** 2026-08-25 01:22
+**Generado:** 2026-08-25 13:16
 **Qué es:** Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).
 
 ## Clasificación: ★ — No presentarse (score 2/100)
