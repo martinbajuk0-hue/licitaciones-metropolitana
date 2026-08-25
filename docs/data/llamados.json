@@ -27,6 +27,16 @@
     "organismo": "Intendencia de Colonia",
     "primera_deteccion": "2026-08-18T19:43:10",
     "que_es": "Licitación de Intendencia de Colonia — categorías de producto detectadas: Alfombras, Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:31:38"
+    },
     "score": 10,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 25/2026",
@@ -88,7 +98,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:18"
+      "ultima_revision": "2026-08-25T11:31:40"
     },
     "score": 13,
     "simbolo": "★",
@@ -152,7 +162,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:19"
+      "ultima_revision": "2026-08-25T11:31:41"
     },
     "score": 48,
     "simbolo": "★★★",
@@ -212,7 +222,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:20"
+      "ultima_revision": "2026-08-25T11:31:43"
     },
     "score": 9,
     "simbolo": "★",
@@ -466,6 +476,16 @@
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:36:19",
     "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — categorías de producto detectadas: Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:31:44"
+    },
     "score": 49,
     "simbolo": "★★★",
     "titulo": "Licitación Abreviada 148/2026",
@@ -507,6 +527,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:23:49",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 333.387,24",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:31:45"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 194/2026",
@@ -549,7 +579,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:24"
+      "ultima_revision": "2026-08-25T11:31:46"
     },
     "score": 37,
     "simbolo": "★★",
@@ -598,6 +628,16 @@
     "organismo": "Ministerio del Interior (MI)",
     "primera_deteccion": "2026-08-18T19:27:18",
     "que_es": "Licitación de Ministerio del Interior (MI) — categorías de producto detectadas: Material mencionado (revisar contexto), Pisos vinílicos.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:31:47"
+    },
     "score": 15,
     "simbolo": "★",
     "titulo": "Concurso de Precios 14/2026",
@@ -704,7 +744,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:26"
+      "ultima_revision": "2026-08-25T11:31:49"
     },
     "score": 0,
     "simbolo": "★",
@@ -805,7 +845,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:27"
+      "ultima_revision": "2026-08-25T11:31:50"
     },
     "score": 15,
     "simbolo": "★",
@@ -851,6 +891,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:33:12",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 127.396,46",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:31:51"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 191/2026",
@@ -891,7 +941,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:29"
+      "ultima_revision": "2026-08-25T11:31:52"
     },
     "score": 8,
     "simbolo": "★",
@@ -926,6 +976,16 @@
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:57:18",
     "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — categorías de producto detectadas: Normativa/certificación mencionada.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:31:54"
+    },
     "score": 21,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 23/2026",
@@ -978,7 +1038,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:31"
+      "ultima_revision": "2026-08-25T11:31:55"
     },
     "score": 27,
     "simbolo": "★★",
@@ -1039,7 +1099,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:32"
+      "ultima_revision": "2026-08-25T11:31:56"
     },
     "score": 20,
     "simbolo": "★",
@@ -1081,7 +1141,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:33"
+      "ultima_revision": "2026-08-25T11:31:57"
     },
     "score": 3,
     "simbolo": "★",
@@ -1125,7 +1185,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:34"
+      "ultima_revision": "2026-08-25T11:31:58"
     },
     "score": 2,
     "simbolo": "★",
@@ -1187,7 +1247,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:35"
+      "ultima_revision": "2026-08-25T11:31:59"
     },
     "score": 39,
     "simbolo": "★★",
@@ -1260,7 +1320,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:36"
+      "ultima_revision": "2026-08-25T11:32:00"
     },
     "score": 6,
     "simbolo": "★",
@@ -1355,7 +1415,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:37"
+      "ultima_revision": "2026-08-25T11:32:01"
     },
     "score": 15,
     "simbolo": "★",
@@ -1414,7 +1474,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:38"
+      "ultima_revision": "2026-08-25T11:32:02"
     },
     "score": 10,
     "simbolo": "★",
@@ -1482,6 +1542,16 @@
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:58:35",
     "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — categorías de producto detectadas: Abreviatura técnica del rubro, Accesorios de instalación, Alfombras, Felpudos y camineros, Marca de mercado mencionada, Material mencionado (revisar contexto), Paneles y revestimientos de pared, Pisos de goma, Pisos de madera, Pisos flotantes/laminados, Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 786.900,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:03"
+    },
     "score": 36,
     "simbolo": "★★",
     "titulo": "Compra Directa 196726/2026",
@@ -1564,7 +1634,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:40"
+      "ultima_revision": "2026-08-25T11:32:04"
     },
     "score": 55,
     "simbolo": "★★★",
@@ -1629,6 +1699,16 @@
     "organismo": "Ministerio de Industria, Energía y Minería (MIEM)",
     "primera_deteccion": "2026-08-18T19:26:11",
     "que_es": "Licitación de Ministerio de Industria, Energía y Minería (MIEM) — categorías de producto detectadas: Abreviatura técnica del rubro, Accesorios de instalación, Marca de mercado mencionada, Material mencionado (revisar contexto), Pisos vinílicos.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:05"
+    },
     "score": 45,
     "simbolo": "★★★",
     "titulo": "Compra Directa 351/2026",
@@ -1688,7 +1768,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:42"
+      "ultima_revision": "2026-08-25T11:32:06"
     },
     "score": 37,
     "simbolo": "★★",
@@ -1732,6 +1812,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:23:59",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto), Pisos de madera.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 42.792,72",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:07"
+    },
     "score": 29,
     "simbolo": "★★",
     "titulo": "Compra Directa 151/2026",
@@ -1832,7 +1922,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:44"
+      "ultima_revision": "2026-08-25T11:32:08"
     },
     "score": 15,
     "simbolo": "★",
@@ -1863,6 +1953,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:36:45",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: ninguna coincidencia directa de categoría.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 192.184,15",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:10"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Compra Directa 188/2026",
@@ -1907,7 +2007,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:46"
+      "ultima_revision": "2026-08-25T11:32:11"
     },
     "score": 26,
     "simbolo": "★★",
@@ -1942,6 +2042,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:39:22",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 396.000,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:12"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 363/2026",
@@ -1981,6 +2091,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:43:23",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto), Pisos de madera.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 29.280,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:13"
+    },
     "score": 29,
     "simbolo": "★★",
     "titulo": "Compra Directa 146/2026",
@@ -2022,6 +2142,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:40:46",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Normativa/certificación mencionada, Pisos vinílicos.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:14"
+    },
     "score": 36,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 3005/2026",
@@ -2217,7 +2347,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:50"
+      "ultima_revision": "2026-08-25T11:32:15"
     },
     "score": 51,
     "simbolo": "★★★",
@@ -2346,7 +2476,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:51"
+      "ultima_revision": "2026-08-25T11:32:16"
     },
     "score": 12,
     "simbolo": "★",
@@ -2404,7 +2534,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:52"
+      "ultima_revision": "2026-08-25T11:32:17"
     },
     "score": 57,
     "simbolo": "★★★",
@@ -2457,6 +2587,16 @@
     "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
     "primera_deteccion": "2026-08-18T19:58:42",
     "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos de goma.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 320.176,80",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:18"
+    },
     "score": 41,
     "simbolo": "★★",
     "titulo": "Compra Directa 173/2026",
@@ -2505,7 +2645,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:54"
+      "ultima_revision": "2026-08-25T11:32:19"
     },
     "score": 51,
     "simbolo": "★★★",
@@ -2563,7 +2703,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:55"
+      "ultima_revision": "2026-08-25T11:32:20"
     },
     "score": 4,
     "simbolo": "★",
@@ -2617,7 +2757,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:56"
+      "ultima_revision": "2026-08-25T11:32:21"
     },
     "score": 21,
     "simbolo": "★",
@@ -2665,7 +2805,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:57"
+      "ultima_revision": "2026-08-25T11:32:22"
     },
     "score": 26,
     "simbolo": "★★",
@@ -2706,6 +2846,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T20:02:11",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Alfombras, Variante/error ortográfico de un término del rubro.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 0,00",
+      "nos_presentamos": false,
+      "resolucion": "Declarada sin efecto",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:23"
+    },
     "score": 14,
     "simbolo": "★",
     "titulo": "Compra Directa 11820/2026",
@@ -2752,7 +2902,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:32:59"
+      "ultima_revision": "2026-08-25T11:32:24"
     },
     "score": 21,
     "simbolo": "★",
@@ -2803,7 +2953,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:00"
+      "ultima_revision": "2026-08-25T11:32:25"
     },
     "score": 25,
     "simbolo": "★★",
@@ -2867,7 +3017,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:01"
+      "ultima_revision": "2026-08-25T11:32:26"
     },
     "score": 41,
     "simbolo": "★★",
@@ -2925,7 +3075,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:02"
+      "ultima_revision": "2026-08-25T11:32:27"
     },
     "score": 1,
     "simbolo": "★",
@@ -2969,7 +3119,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:02"
+      "ultima_revision": "2026-08-25T11:32:28"
     },
     "score": 13,
     "simbolo": "★",
@@ -3017,7 +3167,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:03"
+      "ultima_revision": "2026-08-25T11:32:29"
     },
     "score": 13,
     "simbolo": "★",
@@ -3065,7 +3215,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:04"
+      "ultima_revision": "2026-08-25T11:32:30"
     },
     "score": 16,
     "simbolo": "★",
@@ -3113,7 +3263,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:05"
+      "ultima_revision": "2026-08-25T11:32:31"
     },
     "score": 29,
     "simbolo": "★★",
@@ -3175,7 +3325,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:06"
+      "ultima_revision": "2026-08-25T11:32:32"
     },
     "score": 21,
     "simbolo": "★",
@@ -3226,7 +3376,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:07"
+      "ultima_revision": "2026-08-25T11:32:33"
     },
     "score": 2,
     "simbolo": "★",
@@ -3279,7 +3429,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:08"
+      "ultima_revision": "2026-08-25T11:32:34"
     },
     "score": 0,
     "simbolo": "★",
@@ -3318,6 +3468,16 @@
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:42:54",
     "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — categorías de producto detectadas: Material mencionado (revisar contexto), Normativa/certificación mencionada.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:35"
+    },
     "score": 33,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 4/2026",
@@ -3375,7 +3535,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:10"
+      "ultima_revision": "2026-08-25T11:32:36"
     },
     "score": 21,
     "simbolo": "★",
@@ -3422,7 +3582,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:11"
+      "ultima_revision": "2026-08-25T11:32:37"
     },
     "score": 21,
     "simbolo": "★",
@@ -3457,6 +3617,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T20:02:07",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:38"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 238/2026",
@@ -3559,7 +3729,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:12"
+      "ultima_revision": "2026-08-25T11:32:39"
     },
     "score": 41,
     "simbolo": "★★",
@@ -3667,7 +3837,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:13"
+      "ultima_revision": "2026-08-25T11:32:40"
     },
     "score": 27,
     "simbolo": "★★",
@@ -3714,7 +3884,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:14"
+      "ultima_revision": "2026-08-25T11:32:41"
     },
     "score": 14,
     "simbolo": "★",
@@ -3777,7 +3947,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:15"
+      "ultima_revision": "2026-08-25T11:32:42"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -3833,6 +4003,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:39:37",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto), Pisos flotantes/laminados.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:43"
+    },
     "score": 41,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 8/2026",
@@ -3876,7 +4056,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:17"
+      "ultima_revision": "2026-08-25T11:32:44"
     },
     "score": 21,
     "simbolo": "★",
@@ -3922,7 +4102,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:17"
+      "ultima_revision": "2026-08-25T11:32:45"
     },
     "score": 41,
     "simbolo": "★★",
@@ -3973,7 +4153,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:18"
+      "ultima_revision": "2026-08-25T11:32:46"
     },
     "score": 20,
     "simbolo": "★",
@@ -4019,7 +4199,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:19"
+      "ultima_revision": "2026-08-25T11:32:47"
     },
     "score": 24,
     "simbolo": "★",
@@ -4074,7 +4254,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:20"
+      "ultima_revision": "2026-08-25T11:32:48"
     },
     "score": 25,
     "simbolo": "★★",
@@ -4120,7 +4300,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:21"
+      "ultima_revision": "2026-08-25T11:32:49"
     },
     "score": 17,
     "simbolo": "★",
@@ -4167,7 +4347,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:22"
+      "ultima_revision": "2026-08-25T11:32:50"
     },
     "score": 14,
     "simbolo": "★",
@@ -4282,7 +4462,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:22"
+      "ultima_revision": "2026-08-25T11:32:50"
     },
     "score": 50,
     "simbolo": "★★★",
@@ -4335,7 +4515,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:23"
+      "ultima_revision": "2026-08-25T11:32:51"
     },
     "score": 31,
     "simbolo": "★★",
@@ -4396,7 +4576,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:24"
+      "ultima_revision": "2026-08-25T11:32:52"
     },
     "score": 20,
     "simbolo": "★",
@@ -4487,6 +4667,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:44:29",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto), Pisos de madera.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:53"
+    },
     "score": 30,
     "simbolo": "★★",
     "titulo": "Compra Directa 10120/2026",
@@ -4604,7 +4794,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:26"
+      "ultima_revision": "2026-08-25T11:32:54"
     },
     "score": 36,
     "simbolo": "★★",
@@ -4679,6 +4869,16 @@
     "organismo": "Intendencia de Paysandú",
     "primera_deteccion": "2026-08-18T19:58:39",
     "que_es": "Licitación de Intendencia de Paysandú — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:55"
+    },
     "score": 11,
     "simbolo": "★",
     "titulo": "Compra Directa 692/2026",
@@ -4725,7 +4925,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:27"
+      "ultima_revision": "2026-08-25T11:32:56"
     },
     "score": 13,
     "simbolo": "★",
@@ -4769,7 +4969,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:28"
+      "ultima_revision": "2026-08-25T11:32:57"
     },
     "score": 2,
     "simbolo": "★",
@@ -4817,7 +5017,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:29"
+      "ultima_revision": "2026-08-25T11:32:58"
     },
     "score": 17,
     "simbolo": "★",
@@ -4858,6 +5058,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:24:40",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Abreviatura técnica del rubro, Marca de mercado mencionada, Material mencionado (revisar contexto), Pisos vinílicos.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:32:59"
+    },
     "score": 35,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 11/2026",
@@ -4905,7 +5115,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:31"
+      "ultima_revision": "2026-08-25T11:33:00"
     },
     "score": 33,
     "simbolo": "★★",
@@ -4949,7 +5159,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:32"
+      "ultima_revision": "2026-08-25T11:33:01"
     },
     "score": 16,
     "simbolo": "★",
@@ -5002,7 +5212,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:33"
+      "ultima_revision": "2026-08-25T11:33:02"
     },
     "score": 0,
     "simbolo": "★",
@@ -5041,14 +5251,14 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T20:37:04",
     "resultado": {
-      "estado": "pendiente",
+      "estado": "no_presentamos",
       "fecha_resolucion": null,
       "ganamos": null,
-      "monto_total": null,
+      "monto_total": "$ 226.424,71",
       "nos_presentamos": false,
-      "resolucion": null,
+      "resolucion": "Adjudicada totalmente",
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:34"
+      "ultima_revision": "2026-08-25T11:33:03"
     },
     "score": 25,
     "simbolo": "★★",
@@ -5100,7 +5310,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:35"
+      "ultima_revision": "2026-08-25T11:33:03"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -5149,7 +5359,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:35"
+      "ultima_revision": "2026-08-25T11:33:04"
     },
     "score": 17,
     "simbolo": "★",
@@ -5255,7 +5465,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:37"
+      "ultima_revision": "2026-08-25T11:33:05"
     },
     "score": 41,
     "simbolo": "★★",
@@ -5298,6 +5508,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T20:03:40",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:06"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra por Excepción 2/2026",
@@ -5348,7 +5568,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:39"
+      "ultima_revision": "2026-08-25T11:33:07"
     },
     "score": 48,
     "simbolo": "★★★",
@@ -5406,7 +5626,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:40"
+      "ultima_revision": "2026-08-25T11:33:08"
     },
     "score": 22,
     "simbolo": "★",
@@ -5450,7 +5670,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:41"
+      "ultima_revision": "2026-08-25T11:33:09"
     },
     "score": 3,
     "simbolo": "★",
@@ -5502,7 +5722,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:42"
+      "ultima_revision": "2026-08-25T11:33:10"
     },
     "score": 21,
     "simbolo": "★",
@@ -5591,6 +5811,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:45:06",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 65.106,72",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:11"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 176/2026",
@@ -5641,7 +5871,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:44"
+      "ultima_revision": "2026-08-25T11:33:12"
     },
     "score": 47,
     "simbolo": "★★★",
@@ -5683,6 +5913,16 @@
     "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
     "primera_deteccion": "2026-08-18T19:35:21",
     "que_es": "Licitación de Ministerio de Relaciones Exteriores (MRREE) — categorías de producto detectadas: Alfombras, Variante/error ortográfico de un término del rubro.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": "13/08/2026",
+      "ganamos": null,
+      "monto_total": "U$S 25.687,11",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": "109431/2026",
+      "ultima_revision": "2026-08-25T11:33:13"
+    },
     "score": 35,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 109431/2026",
@@ -5729,7 +5969,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:45"
+      "ultima_revision": "2026-08-25T11:33:14"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -5784,7 +6024,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:47"
+      "ultima_revision": "2026-08-25T11:33:15"
     },
     "score": 35,
     "simbolo": "★★",
@@ -5843,7 +6083,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:47"
+      "ultima_revision": "2026-08-25T11:33:16"
     },
     "score": 22,
     "simbolo": "★",
@@ -5897,6 +6137,16 @@
     "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
     "primera_deteccion": "2026-08-18T19:25:15",
     "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 458.000,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:17"
+    },
     "score": 33,
     "simbolo": "★★",
     "titulo": "Compra Directa 187/2026",
@@ -6010,7 +6260,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:49"
+      "ultima_revision": "2026-08-25T11:33:18"
     },
     "score": 36,
     "simbolo": "★★",
@@ -6094,7 +6344,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:33:51"
+      "ultima_revision": "2026-08-25T11:33:18"
     },
     "score": 39,
     "simbolo": "★★",
@@ -6133,6 +6383,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:53:50",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:19"
+    },
     "score": 23,
     "simbolo": "★",
     "titulo": "Concurso de Precios 112026/2026",
@@ -6177,6 +6437,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:59:04",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Marca de mercado mencionada, Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:20"
+    },
     "score": 14,
     "simbolo": "★",
     "titulo": "Compra Directa 1047/2026",
@@ -6214,6 +6484,16 @@
     "organismo": "Intendencia de Maldonado",
     "primera_deteccion": "2026-08-18T19:33:02",
     "que_es": "Licitación de Intendencia de Maldonado — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:21"
+    },
     "score": 35,
     "simbolo": "★★",
     "titulo": "Licitación Pública 13/2026",
@@ -6293,6 +6573,16 @@
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:52:27",
     "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:22"
+    },
     "score": 29,
     "simbolo": "★★",
     "titulo": "Compra Directa 110/2026",
@@ -6326,6 +6616,16 @@
     "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
     "primera_deteccion": "2026-08-18T19:37:16",
     "que_es": "Licitación de Ministerio de Trabajo y Seguridad Social (MTSS) — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:23"
+    },
     "score": 4,
     "simbolo": "★",
     "titulo": "Compra Directa 88567/2026",
@@ -6367,6 +6667,16 @@
     "organismo": "BSE - Banco de Seguros del Estado",
     "primera_deteccion": "2026-08-18T19:31:30",
     "que_es": "Licitación de BSE - Banco de Seguros del Estado — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 9.932,02",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:24"
+    },
     "score": 38,
     "simbolo": "★★",
     "titulo": "Compra Directa 1292/2026",
@@ -6405,6 +6715,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:33:06",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 21.167,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:25"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 88586/2026",
@@ -6484,6 +6804,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:48:23",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:26"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 103848/2026",
@@ -6524,7 +6854,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:00"
+      "ultima_revision": "2026-08-25T11:33:27"
     },
     "score": 2,
     "simbolo": "★",
@@ -6559,6 +6889,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:36:43",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 268.504,18",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:28"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 154/2026",
@@ -6599,7 +6939,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:02"
+      "ultima_revision": "2026-08-25T11:33:29"
     },
     "score": 0,
     "simbolo": "★",
@@ -6641,7 +6981,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:03"
+      "ultima_revision": "2026-08-25T11:33:30"
     },
     "score": 23,
     "simbolo": "★",
@@ -6689,7 +7029,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:04"
+      "ultima_revision": "2026-08-25T11:33:31"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -6830,7 +7170,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:05"
+      "ultima_revision": "2026-08-25T11:33:32"
     },
     "score": 37,
     "simbolo": "★★",
@@ -6871,6 +7211,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:45:11",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:33"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 211/2026",
@@ -6908,6 +7258,16 @@
     "organismo": "BSE - Banco de Seguros del Estado",
     "primera_deteccion": "2026-08-18T19:30:31",
     "que_es": "Licitación de BSE - Banco de Seguros del Estado — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 189.279,34",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:34"
+    },
     "score": 45,
     "simbolo": "★★★",
     "titulo": "Compra Directa 210/2026",
@@ -6957,7 +7317,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:07"
+      "ultima_revision": "2026-08-25T11:33:34"
     },
     "score": 39,
     "simbolo": "★★",
@@ -6999,7 +7359,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:08"
+      "ultima_revision": "2026-08-25T11:33:35"
     },
     "score": 25,
     "simbolo": "★★",
@@ -7133,6 +7493,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:30:27",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: ninguna coincidencia directa de categoría.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:36"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 7481/2026",
@@ -7183,7 +7553,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:10"
+      "ultima_revision": "2026-08-25T11:33:37"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -7243,7 +7613,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:11"
+      "ultima_revision": "2026-08-25T11:33:38"
     },
     "score": 12,
     "simbolo": "★",
@@ -7289,7 +7659,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:12"
+      "ultima_revision": "2026-08-25T11:33:39"
     },
     "score": 24,
     "simbolo": "★",
@@ -7346,7 +7716,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:13"
+      "ultima_revision": "2026-08-25T11:33:40"
     },
     "score": 39,
     "simbolo": "★★",
@@ -7394,7 +7764,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:14"
+      "ultima_revision": "2026-08-25T11:33:41"
     },
     "score": 22,
     "simbolo": "★",
@@ -7436,6 +7806,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:36:14",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:42"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Concurso de Precios 109484/2026",
@@ -7476,7 +7856,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:15"
+      "ultima_revision": "2026-08-25T11:33:43"
     },
     "score": 5,
     "simbolo": "★",
@@ -7511,6 +7891,16 @@
     "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
     "primera_deteccion": "2026-08-18T20:06:00",
     "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:44"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 805/2026",
@@ -7555,7 +7945,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:17"
+      "ultima_revision": "2026-08-25T11:33:45"
     },
     "score": 25,
     "simbolo": "★★",
@@ -7647,7 +8037,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:18"
+      "ultima_revision": "2026-08-25T11:33:46"
     },
     "score": 12,
     "simbolo": "★",
@@ -7691,7 +8081,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:19"
+      "ultima_revision": "2026-08-25T11:33:47"
     },
     "score": 35,
     "simbolo": "★★",
@@ -7747,7 +8137,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:20"
+      "ultima_revision": "2026-08-25T11:33:48"
     },
     "score": 41,
     "simbolo": "★★",
@@ -7789,6 +8179,16 @@
     "organismo": "Intendencia de Soriano",
     "primera_deteccion": "2026-08-18T19:38:52",
     "que_es": "Licitación de Intendencia de Soriano — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:49"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Concurso de Precios 29/2026",
@@ -7831,7 +8231,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:21"
+      "ultima_revision": "2026-08-25T11:33:49"
     },
     "score": 23,
     "simbolo": "★",
@@ -7878,7 +8278,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:22"
+      "ultima_revision": "2026-08-25T11:33:50"
     },
     "score": 3,
     "simbolo": "★",
@@ -7917,6 +8317,16 @@
     "organismo": "Intendencia de Paysandú",
     "primera_deteccion": "2026-08-18T19:31:22",
     "que_es": "Licitación de Intendencia de Paysandú — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:51"
+    },
     "score": 20,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 43/2026",
@@ -7964,6 +8374,16 @@
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:50:59",
     "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — categorías de producto detectadas: Material mencionado (revisar contexto), Pisos flotantes/laminados.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": "13/08/2026",
+      "ganamos": null,
+      "monto_total": "$ 1.196.841,96",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": "58/2026",
+      "ultima_revision": "2026-08-25T11:33:52"
+    },
     "score": 23,
     "simbolo": "★",
     "titulo": "Concurso de Precios 26313/2026",
@@ -8000,6 +8420,16 @@
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T20:04:09",
     "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:53"
+    },
     "score": 14,
     "simbolo": "★",
     "titulo": "Concurso de Precios 146778/2026",
@@ -8039,6 +8469,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:34:06",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:54"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 3654/2026",
@@ -8095,7 +8535,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:27"
+      "ultima_revision": "2026-08-25T11:33:55"
     },
     "score": 50,
     "simbolo": "★★★",
@@ -8234,7 +8674,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:28"
+      "ultima_revision": "2026-08-25T11:33:56"
     },
     "score": 43,
     "simbolo": "★★",
@@ -8281,6 +8721,16 @@
     "organismo": "BSE - Banco de Seguros del Estado",
     "primera_deteccion": "2026-08-18T19:49:56",
     "que_es": "Licitación de BSE - Banco de Seguros del Estado — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 428.978,57",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:33:57"
+    },
     "score": 38,
     "simbolo": "★★",
     "titulo": "Compra Directa 1264/2026",
@@ -8371,7 +8821,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:30"
+      "ultima_revision": "2026-08-25T11:33:58"
     },
     "score": 2,
     "simbolo": "★",
@@ -8409,7 +8859,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:31"
+      "ultima_revision": "2026-08-25T11:33:59"
     },
     "score": 25,
     "simbolo": "★★",
@@ -8453,7 +8903,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:32"
+      "ultima_revision": "2026-08-25T11:34:00"
     },
     "score": 14,
     "simbolo": "★",
@@ -8501,7 +8951,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:32"
+      "ultima_revision": "2026-08-25T11:34:01"
     },
     "score": 29,
     "simbolo": "★★",
@@ -8549,7 +8999,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:33"
+      "ultima_revision": "2026-08-25T11:34:02"
     },
     "score": 37,
     "simbolo": "★★",
@@ -8594,6 +9044,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:31:00",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:03"
+    },
     "score": 20,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 10/2026",
@@ -8647,7 +9107,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:35"
+      "ultima_revision": "2026-08-25T11:34:04"
     },
     "score": 4,
     "simbolo": "★",
@@ -8701,7 +9161,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:36"
+      "ultima_revision": "2026-08-25T11:34:05"
     },
     "score": 19,
     "simbolo": "★",
@@ -8749,7 +9209,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:37"
+      "ultima_revision": "2026-08-25T11:34:06"
     },
     "score": 1,
     "simbolo": "★",
@@ -8789,6 +9249,16 @@
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:42:32",
     "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:07"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 82/2026",
@@ -8835,7 +9305,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:39"
+      "ultima_revision": "2026-08-25T11:34:08"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -8873,6 +9343,16 @@
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:38:14",
     "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:09"
+    },
     "score": 0,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 6/2026",
@@ -8913,7 +9393,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:41"
+      "ultima_revision": "2026-08-25T11:34:10"
     },
     "score": 0,
     "simbolo": "★",
@@ -8952,6 +9432,16 @@
     "organismo": "Intendencia de Paysandú",
     "primera_deteccion": "2026-08-18T19:58:30",
     "que_es": "Licitación de Intendencia de Paysandú — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:11"
+    },
     "score": 11,
     "simbolo": "★",
     "titulo": "Compra Directa 691/2026",
@@ -8996,7 +9486,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:42"
+      "ultima_revision": "2026-08-25T11:34:12"
     },
     "score": 18,
     "simbolo": "★",
@@ -9115,6 +9605,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:30:46",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:13"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 777/2026",
@@ -9155,7 +9655,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:44"
+      "ultima_revision": "2026-08-25T11:34:14"
     },
     "score": 16,
     "simbolo": "★",
@@ -9199,6 +9699,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T20:04:35",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 10.797,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:15"
+    },
     "score": 21,
     "simbolo": "★",
     "titulo": "Compra Directa 2298/2026",
@@ -9240,6 +9750,16 @@
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:37:00",
     "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos de goma, Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:16"
+    },
     "score": 18,
     "simbolo": "★",
     "titulo": "Concurso de Precios 6/2026",
@@ -9278,6 +9798,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:29:15",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 12.444,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:17"
+    },
     "score": 18,
     "simbolo": "★",
     "titulo": "Compra Directa 12782/2026",
@@ -9362,7 +9892,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:48"
+      "ultima_revision": "2026-08-25T11:34:18"
     },
     "score": 22,
     "simbolo": "★",
@@ -9401,6 +9931,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T20:01:28",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:19"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 88327/2026",
@@ -9488,7 +10028,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:49"
+      "ultima_revision": "2026-08-25T11:34:20"
     },
     "score": 17,
     "simbolo": "★",
@@ -9530,6 +10070,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:45:48",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:21"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 22/2026",
@@ -9567,6 +10117,16 @@
     "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
     "primera_deteccion": "2026-08-18T19:24:55",
     "que_es": "Licitación de Ministerio de Relaciones Exteriores (MRREE) — categorías de producto detectadas: Alfombras, Variante/error ortográfico de un término del rubro.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:22"
+    },
     "score": 35,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 109492/2026",
@@ -9600,6 +10160,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:26:42",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Adhesivos.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:23"
+    },
     "score": 46,
     "simbolo": "★★★",
     "titulo": "Licitación Abreviada 3/2026",
@@ -9644,7 +10214,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:53"
+      "ultima_revision": "2026-08-25T11:34:24"
     },
     "score": 26,
     "simbolo": "★★",
@@ -9695,7 +10265,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:53"
+      "ultima_revision": "2026-08-25T11:34:25"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -9745,7 +10315,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:54"
+      "ultima_revision": "2026-08-25T11:34:26"
     },
     "score": 25,
     "simbolo": "★★",
@@ -9791,7 +10361,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:55"
+      "ultima_revision": "2026-08-25T11:34:26"
     },
     "score": 13,
     "simbolo": "★",
@@ -9839,7 +10409,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:56"
+      "ultima_revision": "2026-08-25T11:34:27"
     },
     "score": 3,
     "simbolo": "★",
@@ -9889,7 +10459,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:57"
+      "ultima_revision": "2026-08-25T11:34:28"
     },
     "score": 16,
     "simbolo": "★",
@@ -10077,7 +10647,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:58"
+      "ultima_revision": "2026-08-25T11:34:29"
     },
     "score": 23,
     "simbolo": "★",
@@ -10149,7 +10719,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:34:59"
+      "ultima_revision": "2026-08-25T11:34:30"
     },
     "score": 71,
     "simbolo": "★★★★",
@@ -10210,7 +10780,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:00"
+      "ultima_revision": "2026-08-25T11:34:31"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -10280,7 +10850,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:01"
+      "ultima_revision": "2026-08-25T11:34:32"
     },
     "score": 25,
     "simbolo": "★★",
@@ -10348,7 +10918,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:02"
+      "ultima_revision": "2026-08-25T11:34:33"
     },
     "score": 13,
     "simbolo": "★",
@@ -10444,7 +11014,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:03"
+      "ultima_revision": "2026-08-25T11:34:34"
     },
     "score": 16,
     "simbolo": "★",
@@ -10496,7 +11066,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:04"
+      "ultima_revision": "2026-08-25T11:34:35"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -10565,7 +11135,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:05"
+      "ultima_revision": "2026-08-25T11:34:36"
     },
     "score": 47,
     "simbolo": "★★★",
@@ -10619,6 +11189,16 @@
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T20:01:37",
     "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — categorías de producto detectadas: Material mencionado (revisar contexto), Normativa/certificación mencionada.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:37"
+    },
     "score": 23,
     "simbolo": "★",
     "titulo": "Concurso de Precios 146765/2026",
@@ -10667,7 +11247,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:07"
+      "ultima_revision": "2026-08-25T11:34:38"
     },
     "score": 37,
     "simbolo": "★★",
@@ -10713,6 +11293,16 @@
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:34:48",
     "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — categorías de producto detectadas: Abreviatura técnica del rubro, Alfombras, Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:39"
+    },
     "score": 38,
     "simbolo": "★★",
     "titulo": "Compra Directa 122/2026",
@@ -10753,6 +11343,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:58:05",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 66.429,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:40"
+    },
     "score": 46,
     "simbolo": "★★★",
     "titulo": "Compra Directa 11913/2026",
@@ -10866,6 +11466,16 @@
     "organismo": "Ministerio del Interior (MI)",
     "primera_deteccion": "2026-08-18T20:01:07",
     "que_es": "Licitación de Ministerio del Interior (MI) — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:41"
+    },
     "score": 11,
     "simbolo": "★",
     "titulo": "Concurso de Precios 24/2026",
@@ -10928,7 +11538,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:11"
+      "ultima_revision": "2026-08-25T11:34:42"
     },
     "score": 36,
     "simbolo": "★★",
@@ -11006,7 +11616,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:11"
+      "ultima_revision": "2026-08-25T11:34:43"
     },
     "score": 4,
     "simbolo": "★",
@@ -11043,6 +11653,16 @@
     "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
     "primera_deteccion": "2026-08-18T20:05:30",
     "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 57.645,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:44"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 810/2026",
@@ -11125,7 +11745,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:13"
+      "ultima_revision": "2026-08-25T11:34:45"
     },
     "score": 25,
     "simbolo": "★★",
@@ -11164,6 +11784,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:50:10",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:46"
+    },
     "score": 30,
     "simbolo": "★★",
     "titulo": "Compra Directa 64/2026",
@@ -11209,6 +11839,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:38:22",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: ninguna coincidencia directa de categoría.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:47"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 109378/2026",
@@ -11244,6 +11884,16 @@
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:33:28",
     "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 0,00",
+      "nos_presentamos": false,
+      "resolucion": "Declarada sin efecto",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:34:48"
+    },
     "score": 21,
     "simbolo": "★",
     "titulo": "Compra Directa 43/2026",
@@ -11295,7 +11945,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:17"
+      "ultima_revision": "2026-08-25T11:34:49"
     },
     "score": 35,
     "simbolo": "★★",
@@ -11361,7 +12011,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:17"
+      "ultima_revision": "2026-08-25T11:34:49"
     },
     "score": 33,
     "simbolo": "★★",
@@ -11412,7 +12062,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:18"
+      "ultima_revision": "2026-08-25T11:34:50"
     },
     "score": 41,
     "simbolo": "★★",
@@ -11460,7 +12110,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:19"
+      "ultima_revision": "2026-08-25T11:34:51"
     },
     "score": 35,
     "simbolo": "★★",
@@ -11508,7 +12158,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:20"
+      "ultima_revision": "2026-08-25T11:34:52"
     },
     "score": 7,
     "simbolo": "★",
@@ -11552,7 +12202,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:21"
+      "ultima_revision": "2026-08-25T11:34:53"
     },
     "score": 2,
     "simbolo": "★",
@@ -11598,7 +12248,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:22"
+      "ultima_revision": "2026-08-25T11:34:54"
     },
     "score": 23,
     "simbolo": "★",
@@ -11646,7 +12296,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:23"
+      "ultima_revision": "2026-08-25T11:34:55"
     },
     "score": 5,
     "simbolo": "★",
@@ -11798,7 +12448,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:23"
+      "ultima_revision": "2026-08-25T11:34:56"
     },
     "score": 28,
     "simbolo": "★★",
@@ -11851,7 +12501,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:24"
+      "ultima_revision": "2026-08-25T11:34:57"
     },
     "score": 25,
     "simbolo": "★★",
@@ -11907,7 +12557,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:25"
+      "ultima_revision": "2026-08-25T11:34:58"
     },
     "score": 6,
     "simbolo": "★",
@@ -11960,7 +12610,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:26"
+      "ultima_revision": "2026-08-25T11:34:59"
     },
     "score": 3,
     "simbolo": "★",
@@ -12004,7 +12654,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:27"
+      "ultima_revision": "2026-08-25T11:35:00"
     },
     "score": 20,
     "simbolo": "★",
@@ -12095,6 +12745,16 @@
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:46:41",
     "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — categorías de producto detectadas: Material mencionado (revisar contexto), Servicios, Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:01"
+    },
     "score": 38,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 6/2026",
@@ -12133,6 +12793,16 @@
     "organismo": "Ministerio de Ambiente (MA)",
     "primera_deteccion": "2026-08-18T19:46:00",
     "que_es": "Licitación de Ministerio de Ambiente (MA) — categorías de producto detectadas: Normativa/certificación mencionada.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:02"
+    },
     "score": 21,
     "simbolo": "★",
     "titulo": "Compra Directa 12028/2026",
@@ -12166,6 +12836,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:37:46",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:03"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Concurso de Precios 27/2026",
@@ -12201,6 +12881,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:49:48",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:04"
+    },
     "score": 7,
     "simbolo": "★",
     "titulo": "Compra Directa 50/2026",
@@ -12303,7 +12993,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:31"
+      "ultima_revision": "2026-08-25T11:35:05"
     },
     "score": 25,
     "simbolo": "★★",
@@ -12361,7 +13051,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:32"
+      "ultima_revision": "2026-08-25T11:35:06"
     },
     "score": 39,
     "simbolo": "★★",
@@ -12432,7 +13122,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:33"
+      "ultima_revision": "2026-08-25T11:35:07"
     },
     "score": 16,
     "simbolo": "★",
@@ -12471,6 +13161,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:59:43",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Normativa/certificación mencionada.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 28.763,73",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:08"
+    },
     "score": 41,
     "simbolo": "★★",
     "titulo": "Compra Directa 11920/2026",
@@ -12520,7 +13220,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:34"
+      "ultima_revision": "2026-08-25T11:35:09"
     },
     "score": 21,
     "simbolo": "★",
@@ -12617,7 +13317,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:35"
+      "ultima_revision": "2026-08-25T11:35:10"
     },
     "score": 3,
     "simbolo": "★",
@@ -12669,7 +13369,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:36"
+      "ultima_revision": "2026-08-25T11:35:11"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -12758,6 +13458,16 @@
     "organismo": "Intendencia de Colonia",
     "primera_deteccion": "2026-08-18T19:40:11",
     "que_es": "Licitación de Intendencia de Colonia — categorías de producto detectadas: Deck y exterior, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:12"
+    },
     "score": 41,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 96517/2026",
@@ -12799,6 +13509,16 @@
     "organismo": "CES - Consejo de Educación Secundaria",
     "primera_deteccion": "2026-08-18T19:59:03",
     "que_es": "Licitación de CES - Consejo de Educación Secundaria — categorías de producto detectadas: Adhesivos, Marca de mercado mencionada, Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 27.290,01",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:13"
+    },
     "score": 41,
     "simbolo": "★★",
     "titulo": "Compra Directa 91/2026",
@@ -12842,7 +13562,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:38"
+      "ultima_revision": "2026-08-25T11:35:14"
     },
     "score": 18,
     "simbolo": "★",
@@ -12909,7 +13629,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:39"
+      "ultima_revision": "2026-08-25T11:35:15"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -12977,7 +13697,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:40"
+      "ultima_revision": "2026-08-25T11:35:16"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -13038,7 +13758,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:41"
+      "ultima_revision": "2026-08-25T11:35:17"
     },
     "score": 25,
     "simbolo": "★★",
@@ -13079,6 +13799,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:37:13",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:18"
+    },
     "score": 42,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 7464/2026",
@@ -13138,7 +13868,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:43"
+      "ultima_revision": "2026-08-25T11:35:19"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -13204,7 +13934,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:44"
+      "ultima_revision": "2026-08-25T11:35:20"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -13259,7 +13989,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:44"
+      "ultima_revision": "2026-08-25T11:35:21"
     },
     "score": 0,
     "simbolo": "★",
@@ -13309,7 +14039,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:45"
+      "ultima_revision": "2026-08-25T11:35:22"
     },
     "score": 41,
     "simbolo": "★★",
@@ -13364,7 +14094,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:46"
+      "ultima_revision": "2026-08-25T11:35:23"
     },
     "score": 33,
     "simbolo": "★★",
@@ -13403,6 +14133,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:39:42",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 72.687,60",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:24"
+    },
     "score": 7,
     "simbolo": "★",
     "titulo": "Compra Directa 106/2026",
@@ -13447,7 +14187,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:48"
+      "ultima_revision": "2026-08-25T11:35:25"
     },
     "score": 29,
     "simbolo": "★★",
@@ -13486,6 +14226,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:39:09",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos flotantes/laminados.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 26.321,50",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:26"
+    },
     "score": 41,
     "simbolo": "★★",
     "titulo": "Compra Directa 119/2026",
@@ -13529,7 +14279,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:50"
+      "ultima_revision": "2026-08-25T11:35:27"
     },
     "score": 2,
     "simbolo": "★",
@@ -13574,7 +14324,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:50"
+      "ultima_revision": "2026-08-25T11:35:28"
     },
     "score": 23,
     "simbolo": "★",
@@ -13609,6 +14359,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:57:39",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Alfombras, Variante/error ortográfico de un término del rubro.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 7.237,98",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:30"
+    },
     "score": 14,
     "simbolo": "★",
     "titulo": "Compra Directa 301/2026",
@@ -13653,7 +14413,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:52"
+      "ultima_revision": "2026-08-25T11:35:31"
     },
     "score": 8,
     "simbolo": "★",
@@ -13704,7 +14464,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:53"
+      "ultima_revision": "2026-08-25T11:35:32"
     },
     "score": 35,
     "simbolo": "★★",
@@ -13746,6 +14506,16 @@
     "organismo": "Ministerio del Interior (MI)",
     "primera_deteccion": "2026-08-18T19:57:39",
     "que_es": "Licitación de Ministerio del Interior (MI) — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:34"
+    },
     "score": 1,
     "simbolo": "★",
     "titulo": "Concurso de Precios 77/2026",
@@ -13779,6 +14549,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:45:16",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: ninguna coincidencia directa de categoría.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:36"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Compra Directa 158/2026",
@@ -13818,6 +14598,16 @@
     "organismo": "Ministerio de Ganadería, Agricultura y Pesca (MGAP)",
     "primera_deteccion": "2026-08-18T19:36:44",
     "que_es": "Licitación de Ministerio de Ganadería, Agricultura y Pesca (MGAP) — categorías de producto detectadas: Accesorios de instalación, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:37"
+    },
     "score": 39,
     "simbolo": "★★",
     "titulo": "PFI - Comparación de precios 8/2026",
@@ -13861,7 +14651,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:57"
+      "ultima_revision": "2026-08-25T11:35:38"
     },
     "score": 5,
     "simbolo": "★",
@@ -13962,7 +14752,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:58"
+      "ultima_revision": "2026-08-25T11:35:40"
     },
     "score": 32,
     "simbolo": "★★",
@@ -14024,6 +14814,16 @@
     "organismo": "Intendencia de Colonia",
     "primera_deteccion": "2026-08-18T19:43:16",
     "que_es": "Licitación de Intendencia de Colonia — categorías de producto detectadas: Abreviatura técnica del rubro, Deck y exterior, Material mencionado (revisar contexto), Pisos de madera, Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:41"
+    },
     "score": 45,
     "simbolo": "★★★",
     "titulo": "Concurso de Precios 91022/2026",
@@ -14082,7 +14882,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:35:59"
+      "ultima_revision": "2026-08-25T11:35:41"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -14133,6 +14933,16 @@
     "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
     "primera_deteccion": "2026-08-18T20:04:30",
     "que_es": "Licitación de Ministerio de Relaciones Exteriores (MRREE) — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:43"
+    },
     "score": 27,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 846/2026",
@@ -14204,7 +15014,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:01"
+      "ultima_revision": "2026-08-25T11:35:44"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -14257,6 +15067,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T20:01:16",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 85.473,20",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:46"
+    },
     "score": 23,
     "simbolo": "★",
     "titulo": "Compra Directa 11955/2026",
@@ -14308,7 +15128,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:03"
+      "ultima_revision": "2026-08-25T11:35:47"
     },
     "score": 0,
     "simbolo": "★",
@@ -14351,6 +15171,16 @@
     "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
     "primera_deteccion": "2026-08-18T19:57:33",
     "que_es": "Licitación de Ministerio de Relaciones Exteriores (MRREE) — categorías de producto detectadas: Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:48"
+    },
     "score": 55,
     "simbolo": "★★★",
     "titulo": "Licitación Abreviada 807/2026",
@@ -14410,6 +15240,16 @@
     "organismo": "Intendencia de Rocha",
     "primera_deteccion": "2026-08-18T19:55:27",
     "que_es": "Licitación de Intendencia de Rocha — categorías de producto detectadas: Alfombras, Material mencionado (revisar contexto), Pisos flotantes/laminados.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:49"
+    },
     "score": 48,
     "simbolo": "★★★",
     "titulo": "Licitación Pública 7/2026",
@@ -14482,7 +15322,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:06"
+      "ultima_revision": "2026-08-25T11:35:50"
     },
     "score": 51,
     "simbolo": "★★★",
@@ -14537,6 +15377,16 @@
     "organismo": "Ministerio del Interior (MI)",
     "primera_deteccion": "2026-08-18T19:53:02",
     "que_es": "Licitación de Ministerio del Interior (MI) — categorías de producto detectadas: Normativa/certificación mencionada, Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:51"
+    },
     "score": 7,
     "simbolo": "★",
     "titulo": "Concurso de Precios 80/2026",
@@ -14619,7 +15469,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:07"
+      "ultima_revision": "2026-08-25T11:35:52"
     },
     "score": 1,
     "simbolo": "★",
@@ -14669,7 +15519,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:08"
+      "ultima_revision": "2026-08-25T11:35:53"
     },
     "score": 38,
     "simbolo": "★★",
@@ -14721,7 +15571,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:09"
+      "ultima_revision": "2026-08-25T11:35:55"
     },
     "score": 2,
     "simbolo": "★",
@@ -14764,6 +15614,16 @@
     "organismo": "Intendencia de Paysandú",
     "primera_deteccion": "2026-08-18T19:58:44",
     "que_es": "Licitación de Intendencia de Paysandú — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:55"
+    },
     "score": 15,
     "simbolo": "★",
     "titulo": "Concurso de Precios 12/2026",
@@ -14803,6 +15663,16 @@
     "organismo": "BSE - Banco de Seguros del Estado",
     "primera_deteccion": "2026-08-18T20:00:16",
     "que_es": "Licitación de BSE - Banco de Seguros del Estado — categorías de producto detectadas: Material mencionado (revisar contexto), Pisos vinílicos.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 11.990,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:35:56"
+    },
     "score": 37,
     "simbolo": "★★",
     "titulo": "Compra Directa 234/2026",
@@ -14850,7 +15720,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:12"
+      "ultima_revision": "2026-08-25T11:35:58"
     },
     "score": 17,
     "simbolo": "★",
@@ -14913,7 +15783,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:12"
+      "ultima_revision": "2026-08-25T11:35:59"
     },
     "score": 36,
     "simbolo": "★★",
@@ -14985,7 +15855,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:13"
+      "ultima_revision": "2026-08-25T11:36:00"
     },
     "score": 0,
     "simbolo": "★",
@@ -15022,6 +15892,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:25:42",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:01"
+    },
     "score": 0,
     "simbolo": "★",
     "titulo": "Compra Directa 73/2026",
@@ -15059,6 +15939,16 @@
     "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
     "primera_deteccion": "2026-08-18T19:53:21",
     "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 29.909,67",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:02"
+    },
     "score": 38,
     "simbolo": "★★",
     "titulo": "Compra Directa 179/2026",
@@ -15104,7 +15994,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:16"
+      "ultima_revision": "2026-08-25T11:36:03"
     },
     "score": 12,
     "simbolo": "★",
@@ -15185,6 +16075,16 @@
     "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
     "primera_deteccion": "2026-08-18T19:46:35",
     "que_es": "Licitación de Ministerio de Relaciones Exteriores (MRREE) — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:04"
+    },
     "score": 26,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 739/2026",
@@ -15241,7 +16141,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:17"
+      "ultima_revision": "2026-08-25T11:36:05"
     },
     "score": 5,
     "simbolo": "★",
@@ -15287,7 +16187,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:18"
+      "ultima_revision": "2026-08-25T11:36:06"
     },
     "score": 53,
     "simbolo": "★★★",
@@ -15336,7 +16236,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:19"
+      "ultima_revision": "2026-08-25T11:36:07"
     },
     "score": 0,
     "simbolo": "★",
@@ -15424,6 +16324,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:45:00",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Abreviatura técnica del rubro, Adhesivos, Material mencionado (revisar contexto), Pisos vinílicos.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:08"
+    },
     "score": 29,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 24/2026",
@@ -15481,7 +16391,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:21"
+      "ultima_revision": "2026-08-25T11:36:09"
     },
     "score": 23,
     "simbolo": "★",
@@ -15516,6 +16426,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T20:05:45",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: ninguna coincidencia directa de categoría.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:11"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 26934/2026",
@@ -15551,6 +16471,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T20:04:47",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:11"
+    },
     "score": 23,
     "simbolo": "★",
     "titulo": "Compra Directa 11829/2026",
@@ -15606,7 +16536,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:24"
+      "ultima_revision": "2026-08-25T11:36:13"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -15666,7 +16596,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:25"
+      "ultima_revision": "2026-08-25T11:36:13"
     },
     "score": 18,
     "simbolo": "★",
@@ -15725,7 +16655,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:26"
+      "ultima_revision": "2026-08-25T11:36:14"
     },
     "score": 9,
     "simbolo": "★",
@@ -15765,6 +16695,16 @@
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:41:11",
     "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — categorías de producto detectadas: Servicios.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:15"
+    },
     "score": 10,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 13/2026",
@@ -15817,7 +16757,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:27"
+      "ultima_revision": "2026-08-25T11:36:16"
     },
     "score": 25,
     "simbolo": "★★",
@@ -15932,7 +16872,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:28"
+      "ultima_revision": "2026-08-25T11:36:17"
     },
     "score": 17,
     "simbolo": "★",
@@ -15967,6 +16907,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:53:00",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:18"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 30/2026",
@@ -16007,7 +16957,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:30"
+      "ultima_revision": "2026-08-25T11:36:19"
     },
     "score": 21,
     "simbolo": "★",
@@ -16063,7 +17013,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:31"
+      "ultima_revision": "2026-08-25T11:36:20"
     },
     "score": 50,
     "simbolo": "★★★",
@@ -16115,6 +17065,16 @@
     "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
     "primera_deteccion": "2026-08-18T19:36:08",
     "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:21"
+    },
     "score": 11,
     "simbolo": "★",
     "titulo": "Compra por Excepción 7/2026",
@@ -16150,6 +17110,16 @@
     "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
     "primera_deteccion": "2026-08-18T19:37:39",
     "que_es": "Licitación de Ministerio de Trabajo y Seguridad Social (MTSS) — categorías de producto detectadas: Pisos vinílicos, Servicios.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:22"
+    },
     "score": 33,
     "simbolo": "★★",
     "titulo": "Compra Directa 5214/2026",
@@ -16188,6 +17158,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:45:05",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 0,00",
+      "nos_presentamos": false,
+      "resolucion": "Declarada sin efecto",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:23"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 175/2026",
@@ -16236,7 +17216,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:34"
+      "ultima_revision": "2026-08-25T11:36:25"
     },
     "score": 47,
     "simbolo": "★★★",
@@ -16278,6 +17258,16 @@
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:43:18",
     "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:26"
+    },
     "score": 1,
     "simbolo": "★",
     "titulo": "Compra por Excepción 157/2026",
@@ -16318,6 +17308,16 @@
     "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
     "primera_deteccion": "2026-08-18T19:41:52",
     "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — categorías de producto detectadas: Accesorios de instalación, Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 44.273,80",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:27"
+    },
     "score": 29,
     "simbolo": "★★",
     "titulo": "Compra Directa 3317/2026",
@@ -16360,6 +17360,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:44:33",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Marca de mercado mencionada, Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:27"
+    },
     "score": 30,
     "simbolo": "★★",
     "titulo": "Compra Directa 11408/2026",
@@ -16402,7 +17412,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:38"
+      "ultima_revision": "2026-08-25T11:36:28"
     },
     "score": 0,
     "simbolo": "★",
@@ -16444,7 +17454,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:38"
+      "ultima_revision": "2026-08-25T11:36:29"
     },
     "score": 4,
     "simbolo": "★",
@@ -16485,6 +17495,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:39:13",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto), Normativa/certificación mencionada, Pisos flotantes/laminados.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:30"
+    },
     "score": 56,
     "simbolo": "★★★",
     "titulo": "Licitación Pública 11/2026",
@@ -16535,7 +17555,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:40"
+      "ultima_revision": "2026-08-25T11:36:31"
     },
     "score": 8,
     "simbolo": "★",
@@ -16591,7 +17611,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:41"
+      "ultima_revision": "2026-08-25T11:36:32"
     },
     "score": 27,
     "simbolo": "★★",
@@ -16646,6 +17666,16 @@
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:49:44",
     "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — categorías de producto detectadas: Abreviatura técnica del rubro, Accesorios de instalación, Deck y exterior, Material mencionado (revisar contexto), Piedrafina, Pisos de madera, Pisos flotantes/laminados, Pisos vinílicos, Servicios, Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": "05/08/2026",
+      "ganamos": null,
+      "monto_total": "$ 401.840,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": "157/2026",
+      "ultima_revision": "2026-08-25T11:36:33"
+    },
     "score": 36,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 4/2026",
@@ -16693,6 +17723,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:45:07",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 0,00",
+      "nos_presentamos": false,
+      "resolucion": "Declarada sin efecto",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:34"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Compra Directa 173/2026",
@@ -16733,7 +17773,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:44"
+      "ultima_revision": "2026-08-25T11:36:35"
     },
     "score": 0,
     "simbolo": "★",
@@ -16773,6 +17813,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:44:48",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: ninguna coincidencia directa de categoría.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 57.248,90",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:37"
+    },
     "score": 0,
     "simbolo": "★",
     "titulo": "Compra Directa 12183/2026",
@@ -16806,6 +17856,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:29:32",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:37"
+    },
     "score": 29,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 7/2026",
@@ -16843,6 +17903,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:46:36",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 88.938,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:39"
+    },
     "score": 29,
     "simbolo": "★★",
     "titulo": "Compra Directa 11990/2026",
@@ -16885,7 +17955,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:47"
+      "ultima_revision": "2026-08-25T11:36:39"
     },
     "score": 3,
     "simbolo": "★",
@@ -16929,6 +17999,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:55:16",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:40"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 88468/2026",
@@ -16971,7 +18051,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:49"
+      "ultima_revision": "2026-08-25T11:36:41"
     },
     "score": 1,
     "simbolo": "★",
@@ -17037,7 +18117,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:50"
+      "ultima_revision": "2026-08-25T11:36:42"
     },
     "score": 33,
     "simbolo": "★★",
@@ -17101,7 +18181,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:50"
+      "ultima_revision": "2026-08-25T11:36:43"
     },
     "score": 73,
     "simbolo": "★★★★",
@@ -17223,7 +18303,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:51"
+      "ultima_revision": "2026-08-25T11:36:44"
     },
     "score": 24,
     "simbolo": "★",
@@ -17280,7 +18360,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:52"
+      "ultima_revision": "2026-08-25T11:36:45"
     },
     "score": 38,
     "simbolo": "★★",
@@ -17328,7 +18408,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:53"
+      "ultima_revision": "2026-08-25T11:36:46"
     },
     "score": 29,
     "simbolo": "★★",
@@ -17372,7 +18452,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:54"
+      "ultima_revision": "2026-08-25T11:36:47"
     },
     "score": 2,
     "simbolo": "★",
@@ -17415,6 +18495,16 @@
     "organismo": "Ministerio de Salud Pública (MSP)",
     "primera_deteccion": "2026-08-18T19:54:18",
     "que_es": "Licitación de Ministerio de Salud Pública (MSP) — categorías de producto detectadas: Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto), Pisos flotantes/laminados, Pisos vinílicos.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:48"
+    },
     "score": 38,
     "simbolo": "★★",
     "titulo": "Licitación Pública 10/2026",
@@ -17476,7 +18566,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:55"
+      "ultima_revision": "2026-08-25T11:36:49"
     },
     "score": 20,
     "simbolo": "★",
@@ -17530,7 +18620,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:56"
+      "ultima_revision": "2026-08-25T11:36:50"
     },
     "score": 0,
     "simbolo": "★",
@@ -17567,6 +18657,16 @@
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-18T19:45:05",
     "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — categorías de producto detectadas: Normativa/certificación mencionada.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:51"
+    },
     "score": 21,
     "simbolo": "★",
     "titulo": "Concurso de Precios 5/2026",
@@ -17621,7 +18721,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:58"
+      "ultima_revision": "2026-08-25T11:36:52"
     },
     "score": 53,
     "simbolo": "★★★",
@@ -17688,7 +18788,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:59"
+      "ultima_revision": "2026-08-25T11:36:52"
     },
     "score": 17,
     "simbolo": "★",
@@ -17743,7 +18843,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:36:59"
+      "ultima_revision": "2026-08-25T11:36:53"
     },
     "score": 42,
     "simbolo": "★★",
@@ -17808,7 +18908,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:00"
+      "ultima_revision": "2026-08-25T11:36:55"
     },
     "score": 12,
     "simbolo": "★",
@@ -17876,7 +18976,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:01"
+      "ultima_revision": "2026-08-25T11:36:55"
     },
     "score": 43,
     "simbolo": "★★",
@@ -17924,7 +19024,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:02"
+      "ultima_revision": "2026-08-25T11:36:57"
     },
     "score": 21,
     "simbolo": "★",
@@ -17975,6 +19075,16 @@
     "organismo": "Ministerio de Ambiente (MA)",
     "primera_deteccion": "2026-08-18T19:30:57",
     "que_es": "Licitación de Ministerio de Ambiente (MA) — categorías de producto detectadas: Alfombras, Variante/error ortográfico de un término del rubro.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:58"
+    },
     "score": 13,
     "simbolo": "★",
     "titulo": "Compra por Excepción 16/2026",
@@ -18018,6 +19128,16 @@
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:40:14",
     "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — categorías de producto detectadas: Abreviatura técnica del rubro, Alfombras, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:36:58"
+    },
     "score": 22,
     "simbolo": "★",
     "titulo": "Compra Directa 88546/2026",
@@ -18071,7 +19191,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:05"
+      "ultima_revision": "2026-08-25T11:36:59"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -18119,14 +19239,14 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T20:53:54",
     "resultado": {
-      "estado": "pendiente",
+      "estado": "no_presentamos",
       "fecha_resolucion": null,
       "ganamos": null,
-      "monto_total": null,
+      "monto_total": "$ 245.321,00",
       "nos_presentamos": false,
-      "resolucion": null,
+      "resolucion": "Adjudicada totalmente",
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:05"
+      "ultima_revision": "2026-08-25T11:37:00"
     },
     "score": 17,
     "simbolo": "★",
@@ -18263,7 +19383,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:06"
+      "ultima_revision": "2026-08-25T11:37:01"
     },
     "score": 37,
     "simbolo": "★★",
@@ -18313,7 +19433,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:07"
+      "ultima_revision": "2026-08-25T11:37:02"
     },
     "score": 1,
     "simbolo": "★",
@@ -18437,7 +19557,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:08"
+      "ultima_revision": "2026-08-25T11:37:03"
     },
     "score": 25,
     "simbolo": "★★",
@@ -18473,6 +19593,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:26:39",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: ninguna coincidencia directa de categoría.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:04"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 7482/2026",
@@ -18583,7 +19713,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:10"
+      "ultima_revision": "2026-08-25T11:37:05"
     },
     "score": 41,
     "simbolo": "★★",
@@ -18633,7 +19763,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:11"
+      "ultima_revision": "2026-08-25T11:37:06"
     },
     "score": 37,
     "simbolo": "★★",
@@ -18672,6 +19802,16 @@
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T19:24:36",
     "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:07"
+    },
     "score": 18,
     "simbolo": "★",
     "titulo": "Compra Directa 236/2026",
@@ -18708,6 +19848,16 @@
     "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
     "primera_deteccion": "2026-08-18T19:36:28",
     "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:08"
+    },
     "score": 11,
     "simbolo": "★",
     "titulo": "Compra por Excepción 6/2026",
@@ -18750,7 +19900,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:13"
+      "ultima_revision": "2026-08-25T11:37:09"
     },
     "score": 6,
     "simbolo": "★",
@@ -18806,7 +19956,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:14"
+      "ultima_revision": "2026-08-25T11:37:10"
     },
     "score": 32,
     "simbolo": "★★",
@@ -18888,6 +20038,16 @@
     "organismo": "Ministerio de Ganadería, Agricultura y Pesca (MGAP)",
     "primera_deteccion": "2026-08-18T19:51:52",
     "que_es": "Licitación de Ministerio de Ganadería, Agricultura y Pesca (MGAP) — categorías de producto detectadas: Abreviatura técnica del rubro, Accesorios de instalación, Marca de mercado mencionada, Material mencionado (revisar contexto), Pisos de madera, Pisos vinílicos, Servicios, Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:11"
+    },
     "score": 42,
     "simbolo": "★★",
     "titulo": "PFI - Comparación de precios 12026/2026",
@@ -18958,7 +20118,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:16"
+      "ultima_revision": "2026-08-25T11:37:12"
     },
     "score": 7,
     "simbolo": "★",
@@ -19014,7 +20174,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:17"
+      "ultima_revision": "2026-08-25T11:37:13"
     },
     "score": 32,
     "simbolo": "★★",
@@ -19082,6 +20242,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:43:22",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 83.897,96",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:14"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 12116/2026",
@@ -19117,6 +20287,16 @@
     "organismo": "Intendencia de Soriano",
     "primera_deteccion": "2026-08-18T19:41:40",
     "que_es": "Licitación de Intendencia de Soriano — categorías de producto detectadas: Marca de mercado mencionada, Variante/error ortográfico de un término del rubro.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:15"
+    },
     "score": 26,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 8/2026",
@@ -19161,7 +20341,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:19"
+      "ultima_revision": "2026-08-25T11:37:16"
     },
     "score": 18,
     "simbolo": "★",
@@ -19222,7 +20402,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:20"
+      "ultima_revision": "2026-08-25T11:37:17"
     },
     "score": 20,
     "simbolo": "★",
@@ -19268,7 +20448,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:21"
+      "ultima_revision": "2026-08-25T11:37:17"
     },
     "score": 20,
     "simbolo": "★",
@@ -19322,7 +20502,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:22"
+      "ultima_revision": "2026-08-25T11:37:19"
     },
     "score": 18,
     "simbolo": "★",
@@ -19366,7 +20546,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:22"
+      "ultima_revision": "2026-08-25T11:37:20"
     },
     "score": 15,
     "simbolo": "★",
@@ -19419,7 +20599,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:23"
+      "ultima_revision": "2026-08-25T11:37:21"
     },
     "score": 21,
     "simbolo": "★",
@@ -19459,6 +20639,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:51:15",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 9.150,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:22"
+    },
     "score": 21,
     "simbolo": "★",
     "titulo": "Compra Directa 12186/2026",
@@ -19503,7 +20693,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:25"
+      "ultima_revision": "2026-08-25T11:37:22"
     },
     "score": 17,
     "simbolo": "★",
@@ -19605,7 +20795,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:26"
+      "ultima_revision": "2026-08-25T11:37:23"
     },
     "score": 32,
     "simbolo": "★★",
@@ -19661,7 +20851,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:27"
+      "ultima_revision": "2026-08-25T11:37:24"
     },
     "score": 22,
     "simbolo": "★",
@@ -19711,7 +20901,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:28"
+      "ultima_revision": "2026-08-25T11:37:25"
     },
     "score": 12,
     "simbolo": "★",
@@ -19796,6 +20986,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:57:09",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 47.683,45",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:27"
+    },
     "score": 7,
     "simbolo": "★",
     "titulo": "Compra Directa 44/2026",
@@ -19840,7 +21040,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:29"
+      "ultima_revision": "2026-08-25T11:37:28"
     },
     "score": 2,
     "simbolo": "★",
@@ -19889,6 +21089,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:36:04",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 546.814,98",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada parcialmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:29"
+    },
     "score": 53,
     "simbolo": "★★★",
     "titulo": "Compra Directa 1916/2026",
@@ -19947,7 +21157,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:31"
+      "ultima_revision": "2026-08-25T11:37:30"
     },
     "score": 35,
     "simbolo": "★★",
@@ -20075,7 +21285,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:32"
+      "ultima_revision": "2026-08-25T11:37:31"
     },
     "score": 7,
     "simbolo": "★",
@@ -20110,6 +21320,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:57:32",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:32"
+    },
     "score": 5,
     "simbolo": "★",
     "titulo": "Compra Directa 439/2026",
@@ -20218,7 +21438,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:34"
+      "ultima_revision": "2026-08-25T11:37:32"
     },
     "score": 14,
     "simbolo": "★",
@@ -20363,7 +21583,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:35"
+      "ultima_revision": "2026-08-25T11:37:33"
     },
     "score": 19,
     "simbolo": "★",
@@ -20409,7 +21629,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:36"
+      "ultima_revision": "2026-08-25T11:37:34"
     },
     "score": 18,
     "simbolo": "★",
@@ -20468,7 +21688,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:37"
+      "ultima_revision": "2026-08-25T11:37:35"
     },
     "score": 21,
     "simbolo": "★",
@@ -20508,6 +21728,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:35:36",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Normativa/certificación mencionada.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:36"
+    },
     "score": 23,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 16/2026",
@@ -20638,7 +21868,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:39"
+      "ultima_revision": "2026-08-25T11:37:37"
     },
     "score": 29,
     "simbolo": "★★",
@@ -20684,7 +21914,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:40"
+      "ultima_revision": "2026-08-25T11:37:38"
     },
     "score": 2,
     "simbolo": "★",
@@ -20725,6 +21955,16 @@
     "organismo": "Ministerio del Interior (MI)",
     "primera_deteccion": "2026-08-18T20:01:06",
     "que_es": "Licitación de Ministerio del Interior (MI) — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos flotantes/laminados, Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:40"
+    },
     "score": 31,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 44/2026",
@@ -20764,6 +22004,16 @@
     "organismo": "Intendencia de Maldonado",
     "primera_deteccion": "2026-08-18T19:46:05",
     "que_es": "Licitación de Intendencia de Maldonado — categorías de producto detectadas: Insumos para canchas, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:40"
+    },
     "score": 42,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 29/2026",
@@ -20808,7 +22058,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:44"
+      "ultima_revision": "2026-08-25T11:37:41"
     },
     "score": 21,
     "simbolo": "★",
@@ -20839,6 +22089,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:29:13",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: ninguna coincidencia directa de categoría.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:43"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 13/2026",
@@ -20881,7 +22141,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:46"
+      "ultima_revision": "2026-08-25T11:37:44"
     },
     "score": 1,
     "simbolo": "★",
@@ -20916,6 +22176,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:53:19",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:44"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Compra Directa 239/2026",
@@ -20954,7 +22224,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:49"
+      "ultima_revision": "2026-08-25T11:37:45"
     },
     "score": 25,
     "simbolo": "★★",
@@ -20993,6 +22263,16 @@
     "organismo": "CES - Consejo de Educación Secundaria",
     "primera_deteccion": "2026-08-18T19:27:46",
     "que_es": "Licitación de CES - Consejo de Educación Secundaria — categorías de producto detectadas: Material mencionado (revisar contexto), Pisos flotantes/laminados.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:46"
+    },
     "score": 33,
     "simbolo": "★★",
     "titulo": "Compra Directa 113/2026",
@@ -21039,7 +22319,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:50"
+      "ultima_revision": "2026-08-25T11:37:47"
     },
     "score": 35,
     "simbolo": "★★",
@@ -21087,7 +22367,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:52"
+      "ultima_revision": "2026-08-25T11:37:48"
     },
     "score": 41,
     "simbolo": "★★",
@@ -21155,7 +22435,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:53"
+      "ultima_revision": "2026-08-25T11:37:49"
     },
     "score": 44,
     "simbolo": "★★",
@@ -21229,7 +22509,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:53"
+      "ultima_revision": "2026-08-25T11:37:50"
     },
     "score": 29,
     "simbolo": "★★",
@@ -21304,7 +22584,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:54"
+      "ultima_revision": "2026-08-25T11:37:51"
     },
     "score": 36,
     "simbolo": "★★",
@@ -21436,7 +22716,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:55"
+      "ultima_revision": "2026-08-25T11:37:52"
     },
     "score": 35,
     "simbolo": "★★",
@@ -21487,7 +22767,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:57"
+      "ultima_revision": "2026-08-25T11:37:53"
     },
     "score": 9,
     "simbolo": "★",
@@ -21546,7 +22826,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:37:58"
+      "ultima_revision": "2026-08-25T11:37:54"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -21600,6 +22880,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T20:00:06",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:55"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra por Excepción 108/2026",
@@ -21644,7 +22934,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:00"
+      "ultima_revision": "2026-08-25T11:37:56"
     },
     "score": 2,
     "simbolo": "★",
@@ -21683,6 +22973,16 @@
     "organismo": "CES - Consejo de Educación Secundaria",
     "primera_deteccion": "2026-08-18T20:05:18",
     "que_es": "Licitación de CES - Consejo de Educación Secundaria — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 0,00",
+      "nos_presentamos": false,
+      "resolucion": "Declarada sin efecto",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:37:57"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 41/2026",
@@ -21777,7 +23077,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:02"
+      "ultima_revision": "2026-08-25T11:37:58"
     },
     "score": 18,
     "simbolo": "★",
@@ -21835,7 +23135,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:03"
+      "ultima_revision": "2026-08-25T11:37:59"
     },
     "score": 51,
     "simbolo": "★★★",
@@ -21885,6 +23185,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:42:09",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:38:00"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Compra Directa 88507/2026",
@@ -21918,6 +23228,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:41:24",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 245.808,80",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:38:00"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 364/2026",
@@ -21951,6 +23271,16 @@
     "organismo": "BSE - Banco de Seguros del Estado",
     "primera_deteccion": "2026-08-18T19:44:41",
     "que_es": "Licitación de BSE - Banco de Seguros del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 339.942,48",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:38:01"
+    },
     "score": 14,
     "simbolo": "★",
     "titulo": "Compra Directa 1269/2026",
@@ -22000,7 +23330,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:07"
+      "ultima_revision": "2026-08-25T11:38:02"
     },
     "score": 1,
     "simbolo": "★",
@@ -22046,7 +23376,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:08"
+      "ultima_revision": "2026-08-25T11:38:03"
     },
     "score": 14,
     "simbolo": "★",
@@ -22088,7 +23418,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:09"
+      "ultima_revision": "2026-08-25T11:38:04"
     },
     "score": 1,
     "simbolo": "★",
@@ -22132,7 +23462,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:10"
+      "ultima_revision": "2026-08-25T11:38:05"
     },
     "score": 20,
     "simbolo": "★",
@@ -22246,7 +23576,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:10"
+      "ultima_revision": "2026-08-25T11:38:06"
     },
     "score": 29,
     "simbolo": "★★",
@@ -22394,6 +23724,16 @@
     "organismo": "Intendencia de Treinta y Tres",
     "primera_deteccion": "2026-08-18T19:48:24",
     "que_es": "Licitación de Intendencia de Treinta y Tres — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:38:07"
+    },
     "score": 25,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 9/2026",
@@ -22431,6 +23771,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:54:15",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:38:08"
+    },
     "score": 0,
     "simbolo": "★",
     "titulo": "Compra Directa 191195/2026",
@@ -22476,7 +23826,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:13"
+      "ultima_revision": "2026-08-25T11:38:09"
     },
     "score": 34,
     "simbolo": "★★",
@@ -22525,7 +23875,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:14"
+      "ultima_revision": "2026-08-25T11:38:10"
     },
     "score": 13,
     "simbolo": "★",
@@ -22577,7 +23927,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:15"
+      "ultima_revision": "2026-08-25T11:38:11"
     },
     "score": 21,
     "simbolo": "★",
@@ -22625,6 +23975,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:24:58",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:38:12"
+    },
     "score": 51,
     "simbolo": "★★★",
     "titulo": "Licitación Abreviada 18/2026",
@@ -22683,7 +24043,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:17"
+      "ultima_revision": "2026-08-25T11:38:13"
     },
     "score": 1,
     "simbolo": "★",
@@ -22727,7 +24087,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:18"
+      "ultima_revision": "2026-08-25T11:38:14"
     },
     "score": 29,
     "simbolo": "★★",
@@ -22772,6 +24132,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:53:03",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos.",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 804.579,02",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:38:15"
+    },
     "score": 49,
     "simbolo": "★★★",
     "titulo": "Compra Directa 443/2026",
@@ -22817,7 +24187,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:20"
+      "ultima_revision": "2026-08-25T11:38:16"
     },
     "score": 5,
     "simbolo": "★",
@@ -22863,7 +24233,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:21"
+      "ultima_revision": "2026-08-25T11:38:17"
     },
     "score": 5,
     "simbolo": "★",
@@ -22913,7 +24283,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:22"
+      "ultima_revision": "2026-08-25T11:38:18"
     },
     "score": 39,
     "simbolo": "★★",
@@ -22948,6 +24318,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:42:06",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:38:19"
+    },
     "score": 2,
     "simbolo": "★",
     "titulo": "Concurso de Precios 704201/2026",
@@ -22990,7 +24370,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:24"
+      "ultima_revision": "2026-08-25T11:38:20"
     },
     "score": 23,
     "simbolo": "★",
@@ -23032,7 +24412,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:25"
+      "ultima_revision": "2026-08-25T11:38:21"
     },
     "score": 1,
     "simbolo": "★",
@@ -23089,7 +24469,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:26"
+      "ultima_revision": "2026-08-25T11:38:22"
     },
     "score": 32,
     "simbolo": "★★",
@@ -23166,7 +24546,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:27"
+      "ultima_revision": "2026-08-25T11:38:23"
     },
     "score": 0,
     "simbolo": "★",
@@ -23217,7 +24597,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:28"
+      "ultima_revision": "2026-08-25T11:38:24"
     },
     "score": 36,
     "simbolo": "★★",
@@ -23263,7 +24643,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:29"
+      "ultima_revision": "2026-08-25T11:38:25"
     },
     "score": 57,
     "simbolo": "★★★",
@@ -23372,7 +24752,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:30"
+      "ultima_revision": "2026-08-25T11:38:26"
     },
     "score": 18,
     "simbolo": "★",
@@ -23486,7 +24866,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:31"
+      "ultima_revision": "2026-08-25T11:38:27"
     },
     "score": 30,
     "simbolo": "★★",
@@ -23521,6 +24901,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:25:59",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Pisos vinílicos.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:38:27"
+    },
     "score": 0,
     "simbolo": "★",
     "titulo": "Licitación Pública 13/2026",
@@ -23567,7 +24957,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:32"
+      "ultima_revision": "2026-08-25T11:38:28"
     },
     "score": 23,
     "simbolo": "★",
@@ -23610,6 +25000,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:27:51",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:38:29"
+    },
     "score": 35,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 22/2026",
@@ -23645,6 +25045,16 @@
     "organismo": null,
     "primera_deteccion": "2026-08-18T19:56:22",
     "que_es": "Licitación de organismo no identificado — categorías de producto detectadas: Alfombras, Variante/error ortográfico de un término del rubro.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:38:30"
+    },
     "score": 14,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 29/2026",
@@ -23678,6 +25088,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:45:30",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "resultado": {
+      "estado": "no_presentamos",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": "$ 100.406,00",
+      "nos_presentamos": false,
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:38:31"
+    },
     "score": 17,
     "simbolo": "★",
     "titulo": "Compra Directa 88523/2026",
@@ -23715,6 +25135,16 @@
     "organismo": "Intendencia de Florida",
     "primera_deteccion": "2026-08-18T19:51:01",
     "que_es": "Licitación de Intendencia de Florida — categorías de producto detectadas: Material mencionado (revisar contexto), Pisos vinílicos.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:38:32"
+    },
     "score": 33,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 8/2026",
@@ -23769,7 +25199,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:37"
+      "ultima_revision": "2026-08-25T11:38:33"
     },
     "score": 32,
     "simbolo": "★★",
@@ -23841,6 +25271,16 @@
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-18T19:29:04",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — categorías de producto detectadas: Accesorios de instalación, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-08-25T11:38:34"
+    },
     "score": 55,
     "simbolo": "★★★",
     "titulo": "Licitación Abreviada 107/2026",
@@ -23896,7 +25336,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-08-24T11:38:39"
+      "ultima_revision": "2026-08-25T11:38:35"
     },
     "score": 21,
     "simbolo": "★",
