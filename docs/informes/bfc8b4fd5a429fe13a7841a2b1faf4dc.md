@@ -1,7 +1,8 @@
 # Informe de licitación: Compra por Excepción 16/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1356317
-**Generado:** 2026-08-24 11:54
+**Generado:** 2026-08-24 23:50
+**Qué es:** Licitación de Ministerio de Ambiente (MA) — categorías de producto detectadas: Alfombras, Variante/error ortográfico de un término del rubro.
 
 ## Clasificación: ★ — No presentarse (score 13/100)
 
@@ -13,6 +14,8 @@
 - -20 por 12 ítem(s) documentales a verificar
 
 ## Resumen ejecutivo
+QUÉ ES: Licitación de Ministerio de Ambiente (MA) — categorías de producto detectadas: Alfombras, Variante/error ortográfico de un término del rubro.
+
 Organismo: Ministerio de Ambiente (MA).
 Número: no identificado — verificar manualmente.
 Fecha de apertura: no identificada — verificar manualmente.
