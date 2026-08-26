@@ -1,7 +1,7 @@
 # Informe de licitación: Compra Directa 188/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1359195
-**Generado:** 2026-08-26 00:18
+**Generado:** 2026-08-26 12:24
 **Qué es:** Licitación de organismo no identificado — categorías de producto detectadas: ninguna coincidencia directa de categoría.
 
 ## Clasificación: ★★ — Poco conveniente (score 25/100)
