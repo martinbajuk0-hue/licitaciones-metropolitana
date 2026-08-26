@@ -531,6 +531,15 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor
     subject = f"🏗️ {total} novedad(es) de licitaciones para Metropolitana — {datetime.today().strftime('%d/%m/%Y')}"
 
     def _tarjeta(lic: dict, etiqueta: str, color: str) -> str:
+        # Resumen corto ("qué es esta licitación", ver analyzer.extraer_
+        # que_es()) — pedido del usuario 2026-08-24: poder entender de qué
+        # se trata cada llamado sin tener que abrir el pliego. Va primero,
+        # antes de cualquier otro dato, porque es lo primero que hace
+        # falta leer para decidir si seguir mirando la tarjeta.
+        que_es_html = (
+            f'<p style="margin:0 0 6px;font-size:13px;color:#333;">📝 {lic["que_es"]}</p>'
+            if lic.get("que_es") else ""
+        )
         clasif = lic.get("clasificacion")
         clasif_html = (
             f'<p style="margin:0 0 4px;font-size:13px;color:#555;">⭐ {clasif.simbolo} — {clasif.etiqueta} (score {clasif.puntaje}/100)</p>'
@@ -567,6 +576,7 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor
         <div style="border-left:4px solid {color};padding:12px 16px;margin-bottom:16px;background:#f8f9fa;border-radius:0 6px 6px 0;">
             <p style="margin:0 0 4px;font-size:11px;font-weight:700;color:{color};text-transform:uppercase;">{etiqueta}</p>
             <p style="margin:0 0 6px;font-size:15px;font-weight:600;color:#1a1a1a;">{lic['titulo']}</p>
+            {que_es_html}
             <p style="margin:0 0 4px;font-size:13px;color:#555;">📅 {lic['fecha']} &nbsp;|&nbsp; 🔑 Coincidencia: <strong>{lic.get('keyword','')}</strong> &nbsp;|&nbsp; 📄 Encontrado en: <em>{lic.get('fuente','título')}</em></p>
             {clasif_html}
             {ya_adjudicados_html}
@@ -694,6 +704,7 @@ def main(enviar_email_flag: bool = True) -> None:
         lic["clasificacion"] = informe.clasificacion
         lic["ya_adjudicados"] = informe.ya_adjudicados
         lic["cierre"] = informe.cierre
+        lic["que_es"] = informe.que_es
         # Filtro por score mínimo (configurable vía secret SCORE_MINIMO_EMAIL)
         # — salvo que el match haya sido por código de artículo ya
         # adjudicado: ahí se manda sí o sí, pedido explícito del usuario
@@ -813,6 +824,7 @@ def enviar_email_de_prueba() -> None:
         "keyword": "(prueba manual, no es una coincidencia real)",
         "fuente": "prueba",
         "documentos": ["https://www.comprasestatales.gub.uy/Pliegos/pedido_1354522.pdf"],
+        "que_es": "Esto es un mail de prueba — no corresponde a una licitación real.",
     }
     enviar_email([lic_prueba], [])
 
@@ -909,6 +921,7 @@ def enviar_email_de_prueba_rango_fechas(desde: str, hasta: str) -> None:
         lic["clasificacion"] = informe.clasificacion
         lic["ya_adjudicados"] = informe.ya_adjudicados
         lic["cierre"] = informe.cierre
+        lic["que_es"] = informe.que_es
 
         if informe.clasificacion.puntaje < score_minimo and fuente != FUENTE_CODIGO_ARTICULO:
             print(f"    Score {informe.clasificacion.puntaje} < mínimo {score_minimo}, omitiendo del email (igual que en producción).")
