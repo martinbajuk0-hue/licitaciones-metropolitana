@@ -82,6 +82,19 @@ MAX_ALERTAS_POR_EMAIL = 30
 # corridas. El catálogo del visor sigue mostrando todo, sin este filtro.
 DIAS_MAX_PARA_ALERTA_POR_MAIL = 2
 
+# 2026-08-27: buena parte del backlog reprocesado en cada corrida son
+# llamados publicados hace semanas — igual nunca iban a entrar al email
+# (ver DIAS_MAX_PARA_ALERTA_POR_MAIL arriba) pero el loop igual gastaba
+# tiempo descargando y analizando el pliego completo de cada uno antes
+# de descartarlos. Filtro barato ANTES de esa parte cara: si la
+# publicación es más vieja que esto, se asume que ya cerró (o está por
+# cerrar) y se saltea sin analizar — pedido explícito del usuario
+# 2026-08-27 para que la puesta al día del backlog sea rápida. Umbral
+# generoso a propósito (fail-open, igual que _es_publicacion_reciente()
+# más abajo): mejor analizar de más algo que quizás ya cerró, que
+# arriesgarse a saltear un llamado grande todavía abierto.
+DIAS_MAX_BACKLOG_SIN_ANALIZAR = 60
+
 
 # ─── Estado (licitaciones ya vistas) ──────────────────────────────────────
 # Formato: { id: {"titulo": str, "hash": str, "primera_deteccion": iso, "notificaciones": int} }
@@ -684,6 +697,15 @@ def main(enviar_email_flag: bool = True) -> None:
                 vistos[lic["id"]]["notificaciones"] = previo.get("notificaciones", 1) + 1
             continue
 
+        if _es_backlog_viejo(lic):
+            vistos[lic["id"]] = {
+                "titulo": lic["titulo"],
+                "hash": hash_actual,
+                "primera_deteccion": datetime.now().isoformat(),
+                "notificaciones": 0,
+            }
+            continue
+
         relevante, kw, fuente, texto_pliego = es_relevante(lic)
         vistos[lic["id"]] = {
             "titulo": lic["titulo"],
@@ -871,6 +893,23 @@ def _fecha_lic_a_iso(fecha_cruda: str) -> str | None:
         return parsedate_to_datetime(fecha_cruda).strftime("%Y-%m-%d")
     except (TypeError, ValueError):
         return None
+
+
+def _es_backlog_viejo(lic: dict) -> bool:
+    """True si lic['fecha'] es tan vieja que la licitación probablemente
+    ya cerró — ver DIAS_MAX_BACKLOG_SIN_ANALIZAR arriba. Se usa para
+    saltear el análisis caro (pliego + informe) de backlog viejo. Fail-
+    open igual que _es_publicacion_reciente(): si no se puede parsear la
+    fecha, NO se saltea (se prefiere analizar de más).
+    """
+    fecha_iso = _fecha_lic_a_iso(lic.get("fecha", ""))
+    if not fecha_iso:
+        return False
+    try:
+        fecha_pub = datetime.strptime(fecha_iso, "%Y-%m-%d")
+    except ValueError:
+        return False
+    return (datetime.now() - fecha_pub).days > DIAS_MAX_BACKLOG_SIN_ANALIZAR
 
 
 def _es_publicacion_reciente(lic: dict, max_dias: int = DIAS_MAX_PARA_ALERTA_POR_MAIL) -> bool:
