@@ -1,7 +1,7 @@
 # Informe de licitación: Licitación Abreviada 8/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1357563
-**Generado:** 2026-08-26 14:07
+**Generado:** 2026-08-27 03:55
 **Qué es:** Licitación de Intendencia de Florida — categorías de producto detectadas: Material mencionado (revisar contexto), Pisos vinílicos.
 
 ## Clasificación: ★★ — Poco conveniente (score 33/100)
@@ -83,8 +83,8 @@ _(ninguno)_
 - Formulario de identificación del oferente
 
 ## Cronograma de tareas
-- 2026-08-26: Lectura integral del pliego y anexos
-- 2026-08-27: Armar checklist documental y reunir certificados
+- 2026-08-27: Lectura integral del pliego y anexos
+- 2026-08-28: Armar checklist documental y reunir certificados
 - según disponibilidad, antes de apertura: Definir productos y armar cotización
 - según disponibilidad, antes de apertura: Redactar oferta técnica y administrativa
 - FECHA DE APERTURA NO IDENTIFICADA — verificar manualmente antes de planificar: Entrega de oferta

@@ -1,7 +1,7 @@
 # Informe de licitación: Compra Directa 1269/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1357738
-**Generado:** 2026-08-26 13:22
+**Generado:** 2026-08-27 03:12
 **Qué es:** Licitación de BSE - Banco de Seguros del Estado — categorías de producto detectadas: Material mencionado (revisar contexto).
 
 ## Clasificación: ★ — No presentarse (score 14/100)
@@ -82,8 +82,8 @@ _(ninguno)_
 - Formulario de identificación del oferente
 
 ## Cronograma de tareas
-- 2026-08-26: Lectura integral del pliego y anexos
-- 2026-08-27: Armar checklist documental y reunir certificados
+- 2026-08-27: Lectura integral del pliego y anexos
+- 2026-08-28: Armar checklist documental y reunir certificados
 - según disponibilidad, antes de apertura: Definir productos y armar cotización
 - según disponibilidad, antes de apertura: Redactar oferta técnica y administrativa
 - FECHA DE APERTURA NO IDENTIFICADA — verificar manualmente antes de planificar: Entrega de oferta
