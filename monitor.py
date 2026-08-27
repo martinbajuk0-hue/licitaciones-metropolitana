@@ -43,6 +43,20 @@ MAX_DOCUMENTOS_POR_LICITACION = 5
 # corrida #201 se canceló a mitad de camino después de ~50 min).
 CHECKPOINT_CADA_N_ITEMS = 25
 
+# 2026-08-27: la corrida real encontró de una sola vez varios miles de
+# llamados "nuevos" (vistos nunca se llegó a persistir porque el job de
+# GitHub Actions mata TODO el step a las 6h en seco, sin correr ni el
+# guardado de caché ni el commit del catálogo — ver monitor.yml,
+# "Guardar historial actualizado" / "Publicar catálogo del visor web").
+# Evidencia real: corridas #220 a #226, cada una cancelada a las 6h0m
+# exactas sin haber terminado ni una sola vez el for de más abajo — por
+# eso ninguna llegó nunca a guardar_vistos() de cierre ni a
+# enviar_email(). Techo de ítems procesados por corrida para que el loop
+# SIEMPRE termine bien antes de las 6h: lo que quede pendiente se retoma
+# solo en la próxima corrida (los ítems ya procesados en esta quedan
+# marcados en vistos, así que la próxima vez se saltean rápido).
+MAX_ITEMS_POR_CORRIDA = 1500
+
 # corridas del workflow procesando el mismo backlog de ~1000 llamados en
 # simultáneo — ver .github/workflows/monitor.yml, "concurrency"; y cada
 # corrida perdía TODO su progreso si no llegaba a terminar, porque
@@ -642,6 +656,14 @@ def main(enviar_email_flag: bool = True) -> None:
     modificadas: list[dict] = []
 
     for idx, lic in enumerate(licitaciones, start=1):
+        if idx > MAX_ITEMS_POR_CORRIDA:
+            print(
+                f"  Techo de {MAX_ITEMS_POR_CORRIDA} ítems procesados en esta corrida "
+                "alcanzado — el resto queda para la próxima corrida (los que sí se "
+                "procesaron ya quedaron marcados como vistos)."
+            )
+            break
+
         # Checkpoint periódico: guarda el progreso acumulado hasta ahora
         # ANTES de procesar el siguiente ítem, así una corrida larga que
         # se cancela o se cae a mitad de camino no pierde todo lo ya
