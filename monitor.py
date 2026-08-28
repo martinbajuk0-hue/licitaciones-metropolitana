@@ -82,18 +82,18 @@ MAX_ALERTAS_POR_EMAIL = 30
 # corridas. El catálogo del visor sigue mostrando todo, sin este filtro.
 DIAS_MAX_PARA_ALERTA_POR_MAIL = 2
 
-# 2026-08-27: buena parte del backlog reprocesado en cada corrida son
-# llamados publicados hace semanas — igual nunca iban a entrar al email
-# (ver DIAS_MAX_PARA_ALERTA_POR_MAIL arriba) pero el loop igual gastaba
-# tiempo descargando y analizando el pliego completo de cada uno antes
-# de descartarlos. Filtro barato ANTES de esa parte cara: si la
-# publicación es más vieja que esto, se asume que ya cerró (o está por
-# cerrar) y se saltea sin analizar — pedido explícito del usuario
-# 2026-08-27 para que la puesta al día del backlog sea rápida. Umbral
-# generoso a propósito (fail-open, igual que _es_publicacion_reciente()
-# más abajo): mejor analizar de más algo que quizás ya cerró, que
-# arriesgarse a saltear un llamado grande todavía abierto.
-DIAS_MAX_BACKLOG_SIN_ANALIZAR = 60
+# 2026-08-28: 60 días de margen (ver historial más abajo) no achicaba
+# casi nada el backlog en la práctica — el feed RSS de ARCE solo trae
+# el mes en curso + el anterior, así que casi todo caía adentro de esa
+# ventana igual. Pedido explícito del usuario 2026-08-28: no le
+# interesa revisar el histórico — quiere que el sistema mire "de ahora
+# en adelante", no que se ponga al día con meses de llamados viejos.
+# Con un umbral chico, todo lo publicado antes de esta ventana se
+# saltea sin analizar (rápido: sin descarga ni análisis de pliego) y
+# solo se procesa en serio lo genuinamente reciente. Un poco más
+# generoso que DIAS_MAX_PARA_ALERTA_POR_MAIL (2 días) para no perder
+# por un pelo algo publicado justo antes de la corrida.
+DIAS_MAX_BACKLOG_SIN_ANALIZAR = 3
 
 
 # ─── Estado (licitaciones ya vistas) ──────────────────────────────────────
@@ -896,11 +896,13 @@ def _fecha_lic_a_iso(fecha_cruda: str) -> str | None:
 
 
 def _es_backlog_viejo(lic: dict) -> bool:
-    """True si lic['fecha'] es tan vieja que la licitación probablemente
-    ya cerró — ver DIAS_MAX_BACKLOG_SIN_ANALIZAR arriba. Se usa para
-    saltear el análisis caro (pliego + informe) de backlog viejo. Fail-
-    open igual que _es_publicacion_reciente(): si no se puede parsear la
-    fecha, NO se saltea (se prefiere analizar de más).
+    """True si lic['fecha'] cae fuera de la ventana de
+    DIAS_MAX_BACKLOG_SIN_ANALIZAR (ver arriba) — se usa para saltear SIN
+    analizar (sin descargar pliego, sin llamar al analyzer) cualquier
+    llamado que no sea reciente, por pedido explícito del usuario de no
+    revisar el histórico. Fail-open si no se puede parsear la fecha: NO
+    se saltea, se prefiere analizar de más a arriesgarse a perder un
+    llamado real por un pubDate raro.
     """
     fecha_iso = _fecha_lic_a_iso(lic.get("fecha", ""))
     if not fecha_iso:
