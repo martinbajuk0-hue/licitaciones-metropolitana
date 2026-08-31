@@ -1,28 +1,29 @@
-# Informe de licitación: Concurso de Precios 109498/2026
+# Informe de licitación: Compra Directa 61/2026
 
-**URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1367764
-**Generado:** 2026-08-31 21:52
-**Qué es:** Licitación de Ministerio de Relaciones Exteriores (MRREE) — busca Abreviatura técnica del rubro, Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro. Menciona "carpet": «r todos los folios que componen la misma engrampados y/o encarpetados. La copia deberá ser igual al original . En caso que la»
+**URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1351233
+**Generado:** 2026-08-31 21:51
+**Qué es:** Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto), Servicios. Menciona "instalación llave en mano": «inos del Estado (en adelante DGC) requiere el suministro e instalación llave en mano de un automatismo para la climatización del Datacenter…»
 
-## Clasificación: ★★★ — Dudosa (score 45/100)
+## Clasificación: ★ — No presentarse (score 9/100)
 
 ### Por qué este puntaje
-- +40 por 4 categoría(s) de producto identificadas
+- +24 por 2 categoría(s) de producto identificadas
 - +15 por organismo identificado (prioritario según el rol)
 - -20 por 5 campo(s) clave no identificados (a verificar manualmente)
-- -20 por 12 ítem(s) documentales a verificar
+- -20 por 2 riesgo(s) de severidad alta
+- -20 por 10 ítem(s) documentales a verificar
 
 ## Resumen ejecutivo
-QUÉ ES: Licitación de Ministerio de Relaciones Exteriores (MRREE) — busca Abreviatura técnica del rubro, Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro. Menciona "carpet": «r todos los folios que componen la misma engrampados y/o encarpetados. La copia deberá ser igual al original . En caso que la»
+QUÉ ES: Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto), Servicios. Menciona "instalación llave en mano": «inos del Estado (en adelante DGC) requiere el suministro e instalación llave en mano de un automatismo para la climatización del Datacenter…»
 
-Organismo: Ministerio de Relaciones Exteriores (MRREE).
+Organismo: OSE - Obras Sanitarias del Estado.
 Número: no identificado — verificar manualmente.
 Fecha de apertura: no identificada — verificar manualmente.
-Categorías de producto detectadas: Abreviatura técnica del rubro, Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro.
+Categorías de producto detectadas: Material mencionado (revisar contexto), Servicios.
 Resumen generado por reglas (sin ANTHROPIC_API_KEY configurada): es un extracto de campos, no un análisis narrativo completo del pliego.
 
 ## Datos clave
-- Organismo: Ministerio de Relaciones Exteriores (MRREE)
+- Organismo: OSE - Obras Sanitarias del Estado
 - Número de licitación/expediente: **NO IDENTIFICADO — verificar manualmente**
 - Fecha de apertura: **NO IDENTIFICADA — verificar manualmente** (Fecha de cierre no identificada — verificar manualmente)
 - Plazo/fecha de entrega: no identificado — verificar manualmente
@@ -42,30 +43,31 @@ _(ninguno)_
 - criterios de evaluación: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
 
 ## Productos Metropolitana identificados
-Categorías detectadas: Abreviatura técnica del rubro, Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro
+Categorías detectadas: Material mencionado (revisar contexto), Servicios
 
-- **Alfombras** ("carpet"): ...r todos los folios que componen la misma engrampados y/o  encarpetados. La copia deberá ser igual al original . En caso que la...
-- **Material mencionado (revisar contexto)** ("pu"): ...n.    10.5  En ningún caso el total de las multas aplicadas pu ede exceder el 20% (veinte por  ciento) del monto total adj...
-- **Variante/error ortográfico de un término del rubro** ("carpeta"): ...r todos los folios que componen la misma engrampados y/o  encarpetados. La copia deberá ser igual al original . En caso que la...
-- **Abreviatura técnica del rubro** ("pu"): ...n.    10.5  En ningún caso el total de las multas aplicadas pu ede exceder el 20% (veinte por  ciento) del monto total adj...
+- **Servicios** ("instalación llave en mano"): ...inos del Estado (en adelante DGC) requiere el suministro e  instalación llave en mano de un automatismo para la climatización del Datacenter de l...
+- **Material mencionado (revisar contexto)** ("nylon"): ...en la obra se dispondrán y mantendrán cartones, plástico,  nylon y todo lo q ue el oferente entienda necesario para no ensuc...
 
 ### Ya adjudicaste antes
-Metropolitana ya le vendió al Estado alguno de estos productos antes (historial 2025-2026, ver knowledge/historial_adjudicaciones_metropolitana.json): FELPUDO, MANTA BAJO PISO DE ESPUMA DE POLIETILENO, ENTREPUERTA METALICA.
+Metropolitana ya le vendió al Estado alguno de estos productos antes (historial 2025-2026, ver knowledge/historial_adjudicaciones_metropolitana.json): instalación.
 ### Contexto adicional (lugar de uso / aplicación)
-- Lugar de uso mencionado: antel, banco, correo, depósito, fabrica, facultad, facultades, ministerio, oficina, plaza, recepción, tribunal
-- Aplicación mencionada: certificado, exterior, interior
+- Lugar de uso mencionado: correo, dirección, facultad, facultades, fábrica, plaza, recepción
+- Aplicación mencionada: exterior
 
 ## Riesgos detectados
-Altos: 0 · Medios: 0 · Total: 0
+Altos: 2 · Medios: 0 · Total: 2
 
-_(ninguno)_
+- [ALTA] multas_penalidades: Mora automática — «ganismo.  16. MORA Y PENALIDADES  El adjudicatario caerá en mora de pleno derecho y sin necesidad de protesto, ni de  interpelación judicial»
+- [ALTA] multas_penalidades: Penalidades mencionadas — «e los bienes recibidos por parte del Organismo.  16. MORA Y PENALIDADES  El adjudicatario caerá en mora de pleno derecho y sin nece»
 
 ## Checklist documental
 ### Exigidos explícitamente en el pliego
-- Inscripción activa en RUPE — evidencia: «uien tenga facultades de representación y esté val idado en RUPE.  En caso  contrario se descalificará la oferta .     Cada»
-- Poderes / representación legal vigentes — evidencia: «………………………………………………….. , en calidad de…………………………  (apoderado/representante legal) de la (Persona jurí dica/Persona  física)………………………………………,»
-- Catálogos de producto — evidencia: «17.5  19   ITEM 2  12  80  650 100  26  17.5  20    2.2 – CATALOGO: Se deberá presentar junto a la ofer ta el catálogo del fab»
-- Declaraciones juradas exigidas — evidencia: «su oferta:      Indicación expresa de su razón social.    Declaración Jurada que luce como Anexo II en el presente pliego.     En base a»
+- Inscripción activa en RUPE — evidencia: «ravés de correo  electrónico indicado por el proveedor o en RUPE.    5. COTIZACION DE LA PROPUESTA  Se deberá cotizar exclus»
+- Poderes / representación legal vigentes — evidencia: «……………………………………………………….    Firma y contrafirma del titular o representante legal de la empresa y sello identificatorio de la Unidad Ejecutor»
+- Catálogos de producto — evidencia: «isponible en el sistema,  deberá comunicarse con la sección Catálogo de ACCE al correo electrónico  catalogo@acce.gub.uy para so»
+- Garantía de mantenimiento de oferta — evidencia: «unto por cada Advertencia   2 puntos por cada Ejecución de garantía de mantenimiento de oferta o de fiel  cumplimiento de contrato, o multa económica   3»
+- Constancia de visita de obra (si el pliego la exige) — evidencia: «s y complementarias.     3.  VISITAS     No obligatoria. La visita previa cotización de los trabajos solicitados no es obligatoria,»
+- Formulario de identificación del oferente — evidencia: «RIANO 802 PISO 5- TEL. 2901 51 31    ANEXO I: FORMULARIO DE IDENTIFICACIÓN DEL OFERENTE  (formato modelo)     Razón Social de la Empresa:    Nombre»
 
 ### Estándar, no mencionado en el pliego (verificar si igual aplica)
 - Certificado único de DGI vigente
@@ -74,12 +76,10 @@ _(ninguno)_
 - Estados contables / antecedentes financieros
 - Fichas técnicas de los productos ofertados
 - Muestras físicas de producto
-- Garantía de mantenimiento de oferta
 - Garantía de fiel cumplimiento de contrato
 - Pólizas de seguro (responsabilidad civil / accidentes)
 - Antecedentes en obras/suministros similares
-- Constancia de visita de obra (si el pliego la exige)
-- Formulario de identificación del oferente
+- Declaraciones juradas exigidas
 
 ## Cronograma de tareas
 - 2026-08-31: Lectura integral del pliego y anexos
