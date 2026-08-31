@@ -753,7 +753,17 @@ def main(enviar_email_flag: bool = True) -> None:
         # — salvo que el match haya sido por código de artículo ya
         # adjudicado: ahí se manda sí o sí, pedido explícito del usuario
         # 2026-08-18 (ver es_relevante()).
-        score_minimo = int(os.environ.get("SCORE_MINIMO_EMAIL", 0))
+        #
+        # 2026-08-31: default subido de 0 a 45 (el piso de "★★★ Dudosa" en
+        # umbral_estrellas() de config/settings.py). Evidencia real: sin
+        # este piso, la corrida #241 mandó por mail licitaciones con
+        # puntaje 1/100 y 23/100 — clasificadas por el propio sistema como
+        # "No presentarse" / "Poco conveniente" — y con matches de palabra
+        # clave genéricos (ej. "PVC" de un ducto eléctrico, no un piso).
+        # Pedido explícito del usuario 2026-08-31: no quiere en el mail
+        # nada que no tenga que ver con lo que vende. Se puede seguir
+        # ajustando sin tocar código con el secret SCORE_MINIMO_EMAIL.
+        score_minimo = int(os.environ.get("SCORE_MINIMO_EMAIL", 45))
         if informe.clasificacion.puntaje < score_minimo and fuente != FUENTE_CODIGO_ARTICULO:
             print(f"  Score {informe.clasificacion.puntaje} < mínimo {score_minimo}, omitiendo del email.")
             continue
@@ -958,7 +968,7 @@ def enviar_email_de_prueba_rango_fechas(desde: str, hasta: str) -> None:
     en_rango = [lic for lic in licitaciones if (_fecha_lic_a_iso(lic.get("fecha", "")) or "") and desde <= _fecha_lic_a_iso(lic["fecha"]) <= hasta]
     print(f"  Publicadas entre {desde} y {hasta}: {len(en_rango)}")
 
-    score_minimo = int(os.environ.get("SCORE_MINIMO_EMAIL", 0))
+    score_minimo = int(os.environ.get("SCORE_MINIMO_EMAIL", 45))
     nuevas: list[dict] = []
     for lic in en_rango:
         relevante, kw, fuente, texto_pliego = es_relevante(lic)
