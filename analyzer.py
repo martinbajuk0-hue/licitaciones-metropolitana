@@ -278,12 +278,30 @@ def _resumen_extractivo(texto: str, campos: CamposClave, productos: list[Product
     categorias = sorted({settings.etiqueta_categoria(p.categoria) for p in productos})
     organismo = campos.organismo or "organismo no identificado"
     categorias_txt = ", ".join(categorias) if categorias else "ninguna coincidencia directa de categoría"
+
+    # 2026-08-31: la línea "QUÉ ES:" original solo listaba categorías —
+    # muy genérica para decidir sin abrir el pliego. Pedido explícito del
+    # usuario: no va a pagar ANTHROPIC_API_KEY, así que el resumen por
+    # reglas tiene que alcanzar por sí solo. Se le agrega la fecha de
+    # apertura si se detectó, y una cita textual corta del fragmento del
+    # pliego donde matcheó el producto más fuerte — evidencia real, no
+    # inventada: es el mismo `fragmento` que ya se usa en el informe
+    # completo (ver identificar_productos() más arriba), solo recortado.
+    apertura_txt = f", apertura {campos.fecha_apertura}" if campos.fecha_apertura else ""
+    evidencia_txt = ""
+    if productos:
+        p = productos[0]
+        fragmento = " ".join(p.fragmento.split())
+        if len(fragmento) > 140:
+            fragmento = fragmento[:140].rstrip() + "…"
+        evidencia_txt = f' Menciona "{p.termino_encontrado}": «{fragmento}»'
+
     lineas = [
         # Línea "QUÉ ES:" con el mismo formato que generar_resumen_ejecutivo()
         # le pide a Claude (ver prompts/resumen_ejecutivo.md) — así
         # extraer_que_es() funciona igual tenga o no ANTHROPIC_API_KEY
         # configurada, sin que monitor.py tenga que distinguir el origen.
-        f"QUÉ ES: Licitación de {organismo} — categorías de producto detectadas: {categorias_txt}.",
+        f"QUÉ ES: Licitación de {organismo} — busca {categorias_txt}{apertura_txt}.{evidencia_txt}",
         "",
         f"Organismo: {campos.organismo or 'no identificado — verificar manualmente'}.",
         f"Número: {campos.numero_licitacion or 'no identificado — verificar manualmente'}.",
