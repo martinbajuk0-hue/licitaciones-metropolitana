@@ -2155,6 +2155,71 @@
       "CEMENTO ADHESIVO PARA CERAMICA"
     ]
   },
+  "136900d3faa78d46d6ede73f578bceba": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "materiales",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1367612.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 31 Aug 2026 12:40:12",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "136900d3faa78d46d6ede73f578bceba",
+    "informe": "informes/136900d3faa78d46d6ede73f578bceba.md",
+    "keyword": "acero galvanizado",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "39/2026",
+    "organismo": "Intendencia de Cerro Largo",
+    "primera_deteccion": "2026-08-31T17:32:57",
+    "que_es": "Licitación de Intendencia de Cerro Largo — categorías de producto detectadas: Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica).",
+    "score": 23,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 39/2026",
+    "ultima_actualizacion": "2026-08-31T17:32:57",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1367612",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "ALFOMBRA DE GOMA",
+      "ZOCALO PARA PISO FLOTANTE",
+      "PISO MODULAR DE PVC",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "PISO DE GOMA",
+      "ZOCALO DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ZOCALO MONOLITICO",
+      "CAMINERO DE GOMA",
+      "PERFIL U DE ALUMINIO",
+      "BALDOSA DE GOMA",
+      "COLOCACION DE ZOCALO",
+      "PLANCHA DE GOMA EVA",
+      "PAPEL VINILO",
+      "ZOCALO EN MDF",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "CAMINERO DE ACRILICO",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "144a3b1046d8e74e5d83b79367a80b06": {
     "cambio_detectado": false,
     "categorias": [
@@ -3792,6 +3857,45 @@
       "PERFIL U DE ALUMINIO",
       "BALDOSA VINILICA",
       "BALDOSA DE GOMA"
+    ]
+  },
+  "239f3425bd77344665f74b95a0566ee3": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1355503.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": "2026-09-15",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 31 Aug 2026 13:05:17",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "239f3425bd77344665f74b95a0566ee3",
+    "informe": "informes/239f3425bd77344665f74b95a0566ee3.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Economía y Finanzas (MEF)",
+    "primera_deteccion": "2026-08-31T17:32:44",
+    "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — categorías de producto detectadas: Material mencionado (revisar contexto).",
+    "score": 1,
+    "simbolo": "★",
+    "titulo": "Compra por Excepción 5/2026",
+    "ultima_actualizacion": "2026-08-31T17:32:44",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1355503",
+    "ya_adjudicados": [
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO",
+      "REPARACION DE PISO DE MADERA"
     ]
   },
   "23e891bb4beef76b293ea429664d360e": {
@@ -9867,6 +9971,41 @@
       "GOMA NATURAL EN PLANCHA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
+  },
+  "660d458c861cc92502d588bf0c0581f4": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1367521.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 31 Aug 2026 08:50:10",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción",
+    "id": "660d458c861cc92502d588bf0c0581f4",
+    "informe": "informes/660d458c861cc92502d588bf0c0581f4.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Maldonado",
+    "primera_deteccion": "2026-08-31T17:33:50",
+    "que_es": "Licitación de Intendencia de Maldonado — categorías de producto detectadas: Alfombras, Variante/error ortográfico de un término del rubro.",
+    "score": 28,
+    "simbolo": "★★",
+    "titulo": "Licitación Pública 15/2026",
+    "ultima_actualizacion": "2026-08-31T17:33:50",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1367521",
+    "ya_adjudicados": []
   },
   "684322f26b68759ee98f23e18d64ceea": {
     "cambio_detectado": false,
@@ -21192,6 +21331,49 @@
       "GOMA NATURAL EN PLANCHA",
       "REPARACION DE PISO DE MADERA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "d495ffc81687ee1438674c19fc81c33f": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "alfombras",
+      "errores_comunes",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1367764.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 31 Aug 2026 13:35:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "d495ffc81687ee1438674c19fc81c33f",
+    "informe": "informes/d495ffc81687ee1438674c19fc81c33f.md",
+    "keyword": "carpet + carpeta + pu",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
+    "primera_deteccion": "2026-08-31T17:32:36",
+    "que_es": "Licitación de Ministerio de Relaciones Exteriores (MRREE) — categorías de producto detectadas: Abreviatura técnica del rubro, Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro.",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Concurso de Precios 109498/2026",
+    "ultima_actualizacion": "2026-08-31T17:32:36",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1367764",
+    "ya_adjudicados": [
+      "FELPUDO",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "ENTREPUERTA METALICA"
     ]
   },
   "d510492a3400009dde1fedb2391dcec7": {
