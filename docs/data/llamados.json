@@ -2194,25 +2194,15 @@
     "informe": "informes/136900d3faa78d46d6ede73f578bceba.md",
     "keyword": "acero galvanizado",
     "nivel": 1,
-    "notificaciones": 4,
+    "notificaciones": 5,
     "numero_licitacion": "39/2026",
     "organismo": "Intendencia de Cerro Largo",
     "primera_deteccion": "2026-08-31T17:32:57",
     "que_es": "Licitación de Intendencia de Cerro Largo — busca Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"pvc\": «inistro Cámara con tapa 40x40 u 72 21 Suministro de caño de PVC 50mm pared 3,2mm y filtro UV ALTO IMPACTO (tramo 3 ml) tra»",
-    "resultado": {
-      "estado": "pendiente",
-      "fecha_resolucion": null,
-      "ganamos": null,
-      "monto_total": null,
-      "nos_presentamos": false,
-      "resolucion": null,
-      "resolucion_nro": null,
-      "ultima_revision": "2026-09-01T15:25:51"
-    },
     "score": 23,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 39/2026",
-    "ultima_actualizacion": "2026-09-01T14:46:54",
+    "ultima_actualizacion": "2026-09-01T18:23:24",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1367612",
     "ya_adjudicados": [
       "ALFOMBRA DE PVC",
@@ -3900,25 +3890,15 @@
     "informe": "informes/239f3425bd77344665f74b95a0566ee3.md",
     "keyword": "acero inoxidable",
     "nivel": 1,
-    "notificaciones": 4,
+    "notificaciones": 5,
     "numero_licitacion": null,
     "organismo": "Ministerio de Economía y Finanzas (MEF)",
     "primera_deteccion": "2026-08-31T17:32:44",
     "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — busca Material mencionado (revisar contexto), apertura 2026-09-15. Menciona \"acero inoxidable\": «al siguiente detalle: Ítem 1. Hasta 4 (cuatro) mesadas de acero inoxidable sin pileta (10304). Ítem 2. Hasta 2 (dos) mesadas de acero»",
-    "resultado": {
-      "estado": "pendiente",
-      "fecha_resolucion": null,
-      "ganamos": null,
-      "monto_total": null,
-      "nos_presentamos": false,
-      "resolucion": null,
-      "resolucion_nro": null,
-      "ultima_revision": "2026-09-01T15:26:16"
-    },
     "score": 1,
     "simbolo": "★",
     "titulo": "Compra por Excepción 5/2026",
-    "ultima_actualizacion": "2026-09-01T14:46:43",
+    "ultima_actualizacion": "2026-09-01T18:23:13",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1355503",
     "ya_adjudicados": [
       "ZOCALO DE MADERA",
@@ -3982,6 +3962,39 @@
       "ZOCALO EN MDF",
       "REPARACION DE PISO DE MADERA"
     ]
+  },
+  "243482a2b9f94d4705be389f3f25a51b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1362318.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 01 Sep 2026 14:45:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "243482a2b9f94d4705be389f3f25a51b",
+    "informe": "informes/243482a2b9f94d4705be389f3f25a51b.md",
+    "keyword": "provisión de materiales",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "64/2026",
+    "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
+    "primera_deteccion": "2026-09-01T18:24:26",
+    "que_es": "Licitación de Ministerio de Trabajo y Seguridad Social (MTSS) — busca Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"provisión de materiales\": «edente. 2.2) El servicio incluirá sin costo para INAU, la provisión de materiales y repuestos, incluidas las lámparas de los equipos dentale»",
+    "score": 11,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 64/2026",
+    "ultima_actualizacion": "2026-09-01T18:24:26",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1362318",
+    "ya_adjudicados": []
   },
   "24d1c4d12090f947fcdba65120bf1274": {
     "cambio_detectado": false,
@@ -5918,6 +5931,41 @@
       "CAMINERO DE PVC",
       "CAMINERO DE ACRILICO"
     ]
+  },
+  "364eaf7fe7cb14b302dc1ea911315dec": {
+    "cambio_detectado": false,
+    "categorias": [
+      "marcas",
+      "servicios"
+    ],
+    "categorias_etiquetas": [
+      "Marca de mercado mencionada",
+      "Servicios"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1368105.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 01 Sep 2026 14:10:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "364eaf7fe7cb14b302dc1ea911315dec",
+    "informe": "informes/364eaf7fe7cb14b302dc1ea911315dec.md",
+    "keyword": "capacitación técnica al personal",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Turismo (MINTUR)",
+    "primera_deteccion": "2026-09-01T18:26:42",
+    "que_es": "Licitación de Ministerio de Turismo (MINTUR) — busca Marca de mercado mencionada, Servicios. Menciona \"capacitación técnica al personal\": «es y elaboración de un plan de contingencia / Rollback. • Capacitación técnica al personal de TI y manual de usuario para el área de operado…»",
+    "score": 26,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 281/2026",
+    "ultima_actualizacion": "2026-09-01T18:26:42",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1368105",
+    "ya_adjudicados": []
   },
   "367518624c566f283bcef152b4ed3847": {
     "cambio_detectado": false,
@@ -10065,25 +10113,15 @@
     "informe": "informes/660d458c861cc92502d588bf0c0581f4.md",
     "keyword": "carpet + carpeta",
     "nivel": 2,
-    "notificaciones": 4,
+    "notificaciones": 5,
     "numero_licitacion": null,
     "organismo": "Intendencia de Maldonado",
     "primera_deteccion": "2026-08-31T17:33:50",
     "que_es": "Licitación de Intendencia de Maldonado — busca Alfombras, Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «mantenimiento vial, recuperación de pavimentos, fresado de carpetas asfálticas, preparación de superficies para recapado, cor»",
-    "resultado": {
-      "estado": "pendiente",
-      "fecha_resolucion": null,
-      "ganamos": null,
-      "monto_total": null,
-      "nos_presentamos": false,
-      "resolucion": null,
-      "resolucion_nro": null,
-      "ultima_revision": "2026-09-01T15:27:46"
-    },
     "score": 28,
     "simbolo": "★★",
     "titulo": "Licitación Pública 15/2026",
-    "ultima_actualizacion": "2026-09-01T14:47:52",
+    "ultima_actualizacion": "2026-09-01T18:24:13",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1367521",
     "ya_adjudicados": []
   },
@@ -10290,25 +10328,15 @@
     "informe": "informes/68a56d19d7b99759da8f4e3af39a15c9.md",
     "keyword": "acero al carbono",
     "nivel": 1,
-    "notificaciones": 3,
+    "notificaciones": 4,
     "numero_licitacion": "2026-86-001-",
     "organismo": "Intendencia de Florida",
     "primera_deteccion": "2026-08-31T21:51:57",
     "que_es": "Licitación de Intendencia de Florida — busca Material mencionado (revisar contexto). Menciona \"acero al carbono\": «a la normativa vigente.  Tanque barométrico construido en acero al carbono de alta resistencia.  Capacidad útil del tanque no inferio»",
-    "resultado": {
-      "estado": "pendiente",
-      "fecha_resolucion": null,
-      "ganamos": null,
-      "monto_total": null,
-      "nos_presentamos": false,
-      "resolucion": null,
-      "resolucion_nro": null,
-      "ultima_revision": "2026-09-01T15:27:48"
-    },
     "score": 11,
     "simbolo": "★",
     "titulo": "Licitación Abreviada 14/2026",
-    "ultima_actualizacion": "2026-09-01T14:46:25",
+    "ultima_actualizacion": "2026-09-01T18:22:55",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1367791",
     "ya_adjudicados": []
   },
@@ -16645,6 +16673,50 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1354087",
     "ya_adjudicados": []
   },
+  "a43c841fc7fa51de35ec653c6a18295c": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1368100.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 01 Sep 2026 12:35:15",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "a43c841fc7fa51de35ec653c6a18295c",
+    "informe": "informes/a43c841fc7fa51de35ec653c6a18295c.md",
+    "keyword": "algodón + goma + lana",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-01T18:33:24",
+    "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto). Menciona \"algodón\": «10 Remeras de manga corta, cuello tipo polo, material 100% algodón, con logo bordado, de color azul, para dama. - H»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Compra Directa 290/2026",
+    "ultima_actualizacion": "2026-09-01T18:33:24",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1368100",
+    "ya_adjudicados": [
+      "ALFOMBRA DE GOMA",
+      "CEMENTO ADHESIVO PARA PORCELANATO",
+      "PISO DE GOMA",
+      "ALFOMBRA DE LANA",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "a4433927b85554c17fb2b7abe23f6eab": {
     "cambio_detectado": false,
     "categorias": [
@@ -21533,25 +21605,15 @@
     "informe": "informes/d495ffc81687ee1438674c19fc81c33f.md",
     "keyword": "carpet + carpeta + pu",
     "nivel": 3,
-    "notificaciones": 4,
+    "notificaciones": 5,
     "numero_licitacion": null,
     "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
     "primera_deteccion": "2026-08-31T17:32:36",
     "que_es": "Licitación de Ministerio de Relaciones Exteriores (MRREE) — busca Abreviatura técnica del rubro, Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «r todos los folios que componen la misma engrampados y/o encarpetados. La copia deberá ser igual al original . En caso que la»",
-    "resultado": {
-      "estado": "pendiente",
-      "fecha_resolucion": null,
-      "ganamos": null,
-      "monto_total": null,
-      "nos_presentamos": false,
-      "resolucion": null,
-      "resolucion_nro": null,
-      "ultima_revision": "2026-09-01T15:30:25"
-    },
     "score": 45,
     "simbolo": "★★★",
     "titulo": "Concurso de Precios 109498/2026",
-    "ultima_actualizacion": "2026-09-01T14:46:35",
+    "ultima_actualizacion": "2026-09-01T18:23:05",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1367764",
     "ya_adjudicados": [
       "FELPUDO",
@@ -21582,25 +21644,15 @@
     "informe": "informes/d50eb03ae6e86cefca01ac044db4d92c.md",
     "keyword": "instalación llave en mano",
     "nivel": 1,
-    "notificaciones": 3,
+    "notificaciones": 4,
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-31T21:51:59",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto), Servicios. Menciona \"instalación llave en mano\": «inos del Estado (en adelante DGC) requiere el suministro e instalación llave en mano de un automatismo para la climatización del Datacenter…»",
-    "resultado": {
-      "estado": "pendiente",
-      "fecha_resolucion": null,
-      "ganamos": null,
-      "monto_total": null,
-      "nos_presentamos": false,
-      "resolucion": null,
-      "resolucion_nro": null,
-      "ultima_revision": "2026-09-01T15:30:26"
-    },
     "score": 9,
     "simbolo": "★",
     "titulo": "Compra Directa 61/2026",
-    "ultima_actualizacion": "2026-09-01T14:46:28",
+    "ultima_actualizacion": "2026-09-01T18:22:58",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1351233",
     "ya_adjudicados": [
       "instalación"
@@ -21673,25 +21725,15 @@
     "informe": "informes/d54982f5c544d6841a732256ce6dab58.md",
     "keyword": "espuma de poliuretano",
     "nivel": 3,
-    "notificaciones": 1,
+    "notificaciones": 2,
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-09-01T14:48:05",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, apertura 2026-09-07. Menciona \"pvc\": «TABLE CON ELÁSTICO 10000 UNIDAD 14 20689 SONDA ENDOTRAQUEAL PVC N°7 CON BALÓN 50 UNIDAD 15 4494 SÁBANAS ELÁSTIZADAS PARA C»",
-    "resultado": {
-      "estado": "pendiente",
-      "fecha_resolucion": null,
-      "ganamos": null,
-      "monto_total": null,
-      "nos_presentamos": false,
-      "resolucion": null,
-      "resolucion_nro": null,
-      "ultima_revision": "2026-09-01T15:30:29"
-    },
     "score": 49,
     "simbolo": "★★★",
     "titulo": "Compra Directa 531/2026",
-    "ultima_actualizacion": "2026-09-01T14:48:05",
+    "ultima_actualizacion": "2026-09-01T18:35:49",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1367585",
     "ya_adjudicados": [
       "ALFOMBRA DE PVC",
@@ -22313,25 +22355,15 @@
     "informe": "informes/daf815b15901d0f031732dce40d805bb.md",
     "keyword": "goma + pvc",
     "nivel": 3,
-    "notificaciones": 3,
+    "notificaciones": 4,
     "numero_licitacion": null,
     "organismo": "OSE - Obras Sanitarias del Estado",
     "primera_deteccion": "2026-08-31T21:49:45",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, apertura 2026-09-09. Menciona \"pvc\": «• Diametro ⅝ plg. • Rollo de 15 metro. UNIDAD 20 9 CINTA DE PVC • Ancho 50 UNIDAD 100 10 MANGUERA DE DESAGUE PARA AIRE ACO»",
-    "resultado": {
-      "estado": "pendiente",
-      "fecha_resolucion": null,
-      "ganamos": null,
-      "monto_total": null,
-      "nos_presentamos": false,
-      "resolucion": null,
-      "resolucion_nro": null,
-      "ultima_revision": "2026-09-01T15:30:39"
-    },
     "score": 49,
     "simbolo": "★★★",
     "titulo": "Concurso de Precios 103/2026",
-    "ultima_actualizacion": "2026-09-01T14:44:13",
+    "ultima_actualizacion": "2026-09-01T18:20:41",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1367676",
     "ya_adjudicados": [
       "ALFOMBRA DE PVC",
