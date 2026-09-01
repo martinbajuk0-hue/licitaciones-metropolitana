@@ -19,6 +19,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime
+from html import escape as escapar_html
 
 import requests
 
@@ -30,6 +31,12 @@ import parser as parser_mod
 import report as report_mod
 
 MAX_DOCUMENTOS_POR_LICITACION = 5
+
+# Techo de artículos mostrados sin colapsar en el <details> del email (ver
+# _tarjeta() -> items_html). Pedido 2026-09-01: listar TODOS los artículos,
+# pero sin romper el largo de la tarjeta cuando un llamado tiene decenas de
+# ítems (ej. licitaciones de suministros varios con 20+ líneas).
+MAX_ARTICULOS_VISIBLES_EMAIL = 25
 
 # Reportado 2026-08-18/19: al pasar al feed RSS mensual (ver
 # _meses_a_relevar()), un problema de concurrencia entre corridas (dos
@@ -143,6 +150,52 @@ def _codigos_articulo(tender: dict) -> list[str]:
     return codigos
 
 
+def _items_articulos(tender: dict) -> list[dict]:
+    """tender.items[] completo (descripción + cantidad + unidad de cada
+    artículo pedido) — no solo el código de _codigos_articulo(). Pedido
+    explícito del usuario 2026-09-01: "necesito que indique todo los
+    artículos que se solicitan" — el score y la categoría detectada NO
+    alcanzan para decidir sin abrir el pliego. Evidencia real: el
+    "Concurso de Precios 103/2026" (score 49, ★★★) resultó ser en su
+    mayoría insumos de aire acondicionado y plomería con un solo ítem de
+    cinta de PVC — visible recién al leer tender.items del release OCDS
+    real (llamado-1367676), no por el título ni la categoría.
+
+    Se agrupan duplicados EXACTOS (misma descripción+cantidad+unidad) en
+    una sola línea con sufijo "×N" — NO se suman las cantidades, porque
+    asumir que dos líneas duplicadas son el mismo lote sería inventar algo
+    que el dato no garantiza (regla del proyecto: prohibido inventar).
+    """
+    items = tender.get("items", []) if isinstance(tender, dict) else []
+    contados: dict[tuple[str, str, str], int] = {}
+    orden: list[tuple[str, str, str]] = []
+    for it in items:
+        if not isinstance(it, dict):
+            continue
+        clasif = it.get("classification") if isinstance(it.get("classification"), dict) else {}
+        desc = (it.get("description") or clasif.get("description") or "").strip()
+        if not desc:
+            continue
+        cantidad = it.get("quantity")
+        cantidad_txt = str(cantidad) if cantidad not in (None, "") else ""
+        unidad = it.get("unit") if isinstance(it.get("unit"), dict) else {}
+        unidad_txt = (unidad.get("name") or "").strip()
+        clave = (desc, cantidad_txt, unidad_txt)
+        if clave not in contados:
+            orden.append(clave)
+        contados[clave] = contados.get(clave, 0) + 1
+
+    return [
+        {
+            "descripcion": desc,
+            "cantidad": cantidad_txt,
+            "unidad": unidad_txt,
+            "veces": contados[(desc, cantidad_txt, unidad_txt)],
+        }
+        for desc, cantidad_txt, unidad_txt in orden
+    ]
+
+
 # ─── Fetch de licitaciones (OCDS / RSS) ───────────────────────────────────
 
 def _meses_a_relevar(ahora: datetime) -> list[tuple[int, int]]:
@@ -230,6 +283,7 @@ def obtener_licitaciones(vistos: dict | None = None) -> list[dict]:
                     # de qué rama (OCDS/RSS) vino el llamado.
                     "url_ficha": url,
                     "codigos_articulo": _codigos_articulo(tender),
+                    "items_pliego": _items_articulos(tender),
                 })
             if licitaciones:
                 return licitaciones
@@ -323,7 +377,7 @@ def obtener_licitaciones(vistos: dict | None = None) -> list[dict]:
                 omitidos_por_vistos += 1
                 continue
 
-            titulo, desc, documentos, codigos_articulo = "", "", [], []
+            titulo, desc, documentos, codigos_articulo, items_pliego = "", "", [], [], []
             try:
                 rr = requests.get(link, headers=parser_mod.HEADERS, timeout=15)
                 if rr.status_code == 200:
@@ -347,11 +401,13 @@ def obtener_licitaciones(vistos: dict | None = None) -> list[dict]:
                         d.get("url") for d in tender.get("documents", []) if isinstance(d, dict) and d.get("url")
                     ]
                     codigos_articulo = _codigos_articulo(tender)
+                    items_pliego = _items_articulos(tender)
                 if not primer_release_impreso:
                     print(
                         f"  RSS->release: status={rr.status_code} título={titulo!r} "
                         f"tender.keys={sorted(tender.keys()) if titulo or desc else 'N/A'} "
-                        f"documentos={documentos} codigos_articulo={codigos_articulo}"
+                        f"documentos={documentos} codigos_articulo={codigos_articulo} "
+                        f"items_pliego={len(items_pliego)} artículo(s)"
                     )
                     primer_release_impreso = True
             except Exception as e:  # noqa: BLE001
@@ -368,6 +424,7 @@ def obtener_licitaciones(vistos: dict | None = None) -> list[dict]:
                 "url_ficha": _url_ficha_arce(guid, link),
                 "documentos": documentos,
                 "codigos_articulo": codigos_articulo,
+                "items_pliego": items_pliego,
             })
 
         if vistos is not None:
@@ -587,6 +644,40 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor
             f'<p style="margin:0 0 4px;font-size:13px;color:#555;">⏱️ {lic["cierre"]}</p>'
             if lic.get("cierre") else ""
         )
+        # Listado completo de artículos pedidos (tender.items, ver
+        # _items_articulos()) — pedido explícito del usuario 2026-09-01:
+        # "necesito que indique todo los artículos que se solicitan". Antes
+        # el mail solo mostraba categoría/score, que no alcanza para saber
+        # si el llamado es realmente de pisos o solo tiene un ítem suelto
+        # que matcheó por palabra clave (ver evidencia en _items_articulos()).
+        # Se listan TODOS (no un top-N silencioso) para no ocultar artículos
+        # irrelevantes que ayudarían a descartar el llamado de un vistazo;
+        # arriba de MAX_ARTICULOS_VISIBLES_EMAIL se colapsa en un <details>
+        # para no romper el largo de la tarjeta.
+        items_pliego = lic.get("items_pliego") or []
+        if items_pliego:
+            def _linea_item(it: dict) -> str:
+                cant_unidad = " ".join(p for p in [it["cantidad"], it["unidad"]] if p)
+                partes = [escapar_html(it["descripcion"])]
+                if cant_unidad:
+                    partes.append(f"({escapar_html(cant_unidad)})")
+                if it["veces"] > 1:
+                    partes.append(f"×{it['veces']}")
+                return " ".join(partes)
+
+            visibles = items_pliego[:MAX_ARTICULOS_VISIBLES_EMAIL]
+            resto = len(items_pliego) - len(visibles)
+            lis_html = "".join(f'<li style="margin-bottom:2px;">{_linea_item(it)}</li>' for it in visibles)
+            if resto > 0:
+                lis_html += f'<li style="color:#888;">… y {resto} artículo(s) más (ver pliego completo).</li>'
+            items_html = (
+                '<details style="margin:4px 0 6px;">'
+                f'<summary style="font-size:13px;color:#555;cursor:pointer;">📦 Artículos solicitados ({len(items_pliego)})</summary>'
+                f'<ul style="margin:4px 0 0;padding-left:20px;font-size:12px;color:#444;">{lis_html}</ul>'
+                "</details>"
+            )
+        else:
+            items_html = ""
         # lic["url"] es el JSON del release OCDS (metadata para el pipeline,
         # no algo legible para una persona). Lo que hay que abrir es el PDF
         # real del pliego, que viene en lic["documentos"]
@@ -608,6 +699,7 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor
             {clasif_html}
             {ya_adjudicados_html}
             {cierre_html}
+            {items_html}
             {links_html}
         </div>
         """
