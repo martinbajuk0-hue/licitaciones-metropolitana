@@ -1,28 +1,27 @@
-# Informe de licitación: Licitación Abreviada 46/2026
+# Informe de licitación: Compra Directa 222/2026
 
-**URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1368619
+**URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1368679
 **Generado:** 2026-09-02 23:16
-**Qué es:** Licitación de Intendencia de Maldonado — busca Material mencionado (revisar contexto). Menciona "pino": «torial Nro . 1 del Municipio de Piriápolis, calle Simón del Pino entre Reconquista y Misiones, de acuerdo a lo expresado en»
+**Qué es:** Licitación de organismo no identificado — busca Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona "materiales de construcción": «Compra Directa 222/2026 Adq. de materiales de construcción varios, ajustarse al archivo adjunto (excluyente)»
 
-## Clasificación: ★ — No presentarse (score 21/100)
+## Clasificación: ★ — No presentarse (score 2/100)
 
 ### Por qué este puntaje
 - +12 por 1 categoría(s) de producto identificadas
-- +15 por organismo identificado (prioritario según el rol)
-- -16 por 4 campo(s) clave no identificados (a verificar manualmente)
-- -20 por 13 ítem(s) documentales a verificar
+- -20 por 6 campo(s) clave no identificados (a verificar manualmente)
+- -20 por 16 ítem(s) documentales a verificar
 
 ## Resumen ejecutivo
-QUÉ ES: Licitación de Intendencia de Maldonado — busca Material mencionado (revisar contexto). Menciona "pino": «torial Nro . 1 del Municipio de Piriápolis, calle Simón del Pino entre Reconquista y Misiones, de acuerdo a lo expresado en»
+QUÉ ES: Licitación de organismo no identificado — busca Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona "materiales de construcción": «Compra Directa 222/2026 Adq. de materiales de construcción varios, ajustarse al archivo adjunto (excluyente)»
 
-Organismo: Intendencia de Maldonado.
+Organismo: no identificado — verificar manualmente.
 Número: no identificado — verificar manualmente.
 Fecha de apertura: no identificada — verificar manualmente.
-Categorías de producto detectadas: Material mencionado (revisar contexto).
+Categorías de producto detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica).
 Resumen generado por reglas (sin ANTHROPIC_API_KEY configurada): es un extracto de campos, no un análisis narrativo completo del pliego.
 
 ## Datos clave
-- Organismo: Intendencia de Maldonado
+- Organismo: **NO IDENTIFICADO — verificar manualmente**
 - Número de licitación/expediente: **NO IDENTIFICADO — verificar manualmente**
 - Fecha de apertura: **NO IDENTIFICADA — verificar manualmente** (Fecha de cierre no identificada — verificar manualmente)
 - Plazo/fecha de entrega: no identificado — verificar manualmente
@@ -32,33 +31,20 @@ Resumen generado por reglas (sin ANTHROPIC_API_KEY configurada): es un extracto 
 - Garantía de fiel cumplimiento: no identificada — verificar manualmente
 
 ### Criterios de evaluación detectados
-- ” de la Memoria
-- Descriptiva
-- MEJORA DE OFERTAS Y  NEGOCIACIONES ( ART. 66 DEL TOCAF)
-- 6). Si se presentaren dos o más ofertas que reciba n calificación similar o que
-- tengan precio similar según sea el criterio de eval uación aplicado, la Comisión
-- Asesora de Adjudicaciones, podrá invitar a los ofer entes respectivos a mejorar
-- sus ofertas
-- 7). La Intendencia se reserva el derecho en caso d e ofertas similares de
+_(ninguno)_
 
 ### Datos que faltan y dónde buscarlos
+- organismo: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
 - número de licitación/expediente: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
 - fecha de apertura: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
 - fecha/plazo de entrega: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
 - fecha límite de consultas: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- criterios de evaluación: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
 
 ## Productos Metropolitana identificados
-Categorías detectadas: Material mencionado (revisar contexto)
+Categorías detectadas: Terminología genérica del pliego (revisar manualmente qué producto aplica)
 
-- **Material mencionado (revisar contexto)** ("pino"): ...torial Nro . 1 del Municipio de Piriápolis, calle Simón del Pino entre Reconquista y Misiones, de acuerdo a lo expresado en...
-- **Material mencionado (revisar contexto)** ("polietileno"): ...Memoria Descriptiva     SUMINISTRO DE CAÑOS DE  POLIETILENO DE ALTA DENSIDAD                           (Tubos Pead) Lic...
-- **Material mencionado (revisar contexto)** ("polietileno de alta densidad"): ...Memoria Descriptiva     SUMINISTRO DE CAÑOS DE  POLIETILENO DE ALTA DENSIDAD                           (Tubos Pead) Licitación   Abrevia...
-
-### Ya adjudicaste antes
-Metropolitana ya le vendió al Estado alguno de estos productos antes (historial 2025-2026, ver knowledge/historial_adjudicaciones_metropolitana.json): MANTA BAJO PISO DE ESPUMA DE POLIETILENO.
-### Contexto adicional (lugar de uso / aplicación)
-- Lugar de uso mencionado: banco, brou, campus, correo, depósito, depósitos, direccion, dirección, fabrica, instituto, intendencia, intendencia de maldonado, juzgado, ma, mi
-- Aplicación mencionada: certificado
+- **Terminología genérica del pliego (revisar manualmente qué producto aplica)** ("materiales de construcción"): ...Compra Directa 222/2026 Adq. de materiales de construcción varios, ajustarse al archivo adjunto (excluyente)...
 
 ## Riesgos detectados
 Altos: 0 · Medios: 0 · Total: 0
@@ -67,11 +53,10 @@ _(ninguno)_
 
 ## Checklist documental
 ### Exigidos explícitamente en el pliego
-- Inscripción activa en RUPE — evidencia: «veedor propuesto no hubiese adquirido el estado "ACTIVO" en RUPE, la Administración otorgará un plazo de 5 días hábiles a fi»
-- Pólizas de seguro (responsabilidad civil / accidentes) — evidencia: «to en efectivo, valores públicos, fianza o aval bancario, o póliza de seguro de fianza. Para el caso de los depósitos mediante»
-- Formulario de identificación del oferente — evidencia: «dos. 10.3 La oferta deberá ser acompañada del Formulario de Identificación del Oferente que se acompaña. 11) Confidencialidad Cuando los oferentes»
+_(ninguno)_
 
 ### Estándar, no mencionado en el pliego (verificar si igual aplica)
+- Inscripción activa en RUPE
 - Certificado único de DGI vigente
 - Certificado único de BPS vigente
 - Poderes / representación legal vigentes
@@ -82,9 +67,11 @@ _(ninguno)_
 - Muestras físicas de producto
 - Garantía de mantenimiento de oferta
 - Garantía de fiel cumplimiento de contrato
+- Pólizas de seguro (responsabilidad civil / accidentes)
 - Antecedentes en obras/suministros similares
 - Constancia de visita de obra (si el pliego la exige)
 - Declaraciones juradas exigidas
+- Formulario de identificación del oferente
 
 ## Cronograma de tareas
 - 2026-09-02: Lectura integral del pliego y anexos
@@ -94,7 +81,7 @@ _(ninguno)_
 - FECHA DE APERTURA NO IDENTIFICADA — verificar manualmente antes de planificar: Entrega de oferta
 
 ## Documentos que no se pudieron leer
-_(ninguno)_
+- pedido_1368679.doc
 
 ---
 _Informe generado automáticamente. No sustituye la lectura íntegra del pliego por una persona del equipo de licitaciones. Todo campo marcado como 'no identificado' o 'PENDIENTE' requiere verificación manual antes de tomar una decisión de presentarse._
