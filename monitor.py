@@ -584,6 +584,32 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
 
 # ─── Email ──────────────────────────────────────────────────────────────────
 
+def _enriquecer_lic_con_informe(lic: dict, informe: "report_mod.InformeLicitacion") -> None:
+    """Copia al dict `lic` los campos del informe que arma el email (ver
+    enviar_email()) — nunca se recalculan por separado con menos datos,
+    para que el mail muestre siempre lo mismo que quedó en el informe
+    guardado (mismo score, mismo "ya adjudicaste antes", etc.).
+
+    2026-09-02: se agregan organismo/numero_licitacion/fecha_apertura/
+    categorias — pedido del usuario de un formato de tabla prolijo
+    agrupado por rubro (antes el email solo usaba clasificacion/
+    ya_adjudicados/cierre/que_es, sin organismo ni categoría explícitos).
+    Usado tanto en main() (corrida real) como en
+    enviar_email_de_prueba_rango_fechas() (--test-rango-fechas), para que
+    ambos caminos arme el mismo dict y el mail de prueba se vea igual que
+    el real.
+    """
+    lic["clasificacion"] = informe.clasificacion
+    lic["ya_adjudicados"] = informe.ya_adjudicados
+    lic["cierre"] = informe.cierre
+    lic["que_es"] = informe.que_es
+    lic["organismo"] = informe.campos.organismo
+    lic["numero_licitacion"] = informe.campos.numero_licitacion
+    lic["fecha_apertura"] = informe.campos.fecha_apertura
+    categorias = sorted({settings.etiqueta_categoria(p.categoria) for p in informe.productos})
+    lic["categorias"] = categorias or ["Sin categoría específica"]
+
+
 def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor: int = 0) -> None:
     """omitidas_del_visor: cuántos llamados relevantes adicionales quedaron
     afuera de este email (por antigüedad o por el techo de
@@ -592,6 +618,17 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor
     agrega una línea al pie para que quede claro que el email no es
     necesariamente "todo lo relevante", así no se lea como que faltó
     algo sin avisar.
+
+    2026-09-02: formato rediseñado a pedido explícito del usuario ("quiero
+    que sea un formato mas nítido, más amigable") — de tarjetas sueltas a
+    tablas por rubro/categoría de producto (LLAMADO / ORGANISMO / OBJETO /
+    RECEPCIÓN HASTA / Ver), con un encabezado tipo "N alertas en esta
+    corrida", siguiendo el ejemplo visual que mandó (captura de un resumen
+    diario de otro servicio de avisos). El score, "ya adjudicaste antes" y
+    el listado de artículos (pedidos anteriores del usuario, no se
+    descartan) quedan como texto secundario dentro de la celda Objeto, y
+    los artículos en un <details> colapsable — para no perder esa
+    información pero sin volver a la tarjeta densa de antes.
     """
     gmail_user = settings.gmail_user()
     gmail_pass = settings.gmail_app_password()
@@ -614,98 +651,148 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor
     total = len(nuevas) + len(modificadas)
     subject = f"🏗️ {total} novedad(es) de licitaciones para Metropolitana — {datetime.today().strftime('%d/%m/%Y')}"
 
-    def _tarjeta(lic: dict, etiqueta: str, color: str) -> str:
-        # Resumen corto ("qué es esta licitación", ver analyzer.extraer_
-        # que_es()) — pedido del usuario 2026-08-24: poder entender de qué
-        # se trata cada llamado sin tener que abrir el pliego. Va primero,
-        # antes de cualquier otro dato, porque es lo primero que hace
-        # falta leer para decidir si seguir mirando la tarjeta.
-        que_es_html = (
-            f'<p style="margin:0 0 6px;font-size:13px;color:#333;">📝 {lic["que_es"]}</p>'
-            if lic.get("que_es") else ""
-        )
-        clasif = lic.get("clasificacion")
-        clasif_html = (
-            f'<p style="margin:0 0 4px;font-size:13px;color:#555;">⭐ {clasif.simbolo} — {clasif.etiqueta} (score {clasif.puntaje}/100)</p>'
-            if clasif else ""
-        )
-        # "Ya adjudicaste antes" + "Cierra en N días": el mismo par de datos
-        # que un servicio de avisos como Simple Compras Públicas muestra
-        # primero en su email (ver Ejemplo_Alerta_Email_Metropolitana.png,
-        # reunión del 14/08/2026) — permite decidir en un vistazo si vale
-        # la pena abrir el informe completo, sin leer el pliego.
-        ya_adjudicados = lic.get("ya_adjudicados") or []
-        ya_adjudicados_html = (
-            f'<p style="margin:0 0 4px;font-size:13px;color:#1e8e3e;font-weight:600;">✅ Ya adjudicaste antes: {", ".join(ya_adjudicados[:5])}'
-            f'{" ..." if len(ya_adjudicados) > 5 else ""}</p>'
-            if ya_adjudicados else ""
-        )
+    def _fecha_recepcion_html(lic: dict) -> str:
+        # NO se inventa hora si no la tenemos: campos.fecha_apertura (ver
+        # analyzer._normalizar_fecha()) es solo 'YYYY-MM-DD'. lic["cierre"]
+        # (ver report.texto_cierre()) va como subtítulo chico porque es un
+        # dato ya calculado y útil ("Cierra en N días"), no un reemplazo.
+        fecha_apertura = lic.get("fecha_apertura")
+        if fecha_apertura:
+            try:
+                fecha_txt = datetime.strptime(fecha_apertura, "%Y-%m-%d").strftime("%d/%m/%Y")
+            except ValueError:
+                fecha_txt = fecha_apertura
+        else:
+            fecha_txt = "No identificada"
+        # El subtítulo "Cierra en N días" solo suma algo cuando SÍ hay
+        # fecha — si no la hay, report.texto_cierre() devuelve el mismo
+        # boilerplate ("Fecha de cierre no identificada...") que ya dice
+        # fecha_txt de otra forma, y mostrar las dos líneas es redundante.
+        cierre = lic.get("cierre") or ""
         cierre_html = (
-            f'<p style="margin:0 0 4px;font-size:13px;color:#555;">⏱️ {lic["cierre"]}</p>'
-            if lic.get("cierre") else ""
+            f'<div style="font-size:11px;color:#888;margin-top:2px;">{escapar_html(cierre)}</div>'
+            if cierre and fecha_apertura else ""
         )
+        return f'<div>{escapar_html(fecha_txt)}</div>{cierre_html}'
+
+    def _objeto_html(lic: dict) -> str:
+        partes = [f'<div style="font-weight:600;">{escapar_html(lic["titulo"])}</div>']
+
+        # "Qué es" (ver analyzer.extraer_que_es()) — pedido del usuario
+        # 2026-08-24: entender de qué se trata sin abrir el pliego.
+        if lic.get("que_es"):
+            partes.append(f'<div style="font-size:12px;color:#666;margin-top:3px;">{escapar_html(lic["que_es"])}</div>')
+
+        clasif = lic.get("clasificacion")
+        if clasif:
+            partes.append(
+                f'<div style="font-size:11px;color:#888;margin-top:3px;">⭐ {clasif.simbolo} — {clasif.etiqueta} (score {clasif.puntaje}/100)</div>'
+            )
+
+        ya_adjudicados = lic.get("ya_adjudicados") or []
+        if ya_adjudicados:
+            extra = " …" if len(ya_adjudicados) > 5 else ""
+            partes.append(
+                f'<div style="font-size:11px;color:#1e8e3e;font-weight:600;margin-top:3px;">✅ Ya adjudicaste antes: '
+                f'{escapar_html(", ".join(ya_adjudicados[:5]))}{extra}</div>'
+            )
+
         # Listado completo de artículos pedidos (tender.items, ver
         # _items_articulos()) — pedido explícito del usuario 2026-09-01:
-        # "necesito que indique todo los artículos que se solicitan". Antes
-        # el mail solo mostraba categoría/score, que no alcanza para saber
-        # si el llamado es realmente de pisos o solo tiene un ítem suelto
-        # que matcheó por palabra clave (ver evidencia en _items_articulos()).
-        # Se listan TODOS (no un top-N silencioso) para no ocultar artículos
-        # irrelevantes que ayudarían a descartar el llamado de un vistazo;
-        # arriba de MAX_ARTICULOS_VISIBLES_EMAIL se colapsa en un <details>
-        # para no romper el largo de la tarjeta.
+        # "necesito que indique todo los artículos que se solicitan". Se
+        # listan TODOS (no un top-N silencioso), colapsados en un
+        # <details> para no volver a la tarjeta densa de antes.
         items_pliego = lic.get("items_pliego") or []
         if items_pliego:
             def _linea_item(it: dict) -> str:
                 cant_unidad = " ".join(p for p in [it["cantidad"], it["unidad"]] if p)
-                partes = [escapar_html(it["descripcion"])]
+                piezas = [escapar_html(it["descripcion"])]
                 if cant_unidad:
-                    partes.append(f"({escapar_html(cant_unidad)})")
+                    piezas.append(f"({escapar_html(cant_unidad)})")
                 if it["veces"] > 1:
-                    partes.append(f"×{it['veces']}")
-                return " ".join(partes)
+                    piezas.append(f"×{it['veces']}")
+                return " ".join(piezas)
 
             visibles = items_pliego[:MAX_ARTICULOS_VISIBLES_EMAIL]
             resto = len(items_pliego) - len(visibles)
             lis_html = "".join(f'<li style="margin-bottom:2px;">{_linea_item(it)}</li>' for it in visibles)
             if resto > 0:
                 lis_html += f'<li style="color:#888;">… y {resto} artículo(s) más (ver pliego completo).</li>'
-            items_html = (
-                '<details style="margin:4px 0 6px;">'
-                f'<summary style="font-size:13px;color:#555;cursor:pointer;">📦 Artículos solicitados ({len(items_pliego)})</summary>'
-                f'<ul style="margin:4px 0 0;padding-left:20px;font-size:12px;color:#444;">{lis_html}</ul>'
+            partes.append(
+                '<details style="margin-top:4px;">'
+                f'<summary style="font-size:11px;color:#555;cursor:pointer;">📦 Artículos solicitados ({len(items_pliego)})</summary>'
+                f'<ul style="margin:4px 0 0;padding-left:18px;font-size:11px;color:#444;">{lis_html}</ul>'
                 "</details>"
             )
-        else:
-            items_html = ""
-        # lic["url"] es el JSON del release OCDS (metadata para el pipeline,
-        # no algo legible para una persona). Lo que hay que abrir es el PDF
-        # real del pliego, que viene en lic["documentos"]
-        # (tender.documents[].url — ver monitor.obtener_licitaciones()).
+
+        return "".join(partes)
+
+    def _fila_html(lic: dict) -> str:
+        llamado_txt = lic.get("numero_licitacion") or "N/D"
+        # lic["url"] es el JSON del release OCDS (metadata para el
+        # pipeline, no algo legible para una persona) — el botón "Ver" va
+        # al PDF real del pliego (tender.documents[].url) si hay, y si no
+        # a la ficha humana de ARCE (ver obtener_licitaciones()).
         documentos = lic.get("documentos") or []
-        if documentos:
-            links_html = "".join(
-                f'<a href="{doc_url}" style="display:inline-block;margin-top:8px;margin-right:16px;font-size:13px;color:#1a73e8;">📄 Ver pliego {i + 1} →</a>'
-                for i, doc_url in enumerate(documentos[:3])
-            )
-        else:
-            links_html = f'<a href="{lic.get("url_ficha") or lic["url"]}" style="display:inline-block;margin-top:8px;font-size:13px;color:#1a73e8;">Ver ficha de la licitación (sin PDF adjunto) →</a>'
+        ver_url = documentos[0] if documentos else (lic.get("url_ficha") or lic["url"])
+        ver_html = (
+            f'<a href="{ver_url}" style="display:inline-block;padding:4px 14px;border:1px solid #1a73e8;'
+            'border-radius:4px;font-size:12px;color:#1a73e8;text-decoration:none;white-space:nowrap;">Ver</a>'
+        )
         return f"""
-        <div style="border-left:4px solid {color};padding:12px 16px;margin-bottom:16px;background:#f8f9fa;border-radius:0 6px 6px 0;">
-            <p style="margin:0 0 4px;font-size:11px;font-weight:700;color:{color};text-transform:uppercase;">{etiqueta}</p>
-            <p style="margin:0 0 6px;font-size:15px;font-weight:600;color:#1a1a1a;">{lic['titulo']}</p>
-            {que_es_html}
-            <p style="margin:0 0 4px;font-size:13px;color:#555;">📅 {lic['fecha']} &nbsp;|&nbsp; 🔑 Coincidencia: <strong>{lic.get('keyword','')}</strong> &nbsp;|&nbsp; 📄 Encontrado en: <em>{lic.get('fuente','título')}</em></p>
-            {clasif_html}
-            {ya_adjudicados_html}
-            {cierre_html}
-            {items_html}
-            {links_html}
-        </div>
+        <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px 12px;font-size:13px;color:#1a1a1a;vertical-align:top;white-space:nowrap;">{escapar_html(llamado_txt)}</td>
+            <td style="padding:10px 12px;font-size:13px;color:#333;vertical-align:top;">{escapar_html(lic.get("organismo") or "No identificado")}</td>
+            <td style="padding:10px 12px;font-size:13px;color:#1a1a1a;vertical-align:top;">{_objeto_html(lic)}</td>
+            <td style="padding:10px 12px;font-size:12px;color:#555;vertical-align:top;white-space:nowrap;">{_fecha_recepcion_html(lic)}</td>
+            <td style="padding:10px 12px;vertical-align:top;">{ver_html}</td>
+        </tr>
         """
 
-    html_items = "".join(_tarjeta(lic, "Nueva licitación", "#1a73e8") for lic in nuevas)
-    html_items += "".join(_tarjeta(lic, "Aclaración / modificación detectada", "#e8711a") for lic in modificadas)
+    def _tabla_html(items: list[dict]) -> str:
+        encabezado = "".join(
+            f'<th style="text-align:left;padding:8px 12px;font-size:11px;color:#666;'
+            f'text-transform:uppercase;letter-spacing:.03em;border-bottom:2px solid #eee;">{col}</th>'
+            for col in ("Llamado", "Organismo", "Objeto", "Recepción hasta", "")
+        )
+        filas = "".join(_fila_html(lic) for lic in items)
+        return f"""
+        <table style="width:100%;border-collapse:collapse;background:#fff;border:1px solid #eee;border-radius:6px;margin-bottom:20px;">
+            <tr style="background:#f5f6f7;">{encabezado}</tr>
+            {filas}
+        </table>
+        """
+
+    def _seccion_html(titulo: str, color: str, items: list[dict], agrupar_por_categoria: bool) -> str:
+        if not items:
+            return ""
+        encabezado = f"""
+        <div style="border-left:4px solid {color};padding:2px 0 2px 12px;margin:20px 0 10px;">
+            <span style="font-size:15px;font-weight:700;color:#1a1a1a;">{escapar_html(titulo)} ({len(items)})</span>
+        </div>
+        """
+        if not agrupar_por_categoria:
+            return encabezado + _tabla_html(items)
+
+        # Agrupado por categoría de producto Metropolitana (ver
+        # settings.etiqueta_categoria()) — pedido del usuario, igual que
+        # el ejemplo que mandó ("Construcción y Obras"). Un llamado con
+        # varias categorías detectadas se agrupa por la primera (orden
+        # alfabético) para no listarlo duplicado en dos tablas.
+        grupos: dict[str, list[dict]] = {}
+        for lic in items:
+            cat = (lic.get("categorias") or ["Sin categoría específica"])[0]
+            grupos.setdefault(cat, []).append(lic)
+
+        cuerpo = "".join(
+            f'<p style="font-size:12px;font-weight:700;color:#444;margin:14px 0 6px;'
+            f'text-transform:uppercase;letter-spacing:.02em;">{escapar_html(cat)}</p>' + _tabla_html(grupos[cat])
+            for cat in sorted(grupos)
+        )
+        return encabezado + cuerpo
+
+    html_nuevas = _seccion_html("Nuevos llamados", "#1a73e8", nuevas, agrupar_por_categoria=True)
+    html_modificadas = _seccion_html("Aclaraciones / modificaciones", "#e8711a", modificadas, agrupar_por_categoria=False)
 
     omitidas_html = (
         f'<p style="font-size:12px;color:#888;margin:0 0 16px;">ℹ️ {omitidas_del_visor} llamado(s) relevante(s) '
@@ -715,12 +802,14 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor
     )
 
     html = f"""
-    <html><body style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px;color:#1a1a1a;">
-        <h2 style="color:#1a73e8;margin-bottom:4px;">🔔 Novedades de licitaciones</h2>
-        <p style="color:#666;font-size:13px;margin-top:0;">Detectadas automáticamente para <strong>Metropolitana Pisos</strong></p>
+    <html><body style="font-family:Arial,sans-serif;max-width:760px;margin:0 auto;padding:20px;color:#1a1a1a;">
+        <h2 style="margin:0 0 2px;font-size:20px;color:#1a1a1a;">Resumen de licitaciones — Metropolitana Pisos</h2>
+        <p style="color:#888;font-size:12px;margin:0 0 14px;">{datetime.today().strftime('%d/%m/%Y %H:%M')}</p>
+        <p style="font-size:14px;color:#333;margin:0 0 4px;"><strong>{total} alerta(s)</strong> en esta corrida — coinciden con tus rubros y artículos de interés.</p>
         <hr style="border:none;border-top:1px solid #e0e0e0;margin:16px 0;">
         {omitidas_html}
-        {html_items}
+        {html_nuevas}
+        {html_modificadas}
         <p style="font-size:11px;color:#aaa;margin-top:24px;">Monitoreo automático vía ARCE · comprasestatales.gub.uy · Informes completos en la carpeta reports/ del repositorio.</p>
     </body></html>
     """
@@ -837,10 +926,7 @@ def main(enviar_email_flag: bool = True) -> None:
         # guardado — nunca se recalculan por separado con menos datos
         # (evita que el email muestre una estrella, o un "ya adjudicaste
         # antes", distinto al del informe real).
-        lic["clasificacion"] = informe.clasificacion
-        lic["ya_adjudicados"] = informe.ya_adjudicados
-        lic["cierre"] = informe.cierre
-        lic["que_es"] = informe.que_es
+        _enriquecer_lic_con_informe(lic, informe)
         # Filtro por score mínimo (configurable vía secret SCORE_MINIMO_EMAIL)
         # — salvo que el match haya sido por código de artículo ya
         # adjudicado: ahí se manda sí o sí, pedido explícito del usuario
@@ -971,6 +1057,8 @@ def enviar_email_de_prueba() -> None:
         "fuente": "prueba",
         "documentos": ["https://www.comprasestatales.gub.uy/Pliegos/pedido_1354522.pdf"],
         "que_es": "Esto es un mail de prueba — no corresponde a una licitación real.",
+        "organismo": "Organismo de prueba",
+        "categorias": ["Prueba"],
     }
     enviar_email([lic_prueba], [])
 
@@ -1083,10 +1171,7 @@ def enviar_email_de_prueba_rango_fechas(desde: str, hasta: str) -> None:
         )
         print(f"  Relevante: {lic['titulo'][:70]!r} — {informe.clasificacion.simbolo} score {informe.clasificacion.puntaje}")
 
-        lic["clasificacion"] = informe.clasificacion
-        lic["ya_adjudicados"] = informe.ya_adjudicados
-        lic["cierre"] = informe.cierre
-        lic["que_es"] = informe.que_es
+        _enriquecer_lic_con_informe(lic, informe)
 
         if informe.clasificacion.puntaje < score_minimo and fuente != FUENTE_CODIGO_ARTICULO:
             print(f"    Score {informe.clasificacion.puntaje} < mínimo {score_minimo}, omitiendo del email (igual que en producción).")
