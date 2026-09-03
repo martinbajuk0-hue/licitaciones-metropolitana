@@ -1,7 +1,7 @@
 # Informe de licitación: Compra Directa 299/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1368489
-**Generado:** 2026-09-03 18:52
+**Generado:** 2026-09-03 23:30
 **Qué es:** Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto), apertura 2026-09-09. Menciona "acero inoxidable": «SICIONES N° ÍTEM: 7 DESCRIPCIÓN DEL ÍTEM: TORNILLO ALLEN DE ACERO INOXIDABLE CABE- ZA CILINDRICA MILIMETRICA 6 X 20 MM CANTIDAD SOLICITA»
 
 ## Clasificación: ★★ — Poco conveniente (score 25/100)
