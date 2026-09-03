@@ -1,7 +1,7 @@
 # Informe de licitación: Compra Directa 61/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1351233
-**Generado:** 2026-09-03 14:25
+**Generado:** 2026-09-03 18:36
 **Qué es:** Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto), Servicios. Menciona "instalación llave en mano": «inos del Estado (en adelante DGC) requiere el suministro e instalación llave en mano de un automatismo para la climatización del Datacenter…»
 
 ## Clasificación: ★ — No presentarse (score 9/100)

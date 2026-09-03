@@ -1,7 +1,7 @@
 # Informe de licitación: Compra Directa 222/2026
 
 **URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1368679
-**Generado:** 2026-09-03 14:29
+**Generado:** 2026-09-03 18:43
 **Qué es:** Licitación de organismo no identificado — busca Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona "materiales de construcción": «Compra Directa 222/2026 Adq. de materiales de construcción varios, ajustarse al archivo adjunto (excluyente)»
 
 ## Clasificación: ★ — No presentarse (score 2/100)
