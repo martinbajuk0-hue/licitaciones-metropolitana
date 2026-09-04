@@ -59,7 +59,28 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Restaurar historial de licitaciones vistas
-        uses: actions/cache@v4
+        # 2026-09-03: cambiado de actions/cache@v4 a actions/cache/restore@v4.
+        # El action completo (actions/cache@v4) tiene un post-step
+        # automático que, si NO hubo un hit EXACTO en `key`, guarda al
+        # terminar el job un cache nuevo bajo ESE MISMO key fijo (sin
+        # run_id) — independiente del step "Guardar historial actualizado"
+        # de abajo (que sí usa run_id). Eso recrea una trampa: la próxima
+        # corrida encuentra un hit exacto en el key fijo (que siempre gana
+        # sobre el fallback por prefijo de restore-keys) y queda pegada
+        # ahí para siempre, mientras los caches por corrida (con la info
+        # real y creciente) se siguen guardando pero nunca se vuelven a
+        # leer.
+        #
+        # Evidencia real: un cache "licitaciones-vistas-Linux" (sin
+        # run_id) de 4 días de antigüedad estaba ganando el restore en
+        # cada corrida desde entonces — el mail repitió las mismas
+        # licitaciones 3 días seguidos (reportado por el usuario
+        # 2026-09-03). Ya había pasado una vez antes (18/08/2026) y se
+        # "arregló" borrando el cache viejo a mano, sin tocar esta causa
+        # de fondo — por eso volvió a pasar. actions/cache/restore@v4 es
+        # SOLO restore, sin ese post-step automático: el único lugar que
+        # guarda un cache nuevo queda siendo el step explícito de abajo.
+        uses: actions/cache/restore@v4
         with:
           path: data/licitaciones_vistas.json
           key: licitaciones-vistas-${{ runner.os }}
