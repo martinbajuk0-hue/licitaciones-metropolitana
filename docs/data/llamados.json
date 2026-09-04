@@ -15354,6 +15354,48 @@
       "CAMINERO DE ACRILICO"
     ]
   },
+  "919722be2bf75381d966f481b2c9a703": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1369211.docx"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 04 Sep 2026 09:35:08",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "919722be2bf75381d966f481b2c9a703",
+    "informe": "informes/919722be2bf75381d966f481b2c9a703.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-04T14:02:57",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «.5 largo x 40 cm profundidad 9 | CAMILLA DE EXAMEN | 8 | Acero inoxidable, con colchoneta. Altura fija. Superficie tapizada lavable.»",
+    "score": 17,
+    "simbolo": "★",
+    "titulo": "Compra Directa 41/2026",
+    "ultima_actualizacion": "2026-09-04T14:02:57",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369211",
+    "ya_adjudicados": [
+      "ALFOMBRA DE GOMA",
+      "PISO DE GOMA",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "92fbd72fc36f981798e70a95c4da2da9": {
     "cambio_detectado": false,
     "categorias": [
@@ -20929,6 +20971,43 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1361685",
     "ya_adjudicados": []
   },
+  "c5411f4a0bec105d7fa02428ad8edbe1": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "normativas"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Normativa/certificación mencionada"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1369168.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 04 Sep 2026 07:50:08",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "c5411f4a0bec105d7fa02428ad8edbe1",
+    "informe": "informes/c5411f4a0bec105d7fa02428ad8edbe1.md",
+    "keyword": "informe de ensayo",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-04T14:03:07",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto), Normativa/certificación mencionada. Menciona \"látex\": «rea o elemento equivalente: 5 puntos.  Material libre de látex: 5 puntos. ADTYEP – DIRECCIÓN TÉCNICA Y GERENCIA ÁREA A»",
+    "score": 23,
+    "simbolo": "★",
+    "titulo": "Llamado a Expresiones de Interés 6/2026",
+    "ultima_actualizacion": "2026-09-04T14:03:07",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369168",
+    "ya_adjudicados": [
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM"
+    ]
+  },
   "c59135f6b181b0fca9b359d279a669b0": {
     "cambio_detectado": false,
     "categorias": [
@@ -21443,6 +21522,43 @@
       "PANEL DE MADERA",
       "REPARACION DE PISO DE MADERA"
     ]
+  },
+  "ca3d55a48fc2a1eed9134eb56321681e": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_goma"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos de goma"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1369159.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 03 Sep 2026 23:40:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "ca3d55a48fc2a1eed9134eb56321681e",
+    "informe": "informes/ca3d55a48fc2a1eed9134eb56321681e.md",
+    "keyword": "acero inoxidable",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-04T14:03:09",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos de goma. Menciona \"epdm\": «Acero inoxidable EN 1.4301 (AISI 304) o superior - Sellos: EPDM o equivalente. Condiciones de operación: Las unidade»",
+    "score": 35,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 89051/2026",
+    "ultima_actualizacion": "2026-09-04T14:03:09",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369159",
+    "ya_adjudicados": []
   },
   "cad2a9515916a5a7edb619df4e0971bd": {
     "cambio_detectado": false,
