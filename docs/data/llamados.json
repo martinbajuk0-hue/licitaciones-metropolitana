@@ -6548,6 +6548,39 @@
       "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
     ]
   },
+  "3978025ff5c95371cc1531504affefd6": {
+    "cambio_detectado": false,
+    "categorias": [
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1369046.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 04 Sep 2026 16:15:08",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción",
+    "id": "3978025ff5c95371cc1531504affefd6",
+    "informe": "informes/3978025ff5c95371cc1531504affefd6.md",
+    "keyword": "materiales de construcción",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-04T22:52:33",
+    "que_es": "Licitación de organismo no identificado — busca Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"materiales de construcción\": «Compra Directa 229/2026 Adq. de materiales de construcción varios, ajustarse al archivo adjunto (excluyente)»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Compra Directa 229/2026",
+    "ultima_actualizacion": "2026-09-04T22:52:33",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369046",
+    "ya_adjudicados": []
+  },
   "397cd3de52fef3eb42c9b2d1538fabf4": {
     "cambio_detectado": false,
     "categorias": [
@@ -18696,6 +18729,49 @@
     "ultima_actualizacion": "2026-08-27T23:03:10",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1357359",
     "ya_adjudicados": []
+  },
+  "b062ddbef4bf7aab8fa4bd9b6d09bee5": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1369497.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 04 Sep 2026 17:40:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "b062ddbef4bf7aab8fa4bd9b6d09bee5",
+    "informe": "informes/b062ddbef4bf7aab8fa4bd9b6d09bee5.md",
+    "keyword": "polietileno de alta densidad",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Colonia",
+    "primera_deteccion": "2026-09-04T22:50:18",
+    "que_es": "Licitación de Intendencia de Colonia — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «V. - M.T.O.P.: P= 0.15 ∗ CV CV0 + 0.35 ∗ 𝐷 𝐷0 + 0.50 ∗ PVC PVC0 Donde los coeficientes son:»",
+    "score": 38,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 35/2026",
+    "ultima_actualizacion": "2026-09-04T22:50:18",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369497",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC"
+    ]
   },
   "b11b147241e640ea4d045fcc59c44d41": {
     "cambio_detectado": false,
