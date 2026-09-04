@@ -9320,6 +9320,62 @@
       "REPARACION DE PISO DE MADERA"
     ]
   },
+  "5a945c85ad2e95806eba6c334232d8f7": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "marcas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Marca de mercado mencionada",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1368941.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 04 Sep 2026 13:50:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "5a945c85ad2e95806eba6c334232d8f7",
+    "informe": "informes/5a945c85ad2e95806eba6c334232d8f7.md",
+    "keyword": "látex + pvc + roca",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Industria, Energía y Minería (MIEM)",
+    "primera_deteccion": "2026-09-04T18:16:00",
+    "que_es": "Licitación de Ministerio de Industria, Energía y Minería (MIEM) — busca Abreviatura técnica del rubro, Accesorios de instalación, Marca de mercado mencionada, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «uctos protectores, admitiéndose exclusivamente cañerías de PVC rígido o corrugado tipo antillama, debidamente normalizadas»",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 418/2026",
+    "ultima_actualizacion": "2026-09-04T18:16:00",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1368941",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "ZOCALO PARA PISO FLOTANTE",
+      "PISO MODULAR DE PVC",
+      "ZOCALO DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ZOCALO MONOLITICO",
+      "LONA VINILICA",
+      "BALDOSA VINILICA ALTO TRANSITO",
+      "BALDOSA VINILICA",
+      "COLOCACION DE ZOCALO",
+      "ZOCALO EN MDF",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC"
+    ]
+  },
   "5bfb913a8870d4cf02a0e9c4738098b5": {
     "cambio_detectado": false,
     "categorias": [
@@ -13861,6 +13917,53 @@
     "ultima_actualizacion": "2026-08-21T12:50:15",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1361622",
     "ya_adjudicados": []
+  },
+  "859b263e5589a626862f1c8f2f2b7223": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "decks_exterior",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Deck y exterior",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1369364.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 04 Sep 2026 13:10:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "859b263e5589a626862f1c8f2f2b7223",
+    "informe": "informes/859b263e5589a626862f1c8f2f2b7223.md",
+    "keyword": "decks + madera + nylon",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-04T18:16:09",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Deck y exterior, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «ecuerdo). ● Depósitos para colillas (tubos de PVC con arena en el fondo) con leyenda descript»",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Llamado a Expresiones de Interés 1/2026",
+    "ultima_actualizacion": "2026-09-04T18:16:09",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369364",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC",
+      "REPARACION DE PISO DE MADERA"
+    ]
   },
   "86001bd832b20d4d291649a495b0ce39": {
     "cambio_detectado": false,
@@ -24281,6 +24384,47 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1361150",
     "ya_adjudicados": []
   },
+  "e17a5b74968875c517b5bc1b2c9475eb": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "servicios",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Servicios",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1369293.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 04 Sep 2026 11:15:19",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "e17a5b74968875c517b5bc1b2c9475eb",
+    "informe": "informes/e17a5b74968875c517b5bc1b2c9475eb.md",
+    "keyword": "limpieza de pisos",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Colonia",
+    "primera_deteccion": "2026-09-04T18:18:44",
+    "que_es": "Licitación de Intendencia de Colonia — busca Material mencionado (revisar contexto), Servicios, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"limpieza de pisos\": «Retiro de escombros. * Retiro de materiales sobrantes. * Limpieza de pisos y revestimientos. * Limpieza de artefactos. * Limpieza ge»",
+    "score": 41,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 84329/2026",
+    "ultima_actualizacion": "2026-09-04T18:18:44",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369293",
+    "ya_adjudicados": [
+      "CEMENTO ADHESIVO PARA CERAMICA",
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO"
+    ]
+  },
   "e1cce4da152c2f9255681266641ee4b6": {
     "cambio_detectado": false,
     "categorias": [
@@ -25614,6 +25758,50 @@
       "GOMA NATURAL EN PLANCHA",
       "REPARACION DE PISO DE MADERA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "ecb5fde7b9bd8afa5ebc811e052ff93b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1353728.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 04 Sep 2026 14:05:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "ecb5fde7b9bd8afa5ebc811e052ff93b",
+    "informe": "informes/ecb5fde7b9bd8afa5ebc811e052ff93b.md",
+    "keyword": "acero galvanizado",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-04T18:15:54",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «logada marcado CE: Antienganche de color negro realizada en PVC Alzado Transversal Escala 1/20 PREMARCO: De acero inoxidabl»",
+    "score": 21,
+    "simbolo": "★",
+    "titulo": "Compra Directa 63/2026",
+    "ultima_actualizacion": "2026-09-04T18:15:54",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1353728",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "PERFIL U DE ALUMINIO",
+      "CAMINERO DE PVC"
     ]
   },
   "ed27f59f3f83652fa7c20b781c9c1281": {
