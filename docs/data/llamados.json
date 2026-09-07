@@ -7214,6 +7214,51 @@
       "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
     ]
   },
+  "441176e2578126aadaa04be4de64f944": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1369618.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 07 Sep 2026 10:35:16",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "441176e2578126aadaa04be4de64f944",
+    "informe": "informes/441176e2578126aadaa04be4de64f944.md",
+    "keyword": "acero inoxidable",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Maldonado",
+    "primera_deteccion": "2026-09-07T15:35:02",
+    "que_es": "Licitación de Intendencia de Maldonado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «n tapa de 40 x 40 x 40 cm, • Canalización mediante cañería PVC Ø40 mm con salida por codo, conforme a plano adjunto. 3.4 I»",
+    "score": 32,
+    "simbolo": "★★",
+    "titulo": "Licitación Pública 16/2026",
+    "ultima_actualizacion": "2026-09-07T15:35:02",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369618",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "442e735eaefba2be5ff60b5996879ac1": {
     "cambio_detectado": false,
     "categorias": [
@@ -13563,6 +13608,45 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1361332",
     "ya_adjudicados": []
   },
+  "80ee33d72ea38a2f1e6ae462bfe16dce": {
+    "cambio_detectado": false,
+    "categorias": [
+      "decks_exterior",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Deck y exterior",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1369610.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 07 Sep 2026 10:25:16",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "80ee33d72ea38a2f1e6ae462bfe16dce",
+    "informe": "informes/80ee33d72ea38a2f1e6ae462bfe16dce.md",
+    "keyword": "decks + madera",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Maldonado",
+    "primera_deteccion": "2026-09-07T15:35:08",
+    "que_es": "Licitación de Intendencia de Maldonado — busca Deck y exterior, Material mencionado (revisar contexto). Menciona \"decks\": «(150 metros) podrá ser ubicada en sombrillas, o en base de decks desde la línea de ribera hacia el mar en una distancia no ma»",
+    "score": 7,
+    "simbolo": "★",
+    "titulo": "Licitación Pública 1004/2026",
+    "ultima_actualizacion": "2026-09-07T15:35:08",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369610",
+    "ya_adjudicados": [
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "80f99cdf244c89ef72d5743cf91df027": {
     "cambio_detectado": false,
     "categorias": [
@@ -17739,6 +17823,41 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1354087",
     "ya_adjudicados": []
   },
+  "a4114fc75cb5eac8a96d37e9912fee54": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 07 Sep 2026 10:00:18",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción",
+    "id": "a4114fc75cb5eac8a96d37e9912fee54",
+    "informe": "informes/a4114fc75cb5eac8a96d37e9912fee54.md",
+    "keyword": "algodón + madera",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
+    "primera_deteccion": "2026-09-07T15:37:27",
+    "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca Material mencionado (revisar contexto). Menciona \"algodón\": «Compra Directa 1004/2026 HISOPO DE ALGODÓN NO ESTÉRIL CON VÁSTAGO DE CM:20 DE LARGO Y ALGODÓN DE CM: 2»",
+    "score": 17,
+    "simbolo": "★",
+    "titulo": "Compra Directa 1004/2026",
+    "ultima_actualizacion": "2026-09-07T15:37:27",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369598",
+    "ya_adjudicados": [
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "a43c841fc7fa51de35ec653c6a18295c": {
     "cambio_detectado": false,
     "categorias": [
@@ -18449,6 +18568,41 @@
       "GOMA NATURAL EN PLANCHA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
+  },
+  "ab41dad5f2343d2a4e96e2dd1e154db5": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1369549.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 07 Sep 2026 09:10:28",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "ab41dad5f2343d2a4e96e2dd1e154db5",
+    "informe": "informes/ab41dad5f2343d2a4e96e2dd1e154db5.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
+    "primera_deteccion": "2026-09-07T15:37:38",
+    "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca Alfombras, Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «e: ITEM CODIGO -SICE CONCEPTO/ARTICULO CANT. 1 25320 CARPETA DE CARTULINA - CARPETA VERDE CONTRATAPA CON SOLAPAS EN LA»",
+    "score": 26,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 1512/2026",
+    "ultima_actualizacion": "2026-09-07T15:37:38",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369549",
+    "ya_adjudicados": []
   },
   "ac70a05d75e9310b454b314601a2b428": {
     "cambio_detectado": false,
@@ -21794,6 +21948,39 @@
       "CAMINERO DE PVC",
       "CAMINERO DE ACRILICO"
     ]
+  },
+  "c88a290a48f9a489729a09b3a3e081c8": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1365954.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": "2026-09-14",
+    "fecha_publicacion": "Mon, 07 Sep 2026 10:50:20",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "c88a290a48f9a489729a09b3a3e081c8",
+    "informe": "informes/c88a290a48f9a489729a09b3a3e081c8.md",
+    "keyword": "algodon + algodón + poliester",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "512/26",
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-07T15:34:53",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto). Menciona \"algodon\": «ogo y el borde inicial del siguiente. 7 14436 REMERA EN ALGODON DE MANGA LARGA TALLE COLOR GRIS 50 UNIDAD Remera de alg»",
+    "score": 18,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 512/2026",
+    "ultima_actualizacion": "2026-09-07T15:34:53",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1365954",
+    "ya_adjudicados": []
   },
   "c89f09471e8c9ab3f8ff7a239c395fd5": {
     "cambio_detectado": false,
@@ -26876,6 +27063,35 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1356726",
     "ya_adjudicados": []
   },
+  "f39a0cfb4aecc86a7721bea027f49e74": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1369715.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 07 Sep 2026 12:15:14",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción",
+    "id": "f39a0cfb4aecc86a7721bea027f49e74",
+    "informe": "informes/f39a0cfb4aecc86a7721bea027f49e74.md",
+    "keyword": "compra de materiales",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-07T15:34:20",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 15175/2026",
+    "ultima_actualizacion": "2026-09-07T15:34:20",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369715",
+    "ya_adjudicados": []
+  },
   "f3e8664749e55a2a165d5de4ac7f15b1": {
     "cambio_detectado": false,
     "categorias": [
@@ -27972,6 +28188,47 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1358139",
     "ya_adjudicados": [
       "MANTENIMIENTO EDILICIO"
+    ]
+  },
+  "fe0f728f247b78c82a7fb1c732efe6fc": {
+    "cambio_detectado": false,
+    "categorias": [
+      "decks_exterior",
+      "materiales",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Deck y exterior",
+      "Material mencionado (revisar contexto)",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1369607.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 07 Sep 2026 10:10:30",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "fe0f728f247b78c82a7fb1c732efe6fc",
+    "informe": "informes/fe0f728f247b78c82a7fb1c732efe6fc.md",
+    "keyword": "obra nueva",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Maldonado",
+    "primera_deteccion": "2026-09-07T15:35:11",
+    "que_es": "Licitación de Intendencia de Maldonado — busca Deck y exterior, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"decks\": «del parador podrá ser ubicada en sombrillas, o en base de decks desde la línea de ribera hacia el mar en una distancia no ma»",
+    "score": 19,
+    "simbolo": "★",
+    "titulo": "Licitación Pública 1003/2026",
+    "ultima_actualizacion": "2026-09-07T15:35:11",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369607",
+    "ya_adjudicados": [
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "REPARACION DE PISO DE MADERA"
     ]
   },
   "fe14deaafdc8564ff1b5e5ff2d2c0e1e": {
