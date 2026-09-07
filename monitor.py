@@ -531,6 +531,20 @@ FUENTE_CODIGO_ARTICULO = "código de artículo ARCE (ya adjudicado)"
 def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
     """Devuelve (relevante, keyword, fuente, texto_pliego_si_se_leyo).
 
+    texto_base incluye título + descripción del llamado Y las descripciones
+    de tender.items[] (lic["items_pliego"], ver _items_articulos()) — no
+    solo título/descripción. Caso real que expuso el hueco (2026-09-07):
+    Licitación Abreviada 173/2026 (ASSE, idc 1369431) tenía como título
+    solo el número de expediente y como descripción "COMPRA DE HASTA 2
+    CONTENEDORES PARA CUARTO MEDICO BALNEARIO BUENOS AIRES" (sin la
+    palabra "habitable"); el nombre real del producto, "CONTENEDOR
+    HABITABLE", solo aparecía en tender.items[].description — un campo
+    que ya se capturaba en items_pliego para mostrarlo en el mail, pero
+    nunca se usaba para decidir relevancia. El pliego adjunto tampoco
+    servía de red de seguridad: era un PDF escaneado sin capa de texto
+    (0 caracteres extraíbles), así que ni la lectura de pliego más abajo
+    lo hubiera detectado.
+
     El match por código de artículo (lic["codigos_articulo"], ver
     _codigos_articulo()) se chequea ANTES que el umbral de 2+ términos de
     _decidir_relevancia() (que existe para compensar la debilidad del
@@ -550,7 +564,8 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
     "ARRENDAMIENTO DE PISO" sin excluir) — así que ninguna señal, ni
     siquiera el código, debe pisar ese veto.
     """
-    texto_base = (lic["titulo"] + " " + lic["descripcion"]).lower()
+    texto_items = " ".join(it["descripcion"] for it in (lic.get("items_pliego") or []))
+    texto_base = (lic["titulo"] + " " + lic["descripcion"] + " " + texto_items).lower()
     if _es_alquiler_de_inmueble(texto_base):
         return False, None, None, ""
 
@@ -567,7 +582,7 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
 
     relevante, kw = _decidir_relevancia(_matches_en_texto(texto_base))
     if relevante:
-        return True, kw, "título/descripción", ""
+        return True, kw, "título/descripción/ítems", ""
 
     print(f"  Leyendo pliego de: {lic['titulo'][:60]}... ({len(lic.get('documentos') or [])} documento(s))")
     pliego = _leer_pliego(lic)
