@@ -2677,6 +2677,39 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "193ca9f2cd9b3bbb9efc91b21c54e014": {
+    "cambio_detectado": false,
+    "categorias": [
+      "pisos_deportivos"
+    ],
+    "categorias_etiquetas": [
+      "Pisos deportivos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1370027.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 08 Sep 2026 12:15:15",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "193ca9f2cd9b3bbb9efc91b21c54e014",
+    "informe": "informes/193ca9f2cd9b3bbb9efc91b21c54e014.md",
+    "keyword": "piso deportivo",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "40/2026",
+    "organismo": "CES - Consejo de Educación Secundaria",
+    "primera_deteccion": "2026-09-08T18:26:19",
+    "que_es": "Licitación de CES - Consejo de Educación Secundaria — busca Pisos deportivos. Menciona \"piso deportivo\": «Licitación Abreviada 40/2026 \"PISO DEPORTIVO Y ACCESORIOS PARA GIMNASIO SARANDI DEL YI\"»",
+    "score": 21,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 40/2026",
+    "ultima_actualizacion": "2026-09-08T18:26:19",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370027",
+    "ya_adjudicados": []
+  },
   "1960a243d8fa61bedf4de784d19cbcf9": {
     "cambio_detectado": false,
     "categorias": [
@@ -6135,6 +6168,39 @@
       "CAMINERO DE PVC",
       "CAMINERO DE ACRILICO"
     ]
+  },
+  "35598dbd1867aa4a67d62ba25b0477fc": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1370101.odt"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 08 Sep 2026 13:15:16",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "35598dbd1867aa4a67d62ba25b0477fc",
+    "informe": "informes/35598dbd1867aa4a67d62ba25b0477fc.md",
+    "keyword": "nylon + polipropileno",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-08T18:24:07",
+    "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto). Menciona \"nylon\": «pra Directa 287/2026 ADQUISICIÓN DE BANDEJAS DESCARTABLES Y NYLON FILMS PARA EL MES DE OCTUBRE . LEER PLIEGO DE CONDICIONES P»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Compra Directa 287/2026",
+    "ultima_actualizacion": "2026-09-08T18:24:07",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370101",
+    "ya_adjudicados": []
   },
   "364eaf7fe7cb14b302dc1ea911315dec": {
     "cambio_detectado": false,
@@ -11681,6 +11747,47 @@
       "MANTENIMIENTO DE PAVIMENTO"
     ]
   },
+  "6dd589b1e9ecb1849ed63e19e0822579": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "pisos_madera",
+      "servicios"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Pisos de madera",
+      "Servicios"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1370103.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 08 Sep 2026 12:55:17",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "6dd589b1e9ecb1849ed63e19e0822579",
+    "informe": "informes/6dd589b1e9ecb1849ed63e19e0822579.md",
+    "keyword": "pisos de madera",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Defensa Nacional (MDN)",
+    "primera_deteccion": "2026-09-08T18:24:11",
+    "que_es": "Licitación de Ministerio de Defensa Nacional (MDN) — busca Material mencionado (revisar contexto), Pisos de madera, Servicios. Menciona \"pisos de madera\": «or de la totalidad de las ventanas. -Limpieza y encerado de pisos de madera y monolíticos a solicitud. 11 -Todos los productos de li»",
+    "score": 31,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 5002/2026",
+    "ultima_actualizacion": "2026-09-08T18:24:11",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370103",
+    "ya_adjudicados": [
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "6dfdbc8699c551a717f729a68ec1b3ad": {
     "cambio_detectado": false,
     "categorias": [
@@ -11728,6 +11835,39 @@
       "PANEL DE MADERA",
       "REPARACION DE PISO DE MADERA"
     ]
+  },
+  "6e05372aa42343f59e107c0ab9f1e87c": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1370071.7z"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 08 Sep 2026 12:05:18",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "6e05372aa42343f59e107c0ab9f1e87c",
+    "informe": "informes/6e05372aa42343f59e107c0ab9f1e87c.md",
+    "keyword": "contenedor habitable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "104126/2026",
+    "organismo": null,
+    "primera_deteccion": "2026-09-08T18:26:23",
+    "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto). Menciona \"eucalipto\": «Abreviada 104126/2026 Acondicionamiento de contenedor en El Eucalipto»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 104126/2026",
+    "ultima_actualizacion": "2026-09-08T18:26:23",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370071",
+    "ya_adjudicados": []
   },
   "6eef4c973e0fa615d8a231e2170fc609": {
     "cambio_detectado": false,
@@ -16782,6 +16922,42 @@
       "ZOCALO DE MADERA",
       "PANEL DE MADERA",
       "REPARACION DE PISO DE MADERA"
+    ]
+  },
+  "96212d3c6ef950775f920c20d3bea897": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1368876.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 08 Sep 2026 15:00:24",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "96212d3c6ef950775f920c20d3bea897",
+    "informe": "informes/96212d3c6ef950775f920c20d3bea897.md",
+    "keyword": "aluminio + polipropileno",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-08T18:21:50",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto). Menciona \"aluminio\": «1 uni. Boquilla 25 mm con tornillo 28478 39 6 rollos Cinta aluminio 12471 IMPORTANTE: A los efectos de LA PRESENTACIÓN DE»",
+    "score": 17,
+    "simbolo": "★",
+    "titulo": "Compra Directa 93/2026",
+    "ultima_actualizacion": "2026-09-08T18:21:50",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1368876",
+    "ya_adjudicados": [
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO"
     ]
   },
   "977acde9084629ca9c196b45975b3009": {
@@ -22301,6 +22477,39 @@
       "CAMINERO DE PVC"
     ]
   },
+  "c7994de2e1f061b6b06bf74c2491fc22": {
+    "cambio_detectado": false,
+    "categorias": [
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1370132.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 08 Sep 2026 13:50:20",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "c7994de2e1f061b6b06bf74c2491fc22",
+    "informe": "informes/c7994de2e1f061b6b06bf74c2491fc22.md",
+    "keyword": "mantenimiento edilicio",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
+    "primera_deteccion": "2026-09-08T18:24:02",
+    "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — busca Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"memoria constructiva\": «úblicas: Decreto N° 257/015 de 23 de setiembre de 2015 4) Memoria Constructiva General para Edificios Públicos de la DNA del MTOP y el Pl»",
+    "score": 11,
+    "simbolo": "★",
+    "titulo": "Compra por Excepción 9/2026",
+    "ultima_actualizacion": "2026-09-08T18:24:02",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370132",
+    "ya_adjudicados": []
+  },
   "c83efb15b44d4f862d94fa11be87fd1d": {
     "cambio_detectado": false,
     "categorias": [],
@@ -26233,6 +26442,35 @@
     "ya_adjudicados": [
       "MANTENIMIENTO EDILICIO"
     ]
+  },
+  "ea8db5269d48c53a70611bb36b19b3f4": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1370084.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 08 Sep 2026 13:35:15",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "ea8db5269d48c53a70611bb36b19b3f4",
+    "informe": "informes/ea8db5269d48c53a70611bb36b19b3f4.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "1005/2026",
+    "organismo": null,
+    "primera_deteccion": "2026-09-08T18:24:05",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 1005/2026",
+    "ultima_actualizacion": "2026-09-08T18:24:05",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370084",
+    "ya_adjudicados": []
   },
   "eaad54bfadd1e3e37c8344a1dc0b1f4a": {
     "cambio_detectado": false,
