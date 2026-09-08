@@ -9606,6 +9606,35 @@
       "CAMINERO DE PVC"
     ]
   },
+  "5acd1ea44e48bd80e3840e729bfe2472": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1369895.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 07 Sep 2026 23:35:08",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "5acd1ea44e48bd80e3840e729bfe2472",
+    "informe": "informes/5acd1ea44e48bd80e3840e729bfe2472.md",
+    "keyword": "polietileno de alta densidad",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "26891/2026",
+    "organismo": null,
+    "primera_deteccion": "2026-09-08T14:11:38",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 26891/2026",
+    "ultima_actualizacion": "2026-09-08T14:11:38",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369895",
+    "ya_adjudicados": []
+  },
   "5bfb913a8870d4cf02a0e9c4738098b5": {
     "cambio_detectado": false,
     "categorias": [
