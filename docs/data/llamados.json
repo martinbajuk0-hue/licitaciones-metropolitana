@@ -8128,6 +8128,46 @@
       "CAMINERO DE PVC"
     ]
   },
+  "4acee19526126a7dc53bf249265e0d4b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1370216.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 08 Sep 2026 16:30:14",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "4acee19526126a7dc53bf249265e0d4b",
+    "informe": "informes/4acee19526126a7dc53bf249265e0d4b.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-08T23:13:05",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «Fondo en chapa doblada 2 mm de espesor • Manija en caño de acero inoxidable en un extremo. • 4 ruedas de teflón de 20 cm de diámetro;»",
+    "score": 1,
+    "simbolo": "★",
+    "titulo": "Compra Directa 338/2026",
+    "ultima_actualizacion": "2026-09-08T23:13:05",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370216",
+    "ya_adjudicados": [
+      "FELPUDO",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "ENTREPUERTA METALICA",
+      "CAMINERO DE ACRILICO"
+    ]
+  },
   "4be2533424b58e6216134fcb407463e1": {
     "cambio_detectado": false,
     "categorias": [
