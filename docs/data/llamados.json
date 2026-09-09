@@ -11499,6 +11499,43 @@
       "MANTENIMIENTO EDILICIO"
     ]
   },
+  "6b0a66ce55dec0a5ea05a61656aa6b73": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1370397.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 09 Sep 2026 11:00:22",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "6b0a66ce55dec0a5ea05a61656aa6b73",
+    "informe": "informes/6b0a66ce55dec0a5ea05a61656aa6b73.md",
+    "keyword": "código ya adjudicado: MANTENIMIENTO DE PAVIMENTO",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "15/2026",
+    "organismo": null,
+    "primera_deteccion": "2026-09-09T14:14:07",
+    "que_es": "Licitación de organismo no identificado — busca Alfombras, Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «ecuperación de pavimentos de hormigón mediante recapado con carpeta asfáltica en caliente y la reconstrucción de la estructura»",
+    "score": 39,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 15/2026",
+    "ultima_actualizacion": "2026-09-09T14:14:07",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370397",
+    "ya_adjudicados": [
+      "MANTENIMIENTO DE PAVIMENTO"
+    ]
+  },
   "6b5248656ad41c5dc040548f69572a92": {
     "cambio_detectado": false,
     "categorias": [
@@ -14185,6 +14222,37 @@
       "CAMINERO DE PVC"
     ]
   },
+  "822ff46db90abde3aa72cd3b015c64a2": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1370266.odt"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 09 Sep 2026 09:35:11",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "822ff46db90abde3aa72cd3b015c64a2",
+    "informe": "informes/822ff46db90abde3aa72cd3b015c64a2.md",
+    "keyword": "código ya adjudicado: PLANCHA DE GOMA EVA",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-09T14:14:14",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 25,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 289/2026",
+    "ultima_actualizacion": "2026-09-09T14:14:14",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370266",
+    "ya_adjudicados": [
+      "PLANCHA DE GOMA EVA"
+    ]
+  },
   "823d282008153d2ea07f88f25c07ec01": {
     "cambio_detectado": false,
     "categorias": [
@@ -14383,6 +14451,37 @@
       "PROTECTOR EN PVC PARA PISO FLOTANTE",
       "CAMINERO DE PVC"
     ]
+  },
+  "83ef554adbe89d4bd1df27ee8014940b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 09 Sep 2026 09:10:12",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "83ef554adbe89d4bd1df27ee8014940b",
+    "informe": "informes/83ef554adbe89d4bd1df27ee8014940b.md",
+    "keyword": "caucho + poliuretano",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-09T14:14:16",
+    "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto). Menciona \"caucho\": «ara el autoclave con temperaturas de 121 grados deben tener caucho - se solicita muestras enviarla a sector Intendencia Hospit»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Compra Directa 1011/2026",
+    "ultima_actualizacion": "2026-09-09T14:14:16",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370258",
+    "ya_adjudicados": []
   },
   "84323794b10fdf8b216214590d1ad1dc": {
     "cambio_detectado": false,
