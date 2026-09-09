@@ -3515,6 +3515,56 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "208e3573ea938ed1e762a20bd896aa7f": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1370496.doc"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 09 Sep 2026 12:15:32",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "208e3573ea938ed1e762a20bd896aa7f",
+    "informe": "informes/208e3573ea938ed1e762a20bd896aa7f.md",
+    "keyword": "goma + madera + polipropileno",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-09T18:29:07",
+    "que_es": "Licitación de organismo no identificado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «A DE CELULOSA, TERMÓMETRO, TAPA ROSCA PERFORADA, TUBULADURA PVC, PERFORADOR DE MEMBRANA, RESUCITADOR PEDIÁTRICO, ADULTO, BA»",
+    "score": 26,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 14770/2026",
+    "ultima_actualizacion": "2026-09-09T18:29:07",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370496",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "ALFOMBRA DE GOMA",
+      "PISO MODULAR DE PVC",
+      "PISO DE GOMA",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "20f3f9eb3911ed28bd8f3c54bb707b5c": {
     "cambio_detectado": false,
     "categorias": [
@@ -4428,6 +4478,46 @@
     "ultima_actualizacion": "2026-08-21T12:10:42",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1352832",
     "ya_adjudicados": []
+  },
+  "261c6c55533cdf5a7e203180bebb22e5": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "paneles_revestimientos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Paneles y revestimientos de pared",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1370376.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 09 Sep 2026 12:15:22",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "261c6c55533cdf5a7e203180bebb22e5",
+    "informe": "informes/261c6c55533cdf5a7e203180bebb22e5.md",
+    "keyword": "panel acustico",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": "22-2026",
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-09T18:29:11",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto), Paneles y revestimientos de pared, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"panel acústico\": «grabación y reproducción directa. Código 7338. Item 7: 1 Panel acústico para grabaciones de audio: filtro de control acústico portá»",
+    "score": 49,
+    "simbolo": "★★★",
+    "titulo": "Licitación Abreviada 22/2026",
+    "ultima_actualizacion": "2026-09-09T18:29:11",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370376",
+    "ya_adjudicados": [
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO"
+    ]
   },
   "266ce7ae016c53c4da71436c46aec689": {
     "cambio_detectado": false,
@@ -19183,6 +19273,41 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "a6ff3ee8541ccb4b5b4081eb79f509b5": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1370427.docx"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 09 Sep 2026 12:30:23",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "a6ff3ee8541ccb4b5b4081eb79f509b5",
+    "informe": "informes/a6ff3ee8541ccb4b5b4081eb79f509b5.md",
+    "keyword": "nylon + polietileno",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-09T18:29:04",
+    "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto). Menciona \"nylon\": «ITEM 1-28061- 10.000 Bolsas de nylon 24x35 60 micras ÍTEM 2-28061- 2.000 Bolsas en polietileno»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Compra Directa 264/2026",
+    "ultima_actualizacion": "2026-09-09T18:29:04",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370427",
+    "ya_adjudicados": [
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
+    ]
+  },
   "a7575d23f20acad336acf33cbbb6c182": {
     "cambio_detectado": false,
     "categorias": [
@@ -19381,6 +19506,33 @@
       "GOMA NATURAL EN PLANCHA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
+  },
+  "aa4d4fd11e7a2afb0a836ea6961d1189": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 09 Sep 2026 11:15:10",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "aa4d4fd11e7a2afb0a836ea6961d1189",
+    "informe": "informes/aa4d4fd11e7a2afb0a836ea6961d1189.md",
+    "keyword": "aluminio + poliestireno",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-09T18:33:44",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 152/2026",
+    "ultima_actualizacion": "2026-09-09T18:33:44",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370255",
+    "ya_adjudicados": []
   },
   "ab41dad5f2343d2a4e96e2dd1e154db5": {
     "cambio_detectado": false,
@@ -22949,6 +23101,37 @@
       "GOMA DE LATEX 1.5 ESPESOR 3 MM"
     ]
   },
+  "c91fb68b2fb89b4bb862d8506c71cc5a": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1368129.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 09 Sep 2026 12:15:25",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "c91fb68b2fb89b4bb862d8506c71cc5a",
+    "informe": "informes/c91fb68b2fb89b4bb862d8506c71cc5a.md",
+    "keyword": "código ya adjudicado: CEMENTO ADHESIVO PARA CERAMICA",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-09T18:29:09",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 25,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 8/2026",
+    "ultima_actualizacion": "2026-09-09T18:29:09",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1368129",
+    "ya_adjudicados": [
+      "CEMENTO ADHESIVO PARA CERAMICA"
+    ]
+  },
   "c9419c34523e1bc5498d9361ea4dfcea": {
     "cambio_detectado": false,
     "categorias": [
@@ -23979,6 +24162,33 @@
       "COLOCACION DE VINILICOS",
       "ZOCALO CONFORMADO PARA PISO VINILICO"
     ]
+  },
+  "d2c67d763dde791e97bed6ba91c2a41f": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 09 Sep 2026 11:35:14",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "d2c67d763dde791e97bed6ba91c2a41f",
+    "informe": "informes/d2c67d763dde791e97bed6ba91c2a41f.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-09T18:29:33",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 15448/2026",
+    "ultima_actualizacion": "2026-09-09T18:29:33",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370458",
+    "ya_adjudicados": []
   },
   "d36fa707c4475cf497158b72f365c78a": {
     "cambio_detectado": false,
@@ -25702,6 +25912,37 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1356248",
     "ya_adjudicados": [
       "ZOCALO EN MDF"
+    ]
+  },
+  "e206185ef2441c22ac8167aecdc3d156": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1370430.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 09 Sep 2026 11:20:09",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "e206185ef2441c22ac8167aecdc3d156",
+    "informe": "informes/e206185ef2441c22ac8167aecdc3d156.md",
+    "keyword": "código ya adjudicado: MANTENIMIENTO DE PAVIMENTO",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "16/2026",
+    "organismo": null,
+    "primera_deteccion": "2026-09-09T18:33:43",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 25,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 16/2026",
+    "ultima_actualizacion": "2026-09-09T18:33:43",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370430",
+    "ya_adjudicados": [
+      "MANTENIMIENTO DE PAVIMENTO"
     ]
   },
   "e26bacbff3f3ba933267377a59782995": {
