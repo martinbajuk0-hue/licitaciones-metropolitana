@@ -5307,6 +5307,39 @@
       "colocación moquette"
     ]
   },
+  "29b80e12bf96961a2957b56a7974e415": {
+    "cambio_detectado": false,
+    "categorias": [
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1370606.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 10 Sep 2026 17:25:11",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "29b80e12bf96961a2957b56a7974e415",
+    "informe": "informes/29b80e12bf96961a2957b56a7974e415.md",
+    "keyword": "materiales de construcción",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-10T22:57:17",
+    "que_es": "Licitación de organismo no identificado — busca Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"materiales de construcción\": «Compra Directa 235/2026 Adq. de materiales de construcción, ajustarse al archivo adjunto (excluyente)»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Compra Directa 235/2026",
+    "ultima_actualizacion": "2026-09-10T22:57:17",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370606",
+    "ya_adjudicados": []
+  },
   "29c9c40229048ddb76d7d9ed91142e32": {
     "cambio_detectado": false,
     "categorias": [
@@ -27482,6 +27515,35 @@
     "ya_adjudicados": [
       "MANTENIMIENTO EDILICIO"
     ]
+  },
+  "e9ccc6f6ce126acc017fc9703341635b": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1370521.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 10 Sep 2026 18:15:09",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "e9ccc6f6ce126acc017fc9703341635b",
+    "informe": "informes/e9ccc6f6ce126acc017fc9703341635b.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-10T22:57:16",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 238/2026",
+    "ultima_actualizacion": "2026-09-10T22:57:16",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370521",
+    "ya_adjudicados": []
   },
   "ea8db5269d48c53a70611bb36b19b3f4": {
     "cambio_detectado": false,
