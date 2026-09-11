@@ -10286,6 +10286,35 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1362323",
     "ya_adjudicados": []
   },
+  "5945430108afe8babb1d250b1e7eba92": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1344473.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 15:00:14",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "5945430108afe8babb1d250b1e7eba92",
+    "informe": "informes/5945430108afe8babb1d250b1e7eba92.md",
+    "keyword": "goma + madera + pvc",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio del Interior (MI)",
+    "primera_deteccion": "2026-09-11T18:12:06",
+    "que_es": "Licitación de Ministerio del Interior (MI) — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 60/2026",
+    "ultima_actualizacion": "2026-09-11T18:12:06",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1344473",
+    "ya_adjudicados": []
+  },
   "59c330e9615c6199d5e8108232b8c865": {
     "cambio_detectado": false,
     "categorias": [
@@ -12735,6 +12764,35 @@
     "titulo": "Licitación Abreviada 104126/2026",
     "ultima_actualizacion": "2026-09-08T18:26:23",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370071",
+    "ya_adjudicados": []
+  },
+  "6e0e63e168fb4179eb553681c0e29385": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1371198.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 13:25:18",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "6e0e63e168fb4179eb553681c0e29385",
+    "informe": "informes/6e0e63e168fb4179eb553681c0e29385.md",
+    "keyword": "goma + pino + pvc",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "24/2026",
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-11T18:12:29",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 24/2026",
+    "ultima_actualizacion": "2026-09-11T18:12:29",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371198",
     "ya_adjudicados": []
   },
   "6eef4c973e0fa615d8a231e2170fc609": {
@@ -16446,6 +16504,39 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1354447",
     "ya_adjudicados": []
   },
+  "8bf5bda83f4af7887052a5f32417d9d7": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1370163.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 13:25:16",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "8bf5bda83f4af7887052a5f32417d9d7",
+    "informe": "informes/8bf5bda83f4af7887052a5f32417d9d7.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio del Interior (MI)",
+    "primera_deteccion": "2026-09-11T18:12:32",
+    "que_es": "Licitación de Ministerio del Interior (MI) — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «Obligatorio 2 Voltaje: 220 V Obligatorio 3 Material: acero inoxidable Obligatorio 4 Potencia de motor: 280 W Obligatorio 5»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "PFI - Comparación de precios 7/2026",
+    "ultima_actualizacion": "2026-09-11T18:12:32",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370163",
+    "ya_adjudicados": []
+  },
   "8c157b9dd012cc158a188d9086157f2d": {
     "cambio_detectado": false,
     "categorias": [
@@ -16741,6 +16832,44 @@
       "GOMA NATURAL EN PLANCHA",
       "REPARACION DE PISO DE MADERA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "8cf8add029b529e685be000b16064c67": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1371213.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 11:35:18",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "8cf8add029b529e685be000b16064c67",
+    "informe": "informes/8cf8add029b529e685be000b16064c67.md",
+    "keyword": "memoria constructiva",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-09-11T18:15:02",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"memoria constructiva\": «cederá de conforme a las especificaciones contenidas en la Memoria Constructiva General para edificios públicos, de la Dirección de Arquit»",
+    "score": 29,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 437/2026",
+    "ultima_actualizacion": "2026-09-11T18:15:02",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371213",
+    "ya_adjudicados": [
+      "CEMENTO ADHESIVO PARA CERAMICA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM"
     ]
   },
   "8de34fd38f005777ee6faf936bafbdff": {
@@ -24636,6 +24765,41 @@
     "titulo": "Compra Directa 262/2026",
     "ultima_actualizacion": "2026-09-03T23:21:39",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1368659",
+    "ya_adjudicados": []
+  },
+  "cff0712079c4f404396b8537c218760a": {
+    "cambio_detectado": false,
+    "categorias": [
+      "normativas",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Normativa/certificación mencionada",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1370980.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 12:55:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "cff0712079c4f404396b8537c218760a",
+    "informe": "informes/cff0712079c4f404396b8537c218760a.md",
+    "keyword": "memoria constructiva",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "17/2026",
+    "organismo": "Ministerio del Interior (MI)",
+    "primera_deteccion": "2026-09-11T18:14:38",
+    "que_es": "Licitación de Ministerio del Interior (MI) — busca Normativa/certificación mencionada, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"memoria constructiva\": «DG, Maldonado ” especificaciones técnicas que surgen de la Memoria Constructiva y planos. Visita Obligatoria: Se hará una visita obligatori»",
+    "score": 9,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 17/2026",
+    "ultima_actualizacion": "2026-09-11T18:14:38",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370980",
     "ya_adjudicados": []
   },
   "cff907c5d1c8f31b7690753945291655": {
