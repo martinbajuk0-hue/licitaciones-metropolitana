@@ -1,0 +1,91 @@
+# Informe de licitación: Compra Directa 267/2026
+
+**URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1371116
+**Generado:** 2026-09-11 14:08
+**Qué es:** Licitación de Ministerio de Desarrollo Social (MIDES) — busca Material mencionado (revisar contexto). Menciona "algodón": «da kit contiene: -1 toalla grande de baño: Material: 100% algodón Medidas: ancho entre 70 y 80 cm x largo entre 140 y 150 c»
+
+## Clasificación: ★ — No presentarse (score 1/100)
+
+### Por qué este puntaje
+- +12 por 1 categoría(s) de producto identificadas
+- +15 por organismo identificado (prioritario según el rol)
+- -16 por 4 campo(s) clave no identificados (a verificar manualmente)
+- -20 por 2 riesgo(s) de severidad alta
+- -20 por 14 ítem(s) documentales a verificar
+
+## Resumen ejecutivo
+QUÉ ES: Licitación de Ministerio de Desarrollo Social (MIDES) — busca Material mencionado (revisar contexto). Menciona "algodón": «da kit contiene: -1 toalla grande de baño: Material: 100% algodón Medidas: ancho entre 70 y 80 cm x largo entre 140 y 150 c»
+
+Organismo: Ministerio de Desarrollo Social (MIDES).
+Número: no identificado — verificar manualmente.
+Fecha de apertura: no identificada — verificar manualmente.
+Categorías de producto detectadas: Material mencionado (revisar contexto).
+Resumen generado por reglas (sin ANTHROPIC_API_KEY configurada): es un extracto de campos, no un análisis narrativo completo del pliego.
+
+## Datos clave
+- Organismo: Ministerio de Desarrollo Social (MIDES)
+- Número de licitación/expediente: **NO IDENTIFICADO — verificar manualmente**
+- Fecha de apertura: **NO IDENTIFICADA — verificar manualmente** (Fecha de cierre no identificada — verificar manualmente)
+- Plazo/fecha de entrega: 30 días corridos (plazo relativo — no es una fecha fija, calcular desde la orden de compra/notificación)
+- Fecha límite de consultas: no identificada — verificar manualmente
+- Fecha de visita de obra: no identificada / puede no aplicar
+- Garantía de mantenimiento de oferta: no identificada — verificar manualmente
+- Garantía de fiel cumplimiento: no identificada — verificar manualmente
+
+### Criterios de evaluación detectados
+_(ninguno)_
+
+### Datos que faltan y dónde buscarlos
+- número de licitación/expediente: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- fecha de apertura: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- fecha límite de consultas: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- criterios de evaluación: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+
+## Productos Metropolitana identificados
+Categorías detectadas: Material mencionado (revisar contexto)
+
+- **Material mencionado (revisar contexto)** ("algodón"): ...da kit contiene:  -1 toalla grande de baño:  Material: 100% algodón   Medidas: ancho entre 70 y 80 cm x largo entre 140 y 150 c...
+- **Material mencionado (revisar contexto)** ("nylon"): ...es   1000  Forma de entrega: Cada kit de toalla en bolsa de nylon.    Modo de entrega: deben entregarse en cajas cerradas deb...
+
+### Contexto adicional (lugar de uso / aplicación)
+- Lugar de uso mencionado: depósito, dirección, mides, ministerio, oficina, tribunal
+
+## Riesgos detectados
+Altos: 2 · Medios: 0 · Total: 2
+
+- [ALTA] multas_penalidades: Mora automática — «6    13.- MORA    13.1 El adjudicatario incurrirá en mora de pleno derecho sin necesidad de interpelación judicial o  extrajudicial al»
+- [ALTA] multas_penalidades: Riesgo de rescisión contractual — «ub.uy           7    15.- CAUSALES DE RESCISIÓN    15.1- La rescisión del contrato se producirá de pleno derecho por la inhabilitación supervi»
+
+## Checklist documental
+### Exigidos explícitamente en el pliego
+- Inscripción activa en RUPE — evidencia: «registrado en el Registro Único de  Proveedores del Estado (RUPE), conforme a lo dispuesto por el Decreto del Poder Ejecutiv»
+- Garantía de fiel cumplimiento de contrato — evidencia: «Registro de Proveedores del Organismo;  d) ejecución de la garantía de fiel cumplimiento del contrato, o de la multa que se disponga en su  lugar co»
+
+### Estándar, no mencionado en el pliego (verificar si igual aplica)
+- Certificado único de DGI vigente
+- Certificado único de BPS vigente
+- Poderes / representación legal vigentes
+- Certificado notarial de vigencia / representación
+- Estados contables / antecedentes financieros
+- Catálogos de producto
+- Fichas técnicas de los productos ofertados
+- Muestras físicas de producto
+- Garantía de mantenimiento de oferta
+- Pólizas de seguro (responsabilidad civil / accidentes)
+- Antecedentes en obras/suministros similares
+- Constancia de visita de obra (si el pliego la exige)
+- Declaraciones juradas exigidas
+- Formulario de identificación del oferente
+
+## Cronograma de tareas
+- 2026-09-11: Lectura integral del pliego y anexos
+- 2026-09-12: Armar checklist documental y reunir certificados
+- según disponibilidad, antes de apertura: Definir productos y armar cotización
+- según disponibilidad, antes de apertura: Redactar oferta técnica y administrativa
+- FECHA DE APERTURA NO IDENTIFICADA — verificar manualmente antes de planificar: Entrega de oferta
+
+## Documentos que no se pudieron leer
+_(ninguno)_
+
+---
+_Informe generado automáticamente. No sustituye la lectura íntegra del pliego por una persona del equipo de licitaciones. Todo campo marcado como 'no identificado' o 'PENDIENTE' requiere verificación manual antes de tomar una decisión de presentarse._

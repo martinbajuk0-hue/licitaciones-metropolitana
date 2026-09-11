@@ -6176,6 +6176,35 @@
       "REPARACION DE PISO DE MADERA"
     ]
   },
+  "314997107cf007d1586c2c5b419e0c5b": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1371097.odt"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 10:45:13",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "314997107cf007d1586c2c5b419e0c5b",
+    "informe": "informes/314997107cf007d1586c2c5b419e0c5b.md",
+    "keyword": "carpet + carpeta + goma",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-11T14:05:32",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 15164/2026",
+    "ultima_actualizacion": "2026-09-11T14:05:32",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371097",
+    "ya_adjudicados": []
+  },
   "317832d4c3f9b51b2565e4c2a2ee01a9": {
     "cambio_detectado": false,
     "categorias": [
@@ -8214,6 +8243,39 @@
       "BALDOSA VINILICA",
       "BALDOSA DE GOMA",
       "REPARACION DE PISO DE MADERA"
+    ]
+  },
+  "46de27f42b993cafd232da825ff955ef": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 09:55:11",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "46de27f42b993cafd232da825ff955ef",
+    "informe": "informes/46de27f42b993cafd232da825ff955ef.md",
+    "keyword": "acrilico + acrílico",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-11T14:07:56",
+    "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto). Menciona \"acrílico\": «Compra Directa 269/2026 Adquisición de cartelería de acrílico para comunicación institucional»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Compra Directa 269/2026",
+    "ultima_actualizacion": "2026-09-11T14:07:56",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371118",
+    "ya_adjudicados": [
+      "CAMINERO DE ACRILICO"
     ]
   },
   "477758eba34e7fc94ae9fe041d5bc12b": {
@@ -11141,6 +11203,41 @@
     "titulo": "Licitación Abreviada 6/2026",
     "ultima_actualizacion": "2026-08-27T21:21:40",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1320532",
+    "ya_adjudicados": []
+  },
+  "63a3285d075e786c3128f0b95f437afc": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1371131.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 10:05:14",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "63a3285d075e786c3128f0b95f437afc",
+    "informe": "informes/63a3285d075e786c3128f0b95f437afc.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
+    "primera_deteccion": "2026-09-11T14:07:49",
+    "que_es": "Licitación de Ministerio de Relaciones Exteriores (MRREE) — busca Alfombras, Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «estimada Cada oferta deberá presentarse engrampada y/o encarpetada. La copia deberá ser igual al original. En caso que la»",
+    "score": 33,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 109485/2026",
+    "ultima_actualizacion": "2026-09-11T14:07:49",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371131",
     "ya_adjudicados": []
   },
   "63b03666c60591f2fa31ae77e5315529": {
@@ -14346,6 +14443,35 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "7d4b9a3fdbe87c5ff39e10d841afd06b": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1371094.PDF"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 09:05:10",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "7d4b9a3fdbe87c5ff39e10d841afd06b",
+    "informe": "informes/7d4b9a3fdbe87c5ff39e10d841afd06b.md",
+    "keyword": "contenedor habitable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "152102/2026",
+    "organismo": "ANCAP - Administración Nacional de Combustibles, Alcohol y Pórtland",
+    "primera_deteccion": "2026-09-11T14:10:07",
+    "que_es": "Licitación de ANCAP - Administración Nacional de Combustibles, Alcohol y Pórtland — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 152102/2026",
+    "ultima_actualizacion": "2026-09-11T14:10:07",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371094",
+    "ya_adjudicados": []
+  },
   "7dc3ae69113cc583f9b4a9eb854eef18": {
     "cambio_detectado": false,
     "categorias": [],
@@ -16716,6 +16842,42 @@
       "CAMINERO DE PVC",
       "GOMA NATURAL EN PLANCHA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "8f086ec224c0125210731ba5d10d80a9": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1371102.docx"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 09:35:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "8f086ec224c0125210731ba5d10d80a9",
+    "informe": "informes/8f086ec224c0125210731ba5d10d80a9.md",
+    "keyword": "acabado mate",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-11T14:08:04",
+    "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto). Menciona \"acabado mate\": «ros, fachadas, revoques, hormigón, ladrillos). Terminación: Acabado mate sedoso (ayuda a disimular las imperfecciones de la superfic»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Compra Directa 19/2026",
+    "ultima_actualizacion": "2026-09-11T14:08:04",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371102",
+    "ya_adjudicados": [
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE ACRILICO"
     ]
   },
   "8f23059a17c75d383707bff62bbbe519": {
@@ -20066,6 +20228,39 @@
     "titulo": "Compra Directa 152/2026",
     "ultima_actualizacion": "2026-09-09T18:33:44",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370255",
+    "ya_adjudicados": []
+  },
+  "aaad3e8a8f45facbb1a05422d14d5f9b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1371116.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 09:50:20",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "aaad3e8a8f45facbb1a05422d14d5f9b",
+    "informe": "informes/aaad3e8a8f45facbb1a05422d14d5f9b.md",
+    "keyword": "algodón + nylon",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Desarrollo Social (MIDES)",
+    "primera_deteccion": "2026-09-11T14:08:00",
+    "que_es": "Licitación de Ministerio de Desarrollo Social (MIDES) — busca Material mencionado (revisar contexto). Menciona \"algodón\": «da kit contiene: -1 toalla grande de baño: Material: 100% algodón Medidas: ancho entre 70 y 80 cm x largo entre 140 y 150 c»",
+    "score": 1,
+    "simbolo": "★",
+    "titulo": "Compra Directa 267/2026",
+    "ultima_actualizacion": "2026-09-11T14:08:00",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371116",
     "ya_adjudicados": []
   },
   "ab04f49c3c0b9c4484538f7a96ea39fd": {
@@ -28667,6 +28862,43 @@
       "CAMINERO DE PVC",
       "CAMINERO DE ACRILICO"
     ]
+  },
+  "f28cd8d0c3eab87a665e31d1b879a11b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "accesorios",
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Accesorios de instalación",
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1371124.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": "2026-10-13",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 10:00:15",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "f28cd8d0c3eab87a665e31d1b879a11b",
+    "informe": "informes/f28cd8d0c3eab87a665e31d1b879a11b.md",
+    "keyword": "carpet + carpeta + esquinero",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
+    "primera_deteccion": "2026-09-11T14:07:52",
+    "que_es": "Licitación de Ministerio de Relaciones Exteriores (MRREE) — busca Accesorios de instalación, Alfombras, Variante/error ortográfico de un término del rubro, apertura 2026-10-13. Menciona \"carpet\": «estimada Cada oferta deberá presentarse engrampada y/o encarpetada. La copia deberá ser igual al original. En caso que la»",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Licitación Abreviada 109521/2026",
+    "ultima_actualizacion": "2026-09-11T14:07:52",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371124",
+    "ya_adjudicados": []
   },
   "f2a0e6729dbf2e8b953df0ecc552a9d8": {
     "cambio_detectado": false,
