@@ -10147,6 +10147,43 @@
       "REPARACION DE PISO DE MADERA"
     ]
   },
+  "57343c6984b7302ad1f3cf08820bf254": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "marcas",
+      "normativas"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Marca de mercado mencionada",
+      "Normativa/certificación mencionada"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1371345.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 16:00:13",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "57343c6984b7302ad1f3cf08820bf254",
+    "informe": "informes/57343c6984b7302ad1f3cf08820bf254.md",
+    "keyword": "iso 14001",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-11T23:03:08",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Marca de mercado mencionada, Normativa/certificación mencionada. Menciona \"iso 14001\": «a Energética - Certificaciones: EPAT, TCO, Energy Star, ISO 14001 Hasta 7% Experiencia con empresa oferente Hasta 5% Otr»",
+    "score": 36,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 25/2026",
+    "ultima_actualizacion": "2026-09-11T23:03:08",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371345",
+    "ya_adjudicados": []
+  },
   "57dfec6a7b4991b01793ed6b3bfcf61c": {
     "cambio_detectado": false,
     "categorias": [
@@ -13862,6 +13899,39 @@
       "COLOCACION DE ZOCALO",
       "ZOCALO EN MDF"
     ]
+  },
+  "76fbf035fdacb934b1c7853178a27db5": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1371225.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 15:20:12",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "76fbf035fdacb934b1c7853178a27db5",
+    "informe": "informes/76fbf035fdacb934b1c7853178a27db5.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "CES - Consejo de Educación Secundaria",
+    "primera_deteccion": "2026-09-11T23:09:26",
+    "que_es": "Licitación de CES - Consejo de Educación Secundaria — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «ango de plástico 1 paquetes Cucharas Cuchara de sopa de acero inoxidable, con mango de plástico, paquete de 12 unidades. 1 paque»",
+    "score": 17,
+    "simbolo": "★",
+    "titulo": "Compra Directa 20141/2026",
+    "ultima_actualizacion": "2026-09-11T23:09:26",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371225",
+    "ya_adjudicados": []
   },
   "78337a2c6bca5a56e48eb50095d1d586": {
     "cambio_detectado": false,
@@ -21972,6 +22042,37 @@
     "ultima_actualizacion": "2026-08-27T22:06:26",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1357583",
     "ya_adjudicados": []
+  },
+  "b6410fcc1acdd9151a266753d88b3db4": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1371369.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 11 Sep 2026 15:35:09",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "b6410fcc1acdd9151a266753d88b3db4",
+    "informe": "informes/b6410fcc1acdd9151a266753d88b3db4.md",
+    "keyword": "código ya adjudicado: COLOCACION DE PISO",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "109568/2026",
+    "organismo": null,
+    "primera_deteccion": "2026-09-11T23:07:19",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 25,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 109568/2026",
+    "ultima_actualizacion": "2026-09-11T23:07:19",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371369",
+    "ya_adjudicados": [
+      "COLOCACION DE PISO"
+    ]
   },
   "b6b620d45b96f72f4cd75f4992389e3a": {
     "cambio_detectado": false,
