@@ -2187,6 +2187,39 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1364274",
     "ya_adjudicados": []
   },
+  "11b22d58211f101310c9baac1d7feff1": {
+    "cambio_detectado": false,
+    "categorias": [
+      "contenedores_modulares"
+    ],
+    "categorias_etiquetas": [
+      "Contenedores habitables, garitas y módulos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1371031.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 15 Sep 2026 15:20:15",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "11b22d58211f101310c9baac1d7feff1",
+    "informe": "informes/11b22d58211f101310c9baac1d7feff1.md",
+    "keyword": "contenedor habitable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-15T18:46:14",
+    "que_es": "Licitación de organismo no identificado — busca Contenedores habitables, garitas y módulos. Menciona \"contenedor habitable\": «Concurso de Precios 7/2026 Adquisición de contenedor habitable de 40 pies.»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 7/2026",
+    "ultima_actualizacion": "2026-09-15T18:46:14",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371031",
+    "ya_adjudicados": []
+  },
   "11cc108c6db91335c52aab98e3da77b9": {
     "cambio_detectado": false,
     "categorias": [
@@ -6281,6 +6314,43 @@
     "ultima_actualizacion": "2026-08-21T12:32:49",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1363746",
     "ya_adjudicados": []
+  },
+  "2f43a995840967d17ebbcf8387f7d739": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1371867.docx"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 15 Sep 2026 12:00:18",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "2f43a995840967d17ebbcf8387f7d739",
+    "informe": "informes/2f43a995840967d17ebbcf8387f7d739.md",
+    "keyword": "acrílico + aluminio",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Treinta y Tres",
+    "primera_deteccion": "2026-09-15T18:53:11",
+    "que_es": "Licitación de Intendencia de Treinta y Tres — busca Material mencionado (revisar contexto). Menciona \"acrílico\": «O ESPECIFICACIONES TECNICAS: Marco de Aluminio y frente de acrílico Leds de alta luminosidad de tres renglones en cada dígito D»",
+    "score": 25,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 13/2026",
+    "ultima_actualizacion": "2026-09-15T18:53:11",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371867",
+    "ya_adjudicados": [
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO",
+      "CAMINERO DE ACRILICO"
+    ]
   },
   "30309a5b9dce013f83dd49183e63f613": {
     "cambio_detectado": false,
@@ -11333,6 +11403,39 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369201",
     "ya_adjudicados": []
   },
+  "60147c4769c8f6ed7802120c61139b84": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1371909.docx"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 15 Sep 2026 14:40:11",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "60147c4769c8f6ed7802120c61139b84",
+    "informe": "informes/60147c4769c8f6ed7802120c61139b84.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "CES - Consejo de Educación Secundaria",
+    "primera_deteccion": "2026-09-15T18:48:34",
+    "que_es": "Licitación de CES - Consejo de Educación Secundaria — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «roducto: | Cantidad hasta: | Foto ilustrativa 1 | MESADA DE ACERO INOXIDABLE CIEGA Caracteristicas: Medidas: 1.80 x 0,50 Material: Acero»",
+    "score": 14,
+    "simbolo": "★",
+    "titulo": "Compra Directa 1019/2026",
+    "ultima_actualizacion": "2026-09-15T18:48:34",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371909",
+    "ya_adjudicados": []
+  },
   "606ec75d84e371ffa91b3bcdff17b135": {
     "cambio_detectado": false,
     "categorias": [
@@ -15243,6 +15346,43 @@
       "ALFOMBRA DE LANA"
     ]
   },
+  "7e5fe10a54e49dc25647f0351cf6e4fe": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1371965.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 15 Sep 2026 14:10:14",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "7e5fe10a54e49dc25647f0351cf6e4fe",
+    "informe": "informes/7e5fe10a54e49dc25647f0351cf6e4fe.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "CES - Consejo de Educación Secundaria",
+    "primera_deteccion": "2026-09-15T18:52:58",
+    "que_es": "Licitación de CES - Consejo de Educación Secundaria — busca Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «APELES DE METAL Tipo binder clip, ancho 41 mm Unidad 60 3 CARPETA EN L De acetato, formato A4, transparente Unidad 84 4 C»",
+    "score": 41,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 431/2026",
+    "ultima_actualizacion": "2026-09-15T18:52:58",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371965",
+    "ya_adjudicados": []
+  },
   "7e6096f408d51388df6119346ff00074": {
     "cambio_detectado": false,
     "categorias": [
@@ -16193,6 +16333,37 @@
       "PROTECTOR EN PVC PARA PISO FLOTANTE",
       "CAMINERO DE PVC",
       "REPARACION DE PISO DE MADERA"
+    ]
+  },
+  "85b5109464ae31fba98cd21cbdefc722": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1372058.7z"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 15 Sep 2026 15:30:24",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "85b5109464ae31fba98cd21cbdefc722",
+    "informe": "informes/85b5109464ae31fba98cd21cbdefc722.md",
+    "keyword": "código ya adjudicado: REPARACION DE PAVIMENTO",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "104112/2026",
+    "organismo": null,
+    "primera_deteccion": "2026-09-15T18:44:10",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 25,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 104112/2026",
+    "ultima_actualizacion": "2026-09-15T18:44:10",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372058",
+    "ya_adjudicados": [
+      "REPARACION DE PAVIMENTO"
     ]
   },
   "86001bd832b20d4d291649a495b0ce39": {
