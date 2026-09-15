@@ -3686,6 +3686,57 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "20ed9f580e442d2612a075fb46e39596": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "normativas",
+      "pisos_madera",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Normativa/certificación mencionada",
+      "Pisos de madera",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1371721.PDF"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 14 Sep 2026 14:15:12",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "20ed9f580e442d2612a075fb46e39596",
+    "informe": "informes/20ed9f580e442d2612a075fb46e39596.md",
+    "keyword": "acero inoxidable",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
+    "primera_deteccion": "2026-09-14T23:57:22",
+    "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Normativa/certificación mencionada, Pisos de madera, Pisos vinílicos. Menciona \"pvc\": «ES ITEM DESCRIPCIÓN CLASE IEC 60228 CANTIDAD 1 CABLE CU PVC/CL5 3X2MM2 CABLEADO 500V 5 500 mts 2 CABLE CU BAJO PLASTIC»",
+    "score": 39,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 146789/2026",
+    "ultima_actualizacion": "2026-09-14T23:57:22",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371721",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "PERFIL U DE ALUMINIO",
+      "CAMINERO DE PVC",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "20f3f9eb3911ed28bd8f3c54bb707b5c": {
     "cambio_detectado": false,
     "categorias": [
@@ -8061,6 +8112,35 @@
     "ya_adjudicados": [
       "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
     ]
+  },
+  "42ac72edf5eb2f99a1cd57078dd2a129": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1370549.xls"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 14 Sep 2026 13:30:17",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "42ac72edf5eb2f99a1cd57078dd2a129",
+    "informe": "informes/42ac72edf5eb2f99a1cd57078dd2a129.md",
+    "keyword": "epoxi + r11",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-15T00:07:39",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 245/2026",
+    "ultima_actualizacion": "2026-09-15T00:07:39",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370549",
+    "ya_adjudicados": []
   },
   "441176e2578126aadaa04be4de64f944": {
     "cambio_detectado": false,
@@ -16907,6 +16987,39 @@
       "REPARACION DE PISO DE MADERA"
     ]
   },
+  "8aebf78ca011e621a60daab692ffe318": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1371734.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 14 Sep 2026 15:00:17",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "8aebf78ca011e621a60daab692ffe318",
+    "informe": "informes/8aebf78ca011e621a60daab692ffe318.md",
+    "keyword": "goma + poliuretano",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-14T23:55:13",
+    "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto). Menciona \"poliuretano\": «Compra Directa 15475/2026 Colchón de poliuretano para cama articulada. Pedido 27309 Servicio: Lavadero»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Compra Directa 15475/2026",
+    "ultima_actualizacion": "2026-09-14T23:55:13",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371734",
+    "ya_adjudicados": []
+  },
   "8b3f297e4e8631ee8b26f0447c35e3f0": {
     "cambio_detectado": false,
     "categorias": [
@@ -19422,6 +19535,35 @@
     "titulo": "Concurso de Precios 80/2026",
     "ultima_actualizacion": "2026-08-27T23:03:13",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1350208",
+    "ya_adjudicados": []
+  },
+  "9c601d6c493f2fc4f9476a11d4954ad0": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1370468.xls"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 14 Sep 2026 13:20:17",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "9c601d6c493f2fc4f9476a11d4954ad0",
+    "informe": "informes/9c601d6c493f2fc4f9476a11d4954ad0.md",
+    "keyword": "deck + madera",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-15T00:07:41",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 244/2026",
+    "ultima_actualizacion": "2026-09-15T00:07:41",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370468",
     "ya_adjudicados": []
   },
   "9c6f4da2b4deba32a59877b21ebfa83b": {
