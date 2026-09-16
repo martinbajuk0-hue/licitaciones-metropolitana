@@ -27,7 +27,7 @@ import requests
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; MetropolitanaLicitaciones/1.0)"}
 
 EXTENSIONES_SOPORTADAS = {
-    ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".odt", ".zip",
+    ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".odt", ".zip", ".7z", ".rar",
     ".png", ".jpg", ".jpeg", ".tif", ".tiff",
 }
 
@@ -198,6 +198,39 @@ def _extraer_odt(path: Path) -> tuple[str, int]:
     return "\n".join(partes), 1
 
 
+def _extraer_miembros_comprimido(nombres_y_bytes, extractores_internos) -> tuple[str, int]:
+    """Lógica compartida por los tres formatos de archivo comprimido
+    (.zip, .7z, .rar): recorre (nombre_interno, contenido) y despacha cada
+    archivo interno al extractor de _EXTRACTORES que corresponda a su
+    extensión, concatenando el texto de todos los que se puedan leer.
+    """
+    partes = []
+    total = 0
+    for nombre_interno, contenido in nombres_y_bytes:
+        ext_interno = Path(nombre_interno).suffix.lower()
+        extractor_interno = extractores_internos.get(ext_interno)
+        if extractor_interno is None:
+            continue
+        with tempfile.NamedTemporaryFile(suffix=ext_interno, delete=False) as f:
+            f.write(contenido)
+            tmp_path = Path(f.name)
+        try:
+            texto_interno, n = extractor_interno(tmp_path)
+            if texto_interno.strip():
+                partes.append(f"### Archivo dentro del comprimido: {nombre_interno}\n{texto_interno}")
+                total += n
+        except Exception:
+            continue
+        finally:
+            tmp_path.unlink(missing_ok=True)
+    if not partes:
+        raise RuntimeError(
+            "El archivo comprimido no contiene ningún archivo en un formato soportado "
+            "(o todos fallaron al leerse)"
+        )
+    return "\n\n".join(partes), total
+
+
 def _extraer_zip(path: Path) -> tuple[str, int]:
     """Extrae texto recursivamente de los archivos soportados dentro de un
     .zip (frecuente en comprasestatales.gub.uy cuando el organismo sube el
@@ -206,34 +239,58 @@ def _extraer_zip(path: Path) -> tuple[str, int]:
     Deliberadamente NO incluye ".zip" en el diccionario de extractores
     usado para la recursión interna: un .zip dentro de otro .zip no se
     sigue expandiendo, para evitar una bomba de descompresión con un
-    adjunto malicioso o corrupto.
+    adjunto malicioso o corrupto. (Mismo criterio en _extraer_7z/_extraer_rar
+    respecto de su propio formato — no impide anidar TIPOS distintos entre
+    sí, pero eso no es un vector de riesgo realista para pliegos oficiales.)
     """
     extractores_internos = {ext: fn for ext, fn in _EXTRACTORES.items() if ext != ".zip"}
-    partes = []
-    total = 0
     with zipfile.ZipFile(path) as zf:
-        for info in zf.infolist():
-            if info.is_dir():
-                continue
-            ext_interno = Path(info.filename).suffix.lower()
-            extractor_interno = extractores_internos.get(ext_interno)
-            if extractor_interno is None:
-                continue
-            with tempfile.NamedTemporaryFile(suffix=ext_interno, delete=False) as f:
-                f.write(zf.read(info))
-                tmp_path = Path(f.name)
-            try:
-                texto_interno, n = extractor_interno(tmp_path)
-                if texto_interno.strip():
-                    partes.append(f"### Archivo dentro del zip: {info.filename}\n{texto_interno}")
-                    total += n
-            except Exception:
-                continue
-            finally:
-                tmp_path.unlink(missing_ok=True)
-    if not partes:
-        raise RuntimeError("El .zip no contiene ningún archivo en un formato soportado (o todos fallaron al leerse)")
-    return "\n\n".join(partes), total
+        pares = ((info.filename, zf.read(info)) for info in zf.infolist() if not info.is_dir())
+        return _extraer_miembros_comprimido(pares, extractores_internos)
+
+
+def _extraer_7z(path: Path) -> tuple[str, int]:
+    """Extrae texto recursivamente de los archivos soportados dentro de un .7z."""
+    try:
+        import py7zr
+    except ImportError as e:
+        raise RuntimeError("Falta la librería 'py7zr' (pip install py7zr) para leer .7z") from e
+
+    extractores_internos = {ext: fn for ext, fn in _EXTRACTORES.items() if ext != ".7z"}
+    with tempfile.TemporaryDirectory() as tmpdir:
+        with py7zr.SevenZipFile(str(path), mode="r") as archivo:
+            archivo.extractall(path=tmpdir)
+        pares = [
+            (p.relative_to(tmpdir).as_posix(), p.read_bytes())
+            for p in Path(tmpdir).rglob("*")
+            if p.is_file()
+        ]
+        return _extraer_miembros_comprimido(pares, extractores_internos)
+
+
+def _extraer_rar(path: Path) -> tuple[str, int]:
+    """Extrae texto recursivamente de los archivos soportados dentro de un
+    .rar. Requiere el binario de sistema 'unrar' (rarfile es solo un
+    wrapper que le delega la descompresión — el formato RAR es propietario
+    y no hay una implementación pura Python confiable).
+    """
+    try:
+        import rarfile
+    except ImportError as e:
+        raise RuntimeError("Falta la librería 'rarfile' (pip install rarfile) para leer .rar") from e
+
+    if shutil.which("unrar") is None:
+        raise RuntimeError(
+            "Falta el binario 'unrar' (instalar vía 'apt-get install unrar') para leer archivos .rar."
+        )
+    extractores_internos = {ext: fn for ext, fn in _EXTRACTORES.items() if ext != ".rar"}
+    with rarfile.RarFile(str(path)) as archivo:
+        pares = [
+            (info.filename, archivo.read(info))
+            for info in archivo.infolist()
+            if not info.is_dir()
+        ]
+        return _extraer_miembros_comprimido(pares, extractores_internos)
 
 
 _EXTRACTORES = {
@@ -244,6 +301,8 @@ _EXTRACTORES = {
     ".xlsx": _extraer_xlsx,
     ".odt": _extraer_odt,
     ".zip": _extraer_zip,
+    ".7z": _extraer_7z,
+    ".rar": _extraer_rar,
     ".png": _extraer_imagen,
     ".jpg": _extraer_imagen,
     ".jpeg": _extraer_imagen,
@@ -378,7 +437,7 @@ def descargar_y_extraer(url: str, timeout: int = 30) -> DocumentoExtraido:
 
 def encontrar_links_documentos(html: str, base_url: str = "") -> list[str]:
     """Busca links a documentos descargables (pdf/doc/xls/imagen) en una página HTML."""
-    patron = r'href=["\']([^"\']+\.(?:pdf|docx?|xlsx?|odt|zip|png|jpe?g|tiff?))["\']'
+    patron = r'href=["\']([^"\']+\.(?:pdf|docx?|xlsx?|odt|zip|7z|rar|png|jpe?g|tiff?))["\']'
     links = re.findall(patron, html, re.IGNORECASE)
     resultado = []
     for link in links:
