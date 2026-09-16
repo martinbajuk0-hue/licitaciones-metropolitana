@@ -15475,6 +15475,43 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371094",
     "ya_adjudicados": []
   },
+  "7daef6190fe4a0926e968ee53a86e1ef": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1372529.zip"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 16 Sep 2026 16:25:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "7daef6190fe4a0926e968ee53a86e1ef",
+    "informe": "informes/7daef6190fe4a0926e968ee53a86e1ef.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Economía y Finanzas (MEF)",
+    "primera_deteccion": "2026-09-16T23:36:18",
+    "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «ío total). Unidad 1 Sensor de nivel tipo flotador Material: acero inoxidable 316L, Plástico o similar. Salida: NA/NC. Instalación: vert»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 738/2026",
+    "ultima_actualizacion": "2026-09-16T23:36:18",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372529",
+    "ya_adjudicados": [
+      "CEMENTO ADHESIVO PARA CERAMICA"
+    ]
+  },
   "7dc3ae69113cc583f9b4a9eb854eef18": {
     "cambio_detectado": false,
     "categorias": [],
@@ -22108,6 +22145,60 @@
       "instalación"
     ]
   },
+  "ad22a99b384596193dd63adfab48d833": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1366679.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 16 Sep 2026 19:25:07",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "ad22a99b384596193dd63adfab48d833",
+    "informe": "informes/ad22a99b384596193dd63adfab48d833.md",
+    "keyword": "caucho + esquinero + goma",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-16T23:34:07",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «40 EN 2MM 4 BABETA DE ZINC --- M 33 BABETAS 5 CIELORRASO DE PVC BLANCO M2 140 CIELO RAZO DE PVC 6 x 0,20 6 ESQUINERO INTERI»",
+    "score": 46,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 25/2026",
+    "ultima_actualizacion": "2026-09-16T23:34:07",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1366679",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "ALFOMBRA DE GOMA",
+      "CEMENTO ADHESIVO PARA PORCELANATO",
+      "PISO MODULAR DE PVC",
+      "PISO DE GOMA",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ALFOMBRA DE LANA",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "adc350814e917301613b3e85c3841e94": {
     "cambio_detectado": false,
     "categorias": [
@@ -28321,6 +28412,41 @@
       "GOMA NATURAL EN PLANCHA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
+  },
+  "dcbff10e35d03c48c1eec7a119658208": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1372512.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 16 Sep 2026 15:50:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "dcbff10e35d03c48c1eec7a119658208",
+    "informe": "informes/dcbff10e35d03c48c1eec7a119658208.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
+    "primera_deteccion": "2026-09-16T23:38:29",
+    "que_es": "Licitación de Ministerio de Relaciones Exteriores (MRREE) — busca Alfombras, Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «mada. Cada ofer ta deberá presentarse engrampada y/o encarpetada. La copia deberá ser igual al original. En caso que la»",
+    "score": 35,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 109474/2026",
+    "ultima_actualizacion": "2026-09-16T23:38:29",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372512",
+    "ya_adjudicados": []
   },
   "dd77fe0dbe3fdd8564819f039c8f9ee5": {
     "cambio_detectado": false,
