@@ -495,6 +495,7 @@ class TestMainFiltraEmailPorFechaYTecho(unittest.TestCase):
         informe.cierre = None
         return informe
 
+    @patch("monitor.seguimiento_mod")
     @patch("monitor.datetime")
     @patch("monitor.enviar_email")
     @patch("monitor.catalogo")
@@ -507,7 +508,9 @@ class TestMainFiltraEmailPorFechaYTecho(unittest.TestCase):
     def test_backlog_viejo_no_entra_al_email_pero_si_al_catalogo(
         self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
         mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
     ):
+        mock_seguimiento_mod.cargar.return_value = {}
         mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
         mock_datetime.strptime = datetime.strptime
         mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
@@ -532,10 +535,12 @@ class TestMainFiltraEmailPorFechaYTecho(unittest.TestCase):
         # ...pero al email solo entra la publicada hoy, aunque la del
         # backlog tenga mayor score.
         args, _ = mock_enviar_email.call_args
-        nuevas_enviadas, modificadas_enviadas, omitidas = args
+        nuevas_enviadas, modificadas_enviadas, omitidas, novedades_seguimiento = args
         self.assertEqual([lic["titulo"] for lic in nuevas_enviadas], ["Publicada hoy"])
         self.assertEqual(omitidas, 1)
+        self.assertEqual(novedades_seguimiento, [])
 
+    @patch("monitor.seguimiento_mod")
     @patch("monitor.datetime")
     @patch("monitor.enviar_email")
     @patch("monitor.catalogo")
@@ -548,7 +553,9 @@ class TestMainFiltraEmailPorFechaYTecho(unittest.TestCase):
     def test_techo_manda_las_de_mayor_score_primero(
         self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
         mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
     ):
+        mock_seguimiento_mod.cargar.return_value = {}
         mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
         mock_datetime.strptime = datetime.strptime
         mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
@@ -578,11 +585,12 @@ class TestMainFiltraEmailPorFechaYTecho(unittest.TestCase):
         monitor.main()
 
         args, _ = mock_enviar_email.call_args
-        nuevas_enviadas, _modificadas, omitidas = args
+        nuevas_enviadas, _modificadas, omitidas, _novedades_seguimiento = args
         self.assertEqual(len(nuevas_enviadas), monitor.MAX_ALERTAS_POR_EMAIL)
         self.assertEqual(omitidas, 5)
         self.assertIn("La de mayor score", [lic["titulo"] for lic in nuevas_enviadas])
 
+    @patch("monitor.seguimiento_mod")
     @patch("monitor.datetime")
     @patch("monitor.enviar_email")
     @patch("monitor.catalogo")
@@ -595,7 +603,9 @@ class TestMainFiltraEmailPorFechaYTecho(unittest.TestCase):
     def test_checkpoint_guarda_vistos_periodicamente_no_solo_al_final(
         self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
         mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
     ):
+        mock_seguimiento_mod.cargar.return_value = {}
         # Evidencia real 2026-08-19: la corrida #201 se canceló a mitad de
         # camino después de ~50 min de procesar backlog, sin haber
         # guardado nada (guardar_vistos() solo se llamaba una vez al
