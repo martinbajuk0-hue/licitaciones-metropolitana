@@ -14,7 +14,10 @@ from __future__ import annotations
 import multiprocessing
 import os
 import re
+import shutil
+import subprocess
 import tempfile
+import zipfile
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable, Optional
@@ -23,7 +26,10 @@ import requests
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; MetropolitanaLicitaciones/1.0)"}
 
-EXTENSIONES_SOPORTADAS = {".pdf", ".doc", ".docx", ".xls", ".xlsx", ".png", ".jpg", ".jpeg", ".tif", ".tiff"}
+EXTENSIONES_SOPORTADAS = {
+    ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".odt", ".zip",
+    ".png", ".jpg", ".jpeg", ".tif", ".tiff",
+}
 
 # Timeout duro (en segundos) para la extracción de texto de UN documento.
 #
@@ -130,10 +136,114 @@ def _extraer_imagen(path: Path) -> tuple[str, int]:
     return texto, 1
 
 
+def _extraer_doc_legado(path: Path) -> tuple[str, int]:
+    """Extrae texto de un .doc binario legado (formato OLE/Compound File,
+    anterior a Word 2007) usando el binario de sistema 'antiword'.
+
+    No hay una librería Python confiable para este formato binario —
+    antiword es la herramienta estándar de facto en Debian/Ubuntu (paquete
+    'antiword', instalado en el workflow de CI vía apt-get).
+    """
+    if shutil.which("antiword") is None:
+        raise RuntimeError(
+            "Falta el binario 'antiword' (instalar vía 'apt-get install antiword') "
+            "para leer archivos .doc en formato binario legado."
+        )
+    resultado = subprocess.run(
+        ["antiword", str(path)],
+        capture_output=True, text=True, timeout=60,
+    )
+    if resultado.returncode != 0:
+        raise RuntimeError(f"antiword falló (código {resultado.returncode}): {resultado.stderr.strip()[:300]}")
+    return resultado.stdout, 1
+
+
+def _extraer_xls_legado(path: Path) -> tuple[str, int]:
+    """Extrae texto de un .xls binario legado (formato BIFF, anterior a
+    Excel 2007) usando xlrd. IMPORTANTE: solo xlrd < 2.0 lee este formato —
+    la versión 2.0 en adelante eliminó soporte legado y solo lee .xlsx
+    (redundante con openpyxl). Ver requirements.txt (pin xlrd==1.2.0).
+    """
+    try:
+        import xlrd
+    except ImportError as e:
+        raise RuntimeError("Falta la librería 'xlrd' (pip install xlrd==1.2.0) para leer .xls legado") from e
+
+    wb = xlrd.open_workbook(str(path))
+    partes = []
+    for hoja in wb.sheets():
+        partes.append(f"### Hoja: {hoja.name}")
+        for fila_idx in range(hoja.nrows):
+            valores = [str(v) for v in hoja.row_values(fila_idx) if v not in (None, "")]
+            if valores:
+                partes.append(" | ".join(valores))
+    return "\n".join(partes), wb.nsheets
+
+
+def _extraer_odt(path: Path) -> tuple[str, int]:
+    """Extrae texto de un OpenDocument Text (.odt)."""
+    try:
+        from odf.opendocument import load
+        from odf.text import H, P
+        from odf import teletype
+    except ImportError as e:
+        raise RuntimeError("Falta la librería 'odfpy' (pip install odfpy) para leer .odt") from e
+
+    doc = load(str(path))
+    partes = []
+    for parrafo in doc.getElementsByType(P) + doc.getElementsByType(H):
+        texto = teletype.extractText(parrafo)
+        if texto:
+            partes.append(texto)
+    return "\n".join(partes), 1
+
+
+def _extraer_zip(path: Path) -> tuple[str, int]:
+    """Extrae texto recursivamente de los archivos soportados dentro de un
+    .zip (frecuente en comprasestatales.gub.uy cuando el organismo sube el
+    pliego + anexos comprimidos en un solo adjunto).
+
+    Deliberadamente NO incluye ".zip" en el diccionario de extractores
+    usado para la recursión interna: un .zip dentro de otro .zip no se
+    sigue expandiendo, para evitar una bomba de descompresión con un
+    adjunto malicioso o corrupto.
+    """
+    extractores_internos = {ext: fn for ext, fn in _EXTRACTORES.items() if ext != ".zip"}
+    partes = []
+    total = 0
+    with zipfile.ZipFile(path) as zf:
+        for info in zf.infolist():
+            if info.is_dir():
+                continue
+            ext_interno = Path(info.filename).suffix.lower()
+            extractor_interno = extractores_internos.get(ext_interno)
+            if extractor_interno is None:
+                continue
+            with tempfile.NamedTemporaryFile(suffix=ext_interno, delete=False) as f:
+                f.write(zf.read(info))
+                tmp_path = Path(f.name)
+            try:
+                texto_interno, n = extractor_interno(tmp_path)
+                if texto_interno.strip():
+                    partes.append(f"### Archivo dentro del zip: {info.filename}\n{texto_interno}")
+                    total += n
+            except Exception:
+                continue
+            finally:
+                tmp_path.unlink(missing_ok=True)
+    if not partes:
+        raise RuntimeError("El .zip no contiene ningún archivo en un formato soportado (o todos fallaron al leerse)")
+    return "\n\n".join(partes), total
+
+
 _EXTRACTORES = {
     ".pdf": _extraer_pdf,
+    ".doc": _extraer_doc_legado,
     ".docx": _extraer_docx,
+    ".xls": _extraer_xls_legado,
     ".xlsx": _extraer_xlsx,
+    ".odt": _extraer_odt,
+    ".zip": _extraer_zip,
     ".png": _extraer_imagen,
     ".jpg": _extraer_imagen,
     ".jpeg": _extraer_imagen,
@@ -149,14 +259,6 @@ def extraer_archivo_local(path: Path, nombre: Optional[str] = None, url: str = "
     extractor = _EXTRACTORES.get(ext)
 
     if extractor is None:
-        if ext in (".doc", ".xls"):
-            return DocumentoExtraido(
-                nombre=nombre, url=url, tipo=ext,
-                error=(
-                    f"Formato legado '{ext}' no soportado directamente. "
-                    "Convertir a .docx/.xlsx o exportar a PDF antes de analizar."
-                ),
-            )
         return DocumentoExtraido(nombre=nombre, url=url, tipo=ext, error=f"Extensión no soportada: {ext}")
 
     try:
@@ -276,7 +378,7 @@ def descargar_y_extraer(url: str, timeout: int = 30) -> DocumentoExtraido:
 
 def encontrar_links_documentos(html: str, base_url: str = "") -> list[str]:
     """Busca links a documentos descargables (pdf/doc/xls/imagen) en una página HTML."""
-    patron = r'href=["\']([^"\']+\.(?:pdf|docx?|xlsx?|png|jpe?g|tiff?))["\']'
+    patron = r'href=["\']([^"\']+\.(?:pdf|docx?|xlsx?|odt|zip|png|jpe?g|tiff?))["\']'
     links = re.findall(patron, html, re.IGNORECASE)
     resultado = []
     for link in links:
