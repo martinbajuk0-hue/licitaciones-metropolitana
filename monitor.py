@@ -29,6 +29,7 @@ import config.settings as settings
 import historial as historial_mod
 import parser as parser_mod
 import report as report_mod
+import seguimiento as seguimiento_mod
 
 MAX_DOCUMENTOS_POR_LICITACION = 5
 
@@ -625,7 +626,12 @@ def _enriquecer_lic_con_informe(lic: dict, informe: "report_mod.InformeLicitacio
     lic["categorias"] = categorias or ["Sin categoría específica"]
 
 
-def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor: int = 0) -> None:
+def enviar_email(
+    nuevas: list[dict],
+    modificadas: list[dict],
+    omitidas_del_visor: int = 0,
+    novedades_seguimiento: list[dict] | None = None,
+) -> None:
     """omitidas_del_visor: cuántos llamados relevantes adicionales quedaron
     afuera de este email (por antigüedad o por el techo de
     MAX_ALERTAS_POR_EMAIL — ver main()) pero siguen visibles en el
@@ -633,6 +639,12 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor
     agrega una línea al pie para que quede claro que el email no es
     necesariamente "todo lo relevante", así no se lea como que faltó
     algo sin avisar.
+
+    novedades_seguimiento: releases nuevos (aclaración/ajuste/adjudicación)
+    detectados sobre licitaciones que el usuario marcó a mano para
+    seguimiento (ver seguimiento.py y docs/index.html) — van en su propia
+    sección, primero en el email y sin pasar por el filtro de relevancia
+    ni de score: si el usuario la marcó, la quiere ver sí o sí.
 
     2026-09-02: formato rediseñado a pedido explícito del usuario ("quiero
     que sea un formato mas nítido, más amigable") — de tarjetas sueltas a
@@ -663,8 +675,11 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor
         f"destino_es_igual_a_gmail_user={dest == gmail_user} dominio_destino={dominio_dest!r}"
     )
 
-    total = len(nuevas) + len(modificadas)
+    novedades_seguimiento = novedades_seguimiento or []
+    total = len(nuevas) + len(modificadas) + len(novedades_seguimiento)
     subject = f"🏗️ {total} novedad(es) de licitaciones para Metropolitana — {datetime.today().strftime('%d/%m/%Y')}"
+    if novedades_seguimiento:
+        subject = f"🔔 {subject}"
 
     def _fecha_recepcion_html(lic: dict) -> str:
         # NO se inventa hora si no la tenemos: campos.fecha_apertura (ver
@@ -806,6 +821,51 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor
         )
         return encabezado + cuerpo
 
+    def _fila_seguimiento_html(item: dict) -> str:
+        etiqueta = seguimiento_mod.etiqueta_tipo(item["tipo"])
+        desc = (item.get("descripcion_release") or "")[:400]
+        desc_html = (
+            f'<div style="font-size:12px;color:#666;margin-top:3px;">{escapar_html(desc)}</div>' if desc else ""
+        )
+        return f"""
+        <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px 12px;font-size:13px;color:#1a1a1a;vertical-align:top;">
+                <div style="font-weight:600;">{escapar_html(item["titulo"])}</div>
+                {desc_html}
+            </td>
+            <td style="padding:10px 12px;font-size:13px;color:#333;vertical-align:top;">{escapar_html(item.get("organismo") or "No identificado")}</td>
+            <td style="padding:10px 12px;font-size:12px;vertical-align:top;white-space:nowrap;">
+                <span style="display:inline-block;padding:2px 8px;background:#fce8e6;color:#c5221f;border-radius:10px;font-weight:600;">{escapar_html(etiqueta)}</span>
+            </td>
+            <td style="padding:10px 12px;vertical-align:top;">
+                <a href="{item['url_ficha']}" style="display:inline-block;padding:4px 14px;border:1px solid #1a73e8;border-radius:4px;font-size:12px;color:#1a73e8;text-decoration:none;white-space:nowrap;">Ver</a>
+            </td>
+        </tr>
+        """
+
+    def _seccion_seguimiento_html(items: list[dict]) -> str:
+        if not items:
+            return ""
+        encabezado = f"""
+        <div style="border-left:4px solid #c5221f;padding:2px 0 2px 12px;margin:20px 0 10px;">
+            <span style="font-size:15px;font-weight:700;color:#1a1a1a;">🔔 Actualizaciones en licitaciones que seguís ({len(items)})</span>
+        </div>
+        """
+        columnas = "".join(
+            f'<th style="text-align:left;padding:8px 12px;font-size:11px;color:#666;'
+            f'text-transform:uppercase;letter-spacing:.03em;border-bottom:2px solid #eee;">{col}</th>'
+            for col in ("Licitación", "Organismo", "Tipo de novedad", "")
+        )
+        filas = "".join(_fila_seguimiento_html(it) for it in items)
+        tabla = f"""
+        <table style="width:100%;border-collapse:collapse;background:#fff;border:1px solid #eee;border-radius:6px;margin-bottom:20px;">
+            <tr style="background:#f5f6f7;">{columnas}</tr>
+            {filas}
+        </table>
+        """
+        return encabezado + tabla
+
+    html_seguimiento = _seccion_seguimiento_html(novedades_seguimiento)
     html_nuevas = _seccion_html("Nuevos llamados", "#1a73e8", nuevas, agrupar_por_categoria=True)
     html_modificadas = _seccion_html("Aclaraciones / modificaciones", "#e8711a", modificadas, agrupar_por_categoria=False)
 
@@ -823,6 +883,7 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor
         <p style="font-size:14px;color:#333;margin:0 0 4px;"><strong>{total} alerta(s)</strong> en esta corrida — coinciden con tus rubros y artículos de interés.</p>
         <hr style="border:none;border-top:1px solid #e0e0e0;margin:16px 0;">
         {omitidas_html}
+        {html_seguimiento}
         {html_nuevas}
         {html_modificadas}
         <p style="font-size:11px;color:#aaa;margin-top:24px;">Monitoreo automático vía ARCE · comprasestatales.gub.uy · Informes completos en la carpeta reports/ del repositorio.</p>
@@ -849,7 +910,10 @@ def enviar_email(nuevas: list[dict], modificadas: list[dict], omitidas_del_visor
     # smtp 250 OK acá solo confirma que Gmail ACEPTÓ el mensaje para
     # entregarlo — no garantiza que llegue a la bandeja de entrada (puede
     # caer en spam/cuarentena del servidor destino sin que Gmail se entere).
-    print(f"✅ Email aceptado por Gmail para entrega ({len(nuevas)} nuevas, {len(modificadas)} modificadas) — revisar spam si no aparece en la bandeja principal.")
+    print(
+        f"✅ Email aceptado por Gmail para entrega ({len(nuevas)} nuevas, {len(modificadas)} modificadas, "
+        f"{len(novedades_seguimiento)} de seguimiento) — revisar spam si no aparece en la bandeja principal."
+    )
 
 
 # ─── Main ──────────────────────────────────────────────────────────────────
@@ -966,6 +1030,21 @@ def main(enviar_email_flag: bool = True) -> None:
     guardar_vistos(vistos)
     print(f"  Nuevas relevantes: {len(nuevas)} · Modificadas: {len(modificadas)}")
 
+    # Licitaciones marcadas a mano para seguimiento (ver seguimiento.py y
+    # docs/index.html) — se revisan SIEMPRE, sin importar si hubo nuevas o
+    # modificadas arriba, y nunca deben tirar abajo el resto de la
+    # corrida si algo falla (ej. el feed RSS no responde).
+    seguimiento_datos = seguimiento_mod.cargar()
+    novedades_seguimiento: list[dict] = []
+    if seguimiento_datos:
+        try:
+            novedades_seguimiento = seguimiento_mod.revisar(seguimiento_datos)
+        except Exception as e:  # noqa: BLE001
+            print(f"  Seguimiento: error inesperado revisando la lista de seguimiento: {e}")
+        if novedades_seguimiento:
+            seguimiento_mod.guardar(seguimiento_datos)
+            print(f"  Seguimiento: {len(novedades_seguimiento)} novedad(es) en licitaciones seguidas.")
+
     # El email es para "acción rápida" (pedido explícito del usuario
     # 2026-08-19) — no un volcado de todo lo relevante que haya en
     # vistos. Dos filtros antes de armar el mail (el catálogo del visor
@@ -996,9 +1075,14 @@ def main(enviar_email_flag: bool = True) -> None:
             "score, el resto queda en el catálogo del visor."
         )
 
-    if (nuevas_para_mail or modificadas) and enviar_email_flag:
-        enviar_email(nuevas_para_mail, modificadas, omitidas_por_techo + omitidas_por_antiguedad)
-    elif not nuevas_para_mail and not modificadas:
+    if (nuevas_para_mail or modificadas or novedades_seguimiento) and enviar_email_flag:
+        enviar_email(
+            nuevas_para_mail,
+            modificadas,
+            omitidas_por_techo + omitidas_por_antiguedad,
+            novedades_seguimiento,
+        )
+    elif not nuevas_para_mail and not modificadas and not novedades_seguimiento:
         print("  Sin novedades para el email del día.")
 
 
