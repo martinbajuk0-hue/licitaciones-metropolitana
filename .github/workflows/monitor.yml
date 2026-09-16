@@ -58,12 +58,13 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
-      - name: Instalar antiword (lectura de anexos .doc legado)
-        # antiword es un binario de sistema, no un paquete pip — lee el
-        # formato binario OLE/Compound File de los .doc pre-2007 (ver
-        # parser.py::_extraer_doc_legado). No existe una librería Python
-        # confiable para este formato.
-        run: sudo apt-get update -qq && sudo apt-get install -y antiword
+      - name: Instalar binarios de sistema para anexos legado/comprimidos
+        # antiword (.doc pre-2007, ver parser.py::_extraer_doc_legado) y
+        # unrar (.rar, ver parser.py::_extraer_rar) son binarios de sistema,
+        # no paquetes pip — no existe una librería Python confiable para
+        # ninguno de los dos formatos. .7z en cambio se lee con py7zr, que
+        # es puro Python y no necesita binario (va en requirements.txt).
+        run: sudo apt-get update -qq && sudo apt-get install -y antiword unrar
 
       - name: Restaurar historial de licitaciones vistas
         # 2026-09-03: cambiado de actions/cache@v4 a actions/cache/restore@v4.
