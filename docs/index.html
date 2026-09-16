@@ -111,6 +111,26 @@
   .badge-ganamos { background: #e6f4ea; color: #1e8e3e; margin-top:4px; }
   .badge-perdimos { background: #fce8e6; color: #c53929; margin-top:4px; }
   .badge-no-presentamos { background: #f1f3f4; color: #5f6368; margin-top:4px; }
+  .badge-siguiendo { background: #fce8e6; color: #c5221f; }
+  .btn-seguir {
+    display: inline-block;
+    padding: 3px 10px;
+    border: 1px solid #c5221f;
+    border-radius: 4px;
+    font-size: 11.5px;
+    color: #c5221f;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-seguir:hover { background: #fce8e6; }
+  .link-dejar-seguir {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    color: var(--gris-texto);
+    text-decoration: none;
+  }
+  .link-dejar-seguir:hover { text-decoration: underline; }
   .cierre {
     display: block;
     font-size: 11px;
@@ -371,6 +391,7 @@
         <th data-col="score">Clasificación</th>
         <th data-col="cambio_detectado">Estado</th>
         <th>Informe</th>
+        <th>Seguimiento</th>
       </tr>
     </thead>
     <tbody id="tbody"></tbody>
@@ -396,7 +417,13 @@
 
 <script>
 let DATA = [];
+let SEGUIMIENTO = {};
 let ORDEN = { col: "fecha_apertura", asc: true };
+
+// Repo de este mismo visor — los botones "Seguir"/"Dejar de seguir" abren
+// acá un issue pre-completado (ver .github/workflows/seguimiento.yml y
+// seguimiento_issue.py, que lo procesan y actualizan data/seguimiento.json).
+const REPO_ISSUES_URL = "https://github.com/martinbajuk0-hue/licitaciones-metropolitana/issues/new";
 
 async function cargar() {
   try {
@@ -406,9 +433,20 @@ async function cargar() {
     DATA = Object.values(json);
   } catch (err) {
     document.getElementById("tbody").innerHTML =
-      '<tr><td colspan="7" class="vacio">No se pudo cargar el catálogo (' + err.message + '). ' +
+      '<tr><td colspan="8" class="vacio">No se pudo cargar el catálogo (' + err.message + '). ' +
       'Puede que todavía no haya corrido ninguna actualización, o que el sitio no esté publicado vía GitHub Pages.</td></tr>';
     return;
+  }
+  try {
+    // data/seguimiento.json es más nuevo que el resto del catálogo y
+    // puede no existir todavía en un checkout viejo cacheado por el
+    // navegador — si falla, se sigue mostrando todo lo demás sin la
+    // columna de seguimiento resuelta (todas las filas quedan como "no
+    // seguidas" en vez de romper el visor entero).
+    const respSeg = await fetch("data/seguimiento.json?_=" + Date.now());
+    SEGUIMIENTO = respSeg.ok ? await respSeg.json() : {};
+  } catch (err) {
+    SEGUIMIENTO = {};
   }
   poblarFiltros();
   render();
@@ -499,6 +537,40 @@ function textoCierre(fechaApertura) {
   return { texto: `Cierra en ${dias} días`, clase: dias <= 3 ? "urgente" : "" };
 }
 
+// El id_compra de ARCE (el mismo que usa seguimiento.py para matchear
+// contra los releases del feed) no viene como campo propio en
+// llamados.json — pero SIEMPRE está en la URL de la ficha
+// (".../consultas/detalle/id/<numero>"), así que se extrae de ahí.
+function idCompraDeFicha(url) {
+  const m = /\/id\/(\d+)/.exec(url || "");
+  return m ? m[1] : null;
+}
+
+function urlIssueSeguimiento(accion, idCompra, d) {
+  const titulo = accion + ": " + idCompra;
+  const cuerpo = "Título: " + (d.titulo || "") + "\nOrganismo: " + (d.organismo || "") + "\nFicha: " + (d.url_ficha || "");
+  return REPO_ISSUES_URL + "?title=" + encodeURIComponent(titulo) +
+    "&labels=" + encodeURIComponent("seguimiento") + "&body=" + encodeURIComponent(cuerpo);
+}
+
+// Sin backend, "marcar" una licitación se resuelve abriendo un GitHub
+// Issue pre-completado (el usuario solo tiene que confirmar "Submit" en
+// GitHub) — .github/workflows/seguimiento.yml lo procesa en segundos y
+// actualiza data/seguimiento.json. El cambio no es instantáneo en ESTE
+// visor: recién se ve reflejado la próxima vez que se recargue la
+// página, después de que el workflow haga el commit.
+function celdaSeguimientoHtml(d) {
+  const idCompra = idCompraDeFicha(d.url_ficha);
+  if (!idCompra) return '<span style="color:#9aa0a6">—</span>';
+  if (SEGUIMIENTO[idCompra]) {
+    return '<span class="badge badge-siguiendo">🔔 Siguiendo</span>' +
+      '<a class="link-dejar-seguir" href="' + escapeAttr(urlIssueSeguimiento("dejar de seguir", idCompra, d)) +
+      '" target="_blank" rel="noopener">Dejar de seguir</a>';
+  }
+  return '<a class="btn-seguir" href="' + escapeAttr(urlIssueSeguimiento("seguir", idCompra, d)) +
+    '" target="_blank" rel="noopener">🔔 Seguir</a>';
+}
+
 function render() {
   const filtrados = ordenar(filtrar());
   renderResumen();
@@ -550,6 +622,7 @@ function render() {
       <td><span class="estrellas">${estrellas}</span><br><span style="font-size:11px;color:var(--gris-texto)">${escapeHtml(d.etiqueta_clasificacion || "")}</span></td>
       <td>${badge}${resultadoHtml}</td>
       <td><a class="link-informe" href="#" onclick="abrirInforme('${escapeAttr(d.informe)}', '${escapeAttr((d.titulo||"").replace(/'/g,"\\'"))}'); return false;">Ver informe →</a></td>
+      <td>${celdaSeguimientoHtml(d)}</td>
     `;
     tbody.appendChild(tr);
   });
@@ -568,6 +641,7 @@ function renderResumen() {
   const altas = DATA.filter(d => (d.nivel || 0) >= 4).length;
   const ganamos = DATA.filter(d => d.resultado && d.resultado.estado === "ganamos").length;
   const perdimos = DATA.filter(d => d.resultado && d.resultado.estado === "perdimos").length;
+  const enSeguimiento = Object.keys(SEGUIMIENTO).length;
   const cont = document.getElementById("resumen");
   cont.innerHTML = `
     <div class="stat"><div class="n">${total}</div><div class="l">Total llamados</div></div>
@@ -576,6 +650,7 @@ function renderResumen() {
     <div class="stat"><div class="n">${altas}</div><div class="l">★★★★ o más</div></div>
     <div class="stat"><div class="n">${ganamos}</div><div class="l">🏆 Ganamos</div></div>
     <div class="stat"><div class="n">${perdimos}</div><div class="l">❌ Perdimos</div></div>
+    <div class="stat"><div class="n">${enSeguimiento}</div><div class="l">🔔 En seguimiento</div></div>
   `;
 }
 
