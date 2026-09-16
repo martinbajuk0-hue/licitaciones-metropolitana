@@ -19,6 +19,14 @@ openpyxl>=3.1
 xlrd==1.2.0
 odfpy>=1.4
 
+# Lectura de archivos comprimidos (.7z, .rar) — opcional (parser.py degrada
+# si faltan). py7zr es puro Python, sin binario de sistema. rarfile en
+# cambio SOLO envuelve un binario externo (el formato RAR es propietario,
+# no hay implementación pura Python confiable) — requiere 'unrar' instalado
+# a nivel de sistema (ver .github/workflows/monitor.yml).
+py7zr>=0.21
+rarfile>=4.1
+
 # OCR de imágenes — opcional (requiere además el binario de Tesseract instalado en el sistema)
 pytesseract>=0.3
 Pillow>=10.0
