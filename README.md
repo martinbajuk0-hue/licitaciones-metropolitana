@@ -29,6 +29,11 @@ completo y `docs/FLUJO_DE_TRABAJO.md` para el detalle paso a paso.
    por email — filtrable por organismo, rubro, score mínimo y estado.
 7. Provee **plantillas y prompts reutilizables** para armar el borrador
    de oferta técnica/administrativa y cotizar.
+8. Permite **marcar licitaciones puntuales para seguimiento** desde el
+   visor (botón "🔔 Seguir esta licitación") y avisa por email, aparte y
+   destacado, si ARCE publica una aclaración/ajuste/adjudicación sobre
+   esa licitación puntual — ver "Seguimiento de licitaciones marcadas"
+   más abajo.
 
 ## Estructura del proyecto
 
@@ -41,7 +46,9 @@ checklist.py                # Checklist documental
 pricing.py                   # Cotización (nunca inventa precios)
 report.py                     # Informe ejecutivo .md + clasificación ★
 catalogo.py                    # Persistencia del catálogo para el visor web (docs/)
-cli.py                          # Analizar una licitación puntual a demanda
+seguimiento.py                  # Lista de licitaciones marcadas + revisión de novedades ARCE
+seguimiento_issue.py             # Procesa el GitHub Issue que marca/desmarca una licitación
+cli.py                            # Analizar una licitación puntual a demanda
 
 config/
   settings.py              # Loader central de configuración (único punto de acceso a los YAML)
@@ -59,11 +66,13 @@ templates/                      # Modelos de oferta técnica/administrativa, con
 docs/                           # Documentación + visor web (servido por GitHub Pages)
   index.html                    # Visor: lista filtrable de llamados detectados
   data/llamados.json            # Catálogo (generado y commiteado por el workflow)
+  data/seguimiento.json         # Licitaciones marcadas para seguimiento (idem)
   informes/*.md                 # Informe completo de cada llamado (idem)
 data/                           # Estado runtime (licitaciones ya vistas)
 reports/                        # Informes generados (gitignored por defecto)
 
 .github/workflows/monitor.yml  # Cron de GitHub Actions (7am, 12pm, 6pm hora Uruguay)
+.github/workflows/seguimiento.yml  # Procesa los issues de "🔔 Seguir esta licitación"
 ```
 
 Ver `docs/ARQUITECTURA.md` para el diagrama de flujo de datos completo y
@@ -122,6 +131,42 @@ configuración del repositorio en GitHub, no se puede hacer por commit:
 
 Después de eso, el visor se actualiza solo en cada corrida del monitor
 — no hace falta repetir este paso.
+
+## Seguimiento de licitaciones marcadas
+
+Para una licitación puntual que interesa especialmente, el visor tiene un
+botón **"🔔 Seguir esta licitación"** (columna "Seguimiento" de la tabla).
+No hace falta tocar código ni JSON a mano:
+
+1. En el visor, click en "🔔 Seguir" en la fila de la licitación que
+   interesa. Se abre una pestaña nueva de GitHub con un Issue ya
+   completo.
+2. Click en **"Submit new issue"** en esa pestaña (eso es lo único que
+   hay que confirmar).
+3. En unos segundos, `.github/workflows/seguimiento.yml` procesa el
+   issue, agrega la licitación a `docs/data/seguimiento.json`, comenta la
+   confirmación en el propio issue y lo cierra automáticamente.
+4. Al recargar el visor (puede tardar uno o dos minutos, lo que tarda el
+   workflow), esa fila pasa a mostrar "🔔 Siguiendo" con un link para
+   "Dejar de seguir" — mismo mecanismo, a la inversa.
+
+Cada corrida del monitor (3 veces al día) revisa el feed de ARCE
+puntualmente para cada licitación en seguimiento, buscando si apareció
+una aclaración, un ajuste o una adjudicación sobre ese llamado. Si
+encuentra algo nuevo, lo manda en una sección aparte y destacada al
+principio del email ("🔔 Actualizaciones en licitaciones que seguís") —
+sin pasar por el filtro de relevancia ni de score mínimo: si se marcó a
+mano, se avisa sí o sí. Esto es un mecanismo aparte y más preciso que la
+detección general de "aclaraciones/modificaciones" (ítem 1 de "Qué
+hace"), que hoy en la práctica solo cubre el momento en que una
+licitación se ve por primera vez — ver el docstring de `seguimiento.py`
+para el detalle técnico de por qué.
+
+**No requiere ningún secret ni token nuevo:** el botón del visor solo abre
+un formulario de GitHub Issues ya completo: quien lo usa confirma con su
+propia sesión de GitHub (la misma con la que ya administra el
+repositorio), y el workflow usa el token automático de GitHub Actions
+para comentar/cerrar el issue y commitear el cambio.
 
 ## Estado de los datos
 
