@@ -5785,6 +5785,52 @@
       "REPARACION DE PISO DE MADERA"
     ]
   },
+  "2aa3b44367e796f76c3b865cd9379c40": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1366965.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 16 Sep 2026 10:55:19",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "2aa3b44367e796f76c3b865cd9379c40",
+    "informe": "informes/2aa3b44367e796f76c3b865cd9379c40.md",
+    "keyword": "memoria constructiva",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-16T14:41:13",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"memoria constructiva\": «planos, planillas, ésta Memoria y la última edición de la Memoria Constructiva General para Edificios Públicos del Ministerio de Transpor»",
+    "score": 9,
+    "simbolo": "★",
+    "titulo": "Compra Directa 88/2026",
+    "ultima_actualizacion": "2026-09-16T14:41:13",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1366965",
+    "ya_adjudicados": [
+      "ALFOMBRA DE GOMA",
+      "PISO DE GOMA",
+      "VARILLA DE ALUMINIO",
+      "CAMINERO DE GOMA",
+      "PERFIL U DE ALUMINIO",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "2bd0a0039570973ac5e56818ee2a9f44": {
     "cambio_detectado": false,
     "categorias": [
@@ -11742,6 +11788,33 @@
       "BALDOSA VINILICA",
       "BALDOSA DE GOMA"
     ]
+  },
+  "621afc7af4a9ec9c865da4b310c43abc": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 16 Sep 2026 07:30:14",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "621afc7af4a9ec9c865da4b310c43abc",
+    "informe": "informes/621afc7af4a9ec9c865da4b310c43abc.md",
+    "keyword": "polietileno de alta densidad",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-16T14:48:25",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 904/2026",
+    "ultima_actualizacion": "2026-09-16T14:48:25",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371887",
+    "ya_adjudicados": []
   },
   "628d2122e4540730a21a796c0e79cb24": {
     "cambio_detectado": false,
@@ -18531,6 +18604,35 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1356819",
     "ya_adjudicados": []
   },
+  "937cb76f240640a15ce6c243a3ac5376": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1372220.zip"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 16 Sep 2026 11:20:11",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "937cb76f240640a15ce6c243a3ac5376",
+    "informe": "informes/937cb76f240640a15ce6c243a3ac5376.md",
+    "keyword": "caucho sintetico",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-16T14:41:08",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 41/2026",
+    "ultima_actualizacion": "2026-09-16T14:41:08",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372220",
+    "ya_adjudicados": []
+  },
   "9397ef17b4a6f4e9ddaacd45f26ac68b": {
     "cambio_detectado": false,
     "categorias": [
@@ -19624,6 +19726,35 @@
       "GOMA NATURAL EN PLANCHA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
+  },
+  "9acc81ccb21e84090b29c384e66451e1": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1372128.odt"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 16 Sep 2026 07:40:09",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "9acc81ccb21e84090b29c384e66451e1",
+    "informe": "informes/9acc81ccb21e84090b29c384e66451e1.md",
+    "keyword": "carpet + carpeta + nylon",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-16T14:48:21",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 15767/2026",
+    "ultima_actualizacion": "2026-09-16T14:48:21",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372128",
+    "ya_adjudicados": []
   },
   "9af259d6ff32b084abf05cb02ba638cf": {
     "cambio_detectado": false,
@@ -29648,6 +29779,53 @@
       "BALDOSA DE GOMA",
       "PLANCHA DE GOMA EVA",
       "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "eea2460e07bfb3b8e993fc54a00fbb5d": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1370504.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": "2026-09-28",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 16 Sep 2026 10:10:10",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "eea2460e07bfb3b8e993fc54a00fbb5d",
+    "informe": "informes/eea2460e07bfb3b8e993fc54a00fbb5d.md",
+    "keyword": "acero inoxidable",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-16T14:45:43",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica), apertura 2026-09-28. Menciona \"loseta\": «K FLEX LONGITUD 25 MM SEGUNDA SERIE (45 AL 80) CAJA 50 36 LOSETA PARA ESPATULAR PAPEL UNIDAD 80 37 LUBRICANTE DE CONDUCTOS (»",
+    "score": 37,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 107/2026",
+    "ultima_actualizacion": "2026-09-16T14:45:43",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370504",
+    "ya_adjudicados": [
+      "ALFOMBRA DE GOMA",
+      "PISO DE GOMA",
+      "VARILLA DE ALUMINIO",
+      "CAMINERO DE GOMA",
+      "PERFIL U DE ALUMINIO",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE ACRILICO",
       "GOMA NATURAL EN PLANCHA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
