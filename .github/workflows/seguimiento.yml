@@ -1,0 +1,96 @@
+name: Seguimiento de licitaciones marcadas
+
+# Se dispara cuando se abre un GitHub Issue con la etiqueta "seguimiento"
+# — eso es lo que hacen los botones "🔔 Seguir esta licitación" / "Dejar
+# de seguir" del visor (docs/index.html): abren un formulario de issue
+# pre-completado (título, cuerpo y esa etiqueta), sin necesitar que la
+# persona escriba nada. Cualquier OTRO issue que se abra en el repo (un
+# bug real, una pregunta) no tiene esa etiqueta, así que este workflow ni
+# siquiera corre para esos — ver el "if:" del job.
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write  # commit+push de docs/data/seguimiento.json
+  issues: write     # comentar y cerrar el issue
+
+# Evita que dos issues abiertos casi al mismo tiempo pisen el commit uno
+# del otro (mismo motivo que el concurrency de monitor.yml/resultados.yml).
+concurrency:
+  group: seguimiento-licitaciones
+  cancel-in-progress: false
+
+jobs:
+  procesar:
+    if: contains(github.event.issue.labels.*.name, 'seguimiento')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Procesar issue de seguimiento
+        id: procesar
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python seguimiento_issue.py
+
+      - name: Commitear cambio en la lista de seguimiento
+        if: steps.procesar.outputs.cambio == 'true'
+        run: |
+          git config user.name "seguimiento-bot"
+          git config user.email "seguimiento-bot@users.noreply.github.com"
+          git add docs/data/seguimiento.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios que commitear (no debería pasar si cambio=true, pero por las dudas)."
+            exit 0
+          fi
+          git commit -m "Actualizar lista de seguimiento (issue #${{ github.event.issue.number }}) [skip ci]"
+
+          # Mismo mecanismo de reintento con rebase que monitor.yml: este
+          # workflow puede pisarse con un push de monitor.yml/resultados.yml
+          # a docs/data, y son ediciones a archivos distintos (o líneas
+          # distintas del mismo JSON) — un rebase automático las combina
+          # sin conflicto en el caso normal.
+          intentos_restantes=5
+          while [ "$intentos_restantes" -gt 0 ]; do
+            if git push; then
+              echo "Push OK."
+              break
+            fi
+            intentos_restantes=$((intentos_restantes - 1))
+            echo "Push rechazado (quedan $intentos_restantes reintentos) — reintentando con rebase..."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "::error::Conflicto real al rebasar sobre origin/main."
+              git rebase --abort
+              exit 1
+            fi
+            sleep $((5 + RANDOM % 10))
+          done
+
+      - name: Comentar y cerrar el issue
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const mensaje = fs.readFileSync('comentario_issue.txt', 'utf8');
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: mensaje,
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed',
+            });
