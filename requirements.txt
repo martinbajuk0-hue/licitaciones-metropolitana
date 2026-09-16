@@ -11,6 +11,14 @@ beautifulsoup4>=4.12
 python-docx>=1.1
 openpyxl>=3.1
 
+# Lectura de anexos en formatos legado/alternativos — opcional (parser.py
+# degrada si faltan). xlrd debe quedar fijado en <2.0: la versión 2.0 en
+# adelante eliminó el soporte de .xls binario y solo lee .xlsx (redundante
+# con openpyxl de arriba), así que cualquier upgrade automático rompería
+# la lectura de .xls otra vez.
+xlrd==1.2.0
+odfpy>=1.4
+
 # OCR de imágenes — opcional (requiere además el binario de Tesseract instalado en el sistema)
 pytesseract>=0.3
 Pillow>=10.0
