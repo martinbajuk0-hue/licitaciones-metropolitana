@@ -58,6 +58,13 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
+      - name: Instalar antiword (lectura de anexos .doc legado)
+        # antiword es un binario de sistema, no un paquete pip — lee el
+        # formato binario OLE/Compound File de los .doc pre-2007 (ver
+        # parser.py::_extraer_doc_legado). No existe una librería Python
+        # confiable para este formato.
+        run: sudo apt-get update -qq && sudo apt-get install -y antiword
+
       - name: Restaurar historial de licitaciones vistas
         # 2026-09-03: cambiado de actions/cache@v4 a actions/cache/restore@v4.
         # El action completo (actions/cache@v4) tiene un post-step
