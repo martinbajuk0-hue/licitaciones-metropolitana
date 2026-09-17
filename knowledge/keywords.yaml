@@ -1777,11 +1777,27 @@ categorias:
     # de 2+ palabras a propósito (ver settings.es_termino_multipalabra):
     # "container"/"garita" sueltos son demasiado genéricos para ser señal
     # fuerte por sí solos.
+    #
+    # "baño químico"/"baños químicos" agregado 2026-09-16 a pedido
+    # explícito del usuario: Compra Directa idc 1370966 (ASSE, alquiler de
+    # 2 baños químicos, código de artículo 9232) no había matcheado porque
+    # el catálogo solo tenía "baño modular" — un término distinto en el
+    # texto del pliego. El usuario confirmó que es el mismo producto con
+    # otro nombre: el "Baño Modular Prefabricado Individual" de
+    # Metropolitana (ver metropolitana.com.uy/soluciones-prefabricadas/
+    # bano-modular-prefabricado-individual-autonomo-o-conectado) es una
+    # unidad sanitaria portátil autónoma para obras/eventos/canchas — la
+    # misma necesidad que cubre un "baño químico" de alquiler, solo con
+    # otra construcción (metálica/aislada en vez de plástico).
     keywords:
     - baño modular
+    - baño químico
     - baños modulares
+    - baños químicos
     - bano modular
+    - bano quimico
     - banos modulares
+    - banos quimicos
     - contenedor habitable
     - contenedor oficina
     - contenedor vivienda
