@@ -3986,6 +3986,43 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371676",
     "ya_adjudicados": []
   },
+  "214c86ba5733c508d7363c223c47648c": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "pisos_flotantes"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Pisos flotantes/laminados"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1363940.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 17 Sep 2026 11:10:12",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "214c86ba5733c508d7363c223c47648c",
+    "informe": "informes/214c86ba5733c508d7363c223c47648c.md",
+    "keyword": "melamina + polietileno + poliuretano",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Defensa Nacional (MDN)",
+    "primera_deteccion": "2026-09-17T14:43:39",
+    "que_es": "Licitación de Ministerio de Defensa Nacional (MDN) — busca Material mencionado (revisar contexto), Pisos flotantes/laminados. Menciona \"melamina\": «|2,00 |UNIDAD |196.0|Tamaño: 40 X 35 | | | |MELAMINA | | | |Cm. | |7 |7185»",
+    "score": 20,
+    "simbolo": "★",
+    "titulo": "Compra Directa 1150/2026",
+    "ultima_actualizacion": "2026-09-17T14:43:39",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1363940",
+    "ya_adjudicados": [
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
+    ]
+  },
   "21ab84148610434c42c97965492f9296": {
     "cambio_detectado": false,
     "categorias": [
@@ -20208,6 +20245,41 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1350208",
     "ya_adjudicados": []
   },
+  "9bdc57549766d9e50af3b145f35808d9": {
+    "cambio_detectado": false,
+    "categorias": [
+      "errores_comunes",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 17 Sep 2026 09:25:13",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "9bdc57549766d9e50af3b145f35808d9",
+    "informe": "informes/9bdc57549766d9e50af3b145f35808d9.md",
+    "keyword": "código ya adjudicado: CEMENTO ADHESIVO PARA PORCELANATO",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-17T14:50:03",
+    "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro. Menciona \"porcelanato\": «Compra Directa 8/2026 Pegamento porcelanato»",
+    "score": 39,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 8/2026",
+    "ultima_actualizacion": "2026-09-17T14:50:03",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372603",
+    "ya_adjudicados": [
+      "CEMENTO ADHESIVO PARA PORCELANATO"
+    ]
+  },
   "9c601d6c493f2fc4f9476a11d4954ad0": {
     "cambio_detectado": false,
     "categorias": [],
@@ -20719,6 +20791,35 @@
       "REPARACION DE PISO DE MADERA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
+  },
+  "a0ce670f76b62d39b9e281b7d4a4de60": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1372483.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 17 Sep 2026 10:15:08",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "a0ce670f76b62d39b9e281b7d4a4de60",
+    "informe": "informes/a0ce670f76b62d39b9e281b7d4a4de60.md",
+    "keyword": "mantenimiento edilicio",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-17T14:45:53",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 7633/2026",
+    "ultima_actualizacion": "2026-09-17T14:45:53",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372483",
+    "ya_adjudicados": []
   },
   "a0dbe422b78b170717fab4604ea62ddf": {
     "cambio_detectado": false,
@@ -28775,6 +28876,42 @@
       "PERFIL U DE ALUMINIO"
     ]
   },
+  "e1b3621fcfa417851b6beeff3db9bfbf": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1372554.odt"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 17 Sep 2026 08:00:12",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "e1b3621fcfa417851b6beeff3db9bfbf",
+    "informe": "informes/e1b3621fcfa417851b6beeff3db9bfbf.md",
+    "keyword": "aluminio + poliestireno",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Salud Pública (MSP)",
+    "primera_deteccion": "2026-09-17T14:54:17",
+    "que_es": "Licitación de Ministerio de Salud Pública (MSP) — busca Material mencionado (revisar contexto). Menciona \"aluminio\": «ación Especificaciones Cantidad a comprar 1 1.716 PAPEL DE ALUMINIO / (VARIANTE: ANCHO 50) (ROLLO 30 M) ROLLO Papel Aluminio»",
+    "score": 21,
+    "simbolo": "★",
+    "titulo": "Compra Directa 15901/2026",
+    "ultima_actualizacion": "2026-09-17T14:54:17",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372554",
+    "ya_adjudicados": [
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO"
+    ]
+  },
   "e1cce4da152c2f9255681266641ee4b6": {
     "cambio_detectado": false,
     "categorias": [
@@ -29041,6 +29178,35 @@
     "titulo": "Licitación Abreviada 27402/2026",
     "ultima_actualizacion": "2026-08-21T12:28:56",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1364193",
+    "ya_adjudicados": []
+  },
+  "e3a99b2309f6e355a1c1ec7f3b583009": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1372662.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 17 Sep 2026 10:15:09",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "e3a99b2309f6e355a1c1ec7f3b583009",
+    "informe": "informes/e3a99b2309f6e355a1c1ec7f3b583009.md",
+    "keyword": "mantenimiento edilicio",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-17T14:45:52",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 89139/2026",
+    "ultima_actualizacion": "2026-09-17T14:45:52",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372662",
     "ya_adjudicados": []
   },
   "e3b8d2231dee179330f7e72b97a197f4": {
