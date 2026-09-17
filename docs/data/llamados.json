@@ -11814,6 +11814,45 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371909",
     "ya_adjudicados": []
   },
+  "60375d9af45b794bd666b2a325e741af": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1372966.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 17 Sep 2026 19:30:08",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "60375d9af45b794bd666b2a325e741af",
+    "informe": "informes/60375d9af45b794bd666b2a325e741af.md",
+    "keyword": "acero galvanizado",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "2026-86-001-",
+    "organismo": "Intendencia de Florida",
+    "primera_deteccion": "2026-09-17T23:24:31",
+    "que_es": "Licitación de Intendencia de Florida — busca Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"vinilo\": «ow Bold, caja minúscula de 5 cm de alto, aplicada mediante vinilo reflectivo autoadhesivo color blanco marca 3M o equivalent»",
+    "score": 33,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 16/2026",
+    "ultima_actualizacion": "2026-09-17T23:24:31",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372966",
+    "ya_adjudicados": [
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "PAPEL VINILO",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "606ec75d84e371ffa91b3bcdff17b135": {
     "cambio_detectado": false,
     "categorias": [
@@ -17431,6 +17470,41 @@
     "ya_adjudicados": [
       "PLANCHA DE GOMA EVA"
     ]
+  },
+  "883d2d202f12ed87915fb4945649704f": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1372955.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": "2026-10-01",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 17 Sep 2026 17:35:12",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "883d2d202f12ed87915fb4945649704f",
+    "informe": "informes/883d2d202f12ed87915fb4945649704f.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Paysandú",
+    "primera_deteccion": "2026-09-17T23:24:35",
+    "que_es": "Licitación de Intendencia de Paysandú — busca Alfombras, Variante/error ortográfico de un término del rubro, apertura 2026-10-01. Menciona \"carpet\": «d PLIEGO DE CONDICIONES PARTICULARES PIEDRA PARA CARPETA ASFALTICA LA 2026 65 Artículo 1 - OBJETO La Intendencia»",
+    "score": 7,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 65/2026",
+    "ultima_actualizacion": "2026-09-17T23:24:35",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372955",
+    "ya_adjudicados": []
   },
   "8867c6caab27a9e6d0d2f9a581c5581c": {
     "cambio_detectado": false,
@@ -33557,6 +33631,41 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-",
       "colocación moquette"
     ]
+  },
+  "ff02f9bff4df9bb72bda853b85abaa4d": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1372961.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": "2026-10-01",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 17 Sep 2026 18:30:08",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "ff02f9bff4df9bb72bda853b85abaa4d",
+    "informe": "informes/ff02f9bff4df9bb72bda853b85abaa4d.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Paysandú",
+    "primera_deteccion": "2026-09-17T23:24:33",
+    "que_es": "Licitación de Intendencia de Paysandú — busca Alfombras, Variante/error ortográfico de un término del rubro, apertura 2026-10-01. Menciona \"carpet\": «litación para explotación de cantera. b) AGREGADO FINO PARA CARPETA ASFÁLTICA – Deberá cumplir con las condiciones del PLIE»",
+    "score": 7,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 66/2026",
+    "ultima_actualizacion": "2026-09-17T23:24:33",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372961",
+    "ya_adjudicados": []
   },
   "ff3f884c068d8871fd3b5d570a218f15": {
     "cambio_detectado": false,
