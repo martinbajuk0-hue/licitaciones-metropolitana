@@ -115,6 +115,28 @@ def palabras_clave_contexto() -> dict[str, list[str]]:
     return {grupo: kw.get(grupo, []) for grupo in _GRUPOS_CONTEXTO}
 
 
+def terminos_alerta_total() -> list[str]:
+    """knowledge/keywords.yaml: alertas_totales — términos que fuerzan el
+    aviso sí o sí si aparecen en cualquier parte del texto (título,
+    descripción, ítems o pliego), sin pasar por el umbral de 2+ palabras
+    de monitor._decidir_relevancia() ni por el filtro de score mínimo del
+    email (ver monitor.es_relevante()/monitor.FUENTE_ALERTA_TOTAL). Ver el
+    comentario de "alertas_totales" en el propio YAML para el pedido
+    concreto del usuario que motivó esto (2026-09-18, término "cancha").
+    """
+    return keywords().get("alertas_totales", [])
+
+
+def coincide_alerta_total(texto_lower: str) -> str | None:
+    """Primer término de terminos_alerta_total() que aparece en
+    texto_lower, o None. Reusa coincide_palabra_clave() (misma lógica:
+    límite de palabra en términos cortos, substring en el resto)."""
+    for kw in terminos_alerta_total():
+        if coincide_palabra_clave(texto_lower, kw):
+            return kw
+    return None
+
+
 _ETIQUETAS_CATEGORIA = {
     "pisos_vinilicos": "Pisos vinílicos",
     "pisos_spc": "Pisos SPC",
