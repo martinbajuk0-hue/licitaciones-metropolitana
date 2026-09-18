@@ -528,6 +528,15 @@ def _decidir_relevancia(matches: list[str]) -> tuple[bool, str | None]:
 
 FUENTE_CODIGO_ARTICULO = "código de artículo ARCE (ya adjudicado)"
 
+# Pedido explícito del usuario 2026-09-18 (ver knowledge/keywords.yaml,
+# sección "alertas_totales"): un término como "cancha" se manda sí o sí,
+# aunque no matchee ningún término de rubro específico ni junte el
+# umbral de 2+ palabras de _decidir_relevancia() — mismo tratamiento que
+# FUENTE_CODIGO_ARTICULO (bypassea también el filtro de score mínimo del
+# email, ver main()/enviar_email_de_prueba_rango_fechas()). El único veto
+# que sigue por encima es _es_alquiler_de_inmueble().
+FUENTE_ALERTA_TOTAL = "alerta total (mención directa, sin filtro de score)"
+
 
 def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
     """Devuelve (relevante, keyword, fuente, texto_pliego_si_se_leyo).
@@ -570,6 +579,10 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
     if _es_alquiler_de_inmueble(texto_base):
         return False, None, None, ""
 
+    termino_alerta = settings.coincide_alerta_total(texto_base)
+    if termino_alerta:
+        return True, termino_alerta, FUENTE_ALERTA_TOTAL, ""
+
     codigos = lic.get("codigos_articulo") or []
     if codigos:
         productos_por_codigo = historial_mod.productos_por_codigo_ya_adjudicado(codigos)
@@ -591,6 +604,11 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
     texto_lower = texto_pliego.lower()
     if _es_alquiler_de_inmueble(texto_lower):
         return False, None, None, texto_pliego
+
+    termino_alerta = settings.coincide_alerta_total(texto_lower)
+    if termino_alerta:
+        return True, termino_alerta, FUENTE_ALERTA_TOTAL, texto_pliego
+
     relevante, kw = _decidir_relevancia(_matches_en_texto(texto_lower))
     if relevante:
         return True, kw, "pliego (PDF/Word/Excel)", texto_pliego
@@ -1021,7 +1039,7 @@ def main(enviar_email_flag: bool = True) -> None:
         # nada que no tenga que ver con lo que vende. Se puede seguir
         # ajustando sin tocar código con el secret SCORE_MINIMO_EMAIL.
         score_minimo = int(os.environ.get("SCORE_MINIMO_EMAIL", 45))
-        if informe.clasificacion.puntaje < score_minimo and fuente != FUENTE_CODIGO_ARTICULO:
+        if informe.clasificacion.puntaje < score_minimo and fuente not in (FUENTE_CODIGO_ARTICULO, FUENTE_ALERTA_TOTAL):
             print(f"  Score {informe.clasificacion.puntaje} < mínimo {score_minimo}, omitiendo del email.")
             continue
 
@@ -1272,7 +1290,7 @@ def enviar_email_de_prueba_rango_fechas(desde: str, hasta: str) -> None:
 
         _enriquecer_lic_con_informe(lic, informe)
 
-        if informe.clasificacion.puntaje < score_minimo and fuente != FUENTE_CODIGO_ARTICULO:
+        if informe.clasificacion.puntaje < score_minimo and fuente not in (FUENTE_CODIGO_ARTICULO, FUENTE_ALERTA_TOTAL):
             print(f"    Score {informe.clasificacion.puntaje} < mínimo {score_minimo}, omitiendo del email (igual que en producción).")
             continue
         nuevas.append(lic)
