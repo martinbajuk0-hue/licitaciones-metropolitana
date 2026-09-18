@@ -880,6 +880,39 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372735",
     "ya_adjudicados": []
   },
+  "06b22c3f66568676620889ba570eb6fa": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1372981.odt"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 18 Sep 2026 08:40:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "06b22c3f66568676620889ba570eb6fa",
+    "informe": "informes/06b22c3f66568676620889ba570eb6fa.md",
+    "keyword": "algodón + poliéster",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
+    "primera_deteccion": "2026-09-18T14:17:12",
+    "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca Material mencionado (revisar contexto). Menciona \"algodón\": «em N°1: 200 sabanas Detallo características : tela crea 50% algodón y 50 % poliéster, color blanco con logo en azul institucio»",
+    "score": 17,
+    "simbolo": "★",
+    "titulo": "Compra Directa 3354/2026",
+    "ultima_actualizacion": "2026-09-18T14:17:12",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372981",
+    "ya_adjudicados": []
+  },
   "06df38561f20ed80e04d15b9777a5439": {
     "cambio_detectado": false,
     "categorias": [
@@ -1030,6 +1063,59 @@
     "ultima_actualizacion": "2026-08-27T20:57:06",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1359569",
     "ya_adjudicados": []
+  },
+  "07e39d8fb9ec2f0f592457c03e394d6c": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "errores_comunes",
+      "materiales",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1363646.doc"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 18 Sep 2026 10:00:13",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "07e39d8fb9ec2f0f592457c03e394d6c",
+    "informe": "informes/07e39d8fb9ec2f0f592457c03e394d6c.md",
+    "keyword": "mantenimiento edilicio",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Defensa Nacional (MDN)",
+    "primera_deteccion": "2026-09-18T14:14:49",
+    "que_es": "Licitación de Ministerio de Defensa Nacional (MDN) — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro. Menciona \"pvc\": «ENTO PORTLAND\u000710,00\u0007BOLSA\u0007163.0\u0007BOLSA 25 KG\u0007\u000710\u000771\u0007RAMAL DE PVC DE 45º HEMBRA-HEMBRA\u000710,00\u0007UNIDAD\u0007156.0\u0007Diámetro/diámetro:»",
+    "score": 39,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 1209/2026",
+    "ultima_actualizacion": "2026-09-18T14:14:49",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1363646",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "BALDOSA LISA",
+      "CEMENTO ADHESIVO PARA PORCELANATO",
+      "PISO MODULAR DE PVC",
+      "CEMENTO ADHESIVO PARA CERAMICA",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "BALDOSA VINILICA ALTO TRANSITO",
+      "BALDOSA VINILICA",
+      "BALDOSA DE GOMA",
+      "CAMINERO DE PVC",
+      "MANTENIMIENTO EDILICIO"
+    ]
   },
   "0811f1015c97ade248b16ad8ffa3f41c": {
     "cambio_detectado": false,
@@ -9566,6 +9652,59 @@
       "GOMA DE LATEX 1.5 ESPESOR 3 MM"
     ]
   },
+  "4c8437cc9a800c3aee9f4fb22d1ebbb0": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1372874.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": "2026-09-23",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 18 Sep 2026 08:50:10",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "4c8437cc9a800c3aee9f4fb22d1ebbb0",
+    "informe": "informes/4c8437cc9a800c3aee9f4fb22d1ebbb0.md",
+    "keyword": "acero inoxidable",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-18T14:17:08",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, apertura 2026-09-23. Menciona \"pvc\": «LUBRICANTE EN SPRAY PARA CORREAS 20 UNIDADES 5 MANGUERA DE PVC CON MALLA DE 3/4 TRANSPARENTE 50 M 6 CINTA ALUMINIZADA 50 M»",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 15922/2026",
+    "ultima_actualizacion": "2026-09-18T14:17:08",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372874",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "ALFOMBRA DE GOMA",
+      "PISO MODULAR DE PVC",
+      "PISO DE GOMA",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "GOMA NATURAL EN PLANCHA",
+      "REPARACION DE PISO DE MADERA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "4cc87f97162db10e9ed959ee2e89c9a8": {
     "cambio_detectado": false,
     "categorias": [
@@ -11507,6 +11646,67 @@
     "ultima_actualizacion": "2026-09-16T18:50:39",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372410",
     "ya_adjudicados": []
+  },
+  "5e2789b4a80b70e5f9dcf8672be20b72": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_flotantes",
+      "pisos_vinilicos",
+      "servicios"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos flotantes/laminados",
+      "Pisos vinílicos",
+      "Servicios"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1364993.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 18 Sep 2026 11:00:15",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "5e2789b4a80b70e5f9dcf8672be20b72",
+    "informe": "informes/5e2789b4a80b70e5f9dcf8672be20b72.md",
+    "keyword": "instalación llave en mano",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-18T14:10:31",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos flotantes/laminados, Pisos vinílicos, Servicios. Menciona \"pvc\": «y descanso de personal Los ductos de ventilación serán de PVC 110, el recorrido para cada sistema (inyección y/o extracc»",
+    "score": 25,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 84/2026",
+    "ultima_actualizacion": "2026-09-18T14:10:31",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1364993",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO FLOTANTE",
+      "ALFOMBRA DE GOMA",
+      "ZOCALO PARA PISO FLOTANTE",
+      "PISO MODULAR DE PVC",
+      "PISO DE GOMA",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "REDUCTOR PARA PISO FLOTANTE",
+      "CAMINERO DE GOMA",
+      "PERFIL U DE ALUMINIO",
+      "JUNTA PARA PISO FLOTANTE",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-",
+      "instalación"
+    ]
   },
   "5e8e9b6897bf0f1f74df90f99aee4ec6": {
     "cambio_detectado": false,
@@ -22424,6 +22624,39 @@
       "REPARACION DE PISO DE MADERA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
+  },
+  "aa2653498fa80523e722acb5a518e03b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1372996.odt"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 18 Sep 2026 09:15:13",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "aa2653498fa80523e722acb5a518e03b",
+    "informe": "informes/aa2653498fa80523e722acb5a518e03b.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-18T14:15:01",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «RECTA Nº 15948 /2026 Para la adquisición de “ PALANGANA DE ACERO INOXIDABLE DE USO ASISTENCIAL - MEDICO” PARA RAP ROCHA”»",
+    "score": 23,
+    "simbolo": "★",
+    "titulo": "Compra Directa 15948/2026",
+    "ultima_actualizacion": "2026-09-18T14:15:01",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372996",
+    "ya_adjudicados": []
   },
   "aa37313f95f39b4901fd870050dc9799": {
     "cambio_detectado": false,
