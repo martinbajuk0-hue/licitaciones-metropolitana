@@ -295,6 +295,23 @@ def _resumen_extractivo(texto: str, campos: CamposClave, productos: list[Product
         if len(fragmento) > 140:
             fragmento = fragmento[:140].rstrip() + "…"
         evidencia_txt = f' Menciona "{p.termino_encontrado}": «{fragmento}»'
+    elif texto and texto.strip():
+        # Pedido explícito del usuario 2026-09-18: para un llamado marcado
+        # relevante SIN que se haya identificado ninguna categoría de
+        # producto (ej. un match por "alertas_totales" de knowledge/
+        # keywords.yaml, como "cancha" — ver monitor.FUENTE_ALERTA_TOTAL),
+        # la línea de arriba solo decía "busca ninguna coincidencia directa
+        # de categoría", que no le sirve al usuario para decidir sin abrir
+        # el pliego. Acá no hay un `termino_encontrado`/fragmento de
+        # producto que citar, pero si hay CUALQUIER texto disponible
+        # (pliego leído, o si no, título+descripción — ver monitor.py
+        # texto_para_informe) se cita un extracto textual real, nunca una
+        # interpretación (no inventar): el usuario decide leyendo lo que
+        # el organismo publicó, no un resumen armado sobre texto vacío.
+        extracto = " ".join(texto.split())
+        if len(extracto) > 300:
+            extracto = extracto[:300].rstrip() + "…"
+        evidencia_txt = f' Texto disponible: «{extracto}»'
 
     lineas = [
         # Línea "QUÉ ES:" con el mismo formato que generar_resumen_ejecutivo()
