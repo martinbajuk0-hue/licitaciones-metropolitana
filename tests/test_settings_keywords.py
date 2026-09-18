@@ -331,6 +331,26 @@ class TestKeywordsAmpliado(unittest.TestCase):
             self.assertTrue(matches, f"No se detectó ningún término en: {texto!r}")
 
 
+    def test_marcas_ampliadas_2026_09_18_estan_en_los_terminos_fuertes(self):
+        # Pedido explícito del usuario 2026-09-18: relevamiento de marcas
+        # comerciales del rubro no cubiertas todavía. Se descartó "parador"
+        # a propósito (ver commit): colisiona con la palabra española
+        # "parador" (kiosco/parador turístico), que sí aparece en el
+        # historial real de licitaciones sin relación con la marca alemana
+        # de laminados — agregarlo generaría falsos positivos confirmados,
+        # no solo teóricos.
+        marcas_nuevas = [
+            "ardex", "artigo", "balta", "classen", "edel grass",
+            "global syn-turf", "ivc group", "lg hausys", "nora systems",
+            "norament", "royal grass", "ten cate grass", "tencate grass",
+            "thomsit", "uzin",
+        ]
+        fuertes = {k.lower() for k in settings.todas_las_palabras_clave()}
+        for marca in marcas_nuevas:
+            self.assertIn(marca, fuertes, f"Falta la marca: {marca!r}")
+        self.assertNotIn("parador", fuertes, "\"parador\" se descartó a propósito por colisión con el uso corriente")
+
+
 class TestAlertasTotales(unittest.TestCase):
     """knowledge/keywords.yaml: alertas_totales. Pedido explícito del
     usuario 2026-09-18: quiere ver SIEMPRE cualquier llamado que mencione
