@@ -331,5 +331,56 @@ class TestKeywordsAmpliado(unittest.TestCase):
             self.assertTrue(matches, f"No se detectó ningún término en: {texto!r}")
 
 
+class TestAlertasTotales(unittest.TestCase):
+    """knowledge/keywords.yaml: alertas_totales. Pedido explícito del
+    usuario 2026-09-18: quiere ver SIEMPRE cualquier llamado que mencione
+    "cancha", aunque no matchee ningún término de rubro específico — caso
+    real que expuso el hueco: Compra Directa D196817/2026 (Intendencia de
+    Montevideo, CCZ3, idc i501608), "Mant.cancha F7 sinténtico", cuyo
+    único texto público disponible (ni el pliego adjunto, un stub de 263
+    bytes, tenía más) no contenía ningún término de insumos_canchas ni de
+    cesped_sintetico. Ver monitor.FUENTE_ALERTA_TOTAL.
+    """
+
+    def test_cancha_esta_en_los_terminos_de_alerta_total(self):
+        self.assertIn("cancha", [t.lower() for t in settings.terminos_alerta_total()])
+
+    def test_coincide_alerta_total_detecta_cancha_en_titulo_abreviado(self):
+        # El título real, tal como lo publica ARCE, viene abreviado y con
+        # un error de tipeo en "sintético" — a propósito no se prueba
+        # contra "césped sintético" ni ningún otro término de rubro, para
+        # confirmar que "cancha" solo ya alcanza.
+        self.assertEqual(settings.coincide_alerta_total("mant.cancha f7 sinténtico"), "cancha")
+
+    def test_coincide_alerta_total_no_matchea_sin_el_termino(self):
+        self.assertIsNone(settings.coincide_alerta_total("suministro de piso vinílico para oficinas"))
+
+    def test_es_relevante_marca_por_alerta_total_aunque_no_haya_otro_termino(self):
+        lic = {
+            "titulo": "Mant.cancha F7 sinténtico",
+            "descripcion": "",
+            "documentos": [],
+            "url": "https://www.comprasestatales.gub.uy/ocds/release/test-cancha-i501608",
+        }
+        relevante, kw, fuente, _ = monitor.es_relevante(lic)
+        self.assertTrue(relevante)
+        self.assertEqual(kw, "cancha")
+        self.assertEqual(fuente, monitor.FUENTE_ALERTA_TOTAL)
+
+    def test_alerta_total_no_pisa_el_veto_de_alquiler_de_inmueble(self):
+        # Mismo criterio que con el match por código de artículo (ver
+        # TestEsRelevantePorCodigoArticulo.test_filtro_de_alquiler_de_inmueble_pisa_al_match_por_codigo):
+        # el veto de alquiler de inmueble es absoluto, ni siquiera una
+        # alerta total lo pisa.
+        lic = {
+            "titulo": 'Concurso de Precios N° 12/2026 "Contratación de local apto para clases con cancha propia"',
+            "descripcion": "Contratación de local apto para el dictado de clases, que cuente con cancha propia.",
+            "documentos": [],
+            "url": "https://www.comprasestatales.gub.uy/ocds/release/test-alquiler-con-cancha",
+        }
+        relevante, kw, fuente, _ = monitor.es_relevante(lic)
+        self.assertFalse(relevante)
+
+
 if __name__ == "__main__":
     unittest.main()
