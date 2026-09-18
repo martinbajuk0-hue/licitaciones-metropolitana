@@ -3613,6 +3613,41 @@
       "colocación moquette"
     ]
   },
+  "1ef85b54cc7457809eb46da951ea18e8": {
+    "cambio_detectado": false,
+    "categorias": [
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1373192.7z"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 18 Sep 2026 12:50:09",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "1ef85b54cc7457809eb46da951ea18e8",
+    "informe": "informes/1ef85b54cc7457809eb46da951ea18e8.md",
+    "keyword": "mantenimiento edilicio",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "103678/2026",
+    "organismo": null,
+    "primera_deteccion": "2026-09-18T18:19:16",
+    "que_es": "Licitación de organismo no identificado — busca Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"mantenimiento edilicio\": «as para la provisión de personal para realizar servicios de mantenimiento edilicio»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Licitación Pública 103678/2026",
+    "ultima_actualizacion": "2026-09-18T18:19:16",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373192",
+    "ya_adjudicados": [
+      "MANTENIMIENTO EDILICIO"
+    ]
+  },
   "1f03bab726c3478015a20fc5b8d4b643": {
     "cambio_detectado": false,
     "categorias": [
@@ -4326,6 +4361,35 @@
       "GOMA NATURAL EN PLANCHA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
+  },
+  "21f98c354ffe377649f7a0335643216d": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1373146.odt"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 18 Sep 2026 12:05:13",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "21f98c354ffe377649f7a0335643216d",
+    "informe": "informes/21f98c354ffe377649f7a0335643216d.md",
+    "keyword": "nylon + polietileno",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-18T18:21:29",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría. Texto disponible: «COMPRA DIRECTA: 15303/2026- UE 032 Se solicita cotización de los siguientes insumos detallados a continuación, se agradece agregar archivo adjunto de lo cotizado. Pago SIIF. Item 1: codigo: 2542: Pulidor en crema 500g: 50 unidades Item 2: codigo: 28601: Bolsas negras comunes grandes de aprox 120x80:…»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 15303/2026",
+    "ultima_actualizacion": "2026-09-18T18:21:29",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373146",
+    "ya_adjudicados": []
   },
   "2225c536c7255e0208105168a6d4ac78": {
     "cambio_detectado": false,
@@ -20718,6 +20782,52 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1365340",
     "ya_adjudicados": []
   },
+  "9a38f5c16ad050b47ebb701662f66adf": {
+    "cambio_detectado": false,
+    "categorias": [
+      "accesorios",
+      "materiales",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1373199.docx"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 18 Sep 2026 13:30:12",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "9a38f5c16ad050b47ebb701662f66adf",
+    "informe": "informes/9a38f5c16ad050b47ebb701662f66adf.md",
+    "keyword": "madera + recubrimiento + recubrimientos",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Turismo (MINTUR)",
+    "primera_deteccion": "2026-09-18T18:15:05",
+    "que_es": "Licitación de Ministerio de Turismo (MINTUR) — busca Accesorios de instalación, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"zócalo\": «cta ejecución del servicio. Protección de solados, paredes, zócalos, barandas, pasamanos y mobiliario adyacente durante la eje»",
+    "score": 41,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 308/2026",
+    "ultima_actualizacion": "2026-09-18T18:15:05",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373199",
+    "ya_adjudicados": [
+      "ZOCALO PARA PISO FLOTANTE",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "ZOCALO MONOLITICO",
+      "COLOCACION DE ZOCALO",
+      "ZOCALO EN MDF",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "9a744b4d57a1ea0ef65720089fcdb84c": {
     "cambio_detectado": false,
     "categorias": [
@@ -29485,6 +29595,52 @@
     "ultima_actualizacion": "2026-09-16T23:38:29",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372512",
     "ya_adjudicados": []
+  },
+  "dd0c8987c1af31645f20bc38a23fc6da": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "decks_exterior",
+      "materiales",
+      "pisos_madera"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Deck y exterior",
+      "Material mencionado (revisar contexto)",
+      "Pisos de madera"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1373127.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 18 Sep 2026 11:55:16",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "dd0c8987c1af31645f20bc38a23fc6da",
+    "informe": "informes/dd0c8987c1af31645f20bc38a23fc6da.md",
+    "keyword": "deck de madera",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Maldonado",
+    "primera_deteccion": "2026-09-18T18:21:36",
+    "que_es": "Licitación de Intendencia de Maldonado — busca Abreviatura técnica del rubro, Deck y exterior, Material mencionado (revisar contexto), Pisos de madera. Menciona \"deck de madera\": «on techo para sombra, sin paredes y con piso en la arena o deck de madera, o en su defecto, un gazebo. En ambos casos, no podrá ser»",
+    "score": 42,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 1009/2026",
+    "ultima_actualizacion": "2026-09-18T18:21:36",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373127",
+    "ya_adjudicados": [
+      "FELPUDO",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ENTREPUERTA METALICA",
+      "REPARACION DE PISO DE MADERA"
+    ]
   },
   "dd77fe0dbe3fdd8564819f039c8f9ee5": {
     "cambio_detectado": false,
