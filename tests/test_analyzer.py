@@ -94,6 +94,41 @@ class TestAnalyzer(unittest.TestCase):
         resumen = analyzer.generar_resumen_ejecutivo(texto, campos, productos)
         self.assertTrue(resumen.splitlines()[0].upper().startswith("QUÉ ES:"))
 
+    def test_resumen_sin_producto_identificado_cita_el_texto_disponible(self):
+        # Pedido explícito del usuario 2026-09-18: un llamado marcado
+        # relevante solo por "alertas_totales" (ej. "cancha", ver
+        # monitor.FUENTE_ALERTA_TOTAL) no tiene ningún producto
+        # identificado — antes la línea "QUÉ ES:" se quedaba en "busca
+        # ninguna coincidencia directa de categoría", sin darle al usuario
+        # nada concreto para leer. Ahora tiene que citar un extracto
+        # textual real del texto disponible (nunca inventado).
+        texto = "Mant.cancha F7 sinténtico"
+        campos = analyzer.extraer_campos_clave(texto)
+        productos = analyzer.identificar_productos(texto)
+        self.assertEqual(productos, [])
+        resumen = analyzer.generar_resumen_ejecutivo(texto, campos, productos)
+        que_es = analyzer.extraer_que_es(resumen)
+        self.assertIn("ninguna coincidencia directa de categoría", que_es)
+        self.assertIn("Texto disponible", que_es)
+        self.assertIn("Mant.cancha F7 sinténtico", que_es)
+
+    def test_resumen_con_producto_identificado_no_agrega_texto_disponible(self):
+        # El extracto genérico es solo un fallback: si ya hay un
+        # producto/fragmento específico citado, no hace falta duplicar
+        # con el texto completo.
+        texto = "UTE llama a licitación para piso vinílico."
+        campos = analyzer.extraer_campos_clave(texto)
+        productos = analyzer.identificar_productos(texto)
+        self.assertTrue(productos)
+        resumen = analyzer.generar_resumen_ejecutivo(texto, campos, productos)
+        que_es = analyzer.extraer_que_es(resumen)
+        self.assertNotIn("Texto disponible", que_es)
+
+    def test_resumen_sin_texto_ni_producto_no_rompe(self):
+        campos = analyzer.CamposClave()
+        resumen = analyzer.generar_resumen_ejecutivo("", campos, [])
+        self.assertIn("ninguna coincidencia directa de categoría", resumen)
+
 
 class TestExtraerQueEs(unittest.TestCase):
     """extraer_que_es(): pedido del usuario 2026-08-24, "un pequeño
