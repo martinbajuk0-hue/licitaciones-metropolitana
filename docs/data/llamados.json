@@ -4262,6 +4262,67 @@
       "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
     ]
   },
+  "2188181acd19411c6f36352651e36bd2": {
+    "cambio_detectado": false,
+    "categorias": [
+      "accesorios",
+      "alfombras",
+      "materiales",
+      "pisos_madera",
+      "servicios"
+    ],
+    "categorias_etiquetas": [
+      "Accesorios de instalación",
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Pisos de madera",
+      "Servicios"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1373350.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 18 Sep 2026 17:50:08",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "2188181acd19411c6f36352651e36bd2",
+    "informe": "informes/2188181acd19411c6f36352651e36bd2.md",
+    "keyword": "pisos de madera",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-18T23:03:39",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Accesorios de instalación, Alfombras, Material mencionado (revisar contexto), Pisos de madera, Servicios. Menciona \"pisos de madera\": «terrazas, patios y pasajes de comunicación. • Encerado de pisos de madera. • Limpieza de paredes. • Limpieza general de techos int»",
+    "score": 35,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 372/2026",
+    "ultima_actualizacion": "2026-09-18T23:03:39",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373350",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "COLOCACION DE ALFOMBRA",
+      "ALFOMBRA DE GOMA",
+      "ZOCALO PARA PISO FLOTANTE",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "ALFOMBRA DE FIELTRO",
+      "ZOCALO MONOLITICO",
+      "ALFOMBRA DE LANA",
+      "ALFOMBRA BOUCLE",
+      "REPARACION DE ALFOMBRA",
+      "LIMPIEZA DE ALFOMBRA",
+      "COLOCACION DE ZOCALO",
+      "ALFOMBRA ATRAPA POLVO",
+      "VARILLA DE BRONCE PARA ALFOMBRA",
+      "ZOCALO EN MDF",
+      "ALFOMBRA DE YUTE",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "21ab84148610434c42c97965492f9296": {
     "cambio_detectado": false,
     "categorias": [
@@ -11987,6 +12048,48 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1365319",
     "ya_adjudicados": []
   },
+  "5f122d39e0759128c6e19314559f90ab": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1373325.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 18 Sep 2026 17:05:08",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "5f122d39e0759128c6e19314559f90ab",
+    "informe": "informes/5f122d39e0759128c6e19314559f90ab.md",
+    "keyword": "cesped + goma + pvc",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio del Interior (MI)",
+    "primera_deteccion": "2026-09-18T23:05:47",
+    "que_es": "Licitación de Ministerio del Interior (MI) — busca Material mencionado (revisar contexto). Menciona \"goma\": «liego. Nro Item Producto UdM Cantidad a comprar 1 PELOTA DE GOMA PARA MAN- CHADO UNIDAD 30 2 VARILLAS BASTONES UNIDAD 12 3 V»",
+    "score": 13,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 63/2026",
+    "ultima_actualizacion": "2026-09-18T23:05:47",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373325",
+    "ya_adjudicados": [
+      "ALFOMBRA DE GOMA",
+      "PISO DE GOMA",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "5f79ed4e908c5a4fb1f6885d5d4ed49a": {
     "cambio_detectado": false,
     "categorias": [
@@ -17380,6 +17483,45 @@
     "ultima_actualizacion": "2026-08-21T12:50:15",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1361622",
     "ya_adjudicados": []
+  },
+  "85639af09f8c7de6d3d0a28a196c7ac7": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_flotantes"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos flotantes/laminados"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1368251.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 18 Sep 2026 16:00:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "85639af09f8c7de6d3d0a28a196c7ac7",
+    "informe": "informes/85639af09f8c7de6d3d0a28a196c7ac7.md",
+    "keyword": "mdf + poliuretano + voc",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio del Interior (MI)",
+    "primera_deteccion": "2026-09-18T23:05:55",
+    "que_es": "Licitación de Ministerio del Interior (MI) — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos flotantes/laminados. Menciona \"mdf\": «s ABS en 2 mm mínimo. Obligatorio 3 Tapa de escritorio en MDF (con melamínico) de 25mm de espesor. Obligatorio 4 Con»",
+    "score": 19,
+    "simbolo": "★",
+    "titulo": "PFI - Comparación de precios 8/2026",
+    "ultima_actualizacion": "2026-09-18T23:05:55",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1368251",
+    "ya_adjudicados": [
+      "ZOCALO EN MDF"
+    ]
   },
   "859b263e5589a626862f1c8f2f2b7223": {
     "cambio_detectado": false,
@@ -22810,6 +22952,60 @@
     "ultima_actualizacion": "2026-09-07T23:25:29",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369750",
     "ya_adjudicados": []
+  },
+  "a84f41eb8eae0731ae9106aee95bc5c1": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1372914.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 18 Sep 2026 18:35:08",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "a84f41eb8eae0731ae9106aee95bc5c1",
+    "informe": "informes/a84f41eb8eae0731ae9106aee95bc5c1.md",
+    "keyword": "caucho + esquinero + esquineros",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-18T23:03:37",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «E ZINC --- M 33 33 metros de babetas cal 26 5 CIELORRASO DE PVC BLAN- CO M2 140 cielorraso de pvc 6 x 0,20 6 ESQUINERO INTE»",
+    "score": 46,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 29/2026",
+    "ultima_actualizacion": "2026-09-18T23:03:37",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372914",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "ALFOMBRA DE GOMA",
+      "CEMENTO ADHESIVO PARA PORCELANATO",
+      "PISO MODULAR DE PVC",
+      "PISO DE GOMA",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ALFOMBRA DE LANA",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
   },
   "a9ebc9658afbd6c54c41a931b0fe5e8a": {
     "cambio_detectado": false,
