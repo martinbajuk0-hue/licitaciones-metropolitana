@@ -3038,6 +3038,32 @@ errores_comunes:
 - wpc flor
 - zocalo
 - zocálo
+
+# ─── ALERTAS TOTALES ────────────────────────────────────────────────────────
+# Términos que el usuario quiere ver SIEMPRE, sin excepción, aunque no
+# matcheen ningún término de rubro específico ni junten el umbral normal
+# de 2+ palabras de _decidir_relevancia() (ver config/settings.py y
+# monitor.es_relevante()/monitor.FUENTE_ALERTA_TOTAL). A diferencia de
+# las categorías de arriba, esto NO pasa por el filtro de score mínimo
+# del email tampoco (mismo tratamiento que el match por código de
+# artículo ya adjudicado) — si aparece el término, se manda sí o sí.
+#
+# "cancha" agregado 2026-09-18 a pedido explícito del usuario, a raíz de
+# la Compra Directa D196817/2026 (Intendencia de Montevideo, CCZ3,
+# idc i501608 en comprasgobierno.com / ARCE), objeto "Mant.cancha F7
+# sinténtico": el pliego adjunto de ARCE era un stub de 263 bytes sin
+# ningún texto técnico real, así que no había ningún término de
+# insumos_canchas (mantenimiento de canchas, cepillado, etc.) presente
+# en ningún lado para matchear — el único texto disponible era el
+# título, y ni siquiera decía "césped sintético" completo (typo de ARCE:
+# "sinténtico"). El usuario prefiere ver estos casos de baja evidencia
+# igual y decidir a mano, antes que perderlos silenciosamente. El único
+# veto que sigue aplicando por encima de esto es
+# monitor._es_alquiler_de_inmueble() (ver ese docstring): un llamado que
+# en realidad busca alquilar un local que tiene una cancha (no comprar/
+# mantener una cancha) no se marca relevante ni por esto.
+alertas_totales:
+- cancha
 abreviaturas:
 - ac3
 - ac4
