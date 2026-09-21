@@ -5283,6 +5283,39 @@
       "PERFIL U DE ALUMINIO"
     ]
   },
+  "261ce2a317349751dd98df10922612d4": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1373374.odt"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 21 Sep 2026 08:55:13",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "261ce2a317349751dd98df10922612d4",
+    "informe": "informes/261ce2a317349751dd98df10922612d4.md",
+    "keyword": "algodón + poliamida + poliéster",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-21T16:35:20",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto). Menciona \"algodón\": «tar tabla de medidas) ESPECIFICACIONES DE LA TELA Mezcla de algodón y poliéster Resistente a lavados frecuentes y propiedad de»",
+    "score": 25,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 15626/2026",
+    "ultima_actualizacion": "2026-09-21T16:35:20",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373374",
+    "ya_adjudicados": []
+  },
   "266ce7ae016c53c4da71436c46aec689": {
     "cambio_detectado": false,
     "categorias": [
@@ -11410,6 +11443,41 @@
     "ultima_actualizacion": "2026-08-21T11:21:02",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1357370",
     "ya_adjudicados": []
+  },
+  "58b7c3ea0ab47f0165fb082775e29b37": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1373542.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": "2026-09-25",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 21 Sep 2026 12:30:16",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "58b7c3ea0ab47f0165fb082775e29b37",
+    "informe": "informes/58b7c3ea0ab47f0165fb082775e29b37.md",
+    "keyword": "nylon + polietileno",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-21T16:20:02",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto), apertura 2026-09-25. Menciona \"nylon\": «ón de “ ADQUISICIÓN DE ITEMS DADOS DE BAJA EN LA 91/2023- NYLON ” FECHA DE APERTURA 25/09/2026 HORA 10:00 hs CONTACTO Mail»",
+    "score": 27,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 157/2026",
+    "ultima_actualizacion": "2026-09-21T16:20:02",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373542",
+    "ya_adjudicados": [
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
+    ]
   },
   "58c977310bc895cf8e0a91bc06009757": {
     "cambio_detectado": false,
@@ -23499,6 +23567,112 @@
       "instalación"
     ]
   },
+  "ac8d74a86c84ea960a91353d48589d3b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "felpudos",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Felpudos y camineros",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1373475.PDF"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 21 Sep 2026 11:25:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "ac8d74a86c84ea960a91353d48589d3b",
+    "informe": "informes/ac8d74a86c84ea960a91353d48589d3b.md",
+    "keyword": "caminero + camineros + goma",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
+    "primera_deteccion": "2026-09-21T16:24:29",
+    "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — busca Abreviatura técnica del rubro, Felpudos y camineros, Material mencionado (revisar contexto). Menciona \"caminero\": «s • Paragolpes delanteros de color de carrocería • Faros camineros • Pintura de carrocería y furgón color blanco original d»",
+    "score": 38,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 146775/2026",
+    "ultima_actualizacion": "2026-09-21T16:24:29",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373475",
+    "ya_adjudicados": [
+      "ALFOMBRA DE GOMA",
+      "FELPUDO",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "PISO DE GOMA",
+      "ENTREPUERTA METALICA",
+      "CAMINERO DE GOMA",
+      "CAMINERO DE FIELTRO",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "CAMINERO DE ACRILICO",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "aca8bfed44b9e4094b5100db35f37b34": {
+    "cambio_detectado": false,
+    "categorias": [
+      "accesorios",
+      "alfombras",
+      "errores_comunes",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Accesorios de instalación",
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1373480.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 21 Sep 2026 11:25:12",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "aca8bfed44b9e4094b5100db35f37b34",
+    "informe": "informes/aca8bfed44b9e4094b5100db35f37b34.md",
+    "keyword": "acero inoxidable",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
+    "primera_deteccion": "2026-09-21T16:24:26",
+    "que_es": "Licitación de Ministerio de Relaciones Exteriores (MRREE) — busca Accesorios de instalación, Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «estimada Cada oferta deberá presentarse engrampada y/o encarpetada. La copia deberá ser igual al original. En caso que la»",
+    "score": 47,
+    "simbolo": "★★★",
+    "titulo": "Concurso de Precios 109515/2026",
+    "ultima_actualizacion": "2026-09-21T16:24:26",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373480",
+    "ya_adjudicados": [
+      "ALFOMBRA DE GOMA",
+      "ZOCALO PARA PISO FLOTANTE",
+      "PISO DE GOMA",
+      "ZOCALO DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "ZOCALO MONOLITICO",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "COLOCACION DE ZOCALO",
+      "PLANCHA DE GOMA EVA",
+      "ZOCALO EN MDF",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "ad22a99b384596193dd63adfab48d833": {
     "cambio_detectado": false,
     "categorias": [
@@ -26356,6 +26530,48 @@
       "BALDOSA VINILICA",
       "BALDOSA DE GOMA",
       "CAMINERO DE PVC"
+    ]
+  },
+  "c163ccd5a8e64687a1a7b148feb027bb": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1362918.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": "2026-10-06",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 21 Sep 2026 11:05:12",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "c163ccd5a8e64687a1a7b148feb027bb",
+    "informe": "informes/c163ccd5a8e64687a1a7b148feb027bb.md",
+    "keyword": "algodón + goma",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Educación y Cultura (MEC)",
+    "primera_deteccion": "2026-09-21T16:24:37",
+    "que_es": "Licitación de Ministerio de Educación y Cultura (MEC) — busca Material mencionado (revisar contexto), apertura 2026-10-06. Menciona \"algodón\": «go 338) hasta 50 (cincuenta) unidades. Ítem 3.1 Remera en algodón de manga corta con diseño en ambos lados (código 77440), h»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra por Excepción 8/2026",
+    "ultima_actualizacion": "2026-09-21T16:24:37",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1362918",
+    "ya_adjudicados": [
+      "ALFOMBRA DE GOMA",
+      "PISO DE GOMA",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
   "c1c956425b36f6a39a907aa26f27f1d1": {
@@ -29817,6 +30033,33 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "dc7cbba3378c54c3311f1c7223c96a5d": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 21 Sep 2026 10:55:10",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "dc7cbba3378c54c3311f1c7223c96a5d",
+    "informe": "informes/dc7cbba3378c54c3311f1c7223c96a5d.md",
+    "keyword": "goma + nylon",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-21T16:26:48",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría. Texto disponible: «Compra Directa 16079/2026 Se llama a compra directa Nº 16079/2026 de artículos de limpieza para el Hospital Especializados de Ojos. Ver archivo adjunto para cotizar. No olvidar el timbre profesional en el articulo 46 del TOCAF.»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 16079/2026",
+    "ultima_actualizacion": "2026-09-21T16:26:48",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373433",
+    "ya_adjudicados": []
+  },
   "dcbff10e35d03c48c1eec7a119658208": {
     "cambio_detectado": false,
     "categorias": [
@@ -30014,6 +30257,39 @@
     "titulo": "Licitación Abreviada 16/2026",
     "ultima_actualizacion": "2026-08-27T21:07:03",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1359343",
+    "ya_adjudicados": []
+  },
+  "df79809cea06d0321941127c4bd6c7f7": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1373548.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 21 Sep 2026 12:35:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "df79809cea06d0321941127c4bd6c7f7",
+    "informe": "informes/df79809cea06d0321941127c4bd6c7f7.md",
+    "keyword": "coco + laminado",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-21T16:20:00",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto). Menciona \"coco\": «DO KG 10 2 13967 Café de Cebada en polvo Kgx5 10 3 154 COCO RALLADO Producto obtenido del coco y su carcasa blanca de»",
+    "score": 17,
+    "simbolo": "★",
+    "titulo": "Compra Directa 16145/2026",
+    "ultima_actualizacion": "2026-09-21T16:20:00",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373548",
     "ya_adjudicados": []
   },
   "dfe05f9a077d7f5a4e022e35c2cac1c3": {
@@ -30921,6 +31197,39 @@
       "REPARACION DE PISO DE MADERA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
+  },
+  "e5c2975fa24152e7d65cca9bb8f67db5": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1366321.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 21 Sep 2026 09:25:15",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "e5c2975fa24152e7d65cca9bb8f67db5",
+    "informe": "informes/e5c2975fa24152e7d65cca9bb8f67db5.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-21T16:35:13",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «atos de la puerta: pivotante, batiente, de chapa plegada de acero inoxidable. 1.2.2. Reparación de puerta de hall de acceso de públic»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 83/2026",
+    "ultima_actualizacion": "2026-09-21T16:35:13",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1366321",
+    "ya_adjudicados": []
   },
   "e6286e2181e5313da28bb248b86b68da": {
     "cambio_detectado": false,
