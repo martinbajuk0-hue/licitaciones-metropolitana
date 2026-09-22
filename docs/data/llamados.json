@@ -3532,6 +3532,35 @@
       "CAMINERO DE PVC"
     ]
   },
+  "1d36ec81e78e14e0d2038f76437dabe0": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1373596.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 22 Sep 2026 09:05:13",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "1d36ec81e78e14e0d2038f76437dabe0",
+    "informe": "informes/1d36ec81e78e14e0d2038f76437dabe0.md",
+    "keyword": "contenedor habitable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-22T14:28:05",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca ninguna coincidencia directa de categoría. Texto disponible: «U.E. 049 RAP Maldonado Gerencia Administrativa Enrique Burnett esq. Noruega Tel.: 091425734 administracion.rapmaldonado@asse.com.uy RED DE ATENCIÓN PRIMARIA DE MALDONADO DEPARTAMENTO DE COMPRAS Dirección: Rincón 471 Pan de Azúcar Telefax: 44348511 Horario de atención de 8 a 14hs COMPRA DE CONTENEDOR…»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 120/2026",
+    "ultima_actualizacion": "2026-09-22T14:28:05",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373596",
+    "ya_adjudicados": []
+  },
   "1e81d927523d3af3b99da81d9a8a7715": {
     "cambio_detectado": false,
     "categorias": [
@@ -5016,6 +5045,41 @@
     "ultima_actualizacion": "2026-09-03T23:38:01",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1362318",
     "ya_adjudicados": []
+  },
+  "246bd44214263543838caeaa0a3c11f5": {
+    "cambio_detectado": false,
+    "categorias": [
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1373627.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 22 Sep 2026 09:05:14",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "246bd44214263543838caeaa0a3c11f5",
+    "informe": "informes/246bd44214263543838caeaa0a3c11f5.md",
+    "keyword": "mantenimiento edilicio",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-22T14:28:03",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"mantenimiento edilicio\": «Horario de atención de 8 a 14hs “SERVICIO DE MANTENIMIENTO EDILICIO Y PEQUEÑAS TAREAS DE REPARACIÓN EN CENTROS DE SALUD Y POLIC»",
+    "score": 21,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 121/2026",
+    "ultima_actualizacion": "2026-09-22T14:28:03",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373627",
+    "ya_adjudicados": [
+      "MANTENIMIENTO EDILICIO"
+    ]
   },
   "24d1c4d12090f947fcdba65120bf1274": {
     "cambio_detectado": false,
@@ -9420,6 +9484,50 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371118",
     "ya_adjudicados": [
       "CAMINERO DE ACRILICO"
+    ]
+  },
+  "4765044c11186e702df07e8d05325182": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1373693.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": "2026-10-08",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 22 Sep 2026 09:35:12",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "4765044c11186e702df07e8d05325182",
+    "informe": "informes/4765044c11186e702df07e8d05325182.md",
+    "keyword": "aluminio + poliuretano + pvc",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": "180/2026",
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-22T14:27:59",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, apertura 2026-10-08. Menciona \"pvc\": «6 10 Unidad Gas refrigerante R22 Garrafa 7 50 Unidad Cinta PVC foliar sin adesivo para A.A. 20 mts largo x 70 mm ancho ap»",
+    "score": 59,
+    "simbolo": "★★★",
+    "titulo": "Licitación Abreviada 180/2026",
+    "ultima_actualizacion": "2026-09-22T14:27:59",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373693",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "PERFIL U DE ALUMINIO",
+      "CAMINERO DE PVC"
     ]
   },
   "477758eba34e7fc94ae9fe041d5bc12b": {
