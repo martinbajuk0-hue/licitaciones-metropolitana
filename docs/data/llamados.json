@@ -9562,6 +9562,46 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1353401",
     "ya_adjudicados": []
   },
+  "467c80bf742cb681b9d5053b5426f346": {
+    "cambio_detectado": false,
+    "categorias": [
+      "adhesivos",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Adhesivos",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1372880.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 23 Sep 2026 15:10:12",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "467c80bf742cb681b9d5053b5426f346",
+    "informe": "informes/467c80bf742cb681b9d5053b5426f346.md",
+    "keyword": "código ya adjudicado: CEMENTO DE CONTACTO",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-23T18:59:30",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Adhesivos, Material mencionado (revisar contexto). Menciona \"cemento de contacto\": «ÍCULO CANTIDAD HASTA. 1 PAPEL DE LIJA BANDA Nº 40 3 MTS 1 2 CEMENTO DE CONTACTO 500 ML 1 3 PAPEL DE LIJA PARA MADERA RORO ORBITAL 5” GRANO»",
+    "score": 55,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 291/2026",
+    "ultima_actualizacion": "2026-09-23T18:59:30",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372880",
+    "ya_adjudicados": [
+      "CEMENTO DE CONTACTO",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "4686a289c11aa7bcbfaa2c1440085f84": {
     "cambio_detectado": false,
     "categorias": [
@@ -16227,6 +16267,41 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "75b002f933a519acaa838e457c50ac45": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1374438.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 23 Sep 2026 15:10:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "75b002f933a519acaa838e457c50ac45",
+    "informe": "informes/75b002f933a519acaa838e457c50ac45.md",
+    "keyword": "latex + nylon",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BSE - Banco de Seguros del Estado",
+    "primera_deteccion": "2026-09-23T18:59:32",
+    "que_es": "Licitación de BSE - Banco de Seguros del Estado — busca Material mencionado (revisar contexto). Menciona \"latex\": «2 CON CONECTOR DE PLASTICO 500ML 10000 8 21053 GUANTE DE LATEX QUIRURGICO ESTERIL: 6 PAR 10000 9 21190 GUANTE ESTERIL LI»",
+    "score": 14,
+    "simbolo": "★",
+    "titulo": "Compra Directa 1591/2026",
+    "ultima_actualizacion": "2026-09-23T18:59:32",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374438",
+    "ya_adjudicados": [
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM"
+    ]
+  },
   "75d3d6e02b1f2670e57e16ec16041743": {
     "cambio_detectado": false,
     "categorias": [
@@ -21745,6 +21820,55 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369095",
     "ya_adjudicados": [
       "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
+    ]
+  },
+  "987905d75b47868077095a380d70302a": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "materiales",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1371837.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 23 Sep 2026 12:00:18",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "987905d75b47868077095a380d70302a",
+    "informe": "informes/987905d75b47868077095a380d70302a.md",
+    "keyword": "acero inoxidable",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "564/26",
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-23T19:14:35",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"eva\": «plicables. Las ofertas que superen el control formal serán eva luadas técnicamente y, posteriormente, se realizará el aná»",
+    "score": 40,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 564/2026",
+    "ultima_actualizacion": "2026-09-23T19:14:35",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371837",
+    "ya_adjudicados": [
+      "CEMENTO ADHESIVO PARA PORCELANATO",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ALFOMBRA DE LANA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "MANTENIMIENTO EDILICIO",
+      "CAMINERO DE ACRILICO",
+      "REPARACION DE PISO DE MADERA"
     ]
   },
   "98c6d439c2e2516dccf003f1aaf4df7a": {
@@ -30747,6 +30871,39 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1354809",
     "ya_adjudicados": []
   },
+  "d9bb43001e674a44701bc5825c931bc3": {
+    "cambio_detectado": false,
+    "categorias": [
+      "normativas"
+    ],
+    "categorias_etiquetas": [
+      "Normativa/certificación mencionada"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1374453.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 23 Sep 2026 15:35:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "d9bb43001e674a44701bc5825c931bc3",
+    "informe": "informes/d9bb43001e674a44701bc5825c931bc3.md",
+    "keyword": "ficha de seguridad",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BSE - Banco de Seguros del Estado",
+    "primera_deteccion": "2026-09-23T18:55:16",
+    "que_es": "Licitación de BSE - Banco de Seguros del Estado — busca Normativa/certificación mencionada. Menciona \"ficha de seguridad\": «a a comercializar, producir o importar productos por MSP  Ficha de Seguridad del producto registrada en MSP  Ficha Técnica del product»",
+    "score": 14,
+    "simbolo": "★",
+    "titulo": "Compra Directa 1589/2026",
+    "ultima_actualizacion": "2026-09-23T18:55:16",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374453",
+    "ya_adjudicados": []
+  },
   "da1e3106f5770c651e82e2062430a7ce": {
     "cambio_detectado": false,
     "categorias": [
@@ -32020,6 +32177,43 @@
     "ultima_actualizacion": "2026-09-17T14:45:52",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372662",
     "ya_adjudicados": []
+  },
+  "e3b69e701d44001ba6a69adccd453e47": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1373391.docx"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 23 Sep 2026 11:50:28",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "e3b69e701d44001ba6a69adccd453e47",
+    "informe": "informes/e3b69e701d44001ba6a69adccd453e47.md",
+    "keyword": "código ya adjudicado: CONSTRUCCION DE PISOS",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
+    "primera_deteccion": "2026-09-23T19:14:37",
+    "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — busca Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"recubrimiento\": «úblicas, convoca a Compra Directa para “Acondicionamiento y recubrimiento de piso” de taller mecánico de la Regional 1 de la Direcció»",
+    "score": 54,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 252/2026",
+    "ultima_actualizacion": "2026-09-23T19:14:37",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373391",
+    "ya_adjudicados": [
+      "CONSTRUCCION DE PISOS"
+    ]
   },
   "e3b8d2231dee179330f7e72b97a197f4": {
     "cambio_detectado": false,
@@ -35668,6 +35862,37 @@
       "BALDOSA VINILICA ALTO TRANSITO",
       "BALDOSA VINILICA"
     ]
+  },
+  "fc67e2934552bb9294290c5a73a21ce7": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 23 Sep 2026 12:55:13",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "fc67e2934552bb9294290c5a73a21ce7",
+    "informe": "informes/fc67e2934552bb9294290c5a73a21ce7.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-23T19:09:59",
+    "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «Compra Directa 16004/2026 CALDERA DE ACERO INOXIDABLE»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Compra Directa 16004/2026",
+    "ultima_actualizacion": "2026-09-23T19:09:59",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374368",
+    "ya_adjudicados": []
   },
   "fcb02093eedde1e8bcf576e0c445f6fc": {
     "cambio_detectado": false,
