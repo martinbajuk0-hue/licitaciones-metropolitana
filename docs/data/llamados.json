@@ -3912,6 +3912,43 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1357065",
     "ya_adjudicados": []
   },
+  "1f392bb41933afaa0e5325e264d757fc": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1374819.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 24 Sep 2026 16:10:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "1f392bb41933afaa0e5325e264d757fc",
+    "informe": "informes/1f392bb41933afaa0e5325e264d757fc.md",
+    "keyword": "nylon 6",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-24T23:49:25",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «er todos los folios que componen la misma engrampados y/o encarpetados. La copia deberá ser igual al original. En caso que la»",
+    "score": 35,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 109595/2026",
+    "ultima_actualizacion": "2026-09-24T23:49:25",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374819",
+    "ya_adjudicados": []
+  },
   "1fc1a40f2601f31bebb845f9e3ea7927": {
     "cambio_detectado": false,
     "categorias": [
@@ -22754,6 +22791,41 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "9b20f4a706e63cba191d643d8b9b5ec3": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "pisos_flotantes"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Pisos flotantes/laminados"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1374772.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 24 Sep 2026 16:20:10",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "9b20f4a706e63cba191d643d8b9b5ec3",
+    "informe": "informes/9b20f4a706e63cba191d643d8b9b5ec3.md",
+    "keyword": "acero inoxidable",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-24T23:49:22",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto), Pisos flotantes/laminados. Menciona \"melamina\": «66621 8 800 PLATO HONDO, de mesa, en acero inoxidable o melamina. Diámetro del plato, entre 22 y 30 cm. Díametro de uso: M»",
+    "score": 26,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 169/2026",
+    "ultima_actualizacion": "2026-09-24T23:49:22",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374772",
+    "ya_adjudicados": []
+  },
   "9bba7d4bb06a08bb0862da00676bed45": {
     "cambio_detectado": false,
     "categorias": [
@@ -24384,6 +24456,50 @@
       "GOMA DE LATEX 1.5 ESPESOR 3 MM",
       "GOMA NATURAL EN PLANCHA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "a6ec62394004997306477af7c17494a0": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1374834.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 24 Sep 2026 18:35:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "a6ec62394004997306477af7c17494a0",
+    "informe": "informes/a6ec62394004997306477af7c17494a0.md",
+    "keyword": "pvc + recubrimiento",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": "22/2026",
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-24T23:47:12",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"pvc\": «nas existentes mediante cámaras y tuberías de PVC 110mm (de acuerdo a los recaudos gráficos a»",
+    "score": 53,
+    "simbolo": "★★★",
+    "titulo": "Licitación Abreviada 22/2026",
+    "ultima_actualizacion": "2026-09-24T23:47:12",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374834",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC"
     ]
   },
   "a6ff3ee8541ccb4b5b4081eb79f509b5": {
