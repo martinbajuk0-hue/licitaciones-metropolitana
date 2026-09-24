@@ -2473,6 +2473,42 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1364274",
     "ya_adjudicados": []
   },
+  "119e19513f5de294fe1bc21e70977b5d": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1374557.odt"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 24 Sep 2026 11:50:12",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "119e19513f5de294fe1bc21e70977b5d",
+    "informe": "informes/119e19513f5de294fe1bc21e70977b5d.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-24T19:09:08",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «LITROS REVESTIMIENTO ANTIADHERENTE ÍTEM N.º 5- ASADERA DE ACERO INOXIDABLE RECTANGULAR ANCHO 40 X 30 ÍTEM N.º 6- CUCHARON FAMILIAR M»",
+    "score": 21,
+    "simbolo": "★",
+    "titulo": "Compra Directa 16401/2026",
+    "ultima_actualizacion": "2026-09-24T19:09:08",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374557",
+    "ya_adjudicados": [
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO"
+    ]
+  },
   "11b22d58211f101310c9baac1d7feff1": {
     "cambio_detectado": false,
     "categorias": [
@@ -30454,6 +30490,41 @@
       "FELPUDO",
       "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
       "ENTREPUERTA METALICA"
+    ]
+  },
+  "d4b5c3b1201a3072554f1e74e9c91919": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1374682.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 24 Sep 2026 12:15:14",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "d4b5c3b1201a3072554f1e74e9c91919",
+    "informe": "informes/d4b5c3b1201a3072554f1e74e9c91919.md",
+    "keyword": "polietileno de baja densidad",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BSE - Banco de Seguros del Estado",
+    "primera_deteccion": "2026-09-24T19:07:03",
+    "que_es": "Licitación de BSE - Banco de Seguros del Estado — busca Material mencionado (revisar contexto). Menciona \"polietileno\": «CA DE CLORURO DE SODIO X 100 mL DOBLE PUERTO - AMPOLLA DE POLIETILENO DE BAJA DENSIDAD CON DOBLE PUERTO 1000 ML 300 3 26397 S»",
+    "score": 14,
+    "simbolo": "★",
+    "titulo": "Compra Directa 1602/2026",
+    "ultima_actualizacion": "2026-09-24T19:07:03",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374682",
+    "ya_adjudicados": [
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
     ]
   },
   "d50eb03ae6e86cefca01ac044db4d92c": {
