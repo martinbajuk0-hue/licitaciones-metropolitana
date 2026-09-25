@@ -2872,6 +2872,48 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1361500",
     "ya_adjudicados": []
   },
+  "16b9dd2d0a1d50b23369fac70de8e468": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1374953.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": "2026-09-29",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 25 Sep 2026 11:35:11",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "16b9dd2d0a1d50b23369fac70de8e468",
+    "informe": "informes/16b9dd2d0a1d50b23369fac70de8e468.md",
+    "keyword": "algodon + polipropileno + pvc",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-25T15:04:01",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, apertura 2026-09-29. Menciona \"pvc\": «PIEL / (VARIANTE: -----) UNIDAD 60 unidades 12 MANGUERA DE PVC / (VARIANTE: DIÁMETRO EXTERNO X DIÁMETRO INTERNO 3/8 X 1/»",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 16454/2026",
+    "ultima_actualizacion": "2026-09-25T15:04:01",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374953",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC"
+    ]
+  },
   "178f7a44afc6d9cfad38fa7b43e8971f": {
     "cambio_detectado": false,
     "categorias": [
@@ -5362,6 +5404,50 @@
       "GOMA DE LATEX 1.5 ESPESOR 3 MM",
       "GOMA NATURAL EN PLANCHA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "2509a3a79d3921bd3741bf087653fba8": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1374955.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 25 Sep 2026 11:45:15",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "2509a3a79d3921bd3741bf087653fba8",
+    "informe": "informes/2509a3a79d3921bd3741bf087653fba8.md",
+    "keyword": "memoria constructiva",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
+    "primera_deteccion": "2026-09-25T15:03:56",
+    "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"pvc\": «cará en el fondo del canal longitudinalmente una tubería de PVC de 110 mm de diámetro y grosor de pared de 3,2 mm con perf»",
+    "score": 25,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 1027/2026",
+    "ultima_actualizacion": "2026-09-25T15:03:56",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374955",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC"
     ]
   },
   "253c4f30b115bd83e603d8c171f9a70a": {
@@ -13676,6 +13762,35 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371887",
     "ya_adjudicados": []
   },
+  "6234af4fcd70821acf73fbc306e858de": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1374823.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 25 Sep 2026 10:15:13",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "6234af4fcd70821acf73fbc306e858de",
+    "informe": "informes/6234af4fcd70821acf73fbc306e858de.md",
+    "keyword": "acero galvanizado",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-25T15:08:20",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca ninguna coincidencia directa de categoría. Texto disponible: «DEPARTAMENTO DE ADMINISTRACIÓN SECCIÓN COMPRAS Tel: 2030 3449 / 2030 3427 Correo: caminera -administracion@minterior.gub.uy CD. Nº 98 / 2026.-CD. Nº 98 / 2026.- Por medio del presente, se solicita cotización por la adquisición de lo siguiente: ITEM CANTIDAD HASTA: DESCRIPCIÓN CÓDIGO SICE 1 10 uni. C…»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 98/2026",
+    "ultima_actualizacion": "2026-09-25T15:08:20",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374823",
+    "ya_adjudicados": []
+  },
   "628d2122e4540730a21a796c0e79cb24": {
     "cambio_detectado": false,
     "categorias": [
@@ -18621,6 +18736,39 @@
       "PERFIL U DE ALUMINIO",
       "REPARACION DE PISO DE MADERA"
     ]
+  },
+  "84792bb91ff6ff973f442cd1ff14a97a": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 25 Sep 2026 11:45:09",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "84792bb91ff6ff973f442cd1ff14a97a",
+    "informe": "informes/84792bb91ff6ff973f442cd1ff14a97a.md",
+    "keyword": "eps + poliestireno",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-25T15:03:56",
+    "que_es": "Licitación de organismo no identificado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto). Menciona \"eps\": «s en cotizar por 6 heladeras de espuma fabricadas en espuma EPS, para mantener bebidas y alimentos frescos, capacidad de 50»",
+    "score": 14,
+    "simbolo": "★",
+    "titulo": "Compra Directa 20153/2026",
+    "ultima_actualizacion": "2026-09-25T15:03:56",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374958",
+    "ya_adjudicados": []
   },
   "84ac9a579a5ae9cba9f3576afe5050da": {
     "cambio_detectado": false,
@@ -34598,6 +34746,41 @@
     "ya_adjudicados": [
       "VARILLA DE ALUMINIO",
       "PERFIL U DE ALUMINIO",
+      "MANTENIMIENTO EDILICIO"
+    ]
+  },
+  "f0e1a80c697b6646948e2c23b06c38fb": {
+    "cambio_detectado": false,
+    "categorias": [
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1374977.7z"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 25 Sep 2026 12:00:12",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "f0e1a80c697b6646948e2c23b06c38fb",
+    "informe": "informes/f0e1a80c697b6646948e2c23b06c38fb.md",
+    "keyword": "mantenimiento edilicio",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "104135/2026",
+    "organismo": null,
+    "primera_deteccion": "2026-09-25T15:03:48",
+    "que_es": "Licitación de organismo no identificado — busca Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"mantenimiento edilicio\": «Licitación Abreviada 104135/2026 MANTENIMIENTO EDILICIO PARA LOCALES TIC»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 104135/2026",
+    "ultima_actualizacion": "2026-09-25T15:03:48",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374977",
+    "ya_adjudicados": [
       "MANTENIMIENTO EDILICIO"
     ]
   },
