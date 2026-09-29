@@ -9349,6 +9349,39 @@
       "PERFIL U DE ALUMINIO"
     ]
   },
+  "3e0fb3de5d3f410458aec5157d53e06b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1375455.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 28 Sep 2026 16:30:11",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "3e0fb3de5d3f410458aec5157d53e06b",
+    "informe": "informes/3e0fb3de5d3f410458aec5157d53e06b.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-29T00:52:42",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «,10m, alto 1,12m, profundidad 0,45m. 3. Una (1) mesa de acero inoxidable con ruedas con las siguientes características: largo 0,70m»",
+    "score": 21,
+    "simbolo": "★",
+    "titulo": "Compra Directa 42/2026",
+    "ultima_actualizacion": "2026-09-29T00:52:42",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1375455",
+    "ya_adjudicados": []
+  },
   "3f2d33117432c4aa4934ddb5a44e17ec": {
     "cambio_detectado": false,
     "categorias": [
@@ -10735,6 +10768,33 @@
     "titulo": "Compra Directa 211/2026",
     "ultima_actualizacion": "2026-08-27T22:08:29",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1355628",
+    "ya_adjudicados": []
+  },
+  "4a331adcd339d3e6961d9262c3c23766": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 28 Sep 2026 15:05:10",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "4a331adcd339d3e6961d9262c3c23766",
+    "informe": "informes/4a331adcd339d3e6961d9262c3c23766.md",
+    "keyword": "fibra de vidrio",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-09-29T00:55:11",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría. Texto disponible: «Compra Directa 89374/2026 Suministro escaleras fibra vidrio»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 89374/2026",
+    "ultima_actualizacion": "2026-09-29T00:55:11",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1375434",
     "ya_adjudicados": []
   },
   "4a66eb21f877bfcf882e3a4fff0a9f37": {
