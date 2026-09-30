@@ -9387,6 +9387,52 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "3c5dd3c4321732c16ea208a4ca50e0fe": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "alfombras",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1375729.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 29 Sep 2026 14:50:11",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "3c5dd3c4321732c16ea208a4ca50e0fe",
+    "informe": "informes/3c5dd3c4321732c16ea208a4ca50e0fe.md",
+    "keyword": "algodon + lana",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Defensa Nacional (MDN)",
+    "primera_deteccion": "2026-09-30T00:20:48",
+    "que_es": "Licitación de Ministerio de Defensa Nacional (MDN) — busca Abreviatura técnica del rubro, Alfombras, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «rte Estructural: Incluyen varillas flexibles o ballenas de PVC/metal en la zona lumbar (generalmente 4 a 6) para estabili»",
+    "score": 35,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 5003/2026",
+    "ultima_actualizacion": "2026-09-30T00:20:48",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1375729",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "CEMENTO ADHESIVO PARA PORCELANATO",
+      "PISO MODULAR DE PVC",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ALFOMBRA DE LANA",
+      "CAMINERO DE PVC"
+    ]
+  },
   "3d11b46acd99a309ff49f7cd0a8ea76f": {
     "cambio_detectado": false,
     "categorias": [
@@ -13043,6 +13089,97 @@
     "ultima_actualizacion": "2026-09-11T23:03:08",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371345",
     "ya_adjudicados": []
+  },
+  "575e72f352d49ced9fa2b26571bfee61": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "alfombras",
+      "errores_comunes",
+      "felpudos",
+      "marcas",
+      "materiales",
+      "pisos_flotantes",
+      "pisos_goma",
+      "pisos_madera",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Alfombras",
+      "Felpudos y camineros",
+      "Marca de mercado mencionada",
+      "Material mencionado (revisar contexto)",
+      "Pisos de goma",
+      "Pisos de madera",
+      "Pisos flotantes/laminados",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1375788.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 29 Sep 2026 16:10:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "575e72f352d49ced9fa2b26571bfee61",
+    "informe": "informes/575e72f352d49ced9fa2b26571bfee61.md",
+    "keyword": "piso flotante",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "602395",
+    "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
+    "primera_deteccion": "2026-09-30T00:10:17",
+    "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — busca Abreviatura técnica del rubro, Accesorios de instalación, Alfombras, Felpudos y camineros, Marca de mercado mencionada, Material mencionado (revisar contexto), Pisos de goma, Pisos de madera, Pisos flotantes/laminados, Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro. Menciona \"pvc\": «ventilación cada 10 m2 del sustrato existente. El caño de PVC perforado será amurado a la losa con material pobre en por»",
+    "score": 36,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 680626/2026",
+    "ultima_actualizacion": "2026-09-30T00:10:17",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1375788",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO FLOTANTE",
+      "ALFOMBRA DE GOMA",
+      "BALDOSA LISA",
+      "CEMENTO ADHESIVO PARA PORCELANATO",
+      "ZOCALO PARA PISO FLOTANTE",
+      "PISO MODULAR DE PVC",
+      "CEMENTO ADHESIVO PARA CERAMICA",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "PISO DE GOMA",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ZOCALO MONOLITICO",
+      "ALFOMBRA DE LANA",
+      "REDUCTOR PARA PISO FLOTANTE",
+      "BALDOSA VINILICA ALTO TRANSITO",
+      "CAMINERO DE GOMA",
+      "TAPAJUNTAS",
+      "PERFIL U DE ALUMINIO",
+      "BALDOSA VINILICA",
+      "JUNTA PARA PISO FLOTANTE",
+      "CAMINERO DE FIELTRO",
+      "BALDOSA DE GOMA",
+      "COLOCACION DE ZOCALO",
+      "PLANCHA DE GOMA EVA",
+      "ZOCALO EN MDF",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "CAMINERO DE ACRILICO",
+      "GOMA NATURAL EN PLANCHA",
+      "REPARACION DE PISO DE MADERA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
   },
   "57dfec6a7b4991b01793ed6b3bfcf61c": {
     "cambio_detectado": false,
@@ -22623,6 +22760,35 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1356819",
     "ya_adjudicados": []
   },
+  "93450df0fef43b67ed752354eddd733a": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1375781.7z"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 29 Sep 2026 15:30:12",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "93450df0fef43b67ed752354eddd733a",
+    "informe": "informes/93450df0fef43b67ed752354eddd733a.md",
+    "keyword": "chapa metalica",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "104076/2026",
+    "organismo": null,
+    "primera_deteccion": "2026-09-30T00:12:23",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría. Texto disponible: «Licitación Abreviada 104076/2026 Galpón para maquinaria»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 104076/2026",
+    "ultima_actualizacion": "2026-09-30T00:12:23",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1375781",
+    "ya_adjudicados": []
+  },
   "937cb76f240640a15ce6c243a3ac5376": {
     "cambio_detectado": false,
     "categorias": [],
@@ -23952,6 +24118,52 @@
     "ultima_actualizacion": "2026-09-16T14:48:21",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372128",
     "ya_adjudicados": []
+  },
+  "9ae1a3c8aafe7411b713d1ce68166446": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1375682.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 29 Sep 2026 14:15:11",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "9ae1a3c8aafe7411b713d1ce68166446",
+    "informe": "informes/9ae1a3c8aafe7411b713d1ce68166446.md",
+    "keyword": "goma + madera",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "33/2026",
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-09-30T00:22:56",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto). Menciona \"cerámica\": «35mm de diámetro superior. 100 31 Telas de Calentamiento Cerámica 16cm x 16cm. (Presentar certificado con los componentes de»",
+    "score": 22,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 33/2026",
+    "ultima_actualizacion": "2026-09-30T00:22:56",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1375682",
+    "ya_adjudicados": [
+      "ALFOMBRA DE GOMA",
+      "CEMENTO ADHESIVO PARA CERAMICA",
+      "PISO DE GOMA",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "REPARACION DE PISO DE MADERA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
   },
   "9af259d6ff32b084abf05cb02ba638cf": {
     "cambio_detectado": false,
@@ -28492,6 +28704,48 @@
       "GOMA NATURAL EN PLANCHA",
       "REPARACION DE PISO DE MADERA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "b8d16650f9e8994d669666289ea8d0da": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1375750.doc"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": "2026-10-08",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 29 Sep 2026 15:05:14",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "b8d16650f9e8994d669666289ea8d0da",
+    "informe": "informes/b8d16650f9e8994d669666289ea8d0da.md",
+    "keyword": "revestimiento de pvc",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
+    "primera_deteccion": "2026-09-30T00:18:39",
+    "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, apertura 2026-10-08. Menciona \"pvc\": «d. Suministro y colocación de tubería de revestimiento de PVC normativa de 7.7mm de espesor de 160mm de diámet»",
+    "score": 32,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 7703/2026",
+    "ultima_actualizacion": "2026-09-30T00:18:39",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1375750",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC"
     ]
   },
   "ba0ab7cd5ab9ed58c7b58bf2f6148145": {
