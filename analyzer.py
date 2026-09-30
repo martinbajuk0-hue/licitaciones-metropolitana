@@ -144,7 +144,13 @@ def _buscar_organismo(texto: str) -> str | None:
     for org in todos:
         # usar solo la parte antes de "(" o "-" para matchear el pliego real
         nombre_corto = re.split(r"[-(]", org)[0].strip()
-        if nombre_corto.lower() in texto.lower():
+        # \b (límite de palabra), no "in" plano: las siglas de 3 letras
+        # (OSE, UTE, BSE, CES...) aparecen como substring dentro de
+        # palabras comunes de cualquier pliego ("posea", "indicándose",
+        # "veces", "subsecretaría"...) y generaban falsos positivos
+        # masivos (confirmado 2026-09-30: 0/38 aciertos en una muestra
+        # de OSE/UTE/BSE/CES contra el organismo real publicado por ARCE).
+        if re.search(rf"\b{re.escape(nombre_corto.lower())}\b", texto.lower()):
             return org
 
     m = re.search(r"municipio\s+de\s+([a-záéíóúñ\s]{3,40})", texto, re.IGNORECASE)

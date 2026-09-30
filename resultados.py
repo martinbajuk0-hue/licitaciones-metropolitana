@@ -48,8 +48,18 @@ RUT_METROPOLITANA = "210196570018"
 # solo de esta secuencia literal de texto, que si ARCE la cambia hace que
 # esto deje de matchear (fail-safe: sin items → sin "ganamos", nunca un
 # resultado inventado).
+#
+# 2026-09-30: entre "(Cód. Artículo N)" y "Proveedor:" puede haber texto
+# intercalado — ARCE agregó un link "Ver Órdenes de Compra" para los
+# ítems que ya tienen orden de compra emitida, y el "\s*" original solo
+# toleraba espacios, no ese texto. Confirmado en vivo (ficha id 1368273):
+# el regex dejaba de matchear CUALQUIER ítem adjudicado apenas aparecía
+# ese link, lo que hacía perder una victoria real (se reportó "perdimos"
+# cuando en realidad ganamos los dos ítems). Se cambia a ".*?" (no
+# goloso) para tolerar cualquier texto intermedio sin cruzarse al
+# "Proveedor:" del ítem siguiente.
 _RE_ITEM_ADJUDICADO = re.compile(
-    r"Ítem\s*Nº\s*\d+\s+.+?\(Cód\.\s*Artículo\s*\d+\)\s*Proveedor:\s*(.+?)\s*\(RUT\s*(\d+)\)"
+    r"Ítem\s*Nº\s*\d+\s+.+?\(Cód\.\s*Artículo\s*\d+\).*?Proveedor:\s*(.+?)\s*\(RUT\s*(\d+)\)"
 )
 
 # El número de compra de ARCE (comprasestatales.gub.uy) es el mismo tanto
