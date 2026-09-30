@@ -1,0 +1,52 @@
+<!--
+Caso sintético basado en el bug real detectado 2026-09-30 (Compra Directa
+35/2026, id 1368273): ARCE agrega un link "Ver Órdenes de Compra" entre
+"(Cód. Artículo N)" y "Proveedor:" para los ítems que ya tienen orden de
+compra emitida. El _RE_ITEM_ADJUDICADO viejo (solo toleraba \s* ahí)
+dejaba de matchear CUALQUIER ítem en ese caso — se reportó "perdimos"
+cuando en realidad Metropolitana ganó los dos ítems. Ver resultados.py.
+-->
+<html>
+<body>
+<main>
+  <h1>Compra Directa 35/2026</h1>
+  <ul>
+    <li class="col-md-6 col-xs-6">Resolución:</li>
+    <li class="col-md-6 col-xs-6">Adjudicada totalmente</li>
+    <li class="col-md-6 col-xs-6">Resolución Nro:</li>
+    <li class="col-md-6 col-xs-6"></li>
+    <li class="col-md-6 col-xs-6">Fecha Resolución:</li>
+    <li class="col-md-6 col-xs-6"></li>
+    <li class="col-md-6 col-xs-6">Monto Total de la Compra:</li>
+    <li class="col-md-6 col-xs-6">$ 118.435,16</li>
+  </ul>
+
+  <h2>Proveedores participantes</h2>
+  <table class="table">
+    <caption class="sr-only">Proveedores participantes</caption>
+    <thead><tr><th>Tipo</th><th>Nro. Documento</th><th>Nombre Proveedor</th></tr></thead>
+    <tbody>
+      <tr><td>RUT</td><td>216607870019</td><td>JUNPOL S.A.</td></tr>
+      <tr><td>RUT</td><td>210196570018</td><td>METROPOLITANA S A</td></tr>
+      <tr><td>RUT</td><td>217009690015</td><td>SANQUILCO SOCIEDAD ANONIMA</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Ítems adjudicados</h2>
+  <div class="row"><div class="col-md-12">
+    Ítem Nº 1 PEDILUVIO SANITARIO (Cód. Artículo 77911)
+    <br><a href="/ordenes/1">Ver Órdenes de Compra</a>
+    <br>Proveedor: METROPOLITANA S A (RUT 210196570018)
+    <br>Variación:10 alfombras de pc de 12 mm espesor de 090por130 lisas
+    Cantidad:10,00 UNIDAD Precio unitario sin impuestos:$ 7.500,00
+  </div></div>
+  <div class="row"><div class="col-md-12">
+    Ítem Nº 2 ALFOMBRA DE PVC (Cód. Artículo 70472)
+    <br><a href="/ordenes/2">Ver Órdenes de Compra</a>
+    <br>Proveedor: METROPOLITANA S A (RUT 210196570018)
+    <br>Variación:9 alfombras de PVC
+    Cantidad:9,00 M2 Precio unitario sin impuestos:$ 4.937,24
+  </div></div>
+</main>
+</body>
+</html>
