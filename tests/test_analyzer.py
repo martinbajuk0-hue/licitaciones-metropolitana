@@ -20,6 +20,29 @@ class TestAnalyzer(unittest.TestCase):
         campos = analyzer.extraer_campos_clave(texto)
         self.assertIsNotNone(campos.organismo)
 
+    def test_organismo_no_confunde_sigla_corta_con_palabra_comun(self):
+        # 2026-09-30: "OSE" (3 letras) matcheaba como substring plano
+        # dentro de "posea"/"indicándose"/"encontrándose" — texto real de
+        # un pliego del IIBCE que el sistema etiquetó como "OSE - Obras
+        # Sanitarias del Estado" sin que el organismo tuviera nada que
+        # ver. Confirmado en vivo que esto afectaba también a UTE/BSE/CES
+        # (0/38 aciertos en una muestra contra el organismo real de ARCE).
+        texto = (
+            "el precio deberá cotizarse indicándose si incluye impuestos. "
+            "60 puntos a quien posea antecedentes positivos, que no "
+            "registre observaciones, no encontrándose en ninguna "
+            "situación que le impida contratar con el Estado."
+        )
+        campos = analyzer.extraer_campos_clave(texto)
+        self.assertIsNone(campos.organismo)
+
+    def test_organismo_con_sigla_corta_real_si_se_detecta(self):
+        # El fix de límite de palabra no debe volverse tan estricto que
+        # deje de detectar una mención real y explícita de la sigla.
+        texto = "OSE - Obras Sanitarias del Estado llama a licitación para la compra de caños de PVC."
+        campos = analyzer.extraer_campos_clave(texto)
+        self.assertEqual(campos.organismo, "OSE - Obras Sanitarias del Estado")
+
     def test_faltantes_declarados_cuando_no_hay_dato(self):
         texto = "Documento sin ninguna estructura reconocible de pliego."
         campos = analyzer.extraer_campos_clave(texto)

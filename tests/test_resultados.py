@@ -119,6 +119,20 @@ class TestMetropolitanaGanaOPierde(unittest.TestCase):
         self.assertFalse(resultado.ganamos)
         self.assertEqual(resultados.estado_resumen(resultado), "perdimos")
 
+    def test_metropolitana_gana_con_link_ver_ordenes_de_compra(self):
+        # 2026-09-30: ARCE intercala un link "Ver Órdenes de Compra" entre
+        # "(Cód. Artículo N)" y "Proveedor:" para ítems con orden ya
+        # emitida — el regex viejo (\s* ahí) dejaba de matchear y esto se
+        # reportaba como "perdimos" a pesar de haber ganado los dos
+        # ítems (caso real: Compra Directa 35/2026, id 1368273).
+        resultado = resultados.parsear_ficha(
+            _leer_fixture("ficha_metropolitana_gana_con_orden_de_compra.html")
+        )
+        self.assertTrue(resultado.nos_presentamos)
+        self.assertEqual(len(resultado.ganadores_por_item), 2)
+        self.assertTrue(resultado.ganamos)
+        self.assertEqual(resultados.estado_resumen(resultado), "ganamos")
+
 
 class TestObtenerResultado(unittest.TestCase):
     """obtener_resultado() es la única función con red — se mockea
