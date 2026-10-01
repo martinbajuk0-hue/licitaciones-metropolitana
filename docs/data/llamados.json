@@ -2476,6 +2476,72 @@
       "CAMINERO DE ACRILICO"
     ]
   },
+  "0f947ed0c6b1aeeea6ce43c4fa726bbe": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1376429.odt"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 01 Oct 2026 13:45:16",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "0f947ed0c6b1aeeea6ce43c4fa726bbe",
+    "informe": "informes/0f947ed0c6b1aeeea6ce43c4fa726bbe.md",
+    "keyword": "código ya adjudicado: LONA VINILICA",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-10-01T16:57:19",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"vinilica\": «RA TOALLAS METROS 100 14 TIZA PARA MODISTA UNIDAD 6 15 TELA VINILICA SÍMIL CUERO COLOR BLANCO O NEGRO METROS 100 16 ELÁSTICO PLA»",
+    "score": 64,
+    "simbolo": "★★★",
+    "titulo": "Concurso de Precios 160/2026",
+    "ultima_actualizacion": "2026-10-01T16:57:19",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376429",
+    "ya_adjudicados": [
+      "LONA VINILICA",
+      "BALDOSA VINILICA ALTO TRANSITO",
+      "BALDOSA VINILICA"
+    ]
+  },
+  "101a5939bc0c641bb37704473a6110da": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 01 Oct 2026 12:55:11",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "101a5939bc0c641bb37704473a6110da",
+    "informe": "informes/101a5939bc0c641bb37704473a6110da.md",
+    "keyword": "algodon + poliester + pvc",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-10-01T17:01:38",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría. Texto disponible: «Compra Directa 3361/2026 COMPRA DIRECTA MATERIAL MEDICO»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 3361/2026",
+    "ultima_actualizacion": "2026-10-01T17:01:38",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376325",
+    "ya_adjudicados": []
+  },
   "10d10d068c3c11b1a6956ed9f22ba386": {
     "cambio_detectado": false,
     "categorias": [
@@ -11246,6 +11312,45 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1366012",
     "ya_adjudicados": []
   },
+  "49234f3304350d83c966f87e03188c52": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1376359.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 01 Oct 2026 11:55:13",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "49234f3304350d83c966f87e03188c52",
+    "informe": "informes/49234f3304350d83c966f87e03188c52.md",
+    "keyword": "carpet + carpeta + polietileno",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ANTEL - Administración Nacional de Telecomunicaciones",
+    "primera_deteccion": "2026-10-01T17:03:55",
+    "que_es": "Licitación de ANTEL - Administración Nacional de Telecomunicaciones — busca Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «er todos los folios que componen la misma engrampados y/o encarpetados. La copia deberá ser igual al original. En caso que la»",
+    "score": 40,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 109611/2026",
+    "ultima_actualizacion": "2026-10-01T17:03:55",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376359",
+    "ya_adjudicados": [
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
+    ]
+  },
   "4991a962350c0b44d6ee8c06c429fd48": {
     "cambio_detectado": false,
     "categorias": [
@@ -15676,6 +15781,45 @@
       "ENTREPUERTA METALICA"
     ]
   },
+  "64051d6b56124881440f57ac87b36441": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes",
+      "materiales",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1376290.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 01 Oct 2026 10:15:15",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "64051d6b56124881440f57ac87b36441",
+    "informe": "informes/64051d6b56124881440f57ac87b36441.md",
+    "keyword": "carpet + carpeta + epoxi",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
+    "primera_deteccion": "2026-10-01T17:04:23",
+    "que_es": "Licitación de Ministerio de Relaciones Exteriores (MRREE) — busca Alfombras, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «para ello Cada oferta deberá presentarse engrampada y/o encarpetada. La copia deberá ser igual al original. En caso que la»",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Licitación Abreviada 109496/2026",
+    "ultima_actualizacion": "2026-10-01T17:04:23",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376290",
+    "ya_adjudicados": []
+  },
   "641648d44dc08d8e21f7fc37c3b8a9b4": {
     "cambio_detectado": false,
     "categorias": [
@@ -19204,6 +19348,49 @@
     "ultima_actualizacion": "2026-09-30T16:26:31",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1375836",
     "ya_adjudicados": []
+  },
+  "7c3897ee3e625bcdc8d594fda81671b6": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1376187.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 01 Oct 2026 13:20:13",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "7c3897ee3e625bcdc8d594fda81671b6",
+    "informe": "informes/7c3897ee3e625bcdc8d594fda81671b6.md",
+    "keyword": "materiales de construcción",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-10-01T17:01:28",
+    "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"recubrimiento\": «membranas. 3 Pintura Aluminio Asfáltico 4 Envases de 4 LT. Recubrimiento protector reflectivo de base asfáltica con pigmentación de»",
+    "score": 14,
+    "simbolo": "★",
+    "titulo": "Compra Directa 1224/2026",
+    "ultima_actualizacion": "2026-10-01T17:01:28",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376187",
+    "ya_adjudicados": [
+      "CEMENTO ADHESIVO PARA PORCELANATO",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "VARILLA DE ALUMINIO",
+      "ALFOMBRA DE LANA",
+      "PERFIL U DE ALUMINIO",
+      "REPARACION DE PISO DE MADERA"
+    ]
   },
   "7c43a4ac967f0faf03c18083afda81ea": {
     "cambio_detectado": false,
@@ -23000,6 +23187,39 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1365749",
     "ya_adjudicados": []
   },
+  "9138bb8371c6c19bf13848884c17ad2a": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1376302.odt"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 01 Oct 2026 10:50:15",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "9138bb8371c6c19bf13848884c17ad2a",
+    "informe": "informes/9138bb8371c6c19bf13848884c17ad2a.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-10-01T17:04:17",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «0 UNIDAD 2 (COD.14698) AFEITADORA DESECHABLE TRIPLE HOJA DE ACERO INOXIDABLE, CON BANDA LUBRICANTE, CABEZA MÓVIL BASCULANTE HASTA 2000 U»",
+    "score": 18,
+    "simbolo": "★",
+    "titulo": "Compra Directa 311/2026",
+    "ultima_actualizacion": "2026-10-01T17:04:17",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376302",
+    "ya_adjudicados": []
+  },
   "9178c55e81fec5e61e687e9f7c2aa163": {
     "cambio_detectado": false,
     "categorias": [
@@ -26126,6 +26346,49 @@
     "ultima_actualizacion": "2026-09-22T18:56:54",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373778",
     "ya_adjudicados": []
+  },
+  "a4a223f7dd88703901e986c44fd498e6": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1376165.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 01 Oct 2026 10:05:14",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "a4a223f7dd88703901e986c44fd498e6",
+    "informe": "informes/a4a223f7dd88703901e986c44fd498e6.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "34/2026",
+    "organismo": "ANEP - Administración Nacional de Educación Pública",
+    "primera_deteccion": "2026-10-01T17:06:28",
+    "que_es": "Licitación de ANEP - Administración Nacional de Educación Pública — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «MUESTRA. 25 sets 5 CALIBRE ACERO. Calibre mecánico de acero inoxidable. Alcance 15cm, resolución 0,02mm. PRESENTAR MUESTRA 50»",
+    "score": 22,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 34/2026",
+    "ultima_actualizacion": "2026-10-01T17:06:28",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376165",
+    "ya_adjudicados": [
+      "ALFOMBRA DE GOMA",
+      "PISO DE GOMA",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE ACRILICO",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
   },
   "a4d8bcc91761275515505604ec7c50a5": {
     "cambio_detectado": false,
