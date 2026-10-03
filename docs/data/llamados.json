@@ -14521,6 +14521,53 @@
       "CEMENTO ADHESIVO PARA CERAMICA"
     ]
   },
+  "5daf8b718cbdf2ae4fc53442bcdc92d4": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "alfombras",
+      "errores_comunes",
+      "marcas",
+      "materiales",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Alfombras",
+      "Marca de mercado mencionada",
+      "Material mencionado (revisar contexto)",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1376824.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 02 Oct 2026 15:10:14",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "5daf8b718cbdf2ae4fc53442bcdc92d4",
+    "informe": "informes/5daf8b718cbdf2ae4fc53442bcdc92d4.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "39/2026",
+    "organismo": "Intendencia de Tacuarembó",
+    "primera_deteccion": "2026-10-03T00:15:52",
+    "que_es": "Licitación de Intendencia de Tacuarembó — busca Abreviatura técnica del rubro, Alfombras, Marca de mercado mencionada, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «c Abrev N°39 - 2026 - Suministro de hasta 1500 toneladas de carpeta asfaltica.doc [pic]»",
+    "score": 43,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 39/2026",
+    "ultima_actualizacion": "2026-10-03T00:15:52",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376824",
+    "ya_adjudicados": [
+      "FELPUDO",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "ENTREPUERTA METALICA"
+    ]
+  },
   "5e1c7f865127a261b2441d31f0c55ff9": {
     "cambio_detectado": false,
     "categorias": [
@@ -16278,6 +16325,39 @@
     "titulo": "Compra Directa 777/2026",
     "ultima_actualizacion": "2026-08-27T20:40:55",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1359899",
+    "ya_adjudicados": []
+  },
+  "653bd48dd5369af7abfcec8b0dc7bca9": {
+    "cambio_detectado": false,
+    "categorias": [
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1376001.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 02 Oct 2026 16:10:08",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "653bd48dd5369af7abfcec8b0dc7bca9",
+    "informe": "informes/653bd48dd5369af7abfcec8b0dc7bca9.md",
+    "keyword": "memoria constructiva",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-10-03T00:11:43",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"memoria constructiva\": «tallesydocumentos: 2.1 ALBAÑILERÍA a)Planta. b)Alzados. 2.2 MEMORIA CONSTRUCTIVA completa de toda la obra, especificando marcas de los mater»",
+    "score": 17,
+    "simbolo": "★",
+    "titulo": "Compra Directa 257/2026",
+    "ultima_actualizacion": "2026-10-03T00:11:43",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376001",
     "ya_adjudicados": []
   },
   "65c58179b4549187195fd30746adb90b": {
@@ -20336,6 +20416,79 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1351921",
     "ya_adjudicados": []
   },
+  "7fe639bdabe0e50201ba1bce9da4a4c1": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "alfombras",
+      "errores_comunes",
+      "materiales",
+      "pisos_flotantes",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Pisos flotantes/laminados",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1376874.rar"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 02 Oct 2026 17:05:08",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "7fe639bdabe0e50201ba1bce9da4a4c1",
+    "informe": "informes/7fe639bdabe0e50201ba1bce9da4a4c1.md",
+    "keyword": "memoria constructiva",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Montevideo",
+    "primera_deteccion": "2026-10-03T00:11:35",
+    "que_es": "Licitación de Intendencia de Montevideo — busca Abreviatura técnica del rubro, Accesorios de instalación, Alfombras, Material mencionado (revisar contexto), Pisos flotantes/laminados, Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro. Menciona \"pvc\": «la correspondiente válvula y sifón de cromado para baños y PVC para cocina o La mesada del baño se colocará a 0 ,85 m sob»",
+    "score": 15,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 5/2026",
+    "ultima_actualizacion": "2026-10-03T00:11:35",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376874",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "ALFOMBRA DE GOMA",
+      "CEMENTO ADHESIVO PARA PORCELANATO",
+      "ZOCALO PARA PISO FLOTANTE",
+      "PISO MODULAR DE PVC",
+      "CEMENTO ADHESIVO PARA CERAMICA",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "PISO DE GOMA",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ZOCALO MONOLITICO",
+      "CAMINERO DE GOMA",
+      "PERFIL U DE ALUMINIO",
+      "BALDOSA DE GOMA",
+      "COLOCACION DE ZOCALO",
+      "PLANCHA DE GOMA EVA",
+      "ZOCALO EN MDF",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "GOMA NATURAL EN PLANCHA",
+      "REPARACION DE PISO DE MADERA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "8067e46f44176df5093dfc13608db2b8": {
     "cambio_detectado": false,
     "categorias": [
@@ -23742,6 +23895,57 @@
     "ultima_actualizacion": "2026-09-14T16:19:25",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1371445",
     "ya_adjudicados": []
+  },
+  "92faed1f1d289b9afd8397a660788248": {
+    "cambio_detectado": false,
+    "categorias": [
+      "contenedores_modulares",
+      "errores_comunes",
+      "materiales",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Contenedores habitables, garitas y módulos",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1376736.rar"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 02 Oct 2026 13:40:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "92faed1f1d289b9afd8397a660788248",
+    "informe": "informes/92faed1f1d289b9afd8397a660788248.md",
+    "keyword": "piso vinílico",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-10-03T00:28:39",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Contenedores habitables, garitas y módulos, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro. Menciona \"piso vinílico\": «ñados. Espesor 18 mm mínimo. − Se sustituirá totalmente el piso vinílico en tablill as encastradas símil madera, iguales a las exis»",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Concurso de Precios 26474/2026",
+    "ultima_actualizacion": "2026-10-03T00:28:39",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376736",
+    "ya_adjudicados": [
+      "VINILICO PARA PISO",
+      "CEMENTO PARA PISO VINILICO (ADHESIVO)",
+      "COLOCACION DE VINILICOS",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO",
+      "REPARACION DE PISO DE MADERA"
+    ]
   },
   "92fbd72fc36f981798e70a95c4da2da9": {
     "cambio_detectado": false,
