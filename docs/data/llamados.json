@@ -5150,6 +5150,57 @@
       "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
     ]
   },
+  "2160e48a26ac6ca037baf54ffa9a952a": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "materiales",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1369382.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 06 Oct 2026 11:05:12",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "2160e48a26ac6ca037baf54ffa9a952a",
+    "informe": "informes/2160e48a26ac6ca037baf54ffa9a952a.md",
+    "keyword": "juntas de dilatación",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "3017/2026",
+    "organismo": "Intendencia de Montevideo",
+    "primera_deteccion": "2026-10-06T16:34:44",
+    "que_es": "Licitación de Intendencia de Montevideo — busca Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"pvc\": «erra i nterior, con banda impermeabilizante bituminosa, de PVC o de polietileno, que rompa la capilaridad. Cada 3 o 4 hil»",
+    "score": 36,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 3017/2026",
+    "ultima_actualizacion": "2026-10-06T16:34:44",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369382",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "BALDOSA LISA",
+      "PISO MODULAR DE PVC",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "BALDOSA VINILICA ALTO TRANSITO",
+      "BALDOSA VINILICA",
+      "BALDOSA DE GOMA",
+      "CAMINERO DE PVC"
+    ]
+  },
   "2188181acd19411c6f36352651e36bd2": {
     "cambio_detectado": false,
     "categorias": [
@@ -14082,6 +14133,41 @@
     "titulo": "Concurso de Precios 60/2026",
     "ultima_actualizacion": "2026-09-11T18:12:06",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1344473",
+    "ya_adjudicados": []
+  },
+  "59513207b1e0e6300b6c14659e2193d6": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1374938.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 06 Oct 2026 11:25:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "59513207b1e0e6300b6c14659e2193d6",
+    "informe": "informes/59513207b1e0e6300b6c14659e2193d6.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Ambiente (MA)",
+    "primera_deteccion": "2026-10-06T16:34:32",
+    "que_es": "Licitación de Ministerio de Ambiente (MA) — busca Alfombras, Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «se presentarán en formato dxf y pdf (en ambos formatos) en carpetas comprimidas (zip, 7z ó .rar) clasificadas por rubros. Lo»",
+    "score": 13,
+    "simbolo": "★",
+    "titulo": "Compra por Excepción 24/2026",
+    "ultima_actualizacion": "2026-10-06T16:34:32",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374938",
     "ya_adjudicados": []
   },
   "59c330e9615c6199d5e8108232b8c865": {
@@ -26866,6 +26952,39 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1354087",
     "ya_adjudicados": []
   },
+  "a274581fa27e900c9ee5ccb3fa54b710": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1367960.docx"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 06 Oct 2026 11:50:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "a274581fa27e900c9ee5ccb3fa54b710",
+    "informe": "informes/a274581fa27e900c9ee5ccb3fa54b710.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Defensa Nacional (MDN)",
+    "primera_deteccion": "2026-10-06T16:34:25",
+    "que_es": "Licitación de Ministerio de Defensa Nacional (MDN) — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «IAL | 9,00 | UNIDAD | 312.0 | Licuadora Industrial, vaso de acero inoxidable, mínimo 8 Litros, potencia mínima de 1500W. Garantía de 6 m»",
+    "score": 11,
+    "simbolo": "★",
+    "titulo": "Compra Directa 1283/2026",
+    "ultima_actualizacion": "2026-10-06T16:34:25",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1367960",
+    "ya_adjudicados": []
+  },
   "a4114fc75cb5eac8a96d37e9912fee54": {
     "cambio_detectado": false,
     "categorias": [
@@ -28733,6 +28852,39 @@
       "GOMA DE LATEX 1.5 ESPESOR 3 MM",
       "REPARACION DE PISO DE MADERA"
     ]
+  },
+  "aef26c7980ce7d6c578dd617b13215ba": {
+    "cambio_detectado": false,
+    "categorias": [
+      "contenedores_modulares"
+    ],
+    "categorias_etiquetas": [
+      "Contenedores habitables, garitas y módulos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1373894.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 06 Oct 2026 10:15:19",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "aef26c7980ce7d6c578dd617b13215ba",
+    "informe": "informes/aef26c7980ce7d6c578dd617b13215ba.md",
+    "keyword": "baño químico",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-10-06T16:34:59",
+    "que_es": "Licitación de organismo no identificado — busca Contenedores habitables, garitas y módulos. Menciona \"baño químico\": «QUILER DE SANITARIOS |2 | | | |BAÑO QUÍMICO |PORTÁTIL | | | |»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 6140/2026",
+    "ultima_actualizacion": "2026-10-06T16:34:59",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373894",
+    "ya_adjudicados": []
   },
   "afeaf7165cc3fb11545920960fea972f": {
     "cambio_detectado": false,
@@ -30648,6 +30800,39 @@
       "MANTENIMIENTO EDILICIO",
       "REPARACION DE PISO DE MADERA"
     ]
+  },
+  "ba6b6f1003bd8a83efe89e52c6ac95f3": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1377436.docx"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 06 Oct 2026 11:30:13",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "ba6b6f1003bd8a83efe89e52c6ac95f3",
+    "informe": "informes/ba6b6f1003bd8a83efe89e52c6ac95f3.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
+    "primera_deteccion": "2026-10-06T16:34:28",
+    "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «DADES (HASTA) MENSUALES | OBSERVACIONES 1 | PORTA AGUJAS DE ACERO INOXIDABLE | 1 | PARA ZURDOS O COTIZAR LAS OPCIONES QUE TENGAN DISPON»",
+    "score": 17,
+    "simbolo": "★",
+    "titulo": "Compra Directa 44/2026",
+    "ultima_actualizacion": "2026-10-06T16:34:28",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1377436",
+    "ya_adjudicados": []
   },
   "babbc017649587572f4a5420ce8b6667": {
     "cambio_detectado": false,
@@ -33292,6 +33477,39 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "cce3ed5ad97c9240c991f8d301c500dc": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1376868.docx"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 06 Oct 2026 10:50:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "cce3ed5ad97c9240c991f8d301c500dc",
+    "informe": "informes/cce3ed5ad97c9240c991f8d301c500dc.md",
+    "keyword": "acero inoxidable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
+    "primera_deteccion": "2026-10-06T16:34:48",
+    "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «ilíndricas de 150 mm de diámetro). Material de Fabricación: Acero inoxidable templado. Protección Ambiental: mínima IP67 (resistente al»",
+    "score": 14,
+    "simbolo": "★",
+    "titulo": "Compra Directa 275/2026",
+    "ultima_actualizacion": "2026-10-06T16:34:48",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376868",
+    "ya_adjudicados": []
+  },
   "cdfd9934e2f3df17d73983d3029f3455": {
     "cambio_detectado": false,
     "categorias": [
@@ -33904,6 +34122,41 @@
       "GOMA DE LATEX 1.5 ESPESOR 3 MM",
       "GOMA NATURAL EN PLANCHA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "d17af29a69879e02f883941a08b751c2": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1377340.odt"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 06 Oct 2026 09:50:32",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "d17af29a69879e02f883941a08b751c2",
+    "informe": "informes/d17af29a69879e02f883941a08b751c2.md",
+    "keyword": "nylon + polietileno",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-10-06T16:37:08",
+    "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto). Menciona \"nylon\": «28 /2026 “ADQUISICIÓN DE INVERNADERO PRE FABRICADO ACERO Y NYLON e INVERNADERO PRE-FABRICADO TÚNEL POLIETILENO” 1.- NORMAS»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Compra Directa 28/2026",
+    "ultima_actualizacion": "2026-10-06T16:37:08",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1377340",
+    "ya_adjudicados": [
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
     ]
   },
   "d20520de081bda3184e0289bc7a64c4a": {
