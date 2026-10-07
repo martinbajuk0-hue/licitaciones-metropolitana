@@ -10326,6 +10326,93 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1375455",
     "ya_adjudicados": []
   },
+  "3e6524d6412dd64fc76e36093bf57167": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1377806.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 07 Oct 2026 11:20:16",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "3e6524d6412dd64fc76e36093bf57167",
+    "informe": "informes/3e6524d6412dd64fc76e36093bf57167.md",
+    "keyword": "pu + pvc",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-10-07T17:29:58",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «25mm por 76mm -Item 6 hasta 250 riñones descartables *PVC -Item 7 hasta 25 set nebulizar adulto * incluye boquil»",
+    "score": 47,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 17140/2026",
+    "ultima_actualizacion": "2026-10-07T17:29:58",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1377806",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "FELPUDO",
+      "PISO MODULAR DE PVC",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ENTREPUERTA METALICA",
+      "CAMINERO DE PVC"
+    ]
+  },
+  "3ec7cc53b237308efb46ca0359281b6b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1377691.rar"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 07 Oct 2026 08:45:13",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "3ec7cc53b237308efb46ca0359281b6b",
+    "informe": "informes/3ec7cc53b237308efb46ca0359281b6b.md",
+    "keyword": "poliuretano + pvc",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-10-07T17:30:19",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «aislación de poliuretano blando e=100mm, forro exterior de PVC y patas de apoyo. Se solicita el desmontaje y retiro del ta»",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Concurso de Precios 6/2026",
+    "ultima_actualizacion": "2026-10-07T17:30:19",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1377691",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC"
+    ]
+  },
   "3f2d33117432c4aa4934ddb5a44e17ec": {
     "cambio_detectado": false,
     "categorias": [
@@ -14182,6 +14269,50 @@
     "ultima_actualizacion": "2026-08-21T12:43:07",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1362323",
     "ya_adjudicados": []
+  },
+  "59347402db739189484e7dff7aa4857b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_flotantes"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos flotantes/laminados"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1377533.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 07 Oct 2026 11:20:19",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "59347402db739189484e7dff7aa4857b",
+    "informe": "informes/59347402db739189484e7dff7aa4857b.md",
+    "keyword": "aluminio + mdf + nylon",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-10-07T17:29:55",
+    "que_es": "Licitación de organismo no identificado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos flotantes/laminados. Menciona \"mdf\": «RIANTE: TIPO CON POSABRAZOS) 1 VER ANEXO II 3 ESCRITORIO DE MDF/MARRON CLARO (VARIANTE: LARGO X ANCHO X ALTURA 30 VER ANEX»",
+    "score": 26,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 270/2026",
+    "ultima_actualizacion": "2026-10-07T17:29:55",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1377533",
+    "ya_adjudicados": [
+      "FELPUDO",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "VARILLA DE ALUMINIO",
+      "ENTREPUERTA METALICA",
+      "PERFIL U DE ALUMINIO",
+      "ZOCALO EN MDF"
+    ]
   },
   "5945430108afe8babb1d250b1e7eba92": {
     "cambio_detectado": false,
@@ -22619,6 +22750,68 @@
       "ZOCALO DE MADERA",
       "PANEL DE MADERA",
       "ZOCALO EN MDF",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
+  "8a3dc300e4aa250d3a940b2d4177355e": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "errores_comunes",
+      "materiales",
+      "pisos_flotantes",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Pisos flotantes/laminados",
+      "Pisos vinílicos",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1377721.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 07 Oct 2026 09:50:22",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "8a3dc300e4aa250d3a940b2d4177355e",
+    "informe": "informes/8a3dc300e4aa250d3a940b2d4177355e.md",
+    "keyword": "código ya adjudicado: PISO FLOTANTE, MANTA BAJO PISO DE ESPUMA DE POLIETILENO, ZOCALO PARA PISO FLOTANTE",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-10-07T17:30:12",
+    "que_es": "Licitación de organismo no identificado — busca Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto), Pisos flotantes/laminados, Pisos vinílicos, Variante/error ortográfico de un término del rubro. Menciona \"pvc\": «ócalo 2400 x 50 x 15 mm, nogal. 50 unidades 4 76095 Lambriz PVC, 6 m x 20 cm x 7 mm, blanco. 200,40 m² 5 27115 Montante, ca»",
+    "score": 55,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 368/2026",
+    "ultima_actualizacion": "2026-10-07T17:30:12",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1377721",
+    "ya_adjudicados": [
+      "PISO FLOTANTE",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "ZOCALO PARA PISO FLOTANTE",
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ZOCALO MONOLITICO",
+      "REDUCTOR PARA PISO FLOTANTE",
+      "PERFIL U DE ALUMINIO",
+      "JUNTA PARA PISO FLOTANTE",
+      "COLOCACION DE ZOCALO",
+      "ZOCALO EN MDF",
+      "CAMINERO DE PVC",
       "REPARACION DE PISO DE MADERA"
     ]
   },
@@ -32769,6 +32962,45 @@
       "colocación moquette"
     ]
   },
+  "c66313fd67c8c49857e8509a9e4b52c9": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1377661.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 06 Oct 2026 23:35:08",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "c66313fd67c8c49857e8509a9e4b52c9",
+    "informe": "informes/c66313fd67c8c49857e8509a9e4b52c9.md",
+    "keyword": "aluminio + epoxi + madera",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-10-07T17:30:26",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Material mencionado (revisar contexto). Menciona \"aluminio\": «Regulación de altura por medio de pistón a gas Base de aluminio pulido o acero de 5 radios de apoyo Ítem 3: Sillas c»",
+    "score": 4,
+    "simbolo": "★",
+    "titulo": "Compra Directa 89382/2026",
+    "ultima_actualizacion": "2026-10-07T17:30:26",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1377661",
+    "ya_adjudicados": [
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "c6dd29a24e2550442086b1610ed74fb2": {
     "cambio_detectado": false,
     "categorias": [
@@ -36557,6 +36789,39 @@
       "CAMINERO DE PVC"
     ]
   },
+  "dd9f666c5742eced29725d41a306902b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1377802.odt"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 07 Oct 2026 11:50:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "dd9f666c5742eced29725d41a306902b",
+    "informe": "informes/dd9f666c5742eced29725d41a306902b.md",
+    "keyword": "coco + laminado + poliester",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-10-07T17:29:38",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Material mencionado (revisar contexto). Menciona \"coco\": «ENTAR IMAGEN DEL PRODUCTO LATAS DE 2.84 K HASTA 15 LATAS 3 COCO RALLADO PAQUETES DE 1 KILO HASTA 25 KILOS 4 CONDIFRAN PAQ»",
+    "score": 17,
+    "simbolo": "★",
+    "titulo": "Compra Directa 314/2026",
+    "ultima_actualizacion": "2026-10-07T17:29:38",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1377802",
+    "ya_adjudicados": []
+  },
   "dddf0328ef4aeadc311080098c991b26": {
     "cambio_detectado": false,
     "categorias": [
@@ -36598,6 +36863,39 @@
     "titulo": "Licitación Abreviada 25/2026",
     "ultima_actualizacion": "2026-10-02T00:34:06",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376529",
+    "ya_adjudicados": []
+  },
+  "de31f622831f295900e36c1c4caf264b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1376850.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 07 Oct 2026 12:40:12",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "de31f622831f295900e36c1c4caf264b",
+    "informe": "informes/de31f622831f295900e36c1c4caf264b.md",
+    "keyword": "coco + marmol",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Defensa Nacional (MDN)",
+    "primera_deteccion": "2026-10-07T17:25:21",
+    "que_es": "Licitación de Ministerio de Defensa Nacional (MDN) — busca Material mencionado (revisar contexto). Menciona \"coco\": «OCOLATE KG COBERTURA BLANCO. PRESENTACIÓN DE 1 KG. 18 18 38 COCO KG RALLADO. PRESENTACIÓN 1 KG 10 10 39 CHANTILLY U.U EN POL»",
+    "score": 7,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 5007/2026",
+    "ultima_actualizacion": "2026-10-07T17:25:21",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376850",
     "ya_adjudicados": []
   },
   "df6833772fd8e7e123634a210a82411f": {
@@ -39172,6 +39470,57 @@
     "ultima_actualizacion": "2026-08-21T11:39:45",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1356305",
     "ya_adjudicados": []
+  },
+  "ef700e943d0d39ae99f3a17bcf93c864": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_flotantes",
+      "pisos_goma",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos de goma",
+      "Pisos flotantes/laminados",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1377837.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 07 Oct 2026 12:15:12",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "ef700e943d0d39ae99f3a17bcf93c864",
+    "informe": "informes/ef700e943d0d39ae99f3a17bcf93c864.md",
+    "keyword": "acero inoxidable",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Economía y Finanzas (MEF)",
+    "primera_deteccion": "2026-10-07T17:27:29",
+    "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos de goma, Pisos flotantes/laminados, Pisos vinílicos. Menciona \"pvc\": «ADES GENERALIDADES 89 cmPROFUNDIDAD SÓLIDA COLOR NEGRO - EN PVC IDEM CARAS PVC - RESISTENTE AL AGUA Y CON FILTRO UV BASE»",
+    "score": 35,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 26469/2026",
+    "ultima_actualizacion": "2026-10-07T17:27:29",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1377837",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "PERFIL U DE ALUMINIO",
+      "CAMINERO DE PVC",
+      "REPARACION DE PISO DE MADERA"
+    ]
   },
   "ef8a5e2a942ef8d0e316fe884d29c04d": {
     "cambio_detectado": false,
