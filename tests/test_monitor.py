@@ -126,7 +126,31 @@ class TestEsRelevantePorCodigoArticulo(unittest.TestCase):
         historial._items_metropolitana_normalizados.cache_clear()
         historial._codigos_metropolitana.cache_clear()
 
-    def test_llamado_real_tatami_matchea_por_codigo_sin_leer_pliego(self):
+    @patch("monitor._leer_pliego")
+    def test_llamado_real_tatami_matchea_por_codigo_y_ahora_igual_lee_el_pliego(self, mock_leer_pliego):
+        # 2026-10-08: hasta esta fecha, un match por código de artículo
+        # (igual que uno por título/descripción/alerta total) devolvía
+        # texto_pliego="" sin intentar leer el documento adjunto — el
+        # match ya era suficiente para decidir relevancia, así que leer
+        # el pliego parecía un gasto de red innecesario. El problema real
+        # (caso Compra Directa 161/2026, ver monitor.es_relevante()) es
+        # que ese ahorro le costaba precisión al informe: sin el pliego,
+        # analyzer.extraer_campos_clave() no tiene de dónde sacar
+        # organismo/fechas/garantías, y el score termina artificialmente
+        # bajo pese a ser una coincidencia real. Pedido explícito del
+        # usuario: leer igual el pliego para enriquecer el informe, sin
+        # que esto cambie la decisión de relevancia (que sigue siendo por
+        # código, no por lo que diga el pliego).
+        mock_pliego = monitor.parser_mod.PliegoExtraido(
+            documentos=[
+                monitor.parser_mod.DocumentoExtraido(
+                    nombre="pedido.pdf", url="http://x/pedido.pdf", tipo="pdf",
+                    texto="MEC llama a Compra Directa 10176/2026 — TATAMI.",
+                )
+            ]
+        )
+        mock_leer_pliego.return_value = mock_pliego
+
         with tempfile.TemporaryDirectory() as tmp:
             self._usar_historial_con_tatami(Path(tmp))
             lic = {
@@ -144,9 +168,10 @@ class TestEsRelevantePorCodigoArticulo(unittest.TestCase):
             self.assertTrue(relevante)
             self.assertEqual(fuente, monitor.FUENTE_CODIGO_ARTICULO)
             self.assertIn("TATAMI", kw)
-            # No hizo falta leer/descargar el pliego para decidir: el match
-            # por código alcanza y es más confiable que el texto.
-            self.assertEqual(texto_pliego, "")
+            # Ahora SÍ se lee/enriquece con el pliego, aunque la relevancia
+            # ya estaba decidida por código.
+            mock_leer_pliego.assert_called_once_with(lic)
+            self.assertEqual(texto_pliego, mock_pliego.texto_completo)
 
     def test_codigo_sin_match_en_historial_sigue_el_flujo_normal_por_texto(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -194,6 +219,50 @@ class TestEsRelevantePorCodigoArticulo(unittest.TestCase):
         }
         relevante, kw, fuente, texto_pliego = monitor.es_relevante(lic)
         self.assertFalse(relevante)
+
+
+class TestEsRelevanteLeeElPliegoAunConMatchPorTitulo(unittest.TestCase):
+    """Caso real 2026-10-08: Compra Directa 161/2026 (Secretaría Nacional
+    del Deporte, id 1378007) matcheó "piso de goma" directo en el título
+    y nunca se abrió el pedido_1378007.zip adjunto (ver monitor.
+    es_relevante() y catalogo.registrar_llamado()) — el informe quedó sin
+    organismo/fechas/garantías y el score salió artificialmente bajo
+    (26/100), casi sin llegar a mano porque hasta esa fecha el email
+    filtraba por score mínimo. Ahora se lee igual el pliego para
+    enriquecer el informe, aunque la relevancia ya esté decidida por
+    título/descripción/ítems — el match sigue viniendo de ahí, el pliego
+    solo aporta más texto para analyzer.extraer_campos_clave().
+    """
+
+    @patch("monitor._leer_pliego")
+    def test_match_por_titulo_lee_el_pliego_y_devuelve_su_texto(self, mock_leer_pliego):
+        mock_pliego = monitor.parser_mod.PliegoExtraido(
+            documentos=[
+                monitor.parser_mod.DocumentoExtraido(
+                    nombre="pedido.zip", url="http://x/pedido.zip", tipo="zip",
+                    texto="Secretaría Nacional del Deporte. Fecha de apertura: 15/10/2026.",
+                )
+            ]
+        )
+        mock_leer_pliego.return_value = mock_pliego
+
+        lic = {
+            "titulo": "Compra Directa 161/2026",
+            "descripcion": "Adquisición de piso de goma (Tatami) encastrable.",
+            "documentos": ["http://www.comprasestatales.gub.uy/Pliegos/pedido_1378007.zip"],
+            "url": "https://www.comprasestatales.gub.uy/ocds/release/llamado-1378007",
+        }
+        relevante, kw, fuente, texto_pliego = monitor.es_relevante(lic)
+
+        self.assertTrue(relevante)
+        self.assertEqual(fuente, "título/descripción/ítems")
+        mock_leer_pliego.assert_called_once_with(lic)
+        self.assertEqual(texto_pliego, mock_pliego.texto_completo)
+        self.assertIn("Secretaría Nacional del Deporte", texto_pliego)
+        # Y queda cacheado en el propio lic para que el llamador (main())
+        # no tenga que descargarlo de nuevo solo para sacar
+        # documentos_con_error.
+        self.assertIs(lic["_pliego_leido"], mock_pliego)
 
 
 class _RespuestaFalsa:
@@ -589,6 +658,54 @@ class TestMainFiltraEmailPorFechaYTecho(unittest.TestCase):
         self.assertEqual(len(nuevas_enviadas), monitor.MAX_ALERTAS_POR_EMAIL)
         self.assertEqual(omitidas, 5)
         self.assertIn("La de mayor score", [lic["titulo"] for lic in nuevas_enviadas])
+
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_score_bajo_ya_no_se_omite_del_email(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
+    ):
+        # 2026-10-08: hasta esta fecha, un llamado relevante con score <
+        # SCORE_MINIMO_EMAIL (45 por default) quedaba afuera del email,
+        # salvo que hubiera matcheado por código de artículo o alerta
+        # total. Caso real que expuso el problema: Compra Directa
+        # 161/2026 (Secretaría Nacional del Deporte, "piso de goma"
+        # Tatami, id 1378007) matcheó por título, nunca llegó a abrir el
+        # pliego adjunto, y terminó con score 26/100 — nunca llegó por
+        # mail aunque era una coincidencia real.
+        #
+        # Pedido explícito del usuario: igual mandarlo por mail aunque el
+        # score sea bajo, porque cada ítem ya va con su resumen ("qué
+        # es") y su score visible — que decida la persona, no el filtro.
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        lic = self._lic("161-2026", "Compra Directa 161/2026", "2026-08-19", 26)
+        mock_cargar_vistos.return_value = {}
+        mock_obtener.return_value = [lic]
+        # Matcheó por título/descripción — no por código ni alerta total,
+        # que ya tenían bypass del filtro de score desde antes.
+        mock_es_relevante.return_value = (True, "piso de goma", "título/descripción/ítems", "")
+        mock_report_mod.analizar_licitacion.side_effect = lambda *a, **k: self._informe_falso(26)
+
+        monitor.main()
+
+        args, _ = mock_enviar_email.call_args
+        nuevas_enviadas, _modificadas, _omitidas, _novedades_seguimiento = args
+        self.assertEqual([lic["titulo"] for lic in nuevas_enviadas], ["Compra Directa 161/2026"])
+        # Y sigue registrado en el catálogo del visor, como siempre.
+        mock_catalogo.registrar_llamado.assert_called_once()
 
     @patch("monitor.seguimiento_mod")
     @patch("monitor.datetime")
