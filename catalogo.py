@@ -63,10 +63,11 @@ def registrar_llamado(lic: dict, informe: report_mod.InformeLicitacion) -> None:
     visor y guarda su informe completo versionado en git.
 
     Se llama para TODO llamado que pasó el filtro de relevancia de
-    es_relevante() — deliberadamente ANTES del filtro de
-    SCORE_MINIMO_EMAIL: ese filtro decide qué llega por mail, no qué
-    aparece en el visor. La idea del visor es poder ver el panorama
-    completo (incluidos los de score bajo) sin depender del email.
+    es_relevante(), sin importar el score. Hasta 2026-10-08 esto también
+    era relevante porque el email SÍ filtraba por SCORE_MINIMO_EMAIL (ver
+    historial en monitor.main()) — ya no: desde esa fecha el email manda
+    todo lo relevante igual que el visor. La idea del visor sigue siendo
+    poder ver el panorama completo sin depender del email.
     """
     catalogo = _cargar_catalogo()
     id_ = lic["id"]
