@@ -851,6 +851,39 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "0654068edfc90daa3f8af3638324843e": {
+    "cambio_detectado": false,
+    "categorias": [
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1377968.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": "2026-10-21",
+    "fecha_publicacion": "Wed, 07 Oct 2026 15:00:22",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "0654068edfc90daa3f8af3638324843e",
+    "informe": "informes/0654068edfc90daa3f8af3638324843e.md",
+    "keyword": "cómputo y presupuesto",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "8/2026",
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-10-08T00:53:10",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"cómputo y presupuesto\": «star incluidos en forma explícita en los Recaudos y en el Cómputo y Presupuesto detallado de su Oferta, sean necesarios para ejecutar la»",
+    "score": 14,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 8/2026",
+    "ultima_actualizacion": "2026-10-08T00:53:10",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1377968",
+    "ya_adjudicados": []
+  },
   "0658a7b1751ca3062e9b52762f7e3409": {
     "cambio_detectado": false,
     "categorias": [
@@ -20845,6 +20878,55 @@
       "CAMINERO DE PVC"
     ]
   },
+  "7eb9d1fa897548628e4b1f7a7860ac6f": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_flotantes",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos flotantes/laminados",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1378006.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 07 Oct 2026 16:15:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "7eb9d1fa897548628e4b1f7a7860ac6f",
+    "informe": "informes/7eb9d1fa897548628e4b1f7a7860ac6f.md",
+    "keyword": "espuma de poliuretano",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-10-08T00:44:50",
+    "que_es": "Licitación de organismo no identificado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos flotantes/laminados, Pisos vinílicos. Menciona \"pvc\": «ticas Octógonos - 4 diseños 10 2 tintas, 20 cm 5mm espesor Pvc con soporte Dado colores grande para diversas actividade»",
+    "score": 20,
+    "simbolo": "★",
+    "titulo": "Compra Directa 305/2026",
+    "ultima_actualizacion": "2026-10-08T00:44:50",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1378006",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ZOCALO EN MDF",
+      "CAMINERO DE PVC",
+      "CAMINERO DE ACRILICO",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "7f0c01f6ae07c7efe3c6004dd7c5978a": {
     "cambio_detectado": false,
     "categorias": [
@@ -21380,6 +21462,41 @@
       "CAMINERO DE ACRILICO",
       "REPARACION DE PISO DE MADERA"
     ]
+  },
+  "81c046d7a266595cdea9d0d25213aa5e": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1377938.odt"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 07 Oct 2026 14:30:09",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "81c046d7a266595cdea9d0d25213aa5e",
+    "informe": "informes/81c046d7a266595cdea9d0d25213aa5e.md",
+    "keyword": "poliestireno + polipropileno",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-10-08T00:59:31",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto). Menciona \"polipropileno\": «ALTO 7 CM PRESENTAR FOTO HASTA 4000 UNIDADES 2 BANDEJAS DE POLIPROPILENO BANDEJAS POLIPROPILENO DESCARTABLES 15CMX18.5CMX5CM PRESENT»",
+    "score": 29,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 317/2026",
+    "ultima_actualizacion": "2026-10-08T00:59:31",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1377938",
+    "ya_adjudicados": []
   },
   "822ff46db90abde3aa72cd3b015c64a2": {
     "cambio_detectado": false,
@@ -34050,6 +34167,52 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "ccb61119f78a4fe566097df1b05788ba": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "pisos_deportivos",
+      "pisos_goma"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Pisos de goma",
+      "Pisos deportivos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1378007.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 07 Oct 2026 17:25:08",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "ccb61119f78a4fe566097df1b05788ba",
+    "informe": "informes/ccb61119f78a4fe566097df1b05788ba.md",
+    "keyword": "piso de goma",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-10-08T00:44:45",
+    "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto), Pisos de goma, Pisos deportivos. Menciona \"piso de goma\": «IRECTA N.º 161/2026 Objeto de la compra : 1) Adquisición de piso de goma (Tatami) encastrable , de acuerdo a las siguientes especif»",
+    "score": 26,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 161/2026",
+    "ultima_actualizacion": "2026-10-08T00:44:45",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1378007",
+    "ya_adjudicados": [
+      "ALFOMBRA DE GOMA",
+      "PISO DE GOMA",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "cce3ed5ad97c9240c991f8d301c500dc": {
     "cambio_detectado": false,
     "categorias": [
@@ -38480,6 +38643,39 @@
       "JUNTA PARA PISO FLOTANTE",
       "MANTENIMIENTO EDILICIO"
     ]
+  },
+  "e84dcbfd9c8d58f56bd64781ecc00608": {
+    "cambio_detectado": false,
+    "categorias": [
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1377980.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": "2026-10-30",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 07 Oct 2026 15:20:14",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "e84dcbfd9c8d58f56bd64781ecc00608",
+    "informe": "informes/e84dcbfd9c8d58f56bd64781ecc00608.md",
+    "keyword": "memoria constructiva",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
+    "primera_deteccion": "2026-10-08T00:51:06",
+    "que_es": "Licitación de Ministerio de Trabajo y Seguridad Social (MTSS) — busca Terminología genérica del pliego (revisar manualmente qué producto aplica), apertura 2026-10-30. Menciona \"memoria constructiva\": «Se adjunta como Anexo el Proyecto arquitectónico co n la Memoria Constructiva Particular (M.C.P.) y los Planos que complementan la infor»",
+    "score": 13,
+    "simbolo": "★",
+    "titulo": "PFI - Comparación de precios 5032/2026",
+    "ultima_actualizacion": "2026-10-08T00:51:06",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1377980",
+    "ya_adjudicados": []
   },
   "e8d1d108d78f69f01f4b96bddca728a1": {
     "cambio_detectado": false,
