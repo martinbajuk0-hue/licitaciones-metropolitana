@@ -573,15 +573,43 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
     en realidad es un alquiler de local (ej. si algún día apareciera
     "ARRENDAMIENTO DE PISO" sin excluir) — así que ninguna señal, ni
     siquiera el código, debe pisar ese veto.
+
+    2026-10-08: antes, cuando la relevancia se decidía por título/
+    descripción/ítems/código/alerta (texto_base), la función devolvía
+    texto_pliego="" SIN leer el documento adjunto — era una optimización
+    (evita 1-2 requests HTTP por llamado) pero tenía un costo real: el
+    informe/score se armaba solo con título+descripción, un texto
+    demasiado corto para encontrar organismo/fechas/garantías, así que el
+    score salía artificialmente bajo pese a ser una coincidencia real.
+    Caso real: Compra Directa 161/2026 (Secretaría Nacional del Deporte,
+    id 1378007) matcheó "piso de goma" en el título, nunca se abrió el
+    pedido_1378007.zip adjunto, y el informe quedó con organismo/fechas
+    "no identificado" y score 26/100 — casi no llegó a mano porque el
+    filtro de score mínimo del email lo hubiera dejado afuera. Pedido
+    explícito del usuario: leer igual el pliego para enriquecer el
+    informe aunque la relevancia ya esté decidida — ya no es una
+    optimización gratis, es perder precisión.
     """
     texto_items = " ".join(it["descripcion"] for it in (lic.get("items_pliego") or []))
     texto_base = (lic["titulo"] + " " + lic["descripcion"] + " " + texto_items).lower()
     if _es_alquiler_de_inmueble(texto_base):
         return False, None, None, ""
 
+    def _texto_pliego_enriquecido() -> str:
+        print(f"  Leyendo pliego de: {lic['titulo'][:60]}... ({len(lic.get('documentos') or [])} documento(s))")
+        pliego = _leer_pliego(lic)
+        # Se cachea en el propio dict para que el llamador (main()/
+        # enviar_email_de_prueba_rango_fechas()) no tenga que descargar
+        # el mismo documento de nuevo solo para sacar
+        # pliego.documentos_con_error — es una clave interna, nunca se
+        # serializa (catalogo.registrar_llamado() y vistos[...] arman sus
+        # propios dicts campo por campo, no vuelcan lic entero).
+        lic["_pliego_leido"] = pliego
+        return pliego.texto_completo
+
     termino_alerta = settings.coincide_alerta_total(texto_base)
     if termino_alerta:
-        return True, termino_alerta, FUENTE_ALERTA_TOTAL, ""
+        return True, termino_alerta, FUENTE_ALERTA_TOTAL, _texto_pliego_enriquecido()
 
     codigos = lic.get("codigos_articulo") or []
     if codigos:
@@ -591,16 +619,14 @@ def es_relevante(lic: dict) -> tuple[bool, str | None, str | None, str]:
                 True,
                 f"código ya adjudicado: {', '.join(productos_por_codigo)}",
                 FUENTE_CODIGO_ARTICULO,
-                "",
+                _texto_pliego_enriquecido(),
             )
 
     relevante, kw = _decidir_relevancia(_matches_en_texto(texto_base))
     if relevante:
-        return True, kw, "título/descripción/ítems", ""
+        return True, kw, "título/descripción/ítems", _texto_pliego_enriquecido()
 
-    print(f"  Leyendo pliego de: {lic['titulo'][:60]}... ({len(lic.get('documentos') or [])} documento(s))")
-    pliego = _leer_pliego(lic)
-    texto_pliego = pliego.texto_completo
+    texto_pliego = _texto_pliego_enriquecido()
     texto_lower = texto_pliego.lower()
     if _es_alquiler_de_inmueble(texto_lower):
         return False, None, None, texto_pliego
@@ -998,7 +1024,15 @@ def main(enviar_email_flag: bool = True) -> None:
         lic["keyword"] = kw
         lic["fuente"] = fuente
 
-        if not texto_pliego:
+        # es_relevante() ya leyó el pliego (ver _texto_pliego_enriquecido(),
+        # 2026-10-08) y deja el resultado completo cacheado en
+        # lic["_pliego_leido"] para no volver a descargarlo acá — solo se
+        # necesita releer si, por lo que sea, no quedó nada cacheado (ej.
+        # el llamado no tenía ningún documento adjunto ni ficha legible).
+        pliego_cacheado = lic.pop("_pliego_leido", None)
+        if pliego_cacheado is not None:
+            errores = [d.nombre for d in pliego_cacheado.documentos_con_error]
+        elif not texto_pliego:
             pliego = _leer_pliego(lic)
             texto_pliego = pliego.texto_completo
             errores = [d.nombre for d in pliego.documentos_con_error]
@@ -1024,25 +1058,27 @@ def main(enviar_email_flag: bool = True) -> None:
         # (evita que el email muestre una estrella, o un "ya adjudicaste
         # antes", distinto al del informe real).
         _enriquecer_lic_con_informe(lic, informe)
-        # Filtro por score mínimo (configurable vía secret SCORE_MINIMO_EMAIL)
-        # — salvo que el match haya sido por código de artículo ya
-        # adjudicado: ahí se manda sí o sí, pedido explícito del usuario
-        # 2026-08-18 (ver es_relevante()).
+        # Histórico: entre 2026-08-31 y 2026-10-08 había un filtro acá que
+        # omitía del email los llamados con score < SCORE_MINIMO_EMAIL
+        # (default 45) — salvo código de artículo/alerta total. Motivo
+        # original (evidencia real, corrida #241): sin piso, llegaban
+        # matches genéricos de una sola palabra (ej. "PVC" de un ducto
+        # eléctrico) con score 1/100 o 23/100, puro ruido.
         #
-        # 2026-08-31: default subido de 0 a 45 (el piso de "★★★ Dudosa" en
-        # umbral_estrellas() de config/settings.py). Evidencia real: sin
-        # este piso, la corrida #241 mandó por mail licitaciones con
-        # puntaje 1/100 y 23/100 — clasificadas por el propio sistema como
-        # "No presentarse" / "Poco conveniente" — y con matches de palabra
-        # clave genéricos (ej. "PVC" de un ducto eléctrico, no un piso).
-        # Pedido explícito del usuario 2026-08-31: no quiere en el mail
-        # nada que no tenga que ver con lo que vende. Se puede seguir
-        # ajustando sin tocar código con el secret SCORE_MINIMO_EMAIL.
-        score_minimo = int(os.environ.get("SCORE_MINIMO_EMAIL", 45))
-        if informe.clasificacion.puntaje < score_minimo and fuente not in (FUENTE_CODIGO_ARTICULO, FUENTE_ALERTA_TOTAL):
-            print(f"  Score {informe.clasificacion.puntaje} < mínimo {score_minimo}, omitiendo del email.")
-            continue
-
+        # 2026-10-08: eliminado a pedido explícito del usuario. Motivo: el
+        # fix de la misma fecha (ver es_relevante()/_texto_pliego_
+        # enriquecido()) ya evita que un match real por título/descripción
+        # se quede sin leer el pliego — pero aun con el pliego leído, un
+        # llamado real puede seguir sacando poco score si el pliego no
+        # tiene mucha info extraíble (caso real: Compra Directa 161/2026,
+        # Secretaría Nacional del Deporte, score 26/100, pliego real y
+        # coincidencia real con "piso de goma"/Tatami). El usuario prefiere
+        # ver todo lo relevante en el email — cada ítem ya muestra su
+        # score y su resumen ("qué es"), así que puede descartar él mismo
+        # lo que no le interese en vez de que el filtro lo esconda del
+        # todo. El score mínimo sigue existiendo como criterio de
+        # ORDEN/clasificación (ver estrellas/simbolo), solo dejó de decidir
+        # qué entra o no al email.
         nuevas.append(lic)
 
     guardar_vistos(vistos)
@@ -1130,6 +1166,7 @@ def auditar() -> None:
             continue
         relevantes += 1
 
+        lic.pop("_pliego_leido", None)
         if not texto_pliego:
             # Matcheó por título/descripción: igual leemos el pliego para
             # poder mostrar los fragmentos de producto, si los hay.
@@ -1265,7 +1302,6 @@ def enviar_email_de_prueba_rango_fechas(desde: str, hasta: str) -> None:
     en_rango = [lic for lic in licitaciones if (_fecha_lic_a_iso(lic.get("fecha", "")) or "") and desde <= _fecha_lic_a_iso(lic["fecha"]) <= hasta]
     print(f"  Publicadas entre {desde} y {hasta}: {len(en_rango)}")
 
-    score_minimo = int(os.environ.get("SCORE_MINIMO_EMAIL", 45))
     nuevas: list[dict] = []
     for lic in en_rango:
         relevante, kw, fuente, texto_pliego = es_relevante(lic)
@@ -1274,7 +1310,10 @@ def enviar_email_de_prueba_rango_fechas(desde: str, hasta: str) -> None:
         lic["keyword"] = kw
         lic["fuente"] = fuente
 
-        if not texto_pliego:
+        pliego_cacheado = lic.pop("_pliego_leido", None)
+        if pliego_cacheado is not None:
+            errores = [d.nombre for d in pliego_cacheado.documentos_con_error]
+        elif not texto_pliego:
             pliego = _leer_pliego(lic)
             texto_pliego = pliego.texto_completo
             errores = [d.nombre for d in pliego.documentos_con_error]
@@ -1290,9 +1329,9 @@ def enviar_email_de_prueba_rango_fechas(desde: str, hasta: str) -> None:
 
         _enriquecer_lic_con_informe(lic, informe)
 
-        if informe.clasificacion.puntaje < score_minimo and fuente not in (FUENTE_CODIGO_ARTICULO, FUENTE_ALERTA_TOTAL):
-            print(f"    Score {informe.clasificacion.puntaje} < mínimo {score_minimo}, omitiendo del email (igual que en producción).")
-            continue
+        # 2026-10-08: ya no se omite por score mínimo — ver el comentario
+        # largo en main(), misma fecha. Este test debe reflejar lo que
+        # realmente manda producción.
         nuevas.append(lic)
 
     print(f"  Relevantes que entrarían al email: {len(nuevas)}")
