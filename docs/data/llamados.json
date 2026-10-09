@@ -29,7 +29,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:46:57"
+      "ultima_revision": "2026-10-09T17:22:49"
     },
     "score": 0,
     "simbolo": "★",
@@ -74,7 +74,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:46:59"
+      "ultima_revision": "2026-10-09T17:22:51"
     },
     "score": 10,
     "simbolo": "★",
@@ -137,7 +137,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:00"
+      "ultima_revision": "2026-10-09T17:22:52"
     },
     "score": 13,
     "simbolo": "★",
@@ -201,7 +201,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:02"
+      "ultima_revision": "2026-10-09T17:22:53"
     },
     "score": 48,
     "simbolo": "★★★",
@@ -261,7 +261,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:03"
+      "ultima_revision": "2026-10-09T17:22:55"
     },
     "score": 9,
     "simbolo": "★",
@@ -318,6 +318,16 @@
     "organismo": null,
     "primera_deteccion": "2026-10-09T16:59:55",
     "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «| | |29 |101479 |PELAPAPAS MANUAL |De acero inoxidable |5 | |30 |39338 |PIEDRA PARA AFILAR»",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:22:56"
+    },
     "score": 0,
     "simbolo": "★",
     "titulo": "Compra Directa 4065/2026",
@@ -560,7 +570,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:05"
+      "ultima_revision": "2026-10-09T17:22:58"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -655,7 +665,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:06"
+      "ultima_revision": "2026-10-09T17:22:58"
     },
     "score": 37,
     "simbolo": "★★",
@@ -712,7 +722,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:07"
+      "ultima_revision": "2026-10-09T17:23:00"
     },
     "score": 15,
     "simbolo": "★",
@@ -820,7 +830,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:08"
+      "ultima_revision": "2026-10-09T17:23:00"
     },
     "score": 0,
     "simbolo": "★",
@@ -922,7 +932,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:09"
+      "ultima_revision": "2026-10-09T17:23:01"
     },
     "score": 14,
     "simbolo": "★",
@@ -971,7 +981,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:11"
+      "ultima_revision": "2026-10-09T17:23:03"
     },
     "score": 26,
     "simbolo": "★★",
@@ -1111,7 +1121,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:11"
+      "ultima_revision": "2026-10-09T17:23:04"
     },
     "score": 15,
     "simbolo": "★",
@@ -1216,7 +1226,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:13"
+      "ultima_revision": "2026-10-09T17:23:05"
     },
     "score": 39,
     "simbolo": "★★",
@@ -1321,7 +1331,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:13"
+      "ultima_revision": "2026-10-09T17:23:06"
     },
     "score": 20,
     "simbolo": "★",
@@ -1363,7 +1373,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:14"
+      "ultima_revision": "2026-10-09T17:23:07"
     },
     "score": 8,
     "simbolo": "★",
@@ -1563,7 +1573,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:16"
+      "ultima_revision": "2026-10-09T17:23:08"
     },
     "score": 3,
     "simbolo": "★",
@@ -1607,7 +1617,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:17"
+      "ultima_revision": "2026-10-09T17:23:08"
     },
     "score": 2,
     "simbolo": "★",
@@ -1706,7 +1716,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:18"
+      "ultima_revision": "2026-10-09T17:23:09"
     },
     "score": 39,
     "simbolo": "★★",
@@ -1874,7 +1884,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:19"
+      "ultima_revision": "2026-10-09T17:23:10"
     },
     "score": 15,
     "simbolo": "★",
@@ -1933,7 +1943,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:20"
+      "ultima_revision": "2026-10-09T17:23:11"
     },
     "score": 10,
     "simbolo": "★",
@@ -1982,14 +1992,14 @@
     "primera_deteccion": "2026-09-22T00:16:20",
     "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «CINTA PARA TABLA DE INMOVILIZACION HASTA 4 50 BAJALENGUA DE PVC HASTA 1000 51 CLORHEXIDINA ALCOHOLICA AL 2% ENVASE 500 ML.»",
     "resultado": {
-      "estado": "pendiente",
+      "estado": "no_presentamos",
       "fecha_resolucion": null,
       "ganamos": null,
-      "monto_total": null,
+      "monto_total": "$ 422.711,72",
       "nos_presentamos": false,
-      "resolucion": null,
+      "resolucion": "Adjudicada parcialmente",
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:21"
+      "ultima_revision": "2026-10-09T17:23:12"
     },
     "score": 47,
     "simbolo": "★★★",
@@ -2042,7 +2052,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:22"
+      "ultima_revision": "2026-10-09T17:23:13"
     },
     "score": 29,
     "simbolo": "★★",
@@ -2090,7 +2100,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:23"
+      "ultima_revision": "2026-10-09T17:23:14"
     },
     "score": 0,
     "simbolo": "★",
@@ -2244,7 +2254,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:24"
+      "ultima_revision": "2026-10-09T17:23:15"
     },
     "score": 37,
     "simbolo": "★★",
@@ -2308,7 +2318,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:26"
+      "ultima_revision": "2026-10-09T17:23:16"
     },
     "score": 11,
     "simbolo": "★",
@@ -2356,7 +2366,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:27"
+      "ultima_revision": "2026-10-09T17:23:17"
     },
     "score": 55,
     "simbolo": "★★★",
@@ -2490,7 +2500,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:28"
+      "ultima_revision": "2026-10-09T17:23:18"
     },
     "score": 37,
     "simbolo": "★★",
@@ -2534,7 +2544,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:29"
+      "ultima_revision": "2026-10-09T17:23:19"
     },
     "score": 0,
     "simbolo": "★",
@@ -2684,7 +2694,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:30"
+      "ultima_revision": "2026-10-09T17:23:20"
     },
     "score": 64,
     "simbolo": "★★★",
@@ -2767,7 +2777,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:30"
+      "ultima_revision": "2026-10-09T17:23:20"
     },
     "score": 15,
     "simbolo": "★",
@@ -3035,7 +3045,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:31"
+      "ultima_revision": "2026-10-09T17:23:21"
     },
     "score": 41,
     "simbolo": "★★",
@@ -3134,7 +3144,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:32"
+      "ultima_revision": "2026-10-09T17:23:22"
     },
     "score": 33,
     "simbolo": "★★",
@@ -3191,7 +3201,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:33"
+      "ultima_revision": "2026-10-09T17:23:23"
     },
     "score": 23,
     "simbolo": "★",
@@ -3264,7 +3274,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:34"
+      "ultima_revision": "2026-10-09T17:23:24"
     },
     "score": 36,
     "simbolo": "★★",
@@ -3322,7 +3332,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:36"
+      "ultima_revision": "2026-10-09T17:23:25"
     },
     "score": 33,
     "simbolo": "★★",
@@ -3461,7 +3471,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:36"
+      "ultima_revision": "2026-10-09T17:23:26"
     },
     "score": 18,
     "simbolo": "★",
@@ -3601,7 +3611,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:37"
+      "ultima_revision": "2026-10-09T17:23:27"
     },
     "score": 51,
     "simbolo": "★★★",
@@ -3730,7 +3740,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:38"
+      "ultima_revision": "2026-10-09T17:23:29"
     },
     "score": 12,
     "simbolo": "★",
@@ -3785,7 +3795,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:39"
+      "ultima_revision": "2026-10-09T17:23:30"
     },
     "score": 21,
     "simbolo": "★",
@@ -3831,7 +3841,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:42"
+      "ultima_revision": "2026-10-09T17:23:32"
     },
     "score": 57,
     "simbolo": "★★★",
@@ -3942,7 +3952,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:43"
+      "ultima_revision": "2026-10-09T17:23:33"
     },
     "score": 51,
     "simbolo": "★★★",
@@ -4003,7 +4013,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:44"
+      "ultima_revision": "2026-10-09T17:23:34"
     },
     "score": 19,
     "simbolo": "★",
@@ -4045,7 +4055,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:45"
+      "ultima_revision": "2026-10-09T17:23:36"
     },
     "score": 4,
     "simbolo": "★",
@@ -4147,7 +4157,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:46"
+      "ultima_revision": "2026-10-09T17:23:37"
     },
     "score": 26,
     "simbolo": "★★",
@@ -4244,7 +4254,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:47"
+      "ultima_revision": "2026-10-09T17:23:38"
     },
     "score": 21,
     "simbolo": "★",
@@ -4288,7 +4298,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:48"
+      "ultima_revision": "2026-10-09T17:23:39"
     },
     "score": 0,
     "simbolo": "★",
@@ -4334,7 +4344,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:49"
+      "ultima_revision": "2026-10-09T17:23:41"
     },
     "score": 25,
     "simbolo": "★★",
@@ -4398,7 +4408,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:50"
+      "ultima_revision": "2026-10-09T17:23:42"
     },
     "score": 41,
     "simbolo": "★★",
@@ -4457,7 +4467,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:51"
+      "ultima_revision": "2026-10-09T17:23:43"
     },
     "score": 2,
     "simbolo": "★",
@@ -4501,7 +4511,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:52"
+      "ultima_revision": "2026-10-09T17:23:44"
     },
     "score": 1,
     "simbolo": "★",
@@ -4548,7 +4558,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:53"
+      "ultima_revision": "2026-10-09T17:23:45"
     },
     "score": 35,
     "simbolo": "★★",
@@ -4599,7 +4609,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:54"
+      "ultima_revision": "2026-10-09T17:23:47"
     },
     "score": 42,
     "simbolo": "★★",
@@ -4654,7 +4664,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:55"
+      "ultima_revision": "2026-10-09T17:23:48"
     },
     "score": 13,
     "simbolo": "★",
@@ -4702,7 +4712,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:56"
+      "ultima_revision": "2026-10-09T17:23:49"
     },
     "score": 13,
     "simbolo": "★",
@@ -4765,7 +4775,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:56"
+      "ultima_revision": "2026-10-09T17:23:50"
     },
     "score": 39,
     "simbolo": "★★",
@@ -4838,7 +4848,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:58"
+      "ultima_revision": "2026-10-09T17:23:51"
     },
     "score": 16,
     "simbolo": "★",
@@ -4886,7 +4896,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:47:59"
+      "ultima_revision": "2026-10-09T17:23:52"
     },
     "score": 29,
     "simbolo": "★★",
@@ -4953,7 +4963,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:00"
+      "ultima_revision": "2026-10-09T17:23:53"
     },
     "score": 26,
     "simbolo": "★★",
@@ -5017,7 +5027,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:02"
+      "ultima_revision": "2026-10-09T17:23:54"
     },
     "score": 39,
     "simbolo": "★★",
@@ -5072,7 +5082,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:03"
+      "ultima_revision": "2026-10-09T17:23:55"
     },
     "score": 33,
     "simbolo": "★★",
@@ -5223,7 +5233,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:04"
+      "ultima_revision": "2026-10-09T17:23:56"
     },
     "score": 17,
     "simbolo": "★",
@@ -5268,7 +5278,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:05"
+      "ultima_revision": "2026-10-09T17:23:57"
     },
     "score": 20,
     "simbolo": "★",
@@ -5321,7 +5331,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:06"
+      "ultima_revision": "2026-10-09T17:23:58"
     },
     "score": 36,
     "simbolo": "★★",
@@ -5446,7 +5456,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:07"
+      "ultima_revision": "2026-10-09T17:23:59"
     },
     "score": 0,
     "simbolo": "★",
@@ -5493,7 +5503,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:07"
+      "ultima_revision": "2026-10-09T17:24:00"
     },
     "score": 33,
     "simbolo": "★★",
@@ -5541,7 +5551,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:08"
+      "ultima_revision": "2026-10-09T17:24:01"
     },
     "score": 0,
     "simbolo": "★",
@@ -5600,7 +5610,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:09"
+      "ultima_revision": "2026-10-09T17:24:02"
     },
     "score": 39,
     "simbolo": "★★",
@@ -5679,7 +5689,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:10"
+      "ultima_revision": "2026-10-09T17:24:03"
     },
     "score": 21,
     "simbolo": "★",
@@ -5726,7 +5736,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:11"
+      "ultima_revision": "2026-10-09T17:24:04"
     },
     "score": 21,
     "simbolo": "★",
@@ -5873,7 +5883,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:12"
+      "ultima_revision": "2026-10-09T17:24:05"
     },
     "score": 41,
     "simbolo": "★★",
@@ -5927,7 +5937,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:13"
+      "ultima_revision": "2026-10-09T17:24:06"
     },
     "score": 1,
     "simbolo": "★",
@@ -6031,7 +6041,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:14"
+      "ultima_revision": "2026-10-09T17:24:06"
     },
     "score": 11,
     "simbolo": "★",
@@ -6074,7 +6084,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:15"
+      "ultima_revision": "2026-10-09T17:24:08"
     },
     "score": 21,
     "simbolo": "★",
@@ -6223,7 +6233,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:15"
+      "ultima_revision": "2026-10-09T17:24:08"
     },
     "score": 25,
     "simbolo": "★★",
@@ -6282,7 +6292,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:16"
+      "ultima_revision": "2026-10-09T17:24:09"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -6438,7 +6448,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:17"
+      "ultima_revision": "2026-10-09T17:24:10"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -6484,7 +6494,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:18"
+      "ultima_revision": "2026-10-09T17:24:11"
     },
     "score": 25,
     "simbolo": "★★",
@@ -6650,7 +6660,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:19"
+      "ultima_revision": "2026-10-09T17:24:12"
     },
     "score": 41,
     "simbolo": "★★",
@@ -6802,7 +6812,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:20"
+      "ultima_revision": "2026-10-09T17:24:13"
     },
     "score": 25,
     "simbolo": "★★",
@@ -6848,7 +6858,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:21"
+      "ultima_revision": "2026-10-09T17:24:14"
     },
     "score": 17,
     "simbolo": "★",
@@ -6895,7 +6905,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:22"
+      "ultima_revision": "2026-10-09T17:24:14"
     },
     "score": 14,
     "simbolo": "★",
@@ -6964,7 +6974,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:23"
+      "ultima_revision": "2026-10-09T17:24:15"
     },
     "score": 39,
     "simbolo": "★★",
@@ -7219,7 +7229,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:23"
+      "ultima_revision": "2026-10-09T17:24:16"
     },
     "score": 14,
     "simbolo": "★",
@@ -7266,7 +7276,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:24"
+      "ultima_revision": "2026-10-09T17:24:17"
     },
     "score": 37,
     "simbolo": "★★",
@@ -7329,7 +7339,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:25"
+      "ultima_revision": "2026-10-09T17:24:18"
     },
     "score": 31,
     "simbolo": "★★",
@@ -7389,7 +7399,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:26"
+      "ultima_revision": "2026-10-09T17:24:19"
     },
     "score": 2,
     "simbolo": "★",
@@ -7433,7 +7443,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:27"
+      "ultima_revision": "2026-10-09T17:24:19"
     },
     "score": 20,
     "simbolo": "★",
@@ -7492,7 +7502,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:28"
+      "ultima_revision": "2026-10-09T17:24:20"
     },
     "score": 38,
     "simbolo": "★★",
@@ -7592,7 +7602,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:29"
+      "ultima_revision": "2026-10-09T17:24:21"
     },
     "score": 30,
     "simbolo": "★★",
@@ -7688,7 +7698,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:30"
+      "ultima_revision": "2026-10-09T17:24:22"
     },
     "score": 29,
     "simbolo": "★★",
@@ -7733,7 +7743,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:31"
+      "ultima_revision": "2026-10-09T17:24:23"
     },
     "score": 9,
     "simbolo": "★",
@@ -7810,7 +7820,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:31"
+      "ultima_revision": "2026-10-09T17:24:24"
     },
     "score": 36,
     "simbolo": "★★",
@@ -7893,7 +7903,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:32"
+      "ultima_revision": "2026-10-09T17:24:24"
     },
     "score": 11,
     "simbolo": "★",
@@ -7941,7 +7951,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:33"
+      "ultima_revision": "2026-10-09T17:24:25"
     },
     "score": 13,
     "simbolo": "★",
@@ -7985,7 +7995,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:34"
+      "ultima_revision": "2026-10-09T17:24:26"
     },
     "score": 2,
     "simbolo": "★",
@@ -8033,7 +8043,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:35"
+      "ultima_revision": "2026-10-09T17:24:27"
     },
     "score": 17,
     "simbolo": "★",
@@ -8082,7 +8092,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:36"
+      "ultima_revision": "2026-10-09T17:24:28"
     },
     "score": 35,
     "simbolo": "★★",
@@ -8130,7 +8140,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:37"
+      "ultima_revision": "2026-10-09T17:24:29"
     },
     "score": 11,
     "simbolo": "★",
@@ -8174,7 +8184,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:38"
+      "ultima_revision": "2026-10-09T17:24:29"
     },
     "score": 33,
     "simbolo": "★★",
@@ -8218,7 +8228,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:38"
+      "ultima_revision": "2026-10-09T17:24:30"
     },
     "score": 16,
     "simbolo": "★",
@@ -8271,7 +8281,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:39"
+      "ultima_revision": "2026-10-09T17:24:31"
     },
     "score": 0,
     "simbolo": "★",
@@ -8326,7 +8336,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:40"
+      "ultima_revision": "2026-10-09T17:24:32"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -8377,7 +8387,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:41"
+      "ultima_revision": "2026-10-09T17:24:33"
     },
     "score": 2,
     "simbolo": "★",
@@ -8518,7 +8528,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:42"
+      "ultima_revision": "2026-10-09T17:24:34"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -8567,7 +8577,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:43"
+      "ultima_revision": "2026-10-09T17:24:34"
     },
     "score": 17,
     "simbolo": "★",
@@ -8619,7 +8629,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:44"
+      "ultima_revision": "2026-10-09T17:24:35"
     },
     "score": 0,
     "simbolo": "★",
@@ -8660,6 +8670,16 @@
     "organismo": "BPS - Banco de Previsión Social",
     "primera_deteccion": "2026-10-09T16:57:43",
     "que_es": "Licitación de BPS - Banco de Previsión Social — busca Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"mantenimiento edilicio\": «Horario de atención de 8 a 14hs “SERVICIO DE MANTENIMIENTO EDILICIO Y PEQUEÑAS TAREAS DE REPARACIÓN EN CENTROS DE SALUD Y POLIC»",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:24:37"
+    },
     "score": 33,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 122/2026",
@@ -8789,7 +8809,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:45"
+      "ultima_revision": "2026-10-09T17:24:38"
     },
     "score": 0,
     "simbolo": "★",
@@ -8938,7 +8958,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:46"
+      "ultima_revision": "2026-10-09T17:24:39"
     },
     "score": 48,
     "simbolo": "★★★",
@@ -8996,7 +9016,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:47"
+      "ultima_revision": "2026-10-09T17:24:40"
     },
     "score": 22,
     "simbolo": "★",
@@ -9329,7 +9349,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:49"
+      "ultima_revision": "2026-10-09T17:24:41"
     },
     "score": 47,
     "simbolo": "★★★",
@@ -9427,7 +9447,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:50"
+      "ultima_revision": "2026-10-09T17:24:42"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -9530,7 +9550,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:51"
+      "ultima_revision": "2026-10-09T17:24:43"
     },
     "score": 17,
     "simbolo": "★",
@@ -9588,7 +9608,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:52"
+      "ultima_revision": "2026-10-09T17:24:43"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -9657,7 +9677,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:53"
+      "ultima_revision": "2026-10-09T17:24:44"
     },
     "score": 22,
     "simbolo": "★",
@@ -9899,7 +9919,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:54"
+      "ultima_revision": "2026-10-09T17:24:45"
     },
     "score": 4,
     "simbolo": "★",
@@ -9968,7 +9988,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:55"
+      "ultima_revision": "2026-10-09T17:24:46"
     },
     "score": 36,
     "simbolo": "★★",
@@ -10052,7 +10072,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:56"
+      "ultima_revision": "2026-10-09T17:24:47"
     },
     "score": 39,
     "simbolo": "★★",
@@ -10121,7 +10141,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:57"
+      "ultima_revision": "2026-10-09T17:24:48"
     },
     "score": 39,
     "simbolo": "★★",
@@ -10202,7 +10222,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:58"
+      "ultima_revision": "2026-10-09T17:24:48"
     },
     "score": 23,
     "simbolo": "★",
@@ -10260,7 +10280,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:48:59"
+      "ultima_revision": "2026-10-09T17:24:49"
     },
     "score": 35,
     "simbolo": "★★",
@@ -10408,7 +10428,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:00"
+      "ultima_revision": "2026-10-09T17:24:50"
     },
     "score": 32,
     "simbolo": "★★",
@@ -10454,7 +10474,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:00"
+      "ultima_revision": "2026-10-09T17:24:51"
     },
     "score": 21,
     "simbolo": "★",
@@ -10501,7 +10521,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:01"
+      "ultima_revision": "2026-10-09T17:24:52"
     },
     "score": 47,
     "simbolo": "★★★",
@@ -10556,7 +10576,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:02"
+      "ultima_revision": "2026-10-09T17:24:53"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -10600,6 +10620,16 @@
     "organismo": "ANTEL - Administración Nacional de Telecomunicaciones",
     "primera_deteccion": "2026-10-09T16:57:33",
     "que_es": "Licitación de ANTEL - Administración Nacional de Telecomunicaciones — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «• Longitud: 2 metros por unidad, 1cm x 2cm. • Fabricado en PVC autoextinguible o material equivalente. • Con tapa desmont»",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:24:53"
+    },
     "score": 38,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 6005/2026",
@@ -10652,7 +10682,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:03"
+      "ultima_revision": "2026-10-09T17:24:54"
     },
     "score": 35,
     "simbolo": "★★",
@@ -10699,7 +10729,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:04"
+      "ultima_revision": "2026-10-09T17:24:55"
     },
     "score": 21,
     "simbolo": "★",
@@ -10838,7 +10868,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:05"
+      "ultima_revision": "2026-10-09T17:24:56"
     },
     "score": 4,
     "simbolo": "★",
@@ -10982,7 +11012,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:06"
+      "ultima_revision": "2026-10-09T17:24:57"
     },
     "score": 21,
     "simbolo": "★",
@@ -11062,7 +11092,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:07"
+      "ultima_revision": "2026-10-09T17:24:58"
     },
     "score": 0,
     "simbolo": "★",
@@ -11109,7 +11139,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:08"
+      "ultima_revision": "2026-10-09T17:24:58"
     },
     "score": 32,
     "simbolo": "★★",
@@ -11197,14 +11227,14 @@
     "primera_deteccion": "2026-09-03T18:40:26",
     "que_es": "Licitación de organismo no identificado — busca Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"materiales de construcción\": «Compra Directa 1202/2026 Adquisición de materiales de construcción para Viviendas Militares.-»",
     "resultado": {
-      "estado": "pendiente",
+      "estado": "no_presentamos",
       "fecha_resolucion": null,
       "ganamos": null,
-      "monto_total": null,
+      "monto_total": "$ 243.966,01",
       "nos_presentamos": false,
-      "resolucion": null,
+      "resolucion": "Adjudicada parcialmente",
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:09"
+      "ultima_revision": "2026-10-09T17:24:59"
     },
     "score": 2,
     "simbolo": "★",
@@ -11243,7 +11273,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:09"
+      "ultima_revision": "2026-10-09T17:25:00"
     },
     "score": 25,
     "simbolo": "★★",
@@ -11288,7 +11318,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:10"
+      "ultima_revision": "2026-10-09T17:25:01"
     },
     "score": 2,
     "simbolo": "★",
@@ -11330,7 +11360,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:11"
+      "ultima_revision": "2026-10-09T17:25:02"
     },
     "score": 2,
     "simbolo": "★",
@@ -11555,7 +11585,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:12"
+      "ultima_revision": "2026-10-09T17:25:03"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -11703,7 +11733,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:13"
+      "ultima_revision": "2026-10-09T17:25:04"
     },
     "score": 59,
     "simbolo": "★★★",
@@ -11844,7 +11874,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:14"
+      "ultima_revision": "2026-10-09T17:25:04"
     },
     "score": 48,
     "simbolo": "★★★",
@@ -11889,7 +11919,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:15"
+      "ultima_revision": "2026-10-09T17:25:05"
     },
     "score": 29,
     "simbolo": "★★",
@@ -11939,7 +11969,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:16"
+      "ultima_revision": "2026-10-09T17:25:06"
     },
     "score": 37,
     "simbolo": "★★",
@@ -11988,7 +12018,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:17"
+      "ultima_revision": "2026-10-09T17:25:07"
     },
     "score": 21,
     "simbolo": "★",
@@ -12035,7 +12065,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:18"
+      "ultima_revision": "2026-10-09T17:25:08"
     },
     "score": 40,
     "simbolo": "★★",
@@ -12169,7 +12199,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:19"
+      "ultima_revision": "2026-10-09T17:25:08"
     },
     "score": 0,
     "simbolo": "★",
@@ -12266,7 +12296,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:20"
+      "ultima_revision": "2026-10-09T17:25:09"
     },
     "score": 1,
     "simbolo": "★",
@@ -12314,7 +12344,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:20"
+      "ultima_revision": "2026-10-09T17:25:10"
     },
     "score": 2,
     "simbolo": "★",
@@ -12357,7 +12387,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:21"
+      "ultima_revision": "2026-10-09T17:25:11"
     },
     "score": 17,
     "simbolo": "★",
@@ -12560,7 +12590,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:22"
+      "ultima_revision": "2026-10-09T17:25:12"
     },
     "score": 25,
     "simbolo": "★★",
@@ -12666,7 +12696,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:23"
+      "ultima_revision": "2026-10-09T17:25:13"
     },
     "score": 18,
     "simbolo": "★",
@@ -12795,7 +12825,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:24"
+      "ultima_revision": "2026-10-09T17:25:13"
     },
     "score": 0,
     "simbolo": "★",
@@ -12876,7 +12906,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:25"
+      "ultima_revision": "2026-10-09T17:25:14"
     },
     "score": 25,
     "simbolo": "★★",
@@ -12923,7 +12953,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:27"
+      "ultima_revision": "2026-10-09T17:25:15"
     },
     "score": 28,
     "simbolo": "★★",
@@ -13033,7 +13063,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:28"
+      "ultima_revision": "2026-10-09T17:25:16"
     },
     "score": 12,
     "simbolo": "★",
@@ -13157,7 +13187,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:28"
+      "ultima_revision": "2026-10-09T17:25:17"
     },
     "score": 36,
     "simbolo": "★★",
@@ -13241,7 +13271,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:29"
+      "ultima_revision": "2026-10-09T17:25:18"
     },
     "score": 39,
     "simbolo": "★★",
@@ -13289,7 +13319,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:30"
+      "ultima_revision": "2026-10-09T17:25:18"
     },
     "score": 22,
     "simbolo": "★",
@@ -13381,7 +13411,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:31"
+      "ultima_revision": "2026-10-09T17:25:19"
     },
     "score": 5,
     "simbolo": "★",
@@ -13424,7 +13454,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:32"
+      "ultima_revision": "2026-10-09T17:25:20"
     },
     "score": 17,
     "simbolo": "★",
@@ -13517,7 +13547,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:33"
+      "ultima_revision": "2026-10-09T17:25:21"
     },
     "score": 26,
     "simbolo": "★★",
@@ -13616,7 +13646,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:34"
+      "ultima_revision": "2026-10-09T17:25:22"
     },
     "score": 12,
     "simbolo": "★",
@@ -13659,7 +13689,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:35"
+      "ultima_revision": "2026-10-09T17:25:23"
     },
     "score": 17,
     "simbolo": "★",
@@ -13706,7 +13736,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:35"
+      "ultima_revision": "2026-10-09T17:25:23"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -13759,7 +13789,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:36"
+      "ultima_revision": "2026-10-09T17:25:24"
     },
     "score": 35,
     "simbolo": "★★",
@@ -13815,7 +13845,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:37"
+      "ultima_revision": "2026-10-09T17:25:25"
     },
     "score": 41,
     "simbolo": "★★",
@@ -13865,7 +13895,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:38"
+      "ultima_revision": "2026-10-09T17:25:26"
     },
     "score": 17,
     "simbolo": "★",
@@ -13957,7 +13987,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:39"
+      "ultima_revision": "2026-10-09T17:25:27"
     },
     "score": 33,
     "simbolo": "★★",
@@ -14010,7 +14040,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:40"
+      "ultima_revision": "2026-10-09T17:25:27"
     },
     "score": 21,
     "simbolo": "★",
@@ -14052,7 +14082,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:41"
+      "ultima_revision": "2026-10-09T17:25:28"
     },
     "score": 3,
     "simbolo": "★",
@@ -14099,7 +14129,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:42"
+      "ultima_revision": "2026-10-09T17:25:29"
     },
     "score": 20,
     "simbolo": "★",
@@ -14150,7 +14180,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:43"
+      "ultima_revision": "2026-10-09T17:25:30"
     },
     "score": 0,
     "simbolo": "★",
@@ -14241,7 +14271,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:44"
+      "ultima_revision": "2026-10-09T17:25:31"
     },
     "score": 14,
     "simbolo": "★",
@@ -14290,7 +14320,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:44"
+      "ultima_revision": "2026-10-09T17:25:32"
     },
     "score": 25,
     "simbolo": "★★",
@@ -14343,7 +14373,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:45"
+      "ultima_revision": "2026-10-09T17:25:32"
     },
     "score": 36,
     "simbolo": "★★",
@@ -14408,7 +14438,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:46"
+      "ultima_revision": "2026-10-09T17:25:33"
     },
     "score": 36,
     "simbolo": "★★",
@@ -14584,7 +14614,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:47"
+      "ultima_revision": "2026-10-09T17:25:34"
     },
     "score": 27,
     "simbolo": "★★",
@@ -14665,6 +14695,16 @@
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-10-09T01:07:02",
     "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — busca Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica), apertura 2026-10-20. Menciona \"recubrimiento\": «Material Carcasa: fundición de aluminio y lente recubrimiento de policarbonato esmerilado con protección UV.»",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:25:35"
+    },
     "score": 33,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 7705/2026",
@@ -14714,7 +14754,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:48"
+      "ultima_revision": "2026-10-09T17:25:36"
     },
     "score": 26,
     "simbolo": "★★",
@@ -14760,7 +14800,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:49"
+      "ultima_revision": "2026-10-09T17:25:37"
     },
     "score": 0,
     "simbolo": "★",
@@ -14805,7 +14845,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:50"
+      "ultima_revision": "2026-10-09T17:25:37"
     },
     "score": 13,
     "simbolo": "★",
@@ -14857,7 +14897,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:51"
+      "ultima_revision": "2026-10-09T17:25:38"
     },
     "score": 43,
     "simbolo": "★★",
@@ -14970,7 +15010,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:52"
+      "ultima_revision": "2026-10-09T17:25:39"
     },
     "score": 0,
     "simbolo": "★",
@@ -15009,7 +15049,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:52"
+      "ultima_revision": "2026-10-09T17:25:40"
     },
     "score": 0,
     "simbolo": "★",
@@ -15048,7 +15088,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:54"
+      "ultima_revision": "2026-10-09T17:25:41"
     },
     "score": 25,
     "simbolo": "★★",
@@ -15096,7 +15136,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:55"
+      "ultima_revision": "2026-10-09T17:25:42"
     },
     "score": 14,
     "simbolo": "★",
@@ -15145,7 +15185,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:55"
+      "ultima_revision": "2026-10-09T17:25:43"
     },
     "score": 19,
     "simbolo": "★",
@@ -15295,7 +15335,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:56"
+      "ultima_revision": "2026-10-09T17:25:44"
     },
     "score": 43,
     "simbolo": "★★",
@@ -15380,7 +15420,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:57"
+      "ultima_revision": "2026-10-09T17:25:45"
     },
     "score": 0,
     "simbolo": "★",
@@ -15427,7 +15467,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:58"
+      "ultima_revision": "2026-10-09T17:25:46"
     },
     "score": 39,
     "simbolo": "★★",
@@ -15484,7 +15524,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:49:59"
+      "ultima_revision": "2026-10-09T17:25:47"
     },
     "score": 25,
     "simbolo": "★★",
@@ -15547,7 +15587,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:00"
+      "ultima_revision": "2026-10-09T17:25:47"
     },
     "score": 17,
     "simbolo": "★",
@@ -15672,7 +15712,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:01"
+      "ultima_revision": "2026-10-09T17:25:48"
     },
     "score": 13,
     "simbolo": "★",
@@ -15722,14 +15762,14 @@
     "organismo": "ANTEL - Administración Nacional de Telecomunicaciones",
     "primera_deteccion": "2026-08-18T20:45:21",
     "resultado": {
-      "estado": "pendiente",
-      "fecha_resolucion": null,
+      "estado": "no_presentamos",
+      "fecha_resolucion": "07/10/2026",
       "ganamos": null,
-      "monto_total": null,
+      "monto_total": "$ 4.020.632,00",
       "nos_presentamos": false,
-      "resolucion": null,
-      "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:02"
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": "109432/2026",
+      "ultima_revision": "2026-10-09T17:25:49"
     },
     "score": 29,
     "simbolo": "★★",
@@ -15819,7 +15859,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:03"
+      "ultima_revision": "2026-10-09T17:25:50"
     },
     "score": 0,
     "simbolo": "★",
@@ -15907,7 +15947,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:04"
+      "ultima_revision": "2026-10-09T17:25:51"
     },
     "score": 33,
     "simbolo": "★★",
@@ -15955,7 +15995,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:04"
+      "ultima_revision": "2026-10-09T17:25:52"
     },
     "score": 37,
     "simbolo": "★★",
@@ -16006,7 +16046,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:05"
+      "ultima_revision": "2026-10-09T17:25:52"
     },
     "score": 0,
     "simbolo": "★",
@@ -16060,7 +16100,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:07"
+      "ultima_revision": "2026-10-09T17:25:53"
     },
     "score": 36,
     "simbolo": "★★",
@@ -16120,7 +16160,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:08"
+      "ultima_revision": "2026-10-09T17:25:55"
     },
     "score": 61,
     "simbolo": "★★★",
@@ -16177,7 +16217,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:10"
+      "ultima_revision": "2026-10-09T17:25:56"
     },
     "score": 20,
     "simbolo": "★",
@@ -16232,7 +16272,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:10"
+      "ultima_revision": "2026-10-09T17:25:57"
     },
     "score": 4,
     "simbolo": "★",
@@ -16286,7 +16326,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:11"
+      "ultima_revision": "2026-10-09T17:25:58"
     },
     "score": 19,
     "simbolo": "★",
@@ -16376,7 +16416,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:12"
+      "ultima_revision": "2026-10-09T17:25:59"
     },
     "score": 0,
     "simbolo": "★",
@@ -16415,7 +16455,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:13"
+      "ultima_revision": "2026-10-09T17:25:59"
     },
     "score": 0,
     "simbolo": "★",
@@ -16458,7 +16498,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:14"
+      "ultima_revision": "2026-10-09T17:26:00"
     },
     "score": 25,
     "simbolo": "★★",
@@ -16527,7 +16567,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:15"
+      "ultima_revision": "2026-10-09T17:26:01"
     },
     "score": 39,
     "simbolo": "★★",
@@ -16609,7 +16649,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:16"
+      "ultima_revision": "2026-10-09T17:26:02"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -16655,7 +16695,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:17"
+      "ultima_revision": "2026-10-09T17:26:03"
     },
     "score": 0,
     "simbolo": "★",
@@ -16700,7 +16740,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:18"
+      "ultima_revision": "2026-10-09T17:26:03"
     },
     "score": 33,
     "simbolo": "★★",
@@ -16742,7 +16782,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:19"
+      "ultima_revision": "2026-10-09T17:26:04"
     },
     "score": 0,
     "simbolo": "★",
@@ -16789,7 +16829,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:19"
+      "ultima_revision": "2026-10-09T17:26:05"
     },
     "score": 11,
     "simbolo": "★",
@@ -16842,7 +16882,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:20"
+      "ultima_revision": "2026-10-09T17:26:06"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -17058,7 +17098,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:21"
+      "ultima_revision": "2026-10-09T17:26:07"
     },
     "score": 2,
     "simbolo": "★",
@@ -17101,7 +17141,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:22"
+      "ultima_revision": "2026-10-09T17:26:08"
     },
     "score": 17,
     "simbolo": "★",
@@ -17136,6 +17176,16 @@
     "organismo": "ANEP - Administración Nacional de Educación Pública",
     "primera_deteccion": "2026-10-09T16:50:49",
     "que_es": "Licitación de ANEP - Administración Nacional de Educación Pública — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «e Desbaste. 4 1/2¨x 1/4¨. 2857 30 50 Electrodo Rutilo Para Acero Inoxidable. E 316 L , 2.5 mm. 13672 31 50 Electrodo Soldar. Caja De»",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:26:09"
+    },
     "score": 14,
     "simbolo": "★",
     "titulo": "Compra Directa 175/2026",
@@ -17179,7 +17229,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:23"
+      "ultima_revision": "2026-10-09T17:26:10"
     },
     "score": 16,
     "simbolo": "★",
@@ -17233,7 +17283,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:24"
+      "ultima_revision": "2026-10-09T17:26:11"
     },
     "score": 28,
     "simbolo": "★★",
@@ -17274,6 +17324,16 @@
     "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
     "primera_deteccion": "2026-10-09T01:13:16",
     "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Normativa/certificación mencionada, Pisos flotantes/laminados, apertura 2026-10-14. Menciona \"mdf\": «O ARCE VARIANTE ARCE UNIDAD DE MEDIDA Placa de melamínico mdf color blanco 2,6 mt x 1,83 mt x 18mm Placa de melamínico m»",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:26:12"
+    },
     "score": 53,
     "simbolo": "★★★",
     "titulo": "Compra Directa 608/2026",
@@ -17324,7 +17384,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:25"
+      "ultima_revision": "2026-10-09T17:26:13"
     },
     "score": 33,
     "simbolo": "★★",
@@ -17410,7 +17470,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:26"
+      "ultima_revision": "2026-10-09T17:26:13"
     },
     "score": 2,
     "simbolo": "★",
@@ -17461,7 +17521,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:28"
+      "ultima_revision": "2026-10-09T17:26:14"
     },
     "score": 18,
     "simbolo": "★",
@@ -17592,7 +17652,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:29"
+      "ultima_revision": "2026-10-09T17:26:15"
     },
     "score": 11,
     "simbolo": "★",
@@ -17638,7 +17698,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:30"
+      "ultima_revision": "2026-10-09T17:26:16"
     },
     "score": 22,
     "simbolo": "★",
@@ -17685,7 +17745,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:30"
+      "ultima_revision": "2026-10-09T17:26:17"
     },
     "score": 2,
     "simbolo": "★",
@@ -17775,7 +17835,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:31"
+      "ultima_revision": "2026-10-09T17:26:17"
     },
     "score": 2,
     "simbolo": "★",
@@ -17820,7 +17880,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:32"
+      "ultima_revision": "2026-10-09T17:26:18"
     },
     "score": 29,
     "simbolo": "★★",
@@ -17926,7 +17986,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:33"
+      "ultima_revision": "2026-10-09T17:26:19"
     },
     "score": 2,
     "simbolo": "★",
@@ -17976,7 +18036,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:34"
+      "ultima_revision": "2026-10-09T17:26:20"
     },
     "score": 44,
     "simbolo": "★★",
@@ -18019,7 +18079,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:35"
+      "ultima_revision": "2026-10-09T17:26:21"
     },
     "score": 2,
     "simbolo": "★",
@@ -18066,7 +18126,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:36"
+      "ultima_revision": "2026-10-09T17:26:22"
     },
     "score": 20,
     "simbolo": "★",
@@ -18111,7 +18171,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:37"
+      "ultima_revision": "2026-10-09T17:26:22"
     },
     "score": 39,
     "simbolo": "★★",
@@ -18160,7 +18220,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:38"
+      "ultima_revision": "2026-10-09T17:26:23"
     },
     "score": 41,
     "simbolo": "★★",
@@ -18248,7 +18308,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:38"
+      "ultima_revision": "2026-10-09T17:26:24"
     },
     "score": 35,
     "simbolo": "★★",
@@ -18291,7 +18351,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:40"
+      "ultima_revision": "2026-10-09T17:26:25"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -18337,7 +18397,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:41"
+      "ultima_revision": "2026-10-09T17:26:26"
     },
     "score": 26,
     "simbolo": "★★",
@@ -18438,7 +18498,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:42"
+      "ultima_revision": "2026-10-09T17:26:27"
     },
     "score": 25,
     "simbolo": "★★",
@@ -18535,7 +18595,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:43"
+      "ultima_revision": "2026-10-09T17:26:28"
     },
     "score": 13,
     "simbolo": "★",
@@ -18582,7 +18642,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:45"
+      "ultima_revision": "2026-10-09T17:26:28"
     },
     "score": 2,
     "simbolo": "★",
@@ -18621,7 +18681,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:46"
+      "ultima_revision": "2026-10-09T17:26:29"
     },
     "score": 0,
     "simbolo": "★",
@@ -18658,7 +18718,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:48"
+      "ultima_revision": "2026-10-09T17:26:30"
     },
     "score": 25,
     "simbolo": "★★",
@@ -18704,7 +18764,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:49"
+      "ultima_revision": "2026-10-09T17:26:31"
     },
     "score": 3,
     "simbolo": "★",
@@ -18751,7 +18811,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:50"
+      "ultima_revision": "2026-10-09T17:26:32"
     },
     "score": 11,
     "simbolo": "★",
@@ -18797,7 +18857,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:51"
+      "ultima_revision": "2026-10-09T17:26:33"
     },
     "score": 16,
     "simbolo": "★",
@@ -19037,7 +19097,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:53"
+      "ultima_revision": "2026-10-09T17:26:34"
     },
     "score": 23,
     "simbolo": "★",
@@ -19141,7 +19201,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:54"
+      "ultima_revision": "2026-10-09T17:26:34"
     },
     "score": 14,
     "simbolo": "★",
@@ -19252,7 +19312,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:55"
+      "ultima_revision": "2026-10-09T17:26:35"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -19313,7 +19373,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:56"
+      "ultima_revision": "2026-10-09T17:26:36"
     },
     "score": 7,
     "simbolo": "★",
@@ -19434,7 +19494,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:57"
+      "ultima_revision": "2026-10-09T17:26:37"
     },
     "score": 0,
     "simbolo": "★",
@@ -19567,7 +19627,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:58"
+      "ultima_revision": "2026-10-09T17:26:38"
     },
     "score": 0,
     "simbolo": "★",
@@ -19839,7 +19899,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:50:59"
+      "ultima_revision": "2026-10-09T17:26:39"
     },
     "score": 23,
     "simbolo": "★",
@@ -19889,7 +19949,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:00"
+      "ultima_revision": "2026-10-09T17:26:39"
     },
     "score": 37,
     "simbolo": "★★",
@@ -20181,7 +20241,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:01"
+      "ultima_revision": "2026-10-09T17:26:40"
     },
     "score": 36,
     "simbolo": "★★",
@@ -20260,7 +20320,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:03"
+      "ultima_revision": "2026-10-09T17:26:41"
     },
     "score": 11,
     "simbolo": "★",
@@ -20324,7 +20384,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:04"
+      "ultima_revision": "2026-10-09T17:26:42"
     },
     "score": 36,
     "simbolo": "★★",
@@ -20425,7 +20485,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:05"
+      "ultima_revision": "2026-10-09T17:26:43"
     },
     "score": 32,
     "simbolo": "★★",
@@ -20504,7 +20564,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:05"
+      "ultima_revision": "2026-10-09T17:26:44"
     },
     "score": 8,
     "simbolo": "★",
@@ -20690,6 +20750,16 @@
     "organismo": "BPS - Banco de Previsión Social",
     "primera_deteccion": "2026-10-09T16:51:08",
     "que_es": "Licitación de BPS - Banco de Previsión Social — busca Material mencionado (revisar contexto). Menciona \"coco\": «1 CAFE GLASEADO 20 KG KG 2 CEBADA SIN AZÚCAR 240 KG KG 3 COCO RALLADO 10 KG PAQUETE 1 KG 4 COCOA EN SOBRES CAJA 40 SOBRE»",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:26:44"
+    },
     "score": 27,
     "simbolo": "★★",
     "titulo": "Licitación Abreviada 194/2026",
@@ -20775,7 +20845,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:06"
+      "ultima_revision": "2026-10-09T17:26:45"
     },
     "score": 23,
     "simbolo": "★",
@@ -20818,7 +20888,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:07"
+      "ultima_revision": "2026-10-09T17:26:46"
     },
     "score": 21,
     "simbolo": "★",
@@ -20863,7 +20933,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:09"
+      "ultima_revision": "2026-10-09T17:26:47"
     },
     "score": 14,
     "simbolo": "★",
@@ -20909,7 +20979,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:10"
+      "ultima_revision": "2026-10-09T17:26:48"
     },
     "score": 25,
     "simbolo": "★★",
@@ -20946,6 +21016,16 @@
     "organismo": "BPS - Banco de Previsión Social",
     "primera_deteccion": "2026-10-09T16:57:30",
     "que_es": "Licitación de BPS - Banco de Previsión Social — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «ICITADO A COTIZAR: ITEM DESCRIPCIÓN CANTIDAD 2 ESCABEL DE ACERO INOXIDABLE Y GOMA EN LOS ESCALONES HASTA 1 UNIDAD ANEXO II MODELO DE»",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:26:49"
+    },
     "score": 23,
     "simbolo": "★",
     "titulo": "Compra Directa 17336/2026",
@@ -21057,7 +21137,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:11"
+      "ultima_revision": "2026-10-09T17:26:49"
     },
     "score": 17,
     "simbolo": "★",
@@ -21100,7 +21180,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:12"
+      "ultima_revision": "2026-10-09T17:26:50"
     },
     "score": 0,
     "simbolo": "★",
@@ -21145,7 +21225,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:13"
+      "ultima_revision": "2026-10-09T17:26:51"
     },
     "score": 0,
     "simbolo": "★",
@@ -21186,7 +21266,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:13"
+      "ultima_revision": "2026-10-09T17:26:52"
     },
     "score": 25,
     "simbolo": "★★",
@@ -21281,7 +21361,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:14"
+      "ultima_revision": "2026-10-09T17:26:53"
     },
     "score": 41,
     "simbolo": "★★",
@@ -21331,7 +21411,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:15"
+      "ultima_revision": "2026-10-09T17:26:53"
     },
     "score": 35,
     "simbolo": "★★",
@@ -21397,7 +21477,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:16"
+      "ultima_revision": "2026-10-09T17:26:54"
     },
     "score": 33,
     "simbolo": "★★",
@@ -21451,7 +21531,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:17"
+      "ultima_revision": "2026-10-09T17:26:55"
     },
     "score": 20,
     "simbolo": "★",
@@ -21507,7 +21587,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:18"
+      "ultima_revision": "2026-10-09T17:26:56"
     },
     "score": 41,
     "simbolo": "★★",
@@ -21555,7 +21635,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:19"
+      "ultima_revision": "2026-10-09T17:26:57"
     },
     "score": 35,
     "simbolo": "★★",
@@ -21590,6 +21670,16 @@
     "organismo": null,
     "primera_deteccion": "2026-10-09T16:50:45",
     "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría.",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:26:58"
+    },
     "score": 0,
     "simbolo": "★",
     "titulo": "Concurso de Precios 4/2026",
@@ -21632,7 +21722,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:20"
+      "ultima_revision": "2026-10-09T17:26:58"
     },
     "score": 7,
     "simbolo": "★",
@@ -21689,7 +21779,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:21"
+      "ultima_revision": "2026-10-09T17:26:59"
     },
     "score": 15,
     "simbolo": "★",
@@ -21759,7 +21849,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:22"
+      "ultima_revision": "2026-10-09T17:27:00"
     },
     "score": 2,
     "simbolo": "★",
@@ -21806,7 +21896,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:23"
+      "ultima_revision": "2026-10-09T17:27:01"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -21859,7 +21949,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:24"
+      "ultima_revision": "2026-10-09T17:27:02"
     },
     "score": 7,
     "simbolo": "★",
@@ -21910,7 +22000,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:25"
+      "ultima_revision": "2026-10-09T17:27:03"
     },
     "score": 23,
     "simbolo": "★",
@@ -21964,7 +22054,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:26"
+      "ultima_revision": "2026-10-09T17:27:03"
     },
     "score": 23,
     "simbolo": "★",
@@ -22017,7 +22107,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:27"
+      "ultima_revision": "2026-10-09T17:27:04"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -22071,7 +22161,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:28"
+      "ultima_revision": "2026-10-09T17:27:05"
     },
     "score": 29,
     "simbolo": "★★",
@@ -22154,7 +22244,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:29"
+      "ultima_revision": "2026-10-09T17:27:06"
     },
     "score": 5,
     "simbolo": "★",
@@ -22505,7 +22595,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:30"
+      "ultima_revision": "2026-10-09T17:27:07"
     },
     "score": 6,
     "simbolo": "★",
@@ -22601,7 +22691,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:31"
+      "ultima_revision": "2026-10-09T17:27:08"
     },
     "score": 3,
     "simbolo": "★",
@@ -22648,7 +22738,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:32"
+      "ultima_revision": "2026-10-09T17:27:09"
     },
     "score": 19,
     "simbolo": "★",
@@ -22699,7 +22789,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:33"
+      "ultima_revision": "2026-10-09T17:27:09"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -22746,7 +22836,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:34"
+      "ultima_revision": "2026-10-09T17:27:10"
     },
     "score": 25,
     "simbolo": "★★",
@@ -22793,7 +22883,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:35"
+      "ultima_revision": "2026-10-09T17:27:11"
     },
     "score": 37,
     "simbolo": "★★",
@@ -22984,7 +23074,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:36"
+      "ultima_revision": "2026-10-09T17:27:12"
     },
     "score": 21,
     "simbolo": "★",
@@ -23179,7 +23269,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:37"
+      "ultima_revision": "2026-10-09T17:27:13"
     },
     "score": 7,
     "simbolo": "★",
@@ -23279,7 +23369,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:38"
+      "ultima_revision": "2026-10-09T17:27:13"
     },
     "score": 39,
     "simbolo": "★★",
@@ -23350,7 +23440,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:39"
+      "ultima_revision": "2026-10-09T17:27:15"
     },
     "score": 16,
     "simbolo": "★",
@@ -23556,7 +23646,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:40"
+      "ultima_revision": "2026-10-09T17:27:16"
     },
     "score": 55,
     "simbolo": "★★★",
@@ -23622,7 +23712,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:41"
+      "ultima_revision": "2026-10-09T17:27:16"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -23679,7 +23769,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:42"
+      "ultima_revision": "2026-10-09T17:27:17"
     },
     "score": 3,
     "simbolo": "★",
@@ -23732,7 +23822,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:42"
+      "ultima_revision": "2026-10-09T17:27:18"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -23784,7 +23874,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:43"
+      "ultima_revision": "2026-10-09T17:27:19"
     },
     "score": 18,
     "simbolo": "★",
@@ -23834,7 +23924,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:44"
+      "ultima_revision": "2026-10-09T17:27:20"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -23885,7 +23975,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:45"
+      "ultima_revision": "2026-10-09T17:27:21"
     },
     "score": 2,
     "simbolo": "★",
@@ -23970,7 +24060,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:46"
+      "ultima_revision": "2026-10-09T17:27:22"
     },
     "score": 17,
     "simbolo": "★",
@@ -24016,7 +24106,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:47"
+      "ultima_revision": "2026-10-09T17:27:23"
     },
     "score": 0,
     "simbolo": "★",
@@ -24226,7 +24316,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:48"
+      "ultima_revision": "2026-10-09T17:27:23"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -24297,7 +24387,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:49"
+      "ultima_revision": "2026-10-09T17:27:24"
     },
     "score": 47,
     "simbolo": "★★★",
@@ -24452,7 +24542,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:49"
+      "ultima_revision": "2026-10-09T17:27:25"
     },
     "score": 25,
     "simbolo": "★★",
@@ -24562,7 +24652,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:50"
+      "ultima_revision": "2026-10-09T17:27:26"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -24628,7 +24718,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:52"
+      "ultima_revision": "2026-10-09T17:27:27"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -24730,7 +24820,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:52"
+      "ultima_revision": "2026-10-09T17:27:28"
     },
     "score": 0,
     "simbolo": "★",
@@ -24778,7 +24868,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:53"
+      "ultima_revision": "2026-10-09T17:27:29"
     },
     "score": 25,
     "simbolo": "★★",
@@ -24822,7 +24912,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:54"
+      "ultima_revision": "2026-10-09T17:27:30"
     },
     "score": 0,
     "simbolo": "★",
@@ -24916,7 +25006,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:55"
+      "ultima_revision": "2026-10-09T17:27:32"
     },
     "score": 0,
     "simbolo": "★",
@@ -24961,7 +25051,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:56"
+      "ultima_revision": "2026-10-09T17:27:33"
     },
     "score": 26,
     "simbolo": "★★",
@@ -25006,7 +25096,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:57"
+      "ultima_revision": "2026-10-09T17:27:34"
     },
     "score": 0,
     "simbolo": "★",
@@ -25146,6 +25236,16 @@
     "organismo": null,
     "primera_deteccion": "2026-10-09T16:51:07",
     "que_es": "Licitación de organismo no identificado — busca Abreviatura técnica del rubro, Marca de mercado mencionada, Normativa/certificación mencionada. Menciona \"r10\": «color rojo de 10 cm. 23,9 23,9 27,4 13,3 18,1 18,1 22,2 R25 R10 línea de seguridad línea de seguridad 32,7 21,5 29,5 7,5 R3»",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:27:35"
+    },
     "score": 26,
     "simbolo": "★★",
     "titulo": "Compra Directa 495/2026",
@@ -25231,7 +25331,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:58"
+      "ultima_revision": "2026-10-09T17:27:37"
     },
     "score": 18,
     "simbolo": "★",
@@ -25324,7 +25424,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:59"
+      "ultima_revision": "2026-10-09T17:27:38"
     },
     "score": 17,
     "simbolo": "★",
@@ -25368,6 +25468,16 @@
     "organismo": "Ministerio de Defensa Nacional",
     "primera_deteccion": "2026-10-09T16:59:59",
     "que_es": "Licitación de Ministerio de Defensa Nacional — busca Material mencionado (revisar contexto). Menciona \"algodón\": «tela twill | | | | | |100% algodón; | | | | |»",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:27:38"
+    },
     "score": 15,
     "simbolo": "★",
     "titulo": "Compra Directa 6139/2026",
@@ -25463,7 +25573,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:51:59"
+      "ultima_revision": "2026-10-09T17:27:40"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -25515,7 +25625,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:01"
+      "ultima_revision": "2026-10-09T17:27:40"
     },
     "score": 2,
     "simbolo": "★",
@@ -25565,7 +25675,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:01"
+      "ultima_revision": "2026-10-09T17:27:42"
     },
     "score": 51,
     "simbolo": "★★★",
@@ -25713,7 +25823,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:02"
+      "ultima_revision": "2026-10-09T17:27:43"
     },
     "score": 0,
     "simbolo": "★",
@@ -25752,7 +25862,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:03"
+      "ultima_revision": "2026-10-09T17:27:44"
     },
     "score": 0,
     "simbolo": "★",
@@ -25798,7 +25908,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:04"
+      "ultima_revision": "2026-10-09T17:27:45"
     },
     "score": 8,
     "simbolo": "★",
@@ -25849,7 +25959,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:05"
+      "ultima_revision": "2026-10-09T17:27:46"
     },
     "score": 35,
     "simbolo": "★★",
@@ -25899,7 +26009,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:06"
+      "ultima_revision": "2026-10-09T17:27:47"
     },
     "score": 1,
     "simbolo": "★",
@@ -25991,7 +26101,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:07"
+      "ultima_revision": "2026-10-09T17:27:49"
     },
     "score": 41,
     "simbolo": "★★",
@@ -26089,7 +26199,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:08"
+      "ultima_revision": "2026-10-09T17:27:49"
     },
     "score": 5,
     "simbolo": "★",
@@ -26190,7 +26300,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:08"
+      "ultima_revision": "2026-10-09T17:27:50"
     },
     "score": 32,
     "simbolo": "★★",
@@ -26260,7 +26370,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:09"
+      "ultima_revision": "2026-10-09T17:27:51"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -26307,7 +26417,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:10"
+      "ultima_revision": "2026-10-09T17:27:52"
     },
     "score": 17,
     "simbolo": "★",
@@ -26347,6 +26457,16 @@
     "organismo": "Intendencia de Treinta y Tres",
     "primera_deteccion": "2026-10-09T16:50:52",
     "que_es": "Licitación de Intendencia de Treinta y Tres — busca Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"plaza de deportes\": «nicas Iguales a los que lucen en Plaza Bolivar Ledesma y Plaza de Deportes estructura de chapa fachada en policarbonato blanco texto e»",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:27:53"
+    },
     "score": 37,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 14/2026",
@@ -26401,7 +26521,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:11"
+      "ultima_revision": "2026-10-09T17:27:54"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -26454,7 +26574,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:12"
+      "ultima_revision": "2026-10-09T17:27:55"
     },
     "score": 14,
     "simbolo": "★",
@@ -26505,7 +26625,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:13"
+      "ultima_revision": "2026-10-09T17:27:56"
     },
     "score": 40,
     "simbolo": "★★",
@@ -26752,7 +26872,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:14"
+      "ultima_revision": "2026-10-09T17:27:57"
     },
     "score": 0,
     "simbolo": "★",
@@ -26794,7 +26914,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:15"
+      "ultima_revision": "2026-10-09T17:27:58"
     },
     "score": 0,
     "simbolo": "★",
@@ -26841,7 +26961,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:16"
+      "ultima_revision": "2026-10-09T17:27:58"
     },
     "score": 41,
     "simbolo": "★★",
@@ -26901,7 +27021,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:17"
+      "ultima_revision": "2026-10-09T17:28:00"
     },
     "score": 55,
     "simbolo": "★★★",
@@ -26966,7 +27086,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:18"
+      "ultima_revision": "2026-10-09T17:28:01"
     },
     "score": 2,
     "simbolo": "★",
@@ -27015,7 +27135,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:19"
+      "ultima_revision": "2026-10-09T17:28:02"
     },
     "score": 48,
     "simbolo": "★★★",
@@ -27121,7 +27241,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:20"
+      "ultima_revision": "2026-10-09T17:28:04"
     },
     "score": 22,
     "simbolo": "★",
@@ -27184,7 +27304,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:21"
+      "ultima_revision": "2026-10-09T17:28:05"
     },
     "score": 51,
     "simbolo": "★★★",
@@ -27247,7 +27367,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:22"
+      "ultima_revision": "2026-10-09T17:28:06"
     },
     "score": 26,
     "simbolo": "★★",
@@ -27292,7 +27412,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:23"
+      "ultima_revision": "2026-10-09T17:28:07"
     },
     "score": 7,
     "simbolo": "★",
@@ -27460,7 +27580,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:24"
+      "ultima_revision": "2026-10-09T17:28:08"
     },
     "score": 1,
     "simbolo": "★",
@@ -27548,14 +27668,14 @@
     "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
     "primera_deteccion": "2026-08-18T20:53:14",
     "resultado": {
-      "estado": "pendiente",
-      "fecha_resolucion": null,
+      "estado": "no_presentamos",
+      "fecha_resolucion": "18/09/2026",
       "ganamos": null,
-      "monto_total": null,
+      "monto_total": "$ 1.823.764,52",
       "nos_presentamos": false,
-      "resolucion": null,
-      "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:25"
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": "119/2026",
+      "ultima_revision": "2026-10-09T17:28:09"
     },
     "score": 38,
     "simbolo": "★★",
@@ -27606,7 +27726,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:26"
+      "ultima_revision": "2026-10-09T17:28:09"
     },
     "score": 7,
     "simbolo": "★",
@@ -27705,7 +27825,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:27"
+      "ultima_revision": "2026-10-09T17:28:10"
     },
     "score": 15,
     "simbolo": "★",
@@ -27803,7 +27923,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:28"
+      "ultima_revision": "2026-10-09T17:28:11"
     },
     "score": 17,
     "simbolo": "★",
@@ -27851,7 +27971,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:28"
+      "ultima_revision": "2026-10-09T17:28:12"
     },
     "score": 14,
     "simbolo": "★",
@@ -27913,7 +28033,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:29"
+      "ultima_revision": "2026-10-09T17:28:13"
     },
     "score": 36,
     "simbolo": "★★",
@@ -28019,7 +28139,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:30"
+      "ultima_revision": "2026-10-09T17:28:14"
     },
     "score": 0,
     "simbolo": "★",
@@ -28106,7 +28226,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:31"
+      "ultima_revision": "2026-10-09T17:28:14"
     },
     "score": 0,
     "simbolo": "★",
@@ -28200,7 +28320,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:32"
+      "ultima_revision": "2026-10-09T17:28:15"
     },
     "score": 12,
     "simbolo": "★",
@@ -28285,7 +28405,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:33"
+      "ultima_revision": "2026-10-09T17:28:16"
     },
     "score": 11,
     "simbolo": "★",
@@ -28377,7 +28497,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:34"
+      "ultima_revision": "2026-10-09T17:28:17"
     },
     "score": 29,
     "simbolo": "★★",
@@ -28426,7 +28546,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:35"
+      "ultima_revision": "2026-10-09T17:28:18"
     },
     "score": 2,
     "simbolo": "★",
@@ -28543,7 +28663,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:36"
+      "ultima_revision": "2026-10-09T17:28:19"
     },
     "score": 28,
     "simbolo": "★★",
@@ -28623,7 +28743,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:36"
+      "ultima_revision": "2026-10-09T17:28:20"
     },
     "score": 22,
     "simbolo": "★",
@@ -28677,7 +28797,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:37"
+      "ultima_revision": "2026-10-09T17:28:21"
     },
     "score": 5,
     "simbolo": "★",
@@ -28724,7 +28844,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:38"
+      "ultima_revision": "2026-10-09T17:28:21"
     },
     "score": 41,
     "simbolo": "★★",
@@ -28773,7 +28893,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:39"
+      "ultima_revision": "2026-10-09T17:28:22"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -28823,7 +28943,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:41"
+      "ultima_revision": "2026-10-09T17:28:25"
     },
     "score": 53,
     "simbolo": "★★★",
@@ -28873,7 +28993,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:42"
+      "ultima_revision": "2026-10-09T17:28:25"
     },
     "score": 1,
     "simbolo": "★",
@@ -28915,7 +29035,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:43"
+      "ultima_revision": "2026-10-09T17:28:26"
     },
     "score": 0,
     "simbolo": "★",
@@ -29011,7 +29131,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:44"
+      "ultima_revision": "2026-10-09T17:28:27"
     },
     "score": 29,
     "simbolo": "★★",
@@ -29070,7 +29190,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:45"
+      "ultima_revision": "2026-10-09T17:28:28"
     },
     "score": 23,
     "simbolo": "★",
@@ -29113,7 +29233,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:46"
+      "ultima_revision": "2026-10-09T17:28:29"
     },
     "score": 25,
     "simbolo": "★★",
@@ -29158,7 +29278,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:47"
+      "ultima_revision": "2026-10-09T17:28:30"
     },
     "score": 23,
     "simbolo": "★",
@@ -29218,7 +29338,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:48"
+      "ultima_revision": "2026-10-09T17:28:31"
     },
     "score": 53,
     "simbolo": "★★★",
@@ -29266,7 +29386,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:48"
+      "ultima_revision": "2026-10-09T17:28:32"
     },
     "score": 2,
     "simbolo": "★",
@@ -29311,7 +29431,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:49"
+      "ultima_revision": "2026-10-09T17:28:33"
     },
     "score": 21,
     "simbolo": "★",
@@ -29352,7 +29472,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:50"
+      "ultima_revision": "2026-10-09T17:28:34"
     },
     "score": 0,
     "simbolo": "★",
@@ -29401,7 +29521,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:51"
+      "ultima_revision": "2026-10-09T17:28:35"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -29462,7 +29582,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:52"
+      "ultima_revision": "2026-10-09T17:28:36"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -29654,7 +29774,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:53"
+      "ultima_revision": "2026-10-09T17:28:37"
     },
     "score": 1,
     "simbolo": "★",
@@ -29788,7 +29908,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:54"
+      "ultima_revision": "2026-10-09T17:28:38"
     },
     "score": 9,
     "simbolo": "★",
@@ -29836,7 +29956,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:55"
+      "ultima_revision": "2026-10-09T17:28:39"
     },
     "score": 10,
     "simbolo": "★",
@@ -29885,7 +30005,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:55"
+      "ultima_revision": "2026-10-09T17:28:40"
     },
     "score": 38,
     "simbolo": "★★",
@@ -29949,7 +30069,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:56"
+      "ultima_revision": "2026-10-09T17:28:40"
     },
     "score": 47,
     "simbolo": "★★★",
@@ -30013,7 +30133,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:57"
+      "ultima_revision": "2026-10-09T17:28:41"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -30145,7 +30265,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:52:59"
+      "ultima_revision": "2026-10-09T17:28:42"
     },
     "score": 25,
     "simbolo": "★★",
@@ -30237,7 +30357,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:00"
+      "ultima_revision": "2026-10-09T17:28:43"
     },
     "score": 0,
     "simbolo": "★",
@@ -30286,7 +30406,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:01"
+      "ultima_revision": "2026-10-09T17:28:44"
     },
     "score": 70,
     "simbolo": "★★★★",
@@ -30341,7 +30461,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:02"
+      "ultima_revision": "2026-10-09T17:28:44"
     },
     "score": 17,
     "simbolo": "★",
@@ -30384,7 +30504,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:03"
+      "ultima_revision": "2026-10-09T17:28:45"
     },
     "score": 2,
     "simbolo": "★",
@@ -30431,7 +30551,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:04"
+      "ultima_revision": "2026-10-09T17:28:46"
     },
     "score": 38,
     "simbolo": "★★",
@@ -30479,7 +30599,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:05"
+      "ultima_revision": "2026-10-09T17:28:47"
     },
     "score": 21,
     "simbolo": "★",
@@ -30535,7 +30655,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:06"
+      "ultima_revision": "2026-10-09T17:28:48"
     },
     "score": 50,
     "simbolo": "★★★",
@@ -30638,7 +30758,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:07"
+      "ultima_revision": "2026-10-09T17:28:49"
     },
     "score": 14,
     "simbolo": "★",
@@ -30774,7 +30894,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:08"
+      "ultima_revision": "2026-10-09T17:28:50"
     },
     "score": 2,
     "simbolo": "★",
@@ -30817,7 +30937,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:09"
+      "ultima_revision": "2026-10-09T17:28:50"
     },
     "score": 1,
     "simbolo": "★",
@@ -30867,7 +30987,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:10"
+      "ultima_revision": "2026-10-09T17:28:51"
     },
     "score": 47,
     "simbolo": "★★★",
@@ -30917,7 +31037,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:11"
+      "ultima_revision": "2026-10-09T17:28:52"
     },
     "score": 1,
     "simbolo": "★",
@@ -31019,7 +31139,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:12"
+      "ultima_revision": "2026-10-09T17:28:53"
     },
     "score": 30,
     "simbolo": "★★",
@@ -31099,14 +31219,14 @@
     "organismo": "Intendencia de Paysandú",
     "primera_deteccion": "2026-08-18T20:08:32",
     "resultado": {
-      "estado": "pendiente",
-      "fecha_resolucion": null,
+      "estado": "no_presentamos",
+      "fecha_resolucion": "24/08/2026",
       "ganamos": null,
-      "monto_total": null,
+      "monto_total": "$ 1.940.371,00",
       "nos_presentamos": false,
-      "resolucion": null,
-      "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:13"
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": "1/2026",
+      "ultima_revision": "2026-10-09T17:28:54"
     },
     "score": 0,
     "simbolo": "★",
@@ -31193,7 +31313,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:14"
+      "ultima_revision": "2026-10-09T17:28:55"
     },
     "score": 1,
     "simbolo": "★",
@@ -31240,7 +31360,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:15"
+      "ultima_revision": "2026-10-09T17:28:56"
     },
     "score": 56,
     "simbolo": "★★★",
@@ -31292,7 +31412,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:15"
+      "ultima_revision": "2026-10-09T17:28:56"
     },
     "score": 8,
     "simbolo": "★",
@@ -31345,7 +31465,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:16"
+      "ultima_revision": "2026-10-09T17:28:57"
     },
     "score": 0,
     "simbolo": "★",
@@ -31436,7 +31556,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:17"
+      "ultima_revision": "2026-10-09T17:28:58"
     },
     "score": 39,
     "simbolo": "★★",
@@ -31570,7 +31690,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:18"
+      "ultima_revision": "2026-10-09T17:28:59"
     },
     "score": 0,
     "simbolo": "★",
@@ -31655,7 +31775,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:19"
+      "ultima_revision": "2026-10-09T17:29:00"
     },
     "score": 25,
     "simbolo": "★★",
@@ -31699,7 +31819,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:20"
+      "ultima_revision": "2026-10-09T17:29:01"
     },
     "score": 0,
     "simbolo": "★",
@@ -31790,7 +31910,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:21"
+      "ultima_revision": "2026-10-09T17:29:02"
     },
     "score": 29,
     "simbolo": "★★",
@@ -31881,7 +32001,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:21"
+      "ultima_revision": "2026-10-09T17:29:03"
     },
     "score": 3,
     "simbolo": "★",
@@ -31933,7 +32053,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:22"
+      "ultima_revision": "2026-10-09T17:29:04"
     },
     "score": 17,
     "simbolo": "★",
@@ -31977,7 +32097,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:23"
+      "ultima_revision": "2026-10-09T17:29:05"
     },
     "score": 1,
     "simbolo": "★",
@@ -32038,7 +32158,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:24"
+      "ultima_revision": "2026-10-09T17:29:05"
     },
     "score": 32,
     "simbolo": "★★",
@@ -32086,7 +32206,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:25"
+      "ultima_revision": "2026-10-09T17:29:06"
     },
     "score": 17,
     "simbolo": "★",
@@ -32188,7 +32308,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:26"
+      "ultima_revision": "2026-10-09T17:29:07"
     },
     "score": 33,
     "simbolo": "★★",
@@ -32241,7 +32361,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:27"
+      "ultima_revision": "2026-10-09T17:29:08"
     },
     "score": 17,
     "simbolo": "★",
@@ -32295,7 +32415,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:28"
+      "ultima_revision": "2026-10-09T17:29:09"
     },
     "score": 73,
     "simbolo": "★★★★",
@@ -32417,7 +32537,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:28"
+      "ultima_revision": "2026-10-09T17:29:10"
     },
     "score": 24,
     "simbolo": "★",
@@ -32475,7 +32595,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:30"
+      "ultima_revision": "2026-10-09T17:29:11"
     },
     "score": 42,
     "simbolo": "★★",
@@ -32534,7 +32654,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:31"
+      "ultima_revision": "2026-10-09T17:29:12"
     },
     "score": 38,
     "simbolo": "★★",
@@ -32626,7 +32746,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:32"
+      "ultima_revision": "2026-10-09T17:29:13"
     },
     "score": 2,
     "simbolo": "★",
@@ -32677,7 +32797,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:33"
+      "ultima_revision": "2026-10-09T17:29:14"
     },
     "score": 38,
     "simbolo": "★★",
@@ -32740,7 +32860,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:34"
+      "ultima_revision": "2026-10-09T17:29:14"
     },
     "score": 20,
     "simbolo": "★",
@@ -32794,7 +32914,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:35"
+      "ultima_revision": "2026-10-09T17:29:15"
     },
     "score": 0,
     "simbolo": "★",
@@ -32839,7 +32959,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:36"
+      "ultima_revision": "2026-10-09T17:29:16"
     },
     "score": 21,
     "simbolo": "★",
@@ -32895,7 +33015,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:36"
+      "ultima_revision": "2026-10-09T17:29:17"
     },
     "score": 53,
     "simbolo": "★★★",
@@ -32962,7 +33082,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:37"
+      "ultima_revision": "2026-10-09T17:29:18"
     },
     "score": 17,
     "simbolo": "★",
@@ -33017,7 +33137,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:38"
+      "ultima_revision": "2026-10-09T17:29:18"
     },
     "score": 42,
     "simbolo": "★★",
@@ -33082,7 +33202,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:39"
+      "ultima_revision": "2026-10-09T17:29:19"
     },
     "score": 12,
     "simbolo": "★",
@@ -33149,7 +33269,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:40"
+      "ultima_revision": "2026-10-09T17:29:20"
     },
     "score": 31,
     "simbolo": "★★",
@@ -33287,7 +33407,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:41"
+      "ultima_revision": "2026-10-09T17:29:21"
     },
     "score": 21,
     "simbolo": "★",
@@ -33346,7 +33466,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:42"
+      "ultima_revision": "2026-10-09T17:29:22"
     },
     "score": 13,
     "simbolo": "★",
@@ -33391,7 +33511,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:43"
+      "ultima_revision": "2026-10-09T17:29:23"
     },
     "score": 23,
     "simbolo": "★",
@@ -33444,7 +33564,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:44"
+      "ultima_revision": "2026-10-09T17:29:24"
     },
     "score": 22,
     "simbolo": "★",
@@ -33496,7 +33616,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:44"
+      "ultima_revision": "2026-10-09T17:29:24"
     },
     "score": 0,
     "simbolo": "★",
@@ -33544,7 +33664,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:45"
+      "ultima_revision": "2026-10-09T17:29:25"
     },
     "score": 25,
     "simbolo": "★★",
@@ -33793,7 +33913,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:46"
+      "ultima_revision": "2026-10-09T17:29:26"
     },
     "score": 46,
     "simbolo": "★★★",
@@ -33849,7 +33969,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:47"
+      "ultima_revision": "2026-10-09T17:29:27"
     },
     "score": 37,
     "simbolo": "★★",
@@ -33899,7 +34019,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:48"
+      "ultima_revision": "2026-10-09T17:29:28"
     },
     "score": 1,
     "simbolo": "★",
@@ -33944,7 +34064,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:49"
+      "ultima_revision": "2026-10-09T17:29:29"
     },
     "score": 23,
     "simbolo": "★",
@@ -34067,7 +34187,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:50"
+      "ultima_revision": "2026-10-09T17:29:30"
     },
     "score": 4,
     "simbolo": "★",
@@ -34118,7 +34238,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:51"
+      "ultima_revision": "2026-10-09T17:29:31"
     },
     "score": 37,
     "simbolo": "★★",
@@ -34173,7 +34293,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:52"
+      "ultima_revision": "2026-10-09T17:29:31"
     },
     "score": 25,
     "simbolo": "★★",
@@ -34221,7 +34341,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:53"
+      "ultima_revision": "2026-10-09T17:29:32"
     },
     "score": 11,
     "simbolo": "★",
@@ -34264,7 +34384,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:53"
+      "ultima_revision": "2026-10-09T17:29:33"
     },
     "score": 2,
     "simbolo": "★",
@@ -34305,7 +34425,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:54"
+      "ultima_revision": "2026-10-09T17:29:34"
     },
     "score": 25,
     "simbolo": "★★",
@@ -34414,7 +34534,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:55"
+      "ultima_revision": "2026-10-09T17:29:35"
     },
     "score": 18,
     "simbolo": "★",
@@ -34552,7 +34672,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:56"
+      "ultima_revision": "2026-10-09T17:29:36"
     },
     "score": 1,
     "simbolo": "★",
@@ -34600,7 +34720,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:57"
+      "ultima_revision": "2026-10-09T17:29:37"
     },
     "score": 37,
     "simbolo": "★★",
@@ -34737,7 +34857,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:58"
+      "ultima_revision": "2026-10-09T17:29:38"
     },
     "score": 6,
     "simbolo": "★",
@@ -34788,7 +34908,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:53:59"
+      "ultima_revision": "2026-10-09T17:29:39"
     },
     "score": 35,
     "simbolo": "★★",
@@ -34831,7 +34951,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:00"
+      "ultima_revision": "2026-10-09T17:29:40"
     },
     "score": 0,
     "simbolo": "★",
@@ -34955,6 +35075,16 @@
     "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
     "primera_deteccion": "2026-10-09T01:13:18",
     "que_es": "Licitación de Ministerio de Trabajo y Seguridad Social (MTSS) — busca Accesorios de instalación, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"esquinero\": «ítem todos los elementos de zinguería (babetas, esquineros, cumbreras, ganchos de sujeción, canalones de d»",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:29:41"
+    },
     "score": 35,
     "simbolo": "★★",
     "titulo": "Concurso de Precios 38/2026",
@@ -34994,7 +35124,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:00"
+      "ultima_revision": "2026-10-09T17:29:42"
     },
     "score": 25,
     "simbolo": "★★",
@@ -35130,7 +35260,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:01"
+      "ultima_revision": "2026-10-09T17:29:43"
     },
     "score": 26,
     "simbolo": "★★",
@@ -35182,7 +35312,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:02"
+      "ultima_revision": "2026-10-09T17:29:43"
     },
     "score": 14,
     "simbolo": "★",
@@ -35224,7 +35354,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:03"
+      "ultima_revision": "2026-10-09T17:29:44"
     },
     "score": 7,
     "simbolo": "★",
@@ -35275,7 +35405,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:04"
+      "ultima_revision": "2026-10-09T17:29:45"
     },
     "score": 29,
     "simbolo": "★★",
@@ -35323,7 +35453,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:05"
+      "ultima_revision": "2026-10-09T17:29:46"
     },
     "score": 14,
     "simbolo": "★",
@@ -35366,7 +35496,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:06"
+      "ultima_revision": "2026-10-09T17:29:47"
     },
     "score": 17,
     "simbolo": "★",
@@ -35494,7 +35624,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:06"
+      "ultima_revision": "2026-10-09T17:29:47"
     },
     "score": 1,
     "simbolo": "★",
@@ -35539,7 +35669,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:07"
+      "ultima_revision": "2026-10-09T17:29:48"
     },
     "score": 9,
     "simbolo": "★",
@@ -35649,7 +35779,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:08"
+      "ultima_revision": "2026-10-09T17:29:49"
     },
     "score": 36,
     "simbolo": "★★",
@@ -35732,7 +35862,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:09"
+      "ultima_revision": "2026-10-09T17:29:50"
     },
     "score": 26,
     "simbolo": "★★",
@@ -35777,7 +35907,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:10"
+      "ultima_revision": "2026-10-09T17:29:51"
     },
     "score": 9,
     "simbolo": "★",
@@ -35839,7 +35969,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:11"
+      "ultima_revision": "2026-10-09T17:29:52"
     },
     "score": 2,
     "simbolo": "★",
@@ -35994,7 +36124,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:12"
+      "ultima_revision": "2026-10-09T17:29:53"
     },
     "score": 20,
     "simbolo": "★",
@@ -36137,7 +36267,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:13"
+      "ultima_revision": "2026-10-09T17:29:53"
     },
     "score": 15,
     "simbolo": "★",
@@ -36227,7 +36357,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:13"
+      "ultima_revision": "2026-10-09T17:29:54"
     },
     "score": 21,
     "simbolo": "★",
@@ -36321,7 +36451,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:14"
+      "ultima_revision": "2026-10-09T17:29:55"
     },
     "score": 17,
     "simbolo": "★",
@@ -36423,7 +36553,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:15"
+      "ultima_revision": "2026-10-09T17:29:56"
     },
     "score": 32,
     "simbolo": "★★",
@@ -36486,7 +36616,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:16"
+      "ultima_revision": "2026-10-09T17:29:57"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -36624,7 +36754,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:17"
+      "ultima_revision": "2026-10-09T17:29:58"
     },
     "score": 22,
     "simbolo": "★",
@@ -36726,7 +36856,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:18"
+      "ultima_revision": "2026-10-09T17:29:59"
     },
     "score": 12,
     "simbolo": "★",
@@ -36781,7 +36911,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:19"
+      "ultima_revision": "2026-10-09T17:30:00"
     },
     "score": 21,
     "simbolo": "★",
@@ -36837,7 +36967,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:20"
+      "ultima_revision": "2026-10-09T17:30:00"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -36984,7 +37114,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:21"
+      "ultima_revision": "2026-10-09T17:30:02"
     },
     "score": 2,
     "simbolo": "★",
@@ -37039,7 +37169,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:22"
+      "ultima_revision": "2026-10-09T17:30:03"
     },
     "score": 11,
     "simbolo": "★",
@@ -37148,7 +37278,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:23"
+      "ultima_revision": "2026-10-09T17:30:03"
     },
     "score": 35,
     "simbolo": "★★",
@@ -37269,14 +37399,14 @@
     "organismo": "Intendencia de Paysandú",
     "primera_deteccion": "2026-08-18T20:13:04",
     "resultado": {
-      "estado": "pendiente",
-      "fecha_resolucion": null,
+      "estado": "no_presentamos",
+      "fecha_resolucion": "03/09/2026",
       "ganamos": null,
-      "monto_total": null,
+      "monto_total": "$ 2.732.800,00",
       "nos_presentamos": false,
-      "resolucion": null,
-      "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:24"
+      "resolucion": "Adjudicada totalmente",
+      "resolucion_nro": "1/2026",
+      "ultima_revision": "2026-10-09T17:30:04"
     },
     "score": 7,
     "simbolo": "★",
@@ -37362,7 +37492,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:25"
+      "ultima_revision": "2026-10-09T17:30:05"
     },
     "score": 5,
     "simbolo": "★",
@@ -37415,7 +37545,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:26"
+      "ultima_revision": "2026-10-09T17:30:06"
     },
     "score": 4,
     "simbolo": "★",
@@ -37516,7 +37646,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:27"
+      "ultima_revision": "2026-10-09T17:30:07"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -37720,7 +37850,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:27"
+      "ultima_revision": "2026-10-09T17:30:08"
     },
     "score": 19,
     "simbolo": "★",
@@ -37766,7 +37896,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:28"
+      "ultima_revision": "2026-10-09T17:30:09"
     },
     "score": 18,
     "simbolo": "★",
@@ -37857,7 +37987,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:29"
+      "ultima_revision": "2026-10-09T17:30:09"
     },
     "score": 35,
     "simbolo": "★★",
@@ -37906,7 +38036,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:30"
+      "ultima_revision": "2026-10-09T17:30:10"
     },
     "score": 42,
     "simbolo": "★★",
@@ -37963,7 +38093,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:31"
+      "ultima_revision": "2026-10-09T17:30:11"
     },
     "score": 21,
     "simbolo": "★",
@@ -38011,7 +38141,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:32"
+      "ultima_revision": "2026-10-09T17:30:12"
     },
     "score": 17,
     "simbolo": "★",
@@ -38054,7 +38184,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:33"
+      "ultima_revision": "2026-10-09T17:30:13"
     },
     "score": 7,
     "simbolo": "★",
@@ -38097,7 +38227,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:34"
+      "ultima_revision": "2026-10-09T17:30:14"
     },
     "score": 7,
     "simbolo": "★",
@@ -38268,7 +38398,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:35"
+      "ultima_revision": "2026-10-09T17:30:15"
     },
     "score": 0,
     "simbolo": "★",
@@ -38354,7 +38484,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:36"
+      "ultima_revision": "2026-10-09T17:30:15"
     },
     "score": 29,
     "simbolo": "★★",
@@ -38447,7 +38577,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:37"
+      "ultima_revision": "2026-10-09T17:30:16"
     },
     "score": 41,
     "simbolo": "★★",
@@ -38546,7 +38676,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:38"
+      "ultima_revision": "2026-10-09T17:30:17"
     },
     "score": 31,
     "simbolo": "★★",
@@ -38587,7 +38717,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:39"
+      "ultima_revision": "2026-10-09T17:30:18"
     },
     "score": 25,
     "simbolo": "★★",
@@ -38636,7 +38766,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:40"
+      "ultima_revision": "2026-10-09T17:30:19"
     },
     "score": 42,
     "simbolo": "★★",
@@ -38682,7 +38812,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:40"
+      "ultima_revision": "2026-10-09T17:30:20"
     },
     "score": 21,
     "simbolo": "★",
@@ -38721,7 +38851,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:42"
+      "ultima_revision": "2026-10-09T17:30:21"
     },
     "score": 25,
     "simbolo": "★★",
@@ -38765,7 +38895,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:43"
+      "ultima_revision": "2026-10-09T17:30:22"
     },
     "score": 1,
     "simbolo": "★",
@@ -38804,7 +38934,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:45"
+      "ultima_revision": "2026-10-09T17:30:23"
     },
     "score": 0,
     "simbolo": "★",
@@ -38849,7 +38979,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:46"
+      "ultima_revision": "2026-10-09T17:30:23"
     },
     "score": 54,
     "simbolo": "★★★",
@@ -38934,7 +39064,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:47"
+      "ultima_revision": "2026-10-09T17:30:24"
     },
     "score": 25,
     "simbolo": "★★",
@@ -39029,7 +39159,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:49"
+      "ultima_revision": "2026-10-09T17:30:25"
     },
     "score": 35,
     "simbolo": "★★",
@@ -39218,7 +39348,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:50"
+      "ultima_revision": "2026-10-09T17:30:26"
     },
     "score": 0,
     "simbolo": "★",
@@ -39262,7 +39392,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:51"
+      "ultima_revision": "2026-10-09T17:30:27"
     },
     "score": 29,
     "simbolo": "★★",
@@ -39512,7 +39642,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:52"
+      "ultima_revision": "2026-10-09T17:30:28"
     },
     "score": 35,
     "simbolo": "★★",
@@ -39613,7 +39743,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:53"
+      "ultima_revision": "2026-10-09T17:30:28"
     },
     "score": 13,
     "simbolo": "★",
@@ -39660,7 +39790,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:55"
+      "ultima_revision": "2026-10-09T17:30:29"
     },
     "score": 19,
     "simbolo": "★",
@@ -39718,7 +39848,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:56"
+      "ultima_revision": "2026-10-09T17:30:30"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -39835,7 +39965,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:57"
+      "ultima_revision": "2026-10-09T17:30:31"
     },
     "score": 61,
     "simbolo": "★★★",
@@ -39881,6 +40011,16 @@
     "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
     "primera_deteccion": "2026-10-09T16:59:57",
     "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca Material mencionado (revisar contexto), apertura 2026-10-15. Menciona \"algodon\": «FRAGUADO RAPIDO /(VARIANTE: ANCHO 20) 3000 Rollo 6 VENDA DE ALGODON LAMINADO / (VARIANTE:ANCHO 20) 1500 Unidades 7 VENDA DE ALG»",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:30:32"
+    },
     "score": 21,
     "simbolo": "★",
     "titulo": "Compra Directa 17248/2026",
@@ -39957,7 +40097,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:54:58"
+      "ultima_revision": "2026-10-09T17:30:32"
     },
     "score": 0,
     "simbolo": "★",
@@ -40000,7 +40140,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:00"
+      "ultima_revision": "2026-10-09T17:30:33"
     },
     "score": 25,
     "simbolo": "★★",
@@ -40195,7 +40335,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:01"
+      "ultima_revision": "2026-10-09T17:30:34"
     },
     "score": 30,
     "simbolo": "★★",
@@ -40311,7 +40451,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:01"
+      "ultima_revision": "2026-10-09T17:30:35"
     },
     "score": 51,
     "simbolo": "★★★",
@@ -40423,7 +40563,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:02"
+      "ultima_revision": "2026-10-09T17:30:36"
     },
     "score": 25,
     "simbolo": "★★",
@@ -40513,7 +40653,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:03"
+      "ultima_revision": "2026-10-09T17:30:37"
     },
     "score": 38,
     "simbolo": "★★",
@@ -40622,7 +40762,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:04"
+      "ultima_revision": "2026-10-09T17:30:37"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -40704,7 +40844,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:05"
+      "ultima_revision": "2026-10-09T17:30:38"
     },
     "score": 17,
     "simbolo": "★",
@@ -40755,7 +40895,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:06"
+      "ultima_revision": "2026-10-09T17:30:39"
     },
     "score": 37,
     "simbolo": "★★",
@@ -40809,7 +40949,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:07"
+      "ultima_revision": "2026-10-09T17:30:40"
     },
     "score": 1,
     "simbolo": "★",
@@ -40860,7 +41000,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:08"
+      "ultima_revision": "2026-10-09T17:30:41"
     },
     "score": 35,
     "simbolo": "★★",
@@ -40913,7 +41053,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:09"
+      "ultima_revision": "2026-10-09T17:30:42"
     },
     "score": 2,
     "simbolo": "★",
@@ -40959,7 +41099,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:10"
+      "ultima_revision": "2026-10-09T17:30:42"
     },
     "score": 14,
     "simbolo": "★",
@@ -41045,7 +41185,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:13"
+      "ultima_revision": "2026-10-09T17:30:43"
     },
     "score": 20,
     "simbolo": "★",
@@ -41092,7 +41232,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:13"
+      "ultima_revision": "2026-10-09T17:30:44"
     },
     "score": 2,
     "simbolo": "★",
@@ -41184,7 +41324,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:15"
+      "ultima_revision": "2026-10-09T17:30:45"
     },
     "score": 43,
     "simbolo": "★★",
@@ -41302,7 +41442,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:17"
+      "ultima_revision": "2026-10-09T17:30:46"
     },
     "score": 29,
     "simbolo": "★★",
@@ -41507,7 +41647,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:17"
+      "ultima_revision": "2026-10-09T17:30:46"
     },
     "score": 7,
     "simbolo": "★",
@@ -41550,7 +41690,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:18"
+      "ultima_revision": "2026-10-09T17:30:47"
     },
     "score": 0,
     "simbolo": "★",
@@ -41597,7 +41737,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:19"
+      "ultima_revision": "2026-10-09T17:30:48"
     },
     "score": 34,
     "simbolo": "★★",
@@ -41649,7 +41789,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:20"
+      "ultima_revision": "2026-10-09T17:30:49"
     },
     "score": 45,
     "simbolo": "★★★",
@@ -41693,7 +41833,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:21"
+      "ultima_revision": "2026-10-09T17:30:50"
     },
     "score": 13,
     "simbolo": "★",
@@ -41745,7 +41885,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:22"
+      "ultima_revision": "2026-10-09T17:30:51"
     },
     "score": 21,
     "simbolo": "★",
@@ -41801,7 +41941,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:23"
+      "ultima_revision": "2026-10-09T17:30:52"
     },
     "score": 51,
     "simbolo": "★★★",
@@ -41861,7 +42001,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:24"
+      "ultima_revision": "2026-10-09T17:30:53"
     },
     "score": 1,
     "simbolo": "★",
@@ -41944,7 +42084,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:25"
+      "ultima_revision": "2026-10-09T17:30:54"
     },
     "score": 29,
     "simbolo": "★★",
@@ -42001,7 +42141,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:26"
+      "ultima_revision": "2026-10-09T17:30:55"
     },
     "score": 49,
     "simbolo": "★★★",
@@ -42051,7 +42191,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:27"
+      "ultima_revision": "2026-10-09T17:30:55"
     },
     "score": 33,
     "simbolo": "★★",
@@ -42113,7 +42253,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:28"
+      "ultima_revision": "2026-10-09T17:30:56"
     },
     "score": 2,
     "simbolo": "★",
@@ -42253,7 +42393,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:29"
+      "ultima_revision": "2026-10-09T17:30:57"
     },
     "score": 5,
     "simbolo": "★",
@@ -42299,7 +42439,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:30"
+      "ultima_revision": "2026-10-09T17:30:58"
     },
     "score": 5,
     "simbolo": "★",
@@ -42349,7 +42489,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:31"
+      "ultima_revision": "2026-10-09T17:30:59"
     },
     "score": 39,
     "simbolo": "★★",
@@ -42531,7 +42671,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:33"
+      "ultima_revision": "2026-10-09T17:31:00"
     },
     "score": 23,
     "simbolo": "★",
@@ -42708,6 +42848,16 @@
     "organismo": "Intendencia de Maldonado",
     "primera_deteccion": "2026-10-09T17:00:11",
     "que_es": "Licitación de Intendencia de Maldonado — busca Abreviatura técnica del rubro, Accesorios de instalación, Deck y exterior, Material mencionado (revisar contexto), Pisos de goma, Pisos de madera. Menciona \"deck de madera\": «ATADA CON \"WOLMAN E\". * EL NIVEL TERMINADO DE SUPERFICIE DE DECK DE MADERA NO DEBE QUEDAR A MAS DE 2,00m RESPECTO AL NIVEL DE COTA INC»",
+    "resultado": {
+      "estado": "pendiente",
+      "fecha_resolucion": null,
+      "ganamos": null,
+      "monto_total": null,
+      "nos_presentamos": false,
+      "resolucion": null,
+      "resolucion_nro": null,
+      "ultima_revision": "2026-10-09T17:31:00"
+    },
     "score": 45,
     "simbolo": "★★★",
     "titulo": "Licitación Abreviada 55/2026",
@@ -42756,7 +42906,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:34"
+      "ultima_revision": "2026-10-09T17:31:01"
     },
     "score": 0,
     "simbolo": "★",
@@ -42807,7 +42957,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:35"
+      "ultima_revision": "2026-10-09T17:31:02"
     },
     "score": 36,
     "simbolo": "★★",
@@ -42850,7 +43000,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:36"
+      "ultima_revision": "2026-10-09T17:31:03"
     },
     "score": 14,
     "simbolo": "★",
@@ -42896,7 +43046,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:37"
+      "ultima_revision": "2026-10-09T17:31:04"
     },
     "score": 57,
     "simbolo": "★★★",
@@ -42956,7 +43106,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:38"
+      "ultima_revision": "2026-10-09T17:31:05"
     },
     "score": 20,
     "simbolo": "★",
@@ -43167,7 +43317,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:39"
+      "ultima_revision": "2026-10-09T17:31:06"
     },
     "score": 12,
     "simbolo": "★",
@@ -43254,7 +43404,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:40"
+      "ultima_revision": "2026-10-09T17:31:07"
     },
     "score": 0,
     "simbolo": "★",
@@ -43299,7 +43449,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:41"
+      "ultima_revision": "2026-10-09T17:31:07"
     },
     "score": 2,
     "simbolo": "★",
@@ -43439,7 +43589,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:41"
+      "ultima_revision": "2026-10-09T17:31:08"
     },
     "score": 14,
     "simbolo": "★",
@@ -43486,7 +43636,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:42"
+      "ultima_revision": "2026-10-09T17:31:09"
     },
     "score": 50,
     "simbolo": "★★★",
@@ -43584,7 +43734,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:43"
+      "ultima_revision": "2026-10-09T17:31:10"
     },
     "score": 19,
     "simbolo": "★",
@@ -43808,7 +43958,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:44"
+      "ultima_revision": "2026-10-09T17:31:11"
     },
     "score": 4,
     "simbolo": "★",
@@ -43864,7 +44014,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:45"
+      "ultima_revision": "2026-10-09T17:31:11"
     },
     "score": 7,
     "simbolo": "★",
@@ -43911,7 +44061,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:46"
+      "ultima_revision": "2026-10-09T17:31:13"
     },
     "score": 55,
     "simbolo": "★★★",
@@ -43968,7 +44118,7 @@
       "nos_presentamos": false,
       "resolucion": null,
       "resolucion_nro": null,
-      "ultima_revision": "2026-10-08T17:55:47"
+      "ultima_revision": "2026-10-09T17:31:13"
     },
     "score": 21,
     "simbolo": "★",
