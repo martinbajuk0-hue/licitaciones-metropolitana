@@ -14519,6 +14519,45 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1362323",
     "ya_adjudicados": []
   },
+  "58dc3e27f3f910852dddb139f19f5695": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1378390.doc"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": "2026-10-20",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 08 Oct 2026 15:05:16",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "58dc3e27f3f910852dddb139f19f5695",
+    "informe": "informes/58dc3e27f3f910852dddb139f19f5695.md",
+    "keyword": "acero galvanizado",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
+    "primera_deteccion": "2026-10-09T01:07:02",
+    "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — busca Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica), apertura 2026-10-20. Menciona \"recubrimiento\": «Material Carcasa: fundición de aluminio y lente recubrimiento de policarbonato esmerilado con protección UV.»",
+    "score": 33,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 7705/2026",
+    "ultima_actualizacion": "2026-10-09T01:07:02",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1378390",
+    "ya_adjudicados": [
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM"
+    ]
+  },
   "59347402db739189484e7dff7aa4857b": {
     "cambio_detectado": false,
     "categorias": [
@@ -17048,6 +17087,52 @@
     "ultima_actualizacion": "2026-09-03T23:13:24",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1367521",
     "ya_adjudicados": []
+  },
+  "67f7b487e928e5fde09aa02376752b2b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "normativas",
+      "pisos_flotantes"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Normativa/certificación mencionada",
+      "Pisos flotantes/laminados"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1378234.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": "2026-10-14",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 08 Oct 2026 14:30:14",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "67f7b487e928e5fde09aa02376752b2b",
+    "informe": "informes/67f7b487e928e5fde09aa02376752b2b.md",
+    "keyword": "aglomerado + madera + poliuretano",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
+    "primera_deteccion": "2026-10-09T01:13:16",
+    "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Normativa/certificación mencionada, Pisos flotantes/laminados, apertura 2026-10-14. Menciona \"mdf\": «O ARCE VARIANTE ARCE UNIDAD DE MEDIDA Placa de melamínico mdf color blanco 2,6 mt x 1,83 mt x 18mm Placa de melamínico m»",
+    "score": 53,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 608/2026",
+    "ultima_actualizacion": "2026-10-09T01:13:16",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1378234",
+    "ya_adjudicados": [
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO",
+      "ZOCALO EN MDF",
+      "REPARACION DE PISO DE MADERA"
+    ]
   },
   "682054d777ea6088c111da175855c0e0": {
     "cambio_detectado": false,
@@ -34472,6 +34557,47 @@
       "MOQUETTE / VERDE",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-",
       "colocación moquette"
+    ]
+  },
+  "cb0b4c2749f990936f0fedeb0f44b003": {
+    "cambio_detectado": false,
+    "categorias": [
+      "accesorios",
+      "materiales",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1378319.doc"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 08 Oct 2026 14:30:13",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "cb0b4c2749f990936f0fedeb0f44b003",
+    "informe": "informes/cb0b4c2749f990936f0fedeb0f44b003.md",
+    "keyword": "mantenimiento edilicio",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
+    "primera_deteccion": "2026-10-09T01:13:18",
+    "que_es": "Licitación de Ministerio de Trabajo y Seguridad Social (MTSS) — busca Accesorios de instalación, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"esquinero\": «ítem todos los elementos de zinguería (babetas, esquineros, cumbreras, ganchos de sujeción, canalones de d»",
+    "score": 35,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 38/2026",
+    "ultima_actualizacion": "2026-10-09T01:13:18",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1378319",
+    "ya_adjudicados": [
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "REPARACION DE PISO DE MADERA"
     ]
   },
   "cc73e4486b18211d77191c3b7a581097": {
