@@ -30222,6 +30222,56 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "a91e6b7b48b225ab5e7adc1d43908345": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1378456.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Sat, 10 Oct 2026 23:25:08",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "a91e6b7b48b225ab5e7adc1d43908345",
+    "informe": "informes/a91e6b7b48b225ab5e7adc1d43908345.md",
+    "keyword": "goma + pvc",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-10-11T16:10:20",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «d.69674-cable multifilar -CABLE MULTIFILAR CON AISLACION DE PVC -En 2mm-Rollo 100 mts 2 UNID 5 Cod.69674-cable multifilar -»",
+    "score": 42,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 14114/2026",
+    "ultima_actualizacion": "2026-10-11T16:10:20",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1378456",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "ALFOMBRA DE GOMA",
+      "PISO MODULAR DE PVC",
+      "PISO DE GOMA",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "a9ebc9658afbd6c54c41a931b0fe5e8a": {
     "cambio_detectado": false,
     "categorias": [
