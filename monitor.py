@@ -16,6 +16,7 @@ import json
 import os
 import re
 import smtplib
+import time
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime
@@ -103,6 +104,28 @@ DIAS_MAX_PARA_ALERTA_POR_MAIL = 2
 # por un pelo algo publicado justo antes de la corrida.
 DIAS_MAX_BACKLOG_SIN_ANALIZAR = 3
 
+# 2026-10-09: pedido explícito del usuario, caso real encontrado en
+# auditoría — DIAS_MAX_BACKLOG_SIN_ANALIZAR de arriba hace exactamente lo
+# que el usuario pidió el 2026-08-28 en el día a día (no reprocesar
+# historial viejo), PERO tiene un efecto no deseado cuando la corrida
+# estuvo caída varios días seguidos (sitio de ARCE caído, feriado largo,
+# corte en GitHub Actions — ya pasó, ver corridas #220-#226 más abajo en
+# el historial del repo): lo publicado DURANTE esa caída es en realidad
+# reciente, el sistema simplemente no llegó a verlo a tiempo, y aun así
+# se descartaba sin leer el pliego ni guardarse en el catálogo del visor,
+# para siempre.
+#
+# Esto distingue los dos casos con el momento de la última corrida que
+# terminó OK (guardado en vistos["_meta"]["ultima_corrida_exitosa"], ver
+# main()): si pasaron más de este umbral de horas desde esa corrida —
+# bastante más que el intervalo normal entre corridas (7am/12pm/6pm, ~5-6
+# horas) — se asume que se está recuperando de una caída, y el backlog SÍ
+# se analiza y entra al catálogo (sigue sin mandarse por mail si ya es
+# viejo — ver DIAS_MAX_PARA_ALERTA_POR_MAIL arriba, ese filtro no cambia).
+# En el día a día normal (corridas sin caídas) el comportamiento pedido en
+# agosto sigue intacto.
+HORAS_GAP_PARA_RECUPERACION_DE_CAIDA = 20
+
 
 # ─── Estado (licitaciones ya vistas) ──────────────────────────────────────
 # Formato: { id: {"titulo": str, "hash": str, "primera_deteccion": iso, "notificaciones": int} }
@@ -124,8 +147,38 @@ def guardar_vistos(vistos: dict) -> None:
         json.dump(vistos, f, ensure_ascii=False, indent=2)
 
 
+# 2026-10-09: versión del algoritmo de _hash_contenido() — ver más abajo
+# por qué hace falta versionarlo en vez de solo cambiar la fórmula.
+HASH_CONTENIDO_VERSION = 2
+
+
 def _hash_contenido(lic: dict) -> str:
-    return hashlib.md5((lic["titulo"] + "|" + lic["descripcion"]).encode("utf-8")).hexdigest()
+    """Hash usado para detectar "hubo un cambio" en un llamado ya visto
+    entre una corrida y la siguiente (ver main(), rama "modificadas").
+
+    Hasta 2026-10-09 (versión 1) solo hasheaba título+descripción. Caso
+    real sin test que lo cubriera (encontrado en auditoría): si el
+    organismo republica el pliego/anexo con cambios reales (cantidades,
+    plazos, un ítem nuevo) pero no toca ni una coma del título/
+    descripción corta del release OCDS —lo más común, el PDF es lo que
+    cambia, no el resumen—, el cambio pasaba completamente
+    desapercibido: el hash quedaba idéntico y el llamado ni siquiera
+    entraba a la rama de "modificadas".
+
+    Versión 2 agrega los links a documentos del pliego y los ítems
+    pedidos (ver _items_articulos()) al hash. Por eso además hace falta
+    HASH_CONTENIDO_VERSION: el día del deploy, todo lo que ya estaba en
+    vistos tiene un hash calculado con la fórmula vieja, que por
+    definición no va a coincidir con el nuevo aunque el contenido real no
+    haya cambiado en absoluto — sin la versión, eso dispararía una ola de
+    falsos "cambio detectado" para todo el catálogo existente. main()
+    compara hash solo cuando previo["hash_version"] == HASH_CONTENIDO_
+    VERSION; si no, actualiza en silencio sin marcar cambio (ver ahí).
+    """
+    documentos = "|".join(sorted(lic.get("documentos") or []))
+    items_pliego_txt = json.dumps(lic.get("items_pliego") or [], sort_keys=True, ensure_ascii=False)
+    contenido = "|".join([lic["titulo"], lic["descripcion"], documentos, items_pliego_txt])
+    return hashlib.md5(contenido.encode("utf-8")).hexdigest()
 
 
 def _codigos_articulo(tender: dict) -> list[str]:
@@ -379,42 +432,63 @@ def obtener_licitaciones(vistos: dict | None = None) -> list[dict]:
                 continue
 
             titulo, desc, documentos, codigos_articulo, items_pliego = "", "", [], [], []
-            try:
-                rr = requests.get(link, headers=parser_mod.HEADERS, timeout=15)
-                if rr.status_code == 200:
-                    rel = rr.json()
-                    # El JSON es un release package OCDS: uri/version/publisher
-                    # a nivel superior, y la release real (con tender/parties)
-                    # anidada en "releases": [...]. Confirmado con evidencia
-                    # del log — el primer intento buscaba "tender" en el nivel
-                    # equivocado y por eso siempre volvía vacío.
-                    if isinstance(rel, dict) and isinstance(rel.get("releases"), list) and rel["releases"]:
-                        rel = rel["releases"][0]
-                    tender = rel.get("tender", {}) if isinstance(rel, dict) else {}
-                    titulo = tender.get("title") or (rel.get("title") if isinstance(rel, dict) else "") or ""
-                    desc = tender.get("description") or ""
-                    # Estándar OCDS: los documentos del pliego van en
-                    # tender.documents[].url — NO en un HTML para scrapear.
-                    # lic["url"] apunta al JSON del release (no a una página
-                    # HTML), así que parser.extraer_pliego() no podría
-                    # encontrarlos ahí buscando <a href="...pdf">.
-                    documentos = [
-                        d.get("url") for d in tender.get("documents", []) if isinstance(d, dict) and d.get("url")
-                    ]
-                    codigos_articulo = _codigos_articulo(tender)
-                    items_pliego = _items_articulos(tender)
-                if not primer_release_impreso:
-                    print(
-                        f"  RSS->release: status={rr.status_code} título={titulo!r} "
-                        f"tender.keys={sorted(tender.keys()) if titulo or desc else 'N/A'} "
-                        f"documentos={documentos} codigos_articulo={codigos_articulo} "
-                        f"items_pliego={len(items_pliego)} artículo(s)"
-                    )
-                    primer_release_impreso = True
-            except Exception as e:  # noqa: BLE001
-                if not primer_release_impreso:
-                    print(f"  RSS->release: error obteniendo {link}: {e}")
-                    primer_release_impreso = True
+            # 2026-10-09: antes, un solo timeout/error de red acá (algo común
+            # contra un servidor del estado) dejaba el título/descripción/
+            # documentos vacíos para SIEMPRE: el item quedaba guardado en
+            # vistos con esos campos en blanco, así que es_relevante() nunca
+            # podía matchear por descripción ni leer el pliego (sin
+            # documentos listados), y la próxima corrida lo saltea sin
+            # reintentar porque el id ya está en vistos (ver el "continue"
+            # más arriba). Ahora se reintenta unas veces antes de resignarse,
+            # y CADA intento fallido se imprime (antes solo se veía el
+            # primero de toda la corrida).
+            ultimo_error: Exception | None = None
+            for intento in range(1, 4):
+                try:
+                    rr = requests.get(link, headers=parser_mod.HEADERS, timeout=15)
+                    if rr.status_code == 200:
+                        rel = rr.json()
+                        # El JSON es un release package OCDS: uri/version/publisher
+                        # a nivel superior, y la release real (con tender/parties)
+                        # anidada en "releases": [...]. Confirmado con evidencia
+                        # del log — el primer intento buscaba "tender" en el nivel
+                        # equivocado y por eso siempre volvía vacío.
+                        if isinstance(rel, dict) and isinstance(rel.get("releases"), list) and rel["releases"]:
+                            rel = rel["releases"][0]
+                        tender = rel.get("tender", {}) if isinstance(rel, dict) else {}
+                        titulo = tender.get("title") or (rel.get("title") if isinstance(rel, dict) else "") or ""
+                        desc = tender.get("description") or ""
+                        # Estándar OCDS: los documentos del pliego van en
+                        # tender.documents[].url — NO en un HTML para scrapear.
+                        # lic["url"] apunta al JSON del release (no a una página
+                        # HTML), así que parser.extraer_pliego() no podría
+                        # encontrarlos ahí buscando <a href="...pdf">.
+                        documentos = [
+                            d.get("url") for d in tender.get("documents", []) if isinstance(d, dict) and d.get("url")
+                        ]
+                        codigos_articulo = _codigos_articulo(tender)
+                        items_pliego = _items_articulos(tender)
+                    if not primer_release_impreso:
+                        print(
+                            f"  RSS->release: status={rr.status_code} título={titulo!r} "
+                            f"tender.keys={sorted(tender.keys()) if titulo or desc else 'N/A'} "
+                            f"documentos={documentos} codigos_articulo={codigos_articulo} "
+                            f"items_pliego={len(items_pliego)} artículo(s)"
+                        )
+                        primer_release_impreso = True
+                    ultimo_error = None
+                    break
+                except Exception as e:  # noqa: BLE001
+                    ultimo_error = e
+                    print(f"  RSS->release: intento {intento}/3 falló para {link}: {e}")
+                    if intento < 3:
+                        time.sleep(2 * intento)
+            if ultimo_error is not None:
+                print(
+                    f"  RSS->release: no se pudo obtener {link} tras 3 intentos "
+                    f"({ultimo_error}) — se guarda con título del feed RSS pero sin "
+                    "descripción ni documentos del pliego."
+                )
 
             licitaciones.append({
                 "id": uid,
@@ -516,10 +590,39 @@ def _decidir_relevancia(matches: list[str]) -> tuple[bool, str | None]:
     No reemplaza una verificación semántica real — sigue habiendo margen
     de falsos positivos (ej. "pvc" + "carpeta" en una compra de
     útiles de oficina), pero reduce el ruido sin costo ni dependencias.
+
+    2026-10-12: pedido explícito del usuario — ver settings.
+    terminos_genericos() para el diagnóstico completo (evidencia real
+    contra el catálogo de producción: 307/881 ítems, 35%, eran puro
+    ruido por este motivo). Términos de las listas "materiales"/
+    "terminologia_pliegos" que no viven también en una lista más
+    específica (categoría de producto, normativa, marca, error común,
+    abreviatura) son "genéricos": aparecen en cualquier pliego público
+    uruguayo, no solo en los del rubro de Metropolitana. Un match
+    multi-palabra genérico (ej. "acero inoxidable", "memoria
+    constructiva") YA NO alcanza solo — antes sí, por ser multi-palabra.
+    Un conjunto de matches compuesto ÚNICAMENTE por términos genéricos
+    nunca alcanza, sin importar cuántos sean. Pero un término genérico
+    SÍ puede seguir corroborando un término no genérico (ej. "pvc" +
+    "acero inoxidable" sigue siendo relevante, porque "pvc" ya es
+    específico por sí mismo — vive también en categorias.pisos_vinilicos).
     """
-    multipalabra = [kw for kw in matches if settings.es_termino_multipalabra(kw)]
-    if multipalabra:
-        return True, multipalabra[0]
+    genericos = settings.terminos_genericos()
+
+    multipalabra_no_generico = [
+        kw for kw in matches
+        if settings.es_termino_multipalabra(kw) and kw.lower() not in genericos
+    ]
+    if multipalabra_no_generico:
+        return True, multipalabra_no_generico[0]
+
+    no_genericos = [kw for kw in matches if kw.lower() not in genericos]
+    if not no_genericos:
+        # Todos los matches son genéricos (incluye el caso de un único
+        # término multi-palabra genérico, ya descartado arriba) — nunca
+        # alcanza solo, sin corroboración de un término no genérico.
+        return False, None
+
     distintos = sorted({kw.lower() for kw in matches})
     if len(distintos) >= 2:
         return True, " + ".join(distintos[:3])
@@ -966,6 +1069,33 @@ def main(enviar_email_flag: bool = True) -> None:
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M')}] Consultando ARCE...")
 
     vistos = cargar_vistos()
+
+    # 2026-10-09: ver HORAS_GAP_PARA_RECUPERACION_DE_CAIDA arriba — si pasó
+    # mucho más que el intervalo normal entre corridas desde la última vez
+    # que main() terminó una corrida completa con éxito (vistos["_meta"]
+    # ["ultima_corrida_exitosa"], stampeado al final de esta función), se
+    # asume que se está recuperando de una caída: el backlog viejo SÍ se
+    # analiza y entra al catálogo (sigue sin mandarse por mail si ya es
+    # viejo, ver DIAS_MAX_PARA_ALERTA_POR_MAIL). En el día a día normal
+    # (sin caídas) el comportamiento pedido por el usuario en agosto sigue
+    # intacto: el backlog viejo no se analiza.
+    recuperando_de_caida = False
+    ultima_corrida_exitosa = (vistos.get("_meta") or {}).get("ultima_corrida_exitosa")
+    if ultima_corrida_exitosa:
+        try:
+            gap_horas = (
+                datetime.now() - datetime.fromisoformat(ultima_corrida_exitosa)
+            ).total_seconds() / 3600
+            recuperando_de_caida = gap_horas > HORAS_GAP_PARA_RECUPERACION_DE_CAIDA
+        except ValueError:
+            recuperando_de_caida = False
+    if recuperando_de_caida:
+        print(
+            f"  Última corrida exitosa: {ultima_corrida_exitosa} — más de "
+            f"{HORAS_GAP_PARA_RECUPERACION_DE_CAIDA}hs atrás, se asume recuperación "
+            "de una caída: el backlog viejo SÍ se analiza y entra al catálogo."
+        )
+
     licitaciones = obtener_licitaciones(vistos)
     print(f"  Total obtenidas: {len(licitaciones)}")
 
@@ -990,21 +1120,48 @@ def main(enviar_email_flag: bool = True) -> None:
 
         hash_actual = _hash_contenido(lic)
         previo = vistos.get(lic["id"])
+        es_posible_cambio_a_relevante = False
 
         if previo is not None:
-            if previo.get("hash") and previo["hash"] != hash_actual:
-                lic["keyword"] = "(título/descripción cambió desde la última revisión)"
-                lic["fuente"] = "cambio detectado"
-                modificadas.append(lic)
-                catalogo.registrar_modificacion(lic)
+            if previo.get("hash_version") != HASH_CONTENIDO_VERSION:
+                # 2026-10-09: ver HASH_CONTENIDO_VERSION arriba — el día del
+                # deploy, todo lo que ya estaba en vistos tiene un hash
+                # calculado con la fórmula vieja: se migra en silencio al
+                # nuevo, sin disparar un falso "cambio detectado" para todo
+                # el catálogo existente.
                 vistos[lic["id"]]["hash"] = hash_actual
-                vistos[lic["id"]]["notificaciones"] = previo.get("notificaciones", 1) + 1
-            continue
+                vistos[lic["id"]]["hash_version"] = HASH_CONTENIDO_VERSION
+                continue
 
-        if _es_backlog_viejo(lic):
+            if previo.get("hash") and previo["hash"] != hash_actual:
+                era_relevante = previo.get("notificaciones", 0) > 0
+                if era_relevante:
+                    lic["keyword"] = "(título/descripción cambió desde la última revisión)"
+                    lic["fuente"] = "cambio detectado"
+                    modificadas.append(lic)
+                    catalogo.registrar_modificacion(lic)
+                    vistos[lic["id"]]["hash"] = hash_actual
+                    vistos[lic["id"]]["notificaciones"] = previo.get("notificaciones", 1) + 1
+                    continue
+                # 2026-10-09: pedido explícito del usuario, caso real de
+                # auditoría — hasta ahora, un llamado marcado NO relevante
+                # en su primera lectura nunca se volvía a evaluar, ni
+                # aunque una aclaración/ajuste posterior agregara justo el
+                # ítem/producto que lo hacía relevante (ej. una aclaración
+                # que agrega "piso vinílico" a la lista de ítems pedidos).
+                # Acá se detecta ese cambio por hash y se lo vuelve a
+                # evaluar más abajo exactamente como si fuera nuevo (lectura
+                # de pliego, scoring, catálogo, email), conservando la
+                # fecha original de primera_deteccion.
+                es_posible_cambio_a_relevante = True
+            else:
+                continue
+
+        if _es_backlog_viejo(lic) and not recuperando_de_caida and not es_posible_cambio_a_relevante:
             vistos[lic["id"]] = {
                 "titulo": lic["titulo"],
                 "hash": hash_actual,
+                "hash_version": HASH_CONTENIDO_VERSION,
                 "primera_deteccion": datetime.now().isoformat(),
                 "notificaciones": 0,
             }
@@ -1014,15 +1171,23 @@ def main(enviar_email_flag: bool = True) -> None:
         vistos[lic["id"]] = {
             "titulo": lic["titulo"],
             "hash": hash_actual,
-            "primera_deteccion": datetime.now().isoformat(),
-            "notificaciones": 1 if relevante else 0,
+            "hash_version": HASH_CONTENIDO_VERSION,
+            "primera_deteccion": (previo or {}).get("primera_deteccion") or datetime.now().isoformat(),
+            "notificaciones": ((previo or {}).get("notificaciones", 0)) + (1 if relevante else 0),
         }
 
         if not relevante:
+            if es_posible_cambio_a_relevante:
+                print(
+                    f"  '{lic['titulo']}': aclaración/ajuste detectado, pero sigue sin ser "
+                    "relevante tras la re-evaluación."
+                )
             continue
 
         lic["keyword"] = kw
         lic["fuente"] = fuente
+        if es_posible_cambio_a_relevante:
+            print(f"  '{lic['titulo']}' pasó a ser relevante tras una aclaración/ajuste.")
 
         # es_relevante() ya leyó el pliego (ver _texto_pliego_enriquecido(),
         # 2026-10-08) y deja el resultado completo cacheado en
@@ -1081,6 +1246,13 @@ def main(enviar_email_flag: bool = True) -> None:
         # qué entra o no al email.
         nuevas.append(lic)
 
+    # 2026-10-09: se stampea SOLO acá, al llegar al final de la corrida sin
+    # excepciones — ver recuperando_de_caida arriba. Una corrida que se cae
+    # o se cancela a mitad de camino (ya sea por el checkpoint periódico de
+    # más arriba o por una excepción no capturada) NO actualiza este valor,
+    # así que la próxima corrida exitosa va a ver el gap real y va a tratar
+    # ese período como una recuperación de caída.
+    vistos["_meta"] = {"ultima_corrida_exitosa": datetime.now().isoformat()}
     guardar_vistos(vistos)
     print(f"  Nuevas relevantes: {len(nuevas)} · Modificadas: {len(modificadas)}")
 
