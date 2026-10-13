@@ -634,12 +634,28 @@ categorias:
     - wet pour rubber
   pisos_deportivos:
     keywords:
+    # 2026-10-12: "pavimento deportivo"/"acondicionamiento de piso
+    # deportivo"/"obra de infraestructura deportiva" vivían SOLO en
+    # terminologia_pliegos — settings.terminos_genericos() los trataba
+    # como genéricos (igual que "mantenimiento edilicio"), así que la
+    # regla de términos genéricos (ver monitor._decidir_relevancia())
+    # los descartaba por error. Caso real de auditoría (revisión con IA
+    # de los 307 ítems afectados, ver docs/informes): Licitación
+    # Abreviada 30/2026 — "PAVIMENTO DEPORTIVO PARA GIMNASIO BLANQUILLO"
+    # — se perdía aunque es una compra real de piso deportivo, el
+    # producto principal de esta categoría. Quedan también en
+    # terminologia_pliegos (no hace falta sacarlos de ahí): con que
+    # vivan en una categoría de producto ya alcanza para que no se los
+    # trate como genéricos.
     - area elastic
     - athletic track surface
+    - acondicionamiento de piso deportivo
     - cancha acrilica
     - cancha acrílica
     - cancha techada
     - carpeta deportiva
+    - obra de infraestructura deportiva
+    - pavimento deportivo
     - colchoneta deportiva
     - combi elastic
     - dance floor
