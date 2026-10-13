@@ -126,6 +126,15 @@ DIAS_MAX_BACKLOG_SIN_ANALIZAR = 3
 # agosto sigue intacto.
 HORAS_GAP_PARA_RECUPERACION_DE_CAIDA = 20
 
+# 2026-10-13: pedido explícito del usuario — quiere enterarse por mail
+# apenas el pipeline detecta que "no pudo" hacer su trabajo normal, sin
+# esperar a revisar el catálogo a mano. Esta lista se resetea al empezar
+# cada obtener_licitaciones() y junta los ítems cuyo fetch de detalle
+# agotó los 3 reintentos (ver ese bucle más abajo); main() la revisa
+# después de llamar a obtener_licitaciones() y manda UNA alerta (ver
+# _enviar_alerta_operativa()) si quedó algo adentro.
+_ITEMS_SIN_ENRIQUECER: list[dict] = []
+
 
 # ─── Estado (licitaciones ya vistas) ──────────────────────────────────────
 # Formato: { id: {"titulo": str, "hash": str, "primera_deteccion": iso, "notificaciones": int} }
@@ -309,6 +318,8 @@ def obtener_licitaciones(vistos: dict | None = None) -> list[dict]:
     adjudicaciones sobre licitaciones ya vistas) requiere diseño propio —
     hoy monitor.py solo cubre "detectar llamados nuevos".
     """
+    global _ITEMS_SIN_ENRIQUECER
+    _ITEMS_SIN_ENRIQUECER = []
     licitaciones = []
 
     try:
@@ -489,6 +500,11 @@ def obtener_licitaciones(vistos: dict | None = None) -> list[dict]:
                     f"({ultimo_error}) — se guarda con título del feed RSS pero sin "
                     "descripción ni documentos del pliego."
                 )
+                _ITEMS_SIN_ENRIQUECER.append({
+                    "titulo": titulo or item.findtext("title", default=""),
+                    "link": link,
+                    "error": str(ultimo_error),
+                })
 
             licitaciones.append({
                 "id": uid,
@@ -1063,6 +1079,42 @@ def enviar_email(
     )
 
 
+def _enviar_alerta_operativa(asunto: str, cuerpo_texto: str) -> None:
+    """Alerta operativa corta, aparte del email diario de licitaciones —
+    pedido explícito del usuario 2026-10-13: avisarle por mail apenas el
+    pipeline detecta que no pudo cumplir su trabajo normal (recuperación
+    de una caída, reintentos de red agotados para un ítem, o la corrida
+    entera se cae con una excepción — ver las llamadas a esta función en
+    main() y en el bloque __main__ más abajo).
+
+    Reutiliza las mismas credenciales/destino que enviar_email(). Nunca
+    propaga una excepción: una alerta que no se pudo mandar (ej. GMAIL_*
+    mal configurado, o el propio Gmail caído) no debe tirar abajo el resto
+    de la corrida — ya es, en sí misma, la peor situación en la que querés
+    que una excepción silencie el aviso.
+    """
+    gmail_user = settings.gmail_user()
+    gmail_pass = settings.gmail_app_password()
+    dest = settings.email_destino()
+
+    if not gmail_user or not gmail_pass:
+        print(f"  Alerta operativa NO enviada (GMAIL_USER/GMAIL_APP_PASSWORD no configurados): {asunto}")
+        return
+
+    try:
+        msg = MIMEMultipart("alternative")
+        msg["Subject"] = asunto
+        msg["From"] = gmail_user
+        msg["To"] = dest
+        msg.attach(MIMEText(cuerpo_texto, "plain"))
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+            server.login(gmail_user, gmail_pass)
+            server.sendmail(gmail_user, dest, msg.as_string())
+        print(f"  Alerta operativa enviada: {asunto}")
+    except Exception as e:  # noqa: BLE001
+        print(f"  No se pudo enviar la alerta operativa ({asunto!r}): {e}")
+
+
 # ─── Main ──────────────────────────────────────────────────────────────────
 
 def main(enviar_email_flag: bool = True) -> None:
@@ -1095,9 +1147,34 @@ def main(enviar_email_flag: bool = True) -> None:
             f"{HORAS_GAP_PARA_RECUPERACION_DE_CAIDA}hs atrás, se asume recuperación "
             "de una caída: el backlog viejo SÍ se analiza y entra al catálogo."
         )
+        _enviar_alerta_operativa(
+            f"ℹ️ Monitor de licitaciones: recuperando backlog (gap de {gap_horas:.0f}hs)",
+            f"La última corrida exitosa registrada fue el {ultima_corrida_exitosa} — hace "
+            f"{gap_horas:.1f}hs, más del umbral normal de {HORAS_GAP_PARA_RECUPERACION_DE_CAIDA}hs.\n\n"
+            "Esto suele significar que el workflow de GitHub Actions no pudo correr con éxito "
+            "durante ese período (falla técnica, el feed no respondió, etc. — revisá la pestaña "
+            "Actions del repo si querés el motivo exacto).\n\n"
+            "Esta corrida SÍ va a analizar el backlog viejo acumulado y agregarlo al catálogo del "
+            "visor (el backlog muy viejo sigue sin entrar al email del día, eso no cambia)."
+        )
 
     licitaciones = obtener_licitaciones(vistos)
     print(f"  Total obtenidas: {len(licitaciones)}")
+
+    if _ITEMS_SIN_ENRIQUECER:
+        _items_alerta = _ITEMS_SIN_ENRIQUECER[:20]
+        _resto = len(_ITEMS_SIN_ENRIQUECER) - len(_items_alerta)
+        _enviar_alerta_operativa(
+            f"⚠️ Monitor de licitaciones: {len(_ITEMS_SIN_ENRIQUECER)} llamado(s) sin pliego enriquecido",
+            f"{len(_ITEMS_SIN_ENRIQUECER)} llamado(s) de esta corrida se guardaron con el título del "
+            "feed RSS pero SIN descripción ni documentos del pliego (se agotaron los 3 reintentos "
+            "contra comprasestatales.gub.uy en esta misma corrida):\n\n"
+            + "\n".join(f"- {it['titulo']!r} — {it['link']} ({it['error']})" for it in _items_alerta)
+            + (f"\n... y {_resto} más." if _resto else "")
+            + "\n\nQuedan marcados como 'vistos' con esos datos incompletos: NO se van a reintentar "
+            "solos en una corrida futura (habría que borrar su entrada en "
+            "data/licitaciones_vistas.json para forzar un reintento)."
+        )
 
     nuevas: list[dict] = []
     modificadas: list[dict] = []
@@ -1541,4 +1618,21 @@ if __name__ == "__main__":
         else:
             enviar_email_de_prueba_rango_fechas(desde, hasta)
     else:
-        main(enviar_email_flag=not args.sin_email)
+        try:
+            main(enviar_email_flag=not args.sin_email)
+        except Exception as e:  # noqa: BLE001
+            # 2026-10-13: pedido explícito del usuario — que le avisen si el
+            # sistema falla, aunque sea que esté caído por horas. Esto NO
+            # reemplaza que la corrida siga fallando a los ojos de GitHub
+            # Actions (se vuelve a lanzar la excepción abajo): solo asegura
+            # que el aviso llegue por mail también, sin depender de que
+            # alguien mire la pestaña Actions del repo.
+            _enviar_alerta_operativa(
+                "🔴 Monitor de licitaciones: la corrida falló",
+                "La corrida de monitor.py terminó con un error y no se completó:\n\n"
+                f"{type(e).__name__}: {e}\n\n"
+                "No se actualizó licitaciones_vistas.json con esta corrida — la próxima corrida "
+                "exitosa va a detectar el gap de tiempo y recuperar el backlog acumulado "
+                "automáticamente (ver HORAS_GAP_PARA_RECUPERACION_DE_CAIDA)."
+            )
+            raise
