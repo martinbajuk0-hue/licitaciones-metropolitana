@@ -91,6 +91,50 @@ _GRUPOS_SEÑAL_FUERTE = [
 # que la licitación ya fue marcada relevante por una señal fuerte.
 _GRUPOS_CONTEXTO = ["lugares_uso", "aplicaciones"]
 
+# 2026-10-12: pedido explícito del usuario — desde que se sacó el piso de
+# score mínimo del email (2026-10-08), el volumen de "relevantes" subió
+# mucho y gran parte no tiene nada que ver con el rubro. Causa real
+# (evidencia contra el catálogo de producción, 881 ítems): monitor.
+# _decidir_relevancia() trata cualquier término multi-palabra como
+# "específico por construcción", pero "materiales"/"terminologia_pliegos"
+# tienen términos multi-palabra genéricos de cualquier pliego público
+# (ej. "acero inoxidable", "fibra de vidrio", "memoria constructiva",
+# "mantenimiento edilicio") — no exclusivos del rubro de Metropolitana.
+# 307/881 ítems del catálogo (35%, score promedio 11.7/100, máximo 37/100
+# — por debajo del viejo piso de 45, o sea ninguno se "pierde" respecto
+# del comportamiento anterior al 2026-10-08) solo tenían este tipo de
+# término, sin ningún otro match más específico.
+#
+# terminos_genericos() identifica esos términos para que
+# monitor._decidir_relevancia() los trate como señal débil (nunca
+# alcanzan solos, pero sí pueden corroborar un término no genérico — ver
+# esa función). Un término de estas dos listas que TAMBIÉN vive en una
+# lista más específica (categoría de producto real, normativas, marcas,
+# errores_comunes, abreviaturas) no cuenta como genérico: ej. "pvc" está
+# en "materiales" pero también en categorias.pisos_vinilicos, así que
+# sigue siendo señal fuerte.
+_GRUPOS_GENERICOS_SIN_CORROBORACION = ["terminologia_pliegos", "materiales"]
+
+
+@functools.lru_cache(maxsize=None)
+def terminos_genericos() -> frozenset[str]:
+    """Términos (en minúsculas) de materiales/terminologia_pliegos que NO
+    viven también en ninguna lista más específica — ver el comentario de
+    _GRUPOS_GENERICOS_SIN_CORROBORACION arriba para el motivo completo.
+    """
+    kw = keywords()
+    candidatos: set[str] = set()
+    for grupo in _GRUPOS_GENERICOS_SIN_CORROBORACION:
+        candidatos.update(t.lower() for t in kw.get(grupo, []))
+
+    especificos: set[str] = set()
+    for datos_categoria in kw.get("categorias", {}).values():
+        especificos.update(t.lower() for t in datos_categoria.get("keywords", []))
+    for grupo in ("normativas", "marcas", "errores_comunes", "abreviaturas"):
+        especificos.update(t.lower() for t in kw.get(grupo, []))
+
+    return frozenset(candidatos - especificos)
+
 
 def todas_las_palabras_clave() -> list[str]:
     """Aplana knowledge/keywords.yaml en la lista de términos "señal
