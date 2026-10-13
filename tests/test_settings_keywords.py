@@ -83,13 +83,71 @@ class TestKeywordsAmpliado(unittest.TestCase):
         self.assertEqual(monitor._decidir_relevancia(["aluminio"]), (False, None))
 
     def test_decidir_relevancia_dos_palabras_distintas_alcanzan(self):
-        relevante, kw = monitor._decidir_relevancia(["aluminio", "goma"])
+        # 2026-10-12: antes era ["aluminio", "goma"] — ambos términos de
+        # "materiales" sin uso específico (ver settings.terminos_
+        # genericos()), así que desde el fix de "términos genéricos" ya NO
+        # alcanzan solos (ver test_decidir_relevancia_dos_palabras_
+        # genericas_no_alcanza más abajo). Se cambia a "pvc"+"spc": dos
+        # términos de una palabra, pero cada uno vive también en una
+        # categoría de producto real (pisos_vinilicos/pisos_spc), así que
+        # siguen siendo señal fuerte.
+        relevante, kw = monitor._decidir_relevancia(["pvc", "spc"])
+        self.assertTrue(relevante)
+
+    def test_decidir_relevancia_dos_palabras_genericas_no_alcanza(self):
+        # 2026-10-12: pedido explícito del usuario — ver settings.
+        # terminos_genericos(). "aluminio"/"goma" son términos de
+        # "materiales" que aparecen en cualquier pliego público, sin
+        # relación con el rubro de Metropolitana: dos términos genéricos
+        # juntos ya NO alcanzan para marcar relevante (causa real del
+        # ruido reportado por el usuario tras sacar el piso de score).
+        self.assertEqual(monitor._decidir_relevancia(["aluminio", "goma"]), (False, None))
+
+    def test_decidir_relevancia_termino_especifico_mas_generico_alcanza(self):
+        # Un término genérico SÍ puede corroborar uno no genérico: "pvc"
+        # ya es señal fuerte por sí mismo (vive en categorias.
+        # pisos_vinilicos), "aluminio" lo corrobora.
+        relevante, kw = monitor._decidir_relevancia(["pvc", "aluminio"])
         self.assertTrue(relevante)
 
     def test_decidir_relevancia_multipalabra_sola_alcanza(self):
         relevante, kw = monitor._decidir_relevancia(["piso vinílico"])
         self.assertTrue(relevante)
         self.assertEqual(kw, "piso vinílico")
+
+    def test_decidir_relevancia_multipalabra_generica_sola_no_alcanza(self):
+        # 2026-10-12: caso real — "acero inoxidable"/"memoria
+        # constructiva" son multi-palabra pero genéricos (aparecen en
+        # cualquier pliego público), así que ya no alcanzan solos aunque
+        # sean multi-palabra — antes de este fix, cualquier término
+        # multi-palabra alcanzaba sin excepción.
+        self.assertEqual(monitor._decidir_relevancia(["acero inoxidable"]), (False, None))
+        self.assertEqual(monitor._decidir_relevancia(["memoria constructiva"]), (False, None))
+
+    def test_terminos_genericos_incluye_materiales_sin_uso_especifico(self):
+        genericos = settings.terminos_genericos()
+        self.assertIn("aluminio", genericos)
+        self.assertIn("goma", genericos)
+
+    def test_terminos_genericos_no_incluye_termino_tambien_especifico(self):
+        # "pvc" vive en "materiales" PERO también en categorias.
+        # pisos_vinilicos — no debe tratarse como genérico.
+        genericos = settings.terminos_genericos()
+        self.assertNotIn("pvc", genericos)
+        self.assertNotIn("spc", genericos)
+
+    def test_pavimento_deportivo_no_es_generico(self):
+        # 2026-10-12: caso real de la revisión con IA de los 307 ítems
+        # afectados por la regla de términos genéricos — "pavimento
+        # deportivo" vivía SOLO en terminologia_pliegos (señal débil) y
+        # se perdía una compra real (Licitación Abreviada 30/2026,
+        # "PAVIMENTO DEPORTIVO PARA GIMNASIO BLANQUILLO"). Se agregó
+        # también a categorias.pisos_deportivos — ver knowledge/
+        # keywords.yaml.
+        genericos = settings.terminos_genericos()
+        self.assertNotIn("pavimento deportivo", genericos)
+        relevante, kw = monitor._decidir_relevancia(["pavimento deportivo"])
+        self.assertTrue(relevante)
 
     def test_coincide_palabra_clave_respeta_limite_de_palabra_en_termino_corto(self):
         # "pu" (poliuretano) no debe matchear dentro de "publico"

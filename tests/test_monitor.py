@@ -1,3 +1,4 @@
+import hashlib
 import json
 import tempfile
 import unittest
@@ -574,14 +575,27 @@ class TestMainFiltraEmailPorFechaYTecho(unittest.TestCase):
     @patch("monitor.guardar_vistos")
     @patch("monitor.cargar_vistos")
     @patch("monitor.obtener_licitaciones")
-    def test_backlog_viejo_no_entra_al_email_pero_si_al_catalogo(
+    def test_backlog_viejo_no_entra_ni_al_email_ni_al_catalogo_en_corrida_normal(
         self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
         mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
         mock_seguimiento_mod,
     ):
+        # 2026-10-09: ver monitor._es_backlog_viejo() — en una corrida
+        # normal (sin recuperación de caída, ver vistos["_meta"] más
+        # abajo), el backlog viejo se saltea ANTES de leer el pliego o
+        # analizarlo: no entra al email (pedido explícito del usuario
+        # 2026-08-28) NI al catálogo del visor. Antes de esta fecha este
+        # test (con otro nombre) esperaba que igual entrara al catálogo —
+        # eso nunca fue cierto contra el código real (_es_backlog_viejo()
+        # hace un "continue" antes de llegar a catalogo.registrar_llamado())
+        # y quedaba sin cubrir por un test roto. El caso en el que el
+        # backlog SÍ debe entrar al catálogo es la recuperación de una
+        # caída — ver test_backlog_viejo_si_entra_al_catalogo_recuperando_
+        # de_una_caida más abajo.
         mock_seguimiento_mod.cargar.return_value = {}
         mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
         mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
         mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
 
         licitaciones = [
@@ -599,10 +613,66 @@ class TestMainFiltraEmailPorFechaYTecho(unittest.TestCase):
 
         monitor.main()
 
-        # Las DOS se registran en el catálogo del visor (sin filtrar)...
+        # Solo la publicada hoy se registra en el catálogo del visor — el
+        # backlog viejo ni se analiza.
+        self.assertEqual(mock_catalogo.registrar_llamado.call_count, 1)
+        args, _ = mock_enviar_email.call_args
+        nuevas_enviadas, modificadas_enviadas, omitidas, novedades_seguimiento = args
+        self.assertEqual([lic["titulo"] for lic in nuevas_enviadas], ["Publicada hoy"])
+        self.assertEqual(omitidas, 0)
+        self.assertEqual(novedades_seguimiento, [])
+
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_backlog_viejo_si_entra_al_catalogo_recuperando_de_una_caida(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
+    ):
+        # 2026-10-09: pedido explícito del usuario — caso real de
+        # auditoría encontrado tras una caída de varios días (ver
+        # HORAS_GAP_PARA_RECUPERACION_DE_CAIDA en monitor.py). Si la
+        # última corrida exitosa (vistos["_meta"]["ultima_corrida_
+        # exitosa"]) quedó mucho más atrás que el intervalo normal entre
+        # corridas, lo publicado durante la caída es en realidad
+        # reciente — el sistema simplemente no llegó a verlo a tiempo —
+        # así que el backlog SÍ se analiza y entra al catálogo (sigue sin
+        # mandarse por mail si ya es viejo, ver DIAS_MAX_PARA_ALERTA_POR_MAIL).
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        licitaciones = [
+            self._lic("nueva-hoy", "Publicada hoy", "2026-08-19", 60),
+            self._lic("backlog-viejo", "Backlog de hace semanas", "2026-08-01", 90),
+        ]
+        mock_cargar_vistos.return_value = {
+            "_meta": {"ultima_corrida_exitosa": "2026-08-17T10:00:00"}
+        }
+        mock_obtener.return_value = licitaciones
+        mock_es_relevante.return_value = (True, "piso vinílico", "rubro", "")
+        mock_report_mod.analizar_licitacion.side_effect = (
+            lambda titulo, url, texto, errores, codigos_articulo=None: self._informe_falso(
+                60 if titulo == "Publicada hoy" else 90
+            )
+        )
+
+        monitor.main()
+
+        # Las DOS se registran en el catálogo del visor...
         self.assertEqual(mock_catalogo.registrar_llamado.call_count, 2)
-        # ...pero al email solo entra la publicada hoy, aunque la del
-        # backlog tenga mayor score.
+        # ...pero al email solo entra la publicada hoy, el backlog sigue
+        # sin ser "urgente" aunque ya se analizó.
         args, _ = mock_enviar_email.call_args
         nuevas_enviadas, modificadas_enviadas, omitidas, novedades_seguimiento = args
         self.assertEqual([lic["titulo"] for lic in nuevas_enviadas], ["Publicada hoy"])
@@ -743,6 +813,230 @@ class TestMainFiltraEmailPorFechaYTecho(unittest.TestCase):
 
         # 2 checkpoints intermedios + 1 guardado final = 3.
         self.assertEqual(mock_guardar_vistos.call_count, 3)
+
+
+class TestHashContenidoIncluyeDocumentosEItems(unittest.TestCase):
+    """2026-10-09: ver HASH_CONTENIDO_VERSION/_hash_contenido() en
+    monitor.py — caso real sin test que lo cubriera, encontrado en
+    auditoría: hasta esta fecha, el hash de un llamado solo consideraba
+    título+descripción, así que una republicación del pliego/anexo con
+    cambios reales (cantidades, plazos, un ítem nuevo) que no tocara el
+    resumen corto del release OCDS pasaba completamente desapercibida —
+    el llamado ni siquiera entraba a la rama de "modificadas" en main().
+    """
+
+    def _lic_base(self):
+        return {
+            "titulo": "Licitación X",
+            "descripcion": "desc",
+            "documentos": ["https://example.com/pliego.pdf"],
+            "items_pliego": [{"descripcion": "piso vinílico", "cantidad": 10}],
+        }
+
+    def test_distintos_documentos_distinto_hash(self):
+        lic_a = self._lic_base()
+        lic_b = self._lic_base()
+        lic_b["documentos"] = ["https://example.com/pliego_v2.pdf"]
+        self.assertNotEqual(monitor._hash_contenido(lic_a), monitor._hash_contenido(lic_b))
+
+    def test_distintos_items_pliego_distinto_hash(self):
+        lic_a = self._lic_base()
+        lic_b = self._lic_base()
+        lic_b["items_pliego"] = [{"descripcion": "piso vinílico", "cantidad": 99}]
+        self.assertNotEqual(monitor._hash_contenido(lic_a), monitor._hash_contenido(lic_b))
+
+    def test_todo_igual_mismo_hash(self):
+        lic_a = self._lic_base()
+        lic_b = self._lic_base()
+        self.assertEqual(monitor._hash_contenido(lic_a), monitor._hash_contenido(lic_b))
+
+
+class TestMainReevaluaAclaracionesYMigracionDeHash(unittest.TestCase):
+    """2026-10-09: ver monitor.py main() — pedido explícito del usuario,
+    caso real de auditoría. Hasta esta fecha, un llamado marcado NO
+    relevante en su primera lectura nunca se volvía a evaluar, ni aunque
+    una aclaración/ajuste posterior agregara justo el producto que lo
+    hacía relevante: el único camino para un llamado ya visto (previo is
+    not None) era compararle el hash y, si cambiaba, tratarlo como
+    "modificada" — algo que asume que el llamado YA está en el catálogo,
+    cosa que nunca pasó si no era relevante la primera vez. Ahora, si el
+    hash cambia para un llamado que antes NO era relevante, se lo vuelve
+    a evaluar exactamente como si fuera nuevo (lectura de pliego,
+    scoring, catálogo, email), conservando la fecha original de
+    primera_deteccion.
+    """
+
+    def _lic(self, id_="lic-1", titulo="Licitación aclarada", documentos=None, items_pliego=None):
+        return {
+            "id": id_,
+            "titulo": titulo,
+            "descripcion": "desc",
+            "fecha": "2026-10-09",
+            "url": f"https://example.com/{id_}",
+            "url_ficha": f"https://example.com/{id_}",
+            "documentos": documentos or [],
+            "items_pliego": items_pliego or [],
+        }
+
+    def _informe_falso(self, score=60):
+        informe = MagicMock()
+        informe.markdown = "informe"
+        informe.clasificacion = MagicMock(puntaje=score, nivel=3, simbolo="★★★", etiqueta="Media")
+        informe.ya_adjudicados = []
+        informe.cierre = None
+        return informe
+
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_aclaracion_hace_relevante_un_llamado_que_antes_no_lo_era(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
+    ):
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 10, 9, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        lic_sin_aclaracion = self._lic(items_pliego=[{"descripcion": "sin info relevante"}])
+        hash_viejo = monitor._hash_contenido(lic_sin_aclaracion)
+
+        lic_con_aclaracion = self._lic(items_pliego=[{"descripcion": "piso vinílico 500m2"}])
+
+        mock_cargar_vistos.return_value = {
+            "lic-1": {
+                "titulo": "Licitación aclarada",
+                "hash": hash_viejo,
+                "hash_version": monitor.HASH_CONTENIDO_VERSION,
+                "primera_deteccion": "2026-09-01T10:00:00",
+                "notificaciones": 0,
+            }
+        }
+        mock_obtener.return_value = [lic_con_aclaracion]
+        mock_es_relevante.return_value = (True, "piso vinílico", "título/descripción/ítems", "")
+        mock_report_mod.analizar_licitacion.return_value = self._informe_falso(60)
+
+        monitor.main()
+
+        mock_catalogo.registrar_llamado.assert_called_once()
+        args, _ = mock_enviar_email.call_args
+        nuevas_enviadas, _modificadas, _omitidas, _novedades = args
+        self.assertEqual([lic["titulo"] for lic in nuevas_enviadas], ["Licitación aclarada"])
+
+        guardado = mock_guardar_vistos.call_args_list[-1][0][0]
+        self.assertEqual(guardado["lic-1"]["primera_deteccion"], "2026-09-01T10:00:00")
+        self.assertEqual(guardado["lic-1"]["notificaciones"], 1)
+
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_aclaracion_sigue_sin_ser_relevante_no_entra_al_catalogo(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
+    ):
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 10, 9, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        lic_sin_ajuste = self._lic(items_pliego=[{"descripcion": "sin info relevante"}])
+        hash_viejo = monitor._hash_contenido(lic_sin_ajuste)
+
+        lic_con_ajuste = self._lic(items_pliego=[{"descripcion": "otro detalle administrativo"}])
+
+        mock_cargar_vistos.return_value = {
+            "lic-1": {
+                "titulo": "Licitación aclarada",
+                "hash": hash_viejo,
+                "hash_version": monitor.HASH_CONTENIDO_VERSION,
+                "primera_deteccion": "2026-09-01T10:00:00",
+                "notificaciones": 0,
+            }
+        }
+        mock_obtener.return_value = [lic_con_ajuste]
+        mock_es_relevante.return_value = (False, None, None, "")
+
+        monitor.main()
+
+        mock_catalogo.registrar_llamado.assert_not_called()
+        mock_report_mod.analizar_licitacion.assert_not_called()
+        mock_enviar_email.assert_not_called()
+
+        guardado = mock_guardar_vistos.call_args_list[-1][0][0]
+        self.assertEqual(guardado["lic-1"]["notificaciones"], 0)
+        self.assertEqual(guardado["lic-1"]["primera_deteccion"], "2026-09-01T10:00:00")
+
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_hash_de_version_vieja_no_dispara_falso_cambio_el_dia_del_deploy(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
+    ):
+        # El día del deploy, todo lo que ya estaba en vistos tiene un
+        # hash calculado con la fórmula vieja (sin hash_version, o con un
+        # hash_version anterior) — no debe dispararse un falso "cambio
+        # detectado" solo porque cambió la fórmula, sin que el contenido
+        # real haya cambiado.
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 10, 9, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        lic = self._lic(
+            documentos=["https://example.com/pliego.pdf"],
+            items_pliego=[{"descripcion": "piso vinílico"}],
+        )
+        hash_formula_vieja = hashlib.md5(
+            (lic["titulo"] + "|" + lic["descripcion"]).encode("utf-8")
+        ).hexdigest()
+
+        mock_cargar_vistos.return_value = {
+            "lic-1": {
+                "titulo": "Licitación aclarada",
+                "hash": hash_formula_vieja,
+                "primera_deteccion": "2026-09-01T10:00:00",
+                "notificaciones": 1,
+            }
+        }
+        mock_obtener.return_value = [lic]
+
+        monitor.main()
+
+        mock_es_relevante.assert_not_called()
+        mock_catalogo.registrar_modificacion.assert_not_called()
+        mock_enviar_email.assert_not_called()
+
+        guardado = mock_guardar_vistos.call_args_list[-1][0][0]
+        self.assertEqual(guardado["lic-1"]["hash"], monitor._hash_contenido(lic))
+        self.assertEqual(guardado["lic-1"]["hash_version"], monitor.HASH_CONTENIDO_VERSION)
 
 
 if __name__ == "__main__":
