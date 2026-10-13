@@ -1039,5 +1039,231 @@ class TestMainReevaluaAclaracionesYMigracionDeHash(unittest.TestCase):
         self.assertEqual(guardado["lic-1"]["hash_version"], monitor.HASH_CONTENIDO_VERSION)
 
 
+class TestAlertasOperativas(unittest.TestCase):
+    """2026-10-13: pedido explícito del usuario — quiere que le avisen por
+    mail apenas el pipeline detecta que no pudo hacer su trabajo normal,
+    sin tener que revisar el catálogo a mano. Cubre las dos señales que
+    main() ya calculaba pero no comunicaba solas: recuperación de una
+    caída (HORAS_GAP_PARA_RECUPERACION_DE_CAIDA) y reintentos de red
+    agotados para un ítem (_ITEMS_SIN_ENRIQUECER, ver
+    obtener_licitaciones()). La alerta por crash de la corrida entera
+    (bloque __main__) no se prueba acá: vive fuera de cualquier función
+    importable sin invocar un subproceso real.
+    """
+
+    def _lic(self, id_, titulo, fecha, score):
+        return {
+            "id": id_,
+            "titulo": titulo,
+            "descripcion": "desc",
+            "fecha": fecha,
+            "url": f"https://example.com/{id_}",
+            "url_ficha": f"https://example.com/{id_}",
+            "documentos": [],
+            "keyword": "piso vinílico",
+            "fuente": "rubro",
+            "_score": score,
+        }
+
+    def _informe_falso(self, score):
+        informe = MagicMock()
+        informe.markdown = "informe"
+        informe.clasificacion = MagicMock(puntaje=score, nivel=3, simbolo="★★★", etiqueta="Media")
+        informe.ya_adjudicados = []
+        informe.cierre = None
+        return informe
+
+    def tearDown(self):
+        # Varios tests de este archivo (y los de este mismo módulo) dejan
+        # obtener_licitaciones() mockeada, así que nunca corre el reset
+        # real de este global — lo limpiamos a mano para no filtrar estado
+        # entre tests.
+        monitor._ITEMS_SIN_ENRIQUECER = []
+
+    @patch("monitor._enviar_alerta_operativa")
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_recuperacion_de_caida_manda_alerta_operativa(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod, mock_alerta,
+    ):
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        mock_cargar_vistos.return_value = {
+            "_meta": {"ultima_corrida_exitosa": "2026-08-17T10:00:00"}
+        }
+        mock_obtener.return_value = [self._lic("nueva-hoy", "Publicada hoy", "2026-08-19", 60)]
+        mock_es_relevante.return_value = (True, "piso vinílico", "rubro", "")
+        mock_report_mod.analizar_licitacion.return_value = self._informe_falso(60)
+
+        monitor.main()
+
+        asuntos = [c.args[0] for c in mock_alerta.call_args_list]
+        self.assertTrue(any("recuperando" in a.lower() for a in asuntos), asuntos)
+
+    @patch("monitor._enviar_alerta_operativa")
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_corrida_normal_sin_caida_no_manda_alerta_de_recuperacion(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod, mock_alerta,
+    ):
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        # Gap normal entre corridas (6hs), bien por debajo del umbral.
+        mock_cargar_vistos.return_value = {
+            "_meta": {"ultima_corrida_exitosa": "2026-08-19T06:00:00"}
+        }
+        mock_obtener.return_value = [self._lic("nueva-hoy", "Publicada hoy", "2026-08-19", 60)]
+        mock_es_relevante.return_value = (True, "piso vinílico", "rubro", "")
+        mock_report_mod.analizar_licitacion.return_value = self._informe_falso(60)
+
+        monitor.main()
+
+        mock_alerta.assert_not_called()
+
+    @patch("monitor._enviar_alerta_operativa")
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_items_sin_enriquecer_manda_alerta_operativa(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod, mock_alerta,
+    ):
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        mock_cargar_vistos.return_value = {}
+        mock_obtener.return_value = [self._lic("nueva-hoy", "Publicada hoy", "2026-08-19", 60)]
+        mock_es_relevante.return_value = (True, "piso vinílico", "rubro", "")
+        mock_report_mod.analizar_licitacion.return_value = self._informe_falso(60)
+
+        # obtener_licitaciones() está mockeada, así que su reset real del
+        # global no corre — simulamos el efecto que hubiera dejado un
+        # fetch de detalle que agotó los 3 reintentos.
+        monitor._ITEMS_SIN_ENRIQUECER = [
+            {"titulo": "Llamado caído", "link": "https://example.com/x", "error": "timeout"}
+        ]
+
+        monitor.main()
+
+        asuntos = [c.args[0] for c in mock_alerta.call_args_list]
+        self.assertTrue(any("sin pliego enriquecido" in a.lower() for a in asuntos), asuntos)
+        cuerpos = [c.args[1] for c in mock_alerta.call_args_list]
+        self.assertTrue(any("Llamado caído" in c for c in cuerpos), cuerpos)
+
+
+class TestObtenerLicitacionesRegistraFallosDeEnriquecimiento(unittest.TestCase):
+    """2026-10-13: cuando el fetch del detalle de un release agota los 3
+    reintentos (ver obtener_licitaciones()), el ítem se guarda igual con
+    el título del feed pero sin descripción/documentos. Esto se junta en
+    monitor._ITEMS_SIN_ENRIQUECER para que main() pueda avisar por mail
+    (ver TestAlertasOperativas arriba) — acá se prueba solo que la lista
+    se puebla correctamente, sin pasar por main().
+    """
+
+    def tearDown(self):
+        monitor._ITEMS_SIN_ENRIQUECER = []
+
+    @patch("monitor.time.sleep")
+    @patch("monitor.datetime")
+    @patch("monitor.requests.get")
+    def test_fallo_persistente_se_registra_en_items_sin_enriquecer(self, mock_get, mock_datetime, mock_sleep):
+        mock_datetime.now.return_value = datetime(2026, 8, 18)
+        link = "https://www.comprasestatales.gub.uy/ocds/release/llamado-9999999"
+
+        def side_effect(url, headers=None, timeout=None):
+            if url == monitor.settings.OCDS_URL:
+                return _RespuestaFalsa(status_code=404, text="not found")
+            if url == f"{monitor.settings.RSS_URL}/2026/08":
+                return _RespuestaFalsa(status_code=200, content=_rss_mensual_xml(["llamado-9999999"]))
+            if url == f"{monitor.settings.RSS_URL}/2026/07":
+                return _RespuestaFalsa(status_code=200, content=_rss_mensual_xml([]))
+            if url == link:
+                raise ConnectionError("servidor no responde")
+            return _RespuestaFalsa(status_code=404, text="not found")
+
+        mock_get.side_effect = side_effect
+
+        licitaciones = monitor.obtener_licitaciones()
+
+        self.assertEqual(len(licitaciones), 1)
+        self.assertEqual(licitaciones[0]["descripcion"], "")
+        self.assertEqual(len(monitor._ITEMS_SIN_ENRIQUECER), 1)
+        self.assertEqual(monitor._ITEMS_SIN_ENRIQUECER[0]["link"], link)
+        self.assertIn("servidor no responde", monitor._ITEMS_SIN_ENRIQUECER[0]["error"])
+        # 3 intentos → 2 esperas de backoff entre ellos.
+        self.assertEqual(mock_sleep.call_count, 2)
+
+    @patch("monitor.time.sleep")
+    @patch("monitor.datetime")
+    @patch("monitor.requests.get")
+    def test_fallo_transitorio_que_se_recupera_no_queda_registrado(self, mock_get, mock_datetime, mock_sleep):
+        mock_datetime.now.return_value = datetime(2026, 8, 18)
+        link = "https://www.comprasestatales.gub.uy/ocds/release/llamado-8888888"
+        intentos = {"n": 0}
+
+        def side_effect(url, headers=None, timeout=None):
+            if url == monitor.settings.OCDS_URL:
+                return _RespuestaFalsa(status_code=404, text="not found")
+            if url == f"{monitor.settings.RSS_URL}/2026/08":
+                return _RespuestaFalsa(status_code=200, content=_rss_mensual_xml(["llamado-8888888"]))
+            if url == f"{monitor.settings.RSS_URL}/2026/07":
+                return _RespuestaFalsa(status_code=200, content=_rss_mensual_xml([]))
+            if url == link:
+                intentos["n"] += 1
+                if intentos["n"] < 2:
+                    raise ConnectionError("timeout transitorio")
+                return _RespuestaFalsa(
+                    status_code=200,
+                    json_data={"releases": [{"tender": {"title": "OK", "description": "listo"}}]},
+                )
+            return _RespuestaFalsa(status_code=404, text="not found")
+
+        mock_get.side_effect = side_effect
+
+        licitaciones = monitor.obtener_licitaciones()
+
+        self.assertEqual(licitaciones[0]["descripcion"], "listo")
+        self.assertEqual(monitor._ITEMS_SIN_ENRIQUECER, [])
+
+
 if __name__ == "__main__":
     unittest.main()
