@@ -21702,6 +21702,44 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1378294",
     "ya_adjudicados": []
   },
+  "7c078ea25f6ca7ad5dafd08604b60d1f": {
+    "cambio_detectado": false,
+    "categorias": [
+      "errores_comunes",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1379089.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 13 Oct 2026 15:35:13",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "7c078ea25f6ca7ad5dafd08604b60d1f",
+    "informe": "informes/7c078ea25f6ca7ad5dafd08604b60d1f.md",
+    "keyword": "aluminio + nylon + poliéster",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ANEP - Administración Nacional de Educación Pública",
+    "primera_deteccion": "2026-10-14T00:10:19",
+    "que_es": "Licitación de ANEP - Administración Nacional de Educación Pública — busca Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro. Menciona \"aluminio\": «ibra de vidrio o poliéster recubierta con una película de aluminio ignífugo. Con visor: Plástico transparente y estructura re»",
+    "score": 26,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 177/2026",
+    "ultima_actualizacion": "2026-10-14T00:10:19",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1379089",
+    "ya_adjudicados": [
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO"
+    ]
+  },
   "7c3897ee3e625bcdc8d594fda81671b6": {
     "cambio_detectado": false,
     "categorias": [
