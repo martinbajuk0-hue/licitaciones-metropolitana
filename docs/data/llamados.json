@@ -3356,6 +3356,46 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "1475fd4d7b08b09267600f42945198d1": {
+    "cambio_detectado": false,
+    "categorias": [
+      "accesorios",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1379343.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": "2026-10-30",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 14 Oct 2026 11:45:13",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "1475fd4d7b08b09267600f42945198d1",
+    "informe": "informes/1475fd4d7b08b09267600f42945198d1.md",
+    "keyword": "cerámica + madera + moldura",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
+    "primera_deteccion": "2026-10-14T14:54:45",
+    "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — busca Accesorios de instalación, Material mencionado (revisar contexto), apertura 2026-10-30. Menciona \"moldura\": «as de cámaras, azulejos, mesadas , bajo mesada, revoques de molduras, mochetas, pretiles, cerramientos, picar pared como para c»",
+    "score": 38,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 180/2026",
+    "ultima_actualizacion": "2026-10-14T14:54:45",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1379343",
+    "ya_adjudicados": [
+      "CEMENTO ADHESIVO PARA CERAMICA",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "152fd0b836ac7e63c3f6d46ed62a2d3c": {
     "cambio_detectado": false,
     "categorias": [
@@ -5966,6 +6006,52 @@
     "ultima_actualizacion": "2026-08-21T12:48:55",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1361774",
     "ya_adjudicados": []
+  },
+  "22bbe4bdf106b22c2f25e4502c6beea4": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1379206.odt"
+    ],
+    "etiqueta_clasificacion": "Buena",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 14 Oct 2026 11:00:11",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "22bbe4bdf106b22c2f25e4502c6beea4",
+    "informe": "informes/22bbe4bdf106b22c2f25e4502c6beea4.md",
+    "keyword": "código ya adjudicado: PLANCHA DE GOMA EVA",
+    "nivel": 4,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-10-14T14:54:54",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto). Menciona \"eva\": «R TRANSPARENTE EN TUBO) HASTA 50 UNIDAD 11 (COD.55009) GOMA EVA(PAQUETE DIFERENTES COLORES FORMATO A4) HASTA 25 UNIDAD 12 (»",
+    "score": 67,
+    "simbolo": "★★★★",
+    "titulo": "Compra Directa 320/2026",
+    "ultima_actualizacion": "2026-10-14T14:54:54",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1379206",
+    "ya_adjudicados": [
+      "PLANCHA DE GOMA EVA",
+      "ALFOMBRA DE GOMA",
+      "PISO DE GOMA",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
   },
   "2312965a54a3d071c40c886fc2db9ac8": {
     "cambio_detectado": false,
@@ -36238,6 +36324,51 @@
     "ultima_actualizacion": "2026-10-02T16:07:54",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376742",
     "ya_adjudicados": []
+  },
+  "cac7db6325a91f749a24ddae437b2087": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1377866.doc"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 14 Oct 2026 11:40:10",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "cac7db6325a91f749a24ddae437b2087",
+    "informe": "informes/cac7db6325a91f749a24ddae437b2087.md",
+    "keyword": "código ya adjudicado: CEMENTO ADHESIVO PARA CERAMICA",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-10-14T14:54:49",
+    "que_es": "Licitación de organismo no identificado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «| |2 |30 |DUCTOS EN PVC PARA CABLE DE 3 METROS C/UNO | |3»",
+    "score": 51,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 270/2026",
+    "ultima_actualizacion": "2026-10-14T14:54:49",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1377866",
+    "ya_adjudicados": [
+      "CEMENTO ADHESIVO PARA CERAMICA",
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "PERFIL U DE ALUMINIO",
+      "CAMINERO DE PVC"
+    ]
   },
   "cad2a9515916a5a7edb619df4e0971bd": {
     "cambio_detectado": false,
