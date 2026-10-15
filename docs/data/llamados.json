@@ -10059,6 +10059,70 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "387e2fba5d2cc6d70ab7bf5e8f989005": {
+    "cambio_detectado": false,
+    "categorias": [
+      "accesorios",
+      "alfombras",
+      "errores_comunes",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Accesorios de instalación",
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1367148.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 15 Oct 2026 11:50:17",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "387e2fba5d2cc6d70ab7bf5e8f989005",
+    "informe": "informes/387e2fba5d2cc6d70ab7bf5e8f989005.md",
+    "keyword": "código ya adjudicado: COLOCACION DE ALFOMBRA, CEMENTO PARA PISO VINILICO (ADHESIVO)",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-10-15T19:05:37",
+    "que_es": "Licitación de organismo no identificado — busca Accesorios de instalación, Alfombras, Material mencionado (revisar contexto), Pisos vinílicos, Variante/error ortográfico de un término del rubro. Menciona \"vinilico\": «OCACION DE ALFOMBRA 1,00 UNIDAD 3 15502 CEMENTO PARA PISO VINILICO (ADHESIVO) 1,00 UNIDAD Subtotal IVA Total IVA incluido Anex»",
+    "score": 35,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 90/2026",
+    "ultima_actualizacion": "2026-10-15T19:05:37",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1367148",
+    "ya_adjudicados": [
+      "COLOCACION DE ALFOMBRA",
+      "CEMENTO PARA PISO VINILICO (ADHESIVO)",
+      "VINILICO PARA PISO",
+      "ALFOMBRA DE PVC",
+      "COLOCACION DE VINILICOS",
+      "ALFOMBRA DE GOMA",
+      "ZOCALO PARA PISO FLOTANTE",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "ALFOMBRA DE FIELTRO",
+      "ZOCALO MONOLITICO",
+      "ALFOMBRA DE LANA",
+      "ALFOMBRA BOUCLE",
+      "REPARACION DE ALFOMBRA",
+      "LIMPIEZA DE ALFOMBRA",
+      "COLOCACION DE ZOCALO",
+      "ALFOMBRA ATRAPA POLVO",
+      "VARILLA DE BRONCE PARA ALFOMBRA",
+      "ZOCALO EN MDF",
+      "ALFOMBRA DE YUTE",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "388dc94f80e43bbc12b5d290bc31f2f5": {
     "cambio_detectado": false,
     "categorias": [
