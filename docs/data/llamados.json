@@ -6586,6 +6586,41 @@
       "CAMINERO DE PVC"
     ]
   },
+  "24d56cc2b797b28a0b683af804628736": {
+    "cambio_detectado": false,
+    "categorias": [
+      "marcas",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Marca de mercado mencionada",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1380081.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 16 Oct 2026 11:10:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "24d56cc2b797b28a0b683af804628736",
+    "informe": "informes/24d56cc2b797b28a0b683af804628736.md",
+    "keyword": "domo + juegos infantiles",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Lavalleja",
+    "primera_deteccion": "2026-10-16T14:35:13",
+    "que_es": "Licitación de Intendencia de Lavalleja — busca Marca de mercado mencionada, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"juegos infantiles\": «o a Concurso De Precio N.º 3/2026 “Suministro de juegos infantiles para el Municipio de Pirarajá” 1.- NORMAS QUE REGIRÁN»",
+    "score": 9,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 3/2026",
+    "ultima_actualizacion": "2026-10-16T14:35:13",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1380081",
+    "ya_adjudicados": []
+  },
   "24dd3d8c4a1af1c46fbca1e6593b1cfd": {
     "cambio_detectado": false,
     "categorias": [
@@ -25763,6 +25798,78 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1365755",
     "ya_adjudicados": []
   },
+  "8e9e58188b8f4967ff8b055cee4cf66d": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "errores_comunes",
+      "materiales",
+      "normativas",
+      "pisos_flotantes",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Normativa/certificación mencionada",
+      "Pisos flotantes/laminados",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1358540.docx"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 16 Oct 2026 11:15:10",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "8e9e58188b8f4967ff8b055cee4cf66d",
+    "informe": "informes/8e9e58188b8f4967ff8b055cee4cf66d.md",
+    "keyword": "código ya adjudicado: PISO FLOTANTE, MANTA BAJO PISO DE ESPUMA DE POLIETILENO, CEMENTO ADHESIVO PARA PORCELANATO",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": "947/2026",
+    "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
+    "primera_deteccion": "2026-10-16T14:35:09",
+    "que_es": "Licitación de Ministerio de Relaciones Exteriores (MRREE) — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Normativa/certificación mencionada, Pisos flotantes/laminados, Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro. Menciona \"pvc\": «llo de 100 M 20 | 69674 | CABLE MULTIFILAR CON AISLACION DE PVC | 10000,00 | M | 193.0 | Seccion 2 MM2 - Rollo de 100 M 21»",
+    "score": 55,
+    "simbolo": "★★★",
+    "titulo": "Licitación Abreviada 947/2026",
+    "ultima_actualizacion": "2026-10-16T14:35:09",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1358540",
+    "ya_adjudicados": [
+      "PISO FLOTANTE",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "CEMENTO ADHESIVO PARA PORCELANATO",
+      "ALFOMBRA DE PVC",
+      "ALFOMBRA DE GOMA",
+      "ZOCALO PARA PISO FLOTANTE",
+      "PISO MODULAR DE PVC",
+      "PISO DE GOMA",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ALFOMBRA DE LANA",
+      "REDUCTOR PARA PISO FLOTANTE",
+      "CAMINERO DE GOMA",
+      "PERFIL U DE ALUMINIO",
+      "JUNTA PARA PISO FLOTANTE",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "MANTENIMIENTO EDILICIO",
+      "CAMINERO DE ACRILICO",
+      "GOMA NATURAL EN PLANCHA",
+      "REPARACION DE PISO DE MADERA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "8eb111b9b39955f8a19bdd36aece31d0": {
     "cambio_detectado": false,
     "categorias": [
@@ -37624,6 +37731,44 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "d07c392319d1bc8baa9bed176cd09fc5": {
+    "cambio_detectado": false,
+    "categorias": [
+      "marcas",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Marca de mercado mencionada",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1380058.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 16 Oct 2026 10:30:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "d07c392319d1bc8baa9bed176cd09fc5",
+    "informe": "informes/d07c392319d1bc8baa9bed176cd09fc5.md",
+    "keyword": "aluminio + fibra de vidrio + interface",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "17/26",
+    "organismo": "Intendencia de Rivera",
+    "primera_deteccion": "2026-10-16T14:35:26",
+    "que_es": "Licitación de Intendencia de Rivera — busca Marca de mercado mencionada, Material mencionado (revisar contexto). Menciona \"aluminio\": «Los tapones de protección deben ser de material resistente (aluminio o polímero de alto impacto) y estar vinculados físicamente»",
+    "score": 28,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 17/2026",
+    "ultima_actualizacion": "2026-10-16T14:35:26",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1380058",
+    "ya_adjudicados": [
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO"
+    ]
+  },
   "d17af29a69879e02f883941a08b751c2": {
     "cambio_detectado": false,
     "categorias": [
@@ -42696,6 +42841,35 @@
       "GOMA NATURAL EN PLANCHA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
+  },
+  "ef01a8a2e79c06573fe4670393369726": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1380047.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 16 Oct 2026 11:25:09",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "ef01a8a2e79c06573fe4670393369726",
+    "informe": "informes/ef01a8a2e79c06573fe4670393369726.md",
+    "keyword": "madera + poliuretano + pvc",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Transporte y Obras Públicas",
+    "primera_deteccion": "2026-10-16T14:35:05",
+    "que_es": "Licitación de Ministerio de Transporte y Obras Públicas — busca ninguna coincidencia directa de categoría. Texto disponible: «dgs.adquisiciones@mtop.gub.uy Tel. (+5982) 29157859 int.10608 - 10609 Rincón 561, Piso 6º, Montevideo - Uruguay COMPRA DIRECTA N.º 190/2026 OBJETO: Material de barraca, obra edificio Casona 25 de Mayo. Características de la Compra:  ITEM 1: hasta 15 unidades balde de albañil plástico común  ITEM 2…»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 190/2026",
+    "ultima_actualizacion": "2026-10-16T14:35:05",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1380047",
+    "ya_adjudicados": []
   },
   "ef6c8e5a1017fa3c12309453284d017b": {
     "cambio_detectado": false,
