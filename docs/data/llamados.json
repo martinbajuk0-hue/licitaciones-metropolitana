@@ -2849,6 +2849,39 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376325",
     "ya_adjudicados": []
   },
+  "1088321d19b7d56b6faace8d17018906": {
+    "cambio_detectado": false,
+    "categorias": [
+      "contenedores_modulares"
+    ],
+    "categorias_etiquetas": [
+      "Contenedores habitables, garitas y módulos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1380152.rar"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 16 Oct 2026 12:45:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "1088321d19b7d56b6faace8d17018906",
+    "informe": "informes/1088321d19b7d56b6faace8d17018906.md",
+    "keyword": "garita de seguridad",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "01/2026",
+    "organismo": "Ministerio del Interior (MI)",
+    "primera_deteccion": "2026-10-16T18:54:08",
+    "que_es": "Licitación de Ministerio del Interior (MI) — busca Contenedores habitables, garitas y módulos. Menciona \"garita de seguridad\": «tal Español Un guardia de lunes a viernes de 8 a 16 hs. Con garita de seguridad la cual debe ser proporcionada por la empresa adjudicataria»",
+    "score": 25,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 2/2026",
+    "ultima_actualizacion": "2026-10-16T18:54:08",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1380152",
+    "ya_adjudicados": []
+  },
   "10d10d068c3c11b1a6956ed9f22ba386": {
     "cambio_detectado": false,
     "categorias": [
@@ -23626,6 +23659,97 @@
       "CAMINERO DE PVC"
     ]
   },
+  "83e6695409f98c4d387c98d3969b75e1": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "alfombras",
+      "errores_comunes",
+      "felpudos",
+      "marcas",
+      "materiales",
+      "pisos_flotantes",
+      "pisos_goma",
+      "pisos_madera",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Alfombras",
+      "Felpudos y camineros",
+      "Marca de mercado mencionada",
+      "Material mencionado (revisar contexto)",
+      "Pisos de goma",
+      "Pisos de madera",
+      "Pisos flotantes/laminados",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1380254.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 16 Oct 2026 15:26:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "83e6695409f98c4d387c98d3969b75e1",
+    "informe": "informes/83e6695409f98c4d387c98d3969b75e1.md",
+    "keyword": "piso flotante",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "112.050",
+    "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
+    "primera_deteccion": "2026-10-16T18:41:13",
+    "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — busca Abreviatura técnica del rubro, Accesorios de instalación, Alfombras, Felpudos y camineros, Marca de mercado mencionada, Material mencionado (revisar contexto), Pisos de goma, Pisos de madera, Pisos flotantes/laminados, Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro. Menciona \"pvc\": «STO SIMIL CANAL 12 Sellado y tratamiento según MCG ítem 1.1 PVC + FILM DE POLIETILENO + LANA DE VIDRIO 5cm BAÑO -según MCG»",
+    "score": 36,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 932026/2026",
+    "ultima_actualizacion": "2026-10-16T18:41:13",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1380254",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO FLOTANTE",
+      "ALFOMBRA DE GOMA",
+      "BALDOSA LISA",
+      "CEMENTO ADHESIVO PARA PORCELANATO",
+      "ZOCALO PARA PISO FLOTANTE",
+      "PISO MODULAR DE PVC",
+      "CEMENTO ADHESIVO PARA CERAMICA",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "PISO DE GOMA",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ZOCALO MONOLITICO",
+      "ALFOMBRA DE LANA",
+      "REDUCTOR PARA PISO FLOTANTE",
+      "BALDOSA VINILICA ALTO TRANSITO",
+      "CAMINERO DE GOMA",
+      "TAPAJUNTAS",
+      "PERFIL U DE ALUMINIO",
+      "BALDOSA VINILICA",
+      "JUNTA PARA PISO FLOTANTE",
+      "CAMINERO DE FIELTRO",
+      "BALDOSA DE GOMA",
+      "COLOCACION DE ZOCALO",
+      "PLANCHA DE GOMA EVA",
+      "ZOCALO EN MDF",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "CAMINERO DE ACRILICO",
+      "GOMA NATURAL EN PLANCHA",
+      "REPARACION DE PISO DE MADERA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "83ef554adbe89d4bd1df27ee8014940b": {
     "cambio_detectado": false,
     "categorias": [
@@ -25292,6 +25416,58 @@
     "ultima_actualizacion": "2026-08-21T11:57:00",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1354447",
     "ya_adjudicados": []
+  },
+  "8b8c78d89b66fc783bb6a3c96268ed2c": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1365693.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 16 Oct 2026 13:05:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "8b8c78d89b66fc783bb6a3c96268ed2c",
+    "informe": "informes/8b8c78d89b66fc783bb6a3c96268ed2c.md",
+    "keyword": "acero inoxidable + aluminio + goma",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-10-16T18:53:58",
+    "que_es": "Licitación de organismo no identificado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «a y Sala de reuniones). Los ductos de ventilación serán de PVC 110, el recorrido para cada sistema (inyección y extracció»",
+    "score": 6,
+    "simbolo": "★",
+    "titulo": "Compra Directa 85/2026",
+    "ultima_actualizacion": "2026-10-16T18:53:58",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1365693",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "ALFOMBRA DE GOMA",
+      "PISO MODULAR DE PVC",
+      "PISO DE GOMA",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE GOMA",
+      "PERFIL U DE ALUMINIO",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
   },
   "8bdfe611991f23cdaa69c0da14b3acf8": {
     "cambio_detectado": false,
@@ -31770,6 +31946,56 @@
       "CAMINERO DE PVC",
       "GOMA NATURAL EN PLANCHA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "ad5d75a6108e4e3b5c2f352cb9ddc2cf": {
+    "cambio_detectado": false,
+    "categorias": [
+      "accesorios",
+      "materiales",
+      "pisos_madera",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Pisos de madera",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1380165.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 16 Oct 2026 13:25:13",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "ad5d75a6108e4e3b5c2f352cb9ddc2cf",
+    "informe": "informes/ad5d75a6108e4e3b5c2f352cb9ddc2cf.md",
+    "keyword": "madera maciza",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Educación y Cultura",
+    "primera_deteccion": "2026-10-16T18:53:50",
+    "que_es": "Licitación de Ministerio de Educación y Cultura — busca Accesorios de instalación, Material mencionado (revisar contexto), Pisos de madera, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"madera maciza\": «nstancia, el retiro de la puerta telescópica existente, de madera maciza, actualmente en estado de conservación deficiente y con di»",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 10281/2026",
+    "ultima_actualizacion": "2026-10-16T18:53:50",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1380165",
+    "ya_adjudicados": [
+      "ZOCALO PARA PISO FLOTANTE",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "VARILLA DE ALUMINIO",
+      "ZOCALO MONOLITICO",
+      "PERFIL U DE ALUMINIO",
+      "COLOCACION DE ZOCALO",
+      "ZOCALO EN MDF",
+      "REPARACION DE PISO DE MADERA"
     ]
   },
   "adc350814e917301613b3e85c3841e94": {
