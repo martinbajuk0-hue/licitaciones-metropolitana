@@ -9840,6 +9840,39 @@
       "COLOCACION DE PANES DE CESPED"
     ]
   },
+  "369971df0e6d091f70422b0bc1db95c7": {
+    "cambio_detectado": false,
+    "categorias": [
+      "normativas"
+    ],
+    "categorias_etiquetas": [
+      "Normativa/certificación mencionada"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1379357.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": "2026-10-22",
+    "fecha_publicacion": "Mon, 19 Oct 2026 11:45:16",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "369971df0e6d091f70422b0bc1db95c7",
+    "informe": "informes/369971df0e6d091f70422b0bc1db95c7.md",
+    "keyword": "ficha de seguridad",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-10-19T17:02:38",
+    "que_es": "Licitación de organismo no identificado — busca Normativa/certificación mencionada. Menciona \"ficha de seguridad\": «ona acreditada en R.U.P.E. con facultades para contratar. Ficha de seguridad, Habilitación funcional de empresa y Certificado de Regi»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 590/2026",
+    "ultima_actualizacion": "2026-10-19T17:02:38",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1379357",
+    "ya_adjudicados": []
+  },
   "3717e2378b9185ea73f266870cedf0e6": {
     "cambio_detectado": false,
     "categorias": [
@@ -15513,6 +15546,45 @@
     "ultima_actualizacion": "2026-08-21T12:43:07",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1362323",
     "ya_adjudicados": []
+  },
+  "58cc91dfc42a99f589a589038f532bdc": {
+    "cambio_detectado": false,
+    "categorias": [
+      "servicios",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Servicios",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1380406.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 19 Oct 2026 11:05:15",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "58cc91dfc42a99f589a589038f532bdc",
+    "informe": "informes/58cc91dfc42a99f589a589038f532bdc.md",
+    "keyword": "código ya adjudicado: COLOCACION DE PISO, COLOCACION DE ZOCALO",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "9/2026",
+    "organismo": null,
+    "primera_deteccion": "2026-10-19T17:07:06",
+    "que_es": "Licitación de organismo no identificado — busca Servicios, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"colocación de revestimientos\": «-2026_RABAJOS VARIOS DE ALBAÑILERÍA, PINTURA, DEMOLICIONES, COLOCACIÓN DE REVESTIMIENTOS, IMPERMEABILIZACIONES, SUMINISTRO Y COLOCACIÓN DE A…»",
+    "score": 39,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 9/2026",
+    "ultima_actualizacion": "2026-10-19T17:07:06",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1380406",
+    "ya_adjudicados": [
+      "COLOCACION DE PISO",
+      "COLOCACION DE ZOCALO",
+      "MANTENIMIENTO EDILICIO"
+    ]
   },
   "58dc3e27f3f910852dddb139f19f5695": {
     "cambio_detectado": false,
@@ -33406,6 +33478,39 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "b49fac55ab9a5d6974ffffb9b96a3e0f": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1380214.docx"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 19 Oct 2026 12:50:21",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "b49fac55ab9a5d6974ffffb9b96a3e0f",
+    "informe": "informes/b49fac55ab9a5d6974ffffb9b96a3e0f.md",
+    "keyword": "mdf + melamina",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "26-6486.",
+    "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
+    "primera_deteccion": "2026-10-19T16:54:08",
+    "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — busca Material mencionado (revisar contexto). Menciona \"epoxi\": «cción rectangular 70 x 30 mm aprox., terminación en pintura epoxi color blanco, que incluya reguladores de nivel y ducto infe»",
+    "score": 21,
+    "simbolo": "★",
+    "titulo": "Compra Directa 301/2026",
+    "ultima_actualizacion": "2026-10-19T16:54:08",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1380214",
+    "ya_adjudicados": []
+  },
   "b4b105b2923a13c3c97c2077aae2896a": {
     "cambio_detectado": false,
     "categorias": [],
@@ -45729,6 +45834,48 @@
       "LONA VINILICA",
       "BALDOSA VINILICA ALTO TRANSITO",
       "BALDOSA VINILICA"
+    ]
+  },
+  "fbe8d6f37cac6aa0b5476e0ad477889c": {
+    "cambio_detectado": false,
+    "categorias": [
+      "accesorios",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Accesorios de instalación",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1380444.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Mon, 19 Oct 2026 11:45:12",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "fbe8d6f37cac6aa0b5476e0ad477889c",
+    "informe": "informes/fbe8d6f37cac6aa0b5476e0ad477889c.md",
+    "keyword": "mantenimiento edilicio + zócalo + zócalos",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
+    "primera_deteccion": "2026-10-19T17:02:40",
+    "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — busca Accesorios de instalación, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"zócalo\": «nteriores, revoques, pintura, revestimientos, colocación de zócalos (hall de acceso y oficina de Coordinación DGETP) y retiro»",
+    "score": 23,
+    "simbolo": "★",
+    "titulo": "Compra por Excepción 10/2026",
+    "ultima_actualizacion": "2026-10-19T17:02:40",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1380444",
+    "ya_adjudicados": [
+      "ZOCALO PARA PISO FLOTANTE",
+      "ZOCALO DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "ZOCALO MONOLITICO",
+      "COLOCACION DE ZOCALO",
+      "ZOCALO EN MDF"
     ]
   },
   "fc67e2934552bb9294290c5a73a21ce7": {
