@@ -16308,6 +16308,41 @@
       "CEMENTO ADHESIVO PARA CERAMICA"
     ]
   },
+  "5d930087894f4ad0f5ca91d64395bf2e": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1372026.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 20 Oct 2026 09:25:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "5d930087894f4ad0f5ca91d64395bf2e",
+    "informe": "informes/5d930087894f4ad0f5ca91d64395bf2e.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Ambiente (MA)",
+    "primera_deteccion": "2026-10-20T14:54:14",
+    "que_es": "Licitación de Ministerio de Ambiente (MA) — busca Alfombras, Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «se presentarán en formato dxf y pdf (en ambos formatos) en carpetas comprimidas (zip, 7z ó .rar) clasificadas por rubros. Lo»",
+    "score": 3,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 4/2026",
+    "ultima_actualizacion": "2026-10-20T14:54:14",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372026",
+    "ya_adjudicados": []
+  },
   "5daf8b718cbdf2ae4fc53442bcdc92d4": {
     "cambio_detectado": false,
     "categorias": [
@@ -22909,6 +22944,50 @@
       "GOMA NATURAL EN PLANCHA",
       "REPARACION DE PISO DE MADERA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "7eaf4ce7fc488beedc0774e4e1459e6e": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1380756.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 20 Oct 2026 11:35:08",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "7eaf4ce7fc488beedc0774e4e1459e6e",
+    "informe": "informes/7eaf4ce7fc488beedc0774e4e1459e6e.md",
+    "keyword": "pvc + recubrimiento",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "mediante",
+    "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
+    "primera_deteccion": "2026-10-20T14:43:56",
+    "que_es": "Licitación de Ministerio de Trabajo y Seguridad Social (MTSS) — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"pvc\": «er una estructura de soporte para el tendido de cañerías de PVC de diámetros nominales 250 mm y 315 mm, cuya solución podr»",
+    "score": 23,
+    "simbolo": "★",
+    "titulo": "Compra Directa 89571/2026",
+    "ultima_actualizacion": "2026-10-20T14:43:56",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1380756",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC"
     ]
   },
   "7eb1b2eb6a68d913bcaf1215309fbf53": {
