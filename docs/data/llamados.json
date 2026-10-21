@@ -27547,6 +27547,39 @@
       "ALFOMBRA DE LANA"
     ]
   },
+  "9214a2ae3684fd19f4bdb2fbc0ddc5d1": {
+    "cambio_detectado": false,
+    "categorias": [
+      "normativas"
+    ],
+    "categorias_etiquetas": [
+      "Normativa/certificación mencionada"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1381072.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 21 Oct 2026 10:50:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "9214a2ae3684fd19f4bdb2fbc0ddc5d1",
+    "informe": "informes/9214a2ae3684fd19f4bdb2fbc0ddc5d1.md",
+    "keyword": "iso 17025",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
+    "primera_deteccion": "2026-10-21T15:00:07",
+    "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca Normativa/certificación mencionada. Menciona \"iso 17025\": «| | | | | |CALIBRACIÓN ACREDITADA ISO 17025 | | | | | |INCLUIDA.»",
+    "score": 14,
+    "simbolo": "★",
+    "titulo": "Compra Directa 9813/2026",
+    "ultima_actualizacion": "2026-10-21T15:00:07",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1381072",
+    "ya_adjudicados": []
+  },
   "922b4afd31529a6c37260a6a64839ee7": {
     "cambio_detectado": false,
     "categorias": [
