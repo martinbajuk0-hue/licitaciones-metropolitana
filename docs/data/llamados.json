@@ -9453,6 +9453,41 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1366639",
     "ya_adjudicados": []
   },
+  "322a3dfcac1c8996e7ad1eda41954ade": {
+    "cambio_detectado": false,
+    "categorias": [
+      "marcas",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Marca de mercado mencionada",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1372487.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 21 Oct 2026 16:05:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "322a3dfcac1c8996e7ad1eda41954ade",
+    "informe": "informes/322a3dfcac1c8996e7ad1eda41954ade.md",
+    "keyword": "interface + poliéster",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
+    "primera_deteccion": "2026-10-21T19:08:15",
+    "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — busca Marca de mercado mencionada, Material mencionado (revisar contexto). Menciona \"poliéster\": «mún/bond, papel para impresión técnica y rollos de papel o poliéster aptos para impresión de gran formato. Se solicita informar»",
+    "score": 19,
+    "simbolo": "★",
+    "titulo": "Compra Directa 57/2026",
+    "ultima_actualizacion": "2026-10-21T19:08:15",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1372487",
+    "ya_adjudicados": []
+  },
   "32604973238b288eaaef20b966a58a12": {
     "cambio_detectado": false,
     "categorias": [
