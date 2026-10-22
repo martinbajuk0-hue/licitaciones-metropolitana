@@ -910,7 +910,18 @@ def enviar_email(
             resto = len(items_pliego) - len(visibles)
             lis_html = "".join(f'<li style="margin-bottom:2px;">{_linea_item(it)}</li>' for it in visibles)
             if resto > 0:
-                lis_html += f'<li style="color:#888;">… y {resto} artículo(s) más (ver pliego completo).</li>'
+                # 2026-10-22: reportado por el usuario — "(ver pliego
+                # completo)" era texto gris suelto, sin link, así que no
+                # había forma real de ver esos artículos desde el mail.
+                # Mismo destino que el botón "Ver" de la fila (ver
+                # _fila_html() más abajo): el PDF real del pliego si hay
+                # documentos, si no la ficha humana de ARCE.
+                documentos = lic.get("documentos") or []
+                ver_url_resto = documentos[0] if documentos else (lic.get("url_ficha") or lic["url"])
+                lis_html += (
+                    f'<li style="color:#888;">… y {resto} artículo(s) más — '
+                    f'<a href="{ver_url_resto}" style="color:#1a73e8;">ver pliego completo</a>.</li>'
+                )
             partes.append(
                 '<details style="margin-top:4px;">'
                 f'<summary style="font-size:11px;color:#555;cursor:pointer;">📦 Artículos solicitados ({len(items_pliego)})</summary>'
