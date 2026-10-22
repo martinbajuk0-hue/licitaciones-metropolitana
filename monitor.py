@@ -34,11 +34,12 @@ import seguimiento as seguimiento_mod
 
 MAX_DOCUMENTOS_POR_LICITACION = 5
 
-# Techo de artículos mostrados sin colapsar en el <details> del email (ver
-# _tarjeta() -> items_html). Pedido 2026-09-01: listar TODOS los artículos,
-# pero sin romper el largo de la tarjeta cuando un llamado tiene decenas de
-# ítems (ej. licitaciones de suministros varios con 20+ líneas).
-MAX_ARTICULOS_VISIBLES_EMAIL = 25
+# 2026-10-22: existió un techo acá (MAX_ARTICULOS_VISIBLES_EMAIL, 25) que
+# truncaba el listado de artículos del email y agregaba un link "ver
+# pliego completo" para el resto — el usuario aclaró que eso no sirve,
+# quiere los artículos EN el mail, no un link a otro lado. Se sacó el
+# techo: _objeto_html() (ver enviar_email()) ahora siempre lista todos
+# los items_pliego, sin excepción.
 
 # Reportado 2026-08-18/19: al pasar al feed RSS mensual (ver
 # _meses_a_relevar()), un problema de concurrencia entre corridas (dos
@@ -893,8 +894,13 @@ def enviar_email(
         # Listado completo de artículos pedidos (tender.items, ver
         # _items_articulos()) — pedido explícito del usuario 2026-09-01:
         # "necesito que indique todo los artículos que se solicitan". Se
-        # listan TODOS (no un top-N silencioso), colapsados en un
-        # <details> para no volver a la tarjeta densa de antes.
+        # listan TODOS, sin ningún tope ni truncamiento (ver aclaración
+        # del usuario 2026-10-22: "no quiero ver todo el pliego... quiero
+        # ver todos los artículos... lo quiero ver todo en el mismo
+        # mail" — un link al pliego completo NO sirve para esto, tiene
+        # que ser el listado en sí, adentro del mail). Colapsados en un
+        # <details> para no volver a la tarjeta densa de antes, pero el
+        # contenido de adentro es siempre la lista entera.
         items_pliego = lic.get("items_pliego") or []
         if items_pliego:
             def _linea_item(it: dict) -> str:
@@ -906,22 +912,7 @@ def enviar_email(
                     piezas.append(f"×{it['veces']}")
                 return " ".join(piezas)
 
-            visibles = items_pliego[:MAX_ARTICULOS_VISIBLES_EMAIL]
-            resto = len(items_pliego) - len(visibles)
-            lis_html = "".join(f'<li style="margin-bottom:2px;">{_linea_item(it)}</li>' for it in visibles)
-            if resto > 0:
-                # 2026-10-22: reportado por el usuario — "(ver pliego
-                # completo)" era texto gris suelto, sin link, así que no
-                # había forma real de ver esos artículos desde el mail.
-                # Mismo destino que el botón "Ver" de la fila (ver
-                # _fila_html() más abajo): el PDF real del pliego si hay
-                # documentos, si no la ficha humana de ARCE.
-                documentos = lic.get("documentos") or []
-                ver_url_resto = documentos[0] if documentos else (lic.get("url_ficha") or lic["url"])
-                lis_html += (
-                    f'<li style="color:#888;">… y {resto} artículo(s) más — '
-                    f'<a href="{ver_url_resto}" style="color:#1a73e8;">ver pliego completo</a>.</li>'
-                )
+            lis_html = "".join(f'<li style="margin-bottom:2px;">{_linea_item(it)}</li>' for it in items_pliego)
             partes.append(
                 '<details style="margin-top:4px;">'
                 f'<summary style="font-size:11px;color:#555;cursor:pointer;">📦 Artículos solicitados ({len(items_pliego)})</summary>'
