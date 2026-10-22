@@ -1,0 +1,95 @@
+# Informe de licitación: Compra por Excepción 10/2026
+
+**URL:** https://www.comprasestatales.gub.uy/consultas/detalle/id/1381300
+**Generado:** 2026-10-22 19:21
+**Qué es:** Licitación de Ministerio de Trabajo y Seguridad Social (MTSS) — busca Alfombras, Material mencionado (revisar contexto). Menciona "alfombra": «spañol). -Dos juegos de llaves por cada vehículo. -Juego de alfombras de goma (delanteros y traseros). 11 ANEXO II LISTA DE VEHÍ»
+
+## Clasificación: ★ — No presentarse (score 9/100)
+
+### Por qué este puntaje
+- +24 por 2 categoría(s) de producto identificadas
+- +15 por organismo identificado (prioritario según el rol)
+- -20 por 5 campo(s) clave no identificados (a verificar manualmente)
+- -20 por 2 riesgo(s) de severidad alta
+- -20 por 12 ítem(s) documentales a verificar
+
+## Resumen ejecutivo
+QUÉ ES: Licitación de Ministerio de Trabajo y Seguridad Social (MTSS) — busca Alfombras, Material mencionado (revisar contexto). Menciona "alfombra": «spañol). -Dos juegos de llaves por cada vehículo. -Juego de alfombras de goma (delanteros y traseros). 11 ANEXO II LISTA DE VEHÍ»
+
+Organismo: Ministerio de Trabajo y Seguridad Social (MTSS).
+Número: no identificado — verificar manualmente.
+Fecha de apertura: no identificada — verificar manualmente.
+Categorías de producto detectadas: Alfombras, Material mencionado (revisar contexto).
+Resumen generado por reglas (sin ANTHROPIC_API_KEY configurada): es un extracto de campos, no un análisis narrativo completo del pliego.
+
+## Datos clave
+- Organismo: Ministerio de Trabajo y Seguridad Social (MTSS)
+- Número de licitación/expediente: **NO IDENTIFICADO — verificar manualmente**
+- Fecha de apertura: **NO IDENTIFICADA — verificar manualmente** (Fecha de cierre no identificada — verificar manualmente)
+- Plazo/fecha de entrega: no identificado — verificar manualmente
+- Fecha límite de consultas: no identificada — verificar manualmente
+- Fecha de visita de obra: no identificada / puede no aplicar
+- Garantía de mantenimiento de oferta: no identificada — verificar manualmente
+- Garantía de fiel cumplimiento: no identificada — verificar manualmente
+
+### Criterios de evaluación detectados
+_(ninguno)_
+
+### Datos que faltan y dónde buscarlos
+- número de licitación/expediente: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- fecha de apertura: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- fecha/plazo de entrega: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- fecha límite de consultas: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+- criterios de evaluación: no se encontró en el texto analizado. Verificar manualmente en el pliego original (puede estar en un anexo no descargado, una imagen escaneada, o usar una redacción no cubierta por los patrones de analyzer.py).
+
+## Productos Metropolitana identificados
+Categorías detectadas: Alfombras, Material mencionado (revisar contexto)
+
+- **Alfombras** ("alfombra"): ...spañol). -Dos juegos de llaves por cada vehículo. -Juego de alfombras de goma (delanteros y traseros). 11 ANEXO II LISTA DE VEHÍ...
+- **Alfombras** ("alfombras"): ...spañol). -Dos juegos de llaves por cada vehículo. -Juego de alfombras de goma (delanteros y traseros). 11 ANEXO II LISTA DE VEHÍC...
+- **Material mencionado (revisar contexto)** ("goma"): ...juegos de llaves por cada vehículo. -Juego de alfombras de goma (delanteros y traseros). 11 ANEXO II LISTA DE VEHÍCULOS A E...
+
+### Ya adjudicaste antes
+Metropolitana ya le vendió al Estado alguno de estos productos antes (historial 2025-2026, ver knowledge/historial_adjudicaciones_metropolitana.json): ALFOMBRA DE PVC, COLOCACION DE ALFOMBRA, ALFOMBRA DE GOMA, PISO DE GOMA, ALFOMBRA DE FIELTRO, ALFOMBRA DE LANA, CAMINERO DE GOMA, ALFOMBRA BOUCLE, REPARACION DE ALFOMBRA, LIMPIEZA DE ALFOMBRA, BALDOSA DE GOMA, PLANCHA DE GOMA EVA, ALFOMBRA ATRAPA POLVO, VARILLA DE BRONCE PARA ALFOMBRA, ALFOMBRA DE YUTE, GOMA DE LATEX 1.5 ESPESOR 3 MM, GOMA NATURAL EN PLANCHA, piso de goma o vinilo en rollo de 1,5 mm, de espesor.-.
+### Contexto adicional (lugar de uso / aplicación)
+- Lugar de uso mencionado: banco, correo, depósito, dirección, fabrica, facultad, ministerio, mtss, plaza, plazas, recepción
+
+## Riesgos detectados
+Altos: 2 · Medios: 0 · Total: 2
+
+- [ALTA] multas_penalidades: Multa porcentual explícita — «omunicación al RUPE, según corresponda. • Aplicación de una multa de 1% (uno) por cada día de retraso, calculado sobre el   monto d»
+- [ALTA] multas_penalidades: Penalidades mencionadas — «.................................................... .8 24. PENALIDADES............................................................»
+
+## Checklist documental
+### Exigidos explícitamente en el pliego
+- Inscripción activa en RUPE — evidencia: «inscriptos en el  Registro Único de Proveedores del Estado (RUPE) y   aceptar la contratación y pago mediante SIIF. e) Se de»
+- Poderes / representación legal vigentes — evidencia: «……………………………………………………...  Firma y contrafirma del Titular o representante legal ANEXO IV PLANILLA DE DATOS GARANTIZADOS ITEM 1 Motor Cilind»
+- Garantía de fiel cumplimiento de contrato — evidencia: «.................................................... .8 23. GARANTIA DE FIEL CUMPLIMIENTO DEL CONTRA TO..............................................»
+- Pólizas de seguro (responsabilidad civil / accidentes) — evidencia: «ólares estadounidenses de un banco establecido en plaza. B) Póliza de seguro de fianza del Banco de Seguros del Estado, en dól»
+
+### Estándar, no mencionado en el pliego (verificar si igual aplica)
+- Certificado único de DGI vigente
+- Certificado único de BPS vigente
+- Certificado notarial de vigencia / representación
+- Estados contables / antecedentes financieros
+- Catálogos de producto
+- Fichas técnicas de los productos ofertados
+- Muestras físicas de producto
+- Garantía de mantenimiento de oferta
+- Antecedentes en obras/suministros similares
+- Constancia de visita de obra (si el pliego la exige)
+- Declaraciones juradas exigidas
+- Formulario de identificación del oferente
+
+## Cronograma de tareas
+- 2026-10-22: Lectura integral del pliego y anexos
+- 2026-10-23: Armar checklist documental y reunir certificados
+- según disponibilidad, antes de apertura: Definir productos y armar cotización
+- según disponibilidad, antes de apertura: Redactar oferta técnica y administrativa
+- FECHA DE APERTURA NO IDENTIFICADA — verificar manualmente antes de planificar: Entrega de oferta
+
+## Documentos que no se pudieron leer
+_(ninguno)_
+
+---
+_Informe generado automáticamente. No sustituye la lectura íntegra del pliego por una persona del equipo de licitaciones. Todo campo marcado como 'no identificado' o 'PENDIENTE' requiere verificación manual antes de tomar una decisión de presentarse._
