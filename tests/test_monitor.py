@@ -1,3 +1,4 @@
+import email
 import hashlib
 import json
 import tempfile
@@ -1263,6 +1264,104 @@ class TestObtenerLicitacionesRegistraFallosDeEnriquecimiento(unittest.TestCase):
 
         self.assertEqual(licitaciones[0]["descripcion"], "listo")
         self.assertEqual(monitor._ITEMS_SIN_ENRIQUECER, [])
+
+
+class TestEmailArticulosDeMasTieneLinkAlPliego(unittest.TestCase):
+    """Reportado por el usuario 2026-10-22 (captura real de un mail de
+    producción): cuando items_pliego supera MAX_ARTICULOS_VISIBLES_EMAIL,
+    la línea "... y N artículo(s) más (ver pliego completo)" era texto
+    gris suelto, SIN link — no había forma real de ver esos artículos
+    desde el mail. Ahora "ver pliego completo" es un <a href> real, al
+    mismo destino que el botón "Ver" de la fila (PDF del pliego si hay
+    documentos, si no la ficha humana de ARCE).
+    """
+
+    def _lic(self, documentos=None, url_ficha="https://example.com/ficha", n_items=30):
+        return {
+            "titulo": "Compra de materiales eléctricos",
+            "descripcion": "desc",
+            "fecha": "2026-10-20",
+            "url": "https://www.comprasestatales.gub.uy/ocds/release/llamado-123",
+            "url_ficha": url_ficha,
+            "documentos": documentos or [],
+            "organismo": "Organismo de prueba",
+            "items_pliego": [
+                {"descripcion": f"Artículo {i}", "cantidad": "1", "unidad": "unidad", "veces": 1}
+                for i in range(n_items)
+            ],
+        }
+
+    def _html_enviado(self, mock_smtp) -> str:
+        # msg.as_string() codifica el cuerpo HTML en base64 (ver
+        # MIMEText(..., "html") en enviar_email()) — hay que parsear el
+        # mensaje de verdad y decodificar el payload, no buscar el texto
+        # plano adentro del base64 crudo.
+        server = mock_smtp.return_value.__enter__.return_value
+        _, _, mensaje = server.sendmail.call_args[0]
+        parsed = email.message_from_string(mensaje)
+        for parte in parsed.walk():
+            if parte.get_content_type() == "text/html":
+                return parte.get_payload(decode=True).decode("utf-8")
+        raise AssertionError("no se encontró la parte text/html del mail")
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_resto_de_articulos_tiene_link_al_pdf_del_pliego_si_hay_documentos(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(documentos=["https://www.comprasestatales.gub.uy/Pliegos/pedido_123.pdf"])
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertIn(
+            '<a href="https://www.comprasestatales.gub.uy/Pliegos/pedido_123.pdf" '
+            'style="color:#1a73e8;">ver pliego completo</a>',
+            html,
+        )
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_resto_de_articulos_cae_a_la_ficha_si_no_hay_documentos(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(documentos=[], url_ficha="https://www.comprasestatales.gub.uy/ficha/123")
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertIn(
+            '<a href="https://www.comprasestatales.gub.uy/ficha/123" style="color:#1a73e8;">ver pliego completo</a>',
+            html,
+        )
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_sin_resto_no_aparece_la_linea_de_mas(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(documentos=["https://example.com/pliego.pdf"], n_items=5)
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertNotIn("artículo(s) más", html)
+        self.assertNotIn("ver pliego completo", html)
 
 
 if __name__ == "__main__":
