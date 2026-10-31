@@ -22539,6 +22539,37 @@
       "MANTENIMIENTO EDILICIO"
     ]
   },
+  "7afbd05dd79c98f79fbeb724c3b8f6aa": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras"
+    ],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 30 Oct 2026 19:35:07",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "7afbd05dd79c98f79fbeb724c3b8f6aa",
+    "informe": "informes/7afbd05dd79c98f79fbeb724c3b8f6aa.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-10-31T00:28:33",
+    "que_es": "Licitación de organismo no identificado — busca Alfombras. Menciona \"carpet\": «Compra Directa 131/2026 REAF - gafetes, stickears y carpetines»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Compra Directa 131/2026",
+    "ultima_actualizacion": "2026-10-31T00:28:33",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1381736",
+    "ya_adjudicados": []
+  },
   "7b5b685ff02bf95c2496da8d75ddbe43": {
     "cambio_detectado": false,
     "categorias": [
