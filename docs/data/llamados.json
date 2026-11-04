@@ -24758,6 +24758,45 @@
       "CAMINERO DE PVC"
     ]
   },
+  "835c3b1f9f0cfa1b5fff11bc9ad0893e": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "pisos_madera"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Pisos de madera"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1382886.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 03 Nov 2026 15:45:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "835c3b1f9f0cfa1b5fff11bc9ad0893e",
+    "informe": "informes/835c3b1f9f0cfa1b5fff11bc9ad0893e.md",
+    "keyword": "madera maciza",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-04T01:16:42",
+    "que_es": "Licitación de organismo no identificado — busca Material mencionado (revisar contexto), Pisos de madera. Menciona \"madera maciza\": «tidad: 2 pares. Pares de claves de percusión fabricadas en madera maciza resistente, de formato cilíndrico y tamaño adecuado para m»",
+    "score": 14,
+    "simbolo": "★",
+    "titulo": "Compra Directa 10244/2026",
+    "ultima_actualizacion": "2026-11-04T01:16:42",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1382886",
+    "ya_adjudicados": [
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "83e6695409f98c4d387c98d3969b75e1": {
     "cambio_detectado": false,
     "categorias": [
@@ -38719,6 +38758,58 @@
       "REPARACION DE PISO DE MADERA"
     ]
   },
+  "cb3fda7e670f5e2e3dc6ea88d13726a7": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "marcas",
+      "materiales",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Marca de mercado mencionada",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1382978.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 03 Nov 2026 18:15:07",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "cb3fda7e670f5e2e3dc6ea88d13726a7",
+    "informe": "informes/cb3fda7e670f5e2e3dc6ea88d13726a7.md",
+    "keyword": "madera + memoria constructiva + pu",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "7/2026",
+    "organismo": "Intendencia de Tacuarembó",
+    "primera_deteccion": "2026-11-04T01:06:13",
+    "que_es": "Licitación de Intendencia de Tacuarembó — busca Abreviatura técnica del rubro, Marca de mercado mencionada, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"pvc\": «s grafito oscuro; el ploteo debe ser en lona plástica o PVC impreso a cuatro tintas. El diseño del mismo debe estar de»",
+    "score": 36,
+    "simbolo": "★★",
+    "titulo": "Licitación Pública 7/2026",
+    "ultima_actualizacion": "2026-11-04T01:06:13",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1382978",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "FELPUDO",
+      "PISO MODULAR DE PVC",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ENTREPUERTA METALICA",
+      "CAMINERO DE PVC",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "cc73e4486b18211d77191c3b7a581097": {
     "cambio_detectado": false,
     "categorias": [],
@@ -47247,6 +47338,47 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1364275",
     "ya_adjudicados": [
       "CEMENTO ADHESIVO PARA CERAMICA"
+    ]
+  },
+  "fa6545a9f6739759c62b18076a778e20": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "pisos_flotantes"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Pisos flotantes/laminados"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1382929.doc"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 03 Nov 2026 16:40:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "fa6545a9f6739759c62b18076a778e20",
+    "informe": "informes/fa6545a9f6739759c62b18076a778e20.md",
+    "keyword": "flotante + flotantes + nylon",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "48/2026",
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-11-04T01:08:23",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Material mencionado (revisar contexto), Pisos flotantes/laminados. Menciona \"flotante\": «ribera y lecho del Arroyo. - Extracción de elementos flotantes o atrapados en embalses naturales y estructuras de los pun»",
+    "score": 33,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 48/2026",
+    "ultima_actualizacion": "2026-11-04T01:08:23",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1382929",
+    "ya_adjudicados": [
+      "PISO FLOTANTE",
+      "ZOCALO PARA PISO FLOTANTE",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "REDUCTOR PARA PISO FLOTANTE",
+      "JUNTA PARA PISO FLOTANTE"
     ]
   },
   "fabd5536d9c3bc295f4f65f7c6cdc9f0": {
