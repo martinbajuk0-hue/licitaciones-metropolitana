@@ -1307,6 +1307,48 @@
       "MANTENIMIENTO EDILICIO"
     ]
   },
+  "080f21b64d763f00154aafeb2c34e5f0": {
+    "cambio_detectado": false,
+    "categorias": [
+      "accesorios",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Accesorios de instalación",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1383163.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 04 Nov 2026 10:15:13",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "080f21b64d763f00154aafeb2c34e5f0",
+    "informe": "informes/080f21b64d763f00154aafeb2c34e5f0.md",
+    "keyword": "mantenimiento edilicio + zócalo + zócalos",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
+    "primera_deteccion": "2026-11-04T18:20:01",
+    "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — busca Accesorios de instalación, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"zócalo\": «iores, pintura, revest imientos, cielorrasos, colocación de zócalos, cambio de aberturas, colocación de AA, sanitaria, eléctr»",
+    "score": 23,
+    "simbolo": "★",
+    "titulo": "Compra por Excepción 11/2026",
+    "ultima_actualizacion": "2026-11-04T18:20:01",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383163",
+    "ya_adjudicados": [
+      "ZOCALO PARA PISO FLOTANTE",
+      "ZOCALO DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "ZOCALO MONOLITICO",
+      "COLOCACION DE ZOCALO",
+      "ZOCALO EN MDF"
+    ]
+  },
   "0811f1015c97ade248b16ad8ffa3f41c": {
     "cambio_detectado": false,
     "categorias": [
@@ -2234,6 +2276,33 @@
       "CAMINERO DE ACRILICO",
       "REPARACION DE PISO DE MADERA"
     ]
+  },
+  "0ca564530a0cc51d97def398f28d66dc": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 04 Nov 2026 10:00:14",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "0ca564530a0cc51d97def398f28d66dc",
+    "informe": "informes/0ca564530a0cc51d97def398f28d66dc.md",
+    "keyword": "carpet + carpeta + goma",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-04T18:24:14",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría. Texto disponible: «Compra Directa 45/2026 Las cantidades son HASTA. ES OBLIGACIÓN LA PRESENTACIÓN DE MUESTRAS. En Uruguay 933 de L a V de 8:30 a 13:00 hs Proveeduria. Aclaraciones: Ít 1: Presentación de 40g Buena calidad Ít2: Lomo 12cm de plástico. Ít 16:Tamaño A4 Ít 18:Corrector en Cinta de 5mm x 12m Ít 4: Buena cali…»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 45/2026",
+    "ultima_actualizacion": "2026-11-04T18:24:14",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1382651",
+    "ya_adjudicados": []
   },
   "0cb19050aaceeb5740880fa1453cf535": {
     "cambio_detectado": false,
@@ -15160,6 +15229,68 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "5428c0bb6a936647078576f83f01f345": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1382986.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 04 Nov 2026 12:20:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "5428c0bb6a936647078576f83f01f345",
+    "informe": "informes/5428c0bb6a936647078576f83f01f345.md",
+    "keyword": "acero inoxidable + aluminio + goma",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-04T17:56:42",
+    "que_es": "Licitación de organismo no identificado — busca Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «2 |36893 |TIJERA DE CORTE|Tijera termofusion corta tubo pvc grande |1 | | | |PARA CAÑO |hasta»",
+    "score": 24,
+    "simbolo": "★",
+    "titulo": "Compra Directa 1061/2026",
+    "ultima_actualizacion": "2026-11-04T17:56:42",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1382986",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "ALFOMBRA DE GOMA",
+      "ZOCALO PARA PISO FLOTANTE",
+      "PISO MODULAR DE PVC",
+      "PISO DE GOMA",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ZOCALO MONOLITICO",
+      "CAMINERO DE GOMA",
+      "PERFIL U DE ALUMINIO",
+      "BALDOSA DE GOMA",
+      "COLOCACION DE ZOCALO",
+      "PLANCHA DE GOMA EVA",
+      "ZOCALO EN MDF",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "GOMA NATURAL EN PLANCHA",
+      "REPARACION DE PISO DE MADERA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "5432d1851036b5404cf9c960fa46e39f": {
     "cambio_detectado": false,
     "categorias": [
@@ -17510,6 +17641,49 @@
       "REPARACION DE PISO DE MADERA"
     ]
   },
+  "5f8d5cd2ddabaff66abcb2da3cddb3bc": {
+    "cambio_detectado": false,
+    "categorias": [
+      "marcas",
+      "materiales",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Marca de mercado mencionada",
+      "Material mencionado (revisar contexto)",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1381561.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 04 Nov 2026 10:35:12",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "5f8d5cd2ddabaff66abcb2da3cddb3bc",
+    "informe": "informes/5f8d5cd2ddabaff66abcb2da3cddb3bc.md",
+    "keyword": "baldosa + baldosas + cerámica",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
+    "primera_deteccion": "2026-11-04T18:17:53",
+    "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — busca Marca de mercado mencionada, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"baldosa\": «ejecutar los trabajos. • Demolición y retiro localizado de baldosas o piezas cerámicas y de las capas de piso necesarias para»",
+    "score": 30,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 4080/2026",
+    "ultima_actualizacion": "2026-11-04T18:17:53",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1381561",
+    "ya_adjudicados": [
+      "BALDOSA LISA",
+      "CEMENTO ADHESIVO PARA CERAMICA",
+      "BALDOSA VINILICA ALTO TRANSITO",
+      "BALDOSA VINILICA",
+      "BALDOSA DE GOMA"
+    ]
+  },
   "5fc2d49caa9eeee49e4243b8c1d209f9": {
     "cambio_detectado": false,
     "categorias": [
@@ -19120,6 +19294,62 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1378754",
     "ya_adjudicados": []
   },
+  "66860e848e6f091fd5160c061064471f": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1380235.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 04 Nov 2026 10:00:10",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "66860e848e6f091fd5160c061064471f",
+    "informe": "informes/66860e848e6f091fd5160c061064471f.md",
+    "keyword": "contenedor habitable",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio del Interior (MI)",
+    "primera_deteccion": "2026-11-04T18:26:18",
+    "que_es": "Licitación de Ministerio del Interior (MI) — busca ninguna coincidencia directa de categoría. Texto disponible: «ORGANISMO CONTRATANTE: MINISTERIO DEL INTERIOR DIRECCIÓN NACIONAL DE POLICÍA CAMINERA UE 023 OBJETO DEL LLAMADO: Adquisición de 1 (uno) contenedor equipado para el Departamento de Rocha para ésta Dirección Nacional.- TIPO Y NÚMERO DE PROCEDIMIENTO: Concurso de Precios Nro. 06 / 2026 MODALIDAD ELECTR…»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 6/2026",
+    "ultima_actualizacion": "2026-11-04T18:26:18",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1380235",
+    "ya_adjudicados": []
+  },
+  "677df405fd565b5df714a98e1cba7cce": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 04 Nov 2026 09:30:15",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "677df405fd565b5df714a98e1cba7cce",
+    "informe": "informes/677df405fd565b5df714a98e1cba7cce.md",
+    "keyword": "algodon + poliester + polietileno",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-04T18:28:26",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría. Texto disponible: «Compra Directa 3380/2026 COMPRA DIRECTA MMQ»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 3380/2026",
+    "ultima_actualizacion": "2026-11-04T18:28:26",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383050",
+    "ya_adjudicados": []
+  },
   "67f7b487e928e5fde09aa02376752b2b": {
     "cambio_detectado": false,
     "categorias": [
@@ -20100,6 +20330,56 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373345",
     "ya_adjudicados": []
   },
+  "6c3df8e6248a0e65e4ca168501f584a6": {
+    "cambio_detectado": false,
+    "categorias": [
+      "accesorios",
+      "materiales",
+      "pisos_madera",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Pisos de madera",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1383410.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 04 Nov 2026 13:30:14",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "6c3df8e6248a0e65e4ca168501f584a6",
+    "informe": "informes/6c3df8e6248a0e65e4ca168501f584a6.md",
+    "keyword": "madera maciza",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Educación y Cultura",
+    "primera_deteccion": "2026-11-04T17:50:22",
+    "que_es": "Licitación de Ministerio de Educación y Cultura — busca Accesorios de instalación, Material mencionado (revisar contexto), Pisos de madera, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"madera maciza\": «nstancia, el retiro de la puerta telescópica existente, de madera maciza, actualmente en estado de conservación deficiente y con di»",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 102811/2026",
+    "ultima_actualizacion": "2026-11-04T17:50:22",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383410",
+    "ya_adjudicados": [
+      "ZOCALO PARA PISO FLOTANTE",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "VARILLA DE ALUMINIO",
+      "ZOCALO MONOLITICO",
+      "PERFIL U DE ALUMINIO",
+      "COLOCACION DE ZOCALO",
+      "ZOCALO EN MDF",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "6c8dc2d61d540769eecb306640a79f95": {
     "cambio_detectado": false,
     "categorias": [
@@ -20946,6 +21226,39 @@
       "GOMA DE LATEX 1.5 ESPESOR 3 MM",
       "CAMINERO DE PVC"
     ]
+  },
+  "7048efeaf137e76211fcba13bdb03b55": {
+    "cambio_detectado": false,
+    "categorias": [
+      "servicios"
+    ],
+    "categorias_etiquetas": [
+      "Servicios"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1383189.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 04 Nov 2026 11:00:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "7048efeaf137e76211fcba13bdb03b55",
+    "informe": "informes/7048efeaf137e76211fcba13bdb03b55.md",
+    "keyword": "capacitación técnica al personal",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "3026/2026",
+    "organismo": null,
+    "primera_deteccion": "2026-11-04T18:13:26",
+    "que_es": "Licitación de organismo no identificado — busca Servicios. Menciona \"capacitación técnica al personal\": «bricante. - La empresa adjudicataria deberá proporcionar capacitación técnica al personal del SERBA respecto de la operación, mantenimiento,…»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 3026/2026",
+    "ultima_actualizacion": "2026-11-04T18:13:26",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383189",
+    "ya_adjudicados": []
   },
   "70a9f7e5921a9cfcac89a8d9b54b24e4": {
     "cambio_detectado": false,
@@ -22022,6 +22335,41 @@
       "PANEL DE MADERA",
       "REPARACION DE PISO DE MADERA"
     ]
+  },
+  "75e4e9168848e30b8dbb6cd628c0c886": {
+    "cambio_detectado": false,
+    "categorias": [
+      "marcas",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Marca de mercado mencionada",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1383159.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": "2026-11-16",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 04 Nov 2026 10:10:14",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "75e4e9168848e30b8dbb6cd628c0c886",
+    "informe": "informes/75e4e9168848e30b8dbb6cd628c0c886.md",
+    "keyword": "fila + laminado",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-11-04T18:22:09",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Marca de mercado mencionada, Material mencionado (revisar contexto), apertura 2026-11-16. Menciona \"laminado\": «zas y regulación de altura y posición. *El parabrisas será laminado, y el resto de los cristales serán laminados o templados.»",
+    "score": 33,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 89734/2026",
+    "ultima_actualizacion": "2026-11-04T18:22:09",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383159",
+    "ya_adjudicados": []
   },
   "76f7fb33f3196d193831bfc4b4b32302": {
     "cambio_detectado": false,
@@ -24603,6 +24951,41 @@
       "ZOCALO DE MADERA",
       "PANEL DE MADERA",
       "REPARACION DE PISO DE MADERA"
+    ]
+  },
+  "8241694cded04dcd041b15aa948a1969": {
+    "cambio_detectado": false,
+    "categorias": [
+      "cesped_sintetico"
+    ],
+    "categorias_etiquetas": [
+      "Césped sintético"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1382522.doc"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 04 Nov 2026 09:35:09",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "8241694cded04dcd041b15aa948a1969",
+    "informe": "informes/8241694cded04dcd041b15aa948a1969.md",
+    "keyword": "código ya adjudicado: CEMENTO ADHESIVO PARA CERAMICA",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-04T18:28:25",
+    "que_es": "Licitación de organismo no identificado — busca Césped sintético. Menciona \"pasto sintético\": «| |1 |19 KILOS|CEMENTO ADHESIVO PARA PEGAR PASTO SINTÉTICO (ENTREGA EN LA | | |(±10 %) |UNIDAD N º6 “PUNTA DE RIELE»",
+    "score": 27,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 275/2026",
+    "ultima_actualizacion": "2026-11-04T18:28:25",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1382522",
+    "ya_adjudicados": [
+      "CEMENTO ADHESIVO PARA CERAMICA"
     ]
   },
   "82965b185465b2872199df6803e5b759": {
@@ -37997,6 +38380,44 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1360309",
     "ya_adjudicados": [
       "MANTENIMIENTO DE PAVIMENTO"
+    ]
+  },
+  "c859e30b043bde5b93376e6b55aaa299": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1383428.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 04 Nov 2026 14:05:12",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "c859e30b043bde5b93376e6b55aaa299",
+    "informe": "informes/c859e30b043bde5b93376e6b55aaa299.md",
+    "keyword": "vinilo + vinilos",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Educación y Cultura (MEC)",
+    "primera_deteccion": "2026-11-04T17:48:11",
+    "que_es": "Licitación de Ministerio de Educación y Cultura (MEC) — busca Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"vinilo\": «cita cotización para la adquisición de 10 ploteos de corte (vinilos adhesivos) con identificación gráfica de Espacios MEC. Ca»",
+    "score": 29,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 10294/2026",
+    "ultima_actualizacion": "2026-11-04T17:48:11",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383428",
+    "ya_adjudicados": [
+      "PAPEL VINILO",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
   "c8879da9d705d20050e1f6816ba8f9b8": {
