@@ -2407,6 +2407,41 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "0cfdce058dd9d834127e95d5afbaf6aa": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1383856.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 05 Nov 2026 11:15:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "0cfdce058dd9d834127e95d5afbaf6aa",
+    "informe": "informes/0cfdce058dd9d834127e95d5afbaf6aa.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ANTEL - Administración Nacional de Telecomunicaciones",
+    "primera_deteccion": "2026-11-05T18:08:12",
+    "que_es": "Licitación de ANTEL - Administración Nacional de Telecomunicaciones — busca Alfombras, Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «er todos los folios que componen la misma engrampados y/o encarpetados. La copia deberá ser igual al original. En caso que la»",
+    "score": 28,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 109720/2026",
+    "ultima_actualizacion": "2026-11-05T18:08:12",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383856",
+    "ya_adjudicados": []
+  },
   "0d164856bb4f3003dcad272b438d39fd": {
     "cambio_detectado": false,
     "categorias": [
@@ -7645,6 +7680,35 @@
     "ya_adjudicados": [
       "PLANCHA DE GOMA EVA"
     ]
+  },
+  "274df3f020cfe257d96cdb2ee05e5b54": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1383535.zip"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 05 Nov 2026 08:55:08",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "274df3f020cfe257d96cdb2ee05e5b54",
+    "informe": "informes/274df3f020cfe257d96cdb2ee05e5b54.md",
+    "keyword": "acero inoxidable + pvc",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "27/2026",
+    "organismo": null,
+    "primera_deteccion": "2026-11-05T18:33:29",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría. Texto disponible: «Licitación Abreviada 27/2026 Suministro de materiales, insumos, componentes y accesorios destinados al mantenimiento eléctrico de las redes de alumbrado público de la ciudad de Trinidad, departamento de Flores»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 27/2026",
+    "ultima_actualizacion": "2026-11-05T18:33:29",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383535",
+    "ya_adjudicados": []
   },
   "277b3c495bbc95e074f9f7236427e464": {
     "cambio_detectado": false,
@@ -13647,6 +13711,46 @@
       "CAMINERO DE PVC"
     ]
   },
+  "4a2f5318600f5d38cd02b3f5136a0b2c": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1384048.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 05 Nov 2026 14:45:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "4a2f5318600f5d38cd02b3f5136a0b2c",
+    "informe": "informes/4a2f5318600f5d38cd02b3f5136a0b2c.md",
+    "keyword": "aluminio + carpet + carpeta",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ANTEL - Administración Nacional de Telecomunicaciones",
+    "primera_deteccion": "2026-11-05T17:53:09",
+    "que_es": "Licitación de ANTEL - Administración Nacional de Telecomunicaciones — busca Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «er todos los folios que componen la misma engrampados y/o encarpetados. La copia deberá ser igual al original. En caso que la»",
+    "score": 38,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 109704/2026",
+    "ultima_actualizacion": "2026-11-05T17:53:09",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1384048",
+    "ya_adjudicados": [
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO"
+    ]
+  },
   "4a331adcd339d3e6961d9262c3c23766": {
     "cambio_detectado": false,
     "categorias": [],
@@ -16112,6 +16216,44 @@
       "GOMA NATURAL EN PLANCHA",
       "REPARACION DE PISO DE MADERA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "5797ad1d1b498a8f725b72e5e89ce054": {
+    "cambio_detectado": false,
+    "categorias": [
+      "errores_comunes",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1383416.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": "2026-11-23",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 05 Nov 2026 08:10:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "5797ad1d1b498a8f725b72e5e89ce054",
+    "informe": "informes/5797ad1d1b498a8f725b72e5e89ce054.md",
+    "keyword": "cesped + paisajismo",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": "189/2026",
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-11-05T18:35:38",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro, apertura 2026-11-23. Menciona \"paisajismo\": «o de los funcionarios que realice la tarea sea Técnico en Paisajismo. 3.7- Haber realizado la visita obligatoria en la fecha fij»",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Licitación Abreviada 189/2026",
+    "ultima_actualizacion": "2026-11-05T18:35:38",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383416",
+    "ya_adjudicados": [
+      "CESPED SINTETICO",
+      "COLOCACION DE PANES DE CESPED"
     ]
   },
   "57dfec6a7b4991b01793ed6b3bfcf61c": {
@@ -30769,6 +30911,49 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "9aeedddd169c94a28056081884a9c7f8": {
+    "cambio_detectado": false,
+    "categorias": [
+      "marcas",
+      "materiales",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Marca de mercado mencionada",
+      "Material mencionado (revisar contexto)",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1383265.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 05 Nov 2026 09:15:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "9aeedddd169c94a28056081884a9c7f8",
+    "informe": "informes/9aeedddd169c94a28056081884a9c7f8.md",
+    "keyword": "aluminio + interface + madera",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "10/2026",
+    "organismo": null,
+    "primera_deteccion": "2026-11-05T18:29:19",
+    "que_es": "Licitación de organismo no identificado — busca Marca de mercado mencionada, Material mencionado (revisar contexto), Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"recubrimiento\": «la fundación. Materiales y protección: los materiales, recubrimientos, fijaciones y componentes mecánicos deberán ser aptos par»",
+    "score": 20,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 10/2026",
+    "ultima_actualizacion": "2026-11-05T18:29:19",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383265",
+    "ya_adjudicados": [
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "9af259d6ff32b084abf05cb02ba638cf": {
     "cambio_detectado": false,
     "categorias": [
@@ -33190,6 +33375,35 @@
     "titulo": "Concurso de Precios 23/2026",
     "ultima_actualizacion": "2026-10-20T00:10:22",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1380580",
+    "ya_adjudicados": []
+  },
+  "a837fb94c1c98c981338a3e9d6e5d3a2": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1382319.zip"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 05 Nov 2026 11:00:16",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "a837fb94c1c98c981338a3e9d6e5d3a2",
+    "informe": "informes/a837fb94c1c98c981338a3e9d6e5d3a2.md",
+    "keyword": "nylon + pvc",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "UTEC - Universidad Tecnológica",
+    "primera_deteccion": "2026-11-05T18:10:17",
+    "que_es": "Licitación de UTEC - Universidad Tecnológica — busca ninguna coincidencia directa de categoría. Texto disponible: «Concurso de Precios 33/2026 Materiales de laboratorio para la carrera de Ingeniería en Mecatrónica de la UTEC.»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 33/2026",
+    "ultima_actualizacion": "2026-11-05T18:10:17",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1382319",
     "ya_adjudicados": []
   },
   "a83d8bfece88638854afaa149f850f6b": {
@@ -36933,6 +37147,43 @@
       "REPARACION DE PISO DE MADERA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
+  },
+  "bce455cf5c0f9ca9d7b4286ed4196ef6": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1384052.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 05 Nov 2026 14:45:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "bce455cf5c0f9ca9d7b4286ed4196ef6",
+    "informe": "informes/bce455cf5c0f9ca9d7b4286ed4196ef6.md",
+    "keyword": "acero inoxidable + carpet + carpeta",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ANTEL - Administración Nacional de Telecomunicaciones",
+    "primera_deteccion": "2026-11-05T17:53:08",
+    "que_es": "Licitación de ANTEL - Administración Nacional de Telecomunicaciones — busca Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «er todos los folios que componen la misma engrampados y/o encarpetados. La copia deberá ser igual al original. En caso que la»",
+    "score": 37,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 109702/2026",
+    "ultima_actualizacion": "2026-11-05T17:53:08",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1384052",
+    "ya_adjudicados": []
   },
   "bd59d94f50bd75b815ccc321a30a2b33": {
     "cambio_detectado": false,
@@ -40692,6 +40943,47 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370458",
     "ya_adjudicados": []
   },
+  "d34ae85c50de64ab777a95a51e47ad9a": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1383731.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": "2026-11-11",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 05 Nov 2026 10:00:12",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "d34ae85c50de64ab777a95a51e47ad9a",
+    "informe": "informes/d34ae85c50de64ab777a95a51e47ad9a.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-11-05T18:16:50",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro, apertura 2026-11-11. Menciona \"carpet\": «CO, PRESENTACIÓN DE 50 UNIDADES, LONGITUD 8 CM. 100 cajas 2 CARPETAS AMARILLAS PARA LEGAJO SIN ELÁSTICO CON SO - LAPA PEGADA I»",
+    "score": 51,
+    "simbolo": "★★★",
+    "titulo": "Concurso de Precios 167/2026",
+    "ultima_actualizacion": "2026-11-05T18:16:50",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383731",
+    "ya_adjudicados": [
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "d36fa707c4475cf497158b72f365c78a": {
     "cambio_detectado": false,
     "categorias": [
@@ -43901,6 +44193,47 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "e59a2160746040827857f3138a85d129": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "marcas",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Marca de mercado mencionada",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1383558.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": "2026-11-16",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 05 Nov 2026 10:05:08",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "e59a2160746040827857f3138a85d129",
+    "informe": "informes/e59a2160746040827857f3138a85d129.md",
+    "keyword": "interface + pu",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-11-05T18:16:46",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Abreviatura técnica del rubro, Marca de mercado mencionada, Material mencionado (revisar contexto), apertura 2026-11-16. Menciona \"pu\": «o de Proveedores del Estado (R.U.P.E.), la comunicación de pu blicación del acta. Será de responsabilidad de cada oferen»",
+    "score": 48,
+    "simbolo": "★★★",
+    "titulo": "Concurso de Precios 5/2026",
+    "ultima_actualizacion": "2026-11-05T18:16:46",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383558",
+    "ya_adjudicados": [
+      "FELPUDO",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "ENTREPUERTA METALICA"
+    ]
+  },
   "e5c2975fa24152e7d65cca9bb8f67db5": {
     "cambio_detectado": false,
     "categorias": [
@@ -43943,6 +44276,37 @@
     "ultima_actualizacion": "2026-09-21T16:35:13",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1366321",
     "ya_adjudicados": []
+  },
+  "e5e2936ed53849cdd28782e9a864bfe3": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1383729.doc"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 05 Nov 2026 09:50:14",
+    "fecha_visita": null,
+    "fuente_match": "alerta total (mención directa, sin filtro de score)",
+    "id": "e5e2936ed53849cdd28782e9a864bfe3",
+    "informe": "informes/e5e2936ed53849cdd28782e9a864bfe3.md",
+    "keyword": "cancha",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-05T18:20:57",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría. Texto disponible: «ARMADA NACIONAL UNIDAD CENTRALIZADA DE COMPRAS PLIEGO DE CONDICIONES PARTICULARES COMPRA DIRECTA N°4089/2026 \"CAMBIO DE PISOS CANCHAS COMPLEJO DEPORTIVO NAVAL- DIREF \" OBJETO DEL LLAMADO |ÍTEM |CÓD. |ARTICULO |DESCRIPCIÓN |CANT. | | |SICE | | |HASTA | |2 | |APLICACIÓN |DIMENSIONES: |1 | | |66110 |PR…»",
+    "score": 25,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 4089/2026",
+    "ultima_actualizacion": "2026-11-05T18:20:57",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383729",
+    "ya_adjudicados": [
+      "REPARACION DE PISO"
+    ]
   },
   "e6286e2181e5313da28bb248b86b68da": {
     "cambio_detectado": false,
