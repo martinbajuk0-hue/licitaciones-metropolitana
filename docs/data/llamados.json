@@ -4587,6 +4587,46 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "1a301de9b9986af98733999dc6dd7c7d": {
+    "cambio_detectado": false,
+    "categorias": [
+      "normativas",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Normativa/certificación mencionada",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1383476.doc"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 04 Nov 2026 15:00:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "1a301de9b9986af98733999dc6dd7c7d",
+    "informe": "informes/1a301de9b9986af98733999dc6dd7c7d.md",
+    "keyword": "baldosa + baldosas + iram",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "15/2026",
+    "organismo": "Intendencia de Artigas",
+    "primera_deteccion": "2026-11-05T01:35:48",
+    "que_es": "Licitación de Intendencia de Artigas — busca Normativa/certificación mencionada, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"baldosa\": «BREVIADA Nº 15/2026 COMPRA DE BALDOSAS 1°) Objeto de Licitación. El presente llamado convoca a L»",
+    "score": 33,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 15/2026",
+    "ultima_actualizacion": "2026-11-05T01:35:48",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383476",
+    "ya_adjudicados": [
+      "BALDOSA LISA",
+      "BALDOSA VINILICA ALTO TRANSITO",
+      "BALDOSA VINILICA",
+      "BALDOSA DE GOMA"
+    ]
+  },
   "1a3be2a17fb5af17aa39b24f2553f0e4": {
     "cambio_detectado": false,
     "categorias": [
@@ -29258,6 +29298,35 @@
       "PLANCHA DE GOMA EVA"
     ]
   },
+  "93ae92a60cc2215cf66c68278f5d3b94": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1383536.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 04 Nov 2026 16:45:12",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "93ae92a60cc2215cf66c68278f5d3b94",
+    "informe": "informes/93ae92a60cc2215cf66c68278f5d3b94.md",
+    "keyword": "madera + mdf + melamina",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "35/2026",
+    "organismo": "UDELAR - Universidad de la República",
+    "primera_deteccion": "2026-11-05T01:21:30",
+    "que_es": "Licitación de UDELAR - Universidad de la República — busca ninguna coincidencia directa de categoría. Texto disponible: «UNIVERSIDAD DE LA REPÚBLICA OFICINAS CENTRALES División Suministros INCISO 26 – UNIDAD EJECUTORA 01 LICITACIÓN ABREVIADA Nº 35/2026 ADQUISICIÓN DE MOBILIARIO APERTURA ELECTRÓNICA: 16 DE NOVIEMBRE HORA 11:00 1.- OBJETO del LLAMADO.- Se convoca a Licitación Abreviada para la adquisición de mobiliario…»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 35/2026",
+    "ultima_actualizacion": "2026-11-05T01:21:30",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383536",
+    "ya_adjudicados": []
+  },
   "9437faffff1891608f8d9bd8542caca9": {
     "cambio_detectado": false,
     "categorias": [
@@ -33956,6 +34025,44 @@
       "COLOCACION DE ZOCALO",
       "ZOCALO EN MDF",
       "REPARACION DE PISO DE MADERA"
+    ]
+  },
+  "ad82d1b930e2b221727ecc7c4fd9c1bd": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_flotantes"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos flotantes/laminados"
+    ],
+    "documentos": [],
+    "etiqueta_clasificacion": "Buena",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 04 Nov 2026 16:40:10",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "ad82d1b930e2b221727ecc7c4fd9c1bd",
+    "informe": "informes/ad82d1b930e2b221727ecc7c4fd9c1bd.md",
+    "keyword": "código ya adjudicado: ESCUADRA DE METAL",
+    "nivel": 4,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Educación y Cultura (MEC)",
+    "primera_deteccion": "2026-11-05T01:21:30",
+    "que_es": "Licitación de Ministerio de Educación y Cultura (MEC) — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos flotantes/laminados. Menciona \"mdf\": «e Flores: 20 tablas de pino de 330 x 20 cm, cepilladas. 7 MDF de 15 mm, cortadas al medio. 40 escuadras de 4¿. 20 bisag»",
+    "score": 66,
+    "simbolo": "★★★★",
+    "titulo": "Compra Directa 10309/2026",
+    "ultima_actualizacion": "2026-11-05T01:21:30",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383548",
+    "ya_adjudicados": [
+      "ESCUADRA DE METAL",
+      "ZOCALO EN MDF"
     ]
   },
   "adc350814e917301613b3e85c3841e94": {
