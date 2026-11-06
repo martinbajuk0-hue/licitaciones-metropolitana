@@ -3947,6 +3947,41 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1361500",
     "ya_adjudicados": []
   },
+  "169ddef2480fce6ab2e4ee9e11113b09": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1384555.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 06 Nov 2026 14:05:09",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "169ddef2480fce6ab2e4ee9e11113b09",
+    "informe": "informes/169ddef2480fce6ab2e4ee9e11113b09.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-06T17:13:10",
+    "que_es": "Licitación de organismo no identificado — busca Alfombras, Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «COMPRA DIRECTA N°5012/2026 \"CARPETAS DE CARTULINA\"»",
+    "score": 8,
+    "simbolo": "★",
+    "titulo": "Compra Directa 5012/2026",
+    "ultima_actualizacion": "2026-11-06T17:13:10",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1384555",
+    "ya_adjudicados": []
+  },
   "16b9dd2d0a1d50b23369fac70de8e468": {
     "cambio_detectado": false,
     "categorias": [
@@ -19298,6 +19333,33 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1359899",
     "ya_adjudicados": []
   },
+  "6539bd62760e5bf10012bbcfc97fe557": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 06 Nov 2026 08:25:10",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "6539bd62760e5bf10012bbcfc97fe557",
+    "informe": "informes/6539bd62760e5bf10012bbcfc97fe557.md",
+    "keyword": "policarbonato + pvc",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-06T17:47:23",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría. Texto disponible: «Compra Directa 1096/2026 Artículos eléctricos»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 1096/2026",
+    "ultima_actualizacion": "2026-11-06T17:47:23",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1384181",
+    "ya_adjudicados": []
+  },
   "653bd48dd5369af7abfcec8b0dc7bca9": {
     "cambio_detectado": false,
     "categorias": [
@@ -26011,6 +26073,50 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1368251",
     "ya_adjudicados": [
       "ZOCALO EN MDF"
+    ]
+  },
+  "8563a6ce9b4b179628b8076d4c0acbcc": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1384174.docx"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 06 Nov 2026 08:45:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "8563a6ce9b4b179628b8076d4c0acbcc",
+    "informe": "informes/8563a6ce9b4b179628b8076d4c0acbcc.md",
+    "keyword": "pvc + reforma de local",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
+    "primera_deteccion": "2026-11-06T17:45:20",
+    "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"pvc\": «rías aparentes y deterioradas por sistemas de termofusión y PVC. Renovación de revestimientos, artefactos y griferías en la»",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 22/2026",
+    "ultima_actualizacion": "2026-11-06T17:45:20",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1384174",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC"
     ]
   },
   "859b263e5589a626862f1c8f2f2b7223": {
@@ -35203,6 +35309,39 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1357650",
     "ya_adjudicados": []
   },
+  "b3046779b30da4cd7845cd2b032d8f35": {
+    "cambio_detectado": false,
+    "categorias": [
+      "normativas"
+    ],
+    "categorias_etiquetas": [
+      "Normativa/certificación mencionada"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1384346.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 06 Nov 2026 11:10:13",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "b3046779b30da4cd7845cd2b032d8f35",
+    "informe": "informes/b3046779b30da4cd7845cd2b032d8f35.md",
+    "keyword": "informe de ensayo",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-11-06T17:32:24",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Normativa/certificación mencionada. Menciona \"informe de ensayo\": «NADO LAS CUALES SERÁN CURADAS Y ROTAS, PARA LUEGO PASAR EL INFORME DE ENSAYO DE ROTURA CORRESPONDIENTE A LA IDS. *SE PODRÀ ESTABLECER»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 38701/2026",
+    "ultima_actualizacion": "2026-11-06T17:32:24",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1384346",
+    "ya_adjudicados": []
+  },
   "b32ca8fae7c7d538494a168026e705ac": {
     "cambio_detectado": false,
     "categorias": [
@@ -36133,6 +36272,75 @@
     "ya_adjudicados": [
       "VARILLA DE ALUMINIO",
       "PERFIL U DE ALUMINIO"
+    ]
+  },
+  "b6252a1b982f9204906218c9c124edea": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "alfombras",
+      "marcas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Alfombras",
+      "Marca de mercado mencionada",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1373975.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 06 Nov 2026 13:00:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "b6252a1b982f9204906218c9c124edea",
+    "informe": "informes/b6252a1b982f9204906218c9c124edea.md",
+    "keyword": "acero inoxidable + alfombra + aluminio",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "27/2026",
+    "organismo": "Ministerio de Economía y Finanzas (MEF)",
+    "primera_deteccion": "2026-11-06T17:15:31",
+    "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — busca Abreviatura técnica del rubro, Accesorios de instalación, Alfombras, Marca de mercado mencionada, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «llas de ventilación. Se realizarán 2 recorridos en caño de PVC rígid o de 110mm, colocando 1 extractor de aire para ducto»",
+    "score": 33,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 27/2026",
+    "ultima_actualizacion": "2026-11-06T17:15:31",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373975",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "COLOCACION DE ALFOMBRA",
+      "ALFOMBRA DE GOMA",
+      "ZOCALO PARA PISO FLOTANTE",
+      "PISO MODULAR DE PVC",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "VARILLA DE ALUMINIO",
+      "ALFOMBRA DE FIELTRO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ZOCALO MONOLITICO",
+      "ALFOMBRA DE LANA",
+      "PERFIL U DE ALUMINIO",
+      "ALFOMBRA BOUCLE",
+      "REPARACION DE ALFOMBRA",
+      "LIMPIEZA DE ALFOMBRA",
+      "COLOCACION DE ZOCALO",
+      "ALFOMBRA ATRAPA POLVO",
+      "VARILLA DE BRONCE PARA ALFOMBRA",
+      "ZOCALO EN MDF",
+      "ALFOMBRA DE YUTE",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "REPARACION DE PISO DE MADERA"
     ]
   },
   "b63769bed9eb280f2433dc991cc82202": {
@@ -40111,6 +40319,39 @@
       "REPARACION DE PISO DE MADERA"
     ]
   },
+  "cf49817b0ee3cdf35ae11131cb0f7b6b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "insumos_canchas"
+    ],
+    "categorias_etiquetas": [
+      "Insumos para canchas"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1384146.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 05 Nov 2026 23:35:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "cf49817b0ee3cdf35ae11131cb0f7b6b",
+    "informe": "informes/cf49817b0ee3cdf35ae11131cb0f7b6b.md",
+    "keyword": "cerco olímpico",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-11-06T17:47:29",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Insumos para canchas. Menciona \"cerco olímpico\": «zar es la adquisición de materiales de obra: - Postes para cerco olímpico. Prefabricado de hormigón, reforzado, sección de 10 cm x 1»",
+    "score": 17,
+    "simbolo": "★",
+    "titulo": "Compra Directa 89646/2026",
+    "ultima_actualizacion": "2026-11-06T17:47:29",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1384146",
+    "ya_adjudicados": []
+  },
   "cf60a742c311243e62f096af818988bb": {
     "cambio_detectado": false,
     "categorias": [
@@ -41044,6 +41285,48 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1367323",
     "ya_adjudicados": [
       "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
+    ]
+  },
+  "d25f3a0271dc93625ab993d6bfa4dc73": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1384192.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": "2026-11-11",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 06 Nov 2026 09:00:18",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "d25f3a0271dc93625ab993d6bfa4dc73",
+    "informe": "informes/d25f3a0271dc93625ab993d6bfa4dc73.md",
+    "keyword": "nylon + pvc",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
+    "primera_deteccion": "2026-11-06T17:45:17",
+    "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos, apertura 2026-11-11. Menciona \"pvc\": «ABLE PARA ADULTO PAÑAL DESCARTABLE PARA ADULTO TUBULADURA PVC MEDIA PRESIÓN C/LÍNEA AZUL SET DE CUIDADO PERSONAL PARA P»",
+    "score": 49,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 635/2026",
+    "ultima_actualizacion": "2026-11-06T17:45:17",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1384192",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC"
     ]
   },
   "d274059910196a8d6e99ea6eb445b9a0": {
@@ -44549,6 +44832,48 @@
     "ultima_actualizacion": "2026-09-21T16:35:13",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1366321",
     "ya_adjudicados": []
+  },
+  "e5dd77cdbbdf61ad9c235d472e561010": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1384210.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 06 Nov 2026 09:20:17",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "e5dd77cdbbdf61ad9c235d472e561010",
+    "informe": "informes/e5dd77cdbbdf61ad9c235d472e561010.md",
+    "keyword": "acero inoxidable + pvc",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
+    "primera_deteccion": "2026-11-06T17:41:08",
+    "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «RAX CON TROCAR TIPO JOLY 26 FR 5 13 65798 DRENAJE PLEURAL PVC GRADO MEDICO Nº 28 NO MENOR A 1.50 M ESTERIL (SONDA DRENAJ»",
+    "score": 38,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 1732/2026",
+    "ultima_actualizacion": "2026-11-06T17:41:08",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1384210",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC"
+    ]
   },
   "e5e2936ed53849cdd28782e9a864bfe3": {
     "cambio_detectado": false,
