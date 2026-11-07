@@ -27537,6 +27537,41 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1354447",
     "ya_adjudicados": []
   },
+  "8b42ff3844c9a3945cd94f55de928d74": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1384565.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 06 Nov 2026 14:15:08",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "8b42ff3844c9a3945cd94f55de928d74",
+    "informe": "informes/8b42ff3844c9a3945cd94f55de928d74.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-07T01:01:49",
+    "que_es": "Licitación de organismo no identificado — busca Alfombras, Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «mentos escaneados en el soporte entregable (y copia) será: carpeta por estación meteorológica y dentro de cada una de ellas l»",
+    "score": 11,
+    "simbolo": "★",
+    "titulo": "Compra Directa 189/2026",
+    "ultima_actualizacion": "2026-11-07T01:01:49",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1384565",
+    "ya_adjudicados": []
+  },
   "8b8c78d89b66fc783bb6a3c96268ed2c": {
     "cambio_detectado": false,
     "categorias": [
@@ -39891,6 +39926,74 @@
     "ultima_actualizacion": "2026-09-04T14:03:09",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1369159",
     "ya_adjudicados": []
+  },
+  "ca70ec12376663c7199b4c0cc0278453": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "alfombras",
+      "marcas",
+      "materiales",
+      "paneles_revestimientos",
+      "pisos_flotantes",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Alfombras",
+      "Marca de mercado mencionada",
+      "Material mencionado (revisar contexto)",
+      "Paneles y revestimientos de pared",
+      "Pisos flotantes/laminados",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1384110.zip"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 06 Nov 2026 15:30:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "ca70ec12376663c7199b4c0cc0278453",
+    "informe": "informes/ca70ec12376663c7199b4c0cc0278453.md",
+    "keyword": "paneles acústicos",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Economía y Finanzas (MEF)",
+    "primera_deteccion": "2026-11-07T00:47:16",
+    "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — busca Abreviatura técnica del rubro, Alfombras, Marca de mercado mencionada, Material mencionado (revisar contexto), Paneles y revestimientos de pared, Pisos flotantes/laminados, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"mdf\": «o y tiradores de aluminio o metálicos Paneles acústicos de MDF perforado con manta interna de lana de PET o lana de roca (»",
+    "score": 13,
+    "simbolo": "★",
+    "titulo": "Compra Directa 974/2026",
+    "ultima_actualizacion": "2026-11-07T00:47:16",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1384110",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "COLOCACION DE ALFOMBRA",
+      "ALFOMBRA DE GOMA",
+      "CEMENTO ADHESIVO PARA PORCELANATO",
+      "PISO DE GOMA",
+      "VARILLA DE ALUMINIO",
+      "ALFOMBRA DE FIELTRO",
+      "ALFOMBRA DE LANA",
+      "CAMINERO DE GOMA",
+      "PERFIL U DE ALUMINIO",
+      "ALFOMBRA BOUCLE",
+      "REPARACION DE ALFOMBRA",
+      "LIMPIEZA DE ALFOMBRA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "ALFOMBRA ATRAPA POLVO",
+      "VARILLA DE BRONCE PARA ALFOMBRA",
+      "ZOCALO EN MDF",
+      "ALFOMBRA DE YUTE",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
   },
   "ca973b14317056af5ba3fed709ad06e4": {
     "cambio_detectado": false,
