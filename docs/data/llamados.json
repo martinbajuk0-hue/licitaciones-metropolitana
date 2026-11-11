@@ -12564,6 +12564,43 @@
       "CAMINERO DE PVC"
     ]
   },
+  "3eff342776eca6daf7866bf26ad3dd4a": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1384942.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 10 Nov 2026 15:15:08",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "3eff342776eca6daf7866bf26ad3dd4a",
+    "informe": "informes/3eff342776eca6daf7866bf26ad3dd4a.md",
+    "keyword": "código ya adjudicado: ESCUADRA DE METAL",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ANEP - Administración Nacional de Educación Pública",
+    "primera_deteccion": "2026-11-11T01:10:53",
+    "que_es": "Licitación de ANEP - Administración Nacional de Educación Pública — busca Material mencionado (revisar contexto). Menciona \"aluminio\": «13 4 Escuadra de acero • Escuadra profesional con mango de aluminio de 10\" aprox. • Mango de metal extra resistente. • Acaba»",
+    "score": 43,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 192/2026",
+    "ultima_actualizacion": "2026-11-11T01:10:53",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1384942",
+    "ya_adjudicados": [
+      "ESCUADRA DE METAL",
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO"
+    ]
+  },
   "3f2d33117432c4aa4934ddb5a44e17ec": {
     "cambio_detectado": false,
     "categorias": [
@@ -39497,6 +39534,39 @@
     "ultima_actualizacion": "2026-10-01T00:30:50",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376151",
     "ya_adjudicados": []
+  },
+  "c0a60c2eaf557391f7d1c9d40bb274a0": {
+    "cambio_detectado": false,
+    "categorias": [
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 10 Nov 2026 15:45:08",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "c0a60c2eaf557391f7d1c9d40bb274a0",
+    "informe": "informes/c0a60c2eaf557391f7d1c9d40bb274a0.md",
+    "keyword": "código ya adjudicado: CEMENTO ADHESIVO PARA CERAMICA",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-11T01:10:47",
+    "que_es": "Licitación de organismo no identificado — busca Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"materiales de construcción\": «Compra Directa 268/2026 Adq. de materiales de construcción varios, ajustarse al archivo adjunto (excluyente)»",
+    "score": 27,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 268/2026",
+    "ultima_actualizacion": "2026-11-11T01:10:47",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1385411",
+    "ya_adjudicados": [
+      "CEMENTO ADHESIVO PARA CERAMICA"
+    ]
   },
   "c1522c9742ff712f89b44603c328c5f6": {
     "cambio_detectado": false,
