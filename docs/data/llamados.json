@@ -3676,6 +3676,62 @@
       "REPARACION DE PISO DE MADERA"
     ]
   },
+  "11e63a10b34d2f8f8293ee2fddd74bcd": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes",
+      "servicios"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Servicios",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1381288.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 12 Nov 2026 12:05:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "11e63a10b34d2f8f8293ee2fddd74bcd",
+    "informe": "informes/11e63a10b34d2f8f8293ee2fddd74bcd.md",
+    "keyword": "encerado de piso",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "7/2026",
+    "organismo": "Ministerio de Economía y Finanzas (MEF)",
+    "primera_deteccion": "2026-11-12T18:06:27",
+    "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — busca Alfombras, Servicios, Variante/error ortográfico de un término del rubro. Menciona \"alfombra\": «pieza de desagües, lavado y encerado de pisos, aspirado de alfombras y moquetes, limpieza y desinfección de los gabinetes higié»",
+    "score": 29,
+    "simbolo": "★★",
+    "titulo": "Licitación Pública 7/2026",
+    "ultima_actualizacion": "2026-11-12T18:06:27",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1381288",
+    "ya_adjudicados": [
+      "MOQUETTE",
+      "ALFOMBRA DE PVC",
+      "RETIRO DE MOQUETTE",
+      "COLOCACION DE ALFOMBRA",
+      "ALFOMBRA DE GOMA",
+      "COLOCACION DE MOQUETTE",
+      "ALFOMBRA DE FIELTRO",
+      "ALFOMBRA DE LANA",
+      "ALFOMBRA BOUCLE",
+      "REPARACION DE ALFOMBRA",
+      "LIMPIEZA DE ALFOMBRA",
+      "ALFOMBRA ATRAPA POLVO",
+      "VARILLA DE BRONCE PARA ALFOMBRA",
+      "REPARACION DE MOQUETTE",
+      "ALFOMBRA DE YUTE",
+      "LIMPIEZA DE MOQUETTE",
+      "MOQUETTE / VERDE",
+      "colocación moquette"
+    ]
+  },
   "121d31e29e5639795b9916c3290f60bc": {
     "cambio_detectado": false,
     "categorias": [
@@ -3827,6 +3883,44 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1358420",
     "ya_adjudicados": [
       "CEMENTO ADHESIVO PARA CERAMICA"
+    ]
+  },
+  "12c629be656d3855e8b8944e212f7e12": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "normativas"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Normativa/certificación mencionada"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1386055.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 12 Nov 2026 10:50:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "12c629be656d3855e8b8944e212f7e12",
+    "informe": "informes/12c629be656d3855e8b8944e212f7e12.md",
+    "keyword": "marca ce",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "39-26",
+    "organismo": "UDELAR - Universidad de la República",
+    "primera_deteccion": "2026-11-12T18:13:13",
+    "que_es": "Licitación de UDELAR - Universidad de la República — busca Material mencionado (revisar contexto), Normativa/certificación mencionada. Menciona \"aluminio\": «± 90°. 57 65303 49 soporte de notebook regulable, material aluminio, ajustable al menos 3 niveles de altura 58 73148 2 splitter»",
+    "score": 37,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 39/2026",
+    "ultima_actualizacion": "2026-11-12T18:13:13",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1386055",
+    "ya_adjudicados": [
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO"
     ]
   },
   "13118af4f0bb5dc47f63d87ae0172efd": {
@@ -27607,6 +27701,39 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1385339",
     "ya_adjudicados": []
   },
+  "85ff0a0f7a24439cbf97b7ecc51e160b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "insumos_canchas"
+    ],
+    "categorias_etiquetas": [
+      "Insumos para canchas"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1386236.7z"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 12 Nov 2026 13:30:08",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "85ff0a0f7a24439cbf97b7ecc51e160b",
+    "informe": "informes/85ff0a0f7a24439cbf97b7ecc51e160b.md",
+    "keyword": "cerco olímpico",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-12T18:03:59",
+    "que_es": "Licitación de organismo no identificado — busca Insumos para canchas. Menciona \"cerco olímpico\": «Concurso de Precios 704263/2026 Construcción de Cerco Olímpico»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 704263/2026",
+    "ultima_actualizacion": "2026-11-12T18:03:59",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1386236",
+    "ya_adjudicados": []
+  },
   "86001bd832b20d4d291649a495b0ce39": {
     "cambio_detectado": false,
     "categorias": [
@@ -29494,6 +29621,41 @@
       "CAMINERO DE PVC",
       "REPARACION DE PISO DE MADERA"
     ]
+  },
+  "8d6a69140c4ffdf5366a5a4770a7f4c2": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1385624.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 12 Nov 2026 08:10:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "8d6a69140c4ffdf5366a5a4770a7f4c2",
+    "informe": "informes/8d6a69140c4ffdf5366a5a4770a7f4c2.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-12T18:19:59",
+    "que_es": "Licitación de organismo no identificado — busca Alfombras, Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «| | | | | |electrónico, carpeta y | | | | | |memoria»",
+    "score": 14,
+    "simbolo": "★",
+    "titulo": "Compra Directa 240/2026",
+    "ultima_actualizacion": "2026-11-12T18:19:59",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1385624",
+    "ya_adjudicados": []
   },
   "8de34fd38f005777ee6faf936bafbdff": {
     "cambio_detectado": false,
@@ -36423,6 +36585,48 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373894",
     "ya_adjudicados": []
   },
+  "afe234a258708e1e2c8a4bbd9336724c": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1386102.7z"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 12 Nov 2026 11:15:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "afe234a258708e1e2c8a4bbd9336724c",
+    "informe": "informes/afe234a258708e1e2c8a4bbd9336724c.md",
+    "keyword": "poliuretano + pvc",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-11-12T18:10:51",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «aislación de poliuretano blando e=100mm, forro exterior de PVC y patas de apoyo. Se solicita el desmontaje y retiro del ta»",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Concurso de Precios 7/2026",
+    "ultima_actualizacion": "2026-11-12T18:10:51",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1386102",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC"
+    ]
+  },
   "afeaf7165cc3fb11545920960fea972f": {
     "cambio_detectado": false,
     "categorias": [
@@ -42959,6 +43163,41 @@
       "PERFIL U DE ALUMINIO"
     ]
   },
+  "d129e0df4135627263c895c09be7e848": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1376431.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 12 Nov 2026 10:05:12",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "d129e0df4135627263c895c09be7e848",
+    "informe": "informes/d129e0df4135627263c895c09be7e848.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Ambiente (MA)",
+    "primera_deteccion": "2026-11-12T18:15:30",
+    "que_es": "Licitación de Ministerio de Ambiente (MA) — busca Alfombras, Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «se presentarán en formato dxf y pdf (en ambos formatos) en carpetas comprimidas (zip, 7z ó .rar) clasificadas por rubros. Lo»",
+    "score": 13,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 3/2026",
+    "ultima_actualizacion": "2026-11-12T18:15:30",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376431",
+    "ya_adjudicados": []
+  },
   "d17af29a69879e02f883941a08b751c2": {
     "cambio_detectado": false,
     "categorias": [
@@ -49395,6 +49634,60 @@
       "MOQUETTE / VERDE",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-",
       "colocación moquette"
+    ]
+  },
+  "f1d0f8c5aaf64a2f0420088e5a5c691f": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1386220.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 12 Nov 2026 13:05:21",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "f1d0f8c5aaf64a2f0420088e5a5c691f",
+    "informe": "informes/f1d0f8c5aaf64a2f0420088e5a5c691f.md",
+    "keyword": "alfombra + alfombras + goma",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": "45/2026",
+    "organismo": "Intendencia de Cerro Largo",
+    "primera_deteccion": "2026-11-12T18:04:06",
+    "que_es": "Licitación de Intendencia de Cerro Largo — busca Alfombras, Material mencionado (revisar contexto). Menciona \"alfombra\": «camión deberá suministrarse con cubre asientos reforzados, alfombras de goma en todas las plazas y maletín de primeros auxilio»",
+    "score": 13,
+    "simbolo": "★",
+    "titulo": "Licitación Abreviada 45/2026",
+    "ultima_actualizacion": "2026-11-12T18:04:06",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1386220",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "COLOCACION DE ALFOMBRA",
+      "ALFOMBRA DE GOMA",
+      "PISO DE GOMA",
+      "ALFOMBRA DE FIELTRO",
+      "ALFOMBRA DE LANA",
+      "CAMINERO DE GOMA",
+      "ALFOMBRA BOUCLE",
+      "REPARACION DE ALFOMBRA",
+      "LIMPIEZA DE ALFOMBRA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "ALFOMBRA ATRAPA POLVO",
+      "VARILLA DE BRONCE PARA ALFOMBRA",
+      "ALFOMBRA DE YUTE",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
   "f1ef75aa9d1383f879203fa0edc2d110": {
