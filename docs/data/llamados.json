@@ -2030,6 +2030,46 @@
       "REPARACION DE PISO DE MADERA"
     ]
   },
+  "09cd83ccb9f46fb250569e674276796a": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1386311.docx"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 12 Nov 2026 15:30:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "09cd83ccb9f46fb250569e674276796a",
+    "informe": "informes/09cd83ccb9f46fb250569e674276796a.md",
+    "keyword": "aluminio + vinilo",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
+    "primera_deteccion": "2026-11-13T01:42:04",
+    "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"vinilo\": «nio compuesto azul de 3 mm plegado sobre nervio. Gráﬁca en vinilo de corte blanco y amarillo. Tres topes internos impresas e»",
+    "score": 33,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 1159/2026",
+    "ultima_actualizacion": "2026-11-13T01:42:04",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1386311",
+    "ya_adjudicados": [
+      "VARILLA DE ALUMINIO",
+      "PERFIL U DE ALUMINIO",
+      "PAPEL VINILO",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "09e910e62a2b8d5738296f154d7b14ed": {
     "cambio_detectado": false,
     "categorias": [
@@ -12579,6 +12619,52 @@
     "titulo": "Concurso de Precios 5003/2026",
     "ultima_actualizacion": "2026-09-30T00:20:48",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1375729",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "CEMENTO ADHESIVO PARA PORCELANATO",
+      "PISO MODULAR DE PVC",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ALFOMBRA DE LANA",
+      "CAMINERO DE PVC"
+    ]
+  },
+  "3d071556fde41e7c17adc15a94971c0b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "marcas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Marca de mercado mencionada",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1386348.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 12 Nov 2026 17:30:08",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "3d071556fde41e7c17adc15a94971c0b",
+    "informe": "informes/3d071556fde41e7c17adc15a94971c0b.md",
+    "keyword": "lana + poliester + pvc",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-13T01:41:53",
+    "que_es": "Licitación de organismo no identificado — busca Abreviatura técnica del rubro, Marca de mercado mencionada, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «m² de lana poliester  Item 3 ( SR 5774 ) - 22 perfil J de PVC  Item 4 ( SR 5774 ) - 1000 tornillos para fijación de plac»",
+    "score": 27,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 348/2026",
+    "ultima_actualizacion": "2026-11-13T01:41:53",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1386348",
     "ya_adjudicados": [
       "ALFOMBRA DE PVC",
       "CEMENTO ADHESIVO PARA PORCELANATO",
