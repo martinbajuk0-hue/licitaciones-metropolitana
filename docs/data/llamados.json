@@ -5898,6 +5898,39 @@
       "colocación moquette"
     ]
   },
+  "1ed67ba8f01349aedc7b878ea45215f6": {
+    "cambio_detectado": false,
+    "categorias": [
+      "contenedores_modulares"
+    ],
+    "categorias_etiquetas": [
+      "Contenedores habitables, garitas y módulos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1386353.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 12 Nov 2026 23:35:08",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "1ed67ba8f01349aedc7b878ea45215f6",
+    "informe": "informes/1ed67ba8f01349aedc7b878ea45215f6.md",
+    "keyword": "baño químico",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-11-13T17:55:24",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Contenedores habitables, garitas y módulos. Menciona \"baños químicos\": «089877 OBJETO Arrendamiento por hasta 12 meses de 2 Baños Químicos Portátiles, con servicio de desagote semanal. RECEPCIÓN»",
+    "score": 17,
+    "simbolo": "★",
+    "titulo": "Compra Directa 89877/2026",
+    "ultima_actualizacion": "2026-11-13T17:55:24",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1386353",
+    "ya_adjudicados": []
+  },
   "1ef85b54cc7457809eb46da951ea18e8": {
     "cambio_detectado": false,
     "categorias": [
@@ -14693,6 +14726,70 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1355628",
     "ya_adjudicados": []
   },
+  "49cb5c7e0e740ee511ca76e00d265133": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "errores_comunes",
+      "materiales",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1386371.zip"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 13 Nov 2026 07:50:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "49cb5c7e0e740ee511ca76e00d265133",
+    "informe": "informes/49cb5c7e0e740ee511ca76e00d265133.md",
+    "keyword": "acero galvanizado + aluminio + baldosa",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Soriano",
+    "primera_deteccion": "2026-11-13T17:53:20",
+    "que_es": "Licitación de Intendencia de Soriano — busca Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto), Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro. Menciona \"pvc\": «VISTAS Y DETALLES (SISTEMA STEEL FRAME).pdf 2.40 cielorraso pvc estructura metálica aislánte esp. poliuretano 0.652.32contr»",
+    "score": 45,
+    "simbolo": "★★★",
+    "titulo": "Concurso de Precios 44/2026",
+    "ultima_actualizacion": "2026-11-13T17:53:20",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1386371",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "BALDOSA LISA",
+      "CEMENTO ADHESIVO PARA PORCELANATO",
+      "ZOCALO PARA PISO FLOTANTE",
+      "PISO MODULAR DE PVC",
+      "CEMENTO ADHESIVO PARA CERAMICA",
+      "ZOCALO DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ZOCALO MONOLITICO",
+      "ALFOMBRA DE LANA",
+      "BALDOSA VINILICA ALTO TRANSITO",
+      "PERFIL U DE ALUMINIO",
+      "BALDOSA VINILICA",
+      "BALDOSA DE GOMA",
+      "COLOCACION DE ZOCALO",
+      "ZOCALO EN MDF",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC"
+    ]
+  },
   "49f4c65ac5f17e2dc2af9d0bf8e74048": {
     "cambio_detectado": false,
     "categorias": [
@@ -19637,6 +19734,39 @@
       "ZOCALO EN MDF"
     ]
   },
+  "619f5f791021a2fc0f47ef5ddf56b461": {
+    "cambio_detectado": false,
+    "categorias": [
+      "normativas"
+    ],
+    "categorias_etiquetas": [
+      "Normativa/certificación mencionada"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1386549.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 13 Nov 2026 12:10:12",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "619f5f791021a2fc0f47ef5ddf56b461",
+    "informe": "informes/619f5f791021a2fc0f47ef5ddf56b461.md",
+    "keyword": "ficha de seguridad",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
+    "primera_deteccion": "2026-11-13T17:34:17",
+    "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca Normativa/certificación mencionada. Menciona \"ficha de seguridad\": «a a comercializar, producir o importar productos por MSP  Ficha de Seguridad del producto registrada en MSP  Ficha Técnica del product»",
+    "score": 14,
+    "simbolo": "★",
+    "titulo": "Compra Directa 1760/2026",
+    "ultima_actualizacion": "2026-11-13T17:34:17",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1386549",
+    "ya_adjudicados": []
+  },
   "61c17899bbb629d282acc27b6ffd5a90": {
     "cambio_detectado": false,
     "categorias": [
@@ -20457,6 +20587,41 @@
     "titulo": "Compra Directa 777/2026",
     "ultima_actualizacion": "2026-08-27T20:40:55",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1359899",
+    "ya_adjudicados": []
+  },
+  "651cb7e45fd5b580b79d4edfc633f3c1": {
+    "cambio_detectado": false,
+    "categorias": [
+      "contenedores_modulares",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Contenedores habitables, garitas y módulos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1386024.docx"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 13 Nov 2026 10:50:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "651cb7e45fd5b580b79d4edfc633f3c1",
+    "informe": "informes/651cb7e45fd5b580b79d4edfc633f3c1.md",
+    "keyword": "baño químico",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
+    "primera_deteccion": "2026-11-13T17:46:52",
+    "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — busca Contenedores habitables, garitas y módulos, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"baño químico\": «spositivos de amarre que permitan asegurar adecuadamente el baño químico. El oferente deberá indicar las características del sistema»",
+    "score": 29,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 327/2026",
+    "ultima_actualizacion": "2026-11-13T17:46:52",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1386024",
     "ya_adjudicados": []
   },
   "6539bd62760e5bf10012bbcfc97fe557": {
@@ -44301,6 +44466,49 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1374682",
     "ya_adjudicados": [
       "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
+    ]
+  },
+  "d4d2925f8685d34c7aa142c1610b9db4": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras"
+    ],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 13 Nov 2026 12:25:10",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "d4d2925f8685d34c7aa142c1610b9db4",
+    "informe": "informes/d4d2925f8685d34c7aa142c1610b9db4.md",
+    "keyword": "alfombra + goma",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-13T17:34:12",
+    "que_es": "Licitación de organismo no identificado — busca Alfombras. Menciona \"alfombra\": «Compra Directa 331/2026 Pedido de precio de: 1 juego de alfombra 3d con bandeja para camioneta (OROCH DOBLE CABINA).- 1 jueg»",
+    "score": 2,
+    "simbolo": "★",
+    "titulo": "Compra Directa 331/2026",
+    "ultima_actualizacion": "2026-11-13T17:34:12",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1385585",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "COLOCACION DE ALFOMBRA",
+      "ALFOMBRA DE GOMA",
+      "ALFOMBRA DE FIELTRO",
+      "ALFOMBRA DE LANA",
+      "ALFOMBRA BOUCLE",
+      "REPARACION DE ALFOMBRA",
+      "LIMPIEZA DE ALFOMBRA",
+      "ALFOMBRA ATRAPA POLVO",
+      "VARILLA DE BRONCE PARA ALFOMBRA",
+      "ALFOMBRA DE YUTE"
     ]
   },
   "d50eb03ae6e86cefca01ac044db4d92c": {
