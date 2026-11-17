@@ -4586,6 +4586,73 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1375662",
     "ya_adjudicados": []
   },
+  "176ed0b6ea9cbbdb4c753364799f2db2": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes",
+      "materiales",
+      "pisos_flotantes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Pisos flotantes/laminados",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1387348.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": "2026-12-09",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 17 Nov 2026 11:25:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "176ed0b6ea9cbbdb4c753364799f2db2",
+    "informe": "informes/176ed0b6ea9cbbdb4c753364799f2db2.md",
+    "keyword": "pisos flotantes",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-17T19:14:10",
+    "que_es": "Licitación de organismo no identificado — busca Alfombras, Material mencionado (revisar contexto), Pisos flotantes/laminados, Variante/error ortográfico de un término del rubro, apertura 2026-12-09. Menciona \"flotante\": «rá máquina lustradora una vez por semana. ▪ Pisos flotantes: limpieza con productos adecuados. ▪ Escaleras: barrid»",
+    "score": 24,
+    "simbolo": "★",
+    "titulo": "Licitación Pública 8688/2026",
+    "ultima_actualizacion": "2026-11-17T19:14:10",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1387348",
+    "ya_adjudicados": [
+      "MOQUETTE",
+      "ALFOMBRA DE PVC",
+      "PISO FLOTANTE",
+      "RETIRO DE MOQUETTE",
+      "COLOCACION DE ALFOMBRA",
+      "ALFOMBRA DE GOMA",
+      "ZOCALO PARA PISO FLOTANTE",
+      "COLOCACION DE MOQUETTE",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ALFOMBRA DE FIELTRO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ALFOMBRA DE LANA",
+      "REDUCTOR PARA PISO FLOTANTE",
+      "JUNTA PARA PISO FLOTANTE",
+      "ALFOMBRA BOUCLE",
+      "REPARACION DE ALFOMBRA",
+      "LIMPIEZA DE ALFOMBRA",
+      "ALFOMBRA ATRAPA POLVO",
+      "VARILLA DE BRONCE PARA ALFOMBRA",
+      "REPARACION DE MOQUETTE",
+      "ALFOMBRA DE YUTE",
+      "CAMINERO DE ACRILICO",
+      "LIMPIEZA DE MOQUETTE",
+      "REPARACION DE PISO DE MADERA",
+      "MOQUETTE / VERDE",
+      "colocación moquette"
+    ]
+  },
   "178f7a44afc6d9cfad38fa7b43e8971f": {
     "cambio_detectado": false,
     "categorias": [
@@ -20315,6 +20382,59 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "62d9695e677a0b4837e020a3cb11e0e1": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "materiales",
+      "pisos_flotantes",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Pisos flotantes/laminados",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1387445.pdf"
+    ],
+    "etiqueta_clasificacion": "Buena",
+    "fecha_apertura": "2026-11-20",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 17 Nov 2026 13:35:08",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "62d9695e677a0b4837e020a3cb11e0e1",
+    "informe": "informes/62d9695e677a0b4837e020a3cb11e0e1.md",
+    "keyword": "código ya adjudicado: PLANCHA DE GOMA EVA",
+    "nivel": 4,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
+    "primera_deteccion": "2026-11-17T19:11:39",
+    "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto), Pisos flotantes/laminados, Pisos vinílicos, apertura 2026-11-20. Menciona \"vinilica\": «ad de colores 60 25 Goma Eva variedad de colores 60 26 Cola vinilica líquida de 250 ml 50 27 Tapaboca descartables caja x 50 u 2»",
+    "score": 75,
+    "simbolo": "★★★★",
+    "titulo": "Compra Directa 19323/2026",
+    "ultima_actualizacion": "2026-11-17T19:11:39",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1387445",
+    "ya_adjudicados": [
+      "PLANCHA DE GOMA EVA",
+      "ALFOMBRA DE GOMA",
+      "PISO DE GOMA",
+      "LONA VINILICA",
+      "BALDOSA VINILICA ALTO TRANSITO",
+      "CAMINERO DE GOMA",
+      "BALDOSA VINILICA",
+      "BALDOSA DE GOMA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "6337dbfdf5b64725566583a72eec4f8a": {
     "cambio_detectado": false,
     "categorias": [
@@ -24133,6 +24253,50 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1363344",
     "ya_adjudicados": []
   },
+  "750a47e32989b9e95b071bb76970f447": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1386989.docx"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 17 Nov 2026 14:00:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "750a47e32989b9e95b071bb76970f447",
+    "informe": "informes/750a47e32989b9e95b071bb76970f447.md",
+    "keyword": "aluminio + pvc",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Ambiente",
+    "primera_deteccion": "2026-11-17T19:11:31",
+    "que_es": "Licitación de Ministerio de Ambiente — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «de 1,60 mts. x 1,60 mts. 2 unidades de 1,90 x 2,10 mts. PVC o aluminio. Color gris. Una vez adjudicada la presente a»",
+    "score": 41,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 153/2026",
+    "ultima_actualizacion": "2026-11-17T19:11:31",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1386989",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "PERFIL U DE ALUMINIO",
+      "CAMINERO DE PVC"
+    ]
+  },
   "751905ed4b9376cd88c0e58a215d249f": {
     "cambio_detectado": false,
     "categorias": [
@@ -27382,6 +27546,43 @@
     "ya_adjudicados": [
       "CEMENTO ADHESIVO PARA CERAMICA"
     ]
+  },
+  "824404acfec860173597cfaea87f4915": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1387230.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 17 Nov 2026 09:25:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "824404acfec860173597cfaea87f4915",
+    "informe": "informes/824404acfec860173597cfaea87f4915.md",
+    "keyword": "algodón + carpet + carpeta",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Relaciones Exteriores (MRREE)",
+    "primera_deteccion": "2026-11-17T19:18:57",
+    "que_es": "Licitación de Ministerio de Relaciones Exteriores (MRREE) — busca Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «nsorcio. Cada oferta deberá presentarse engrampada y/o encarpetada. La copia podrá presentarse en formato impreso o digita»",
+    "score": 37,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 108913/2026",
+    "ultima_actualizacion": "2026-11-17T19:18:57",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1387230",
+    "ya_adjudicados": []
   },
   "824ddbfa0c6439087eb20dd9f1aed605": {
     "cambio_detectado": false,
@@ -44101,6 +44302,37 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "d21f756e2895cfff5dfde31ac46b692d": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1384794.doc"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 17 Nov 2026 10:05:10",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "d21f756e2895cfff5dfde31ac46b692d",
+    "informe": "informes/d21f756e2895cfff5dfde31ac46b692d.md",
+    "keyword": "código ya adjudicado: MANTENIMIENTO DE PAVIMENTO",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-17T19:18:47",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría. Texto disponible: «Concurso de Precios 7834/2026 Reposición de pavimentos Dpto Tacuarembó»",
+    "score": 25,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 7834/2026",
+    "ultima_actualizacion": "2026-11-17T19:18:47",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1384794",
+    "ya_adjudicados": [
+      "MANTENIMIENTO DE PAVIMENTO"
+    ]
+  },
   "d22beee2572a24c52e6f8f741398eee1": {
     "cambio_detectado": false,
     "categorias": [
@@ -48271,6 +48503,75 @@
       "GOMA NATURAL EN PLANCHA",
       "REPARACION DE PISO DE MADERA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "e655b3327081ff0c1d66dfe60b1ef78f": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes",
+      "materiales",
+      "pisos_madera",
+      "pisos_vinilicos",
+      "servicios"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Pisos de madera",
+      "Pisos vinílicos",
+      "Servicios",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1387454.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Tue, 17 Nov 2026 13:50:13",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "e655b3327081ff0c1d66dfe60b1ef78f",
+    "informe": "informes/e655b3327081ff0c1d66dfe60b1ef78f.md",
+    "keyword": "pisos de madera",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
+    "primera_deteccion": "2026-11-17T19:11:38",
+    "que_es": "Licitación de Ministerio de Trabajo y Seguridad Social (MTSS) — busca Alfombras, Material mencionado (revisar contexto), Pisos de madera, Pisos vinílicos, Servicios, Variante/error ortográfico de un término del rubro. Menciona \"vinílico\": «elemento de vista en bronce. Encerado de pisos de madera y vinílicos, con una mano de cera de muy buena calidad, con terminaci»",
+    "score": 25,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 11943/2026",
+    "ultima_actualizacion": "2026-11-17T19:11:38",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1387454",
+    "ya_adjudicados": [
+      "MOQUETTE",
+      "VINILICO PARA PISO",
+      "CEMENTO PARA PISO VINILICO (ADHESIVO)",
+      "ALFOMBRA DE PVC",
+      "COLOCACION DE VINILICOS",
+      "RETIRO DE MOQUETTE",
+      "COLOCACION DE ALFOMBRA",
+      "ALFOMBRA DE GOMA",
+      "COLOCACION DE MOQUETTE",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "ALFOMBRA DE FIELTRO",
+      "ALFOMBRA DE LANA",
+      "ALFOMBRA BOUCLE",
+      "REPARACION DE ALFOMBRA",
+      "LIMPIEZA DE ALFOMBRA",
+      "ALFOMBRA ATRAPA POLVO",
+      "VARILLA DE BRONCE PARA ALFOMBRA",
+      "REPARACION DE MOQUETTE",
+      "ALFOMBRA DE YUTE",
+      "LIMPIEZA DE MOQUETTE",
+      "REPARACION DE PISO DE MADERA",
+      "MOQUETTE / VERDE",
+      "colocación moquette"
     ]
   },
   "e69c4fd26d48ad8314e866cf28d3a2da": {
