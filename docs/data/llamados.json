@@ -5219,6 +5219,51 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "197f6bf2e01af2e0d3402e0efbfe1c19": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1383226.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 19 Nov 2026 11:20:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "197f6bf2e01af2e0d3402e0efbfe1c19",
+    "informe": "informes/197f6bf2e01af2e0d3402e0efbfe1c19.md",
+    "keyword": "alfombra + alfombras",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-11-19T19:15:51",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Alfombras. Menciona \"alfombra\": «entos de protección personal y colectiva correspondientes (alfombras antiestáticas, elementos de bloqueo y etiquetado, guantes»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 3/2026",
+    "ultima_actualizacion": "2026-11-19T19:15:51",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383226",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "COLOCACION DE ALFOMBRA",
+      "ALFOMBRA DE GOMA",
+      "ALFOMBRA DE FIELTRO",
+      "ALFOMBRA DE LANA",
+      "ALFOMBRA BOUCLE",
+      "REPARACION DE ALFOMBRA",
+      "LIMPIEZA DE ALFOMBRA",
+      "ALFOMBRA ATRAPA POLVO",
+      "VARILLA DE BRONCE PARA ALFOMBRA",
+      "ALFOMBRA DE YUTE"
+    ]
+  },
   "19b3f1725107557f2597122c0652ccbf": {
     "cambio_detectado": false,
     "categorias": [
@@ -6213,6 +6258,51 @@
     "ultima_actualizacion": "2026-08-21T11:33:45",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1357065",
     "ya_adjudicados": []
+  },
+  "1f23223c79042f31102ef81a5522fd84": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1387779.odt"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 19 Nov 2026 08:15:09",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "1f23223c79042f31102ef81a5522fd84",
+    "informe": "informes/1f23223c79042f31102ef81a5522fd84.md",
+    "keyword": "poliuretano + pvc",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-11-19T19:34:56",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «ERIL DESCARTABLE -( AMNIOTOMO) HASTA 20 29 SONDA ASPIRACION PVC CON CONTROL DE SUCCION N.º 7 HASTA 50 30 SELDINGER PARA AD»",
+    "score": 47,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 19459/2026",
+    "ultima_actualizacion": "2026-11-19T19:34:56",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1387779",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC",
+      "REPARACION DE PISO DE MADERA"
+    ]
   },
   "1f392bb41933afaa0e5325e264d757fc": {
     "cambio_detectado": false,
@@ -28642,6 +28732,43 @@
       "REPARACION DE PISO DE MADERA"
     ]
   },
+  "845ac76c96432554e5788cd11c302fca": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1388271.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 19 Nov 2026 15:10:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "845ac76c96432554e5788cd11c302fca",
+    "informe": "informes/845ac76c96432554e5788cd11c302fca.md",
+    "keyword": "epoxi + polietileno + polietileno de alta densidad",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ANEP - Administración Nacional de Educación Pública",
+    "primera_deteccion": "2026-11-19T18:54:32",
+    "que_es": "Licitación de ANEP - Administración Nacional de Educación Pública — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto). Menciona \"epoxi\": «ima de 50 kg. - La terminación deberá ser mediante pintura epoxi o similar. Los recipientes deberán suministrarse instalado»",
+    "score": 26,
+    "simbolo": "★★",
+    "titulo": "Compra por Excepción 64/2026",
+    "ultima_actualizacion": "2026-11-19T18:54:32",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1388271",
+    "ya_adjudicados": [
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO"
+    ]
+  },
   "84792bb91ff6ff973f442cd1ff14a97a": {
     "cambio_detectado": false,
     "categorias": [
@@ -38087,6 +38214,58 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373894",
     "ya_adjudicados": []
   },
+  "af6ac524aaad183a65a65d305e38a900": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1382247.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 19 Nov 2026 08:55:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "af6ac524aaad183a65a65d305e38a900",
+    "informe": "informes/af6ac524aaad183a65a65d305e38a900.md",
+    "keyword": "aluminio + goma + pvc",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-19T19:34:51",
+    "que_es": "Licitación de organismo no identificado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «ntilar, se realizará recorrido sobre cielorraso en caño de PVC rígido de 160mm para el ramal principal y en caño de PVC rí»",
+    "score": 6,
+    "simbolo": "★",
+    "titulo": "Compra Directa 103/2026",
+    "ultima_actualizacion": "2026-11-19T19:34:51",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1382247",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "ALFOMBRA DE GOMA",
+      "PISO MODULAR DE PVC",
+      "PISO DE GOMA",
+      "VARILLA DE ALUMINIO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE GOMA",
+      "PERFIL U DE ALUMINIO",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "afe234a258708e1e2c8a4bbd9336724c": {
     "cambio_detectado": false,
     "categorias": [
@@ -42036,6 +42215,35 @@
       "REPARACION DE PAVIMENTO"
     ]
   },
+  "c1e8e2f052529963900bb4f03ed23d57": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1388096.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 19 Nov 2026 11:25:09",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "c1e8e2f052529963900bb4f03ed23d57",
+    "informe": "informes/c1e8e2f052529963900bb4f03ed23d57.md",
+    "keyword": "aluminio + goma + pvc",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "ASSE - Administración de los Servicios de Salud del Estado",
+    "primera_deteccion": "2026-11-19T19:13:46",
+    "que_es": "Licitación de ASSE - Administración de los Servicios de Salud del Estado — busca ninguna coincidencia directa de categoría. Texto disponible: «Compra Directa N°19244/2026 Pedido Sistema n.º 27700 SERVICIO SOLICITANTE: ARQUITECTURA URGENTE Montevideo, 19 de Noviembre de 2026. LLAMADO A PRECIO - COMPRA DIRECTA SE SOLICITA: cotización de |ÍTEM | En caso de dudas se recomienda consultar Pliego particular de condiciones, publicados en el aparta…»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 19244/2026",
+    "ultima_actualizacion": "2026-11-19T19:13:46",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1388096",
+    "ya_adjudicados": []
+  },
   "c1f4d16d1405195969ee140cb94038cf": {
     "cambio_detectado": false,
     "categorias": [
@@ -42666,6 +42874,49 @@
       "PISO MODULAR DE PVC",
       "PROTECTOR EN PVC PARA PISO FLOTANTE",
       "CAMINERO DE PVC"
+    ]
+  },
+  "c754dad9b27b5e454b21773a6675fef4": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1387967.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 19 Nov 2026 10:55:09",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "c754dad9b27b5e454b21773a6675fef4",
+    "informe": "informes/c754dad9b27b5e454b21773a6675fef4.md",
+    "keyword": "acrílico + policarbonato + pvc",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas",
+    "primera_deteccion": "2026-11-19T19:18:02",
+    "que_es": "Licitación de UTE - Administración Nacional de Usinas y Trasmisiones Eléctricas — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «AS DE REGISTRO Las cajas de registro aparentes serán en PVC o metálicos. Tendrán las perforaciones necesarias para la»",
+    "score": 43,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 19426/2026",
+    "ultima_actualizacion": "2026-11-19T19:18:02",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1387967",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC",
+      "CAMINERO DE ACRILICO"
     ]
   },
   "c7994de2e1f061b6b06bf74c2491fc22": {
@@ -45314,6 +45565,60 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370458",
     "ya_adjudicados": []
   },
+  "d32975172ea51793a34ccfa346fa71f9": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1388158.doc"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 19 Nov 2026 12:00:12",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "d32975172ea51793a34ccfa346fa71f9",
+    "informe": "informes/d32975172ea51793a34ccfa346fa71f9.md",
+    "keyword": "código ya adjudicado: ALFOMBRA DE GOMA",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "2026-29",
+    "organismo": null,
+    "primera_deteccion": "2026-11-19T19:11:34",
+    "que_es": "Licitación de organismo no identificado — busca Alfombras, Material mencionado (revisar contexto). Menciona \"alfombra\": «TROS TELA PARA CORTINA CORTA LUZ. COLOR BLANCO. 5- ROLLO DE ALFOMBRA DE GOMA ANTIDESLIZANTE ANCHO 1,2 M APROX. 6-ROLLO MOSQUITER»",
+    "score": 39,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 19569/2026",
+    "ultima_actualizacion": "2026-11-19T19:11:34",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1388158",
+    "ya_adjudicados": [
+      "ALFOMBRA DE GOMA",
+      "ALFOMBRA DE PVC",
+      "COLOCACION DE ALFOMBRA",
+      "PISO DE GOMA",
+      "ALFOMBRA DE FIELTRO",
+      "ALFOMBRA DE LANA",
+      "CAMINERO DE GOMA",
+      "ALFOMBRA BOUCLE",
+      "REPARACION DE ALFOMBRA",
+      "LIMPIEZA DE ALFOMBRA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "ALFOMBRA ATRAPA POLVO",
+      "VARILLA DE BRONCE PARA ALFOMBRA",
+      "ALFOMBRA DE YUTE",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "d34ae85c50de64ab777a95a51e47ad9a": {
     "cambio_detectado": false,
     "categorias": [
@@ -47061,6 +47366,74 @@
       "GOMA DE LATEX 1.5 ESPESOR 3 MM"
     ]
   },
+  "dbbbcb42ece80eef90203ed07dc981ef": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "errores_comunes",
+      "materiales",
+      "pisos_flotantes",
+      "pisos_spc",
+      "pisos_vinilicos",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Pisos SPC",
+      "Pisos flotantes/laminados",
+      "Pisos vinílicos",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1388289.zip"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": "2026-11-27",
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 19 Nov 2026 15:10:13",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "dbbbcb42ece80eef90203ed07dc981ef",
+    "informe": "informes/dbbbcb42ece80eef90203ed07dc981ef.md",
+    "keyword": "piso vinílico",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
+    "primera_deteccion": "2026-11-19T18:54:28",
+    "que_es": "Licitación de Ministerio de Trabajo y Seguridad Social (MTSS) — busca Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto), Pisos SPC, Pisos flotantes/laminados, Pisos vinílicos, Terminología genérica del pliego (revisar manualmente qué producto aplica), Variante/error ortográfico de un término del rubro, apertura 2026-11-27. Menciona \"piso vinílico\": «lidad que Incastain. e- Sobre los tableros se instalará un piso vinílico SPC de 5,5 mm de espesor con goma IXPE, en formato de tabl»",
+    "score": 49,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 226613/2026",
+    "ultima_actualizacion": "2026-11-19T18:54:28",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1388289",
+    "ya_adjudicados": [
+      "VINILICO PARA PISO",
+      "CEMENTO PARA PISO VINILICO (ADHESIVO)",
+      "COLOCACION DE VINILICOS",
+      "ALFOMBRA DE GOMA",
+      "ZOCALO PARA PISO FLOTANTE",
+      "MANTA BAJO PISO DE ESPUMA DE POLIETILENO",
+      "PISO DE GOMA",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "ZOCALO MONOLITICO",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "COLOCACION DE ZOCALO",
+      "PLANCHA DE GOMA EVA",
+      "ZOCALO EN MDF",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "REPARACION DE PISO DE MADERA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "dbd8aae627707d193a7a9046b99f729c": {
     "cambio_detectado": false,
     "categorias": [
@@ -47244,6 +47617,33 @@
     "titulo": "Compra Directa 16079/2026",
     "ultima_actualizacion": "2026-09-21T16:26:48",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1373433",
+    "ya_adjudicados": []
+  },
+  "dcadd50a7dc30e96efa24ae068f4fab5": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 19 Nov 2026 14:45:11",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "dcadd50a7dc30e96efa24ae068f4fab5",
+    "informe": "informes/dcadd50a7dc30e96efa24ae068f4fab5.md",
+    "keyword": "carpet + carpeta + vinilica",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-19T18:58:51",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría. Texto disponible: «Compra Directa 91/2026 Compra de útiles de Oficina»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 91/2026",
+    "ultima_actualizacion": "2026-11-19T18:58:51",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1387897",
     "ya_adjudicados": []
   },
   "dcbff10e35d03c48c1eec7a119658208": {
@@ -53317,6 +53717,59 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1364275",
     "ya_adjudicados": [
       "CEMENTO ADHESIVO PARA CERAMICA"
+    ]
+  },
+  "f8e3aa731490c9cfe8501a92c52223fd": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1327083.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 19 Nov 2026 12:55:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "f8e3aa731490c9cfe8501a92c52223fd",
+    "informe": "informes/f8e3aa731490c9cfe8501a92c52223fd.md",
+    "keyword": "goma + hierro fundido + madera",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Economía y Finanzas (MEF)",
+    "primera_deteccion": "2026-11-19T19:03:09",
+    "que_es": "Licitación de Ministerio de Economía y Finanzas (MEF) — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «e se trate: hierro fundido, plomo, hormigón, fibrocemento, PVC, etc. (incluye el hidrolavado de las redes). b) Limpieza d»",
+    "score": 17,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 3/2026",
+    "ultima_actualizacion": "2026-11-19T19:03:09",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1327083",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "ALFOMBRA DE GOMA",
+      "PISO MODULAR DE PVC",
+      "PISO DE GOMA",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "GOMA NATURAL EN PLANCHA",
+      "REPARACION DE PISO DE MADERA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
   "fa6545a9f6739759c62b18076a778e20": {
