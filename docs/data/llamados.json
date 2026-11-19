@@ -31036,6 +31036,41 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1365755",
     "ya_adjudicados": []
   },
+  "8e506aabe5eb4b683da1345ff0004211": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1387698.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Wed, 18 Nov 2026 15:50:11",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "8e506aabe5eb4b683da1345ff0004211",
+    "informe": "informes/8e506aabe5eb4b683da1345ff0004211.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-11-19T02:20:31",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Alfombras, Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «00 unidades 5 880 Clip metálico 28mm Hasta 200 cajas 6 6679 Carpeta con tapa transparente p/ A4 Hasta 150 unidades 7 7161 Caja»",
+    "score": 30,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 929/2026",
+    "ultima_actualizacion": "2026-11-19T02:20:31",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1387698",
+    "ya_adjudicados": []
+  },
   "8e9e58188b8f4967ff8b055cee4cf66d": {
     "cambio_detectado": false,
     "categorias": [
