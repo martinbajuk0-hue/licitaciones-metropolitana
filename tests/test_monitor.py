@@ -1341,5 +1341,146 @@ class TestEmailListaTodosLosArticulosSinTruncar(unittest.TestCase):
         self.assertIn("Artículos solicitados (40)", html)
 
 
+class TestEnriquecerLicConInformeCopiaProductosDetectados(unittest.TestCase):
+    """2026-11-20: caso real reportado por el usuario — "Compra Directa
+    226613/2026" (MTSS) traía en tender.items (ARCE, ver items_pliego) un
+    único ítem genérico "ACONDICIONAMIENTO DE EDIFICIO (1 UNIDAD)", que no
+    dice nada de lo que hay que cotizar. El pliego real SÍ lo decía ("piso
+    vinílico SPC con goma IXPE"), vía analyzer.identificar_productos(),
+    pero ese resultado completo (informe.productos) nunca se copiaba al
+    dict `lic` que arma el email — solo se usaba el primer match para una
+    frase suelta dentro de "que_es" (ver analyzer._resumen_extractivo()).
+    Ahora _enriquecer_lic_con_informe() copia TODOS los matches a
+    lic["productos_detectados"], serializados como dict (igual que
+    ProductoIdentificado.to_dict()).
+    """
+
+    def test_copia_todos_los_productos_como_dicts(self):
+        lic = {"titulo": "x"}
+        productos = [
+            monitor.analyzer.ProductoIdentificado(
+                categoria="pisos_spc",
+                termino_encontrado="piso vinílico",
+                fragmento="...se instalará un piso vinílico SPC de 5,5 mm con goma IXPE...",
+            ),
+            monitor.analyzer.ProductoIdentificado(
+                categoria="accesorios",
+                termino_encontrado="zócalo",
+                fragmento="...se colocará zócalo perimetral de PVC...",
+            ),
+        ]
+        informe = MagicMock()
+        informe.clasificacion = MagicMock(puntaje=60, nivel=3, simbolo="★★★", etiqueta="Media")
+        informe.ya_adjudicados = []
+        informe.cierre = None
+        informe.que_es = "QUÉ ES: de prueba"
+        informe.campos = MagicMock(organismo="MTSS", numero_licitacion="CD 226613/2026", fecha_apertura="2026-11-27")
+        informe.productos = productos
+
+        monitor._enriquecer_lic_con_informe(lic, informe)
+
+        self.assertEqual(
+            lic["productos_detectados"],
+            [p.to_dict() for p in productos],
+        )
+        self.assertEqual(len(lic["productos_detectados"]), 2)
+        self.assertEqual(lic["productos_detectados"][0]["termino_encontrado"], "piso vinílico")
+
+    def test_sin_productos_queda_lista_vacia(self):
+        lic = {"titulo": "x"}
+        informe = MagicMock()
+        informe.clasificacion = MagicMock(puntaje=60, nivel=3, simbolo="★★★", etiqueta="Media")
+        informe.ya_adjudicados = []
+        informe.cierre = None
+        informe.que_es = "QUÉ ES: de prueba"
+        informe.campos = MagicMock(organismo="MTSS", numero_licitacion="CD 1/2026", fecha_apertura=None)
+        informe.productos = []
+
+        monitor._enriquecer_lic_con_informe(lic, informe)
+
+        self.assertEqual(lic["productos_detectados"], [])
+
+
+class TestEmailMuestraProductosDetectadosEnElPliego(unittest.TestCase):
+    """Complementa TestEnriquecerLicConInformeCopiaProductosDetectados:
+    acá se prueba que lic["productos_detectados"] efectivamente se
+    renderiza en el HTML del mail (enviar_email()), como una lista
+    separada de "Artículos solicitados" — nunca reemplazándolo, porque
+    son dos fuentes distintas (ARCE/OCDS vs. texto real del pliego).
+    """
+
+    def _lic(self, items_pliego=None, productos_detectados=None):
+        return {
+            "titulo": "Compra Directa 226613/2026",
+            "descripcion": "desc",
+            "fecha": "2026-11-19",
+            "url": "https://www.comprasestatales.gub.uy/ocds/release/llamado-999",
+            "url_ficha": "https://example.com/ficha",
+            "documentos": ["https://example.com/pliego.pdf"],
+            "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
+            "items_pliego": items_pliego or [],
+            "productos_detectados": productos_detectados or [],
+        }
+
+    def _html_enviado(self, mock_smtp) -> str:
+        server = mock_smtp.return_value.__enter__.return_value
+        _, _, mensaje = server.sendmail.call_args[0]
+        parsed = email.message_from_string(mensaje)
+        for parte in parsed.walk():
+            if parte.get_content_type() == "text/html":
+                return parte.get_payload(decode=True).decode("utf-8")
+        raise AssertionError("no se encontró la parte text/html del mail")
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_caso_real_acondicionamiento_de_edificio_muestra_el_piso_vinilico_detectado(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(
+            items_pliego=[
+                {"descripcion": "ACONDICIONAMIENTO DE EDIFICIO", "cantidad": "1", "unidad": "UNIDAD", "veces": 1},
+            ],
+            productos_detectados=[
+                {
+                    "categoria": "pisos_spc",
+                    "termino_encontrado": "piso vinílico",
+                    "fragmento": "se instalará un piso vinílico SPC de 5,5 mm de espesor con goma IXPE",
+                },
+            ],
+        )
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertIn("Coincidencias detectadas en el pliego (1)", html)
+        self.assertIn("piso vinílico", html)
+        self.assertIn("goma IXPE", html)
+        # El ítem genérico de ARCE se sigue mostrando también — no se pisan.
+        self.assertIn("ACONDICIONAMIENTO DE EDIFICIO", html)
+        self.assertIn("Artículos solicitados (1)", html)
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_sin_productos_detectados_no_aparece_la_seccion(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(items_pliego=[{"descripcion": "CABLE", "cantidad": "10", "unidad": "M", "veces": 1}])
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertNotIn("Coincidencias detectadas en el pliego", html)
+
+
 if __name__ == "__main__":
     unittest.main()
