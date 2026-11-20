@@ -1482,5 +1482,73 @@ class TestEmailMuestraProductosDetectadosEnElPliego(unittest.TestCase):
         self.assertNotIn("Coincidencias detectadas en el pliego", html)
 
 
+class TestFilaEmailMuestraBotonArceAdemasDelPliego(unittest.TestCase):
+    """2026-11-20: el usuario, viendo el botón "Ver" de una fila del mail
+    (que cuando hay pliego descargado apunta directo al PDF, ver
+    _fila_html()), pidió un botón aparte que lleve siempre a la ficha
+    humana de ARCE (lic["url_ficha"]) — antes esa ficha desaparecía por
+    completo de la fila en cuanto había un documento de pliego.
+    """
+
+    def _lic(self, documentos=None, url_ficha="https://www.comprasestatales.gub.uy/consultas/detalle/id/999"):
+        return {
+            "titulo": "Compra Directa 226613/2026",
+            "descripcion": "desc",
+            "fecha": "2026-11-19",
+            "url": "https://www.comprasestatales.gub.uy/ocds/release/llamado-999",
+            "url_ficha": url_ficha,
+            "documentos": documentos or [],
+            "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
+            "items_pliego": [],
+            "productos_detectados": [],
+        }
+
+    def _html_enviado(self, mock_smtp) -> str:
+        server = mock_smtp.return_value.__enter__.return_value
+        _, _, mensaje = server.sendmail.call_args[0]
+        parsed = email.message_from_string(mensaje)
+        for parte in parsed.walk():
+            if parte.get_content_type() == "text/html":
+                return parte.get_payload(decode=True).decode("utf-8")
+        raise AssertionError("no se encontró la parte text/html del mail")
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_con_pliego_descargado_aparecen_los_dos_botones(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(documentos=["https://example.com/pliego.pdf"])
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertIn('href="https://example.com/pliego.pdf"', html)
+        self.assertIn('href="https://www.comprasestatales.gub.uy/consultas/detalle/id/999"', html)
+        self.assertIn(">ARCE<", html)
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_sin_pliego_descargado_no_duplica_el_boton(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(documentos=[])
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertIn('href="https://www.comprasestatales.gub.uy/consultas/detalle/id/999"', html)
+        self.assertNotIn(">ARCE<", html)
+
+
 if __name__ == "__main__":
     unittest.main()
