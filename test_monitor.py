@@ -1,0 +1,1554 @@
+import email
+import hashlib
+import json
+import tempfile
+import unittest
+from datetime import datetime, timedelta
+from pathlib import Path
+from unittest.mock import MagicMock, patch
+
+import historial
+import monitor
+
+
+class TestMonitorFechaRango(unittest.TestCase):
+    """monitor._fecha_lic_a_iso() es la pieza nueva y testeable sin red:
+    normaliza lic['fecha'] (que puede venir en ISO del feed OCDS, o en
+    RFC822 crudo si se cayó al fallback RSS — ver obtener_licitaciones())
+    a 'YYYY-MM-DD' para poder compararla contra el rango de
+    --test-rango-fechas.
+    """
+
+    def test_fecha_iso_se_devuelve_truncada_a_10_caracteres(self):
+        self.assertEqual(monitor._fecha_lic_a_iso("2026-08-13"), "2026-08-13")
+        self.assertEqual(monitor._fecha_lic_a_iso("2026-08-13T14:30:00Z"), "2026-08-13")
+
+    def test_fecha_rfc822_se_normaliza_a_iso(self):
+        self.assertEqual(monitor._fecha_lic_a_iso("Wed, 13 Aug 2026 10:00:00 GMT"), "2026-08-13")
+
+    def test_fecha_vacia_devuelve_none(self):
+        self.assertIsNone(monitor._fecha_lic_a_iso(""))
+
+    def test_fecha_no_parseable_devuelve_none(self):
+        self.assertIsNone(monitor._fecha_lic_a_iso("no es una fecha"))
+
+
+class TestAlquilerDeInmueble(unittest.TestCase):
+    """Caso real reportado por el usuario 2026-08-17: Concurso de Precios
+    12/2026, "Contratación de local apto para el dictado de clases
+    curriculares de Educación Física para los alumnos del liceo N°60 de
+    Montevideo". La auditoría en vivo (run #190) mostró que matcheó por
+    'arcos de fútbol', encontrado en un formulario tipo checklist donde
+    el organismo le pregunta a cada local candidato qué equipamiento YA
+    TIENE instalado:
+
+        "10 (diez) pelotas de fútbol Sí …. No ...... Arcos de fútbol
+        Sí …. No..... Red de voleibol Sí..."
+        "Piso: Madera: .......... Baldosa: ............ Hormigón: ..."
+
+    Es decir: el organismo busca ALQUILAR un local ya construido, no
+    comprar productos — el pliego menciona madera/baldosa/arcos de
+    fútbol únicamente para preguntar qué tiene el local candidato, no
+    para pedir que se los provean. Metropolitana no alquila inmuebles,
+    así que este tipo de compra nunca es una oportunidad real sin
+    importar qué término del rubro aparezca casualmente.
+    """
+
+    def test_es_alquiler_de_inmueble_detecta_el_titulo_real(self):
+        titulo = (
+            'concurso de precios n° 12/2026 "contratación de local apto para el '
+            "dictado de clases curriculares de educación física para los alumnos "
+            'del liceo n°60 de montevideo"'
+        )
+        self.assertTrue(monitor._es_alquiler_de_inmueble(titulo))
+
+    def test_es_alquiler_de_inmueble_no_dispara_con_texto_normal_del_rubro(self):
+        texto = "suministro e instalación de piso vinílico y zócalos en el local comercial de la intendencia"
+        self.assertFalse(monitor._es_alquiler_de_inmueble(texto))
+
+    def test_arcos_de_futbol_en_checklist_de_local_alquilado_no_marca_relevante(self):
+        lic = {
+            "titulo": (
+                'Concurso de Precios N° 12/2026 "Contratación de local apto para el '
+                "dictado de clases curriculares de Educación Física para los alumnos "
+                'del liceo N°60 de Montevideo"'
+            ),
+            "descripcion": "Contratación de local apto para el dictado de clases curriculares de Educación Física.",
+            "documentos": [],
+            "url": "https://www.comprasestatales.gub.uy/ocds/release/test-concurso-12-2026",
+        }
+        relevante, kw, fuente, texto = monitor.es_relevante(lic)
+        self.assertFalse(relevante, f"No debería ser relevante (alquiler de local), pero marcó: {kw!r} (fuente: {fuente})")
+
+    def test_alquiler_de_inmueble_no_se_detecta_solo_por_la_palabra_local(self):
+        # Guarda contra un filtro demasiado amplio: la palabra "local" sola
+        # (ej. "gobierno local", "sucursal local") no debe activar el filtro,
+        # solo la frase completa "contratación/alquiler/arrendamiento de local(es)".
+        texto = "el proveedor deberá tener representación local en montevideo para el soporte técnico"
+        self.assertFalse(monitor._es_alquiler_de_inmueble(texto))
+
+
+class TestEsRelevantePorCodigoArticulo(unittest.TestCase):
+    """Pedido explícito del usuario 2026-08-18: si un llamado nuevo pide un
+    ítem con el mismo "Código de artículo" ARCE (classification.id de
+    OCDS, ver monitor._codigos_articulo()) que uno que Metropolitana ya
+    facturó antes (historial.productos_por_codigo_ya_adjudicado()), el
+    llamado se marca relevante SÍ O SÍ — sin pasar por el filtro de
+    alquiler de inmueble ni por el umbral de 2+ términos de
+    _decidir_relevancia(), porque es un match exacto por código, no una
+    coincidencia de texto.
+
+    Caso real verificado 2026-08-18: Compra Directa 10176/2026 (MEC),
+    ítem "TATAMI" con Cód. Artículo 63663 (ver
+    https://www.comprasestatales.gub.uy/ocds/release/llamado-1364508).
+    """
+
+    def setUp(self):
+        self._orig_path = historial.HISTORIAL_PATH
+
+    def tearDown(self):
+        historial.HISTORIAL_PATH = self._orig_path
+        historial._cargar.cache_clear()
+        historial._items_metropolitana_normalizados.cache_clear()
+        historial._codigos_metropolitana.cache_clear()
+
+    def _usar_historial_con_tatami(self, tmp_path):
+        data = {
+            "generado": "2026-08-14",
+            "items_metropolitana": [
+                {"producto": "TATAMI", "codigo": "63663"},
+                {"producto": "MOQUETTE", "codigo": "2925"},
+            ],
+            "items_otros_proveedores": [],
+        }
+        ruta = tmp_path / "historial.json"
+        ruta.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+        historial.HISTORIAL_PATH = ruta
+        historial._cargar.cache_clear()
+        historial._items_metropolitana_normalizados.cache_clear()
+        historial._codigos_metropolitana.cache_clear()
+
+    @patch("monitor._leer_pliego")
+    def test_llamado_real_tatami_matchea_por_codigo_y_ahora_igual_lee_el_pliego(self, mock_leer_pliego):
+        # 2026-10-08: hasta esta fecha, un match por código de artículo
+        # (igual que uno por título/descripción/alerta total) devolvía
+        # texto_pliego="" sin intentar leer el documento adjunto — el
+        # match ya era suficiente para decidir relevancia, así que leer
+        # el pliego parecía un gasto de red innecesario. El problema real
+        # (caso Compra Directa 161/2026, ver monitor.es_relevante()) es
+        # que ese ahorro le costaba precisión al informe: sin el pliego,
+        # analyzer.extraer_campos_clave() no tiene de dónde sacar
+        # organismo/fechas/garantías, y el score termina artificialmente
+        # bajo pese a ser una coincidencia real. Pedido explícito del
+        # usuario: leer igual el pliego para enriquecer el informe, sin
+        # que esto cambie la decisión de relevancia (que sigue siendo por
+        # código, no por lo que diga el pliego).
+        mock_pliego = monitor.parser_mod.PliegoExtraido(
+            documentos=[
+                monitor.parser_mod.DocumentoExtraido(
+                    nombre="pedido.pdf", url="http://x/pedido.pdf", tipo="pdf",
+                    texto="MEC llama a Compra Directa 10176/2026 — TATAMI.",
+                )
+            ]
+        )
+        mock_leer_pliego.return_value = mock_pliego
+
+        with tempfile.TemporaryDirectory() as tmp:
+            self._usar_historial_con_tatami(Path(tmp))
+            lic = {
+                "titulo": "Compra Directa 10176/2026",
+                "descripcion": (
+                    "El Ministerio de Educación y Cultura invita a empresas interesadas a "
+                    "presentar cotización para la adquisición de 115 placas de piso de goma "
+                    "EVA tipo tatami."
+                ),
+                "documentos": [],
+                "url": "https://www.comprasestatales.gub.uy/ocds/release/llamado-1364508",
+                "codigos_articulo": ["63663"],
+            }
+            relevante, kw, fuente, texto_pliego = monitor.es_relevante(lic)
+            self.assertTrue(relevante)
+            self.assertEqual(fuente, monitor.FUENTE_CODIGO_ARTICULO)
+            self.assertIn("TATAMI", kw)
+            # Ahora SÍ se lee/enriquece con el pliego, aunque la relevancia
+            # ya estaba decidida por código.
+            mock_leer_pliego.assert_called_once_with(lic)
+            self.assertEqual(texto_pliego, mock_pliego.texto_completo)
+
+    def test_codigo_sin_match_en_historial_sigue_el_flujo_normal_por_texto(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self._usar_historial_con_tatami(Path(tmp))
+            lic = {
+                "titulo": "Compra Directa 999/2026 — adquisición de resmas de papel A4",
+                "descripcion": "Adquisición de resmas de papel A4 para oficina.",
+                "documentos": [],
+                "url": "https://www.comprasestatales.gub.uy/ocds/release/llamado-9999999",
+                "codigos_articulo": ["11111"],  # no está en el historial
+            }
+            relevante, kw, fuente, texto_pliego = monitor.es_relevante(lic)
+            self.assertFalse(relevante)
+
+    def test_filtro_de_alquiler_de_inmueble_pisa_al_match_por_codigo(self):
+        # Orden de prioridad invertido respecto a una primera versión de
+        # este código: el filtro de alquiler de inmueble es un VETO
+        # ABSOLUTO, ni siquiera un match por código lo pisa. Motivo
+        # (evidencia real 2026-08-18): el historial puede tener códigos
+        # genéricos o casos borde (ver historial._CODIGOS_NO_ESPECIFICOS,
+        # ej. "ARRENDAMIENTO DE PISO") — más vale un falso negativo
+        # ocasional que reintroducir el tipo de falso positivo que ya
+        # causó "siento que no estás leyendo los pliegos".
+        with tempfile.TemporaryDirectory() as tmp:
+            self._usar_historial_con_tatami(Path(tmp))
+            lic = {
+                "titulo": 'Concurso de Precios N° 12/2026 "Contratación de local apto para clases"',
+                "descripcion": "Contratación de local apto para el dictado de clases.",
+                "documentos": [],
+                "url": "https://www.comprasestatales.gub.uy/ocds/release/test-alquiler-con-codigo",
+                "codigos_articulo": ["63663"],
+            }
+            relevante, kw, fuente, texto_pliego = monitor.es_relevante(lic)
+            self.assertFalse(relevante)
+
+    def test_sin_codigos_articulo_no_rompe_el_flujo_normal(self):
+        # lic sin la clave "codigos_articulo" (ej. viniendo de la rama OCDS
+        # vieja, o de un test que no la setea) no debe romper — debe
+        # comportarse como si la lista estuviera vacía.
+        lic = {
+            "titulo": "Compra Directa 1/2026 — insumos varios",
+            "descripcion": "Insumos varios de oficina.",
+            "documentos": [],
+            "url": "https://www.comprasestatales.gub.uy/ocds/release/test-sin-codigos",
+        }
+        relevante, kw, fuente, texto_pliego = monitor.es_relevante(lic)
+        self.assertFalse(relevante)
+
+
+class TestEsRelevanteLeeElPliegoAunConMatchPorTitulo(unittest.TestCase):
+    """Caso real 2026-10-08: Compra Directa 161/2026 (Secretaría Nacional
+    del Deporte, id 1378007) matcheó "piso de goma" directo en el título
+    y nunca se abrió el pedido_1378007.zip adjunto (ver monitor.
+    es_relevante() y catalogo.registrar_llamado()) — el informe quedó sin
+    organismo/fechas/garantías y el score salió artificialmente bajo
+    (26/100), casi sin llegar a mano porque hasta esa fecha el email
+    filtraba por score mínimo. Ahora se lee igual el pliego para
+    enriquecer el informe, aunque la relevancia ya esté decidida por
+    título/descripción/ítems — el match sigue viniendo de ahí, el pliego
+    solo aporta más texto para analyzer.extraer_campos_clave().
+    """
+
+    @patch("monitor._leer_pliego")
+    def test_match_por_titulo_lee_el_pliego_y_devuelve_su_texto(self, mock_leer_pliego):
+        mock_pliego = monitor.parser_mod.PliegoExtraido(
+            documentos=[
+                monitor.parser_mod.DocumentoExtraido(
+                    nombre="pedido.zip", url="http://x/pedido.zip", tipo="zip",
+                    texto="Secretaría Nacional del Deporte. Fecha de apertura: 15/10/2026.",
+                )
+            ]
+        )
+        mock_leer_pliego.return_value = mock_pliego
+
+        lic = {
+            "titulo": "Compra Directa 161/2026",
+            "descripcion": "Adquisición de piso de goma (Tatami) encastrable.",
+            "documentos": ["http://www.comprasestatales.gub.uy/Pliegos/pedido_1378007.zip"],
+            "url": "https://www.comprasestatales.gub.uy/ocds/release/llamado-1378007",
+        }
+        relevante, kw, fuente, texto_pliego = monitor.es_relevante(lic)
+
+        self.assertTrue(relevante)
+        self.assertEqual(fuente, "título/descripción/ítems")
+        mock_leer_pliego.assert_called_once_with(lic)
+        self.assertEqual(texto_pliego, mock_pliego.texto_completo)
+        self.assertIn("Secretaría Nacional del Deporte", texto_pliego)
+        # Y queda cacheado en el propio lic para que el llamador (main())
+        # no tenga que descargarlo de nuevo solo para sacar
+        # documentos_con_error.
+        self.assertIs(lic["_pliego_leido"], mock_pliego)
+
+
+class _RespuestaFalsa:
+    """Doble mínimo de requests.Response para mockear requests.get() sin red."""
+
+    def __init__(self, status_code=200, content=b"", json_data=None, text=""):
+        self.status_code = status_code
+        self.content = content
+        self._json_data = json_data
+        self.text = text
+        self.headers = {"content-type": "application/xml"}
+
+    def json(self):
+        return self._json_data
+
+
+def _rss_mensual_xml(items_guid: list[str]) -> bytes:
+    # Mismo shape que produce comprasestatales.gub.uy/ocds/rss/AAAA/MM:
+    # <channel><item><guid>llamado-123</guid><link>...</link>
+    # <pubDate>...</pubDate><title>...</title></item>...</channel>
+    items_xml = "".join(
+        f"<item><guid>{g}</guid><link>https://www.comprasestatales.gub.uy/ocds/release/{g}</link>"
+        f"<pubDate>Wed, 13 Aug 2026 10:00:00 GMT</pubDate><title>{g}</title></item>"
+        for g in items_guid
+    )
+    return f"<rss><channel>{items_xml}</channel></rss>".encode("utf-8")
+
+
+class TestMesesARelevar(unittest.TestCase):
+    """monitor._meses_a_relevar() decide qué feeds RSS mensuales
+    (settings.RSS_URL + "/AAAA/MM") pedir: el mes en curso + el anterior,
+    para no perder cobertura los primeros días de cada mes (ver
+    conversación 2026-08-18, "faltan organismos y rubros").
+    """
+
+    def test_mes_en_curso_y_anterior_mismo_anio(self):
+        self.assertEqual(
+            monitor._meses_a_relevar(datetime(2026, 8, 18)),
+            [(2026, 7), (2026, 8)],
+        )
+
+    def test_enero_retrocede_a_diciembre_del_anio_anterior(self):
+        self.assertEqual(
+            monitor._meses_a_relevar(datetime(2026, 1, 15)),
+            [(2025, 12), (2026, 1)],
+        )
+
+
+class TestObtenerLicitacionesFeedMensual(unittest.TestCase):
+    """obtener_licitaciones() (rama RSS) ahora pide el feed RSS MENSUAL
+    (mes actual + anterior) en vez del feed plano de 500 ítems — y, si se
+    le pasa `vistos`, omite el refetch de detalle de ítems ya vistos
+    (optimización necesaria: sin esto, cada corrida re-descargaría el
+    detalle de los ~1000+ llamados del mes en vez de solo los nuevos).
+    """
+
+    def _mockear_ocds_caido_y_rss_mensual(self, mock_get, guids_por_mes, detalle_por_guid=None):
+        detalle_por_guid = detalle_por_guid or {}
+
+        def side_effect(url, headers=None, timeout=None):
+            if url == monitor.settings.OCDS_URL:
+                return _RespuestaFalsa(status_code=404, text="not found")
+            for (anio, mes), guids in guids_por_mes.items():
+                if url == f"{monitor.settings.RSS_URL}/{anio}/{mes:02d}":
+                    return _RespuestaFalsa(status_code=200, content=_rss_mensual_xml(guids))
+            # Fetch de detalle de un release individual.
+            for guid, detalle in detalle_por_guid.items():
+                if url.endswith(guid):
+                    return _RespuestaFalsa(status_code=200, json_data=detalle)
+            return _RespuestaFalsa(status_code=404, text="not found")
+
+        mock_get.side_effect = side_effect
+
+    @patch("monitor.datetime")
+    @patch("monitor.requests.get")
+    def test_pide_feed_mensual_de_mes_actual_y_anterior(self, mock_get, mock_datetime):
+        mock_datetime.now.return_value = datetime(2026, 8, 18)
+        self._mockear_ocds_caido_y_rss_mensual(
+            mock_get,
+            {
+                (2026, 7): ["llamado-1"],
+                (2026, 8): ["llamado-2"],
+            },
+            detalle_por_guid={
+                "llamado-1": {"releases": [{"tender": {"title": "Julio", "description": ""}}]},
+                "llamado-2": {"releases": [{"tender": {"title": "Agosto", "description": ""}}]},
+            },
+        )
+        licitaciones = monitor.obtener_licitaciones()
+        titulos = sorted(lic["titulo"] for lic in licitaciones)
+        self.assertEqual(titulos, ["Agosto", "Julio"])
+
+    @patch("monitor.datetime")
+    @patch("monitor.requests.get")
+    def test_vistos_omite_refetch_de_detalle_de_items_ya_vistos(self, mock_get, mock_datetime):
+        mock_datetime.now.return_value = datetime(2026, 8, 18)
+        self._mockear_ocds_caido_y_rss_mensual(
+            mock_get,
+            {
+                (2026, 7): [],
+                (2026, 8): ["llamado-3", "llamado-4"],
+            },
+            detalle_por_guid={
+                "llamado-3": {"releases": [{"tender": {"title": "Nuevo", "description": ""}}]},
+                "llamado-4": {"releases": [{"tender": {"title": "Viejo", "description": ""}}]},
+            },
+        )
+        uid_viejo = monitor.hashlib.md5(b"llamado-4").hexdigest()
+        vistos = {uid_viejo: {"titulo": "Viejo", "hash": "x", "primera_deteccion": "", "notificaciones": 1}}
+
+        licitaciones = monitor.obtener_licitaciones(vistos)
+
+        # El ya visto no debe aparecer en el resultado (main() lo saltea
+        # igual por vistos, así que no hace falta re-traer su detalle)...
+        titulos = [lic["titulo"] for lic in licitaciones]
+        self.assertEqual(titulos, ["Nuevo"])
+        # ...y en particular, nunca se pidió su release individual.
+        urls_pedidas = [c.args[0] if c.args else c.kwargs.get("url") for c in mock_get.call_args_list]
+        self.assertFalse(any(u.endswith("llamado-4") for u in urls_pedidas))
+
+    @patch("monitor.datetime")
+    @patch("monitor.requests.get")
+    def test_sin_vistos_pide_detalle_de_todos_los_items(self, mock_get, mock_datetime):
+        # auditar() y enviar_email_de_prueba_rango_fechas() llaman a
+        # obtener_licitaciones() sin vistos (de solo lectura, quieren ver
+        # todo) — deben seguir trayendo el detalle completo de cada ítem.
+        mock_datetime.now.return_value = datetime(2026, 8, 18)
+        self._mockear_ocds_caido_y_rss_mensual(
+            mock_get,
+            {
+                (2026, 7): [],
+                (2026, 8): ["llamado-5", "llamado-6"],
+            },
+            detalle_por_guid={
+                "llamado-5": {"releases": [{"tender": {"title": "A", "description": ""}}]},
+                "llamado-6": {"releases": [{"tender": {"title": "B", "description": ""}}]},
+            },
+        )
+        licitaciones = monitor.obtener_licitaciones()
+        self.assertEqual(sorted(lic["titulo"] for lic in licitaciones), ["A", "B"])
+
+
+class TestUrlFichaArce(unittest.TestCase):
+    """Bug reportado 2026-08-18: el link "Ver ficha en ARCE" del visor
+    abría el JSON del release OCDS (lic["url"], usado internamente por el
+    pipeline) en vez de la página humana de ARCE. obtener_licitaciones()
+    (rama RSS) debe poblar además lic["url_ficha"] con
+    /consultas/detalle/id/{id numérico}, extraído del <guid> del feed
+    ("llamado-1361110" -> "1361110").
+    """
+
+    def _mockear_ocds_caido_y_rss_mensual(self, mock_get, guids_por_mes, detalle_por_guid=None):
+        detalle_por_guid = detalle_por_guid or {}
+
+        def side_effect(url, headers=None, timeout=None):
+            if url == monitor.settings.OCDS_URL:
+                return _RespuestaFalsa(status_code=404, text="not found")
+            for (anio, mes), guids in guids_por_mes.items():
+                if url == f"{monitor.settings.RSS_URL}/{anio}/{mes:02d}":
+                    return _RespuestaFalsa(status_code=200, content=_rss_mensual_xml(guids))
+            for guid, detalle in detalle_por_guid.items():
+                if url.endswith(guid):
+                    return _RespuestaFalsa(status_code=200, json_data=detalle)
+            return _RespuestaFalsa(status_code=404, text="not found")
+
+        mock_get.side_effect = side_effect
+
+    @patch("monitor.datetime")
+    @patch("monitor.requests.get")
+    def test_url_ficha_apunta_a_la_pagina_humana_no_al_json(self, mock_get, mock_datetime):
+        mock_datetime.now.return_value = datetime(2026, 8, 18)
+        self._mockear_ocds_caido_y_rss_mensual(
+            mock_get,
+            {(2026, 7): [], (2026, 8): ["llamado-1361110"]},
+            detalle_por_guid={
+                "llamado-1361110": {"releases": [{"tender": {"title": "Piso vinílico", "description": ""}}]},
+            },
+        )
+        licitaciones = monitor.obtener_licitaciones()
+        self.assertEqual(len(licitaciones), 1)
+        lic = licitaciones[0]
+        self.assertEqual(
+            lic["url"],
+            "https://www.comprasestatales.gub.uy/ocds/release/llamado-1361110",
+        )
+        self.assertEqual(
+            lic["url_ficha"],
+            "https://www.comprasestatales.gub.uy/consultas/detalle/id/1361110",
+        )
+
+    @patch("monitor.datetime")
+    @patch("monitor.requests.get")
+    def test_url_ficha_cae_al_link_del_json_si_el_guid_no_matchea_el_patron(self, mock_get, mock_datetime):
+        # _url_ficha_arce() es interno a obtener_licitaciones() (no hay
+        # función module-level que testear en aislamiento), así que este
+        # caso borde también se ejercita a través de la función pública.
+        # No debería pasar en la práctica (ya se filtró por
+        # _tipo_release == "llamado", que exige guid "llamado-<dígitos>"),
+        # pero si igual llegara un guid con otro formato no hay que romper
+        # ni devolver un link roto — se cae al link del JSON.
+        mock_datetime.now.return_value = datetime(2026, 8, 18)
+        # Un guid que matchea _tipo_release() ("llamado-...") pero no el
+        # patrón numérico estricto de _url_ficha_arce() ("llamado-\d+$").
+        guid_raro = "llamado-1361110-bis"
+        link = f"https://www.comprasestatales.gub.uy/ocds/release/{guid_raro}"
+
+        def side_effect(url, headers=None, timeout=None):
+            if url == monitor.settings.OCDS_URL:
+                return _RespuestaFalsa(status_code=404, text="not found")
+            if url == f"{monitor.settings.RSS_URL}/2026/08":
+                items_xml = (
+                    f"<item><guid>{guid_raro}</guid><link>{link}</link>"
+                    f"<pubDate>Wed, 13 Aug 2026 10:00:00 GMT</pubDate><title>{guid_raro}</title></item>"
+                )
+                return _RespuestaFalsa(status_code=200, content=f"<rss><channel>{items_xml}</channel></rss>".encode())
+            if url == f"{monitor.settings.RSS_URL}/2026/07":
+                return _RespuestaFalsa(status_code=200, content=b"<rss><channel></channel></rss>")
+            if url == link:
+                return _RespuestaFalsa(
+                    status_code=200,
+                    json_data={"releases": [{"tender": {"title": "Raro", "description": ""}}]},
+                )
+            return _RespuestaFalsa(status_code=404, text="not found")
+
+        mock_get.side_effect = side_effect
+        licitaciones = monitor.obtener_licitaciones()
+        self.assertEqual(len(licitaciones), 1)
+        self.assertEqual(licitaciones[0]["url_ficha"], link)
+
+
+class TestEsPublicacionReciente(unittest.TestCase):
+    """Reportado 2026-08-19: un problema de concurrencia entre corridas
+    (ver TestMainFiltraEmailPorFechaYTecho más abajo) hizo que main()
+    mandara un email con ~450 tarjetas de una sola vez — nada útil para
+    "acción rápida" (pedido explícito del usuario). _es_publicacion_reciente()
+    es el filtro que evita que backlog viejo termine en el email del día.
+    """
+
+    @patch("monitor.datetime")
+    def test_publicado_hoy_es_reciente(self, mock_datetime):
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        lic = {"fecha": "2026-08-19"}
+        self.assertTrue(monitor._es_publicacion_reciente(lic))
+
+    @patch("monitor.datetime")
+    def test_publicado_dentro_del_margen_es_reciente(self, mock_datetime):
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        lic = {"fecha": "2026-08-17"}  # 2 días atrás, == DIAS_MAX_PARA_ALERTA_POR_MAIL
+        self.assertTrue(monitor._es_publicacion_reciente(lic))
+
+    @patch("monitor.datetime")
+    def test_publicado_hace_semanas_no_es_reciente(self, mock_datetime):
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        lic = {"fecha": "2026-08-01"}  # backlog típico del feed mensual
+        self.assertFalse(monitor._es_publicacion_reciente(lic))
+
+    @patch("monitor.datetime")
+    def test_sin_fecha_falla_abierto_se_considera_reciente(self, mock_datetime):
+        # Fail-open: mejor una alerta de más que perder silenciosamente un
+        # llamado nuevo real por un pubDate vacío o no parseable.
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        self.assertTrue(monitor._es_publicacion_reciente({"fecha": ""}))
+        self.assertTrue(monitor._es_publicacion_reciente({"fecha": "no es una fecha"}))
+
+
+class TestMainFiltraEmailPorFechaYTecho(unittest.TestCase):
+    """Caso real 2026-08-18/19: una corrida procesó de una sola vez el
+    backlog completo del feed mensual nuevo (ver monitor.py,
+    _meses_a_relevar()) y mandó un único email con ~450 tarjetas. main()
+    ahora filtra qué entra al email (no qué entra al catálogo del visor,
+    que sigue recibiendo todo) por dos vías: antigüedad de publicación
+    (DIAS_MAX_PARA_ALERTA_POR_MAIL) y un techo defensivo
+    (MAX_ALERTAS_POR_EMAIL, mandando primero lo de mayor score).
+    """
+
+    def _lic(self, id_, titulo, fecha, score):
+        return {
+            "id": id_,
+            "titulo": titulo,
+            "descripcion": "desc",
+            "fecha": fecha,
+            "url": f"https://example.com/{id_}",
+            "url_ficha": f"https://example.com/{id_}",
+            "documentos": [],
+            "keyword": "piso vinílico",
+            "fuente": "rubro",
+            "_score": score,
+        }
+
+    def _informe_falso(self, score):
+        informe = MagicMock()
+        informe.markdown = "informe"
+        informe.clasificacion = MagicMock(puntaje=score, nivel=3, simbolo="★★★", etiqueta="Media")
+        informe.ya_adjudicados = []
+        informe.cierre = None
+        return informe
+
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_backlog_viejo_no_entra_ni_al_email_ni_al_catalogo_en_corrida_normal(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
+    ):
+        # 2026-10-09: ver monitor._es_backlog_viejo() — en una corrida
+        # normal (sin recuperación de caída, ver vistos["_meta"] más
+        # abajo), el backlog viejo se saltea ANTES de leer el pliego o
+        # analizarlo: no entra al email (pedido explícito del usuario
+        # 2026-08-28) NI al catálogo del visor. Antes de esta fecha este
+        # test (con otro nombre) esperaba que igual entrara al catálogo —
+        # eso nunca fue cierto contra el código real (_es_backlog_viejo()
+        # hace un "continue" antes de llegar a catalogo.registrar_llamado())
+        # y quedaba sin cubrir por un test roto. El caso en el que el
+        # backlog SÍ debe entrar al catálogo es la recuperación de una
+        # caída — ver test_backlog_viejo_si_entra_al_catalogo_recuperando_
+        # de_una_caida más abajo.
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        licitaciones = [
+            self._lic("nueva-hoy", "Publicada hoy", "2026-08-19", 60),
+            self._lic("backlog-viejo", "Backlog de hace semanas", "2026-08-01", 90),
+        ]
+        mock_cargar_vistos.return_value = {}
+        mock_obtener.return_value = licitaciones
+        mock_es_relevante.return_value = (True, "piso vinílico", "rubro", "")
+        mock_report_mod.analizar_licitacion.side_effect = (
+            lambda titulo, url, texto, errores, codigos_articulo=None: self._informe_falso(
+                60 if titulo == "Publicada hoy" else 90
+            )
+        )
+
+        monitor.main()
+
+        # Solo la publicada hoy se registra en el catálogo del visor — el
+        # backlog viejo ni se analiza.
+        self.assertEqual(mock_catalogo.registrar_llamado.call_count, 1)
+        args, _ = mock_enviar_email.call_args
+        nuevas_enviadas, modificadas_enviadas, omitidas, novedades_seguimiento = args
+        self.assertEqual([lic["titulo"] for lic in nuevas_enviadas], ["Publicada hoy"])
+        self.assertEqual(omitidas, 0)
+        self.assertEqual(novedades_seguimiento, [])
+
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_backlog_viejo_si_entra_al_catalogo_recuperando_de_una_caida(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
+    ):
+        # 2026-10-09: pedido explícito del usuario — caso real de
+        # auditoría encontrado tras una caída de varios días (ver
+        # HORAS_GAP_PARA_RECUPERACION_DE_CAIDA en monitor.py). Si la
+        # última corrida exitosa (vistos["_meta"]["ultima_corrida_
+        # exitosa"]) quedó mucho más atrás que el intervalo normal entre
+        # corridas, lo publicado durante la caída es en realidad
+        # reciente — el sistema simplemente no llegó a verlo a tiempo —
+        # así que el backlog SÍ se analiza y entra al catálogo (sigue sin
+        # mandarse por mail si ya es viejo, ver DIAS_MAX_PARA_ALERTA_POR_MAIL).
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        licitaciones = [
+            self._lic("nueva-hoy", "Publicada hoy", "2026-08-19", 60),
+            self._lic("backlog-viejo", "Backlog de hace semanas", "2026-08-01", 90),
+        ]
+        mock_cargar_vistos.return_value = {
+            "_meta": {"ultima_corrida_exitosa": "2026-08-17T10:00:00"}
+        }
+        mock_obtener.return_value = licitaciones
+        mock_es_relevante.return_value = (True, "piso vinílico", "rubro", "")
+        mock_report_mod.analizar_licitacion.side_effect = (
+            lambda titulo, url, texto, errores, codigos_articulo=None: self._informe_falso(
+                60 if titulo == "Publicada hoy" else 90
+            )
+        )
+
+        monitor.main()
+
+        # Las DOS se registran en el catálogo del visor...
+        self.assertEqual(mock_catalogo.registrar_llamado.call_count, 2)
+        # ...pero al email solo entra la publicada hoy, el backlog sigue
+        # sin ser "urgente" aunque ya se analizó.
+        args, _ = mock_enviar_email.call_args
+        nuevas_enviadas, modificadas_enviadas, omitidas, novedades_seguimiento = args
+        self.assertEqual([lic["titulo"] for lic in nuevas_enviadas], ["Publicada hoy"])
+        self.assertEqual(omitidas, 1)
+        self.assertEqual(novedades_seguimiento, [])
+
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_techo_manda_las_de_mayor_score_primero(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
+    ):
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        # MAX_ALERTAS_POR_EMAIL + 5 licitaciones, todas publicadas hoy
+        # (todas pasan el filtro de fecha), con scores decrecientes salvo
+        # la última, que tiene el score más alto — debe sobrevivir el
+        # techo mientras que algunas de score bajo quedan afuera.
+        n = monitor.MAX_ALERTAS_POR_EMAIL + 5
+        licitaciones = [self._lic(f"id-{i}", f"Lic {i}", "2026-08-19", 50) for i in range(n)]
+        licitaciones[-1]["titulo"] = "La de mayor score"
+
+        mock_cargar_vistos.return_value = {}
+        mock_obtener.return_value = licitaciones
+
+        def _es_relevante(lic):
+            return True, "piso vinílico", "rubro", ""
+
+        mock_es_relevante.side_effect = _es_relevante
+
+        def _analizar(titulo, url, texto, errores, codigos_articulo=None):
+            score = 99 if titulo == "La de mayor score" else 50
+            return self._informe_falso(score)
+
+        mock_report_mod.analizar_licitacion.side_effect = _analizar
+
+        monitor.main()
+
+        args, _ = mock_enviar_email.call_args
+        nuevas_enviadas, _modificadas, omitidas, _novedades_seguimiento = args
+        self.assertEqual(len(nuevas_enviadas), monitor.MAX_ALERTAS_POR_EMAIL)
+        self.assertEqual(omitidas, 5)
+        self.assertIn("La de mayor score", [lic["titulo"] for lic in nuevas_enviadas])
+
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_score_bajo_ya_no_se_omite_del_email(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
+    ):
+        # 2026-10-08: hasta esta fecha, un llamado relevante con score <
+        # SCORE_MINIMO_EMAIL (45 por default) quedaba afuera del email,
+        # salvo que hubiera matcheado por código de artículo o alerta
+        # total. Caso real que expuso el problema: Compra Directa
+        # 161/2026 (Secretaría Nacional del Deporte, "piso de goma"
+        # Tatami, id 1378007) matcheó por título, nunca llegó a abrir el
+        # pliego adjunto, y terminó con score 26/100 — nunca llegó por
+        # mail aunque era una coincidencia real.
+        #
+        # Pedido explícito del usuario: igual mandarlo por mail aunque el
+        # score sea bajo, porque cada ítem ya va con su resumen ("qué
+        # es") y su score visible — que decida la persona, no el filtro.
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        lic = self._lic("161-2026", "Compra Directa 161/2026", "2026-08-19", 26)
+        mock_cargar_vistos.return_value = {}
+        mock_obtener.return_value = [lic]
+        # Matcheó por título/descripción — no por código ni alerta total,
+        # que ya tenían bypass del filtro de score desde antes.
+        mock_es_relevante.return_value = (True, "piso de goma", "título/descripción/ítems", "")
+        mock_report_mod.analizar_licitacion.side_effect = lambda *a, **k: self._informe_falso(26)
+
+        monitor.main()
+
+        args, _ = mock_enviar_email.call_args
+        nuevas_enviadas, _modificadas, _omitidas, _novedades_seguimiento = args
+        self.assertEqual([lic["titulo"] for lic in nuevas_enviadas], ["Compra Directa 161/2026"])
+        # Y sigue registrado en el catálogo del visor, como siempre.
+        mock_catalogo.registrar_llamado.assert_called_once()
+
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_checkpoint_guarda_vistos_periodicamente_no_solo_al_final(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
+    ):
+        mock_seguimiento_mod.cargar.return_value = {}
+        # Evidencia real 2026-08-19: la corrida #201 se canceló a mitad de
+        # camino después de ~50 min de procesar backlog, sin haber
+        # guardado nada (guardar_vistos() solo se llamaba una vez al
+        # final del loop) — todo ese trabajo se perdió. Ahora debe haber
+        # checkpoints periódicos, no un solo guardado al final.
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        n = 2 * monitor.CHECKPOINT_CADA_N_ITEMS + 1
+        licitaciones = [self._lic(f"id-{i}", f"Lic {i}", "2026-08-19", 50) for i in range(n)]
+        mock_cargar_vistos.return_value = {}
+        mock_obtener.return_value = licitaciones
+        mock_es_relevante.return_value = (True, "piso vinílico", "rubro", "")
+        mock_report_mod.analizar_licitacion.side_effect = lambda *a, **k: self._informe_falso(50)
+
+        monitor.main()
+
+        # 2 checkpoints intermedios + 1 guardado final = 3.
+        self.assertEqual(mock_guardar_vistos.call_count, 3)
+
+
+class TestHashContenidoIncluyeDocumentosEItems(unittest.TestCase):
+    """2026-10-09: ver HASH_CONTENIDO_VERSION/_hash_contenido() en
+    monitor.py — caso real sin test que lo cubriera, encontrado en
+    auditoría: hasta esta fecha, el hash de un llamado solo consideraba
+    título+descripción, así que una republicación del pliego/anexo con
+    cambios reales (cantidades, plazos, un ítem nuevo) que no tocara el
+    resumen corto del release OCDS pasaba completamente desapercibida —
+    el llamado ni siquiera entraba a la rama de "modificadas" en main().
+    """
+
+    def _lic_base(self):
+        return {
+            "titulo": "Licitación X",
+            "descripcion": "desc",
+            "documentos": ["https://example.com/pliego.pdf"],
+            "items_pliego": [{"descripcion": "piso vinílico", "cantidad": 10}],
+        }
+
+    def test_distintos_documentos_distinto_hash(self):
+        lic_a = self._lic_base()
+        lic_b = self._lic_base()
+        lic_b["documentos"] = ["https://example.com/pliego_v2.pdf"]
+        self.assertNotEqual(monitor._hash_contenido(lic_a), monitor._hash_contenido(lic_b))
+
+    def test_distintos_items_pliego_distinto_hash(self):
+        lic_a = self._lic_base()
+        lic_b = self._lic_base()
+        lic_b["items_pliego"] = [{"descripcion": "piso vinílico", "cantidad": 99}]
+        self.assertNotEqual(monitor._hash_contenido(lic_a), monitor._hash_contenido(lic_b))
+
+    def test_todo_igual_mismo_hash(self):
+        lic_a = self._lic_base()
+        lic_b = self._lic_base()
+        self.assertEqual(monitor._hash_contenido(lic_a), monitor._hash_contenido(lic_b))
+
+
+class TestMainReevaluaAclaracionesYMigracionDeHash(unittest.TestCase):
+    """2026-10-09: ver monitor.py main() — pedido explícito del usuario,
+    caso real de auditoría. Hasta esta fecha, un llamado marcado NO
+    relevante en su primera lectura nunca se volvía a evaluar, ni aunque
+    una aclaración/ajuste posterior agregara justo el producto que lo
+    hacía relevante: el único camino para un llamado ya visto (previo is
+    not None) era compararle el hash y, si cambiaba, tratarlo como
+    "modificada" — algo que asume que el llamado YA está en el catálogo,
+    cosa que nunca pasó si no era relevante la primera vez. Ahora, si el
+    hash cambia para un llamado que antes NO era relevante, se lo vuelve
+    a evaluar exactamente como si fuera nuevo (lectura de pliego,
+    scoring, catálogo, email), conservando la fecha original de
+    primera_deteccion.
+    """
+
+    def _lic(self, id_="lic-1", titulo="Licitación aclarada", documentos=None, items_pliego=None):
+        return {
+            "id": id_,
+            "titulo": titulo,
+            "descripcion": "desc",
+            "fecha": "2026-10-09",
+            "url": f"https://example.com/{id_}",
+            "url_ficha": f"https://example.com/{id_}",
+            "documentos": documentos or [],
+            "items_pliego": items_pliego or [],
+        }
+
+    def _informe_falso(self, score=60):
+        informe = MagicMock()
+        informe.markdown = "informe"
+        informe.clasificacion = MagicMock(puntaje=score, nivel=3, simbolo="★★★", etiqueta="Media")
+        informe.ya_adjudicados = []
+        informe.cierre = None
+        return informe
+
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_aclaracion_hace_relevante_un_llamado_que_antes_no_lo_era(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
+    ):
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 10, 9, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        lic_sin_aclaracion = self._lic(items_pliego=[{"descripcion": "sin info relevante"}])
+        hash_viejo = monitor._hash_contenido(lic_sin_aclaracion)
+
+        lic_con_aclaracion = self._lic(items_pliego=[{"descripcion": "piso vinílico 500m2"}])
+
+        mock_cargar_vistos.return_value = {
+            "lic-1": {
+                "titulo": "Licitación aclarada",
+                "hash": hash_viejo,
+                "hash_version": monitor.HASH_CONTENIDO_VERSION,
+                "primera_deteccion": "2026-09-01T10:00:00",
+                "notificaciones": 0,
+            }
+        }
+        mock_obtener.return_value = [lic_con_aclaracion]
+        mock_es_relevante.return_value = (True, "piso vinílico", "título/descripción/ítems", "")
+        mock_report_mod.analizar_licitacion.return_value = self._informe_falso(60)
+
+        monitor.main()
+
+        mock_catalogo.registrar_llamado.assert_called_once()
+        args, _ = mock_enviar_email.call_args
+        nuevas_enviadas, _modificadas, _omitidas, _novedades = args
+        self.assertEqual([lic["titulo"] for lic in nuevas_enviadas], ["Licitación aclarada"])
+
+        guardado = mock_guardar_vistos.call_args_list[-1][0][0]
+        self.assertEqual(guardado["lic-1"]["primera_deteccion"], "2026-09-01T10:00:00")
+        self.assertEqual(guardado["lic-1"]["notificaciones"], 1)
+
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_aclaracion_sigue_sin_ser_relevante_no_entra_al_catalogo(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
+    ):
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 10, 9, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        lic_sin_ajuste = self._lic(items_pliego=[{"descripcion": "sin info relevante"}])
+        hash_viejo = monitor._hash_contenido(lic_sin_ajuste)
+
+        lic_con_ajuste = self._lic(items_pliego=[{"descripcion": "otro detalle administrativo"}])
+
+        mock_cargar_vistos.return_value = {
+            "lic-1": {
+                "titulo": "Licitación aclarada",
+                "hash": hash_viejo,
+                "hash_version": monitor.HASH_CONTENIDO_VERSION,
+                "primera_deteccion": "2026-09-01T10:00:00",
+                "notificaciones": 0,
+            }
+        }
+        mock_obtener.return_value = [lic_con_ajuste]
+        mock_es_relevante.return_value = (False, None, None, "")
+
+        monitor.main()
+
+        mock_catalogo.registrar_llamado.assert_not_called()
+        mock_report_mod.analizar_licitacion.assert_not_called()
+        mock_enviar_email.assert_not_called()
+
+        guardado = mock_guardar_vistos.call_args_list[-1][0][0]
+        self.assertEqual(guardado["lic-1"]["notificaciones"], 0)
+        self.assertEqual(guardado["lic-1"]["primera_deteccion"], "2026-09-01T10:00:00")
+
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_hash_de_version_vieja_no_dispara_falso_cambio_el_dia_del_deploy(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod,
+    ):
+        # El día del deploy, todo lo que ya estaba en vistos tiene un
+        # hash calculado con la fórmula vieja (sin hash_version, o con un
+        # hash_version anterior) — no debe dispararse un falso "cambio
+        # detectado" solo porque cambió la fórmula, sin que el contenido
+        # real haya cambiado.
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 10, 9, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        lic = self._lic(
+            documentos=["https://example.com/pliego.pdf"],
+            items_pliego=[{"descripcion": "piso vinílico"}],
+        )
+        hash_formula_vieja = hashlib.md5(
+            (lic["titulo"] + "|" + lic["descripcion"]).encode("utf-8")
+        ).hexdigest()
+
+        mock_cargar_vistos.return_value = {
+            "lic-1": {
+                "titulo": "Licitación aclarada",
+                "hash": hash_formula_vieja,
+                "primera_deteccion": "2026-09-01T10:00:00",
+                "notificaciones": 1,
+            }
+        }
+        mock_obtener.return_value = [lic]
+
+        monitor.main()
+
+        mock_es_relevante.assert_not_called()
+        mock_catalogo.registrar_modificacion.assert_not_called()
+        mock_enviar_email.assert_not_called()
+
+        guardado = mock_guardar_vistos.call_args_list[-1][0][0]
+        self.assertEqual(guardado["lic-1"]["hash"], monitor._hash_contenido(lic))
+        self.assertEqual(guardado["lic-1"]["hash_version"], monitor.HASH_CONTENIDO_VERSION)
+
+
+class TestAlertasOperativas(unittest.TestCase):
+    """2026-10-13: pedido explícito del usuario — quiere que le avisen por
+    mail apenas el pipeline detecta que no pudo hacer su trabajo normal,
+    sin tener que revisar el catálogo a mano. Cubre las dos señales que
+    main() ya calculaba pero no comunicaba solas: recuperación de una
+    caída (HORAS_GAP_PARA_RECUPERACION_DE_CAIDA) y reintentos de red
+    agotados para un ítem (_ITEMS_SIN_ENRIQUECER, ver
+    obtener_licitaciones()). La alerta por crash de la corrida entera
+    (bloque __main__) no se prueba acá: vive fuera de cualquier función
+    importable sin invocar un subproceso real.
+    """
+
+    def _lic(self, id_, titulo, fecha, score):
+        return {
+            "id": id_,
+            "titulo": titulo,
+            "descripcion": "desc",
+            "fecha": fecha,
+            "url": f"https://example.com/{id_}",
+            "url_ficha": f"https://example.com/{id_}",
+            "documentos": [],
+            "keyword": "piso vinílico",
+            "fuente": "rubro",
+            "_score": score,
+        }
+
+    def _informe_falso(self, score):
+        informe = MagicMock()
+        informe.markdown = "informe"
+        informe.clasificacion = MagicMock(puntaje=score, nivel=3, simbolo="★★★", etiqueta="Media")
+        informe.ya_adjudicados = []
+        informe.cierre = None
+        return informe
+
+    def tearDown(self):
+        # Varios tests de este archivo (y los de este mismo módulo) dejan
+        # obtener_licitaciones() mockeada, así que nunca corre el reset
+        # real de este global — lo limpiamos a mano para no filtrar estado
+        # entre tests.
+        monitor._ITEMS_SIN_ENRIQUECER = []
+
+    @patch("monitor._enviar_alerta_operativa")
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_recuperacion_de_caida_manda_alerta_operativa(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod, mock_alerta,
+    ):
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        mock_cargar_vistos.return_value = {
+            "_meta": {"ultima_corrida_exitosa": "2026-08-17T10:00:00"}
+        }
+        mock_obtener.return_value = [self._lic("nueva-hoy", "Publicada hoy", "2026-08-19", 60)]
+        mock_es_relevante.return_value = (True, "piso vinílico", "rubro", "")
+        mock_report_mod.analizar_licitacion.return_value = self._informe_falso(60)
+
+        monitor.main()
+
+        asuntos = [c.args[0] for c in mock_alerta.call_args_list]
+        self.assertTrue(any("recuperando" in a.lower() for a in asuntos), asuntos)
+
+    @patch("monitor._enviar_alerta_operativa")
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_corrida_normal_sin_caida_no_manda_alerta_de_recuperacion(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod, mock_alerta,
+    ):
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        # Gap normal entre corridas (6hs), bien por debajo del umbral.
+        mock_cargar_vistos.return_value = {
+            "_meta": {"ultima_corrida_exitosa": "2026-08-19T06:00:00"}
+        }
+        mock_obtener.return_value = [self._lic("nueva-hoy", "Publicada hoy", "2026-08-19", 60)]
+        mock_es_relevante.return_value = (True, "piso vinílico", "rubro", "")
+        mock_report_mod.analizar_licitacion.return_value = self._informe_falso(60)
+
+        monitor.main()
+
+        mock_alerta.assert_not_called()
+
+    @patch("monitor._enviar_alerta_operativa")
+    @patch("monitor.seguimiento_mod")
+    @patch("monitor.datetime")
+    @patch("monitor.enviar_email")
+    @patch("monitor.catalogo")
+    @patch("monitor.report_mod")
+    @patch("monitor._leer_pliego")
+    @patch("monitor.es_relevante")
+    @patch("monitor.guardar_vistos")
+    @patch("monitor.cargar_vistos")
+    @patch("monitor.obtener_licitaciones")
+    def test_items_sin_enriquecer_manda_alerta_operativa(
+        self, mock_obtener, mock_cargar_vistos, mock_guardar_vistos, mock_es_relevante,
+        mock_leer_pliego, mock_report_mod, mock_catalogo, mock_enviar_email, mock_datetime,
+        mock_seguimiento_mod, mock_alerta,
+    ):
+        mock_seguimiento_mod.cargar.return_value = {}
+        mock_datetime.now.return_value = datetime(2026, 8, 19, 12, 0)
+        mock_datetime.strptime = datetime.strptime
+        mock_datetime.fromisoformat = datetime.fromisoformat
+        mock_leer_pliego.return_value = monitor.parser_mod.PliegoExtraido()
+
+        mock_cargar_vistos.return_value = {}
+        mock_obtener.return_value = [self._lic("nueva-hoy", "Publicada hoy", "2026-08-19", 60)]
+        mock_es_relevante.return_value = (True, "piso vinílico", "rubro", "")
+        mock_report_mod.analizar_licitacion.return_value = self._informe_falso(60)
+
+        # obtener_licitaciones() está mockeada, así que su reset real del
+        # global no corre — simulamos el efecto que hubiera dejado un
+        # fetch de detalle que agotó los 3 reintentos.
+        monitor._ITEMS_SIN_ENRIQUECER = [
+            {"titulo": "Llamado caído", "link": "https://example.com/x", "error": "timeout"}
+        ]
+
+        monitor.main()
+
+        asuntos = [c.args[0] for c in mock_alerta.call_args_list]
+        self.assertTrue(any("sin pliego enriquecido" in a.lower() for a in asuntos), asuntos)
+        cuerpos = [c.args[1] for c in mock_alerta.call_args_list]
+        self.assertTrue(any("Llamado caído" in c for c in cuerpos), cuerpos)
+
+
+class TestObtenerLicitacionesRegistraFallosDeEnriquecimiento(unittest.TestCase):
+    """2026-10-13: cuando el fetch del detalle de un release agota los 3
+    reintentos (ver obtener_licitaciones()), el ítem se guarda igual con
+    el título del feed pero sin descripción/documentos. Esto se junta en
+    monitor._ITEMS_SIN_ENRIQUECER para que main() pueda avisar por mail
+    (ver TestAlertasOperativas arriba) — acá se prueba solo que la lista
+    se puebla correctamente, sin pasar por main().
+    """
+
+    def tearDown(self):
+        monitor._ITEMS_SIN_ENRIQUECER = []
+
+    @patch("monitor.time.sleep")
+    @patch("monitor.datetime")
+    @patch("monitor.requests.get")
+    def test_fallo_persistente_se_registra_en_items_sin_enriquecer(self, mock_get, mock_datetime, mock_sleep):
+        mock_datetime.now.return_value = datetime(2026, 8, 18)
+        link = "https://www.comprasestatales.gub.uy/ocds/release/llamado-9999999"
+
+        def side_effect(url, headers=None, timeout=None):
+            if url == monitor.settings.OCDS_URL:
+                return _RespuestaFalsa(status_code=404, text="not found")
+            if url == f"{monitor.settings.RSS_URL}/2026/08":
+                return _RespuestaFalsa(status_code=200, content=_rss_mensual_xml(["llamado-9999999"]))
+            if url == f"{monitor.settings.RSS_URL}/2026/07":
+                return _RespuestaFalsa(status_code=200, content=_rss_mensual_xml([]))
+            if url == link:
+                raise ConnectionError("servidor no responde")
+            return _RespuestaFalsa(status_code=404, text="not found")
+
+        mock_get.side_effect = side_effect
+
+        licitaciones = monitor.obtener_licitaciones()
+
+        self.assertEqual(len(licitaciones), 1)
+        self.assertEqual(licitaciones[0]["descripcion"], "")
+        self.assertEqual(len(monitor._ITEMS_SIN_ENRIQUECER), 1)
+        self.assertEqual(monitor._ITEMS_SIN_ENRIQUECER[0]["link"], link)
+        self.assertIn("servidor no responde", monitor._ITEMS_SIN_ENRIQUECER[0]["error"])
+        # 3 intentos → 2 esperas de backoff entre ellos.
+        self.assertEqual(mock_sleep.call_count, 2)
+
+    @patch("monitor.time.sleep")
+    @patch("monitor.datetime")
+    @patch("monitor.requests.get")
+    def test_fallo_transitorio_que_se_recupera_no_queda_registrado(self, mock_get, mock_datetime, mock_sleep):
+        mock_datetime.now.return_value = datetime(2026, 8, 18)
+        link = "https://www.comprasestatales.gub.uy/ocds/release/llamado-8888888"
+        intentos = {"n": 0}
+
+        def side_effect(url, headers=None, timeout=None):
+            if url == monitor.settings.OCDS_URL:
+                return _RespuestaFalsa(status_code=404, text="not found")
+            if url == f"{monitor.settings.RSS_URL}/2026/08":
+                return _RespuestaFalsa(status_code=200, content=_rss_mensual_xml(["llamado-8888888"]))
+            if url == f"{monitor.settings.RSS_URL}/2026/07":
+                return _RespuestaFalsa(status_code=200, content=_rss_mensual_xml([]))
+            if url == link:
+                intentos["n"] += 1
+                if intentos["n"] < 2:
+                    raise ConnectionError("timeout transitorio")
+                return _RespuestaFalsa(
+                    status_code=200,
+                    json_data={"releases": [{"tender": {"title": "OK", "description": "listo"}}]},
+                )
+            return _RespuestaFalsa(status_code=404, text="not found")
+
+        mock_get.side_effect = side_effect
+
+        licitaciones = monitor.obtener_licitaciones()
+
+        self.assertEqual(licitaciones[0]["descripcion"], "listo")
+        self.assertEqual(monitor._ITEMS_SIN_ENRIQUECER, [])
+
+
+class TestEmailListaTodosLosArticulosSinTruncar(unittest.TestCase):
+    """2026-10-22: el usuario aclaró, tras el fix anterior (link a "ver
+    pliego completo"), que eso no era lo que pedía — "no quiero ver todo
+    el pliego... quiero ver todos los artículos... lo quiero ver todo en
+    el mismo mail". Se sacó el techo MAX_ARTICULOS_VISIBLES_EMAIL por
+    completo: _objeto_html() (ver enviar_email()) ahora lista siempre
+    TODOS los items_pliego dentro del <details>, sin truncar ni linkear
+    a ningún lado.
+    """
+
+    def _lic(self, n_items=40):
+        return {
+            "titulo": "Compra de materiales eléctricos",
+            "descripcion": "desc",
+            "fecha": "2026-10-20",
+            "url": "https://www.comprasestatales.gub.uy/ocds/release/llamado-123",
+            "url_ficha": "https://example.com/ficha",
+            "documentos": ["https://example.com/pliego.pdf"],
+            "organismo": "Organismo de prueba",
+            "items_pliego": [
+                {"descripcion": f"Artículo {i}", "cantidad": "1", "unidad": "unidad", "veces": 1}
+                for i in range(n_items)
+            ],
+        }
+
+    def _html_enviado(self, mock_smtp) -> str:
+        # msg.as_string() codifica el cuerpo HTML en base64 (ver
+        # MIMEText(..., "html") en enviar_email()) — hay que parsear el
+        # mensaje de verdad y decodificar el payload, no buscar el texto
+        # plano adentro del base64 crudo.
+        server = mock_smtp.return_value.__enter__.return_value
+        _, _, mensaje = server.sendmail.call_args[0]
+        parsed = email.message_from_string(mensaje)
+        for parte in parsed.walk():
+            if parte.get_content_type() == "text/html":
+                return parte.get_payload(decode=True).decode("utf-8")
+        raise AssertionError("no se encontró la parte text/html del mail")
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_lista_los_40_articulos_sin_truncar(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        monitor.enviar_email([self._lic(n_items=40)], [])
+
+        html = self._html_enviado(mock_smtp)
+        for i in range(40):
+            self.assertIn(f"Artículo {i}", html)
+        # Sin ningún rastro del viejo truncamiento/link.
+        self.assertNotIn("artículo(s) más", html)
+        self.assertNotIn("ver pliego completo", html)
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_cantidad_en_el_resumen_del_details_coincide_con_el_total_real(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        monitor.enviar_email([self._lic(n_items=40)], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertIn("Artículos solicitados (40)", html)
+
+
+class TestEnriquecerLicConInformeCopiaProductosDetectados(unittest.TestCase):
+    """2026-11-20: caso real reportado por el usuario — "Compra Directa
+    226613/2026" (MTSS) traía en tender.items (ARCE, ver items_pliego) un
+    único ítem genérico "ACONDICIONAMIENTO DE EDIFICIO (1 UNIDAD)", que no
+    dice nada de lo que hay que cotizar. El pliego real SÍ lo decía ("piso
+    vinílico SPC con goma IXPE"), vía analyzer.identificar_productos(),
+    pero ese resultado completo (informe.productos) nunca se copiaba al
+    dict `lic` que arma el email — solo se usaba el primer match para una
+    frase suelta dentro de "que_es" (ver analyzer._resumen_extractivo()).
+    Ahora _enriquecer_lic_con_informe() copia TODOS los matches a
+    lic["productos_detectados"], serializados como dict (igual que
+    ProductoIdentificado.to_dict()).
+    """
+
+    def test_copia_todos_los_productos_como_dicts(self):
+        lic = {"titulo": "x"}
+        productos = [
+            monitor.analyzer.ProductoIdentificado(
+                categoria="pisos_spc",
+                termino_encontrado="piso vinílico",
+                fragmento="...se instalará un piso vinílico SPC de 5,5 mm con goma IXPE...",
+            ),
+            monitor.analyzer.ProductoIdentificado(
+                categoria="accesorios",
+                termino_encontrado="zócalo",
+                fragmento="...se colocará zócalo perimetral de PVC...",
+            ),
+        ]
+        informe = MagicMock()
+        informe.clasificacion = MagicMock(puntaje=60, nivel=3, simbolo="★★★", etiqueta="Media")
+        informe.ya_adjudicados = []
+        informe.cierre = None
+        informe.que_es = "QUÉ ES: de prueba"
+        informe.campos = MagicMock(organismo="MTSS", numero_licitacion="CD 226613/2026", fecha_apertura="2026-11-27")
+        informe.productos = productos
+
+        monitor._enriquecer_lic_con_informe(lic, informe)
+
+        self.assertEqual(
+            lic["productos_detectados"],
+            [p.to_dict() for p in productos],
+        )
+        self.assertEqual(len(lic["productos_detectados"]), 2)
+        self.assertEqual(lic["productos_detectados"][0]["termino_encontrado"], "piso vinílico")
+
+    def test_sin_productos_queda_lista_vacia(self):
+        lic = {"titulo": "x"}
+        informe = MagicMock()
+        informe.clasificacion = MagicMock(puntaje=60, nivel=3, simbolo="★★★", etiqueta="Media")
+        informe.ya_adjudicados = []
+        informe.cierre = None
+        informe.que_es = "QUÉ ES: de prueba"
+        informe.campos = MagicMock(organismo="MTSS", numero_licitacion="CD 1/2026", fecha_apertura=None)
+        informe.productos = []
+
+        monitor._enriquecer_lic_con_informe(lic, informe)
+
+        self.assertEqual(lic["productos_detectados"], [])
+
+
+class TestEmailMuestraProductosDetectadosEnElPliego(unittest.TestCase):
+    """Complementa TestEnriquecerLicConInformeCopiaProductosDetectados:
+    acá se prueba que lic["productos_detectados"] efectivamente se
+    renderiza en el HTML del mail (enviar_email()), como una lista
+    separada de "Artículos solicitados" — nunca reemplazándolo, porque
+    son dos fuentes distintas (ARCE/OCDS vs. texto real del pliego).
+    """
+
+    def _lic(self, items_pliego=None, productos_detectados=None):
+        return {
+            "titulo": "Compra Directa 226613/2026",
+            "descripcion": "desc",
+            "fecha": "2026-11-19",
+            "url": "https://www.comprasestatales.gub.uy/ocds/release/llamado-999",
+            "url_ficha": "https://example.com/ficha",
+            "documentos": ["https://example.com/pliego.pdf"],
+            "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
+            "items_pliego": items_pliego or [],
+            "productos_detectados": productos_detectados or [],
+        }
+
+    def _html_enviado(self, mock_smtp) -> str:
+        server = mock_smtp.return_value.__enter__.return_value
+        _, _, mensaje = server.sendmail.call_args[0]
+        parsed = email.message_from_string(mensaje)
+        for parte in parsed.walk():
+            if parte.get_content_type() == "text/html":
+                return parte.get_payload(decode=True).decode("utf-8")
+        raise AssertionError("no se encontró la parte text/html del mail")
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_caso_real_acondicionamiento_de_edificio_muestra_el_piso_vinilico_detectado(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(
+            items_pliego=[
+                {"descripcion": "ACONDICIONAMIENTO DE EDIFICIO", "cantidad": "1", "unidad": "UNIDAD", "veces": 1},
+            ],
+            productos_detectados=[
+                {
+                    "categoria": "pisos_spc",
+                    "termino_encontrado": "piso vinílico",
+                    "fragmento": "se instalará un piso vinílico SPC de 5,5 mm de espesor con goma IXPE",
+                },
+            ],
+        )
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertIn("Coincidencias detectadas en el pliego (1)", html)
+        self.assertIn("piso vinílico", html)
+        self.assertIn("goma IXPE", html)
+        # El ítem genérico de ARCE se sigue mostrando también — no se pisan.
+        self.assertIn("ACONDICIONAMIENTO DE EDIFICIO", html)
+        self.assertIn("Artículos solicitados (1)", html)
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_sin_productos_detectados_no_aparece_la_seccion(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(items_pliego=[{"descripcion": "CABLE", "cantidad": "10", "unidad": "M", "veces": 1}])
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertNotIn("Coincidencias detectadas en el pliego", html)
+
+
+class TestFilaEmailMuestraBotonArceAdemasDelPliego(unittest.TestCase):
+    """2026-11-20: el usuario, viendo el botón "Ver" de una fila del mail
+    (que cuando hay pliego descargado apunta directo al PDF, ver
+    _fila_html()), pidió un botón aparte que lleve siempre a la ficha
+    humana de ARCE (lic["url_ficha"]) — antes esa ficha desaparecía por
+    completo de la fila en cuanto había un documento de pliego.
+    """
+
+    def _lic(self, documentos=None, url_ficha="https://www.comprasestatales.gub.uy/consultas/detalle/id/999"):
+        return {
+            "titulo": "Compra Directa 226613/2026",
+            "descripcion": "desc",
+            "fecha": "2026-11-19",
+            "url": "https://www.comprasestatales.gub.uy/ocds/release/llamado-999",
+            "url_ficha": url_ficha,
+            "documentos": documentos or [],
+            "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
+            "items_pliego": [],
+            "productos_detectados": [],
+        }
+
+    def _html_enviado(self, mock_smtp) -> str:
+        server = mock_smtp.return_value.__enter__.return_value
+        _, _, mensaje = server.sendmail.call_args[0]
+        parsed = email.message_from_string(mensaje)
+        for parte in parsed.walk():
+            if parte.get_content_type() == "text/html":
+                return parte.get_payload(decode=True).decode("utf-8")
+        raise AssertionError("no se encontró la parte text/html del mail")
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_con_pliego_descargado_aparecen_los_dos_botones(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(documentos=["https://example.com/pliego.pdf"])
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertIn('href="https://example.com/pliego.pdf"', html)
+        self.assertIn('href="https://www.comprasestatales.gub.uy/consultas/detalle/id/999"', html)
+        self.assertIn(">ARCE<", html)
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_sin_pliego_descargado_no_duplica_el_boton(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(documentos=[])
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertIn('href="https://www.comprasestatales.gub.uy/consultas/detalle/id/999"', html)
+        self.assertNotIn(">ARCE<", html)
+
+
+if __name__ == "__main__":
+    unittest.main()
