@@ -974,18 +974,31 @@ def enviar_email(
         # al PDF real del pliego (tender.documents[].url) si hay, y si no
         # a la ficha humana de ARCE (ver obtener_licitaciones()).
         documentos = lic.get("documentos") or []
-        ver_url = documentos[0] if documentos else (lic.get("url_ficha") or lic["url"])
+        ficha_url = lic.get("url_ficha") or lic["url"]
+        ver_url = documentos[0] if documentos else ficha_url
         ver_html = (
             f'<a href="{ver_url}" style="display:inline-block;padding:4px 14px;border:1px solid #1a73e8;'
             'border-radius:4px;font-size:12px;color:#1a73e8;text-decoration:none;white-space:nowrap;">Ver</a>'
         )
+        # 2026-11-20: pedido del usuario — cuando "Ver" ya apunta al PDF
+        # del pliego, la ficha de ARCE (la página humana del llamado en
+        # comprasestatales.gub.uy, con los datos oficiales del organismo)
+        # desaparecía por completo de la fila. Se agrega un segundo botón
+        # que siempre lleva a esa ficha. Si no hay documento y "Ver" ya
+        # apunta ahí mismo, no se duplica el botón.
+        arce_html = ""
+        if ver_url != ficha_url:
+            arce_html = (
+                f'<a href="{ficha_url}" style="display:inline-block;padding:4px 14px;border:1px solid #888;'
+                'border-radius:4px;font-size:12px;color:#555;text-decoration:none;white-space:nowrap;margin-left:6px;">ARCE</a>'
+            )
         return f"""
         <tr style="border-bottom:1px solid #eee;">
             <td style="padding:10px 12px;font-size:13px;color:#1a1a1a;vertical-align:top;white-space:nowrap;">{escapar_html(llamado_txt)}</td>
             <td style="padding:10px 12px;font-size:13px;color:#333;vertical-align:top;">{escapar_html(lic.get("organismo") or "No identificado")}</td>
             <td style="padding:10px 12px;font-size:13px;color:#1a1a1a;vertical-align:top;">{_objeto_html(lic)}</td>
             <td style="padding:10px 12px;font-size:12px;color:#555;vertical-align:top;white-space:nowrap;">{_fecha_recepcion_html(lic)}</td>
-            <td style="padding:10px 12px;vertical-align:top;">{ver_html}</td>
+            <td style="padding:10px 12px;vertical-align:top;white-space:nowrap;">{ver_html}{arce_html}</td>
         </tr>
         """
 
