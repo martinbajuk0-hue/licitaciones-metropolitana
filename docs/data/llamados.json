@@ -4145,6 +4145,52 @@
       "REPARACION DE PISO DE MADERA"
     ]
   },
+  "133a7e97fa5744c453bfe88e6517e1b7": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_goma"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos de goma"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1383813.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 20 Nov 2026 12:10:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "133a7e97fa5744c453bfe88e6517e1b7",
+    "informe": "informes/133a7e97fa5744c453bfe88e6517e1b7.md",
+    "keyword": "epdm + goma",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-20T18:35:34",
+    "que_es": "Licitación de organismo no identificado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos de goma. Menciona \"epdm\": «| | | |EXPANSION |Membrana fija en goma EPDM | | | | |CON |»",
+    "score": 20,
+    "simbolo": "★",
+    "titulo": "Compra Directa 4091/2026",
+    "ultima_actualizacion": "2026-11-20T18:35:34",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383813",
+    "ya_adjudicados": [
+      "ALFOMBRA DE GOMA",
+      "PISO DE GOMA",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
   "136900d3faa78d46d6ede73f578bceba": {
     "cambio_detectado": false,
     "categorias": [
@@ -11755,6 +11801,45 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1379357",
     "ya_adjudicados": []
   },
+  "36ff95fc4aba9334b6b3f2d6e71865ab": {
+    "cambio_detectado": false,
+    "categorias": [
+      "contenedores_modulares",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Contenedores habitables, garitas y módulos",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1388575.zip"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 20 Nov 2026 14:30:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "36ff95fc4aba9334b6b3f2d6e71865ab",
+    "informe": "informes/36ff95fc4aba9334b6b3f2d6e71865ab.md",
+    "keyword": "baños químicos",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Flores",
+    "primera_deteccion": "2026-11-20T18:32:48",
+    "que_es": "Licitación de Intendencia de Flores — busca Contenedores habitables, garitas y módulos, Material mencionado (revisar contexto). Menciona \"baños químicos\": «e este llamado supone: a) La instalación de un total de 60 baños químicos (NO OBRA) y dos baños para discapacitados que se encuentr»",
+    "score": 27,
+    "simbolo": "★★",
+    "titulo": "Llamado a Expresiones de Interés 6/2026",
+    "ultima_actualizacion": "2026-11-20T18:32:48",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1388575",
+    "ya_adjudicados": [
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "3717e2378b9185ea73f266870cedf0e6": {
     "cambio_detectado": false,
     "categorias": [
@@ -14201,6 +14286,39 @@
       "CAMINERO DE PVC",
       "REPARACION DE PISO DE MADERA"
     ]
+  },
+  "4429200766ff379e8b227f3ceab71116": {
+    "cambio_detectado": false,
+    "categorias": [
+      "contenedores_modulares"
+    ],
+    "categorias_etiquetas": [
+      "Contenedores habitables, garitas y módulos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1388587.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 20 Nov 2026 14:40:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "4429200766ff379e8b227f3ceab71116",
+    "informe": "informes/4429200766ff379e8b227f3ceab71116.md",
+    "keyword": "baño químico",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Intendencia de Durazno",
+    "primera_deteccion": "2026-11-20T18:32:38",
+    "que_es": "Licitación de Intendencia de Durazno — busca Contenedores habitables, garitas y módulos. Menciona \"baño químico\": «s y/o full track. b) El concesionario deberá contar con un baño químico, responsabilizándose por la higiene del mismo. c) Asimism»",
+    "score": 17,
+    "simbolo": "★",
+    "titulo": "Llamado a Expresiones de Interés 13/2026",
+    "ultima_actualizacion": "2026-11-20T18:32:38",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1388587",
+    "ya_adjudicados": []
   },
   "442e735eaefba2be5ff60b5996879ac1": {
     "cambio_detectado": false,
@@ -23130,6 +23248,63 @@
       "BALDOSA DE GOMA",
       "PLANCHA DE GOMA EVA",
       "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "GOMA NATURAL EN PLANCHA",
+      "REPARACION DE PISO DE MADERA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "6da1b298ee32439c8ef54dcb536c6570": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_flotantes",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos flotantes/laminados",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1387008.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 20 Nov 2026 13:15:09",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "6da1b298ee32439c8ef54dcb536c6570",
+    "informe": "informes/6da1b298ee32439c8ef54dcb536c6570.md",
+    "keyword": "algodon + ceramica + goma",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": "5002/2026",
+    "organismo": "Ministerio de Defensa Nacional (MDN)",
+    "primera_deteccion": "2026-11-20T18:35:12",
+    "que_es": "Licitación de Ministerio de Defensa Nacional (MDN) — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos flotantes/laminados, Pisos vinílicos. Menciona \"pvc\": «hierro de 1” 3/16 mts de 6 mts c/u 4 4 42 cielorraso u.u de pvc blanca de 6 mts y 20 cms de ancho 50 50 43 tornillo u.u cab»",
+    "score": 39,
+    "simbolo": "★★",
+    "titulo": "Licitación Abreviada 5002/2026",
+    "ultima_actualizacion": "2026-11-20T18:35:12",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1387008",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "ALFOMBRA DE GOMA",
+      "PISO MODULAR DE PVC",
+      "CEMENTO ADHESIVO PARA CERAMICA",
+      "PISO DE GOMA",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "PLANCHA DE GOMA EVA",
+      "ZOCALO EN MDF",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
       "GOMA NATURAL EN PLANCHA",
       "REPARACION DE PISO DE MADERA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
@@ -40660,6 +40835,39 @@
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
+  "ba322c1cca57b699bee33c19911f810f": {
+    "cambio_detectado": false,
+    "categorias": [
+      "normativas"
+    ],
+    "categorias_etiquetas": [
+      "Normativa/certificación mencionada"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1383614.docx"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 20 Nov 2026 12:45:13",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "ba322c1cca57b699bee33c19911f810f",
+    "informe": "informes/ba322c1cca57b699bee33c19911f810f.md",
+    "keyword": "certificado de calidad",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Transporte y Obras Públicas (MTOP)",
+    "primera_deteccion": "2026-11-20T18:35:24",
+    "que_es": "Licitación de Ministerio de Transporte y Obras Públicas (MTOP) — busca Normativa/certificación mencionada. Menciona \"certificado de calidad\": «ar las características técnicas de los productos ofrecidos, certificado de calidad de los mismos, e indicar la dosificación promedio del adi…»",
+    "score": 7,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 40/2026",
+    "ultima_actualizacion": "2026-11-20T18:35:24",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1383614",
+    "ya_adjudicados": []
+  },
   "ba56a39636c0438b450cb32080459a8d": {
     "cambio_detectado": false,
     "categorias": [
@@ -44319,6 +44527,68 @@
       "ZOCALO DE MADERA",
       "PANEL DE MADERA",
       "REPARACION DE PISO DE MADERA"
+    ]
+  },
+  "ce793fac525d0a6fb34a1b7bfe7b86e7": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "accesorios",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Accesorios de instalación",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1388054.doc"
+    ],
+    "etiqueta_clasificacion": "Buena",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 20 Nov 2026 12:45:11",
+    "fecha_visita": null,
+    "fuente_match": "código de artículo ARCE (ya adjudicado)",
+    "id": "ce793fac525d0a6fb34a1b7bfe7b86e7",
+    "informe": "informes/ce793fac525d0a6fb34a1b7bfe7b86e7.md",
+    "keyword": "código ya adjudicado: CEMENTO ADHESIVO PARA CERAMICA",
+    "nivel": 4,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Ambiente",
+    "primera_deteccion": "2026-11-20T18:35:26",
+    "que_es": "Licitación de Ministerio de Ambiente — busca Abreviatura técnica del rubro, Accesorios de instalación, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «| | |11 |399 |CAÑO DE PVC |CAÑO CORRUGADO 25MM X 50MTS rollos |500 MTS»",
+    "score": 68,
+    "simbolo": "★★★★",
+    "titulo": "Compra Directa 1072/2026",
+    "ultima_actualizacion": "2026-11-20T18:35:26",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1388054",
+    "ya_adjudicados": [
+      "CEMENTO ADHESIVO PARA CERAMICA",
+      "ALFOMBRA DE PVC",
+      "ALFOMBRA DE GOMA",
+      "ZOCALO PARA PISO FLOTANTE",
+      "PISO MODULAR DE PVC",
+      "PISO DE GOMA",
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "ZOCALO MONOLITICO",
+      "CAMINERO DE GOMA",
+      "BALDOSA DE GOMA",
+      "COLOCACION DE ZOCALO",
+      "PLANCHA DE GOMA EVA",
+      "ZOCALO EN MDF",
+      "GOMA DE LATEX 1.5 ESPESOR 3 MM",
+      "CAMINERO DE PVC",
+      "CAMINERO DE ACRILICO",
+      "GOMA NATURAL EN PLANCHA",
+      "REPARACION DE PISO DE MADERA",
+      "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
     ]
   },
   "cf49817b0ee3cdf35ae11131cb0f7b6b": {
@@ -51771,6 +52041,46 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1377131",
     "ya_adjudicados": [
       "TARIMA"
+    ]
+  },
+  "f1292b3a56bd5f282e7643dab77ab876": {
+    "cambio_detectado": false,
+    "categorias": [
+      "accesorios"
+    ],
+    "categorias_etiquetas": [
+      "Accesorios de instalación"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1376502.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Fri, 20 Nov 2026 09:55:10",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "f1292b3a56bd5f282e7643dab77ab876",
+    "informe": "informes/f1292b3a56bd5f282e7643dab77ab876.md",
+    "keyword": "zócalo + zócalos",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Industria, Energía y Minería (MIEM)",
+    "primera_deteccion": "2026-11-20T18:42:12",
+    "que_es": "Licitación de Ministerio de Industria, Energía y Minería (MIEM) — busca Accesorios de instalación. Menciona \"zócalo\": «canales de memoria que optimice el rendimiento y mantenga zócalos libres para futuras ampliaciones. d. GPU / Acelerador G»",
+    "score": 17,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 12/2026",
+    "ultima_actualizacion": "2026-11-20T18:42:12",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1376502",
+    "ya_adjudicados": [
+      "ZOCALO PARA PISO FLOTANTE",
+      "ZOCALO DE MADERA",
+      "ZOCALO CONFORMADO PARA PISO VINILICO",
+      "ZOCALO MONOLITICO",
+      "COLOCACION DE ZOCALO",
+      "ZOCALO EN MDF"
     ]
   },
   "f13b97271204815cf2da539dab100c3b": {
