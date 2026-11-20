@@ -788,6 +788,13 @@ def _enriquecer_lic_con_informe(lic: dict, informe: "report_mod.InformeLicitacio
     lic["fecha_apertura"] = informe.campos.fecha_apertura
     categorias = sorted({settings.etiqueta_categoria(p.categoria) for p in informe.productos})
     lic["categorias"] = categorias or ["Sin categoría específica"]
+    # 2026-11-20: pedido explícito del usuario — ver el comentario largo en
+    # _objeto_html() (enviar_email()) sobre el caso "ACONDICIONAMIENTO DE
+    # EDIFICIO". informe.productos ya se calculaba (analyzer.
+    # identificar_productos() sobre el texto REAL del pliego) para decidir
+    # relevancia/categoría, pero nunca se exponía como listado completo en
+    # el email — solo el primero se citaba, suelto, dentro de "que_es".
+    lic["productos_detectados"] = [p.to_dict() for p in informe.productos]
 
 
 def enviar_email(
@@ -917,6 +924,44 @@ def enviar_email(
                 '<details style="margin-top:4px;">'
                 f'<summary style="font-size:11px;color:#555;cursor:pointer;">📦 Artículos solicitados ({len(items_pliego)})</summary>'
                 f'<ul style="margin:4px 0 0;padding-left:18px;font-size:11px;color:#444;">{lis_html}</ul>'
+                "</details>"
+            )
+
+        # 2026-11-20: pedido explícito del usuario — caso real "Compra
+        # Directa 226613/2026" (MTSS): tender.items de ARCE traía UN solo
+        # ítem genérico/administrativo ("ACONDICIONAMIENTO DE EDIFICIO, 1
+        # UNIDAD"), que no dice nada de lo que hay que cotizar. El pliego
+        # de verdad SÍ lo decía ("piso vinílico SPC de 5,5mm con goma
+        # IXPE"), pero ese hallazgo solo se usaba para UNA frase suelta
+        # dentro de "qué es" (ver analyzer._resumen_extractivo(), que cita
+        # nada más que productos[0]) — el resto de los matches de
+        # analyzer.identificar_productos() (informe.productos, copiado acá
+        # como lic["productos_detectados"] en _enriquecer_lic_con_informe())
+        # se calculaban pero nunca se mostraban. Ahora se listan TODOS,
+        # igual que se pidió para items_pliego: "que entres y verifiques
+        # qué hay para hacer y me lo des listado". Es información
+        # complementaria a "Artículos solicitados" (ARCE), no un
+        # reemplazo — nunca se inventa nada, es texto citado tal cual
+        # aparece en el pliego.
+        productos_detectados = lic.get("productos_detectados") or []
+        if productos_detectados:
+            def _linea_producto(p: dict) -> str:
+                etiqueta = settings.etiqueta_categoria(p["categoria"])
+                fragmento = " ".join(p["fragmento"].split())
+                if len(fragmento) > 200:
+                    fragmento = fragmento[:200].rstrip() + "…"
+                return (
+                    f'<strong>{escapar_html(etiqueta)}</strong> — "{escapar_html(p["termino_encontrado"])}": '
+                    f'«{escapar_html(fragmento)}»'
+                )
+
+            lis_productos = "".join(
+                f'<li style="margin-bottom:4px;">{_linea_producto(p)}</li>' for p in productos_detectados
+            )
+            partes.append(
+                '<details style="margin-top:4px;">'
+                f'<summary style="font-size:11px;color:#555;cursor:pointer;">🔍 Coincidencias detectadas en el pliego ({len(productos_detectados)})</summary>'
+                f'<ul style="margin:4px 0 0;padding-left:18px;font-size:11px;color:#444;">{lis_productos}</ul>'
                 "</details>"
             )
 
