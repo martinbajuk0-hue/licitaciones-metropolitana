@@ -37822,6 +37822,43 @@
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1370775",
     "ya_adjudicados": []
   },
+  "ab10bdbb8e7e6a2e8b7ef87947084f44": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "normativas"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Normativa/certificación mencionada"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1388686.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Sat, 21 Nov 2026 00:40:09",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "ab10bdbb8e7e6a2e8b7ef87947084f44",
+    "informe": "informes/ab10bdbb8e7e6a2e8b7ef87947084f44.md",
+    "keyword": "epoxi + nylon + r12",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "BPS - Banco de Previsión Social",
+    "primera_deteccion": "2026-11-21T17:08:17",
+    "que_es": "Licitación de BPS - Banco de Previsión Social — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Normativa/certificación mencionada. Menciona \"epoxi\": «A DE NITRILO (PARES) TALLE 9 ---- 50 UNIDAD 6 9730 ADHESIVO EPOXI ----- minimo 300 cc 15 UNIDAD DETALLE DEL INSUMO - ESPEFICA»",
+    "score": 42,
+    "simbolo": "★★",
+    "titulo": "Compra Directa 14126/2026",
+    "ultima_actualizacion": "2026-11-21T17:08:17",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1388686",
+    "ya_adjudicados": []
+  },
   "ab41dad5f2343d2a4e96e2dd1e154db5": {
     "cambio_detectado": false,
     "categorias": [
