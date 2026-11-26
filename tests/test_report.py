@@ -147,5 +147,51 @@ class TestCodigoArticuloEnInforme(unittest.TestCase):
             self.assertNotIn("TATAMI", codigo_ajeno.ya_adjudicados)
 
 
+class TestItemsClasificadosYCotizacionParcial(unittest.TestCase):
+    """items_pliego / items_clasificados / acepta_cotizacion_parcial:
+    pedido explícito del usuario 2026-11-25 — en llamados que piden varios
+    materiales, separar cuáles son del rubro de Metropolitana de cuáles no,
+    y si el pliego admite ofertar solo por una parte."""
+
+    def test_sin_items_pliego_devuelve_listas_vacias_y_none(self):
+        texto = "UTE licitación abreviada 10/2026 para piso vinílico, plazo de entrega: 30 dias."
+        informe = report.analizar_licitacion("Prueba", "https://example.com", texto)
+        self.assertEqual(informe.items_clasificados, [])
+        self.assertIsNone(informe.acepta_cotizacion_parcial)
+        self.assertNotIn("Ítems pedidos", informe.markdown)
+
+    def test_items_pliego_se_clasifican_en_el_informe(self):
+        texto = "UTE licitación abreviada 10/2026, no se admitirán ofertas parciales."
+        items = [
+            {"descripcion": "Baldosa vinílica click para oficinas"},
+            {"descripcion": "Resma de papel A4"},
+        ]
+        informe = report.analizar_licitacion("Prueba", "https://example.com", texto, items_pliego=items)
+        self.assertEqual(len(informe.items_clasificados), 2)
+        self.assertTrue(informe.items_clasificados[0]["lo_tenemos"])
+        self.assertFalse(informe.items_clasificados[1]["lo_tenemos"])
+        self.assertFalse(informe.acepta_cotizacion_parcial)
+
+    def test_seccion_de_items_solo_aparece_con_dos_o_mas_items(self):
+        texto = "UTE licitación abreviada 10/2026 para piso vinílico. Se admite la cotización parcial."
+        un_item = [{"descripcion": "Baldosa vinílica click"}]
+        informe_un_item = report.analizar_licitacion("Prueba", "https://example.com", texto, items_pliego=un_item)
+        self.assertNotIn("Ítems pedidos", informe_un_item.markdown)
+
+        dos_items = un_item + [{"descripcion": "Resma de papel A4"}]
+        informe_dos_items = report.analizar_licitacion("Prueba", "https://example.com", texto, items_pliego=dos_items)
+        self.assertIn("Ítems pedidos", informe_dos_items.markdown)
+        self.assertIn("SÍ — el pliego lo menciona explícitamente", informe_dos_items.markdown)
+        self.assertIn("✅ SÍ es del rubro", informe_dos_items.markdown)
+        self.assertIn("✖️ NO es del rubro", informe_dos_items.markdown)
+
+    def test_markdown_indica_no_detectado_en_pliego_cuando_no_hay_mencion(self):
+        texto = "UTE licitación abreviada 10/2026 para varios materiales de obra."
+        items = [{"descripcion": "Baldosa vinílica click"}, {"descripcion": "Resma de papel A4"}]
+        informe = report.analizar_licitacion("Prueba", "https://example.com", texto, items_pliego=items)
+        self.assertIsNone(informe.acepta_cotizacion_parcial)
+        self.assertIn("NO DETECTADO EN PLIEGO", informe.markdown)
+
+
 if __name__ == "__main__":
     unittest.main()

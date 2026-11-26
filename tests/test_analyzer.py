@@ -190,5 +190,105 @@ class TestExtraerQueEs(unittest.TestCase):
         self.assertTrue(resultado.endswith("…"))
 
 
+class TestDetectarCotizacionParcial(unittest.TestCase):
+    """detectar_cotizacion_parcial(): pedido del usuario 2026-11-25 — en
+    llamados con varios ítems, saber si el pliego admite ofertar solo por
+    una parte de lo pedido. Nunca debe inventar una respuesta: si el texto
+    no lo menciona explícitamente, debe devolver None (NO DETECTADO EN
+    PLIEGO), nunca asumir True ni False por default.
+    """
+
+    def test_texto_vacio_devuelve_none(self):
+        self.assertIsNone(analyzer.detectar_cotizacion_parcial(""))
+        self.assertIsNone(analyzer.detectar_cotizacion_parcial(None))
+
+    def test_sin_mencion_explicita_devuelve_none(self):
+        texto = "El oferente deberá presentar su propuesta técnica y económica antes del 10/12/2026."
+        self.assertIsNone(analyzer.detectar_cotizacion_parcial(texto))
+
+    def test_admite_cotizacion_parcial_explicita_devuelve_true(self):
+        texto = "Se admite la cotización parcial de los artículos solicitados en el presente llamado."
+        self.assertTrue(analyzer.detectar_cotizacion_parcial(texto))
+
+    def test_se_podra_ofertar_por_item_devuelve_true(self):
+        texto = "Los oferentes podrán cotizar por ítem, no siendo obligatorio ofertar la totalidad de los renglones."
+        self.assertTrue(analyzer.detectar_cotizacion_parcial(texto))
+
+    def test_total_o_parcialmente_devuelve_true(self):
+        texto = "La Administración podrá adjudicar total o parcialmente el presente llamado según su conveniencia."
+        self.assertTrue(analyzer.detectar_cotizacion_parcial(texto))
+
+    def test_no_se_admiten_ofertas_parciales_devuelve_false(self):
+        texto = "No se admitirán ofertas parciales; la cotización deberá cubrir la totalidad de los ítems del llamado."
+        self.assertFalse(analyzer.detectar_cotizacion_parcial(texto))
+
+    def test_no_se_aceptan_cotizaciones_parciales_devuelve_false(self):
+        texto = "No se aceptarán cotizaciones parciales bajo ningún concepto."
+        self.assertFalse(analyzer.detectar_cotizacion_parcial(texto))
+
+    def test_negacion_tiene_prioridad_sobre_patron_positivo(self):
+        # Esta frase contiene literalmente "ofertas parciales", que
+        # matchearía el patrón positivo "ofertas? parciales?" si se
+        # revisara antes que la negación — por eso el chequeo de "NO"
+        # debe ir primero en detectar_cotizacion_parcial().
+        texto = "No se admitirán ofertas parciales: la propuesta debe incluir la totalidad de los renglones solicitados."
+        self.assertFalse(analyzer.detectar_cotizacion_parcial(texto))
+
+
+class TestClasificarItemsPliego(unittest.TestCase):
+    """clasificar_items_pliego(): separa, de los ítems pedidos por el
+    pliego (tender.items de ARCE), cuáles son del rubro de Metropolitana
+    (lo_tenemos=True) de cuáles no — matcheando SOLO contra categorías de
+    producto real (knowledge/keywords.yaml: categorias), nunca contra los
+    grupos de señal débil/genérica usados para decidir si el llamado
+    completo es relevante.
+    """
+
+    def test_item_que_matchea_categoria_real_queda_marcado_lo_tenemos(self):
+        items = [{"descripcion": "Baldosa vinílica click para oficinas, color gris", "cantidad": "100", "unidad": "m2"}]
+        resultado = analyzer.clasificar_items_pliego(items)
+        self.assertEqual(len(resultado), 1)
+        self.assertTrue(resultado[0]["lo_tenemos"])
+        self.assertEqual(resultado[0]["categoria"], "pisos_vinilicos")
+
+    def test_item_que_no_matchea_nada_queda_marcado_no_lo_tenemos(self):
+        items = [{"descripcion": "Resma de papel A4 75 gramos", "cantidad": "50", "unidad": "unidad"}]
+        resultado = analyzer.clasificar_items_pliego(items)
+        self.assertEqual(len(resultado), 1)
+        self.assertFalse(resultado[0]["lo_tenemos"])
+        self.assertIsNone(resultado[0]["categoria"])
+
+    def test_distintos_items_se_clasifican_de_forma_independiente(self):
+        items = [
+            {"descripcion": "Baldosa vinílica click para oficinas"},
+            {"descripcion": "Resma de papel A4"},
+            {"descripcion": "Piso SPC con núcleo de piedra para depósito"},
+        ]
+        resultado = analyzer.clasificar_items_pliego(items)
+        self.assertEqual([it["lo_tenemos"] for it in resultado], [True, False, True])
+        self.assertEqual(resultado[0]["categoria"], "pisos_vinilicos")
+        self.assertIsNone(resultado[1]["categoria"])
+        self.assertEqual(resultado[2]["categoria"], "pisos_spc")
+
+    def test_termino_de_senal_debil_no_genera_falso_lo_tenemos(self):
+        # "aluminio" es un término genérico de materiales (señal débil,
+        # sirve para decidir si el LLAMADO completo es relevante) pero no
+        # identifica por sí solo un producto real de Metropolitana — un
+        # ítem que solo menciona esto no debe marcarse como que lo tenemos.
+        items = [{"descripcion": "Perfil de aluminio estructural para fachada"}]
+        resultado = analyzer.clasificar_items_pliego(items)
+        self.assertFalse(resultado[0]["lo_tenemos"])
+        self.assertIsNone(resultado[0]["categoria"])
+
+    def test_lista_vacia_devuelve_lista_vacia(self):
+        self.assertEqual(analyzer.clasificar_items_pliego([]), [])
+
+    def test_no_modifica_los_items_originales(self):
+        original = [{"descripcion": "Baldosa vinílica click"}]
+        analyzer.clasificar_items_pliego(original)
+        self.assertNotIn("lo_tenemos", original[0])
+        self.assertNotIn("categoria", original[0])
+
+
 if __name__ == "__main__":
     unittest.main()

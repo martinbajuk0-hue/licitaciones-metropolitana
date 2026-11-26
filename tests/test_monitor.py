@@ -607,7 +607,7 @@ class TestMainFiltraEmailPorFechaYTecho(unittest.TestCase):
         mock_obtener.return_value = licitaciones
         mock_es_relevante.return_value = (True, "piso vinílico", "rubro", "")
         mock_report_mod.analizar_licitacion.side_effect = (
-            lambda titulo, url, texto, errores, codigos_articulo=None: self._informe_falso(
+            lambda titulo, url, texto, errores, codigos_articulo=None, items_pliego=None: self._informe_falso(
                 60 if titulo == "Publicada hoy" else 90
             )
         )
@@ -663,7 +663,7 @@ class TestMainFiltraEmailPorFechaYTecho(unittest.TestCase):
         mock_obtener.return_value = licitaciones
         mock_es_relevante.return_value = (True, "piso vinílico", "rubro", "")
         mock_report_mod.analizar_licitacion.side_effect = (
-            lambda titulo, url, texto, errores, codigos_articulo=None: self._informe_falso(
+            lambda titulo, url, texto, errores, codigos_articulo=None, items_pliego=None: self._informe_falso(
                 60 if titulo == "Publicada hoy" else 90
             )
         )
@@ -716,7 +716,7 @@ class TestMainFiltraEmailPorFechaYTecho(unittest.TestCase):
 
         mock_es_relevante.side_effect = _es_relevante
 
-        def _analizar(titulo, url, texto, errores, codigos_articulo=None):
+        def _analizar(titulo, url, texto, errores, codigos_articulo=None, items_pliego=None):
             score = 99 if titulo == "La de mayor score" else 50
             return self._informe_falso(score)
 
@@ -1548,6 +1548,198 @@ class TestFilaEmailMuestraBotonArceAdemasDelPliego(unittest.TestCase):
         html = self._html_enviado(mock_smtp)
         self.assertIn('href="https://www.comprasestatales.gub.uy/consultas/detalle/id/999"', html)
         self.assertNotIn(">ARCE<", html)
+
+
+class TestEnriquecerLicConInformeCopiaItemsClasificadosYCotizacionParcial(unittest.TestCase):
+    """2026-11-25: pedido explícito del usuario — en llamados que piden
+    varios materiales, mostrar cuáles son del rubro de Metropolitana
+    (lo_tenemos) y si el pliego admite cotización parcial. Acá se prueba
+    que _enriquecer_lic_con_informe() copia ambos campos del informe al
+    dict `lic` que usa el email (ver report.InformeLicitacion)."""
+
+    def _informe_base(self):
+        informe = MagicMock()
+        informe.clasificacion = MagicMock(puntaje=60, nivel=3, simbolo="★★★", etiqueta="Media")
+        informe.ya_adjudicados = []
+        informe.cierre = None
+        informe.que_es = "QUÉ ES: de prueba"
+        informe.campos = MagicMock(organismo="MTSS", numero_licitacion="CD 1/2026", fecha_apertura=None)
+        informe.productos = []
+        return informe
+
+    def test_copia_items_clasificados_y_acepta_cotizacion_parcial(self):
+        lic = {"titulo": "x"}
+        informe = self._informe_base()
+        informe.items_clasificados = [
+            {"descripcion": "Baldosa vinílica click", "categoria": "pisos_vinilicos", "lo_tenemos": True},
+            {"descripcion": "Resma de papel A4", "categoria": None, "lo_tenemos": False},
+        ]
+        informe.acepta_cotizacion_parcial = True
+
+        monitor._enriquecer_lic_con_informe(lic, informe)
+
+        self.assertEqual(lic["items_clasificados"], informe.items_clasificados)
+        self.assertTrue(lic["acepta_cotizacion_parcial"])
+
+    def test_copia_acepta_cotizacion_parcial_none_sin_inventar(self):
+        lic = {"titulo": "x"}
+        informe = self._informe_base()
+        informe.items_clasificados = []
+        informe.acepta_cotizacion_parcial = None
+
+        monitor._enriquecer_lic_con_informe(lic, informe)
+
+        self.assertEqual(lic["items_clasificados"], [])
+        self.assertIsNone(lic["acepta_cotizacion_parcial"])
+
+
+class TestEmailMuestraQueTenemosYCotizacionParcial(unittest.TestCase):
+    """Complementa la clase anterior: prueba que lic["items_clasificados"]
+    y lic["acepta_cotizacion_parcial"] efectivamente se renderizan en el
+    HTML del mail (enviar_email()) — pedido del usuario: "en las que piden
+    varios materiales... de los que tenemos nosotros y de los que no
+    tenemos, en cuáles sí podemos cotizar, es decir que aceptan cotización
+    parcial"."""
+
+    def _lic(self, items_clasificados=None, acepta_cotizacion_parcial=None):
+        return {
+            "titulo": "Compra Directa 226613/2026",
+            "descripcion": "desc",
+            "fecha": "2026-11-19",
+            "url": "https://www.comprasestatales.gub.uy/ocds/release/llamado-999",
+            "url_ficha": "https://example.com/ficha",
+            "documentos": ["https://example.com/pliego.pdf"],
+            "organismo": "Ministerio de Trabajo y Seguridad Social (MTSS)",
+            "items_pliego": [],
+            "productos_detectados": [],
+            "items_clasificados": items_clasificados or [],
+            "acepta_cotizacion_parcial": acepta_cotizacion_parcial,
+        }
+
+    def _html_enviado(self, mock_smtp) -> str:
+        server = mock_smtp.return_value.__enter__.return_value
+        _, _, mensaje = server.sendmail.call_args[0]
+        parsed = email.message_from_string(mensaje)
+        for parte in parsed.walk():
+            if parte.get_content_type() == "text/html":
+                return parte.get_payload(decode=True).decode("utf-8")
+        raise AssertionError("no se encontró la parte text/html del mail")
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_admite_parcial_muestra_tenemos_y_no_tenemos(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(
+            items_clasificados=[
+                {"descripcion": "Baldosa vinílica click", "categoria": "pisos_vinilicos", "lo_tenemos": True},
+                {"descripcion": "Resma de papel A4", "categoria": None, "lo_tenemos": False},
+            ],
+            acepta_cotizacion_parcial=True,
+        )
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertIn("SÍ admite cotización parcial", html)
+        self.assertIn("Artículos que sí podemos cotizar (1)", html)
+        self.assertIn("Artículos que no son del rubro (1)", html)
+        self.assertIn("Baldosa vinílica click", html)
+        self.assertIn("Resma de papel A4", html)
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_no_admite_parcial_lo_advierte(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(
+            items_clasificados=[
+                {"descripcion": "Baldosa vinílica click", "categoria": "pisos_vinilicos", "lo_tenemos": True},
+                {"descripcion": "Resma de papel A4", "categoria": None, "lo_tenemos": False},
+            ],
+            acepta_cotizacion_parcial=False,
+        )
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertIn("NO admite cotización parcial", html)
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_sin_mencion_en_el_pliego_marca_no_detectado(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(
+            items_clasificados=[
+                {"descripcion": "Baldosa vinílica click", "categoria": "pisos_vinilicos", "lo_tenemos": True},
+                {"descripcion": "Resma de papel A4", "categoria": None, "lo_tenemos": False},
+            ],
+            acepta_cotizacion_parcial=None,
+        )
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertIn("NO DETECTADO EN PLIEGO", html)
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_con_un_solo_item_clasificado_no_aparece_la_seccion(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        # Con un único ítem no hay nada que "separar" entre lo que
+        # tenemos y lo que no — la sección solo tiene sentido con 2+.
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(
+            items_clasificados=[
+                {"descripcion": "Baldosa vinílica click", "categoria": "pisos_vinilicos", "lo_tenemos": True},
+            ],
+            acepta_cotizacion_parcial=True,
+        )
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertNotIn("cotización parcial", html)
+        self.assertNotIn("Artículos que sí podemos cotizar", html)
+
+    @patch("monitor.smtplib.SMTP_SSL")
+    @patch("monitor.settings.email_destino")
+    @patch("monitor.settings.gmail_app_password")
+    @patch("monitor.settings.gmail_user")
+    def test_sin_items_clasificados_no_aparece_la_seccion(
+        self, mock_gmail_user, mock_gmail_pass, mock_dest, mock_smtp,
+    ):
+        mock_gmail_user.return_value = "bot@example.com"
+        mock_gmail_pass.return_value = "x"
+        mock_dest.return_value = "martin@example.com"
+
+        lic = self._lic(items_clasificados=[], acepta_cotizacion_parcial=None)
+        monitor.enviar_email([lic], [])
+
+        html = self._html_enviado(mock_smtp)
+        self.assertNotIn("Artículos que sí podemos cotizar", html)
+        self.assertNotIn("Artículos que no son del rubro", html)
 
 
 if __name__ == "__main__":
