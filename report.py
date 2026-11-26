@@ -131,6 +131,8 @@ class InformeLicitacion:
     cronograma: list[dict]
     ya_adjudicados: list[str]
     cierre: str
+    items_clasificados: list[dict]
+    acepta_cotizacion_parcial: bool | None
     markdown: str
 
 
@@ -140,6 +142,7 @@ def analizar_licitacion(
     texto_pliego: str,
     documentos_con_error: list[str] | None = None,
     codigos_articulo: list[str] | None = None,
+    items_pliego: list[dict] | None = None,
 ) -> InformeLicitacion:
     campos = analyzer.extraer_campos_clave(texto_pliego)
     productos = analyzer.identificar_productos(texto_pliego)
@@ -191,6 +194,14 @@ def analizar_licitacion(
     ))
     cierre = texto_cierre(campos.fecha_apertura)
 
+    # 2026-11-25: pedido explícito del usuario — en llamados que piden
+    # varios materiales, separar cuáles son del rubro de Metropolitana
+    # (se pueden cotizar) de cuáles no, y si el pliego admite ofertar
+    # solo por una parte (ver analyzer.clasificar_items_pliego()/
+    # detectar_cotizacion_parcial()).
+    items_clasificados = analyzer.clasificar_items_pliego(items_pliego or [])
+    acepta_cotizacion_parcial = analyzer.detectar_cotizacion_parcial(texto_pliego)
+
     partes = [
         f"# Informe de licitación: {titulo}",
         "",
@@ -236,6 +247,29 @@ def analizar_licitacion(
             )
             if contexto else None
         ),
+        "## Ítems pedidos: cuáles son del rubro y cotización parcial" if len(items_clasificados) >= 2 else None,
+        (
+            (
+                "¿Admite cotización parcial? "
+                + (
+                    "SÍ — el pliego lo menciona explícitamente."
+                    if acepta_cotizacion_parcial is True
+                    else "NO — el pliego lo prohíbe explícitamente."
+                    if acepta_cotizacion_parcial is False
+                    else "NO DETECTADO EN PLIEGO — verificar manualmente antes de descartar por no tener todos los ítems."
+                )
+                + "\n\n"
+                + _md_lista(
+                    [
+                        f"{'✅ SÍ' if it['lo_tenemos'] else '✖️ NO'} es del rubro"
+                        + (f" ({settings.etiqueta_categoria(it['categoria'])})" if it["categoria"] else "")
+                        + f": {it['descripcion']}"
+                        for it in items_clasificados
+                    ]
+                )
+            )
+            if len(items_clasificados) >= 2 else None
+        ),
         "## Riesgos detectados",
         f"Altos: {len(riesgos_altos)} · Medios: {len(riesgos_medios)} · Total: {len(riesgos)}",
         "",
@@ -270,6 +304,8 @@ def analizar_licitacion(
         cronograma=cronograma,
         ya_adjudicados=ya_adjudicados,
         cierre=cierre,
+        items_clasificados=items_clasificados,
+        acepta_cotizacion_parcial=acepta_cotizacion_parcial,
         markdown=markdown,
     )
 

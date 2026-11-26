@@ -261,6 +261,92 @@ def identificar_productos(texto: str) -> list[ProductoIdentificado]:
     return encontrados
 
 
+# ─── Ítems pedidos: cuáles son del rubro y si se admite cotizar parcial ───
+
+# 2026-11-25: pedido explícito del usuario — en llamados que piden VARIOS
+# materiales (ver monitor._items_articulos()/items_pliego), quiere saber
+# cuáles de esos ítems son del rubro de Metropolitana (los podemos
+# cotizar) y cuáles no, y si el pliego admite presentarse ofertando solo
+# por una parte de lo pedido ("cotización parcial") — sin esto último, un
+# llamado con 20 ítems donde Metropolitana solo tiene 3 puede descartarse
+# por error, cuando en realidad sí se podría ofertar por esos 3 nada más.
+#
+# El chequeo de "NO se admite" va ANTES que el de "SÍ" porque una frase
+# como "no se admitirán ofertas parciales" también contiene las palabras
+# "oferta(s) parcial(es)", que matchearían el patrón positivo si se
+# mirara primero — hay que priorizar la negación explícita.
+_PATRONES_COTIZACION_PARCIAL_NO = [
+    r"no\s+se\s+admit(?:e|ir[áa])n?\s+ofertas?\s+parciales?",
+    r"no\s+se\s+acept(?:a|ar[áa]n?)\s+ofertas?\s+parciales?",
+    r"no\s+se\s+admit(?:e|ir[áa])\s+cotizaci[óo]n\s+parcial",
+    r"no\s+se\s+acept(?:a|ar[áa]n?)\s+cotizaciones?\s+parciales?",
+    r"(?:oferta|cotizaci[óo]n)\s+deber[áa]\s+(?:ser\s+|presentarse\s+)?por\s+(?:la\s+)?totalidad",
+]
+
+_PATRONES_COTIZACION_PARCIAL_SI = [
+    r"cotizaci[óo]n\s+parcial",
+    r"oferta\s+parcial",
+    r"ofertas?\s+parciales?",
+    r"adjudicaci[óo]n\s+parcial",
+    r"total\s+o\s+parcialmente",
+    r"cotizar\s+por\s+(?:[íi]tem|rengl[oó]n|rubro)",
+    r"ofertar\s+por\s+(?:[íi]tem|rengl[oó]n|rubro)",
+    r"se\s+podr[áa]\s+cotizar\s+(?:de\s+forma\s+)?parcial",
+    r"se\s+admite\s+(?:la\s+)?cotizaci[óo]n\s+por\s+(?:[íi]tem|rengl[oó]n)",
+]
+
+
+def detectar_cotizacion_parcial(texto: str) -> bool | None:
+    """True si el pliego admite explícitamente ofertar/cotizar solo por
+    parte de los ítems pedidos; False si lo prohíbe explícitamente; None
+    si no se encontró ninguna mención — nunca se asume una respuesta por
+    default (regla del proyecto: prohibido inventar). None equivale a
+    "NO DETECTADO EN PLIEGO": hay que verificarlo a mano.
+    """
+    if not texto:
+        return None
+    texto_lower = texto.lower()
+    for patron in _PATRONES_COTIZACION_PARCIAL_NO:
+        if re.search(patron, texto_lower):
+            return False
+    for patron in _PATRONES_COTIZACION_PARCIAL_SI:
+        if re.search(patron, texto_lower):
+            return True
+    return None
+
+
+def clasificar_items_pliego(items_pliego: list[dict]) -> list[dict]:
+    """Para cada ítem de items_pliego (tender.items de ARCE, ver
+    monitor._items_articulos()), determina si matchea alguna palabra
+    clave de una categoría de PRODUCTO REAL de Metropolitana (knowledge/
+    keywords.yaml: categorias) — a propósito, NO contra los grupos de
+    señal débil/genérica (materiales, terminologia_pliegos, normativas,
+    marcas, errores_comunes, abreviaturas — ver settings._GRUPOS_SEÑAL_
+    FUERTE), porque esos sirven para decidir si el LLAMADO completo es
+    relevante, no si ESE ítem puntual es algo que Metropolitana vende
+    (que el ítem mencione "aluminio" no significa que sea un producto
+    del rubro).
+
+    Devuelve una copia de items_pliego con dos claves nuevas por ítem:
+    "categoria" (el nombre de la categoría que matcheó, o None si no es
+    del rubro) y "lo_tenemos" (bool).
+    """
+    categorias = settings.keywords().get("categorias", {})
+    resultado = []
+    for it in items_pliego:
+        desc_lower = (it.get("descripcion") or "").lower()
+        categoria_match = None
+        for nombre_cat, datos in categorias.items():
+            if any(settings.coincide_palabra_clave(desc_lower, kw) for kw in datos.get("keywords", [])):
+                categoria_match = nombre_cat
+                break
+        nuevo = dict(it)
+        nuevo["categoria"] = categoria_match
+        nuevo["lo_tenemos"] = categoria_match is not None
+        resultado.append(nuevo)
+    return resultado
+
+
 def identificar_contexto(texto: str) -> dict[str, list[str]]:
     """lugares_uso / aplicaciones detectados en el texto — señal DÉBIL,
     nunca decide relevancia por sí sola (ver knowledge/keywords.yaml).

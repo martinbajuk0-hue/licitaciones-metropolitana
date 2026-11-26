@@ -795,6 +795,11 @@ def _enriquecer_lic_con_informe(lic: dict, informe: "report_mod.InformeLicitacio
     # relevancia/categoría, pero nunca se exponía como listado completo en
     # el email — solo el primero se citaba, suelto, dentro de "que_es".
     lic["productos_detectados"] = [p.to_dict() for p in informe.productos]
+    # 2026-11-25: pedido explícito del usuario — ver el comentario largo
+    # en _objeto_html() sobre "de los que tenemos y de los que no, en
+    # cuáles podemos cotizar (cotización parcial)".
+    lic["items_clasificados"] = informe.items_clasificados
+    lic["acepta_cotizacion_parcial"] = informe.acepta_cotizacion_parcial
 
 
 def enviar_email(
@@ -964,6 +969,70 @@ def enviar_email(
                 f'<ul style="margin:4px 0 0;padding-left:18px;font-size:11px;color:#444;">{lis_productos}</ul>'
                 "</details>"
             )
+
+        # 2026-11-25: pedido explícito del usuario — "en las que piden
+        # varios materiales... de los que tenemos nosotros y de los que
+        # no tenemos, en cuáles sí podemos cotizar, es decir que
+        # aceptan cotización parcial". Un llamado con muchos ítems donde
+        # Metropolitana solo tiene algunos puede descartarse por error
+        # si no queda claro que igual se podría ofertar solo por esos —
+        # siempre que el pliego admita cotización parcial (ver
+        # analyzer.detectar_cotizacion_parcial(): nunca se asume que sí,
+        # solo se dice SÍ/NO si el pliego lo menciona explícitamente,
+        # si no, se marca NO DETECTADO EN PLIEGO en vez de inventar).
+        # Solo se muestra con 2+ ítems — con uno solo no hay nada que
+        # "separar". clasificar_items_pliego() solo matchea contra
+        # categorías de PRODUCTO real (knowledge/keywords.yaml:
+        # categorias), no contra las listas de señal débil/genérica
+        # (materiales, normativas, etc.) que solo sirven para decidir si
+        # el LLAMADO es relevante, no si ESE ítem puntual es un producto
+        # de Metropolitana.
+        items_clasificados = lic.get("items_clasificados") or []
+        if len(items_clasificados) >= 2:
+            los_tenemos = [it for it in items_clasificados if it["lo_tenemos"]]
+            no_los_tenemos = [it for it in items_clasificados if not it["lo_tenemos"]]
+            acepta_parcial = lic.get("acepta_cotizacion_parcial")
+            if acepta_parcial is True:
+                parcial_txt, parcial_color = "SÍ admite cotización parcial", "#1e8e3e"
+            elif acepta_parcial is False:
+                parcial_txt, parcial_color = "NO admite cotización parcial — hay que cubrir todos los ítems", "#c5221f"
+            else:
+                parcial_txt, parcial_color = "NO DETECTADO EN PLIEGO si admite cotización parcial — verificar manualmente", "#b06000"
+
+            categorias_que_tenemos = sorted({
+                settings.etiqueta_categoria(it["categoria"]) for it in los_tenemos if it["categoria"]
+            })
+            resumen_txt = (
+                f"De {len(items_clasificados)} artículos pedidos: {len(los_tenemos)} del rubro Metropolitana"
+                + (f" ({', '.join(categorias_que_tenemos)})" if categorias_que_tenemos else "")
+                + f" · {len(no_los_tenemos)} no son del rubro."
+            )
+            partes.append(
+                f'<div style="font-size:11px;color:{parcial_color};font-weight:600;margin-top:4px;">🧩 {escapar_html(parcial_txt)}</div>'
+                f'<div style="font-size:11px;color:#444;margin-top:1px;">{escapar_html(resumen_txt)}</div>'
+            )
+            if los_tenemos:
+                lis_si = "".join(
+                    f'<li style="margin-bottom:2px;">{escapar_html(it["descripcion"])}'
+                    f' — {escapar_html(settings.etiqueta_categoria(it["categoria"]))}</li>'
+                    for it in los_tenemos
+                )
+                partes.append(
+                    '<details style="margin-top:4px;">'
+                    f'<summary style="font-size:11px;color:#1e8e3e;cursor:pointer;">✅ Artículos que sí podemos cotizar ({len(los_tenemos)})</summary>'
+                    f'<ul style="margin:4px 0 0;padding-left:18px;font-size:11px;color:#444;">{lis_si}</ul>'
+                    "</details>"
+                )
+            if no_los_tenemos:
+                lis_no = "".join(
+                    f'<li style="margin-bottom:2px;">{escapar_html(it["descripcion"])}</li>' for it in no_los_tenemos
+                )
+                partes.append(
+                    '<details style="margin-top:4px;">'
+                    f'<summary style="font-size:11px;color:#888;cursor:pointer;">✖️ Artículos que no son del rubro ({len(no_los_tenemos)})</summary>'
+                    f'<ul style="margin:4px 0 0;padding-left:18px;font-size:11px;color:#444;">{lis_no}</ul>'
+                    "</details>"
+                )
 
         return "".join(partes)
 
@@ -1345,6 +1414,7 @@ def main(enviar_email_flag: bool = True) -> None:
         informe = report_mod.analizar_licitacion(
             lic["titulo"], lic.get("url_ficha") or lic["url"], texto_para_informe, errores,
             codigos_articulo=lic.get("codigos_articulo"),
+            items_pliego=lic.get("items_pliego"),
         )
         ruta_informe = report_mod.guardar_informe(lic["titulo"], informe.markdown)
         print(f"  Informe generado: {ruta_informe} ({informe.clasificacion.simbolo} score {informe.clasificacion.puntaje})")
@@ -1633,6 +1703,7 @@ def enviar_email_de_prueba_rango_fechas(desde: str, hasta: str) -> None:
         informe = report_mod.analizar_licitacion(
             lic["titulo"], lic.get("url_ficha") or lic["url"], texto_para_informe, errores,
             codigos_articulo=lic.get("codigos_articulo"),
+            items_pliego=lic.get("items_pliego"),
         )
         print(f"  Relevante: {lic['titulo'][:70]!r} — {informe.clasificacion.simbolo} score {informe.clasificacion.puntaje}")
 
