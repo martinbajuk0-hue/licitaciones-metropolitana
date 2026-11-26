@@ -4417,6 +4417,41 @@
       "CEMENTO ADHESIVO PARA CERAMICA"
     ]
   },
+  "1249952ae006a4ee948c5a868dfeb88d": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1389969.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 26 Nov 2026 13:55:08",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "1249952ae006a4ee948c5a868dfeb88d",
+    "informe": "informes/1249952ae006a4ee948c5a868dfeb88d.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-26T19:35:03",
+    "que_es": "Licitación de organismo no identificado — busca Alfombras, Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «thernet •Destino escaneos: Poder enviar lo escaneado a una carpeta compartida o enviarlo por email •Incluir cable de alimen»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 4/2026",
+    "ultima_actualizacion": "2026-11-26T19:35:03",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1389969",
+    "ya_adjudicados": []
+  },
   "12c629be656d3855e8b8944e212f7e12": {
     "cambio_detectado": false,
     "categorias": [
@@ -9623,6 +9658,39 @@
       "PANEL DE MADERA",
       "REPARACION DE PISO DE MADERA"
     ]
+  },
+  "2890ac0e2aa011879c6246b6ca956062": {
+    "cambio_detectado": false,
+    "categorias": [
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1389870.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 26 Nov 2026 10:55:08",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "2890ac0e2aa011879c6246b6ca956062",
+    "informe": "informes/2890ac0e2aa011879c6246b6ca956062.md",
+    "keyword": "acero inoxidable + pvc",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Defensa Nacional (MDN)",
+    "primera_deteccion": "2026-11-26T19:47:55",
+    "que_es": "Licitación de Ministerio de Defensa Nacional (MDN) — busca Material mencionado (revisar contexto). Menciona \"acero inoxidable\": «00 2 copa u.u 385 ml. Resistentes. 24 3 cuchara u.u sopera. Acero inoxidable 70 4 abrelatas u.u resistente 4 5 jarra eléctrica u.u 1,7 l»",
+    "score": 7,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 5013/2026",
+    "ultima_actualizacion": "2026-11-26T19:47:55",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1389870",
+    "ya_adjudicados": []
   },
   "28b01284d79017b4365e26dee993d0ce": {
     "cambio_detectado": false,
@@ -15177,6 +15245,33 @@
     "titulo": "Licitación Abreviada 9/2026",
     "ultima_actualizacion": "2026-08-21T11:18:55",
     "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1358348",
+    "ya_adjudicados": []
+  },
+  "45f5e1b9390e7c7da367618dcf87287d": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 26 Nov 2026 10:30:13",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "45f5e1b9390e7c7da367618dcf87287d",
+    "informe": "informes/45f5e1b9390e7c7da367618dcf87287d.md",
+    "keyword": "algodon + espuma de poliuretano + latex",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-26T19:48:01",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría. Texto disponible: «Compra Directa 19384/2026 MMQ DIC/ENE. // ACLARACIONES: ÍTEM 43 - MASCARA ADULTO C7RESERVORIO Y TUBULADURA / ÍTEM 44 - MASCARA FLUJO LIBRE PEDIÁTRICA C/TUBULADURA / ÍTEM 45- MASCARA PEDIATRICA C/RESERVORIO Y TUBULADURA / ÍTEM 48 - PARCHE OFTALMOLÓGICO 20 DE NIÑO Y 50 DE ADULTO / ÍTEM 51 - TESTIGO AU…»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 19384/2026",
+    "ultima_actualizacion": "2026-11-26T19:48:01",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1389391",
     "ya_adjudicados": []
   },
   "46774d6467cfc452de0ef5e5572bdd63": {
@@ -29357,6 +29452,53 @@
       "CAMINERO DE PVC"
     ]
   },
+  "83492fee28fce51c1c6928ad79e5e838": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Material mencionado (revisar contexto)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1389902.pdf"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 26 Nov 2026 11:25:09",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "83492fee28fce51c1c6928ad79e5e838",
+    "informe": "informes/83492fee28fce51c1c6928ad79e5e838.md",
+    "keyword": "alfombra + nylon + poliuretano",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Defensa Nacional (MDN)",
+    "primera_deteccion": "2026-11-26T19:45:42",
+    "que_es": "Licitación de Ministerio de Defensa Nacional (MDN) — busca Alfombras, Material mencionado (revisar contexto). Menciona \"alfombra\": «10 2 juego de sabanas u.u tela de algodón resistente. 20 3 alfombra de baño u.u 20 4 colchón u.u 10 5 cortina de baño u.u imper»",
+    "score": 19,
+    "simbolo": "★",
+    "titulo": "Concurso de Precios 5015/2026",
+    "ultima_actualizacion": "2026-11-26T19:45:42",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1389902",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "COLOCACION DE ALFOMBRA",
+      "ALFOMBRA DE GOMA",
+      "ALFOMBRA DE FIELTRO",
+      "ALFOMBRA DE LANA",
+      "ALFOMBRA BOUCLE",
+      "REPARACION DE ALFOMBRA",
+      "LIMPIEZA DE ALFOMBRA",
+      "ALFOMBRA ATRAPA POLVO",
+      "VARILLA DE BRONCE PARA ALFOMBRA",
+      "ALFOMBRA DE YUTE"
+    ]
+  },
   "835c3b1f9f0cfa1b5fff11bc9ad0893e": {
     "cambio_detectado": false,
     "categorias": [
@@ -32939,6 +33081,35 @@
     "ya_adjudicados": [
       "MANTENIMIENTO EDILICIO"
     ]
+  },
+  "902d480c9bd029bff8780cad52aa675e": {
+    "cambio_detectado": false,
+    "categorias": [],
+    "categorias_etiquetas": [],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1389881.odt"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 26 Nov 2026 11:05:14",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "902d480c9bd029bff8780cad52aa675e",
+    "informe": "informes/902d480c9bd029bff8780cad52aa675e.md",
+    "keyword": "carpet + carpeta + polipropileno",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": null,
+    "primera_deteccion": "2026-11-26T19:47:50",
+    "que_es": "Licitación de organismo no identificado — busca ninguna coincidencia directa de categoría. Texto disponible: «Compra Directa 19757/2026 PAPELERÍA SE ADJUNTA DETALLE»",
+    "score": 0,
+    "simbolo": "★",
+    "titulo": "Compra Directa 19757/2026",
+    "ultima_actualizacion": "2026-11-26T19:47:50",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1389881",
+    "ya_adjudicados": []
   },
   "909cc9993e2d40e533def89e65e7f831": {
     "cambio_detectado": false,
@@ -39804,6 +39975,47 @@
       "CAMINERO DE PVC"
     ]
   },
+  "b091e28a61789b35f76c58a00648846c": {
+    "cambio_detectado": false,
+    "categorias": [
+      "alfombras",
+      "errores_comunes",
+      "materiales"
+    ],
+    "categorias_etiquetas": [
+      "Alfombras",
+      "Material mencionado (revisar contexto)",
+      "Variante/error ortográfico de un término del rubro"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pliego_1389888.pdf"
+    ],
+    "etiqueta_clasificacion": "Poco conveniente",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 26 Nov 2026 11:10:10",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "b091e28a61789b35f76c58a00648846c",
+    "informe": "informes/b091e28a61789b35f76c58a00648846c.md",
+    "keyword": "carpet + carpeta",
+    "nivel": 2,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Defensa Nacional (MDN)",
+    "primera_deteccion": "2026-11-26T19:47:48",
+    "que_es": "Licitación de Ministerio de Defensa Nacional (MDN) — busca Alfombras, Material mencionado (revisar contexto), Variante/error ortográfico de un término del rubro. Menciona \"carpet\": «diploma A4. 160 grs/m². Color blanco 150 9 cinta caja 32 10 carpeta pack 10 11 etiqueta rollo autoadhesivas. FRÁGIL. Con texto»",
+    "score": 31,
+    "simbolo": "★★",
+    "titulo": "Concurso de Precios 5014/2026",
+    "ultima_actualizacion": "2026-11-26T19:47:48",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1389888",
+    "ya_adjudicados": [
+      "ZOCALO DE MADERA",
+      "PANEL DE MADERA",
+      "REPARACION DE PISO DE MADERA"
+    ]
+  },
   "b11b147241e640ea4d045fcc59c44d41": {
     "cambio_detectado": false,
     "categorias": [
@@ -41970,6 +42182,47 @@
       "PISO MODULAR DE PVC",
       "PROTECTOR EN PVC PARA PISO FLOTANTE",
       "CAMINERO DE PVC"
+    ]
+  },
+  "b92176da5bc4b79ef761607460273802": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_flotantes",
+      "terminologia_pliegos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos flotantes/laminados",
+      "Terminología genérica del pliego (revisar manualmente qué producto aplica)"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1390047.pdf"
+    ],
+    "etiqueta_clasificacion": "Dudosa",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 26 Nov 2026 15:00:11",
+    "fecha_visita": null,
+    "fuente_match": "título/descripción/ítems",
+    "id": "b92176da5bc4b79ef761607460273802",
+    "informe": "informes/b92176da5bc4b79ef761607460273802.md",
+    "keyword": "mdf + melamina",
+    "nivel": 3,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "Ministerio de Trabajo y Seguridad Social",
+    "primera_deteccion": "2026-11-26T19:30:49",
+    "que_es": "Licitación de Ministerio de Trabajo y Seguridad Social — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos flotantes/laminados, Terminología genérica del pliego (revisar manualmente qué producto aplica). Menciona \"mdf\": «A DE METAL TAPIZADA 08 - NEGRO UNIDAD 3 57296 ARMARIO DE MDF CON PUERTAS 02 LARGO X ALTO X PROFUNDIDAD GRIS UNIDAD 4»",
+    "score": 49,
+    "simbolo": "★★★",
+    "titulo": "Compra Directa 1541/2026",
+    "ultima_actualizacion": "2026-11-26T19:30:49",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1390047",
+    "ya_adjudicados": [
+      "ZOCALO EN MDF"
     ]
   },
   "ba0ab7cd5ab9ed58c7b58bf2f6148145": {
@@ -45859,6 +46112,48 @@
       "GOMA NATURAL EN PLANCHA",
       "REPARACION DE PISO DE MADERA",
       "piso de goma o vinilo en rollo de 1,5 mm, de espesor.-"
+    ]
+  },
+  "ce9683fc5823b9087f185804c7ee569b": {
+    "cambio_detectado": false,
+    "categorias": [
+      "abreviaturas",
+      "materiales",
+      "pisos_vinilicos"
+    ],
+    "categorias_etiquetas": [
+      "Abreviatura técnica del rubro",
+      "Material mencionado (revisar contexto)",
+      "Pisos vinílicos"
+    ],
+    "documentos": [
+      "http://www.comprasestatales.gub.uy/Pliegos/pedido_1390057.doc"
+    ],
+    "etiqueta_clasificacion": "No presentarse",
+    "fecha_apertura": null,
+    "fecha_consultas": null,
+    "fecha_publicacion": "Thu, 26 Nov 2026 15:05:11",
+    "fecha_visita": null,
+    "fuente_match": "pliego (PDF/Word/Excel)",
+    "id": "ce9683fc5823b9087f185804c7ee569b",
+    "informe": "informes/ce9683fc5823b9087f185804c7ee569b.md",
+    "keyword": "acero inoxidable + pvc",
+    "nivel": 1,
+    "notificaciones": 1,
+    "numero_licitacion": null,
+    "organismo": "OSE - Obras Sanitarias del Estado",
+    "primera_deteccion": "2026-11-26T19:30:47",
+    "que_es": "Licitación de OSE - Obras Sanitarias del Estado — busca Abreviatura técnica del rubro, Material mencionado (revisar contexto), Pisos vinílicos. Menciona \"pvc\": «Equipo de succión y presurización con aire. Mangueras de PVC espiraladas de 2,5”, 3” y 4” de diámetro, de material»",
+    "score": 18,
+    "simbolo": "★",
+    "titulo": "Compra Directa 90061/2026",
+    "ultima_actualizacion": "2026-11-26T19:30:47",
+    "url_ficha": "https://www.comprasestatales.gub.uy/consultas/detalle/id/1390057",
+    "ya_adjudicados": [
+      "ALFOMBRA DE PVC",
+      "PISO MODULAR DE PVC",
+      "PROTECTOR EN PVC PARA PISO FLOTANTE",
+      "CAMINERO DE PVC"
     ]
   },
   "cf49817b0ee3cdf35ae11131cb0f7b6b": {
